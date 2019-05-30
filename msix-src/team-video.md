@@ -1,6 +1,6 @@
 ---
 layout: LandingPage
-title: Vídeos MSIX
+title: Vídeos de MSIX
 description: fala de conferência pela equipe de msix em tópicos relacionados à MSIX
 author: mcleanbyron
 ms.author: mcleans
@@ -9,14 +9,14 @@ ms.topic: landing-page
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 00fad059e7e2035b56395148be54f7de2b6abe02
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 44ec48793e0419c60ee789f555e2c6fe810a570e
+ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900718"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795428"
 ---
-# <a name="msix-videos"></a>Vídeos MSIX
+# <a name="msix-videos"></a>Vídeos de MSIX
 ***
 
 Saiba mais sobre MSIX destes vídeos de conferência e de informações.
@@ -33,18 +33,18 @@ Saiba mais sobre MSIX destes vídeos de conferência e de informações.
 :::row:::
     :::column:::
     >[!VIDEO https://www.youtube.com/embed/sBOTQoi6iXQ]
-        #### MSIX inside and out (Sept 2018)
-        MSIX is the future of app installation and a significant step forward in enabling enterprises to modernize their app deployment processes and stay current with Windows, Office and third-party apps.
+#### <a name="msix-inside-and-out-sept-2018"></a>MSIX interna e externa (setembro de 2018)
+MSIX é o futuro da instalação do aplicativo e uma etapa significativa nos permite que as empresas modernizar sua implantação do aplicativo processa e mantenha-se atualizado com o Windows, Office e aplicativos de terceiros.
     :::column-end:::
     :::column:::
     >[!VIDEO https://www.youtube.com/embed/0kSwCOr7-Ao]
-        #### MSIX – Accelerating Windows 10 and app deployment (Sept 2018)
-        MSIX provides lots of benefits across the app lifecycle management. Learn how to take advantage of MSIX in your enterprise and the benefits to developers, IT Pros and end users.
+#### <a name="msix--accelerating-windows-10-and-app-deployment-sept-2018"></a>MSIX – acelerando Windows 10 e a implantação de aplicativo (setembro de 2018)
+MSIX fornece muitos benefícios no gerenciamento de ciclo de vida do aplicativo. Saiba como aproveitar MSIX em sua empresa e os benefícios para os desenvolvedores, profissionais de TI e usuários finais.
     :::column-end:::
     :::column:::
     >[!VIDEO https://www.youtube.com/embed/_wCv31TI_30]
-        #### Updating your existing Configuration Manager apps to MSIX (Sept 2018)
-        MSIX simplifies and modernizes app deployment. It brings a faster, more reliable, and rot-free deployment for your enterprise. Learn the ins and outs of updating your existing System Center Configuration Manager apps to MSIX along with how it will integrate with Configuration Manager.
+#### <a name="updating-your-existing-configuration-manager-apps-to-msix-sept-2018"></a>Atualizar seus aplicativos existentes do Configuration Manager para MSIX (setembro de 2018)
+MSIX simplifica e moderniza a implantação do aplicativo. Ele traz uma implantação mais rápida, mais confiável e livre de rot para sua empresa. Saiba as vantagens e desvantagens de atualizar seus aplicativos existentes do System Center Configuration Manager para MSIX juntamente com como ele se integrará com o Configuration Manager.
     :::column-end:::
 
 

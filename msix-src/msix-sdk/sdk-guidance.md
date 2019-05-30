@@ -1,19 +1,19 @@
 ---
-title: Diretrizes para desenvolvedores ao destino MSIX SDK
+title: Use o SDK de MSIX para distribuir um pacote MSIX em plataformas não Windows 10
 description: Diretrizes para desenvolvedores que estão usando o SDK para pacotes de MSIX pack para uso em plataforma cruzada
 author: mcleanbyron
 ms.author: mcleans
 ms.date: 12/13/2018
 ms.topic: article
 ms.custom: RS5
-ms.openlocfilehash: 2c6134aad4f1da8da4e835fa2e195861bd7a461a
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 64a780bbc7ef4edc6e2d0c829c7304fdf39762f7
+ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900638"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795234"
 ---
-# <a name="use-the-msix-sdk-to-build-a-package-for-cross-platform-use"></a>Use o SDK de MSIX para compilar um pacote para uso de plataforma cruzada
+# <a name="use-the-msix-sdk-to-distribute-an-msix-package-on-non-windows-10-platforms"></a>Use o SDK de MSIX para distribuir um pacote MSIX em plataformas não Windows 10
 
 O SDK MSIX oferece aos desenvolvedores uma maneira universal para distribuir o conteúdo do pacote para os dispositivos de cliente, independentemente da plataforma do sistema operacional no dispositivo cliente. Isso permite que os desenvolvedores empacotar seu conteúdo de aplicativo em vez de ter uma vez para o pacote para cada plataforma.
 

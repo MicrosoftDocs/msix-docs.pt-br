@@ -1,5 +1,5 @@
 ---
-title: Atualizações de pacote de aplicativo
+title: Atualizações de pacote do aplicativo
 description: Saiba como os aplicativos são atualizados correção diferencial.
 author: mcleanbyron
 ms.author: mcleans
@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Windows 10, uwp, o pacote de aplicativo, atualização do aplicativo, msix, appx
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 786dd7236b8d5c8600dd36e5d3e507576df79ae7
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 1d7fc6a2d899638a8d38c47a477653173f2c5c9d
+ms.sourcegitcommit: b6887e8f66e1d4a49870b933efa25d539eabfcaf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900508"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882605"
 ---
-# <a name="app-package-updates"></a>Atualizações de pacote de aplicativo
+# <a name="app-package-updates"></a>Atualizações de pacote do aplicativo
 
 Atualizar pacotes de aplicativos modernos do Windows é otimizado para garantir que somente os bits alterados essenciais do aplicativo são baixados para atualizar um aplicativo existente do Windows.
 
@@ -51,8 +51,26 @@ Durante uma atualização, se o segundo bloco desse arquivo é modificado, o has
 
 Em uma escala maior, se um arquivo inteiro não é alterado (determinado por um conjunto completo de blocos não alterar), esse arquivo pode ser reutilizado do pacote existente, economizando tempo e recursos.
 
-Há algumas maneiras de utilizar essa tecnologia de atualização de diferencial.
+## <a name="app-update-constraints"></a>Restrições de atualização de aplicativo
+
+#### <a name="updates-are-performed-within-the-same-package-family"></a>As atualizações são executadas dentro da mesma família de pacote
+A família de pacote é composta do nome do pacote e do publicador. Para ser capaz de atualizar, os novos metadados de pacote precisa ser o mesmo que o pacote instalado anteriormente. 
+
+#### <a name="app-updates-must-increment-to-a-higher-version"></a>As atualizações de aplicativo devem incrementar para uma versão superior
+As atualizações de aplicativo é geral exigirá a versão do novo pacote para ser maior do que o atual. O processo de atualização do aplicativo geral não permitirá que os pacotes com versões anteriores para ser instalado por padrão. Iniciando atualização do Windows 10 1809 *'Reverter'* foi introduzido. Ele permite que os pacotes de versão inferiores ser instalado quando uma opção de substituição é fornecida como parte dos argumentos de atualização. Ele está disponível atualmente no PowerShell usando a opção ForceUpdateFromAnyVersion e no [arquivo AppInstaller](https://docs.microsoft.com/en-us/windows/msix/app-installer/update-settings).  
+
+#### <a name="app-update-package-can-have-a-different-architecture"></a>Pacote de atualização do aplicativo pode ter uma arquitetura diferente
+O pacote de atualização para o pacote de aplicativo atualmente instalado pode ser de uma arquitetura diferente, desde que a nova arquitetura é compatível com o sistema operacional no qual ele está sendo implantado. Por exemplo:  Se você tiver x86 versão do MyFavApp(v1.0.0.0) instalada em um x64, o dispositivo Windows 10 e a atualização package(v2.0.0.0) é x64 versão: MyFavApp(1.0.0.0) será atualizado para MyFavApp(v2.0.0.0) com êxito. 
+
+#### <a name="packages-can-update-from-an-msix-to-an-msixbundle"></a>Pacotes podem atualizar de uma MSIX para um MSIXbundle
+Um pacote de atualização pode ir de pacote MSIX para um pacote de MSIXbundle, mas não vice-versa. Quando um MSIXbundle é instalado, a atualização do pacote precisará permanecer um pacote. 
+
+## <a name="optimize-differential-update-technology"></a>Otimizar a tecnologia de atualização diferencial
+    
+Há algumas maneiras de garantir que a tecnologia de atualização diferencial é otimizada para o máximo.
 
 - Manter arquivos no pacote pequeno - Isso garantirá que, se uma alteração é necessária que afetaria o arquivo completo, a atualização ainda será pequeno.
-- Modificações em arquivos devem ser aditivas se possível - alterações aditivas garantirá que os dispositivos do usuário final baixem apenas os blocos alterados.
-- Modificações em arquivos deverão estar contidas aos blocos de 64KB se possível - se seu aplicativo tiver arquivos grandes e requer alterações no meio de um arquivo que contém as alterações a um conjunto de blocos ajudarão significativamente.
+- As alterações nos arquivos devem ser aditivas se possível - alterações aditivas garantirá que os dispositivos do usuário final baixem apenas os blocos alterados.
+- As alterações nos arquivos deverão estar contidas aos blocos de 64KB se possível - se seu aplicativo tiver arquivos grandes e requer alterações no meio de um arquivo que contém as alterações a um conjunto de blocos ajudarão significativamente.
+ 
+

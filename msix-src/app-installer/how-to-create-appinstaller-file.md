@@ -1,6 +1,6 @@
 ---
 author: mcleanbyron
-title: Criar um arquivo do instalador do aplicativo manualmente
+title: Criar manualmente um arquivo do Instalador de Aplicativo
 description: Este artigo descreve como instalar um conjunto relacionado por meio do instalador do aplicativo. Também explicaremos as etapas para construir um arquivo *.appinstaller que definirão o conjunto relacionado.
 ms.author: mcleans
 ms.date: 1/4/2018
@@ -9,13 +9,13 @@ keywords: windows 10, uwp, instalador de aplicativo, AppInstaller, sideload, con
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
 ms.openlocfilehash: 4256e95aa02e73330213034304abbe1354223641
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.sourcegitcommit: 9bbb116d1984082123f694130b4d6cc078fa8510
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900558"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59983398"
 ---
-# <a name="create-an-app-installer-file-manually"></a>Criar um arquivo do instalador do aplicativo manualmente
+# <a name="create-an-app-installer-file-manually"></a>Criar manualmente um arquivo do Instalador de Aplicativo
 
 Este artigo mostra como criar manualmente um arquivo do instalador do aplicativo que define uma [relacionados ao conjunto](install-related-set.md). Um conjunto relacionado não é uma entidade, mas em vez disso, uma combinação de um pacote principal e pacotes opcionais. 
 
@@ -217,7 +217,7 @@ No elemento de dependências, você pode especificar os pacotes de estrutura nec
 
 ### <a name="step-6-add-update-setting"></a>Etapa 6: Adicionar configuração de atualização
 
-O arquivo do Instalador de Aplicativo também pode especificar a configuração de atualização para que os conjuntos relacionados possam ser atualizados automaticamente quando um arquivo mais recente do Instalador de Aplicativo for publicado. **<UpdateSettings>** é um elemento opcional. Dentro de **<UpdateSettings>**, a opção OnLaunch especifica que as verificações de atualização devem ser feitas na inicialização do aplicativo e HoursBetweenUpdateChecks = "12" especifica que uma verificação de atualização deve ser feita a cada 12 horas. Se HoursBetweenUpdateChecks não for especificado, o intervalo padrão usado para verificar se há atualizações será de 24 horas. Tipos de atualizações, como atualizações em segundo plano podem ser encontradas nas configurações de atualização adicionais [esquema](https://docs.microsoft.com/en-us/uwp/schemas/appinstallerschema/element-update-settings); Tipos adicionais de atualizações na inicialização, como atualizações com um prompt podem ser encontradas na OnLaunch [esquema](https://docs.microsoft.com/en-us/uwp/schemas/appinstallerschema/element-onlaunch)
+O arquivo do Instalador de Aplicativo também pode especificar a configuração de atualização para que os conjuntos relacionados possam ser atualizados automaticamente quando um arquivo mais recente do Instalador de Aplicativo for publicado. **<UpdateSettings>** é um elemento opcional. Dentro de **<UpdateSettings>** , a opção OnLaunch especifica que as verificações de atualização devem ser feitas na inicialização do aplicativo e HoursBetweenUpdateChecks = "12" especifica que uma verificação de atualização deve ser feita a cada 12 horas. Se HoursBetweenUpdateChecks não for especificado, o intervalo padrão usado para verificar se há atualizações será de 24 horas. Tipos de atualizações, como atualizações em segundo plano podem ser encontradas nas configurações de atualização adicionais [esquema](https://docs.microsoft.com/en-us/uwp/schemas/appinstallerschema/element-update-settings); Tipos adicionais de atualizações na inicialização, como atualizações com um prompt podem ser encontradas na OnLaunch [esquema](https://docs.microsoft.com/en-us/uwp/schemas/appinstallerschema/element-onlaunch)
 
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>

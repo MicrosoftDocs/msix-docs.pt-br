@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Windows 10, uwp, MSIX, ferramenta de empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b19c7158f6323d867b3b6610d9827396fb6f91d8
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 11461bd93c7ef4147077c34585cce8968ce6c588
+ms.sourcegitcommit: b3564e47328d21916cdeb4c84d638ac12be0a461
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900658"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66186160"
 ---
-# <a name="msix-packaging-tool-insider-program"></a>Programa de Insider de ferramenta de empacotamento MSIX
+# <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
 O programa de Insider de ferramenta de empacotamento MSIX fornece acesso antecipado a profissionais de TI e desenvolvedores que estejam interessados na conversão de aplicativos da área de trabalho existentes em pacotes MSIX. O programa oferece uma oportunidade de avaliar os novos recursos antes das versões da ferramenta de empacotamento MSIX gerais. Além disso, você pode fornecer comentários para ajudar a moldar a ferramenta para atender às suas necessidades comerciais específicas. 
 
@@ -36,18 +36,23 @@ Se a ferramenta já estiver instalada no seu computador, verifique a versão ins
 
 ### <a name="current-insider-preview-build"></a>Compilação atual do Insider Preview 
 
-#### <a name="ver-120194020"></a>Ver 1.2019.402.0
+#### <a name="ver-120195220"></a>Ver 1.2019.522.0
 
 Novos recursos:
 
-- Capacidade de converter em uma máquina remota - [obter mais informações](remote-conversion-setup.md)
-- Melhor experiência de gerenciamento no editor de pacote
-    - Recomendações de controle de versão automático ao salvar no editor de pacote
-    - Agora dá suporte à adição de pasta existente para o pacote no VFS
-- Usuário pode especificar códigos de saída de válidos conhecidos para conversões de CLI
-- Adicionada a capacidade para o carimbo de data / hora seu pacote assinado em todos os fluxos de trabalho em que a assinatura está disponível no momento 
-    - Você pode especificar sua URL de carimbo de data / hora padrão e o tipo de servidor de carimbo de data / hora na página de configurações de ferramenta
-- Atualizado [lógica de geração de AppID](release-notes/history.md#appid-generation-logic)e adicionou uma validação adicional para o aplicativo e o nome do pacote 
+- Suporte para instaladores da área de trabalho que exigem reinicialização - [Saiba mais](support-restart.md)
+    - Opção de logon automático para reinicialização 
+- Novas opções nas configurações do aplicativo
+    - Especifique um certificado padrão para assinar os pacotes com 
+    - Especifique os códigos de saída para instaladores que exigem reinicialização
+    
+Problemas conhecidos:
+
+- Códigos de saída de reinicialização negativos não têm suporte atualmente
+- Se o certificado padrão for especificado, cada fluxo de trabalho de conversão será necessário selecionar 'usar cert'
+- Durante a VM reiniciar ou remoto, pode haver um prompt de logon adicional 
+- Restaurar padrões botão não remove os códigos de saída de senha ou o instalador do certificado
+- Há alguns incongruencies da interface do usuário
 
 Você pode encontrar o histórico completo das notas de versão da ferramenta de empacotamento MSIX [aqui](release-notes/history.md).
 

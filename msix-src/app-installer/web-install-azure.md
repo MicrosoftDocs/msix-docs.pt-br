@@ -1,6 +1,6 @@
 ---
 author: c-don
-title: Instalação de aplicativos do Windows 10 de um servidor Web do Azure | Microsoft Docs
+title: Distribuir um aplicativo do Windows 10 de um aplicativo web do Azure
 description: Este tutorial demonstra como configurar um servidor Web do Azure. Verifique se o aplicativo Web pode hospedar pacotes de aplicativo host, invocar e usar o Instalador de aplicativo de maneira eficaz.
 ms.author: cdon
 ms.date: 09/30/2018
@@ -8,14 +8,14 @@ ms.topic: article
 keywords: windows 10, uwp, instalador de aplicativo, AppInstaller, sideload, conjunto relacionado, pacotes opcionais, servidor Web do Azure
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: b904922ad123a8b59659c217b748683116ee9a2a
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 7dbe2592d0ed60a88d77476f797f1575fee3f172
+ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900548"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795450"
 ---
-# <a name="install-a-windows-10-app-from-an-azure-web-app"></a>Instalar um aplicativo do Windows 10 de um aplicativo Web do Azure
+# <a name="distribute-a-windows-10-app-from-an-azure-web-app"></a>Distribuir um aplicativo do Windows 10 de um aplicativo web do Azure
 
 O aplicativo do Instalador de aplicativo permite que desenvolvedores e profissionais do setor de TI distribuam aplicativos do Windows 10 hospedando-os em sua própria Rede de disponibilização de conteúdo (CDN. Isso é útil para empresas que não desejam ou precisam publicar seus aplicativos na Microsoft Store, mas ainda querem aproveitar a plataforma de empacotamento e implantação do Windows 10.
 

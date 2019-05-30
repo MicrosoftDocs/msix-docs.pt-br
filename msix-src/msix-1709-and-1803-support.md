@@ -1,34 +1,36 @@
 ---
-author: nonasi
+author: c-don
 title: Suporte MSIX em compilações 1709 e 1803
 description: Este artigo resume o suporte para MSIX com nossas atualizações mais recentes a partir de 22/1/2019.
-ms.author: nonasir
-ms.date: 01/18/2019
+ms.author: cdon
+ms.date: 04/04/2019
 ms.topic: article
 keywords: Windows 10, uwp, msix, 1709, 1803
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 667de11b23e9e5eab75cb60be016adbf100409e8
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: d3cfed5d986551ee72ab174b28409927a365cf6e
+ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900568"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795397"
 ---
 # <a name="msix-support-on-windows-10-builds-1709-and-1803"></a>Suporte MSIX em compilações do Windows 10 1709 e 1803
 
 Este artigo resume o suporte MSIX e limitações com nossas atualizações mais recentes.
 
-Por demanda popular, adicionamos suporte para MSIX em mais versões do Windows 10. Notavelmente, isso abrange as versões 1709 e 1803. Esse suporte permite aos usuários implantar pacotes MSIX em versões anteriores do Windows, aproveitando as vantagens de todos os benefícios do MSIX, incluindo o uso de contêineres e segurança por meio de certificados. Para tirar proveito dessas atualizações, verifique se você tiver o 1.0.30311 ou versão posterior do instalador de aplicativo e a manutenção mais recentes correções em seus dispositivos 1709 e 1803.
+Por demanda popular, adicionamos suporte para MSIX em mais versões do Windows 10. Notavelmente, isso abrange as versões 1709 e 1803. Esse suporte permite aos usuários implantar pacotes MSIX em versões anteriores do Windows, aproveitando as vantagens de todos os benefícios do MSIX, incluindo o uso de contêineres e segurança por meio de certificados. Para tirar proveito dessas atualizações, verifique se você tiver o 1.0.30311 ou versão posterior do instalador de aplicativo e estar na atualização do Windows 10 1709 ou posterior. 
 
 Abaixo, discutiremos recursos e limitações de suporte MSIX em versões anteriores do sistema operacional.
 
 ##  <a name="msix-double-click-support"></a>Suporte a dois cliques MSIX
-Um dos benefícios de implantar um MSIX na versão 1809 e posteriores é que o usuário pode instalar o pacote clicando nele. Com a versão mais recente do instalador do aplicativo - 1.0.30311.0 - a capacidade de instalar um pacote MSIX clicando nele está disponível no 1709 e 1803 também. 
+Um dos benefícios de implantar um MSIX na versão 1809 e posteriores é que o usuário pode instalar o pacote clicando nele. Com a versão mais recente do instalador do aplicativo - 1.0.30311.0 - a capacidade de instalar um pacote MSIX clicando nele está disponível nas atualizações do Windows 10 1709 e 1803 também. 
 
 Clicar no pacote fornece o mesmo suporte de instalação, como no 1809, ou seja, o aplicativo do instalador de aplicativos da Microsoft mostra a interface do usuário para o usuário que o orienta a instalação do aplicativo. O instalador do aplicativo é pré-instalado e obtém atualizações da loja, portanto, podemos pode sempre colocar você a melhor experiência de instalação. 
 
-Abaixo está um resumo do suporte à instalação clique MSIX disponíveis no 1709 e 1803.
+O instalador de aplicativo podem ser baixado para uso offline na empresa da Microsoft Store para empresas [portal da web](https://businessstore.microsoft.com/en-us/store/details/app-installer/9NBLGGH4NNS1). Você pode aprender mais sobre a distribuição off-line [aqui](https://docs.microsoft.com/en-us/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app).
+
+Abaixo está um resumo do suporte à instalação clique MSIX disponível nas atualizações do Windows 10 1709 e 1803.
 
 ### <a name="support-matrix"></a>Matriz de suporte
 
@@ -53,7 +55,7 @@ No 1709, 1803 e 1809 oferecemos suporte os cenários de implantação corporativ
 Atualmente, a instalação MSIX por meio da Microsoft Store e a Microsoft Store para empresas exigem Windows 10 versão 1809.
 
 ## <a name="packaging--signing"></a>Empacotando e assinatura
-No momento para empacotar e assinar um MSIX, você precisa do SDK de 1809. Empacotamento e a assinatura podem ser feitos por meio de ferramentas de linha de comando do SDK, a ferramenta de empacotamento MSIX ou o Visual Studio. 
+No momento para empacotar e assinar um MSIX, você precisa do SDK de 1809. Empacotamento e a assinatura podem ser feitos por meio das ferramentas de linha de comando do SDK do Windows 10 (MakeAppx.exe e SignTool.exe), a ferramenta de empacotamento MSIX ou o Visual Studio. 
 
 ## <a name="auto-elevation"></a>Elevação automática
 Em casos raros, alguns aplicativos exigem privilégios elevados. 

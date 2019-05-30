@@ -1,6 +1,6 @@
 ---
 author: mcleanbyron
-title: Instalam de pacotes de aplicativos no AWS para web hospedando o Windows 10 | Microsoft Docs
+title: Distribuir um aplicativo do Windows 10 de um serviço web AWS
 description: Tutorial para configurar o servidor de web do AWS validar a instalação do aplicativo por meio do instalador do aplicativo
 ms.author: mcleans
 ms.date: 05/30/2018
@@ -8,14 +8,14 @@ ms.topic: article
 keywords: o Windows 10, Windows 10, UWP, fazer sideload do instalador, AppInstaller, aplicativo, relacionadas a pacotes definidos, opcionais, AWS
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 015d7b18e541ba63cb4a8b41a38c4270d156c004
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 63d1aeb5ec86bd0fa91deeb8869f58d52b893d90
+ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900708"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795278"
 ---
-# <a name="hosting-windows-10-app-packages-on-aws-for-web-install"></a>Instalam de pacotes de aplicativos no AWS para web hospedando o Windows 10
+# <a name="distribute-a-windows-10-app-from-an-aws-web-service"></a>Distribuir um aplicativo do Windows 10 de um serviço web AWS
 
 O aplicativo do Instalador de aplicativo permite que desenvolvedores e profissionais do setor de TI distribuam aplicativos do Windows 10 hospedando-os em sua própria Rede de disponibilização de conteúdo (CDN. Isso é útil para empresas que não desejam ou precisam publicar seus aplicativos na Microsoft Store, mas ainda querem aproveitar a plataforma de empacotamento e implantação do Windows 10.
 

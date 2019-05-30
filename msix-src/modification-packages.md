@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 7650ab881a3d1c8e6ef295f8c79297fa5ab23498
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 142fce0927d916376733a0380fab6a0dc026a55e
+ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900538"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795410"
 ---
 # <a name="customize-your-enterprise-apps-with-modification-packages"></a>Personalizar seus aplicativos empresariais com pacotes de modificação 
 
@@ -58,4 +58,4 @@ Após fazer as alterações necessárias, você pode criar o pacote de modifica�
 
 ## <a name="see-also"></a>Consulte também
 - [Pacotes de modificação no Windows 10 versão 1809](modification-package-1809-update.md)
-- [Pacotes de modificação no Windows 10 Insider Preview compilar 18312 e versões posteriores](modification-package-insider-preview-build-18312.md)
+- [Pacotes de modificação no Windows 10 versão 1903](modification-package-1903.md)

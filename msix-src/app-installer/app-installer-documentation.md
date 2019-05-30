@@ -9,10 +9,10 @@ keywords: Windows 10, uwp, o instalador do aplicativo, AppInstaller, carregar, A
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 38a18c50ac1be215819b870215f89b9042d060d8
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.sourcegitcommit: 67e56f5414857671c47334c65d636d531632b8f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58900688"
 ---
 # <a name="related-app-installer-file-documentation"></a>Documentação relacionada de arquivo de instalador de aplicativo
@@ -28,6 +28,6 @@ O [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deploym
 |  [Package.GetAppInstallerInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package.getappinstallerinfo)  | Retorna o local do arquivo appinstaller xml. Isso permite que os desenvolvedores de aplicativos recuperar o local do arquivo appinstaller xml quando necessário, seu aplicativo. | Windows 10, versão 1809 (build 17763) |
 |  [Package.CheckUpdateAvailabilityAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package.checkupdateavailabilityasync)  | Verifica se há atualizações para o pacote de aplicativo principal listados no arquivo appinstaller. Ele permite que o desenvolvedor determinar se as atualizações são necessárias devido à política de appinstaller. Este método atualmente só funciona para aplicativos instalados por meio de arquivos appinstaller. | Windows 10, versão 1809 (build 17763) |
 
-## <a name="app-installer-file-schema"></a>Esquema de arquivo do instalador de aplicativo
+## <a name="app-installer-file-schema"></a>Esquema do arquivo do Instalador de Aplicativo
 
 Para obter mais informações sobre como formatar manualmente um arquivo do instalador do aplicativo, consulte [referência de esquema de arquivo de instalador de aplicativo](https://docs.microsoft.com/en-us/uwp/schemas/appinstallerschema/app-installer-file).

@@ -8,21 +8,16 @@ ms.topic: article
 keywords: Ferramenta de empacotamento MSIX, FUTUR, MSIX, IP remoto
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 19a6c4741293835e1494e2796e2ef84f63b63079
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 22ae4c4b939ed70c8a915ce1f3718105e2c65f49
+ms.sourcegitcommit: b3564e47328d21916cdeb4c84d638ac12be0a461
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900358"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66186138"
 ---
 # <a name="setup-instructions-for-remote-machine-conversions"></a>Instruções de instalação para conversões de máquina remota 
 
-> [!NOTE]
-> Conversões de máquina remota é um novo recurso que só está disponível no build de versão prévia do insider. 
->
-> Você pode unir as [MSIX empacotamento ferramenta Insider Preview Program](insider-program.md) para obter acesso a esse recurso. 
-
-Nesta versão prévia do [ferramenta de empacotamento MSIX](insider-program.md#current-insider-preview-build), habilitamos a capacidade de se conectar a um computador remoto para executar a conversão em. Há algumas etapas que você precisará levar antes de começar com conversões remotas.  
+A capacidade de se conectar a um computador remoto para executar sua conversão agora está disponível. Há algumas etapas que você precisará levar antes de começar com conversões remotas.  
 
 Comunicação remota do PowerShell deve ser habilitada no computador remoto para acesso seguro. Você também deve ter uma conta de administrador para o computador remoto.  Se você quiser se conectar usando um endereço IP, siga as instruções para se conectar a um computador remoto associado de fora do domínio. 
 

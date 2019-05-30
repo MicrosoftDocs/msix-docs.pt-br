@@ -9,13 +9,13 @@ keywords: windows 10, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
 ms.openlocfilehash: 54e6f063aa05c1a297725e6c1c7a091ebffbb043
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.sourcegitcommit: 9bbb116d1984082123f694130b4d6cc078fa8510
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900158"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59983438"
 ---
-# <a name="bundle-msix-packages"></a>Pacotes de MSIX 
+# <a name="bundle-msix-packages"></a>Agrupar pacotes de MSIX 
 
 Este artigo descreve o processo de criação de um pacote depois de converter as versões x86 e x64 dos seus instaladores do Windows usando a ferramenta de empacotamento MSIX. 
 

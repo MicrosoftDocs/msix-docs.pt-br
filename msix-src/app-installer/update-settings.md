@@ -9,13 +9,13 @@ keywords: Windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: fd234323185200895a6eaf276988fbe7a5c363b3
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.sourcegitcommit: 9bbb116d1984082123f694130b4d6cc078fa8510
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900348"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59983488"
 ---
-# <a name="configure-update-settings-in-the-app-installer-file"></a>Definir configurações de atualização no arquivo de instalador de aplicativo
+# <a name="configure-update-settings-in-the-app-installer-file"></a>Definir configurações de atualização no arquivo do Instalador de Aplicativo
 
 Conforme mencionado na [visão geral de arquivo do instalador do aplicativo](app-installer-file-overview.md), você pode configurar o comportamento de atualização do aplicativo no arquivo de instalador de aplicativo. Este artigo explora as opções de atualização e seus respectivas prós e contras.
 

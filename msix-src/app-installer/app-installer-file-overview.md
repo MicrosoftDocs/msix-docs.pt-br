@@ -1,5 +1,5 @@
 ---
-title: Visão geral de arquivo do instalador de aplicativo
+title: Visão geral do arquivo do Instalador de Aplicativo
 description: Saiba mais sobre o conteúdo de arquivos do instalador do aplicativo e como eles funcionam.
 author: mcleanbyron
 ms.author: mcleans
@@ -8,18 +8,18 @@ ms.topic: article
 keywords: Windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 67fbda421f84227ed2618af5711617e406b26a7e
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 34143433ba07c68c86c394466f9be7dc75632194
+ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900278"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795252"
 ---
-# <a name="app-installer-file-overview"></a>Visão geral de arquivo do instalador de aplicativo
+# <a name="app-installer-file-overview"></a>Visão geral do arquivo do Instalador de Aplicativo
 
 Muitas vezes, você precisa compartilhar seu aplicativo com muitos usuários. Posteriormente, você precisa atualizar o aplicativo e você deseja certificar-se de que você pode fazer isso de forma simples, mesmo para os usuários não técnicos, e fácil para você.
 
-Para ajudar você a conseguir isso, apresentamos criado o arquivo do instalador do aplicativo. Esse é um arquivo XML que você pode criar por conta própria ou criar usando o Visual Studio (consulte as instruções do Visual Studio [aqui](create-appinstallerfile-vs.md)). O arquivo do instalador de aplicativo especifica onde o seu aplicativo está localizado e como atualizá-lo. Se você optar por usar esse método de distribuição de aplicativos, você deve compartilhar com seus usuários do arquivo instalador do aplicativo, em vez de contêiner do aplicativo real. O usuário deve, em seguida, clique no arquivo instalador do aplicativo. Neste ponto, a interface do usuário familiar do aplicativo instalador aparecerá e orientar o usuário durante a instalação.  Quando o usuário tiver instalado o aplicativo usando essas etapas, o aplicativo está associado com o arquivo do instalador do aplicativo.  
+Para ajudar você a conseguir isso, apresentamos o arquivo do instalador do aplicativo. Esse é um arquivo XML que você pode criar por conta própria ou criar usando o Visual Studio (consulte as instruções do Visual Studio [aqui](create-appinstallerfile-vs.md)). O arquivo do instalador de aplicativo especifica onde o seu aplicativo está localizado e como atualizá-lo. Se você optar por usar esse método de distribuição de aplicativos, você deve compartilhar com seus usuários do arquivo instalador do aplicativo, em vez de contêiner do aplicativo real. O usuário deve, em seguida, clique no arquivo instalador do aplicativo. Neste ponto, a interface do usuário familiar do aplicativo instalador aparecerá e orientar o usuário durante a instalação.  Quando o usuário tiver instalado o aplicativo usando essas etapas, o aplicativo está associado com o arquivo do instalador do aplicativo.  
 
 Posteriormente, quando você tem uma atualização para o aplicativo, você apenas atualiza o arquivo do instalador do aplicativo (appinstaller). Quando você atualiza o arquivo, a nova versão do aplicativo é enviada para o usuário. Isso é especialmente bom para os usuários porque eles não precisam fazer nada para obter a atualização. Eles simplesmente continuar usando o aplicativo como de costume, e a atualização será entregue a eles.
 
@@ -46,6 +46,6 @@ A imagem a seguir mostra um exemplo de arquivo do instalador do aplicativo. Para
 
 ## <a name="related-topics"></a>Tópicos relacionados
 
-* [Criar um arquivo do Instalador de Aplicativo com o Visual Studio](create-appinstallerfile-vs.md)
+* [Criar um arquivo do instalador de aplicativo com o Visual Studio](create-appinstallerfile-vs.md)
 * [Criar um arquivo do instalador do aplicativo manualmente](how-to-create-appinstaller-file.md)
 * [Definir configurações de atualização no arquivo de instalador de aplicativo](update-settings.md)

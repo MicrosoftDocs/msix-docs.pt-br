@@ -9,10 +9,10 @@ keywords: windows 10, uwp, instalador de aplicativo, AppInstaller, sideload, con
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
 ms.openlocfilehash: a18b5e11ec87e625b757764994762cf0e29cab99
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.sourcegitcommit: 67e56f5414857671c47334c65d636d531632b8f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58900458"
 ---
 # <a name="optional-packages-and-related-sets"></a>Pacotes opcionais e conjuntos relacionados

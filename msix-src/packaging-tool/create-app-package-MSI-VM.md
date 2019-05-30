@@ -1,6 +1,6 @@
 ---
-title: Criar um pacote de aplicativos com MSI ou o App-V em uma máquina virtual
-description: Criar um pacote MSIX usando um. msi a existente em uma máquina virtual
+title: Criar um pacote MSIX de um instalador da área de trabalho (MSI, EXE ou App-V) em uma VM
+description: Criar um pacote MSIX de um instalador da área de trabalho (MSI, EXE ou App-V) em uma VM
 author: mcleanbyron
 ms.author: mcleans
 ms.date: 02/11/2019
@@ -8,18 +8,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 83a9666091ca04634c9494f3fa58c0a380692fae
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: cc9b0e1242df931a155da1735b59c54c7b109737
+ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900628"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984425"
 ---
-# <a name="create-an-application-package-with-msi-or-app-v-on-a-vm"></a>Criar um pacote de aplicativos com MSI ou o App-V em uma máquina virtual
+# <a name="create-an-msix-package-from-a-desktop-installer-msi-exe-or-app-v-on-a-vm"></a>Criar um pacote MSIX de um instalador da área de trabalho (MSI, EXE ou App-V) em uma VM
 
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">Obter a ferramenta de empacotamento MSIX</a></p></div>
 
-Você pode usar a ferramenta de empacotamento MSIX para criar um pacote de aplicativo MSIX para um instalador MSI ou o App-V existente em uma máquina virtual do Hyper-V (VM). A VM deve atender a esses requisitos:
+Você pode usar a ferramenta de empacotamento MSIX para criar um pacote de aplicativo MSIX de um instalador MSI, EXE ou App-V existente em uma máquina virtual do Hyper-V (VM). A VM deve atender a esses requisitos:
 
 - Ele deve ser configurado para [receber comandos remotos](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/remotely-manage-hyper-v-hosts) (executar o [Enable-PSRemoting](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Enable-PSRemoting?view=powershell-5.1) comando na VM)
 - Ele deve estar executando o Windows 10, versão 1809 ou uma versão posterior do Windows.

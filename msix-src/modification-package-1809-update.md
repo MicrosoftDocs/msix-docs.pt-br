@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 567417fb77ade5e048388a05ccc47651b32437dc
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 7273f3866eb8ed416b8dc60a621498cbddec54bd
+ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900498"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795417"
 ---
 # <a name="msix-modification-packages-on-windows-10-version-1809"></a>Pacotes de modificação de MSIX no Windows 10 versão 1809 
 
@@ -46,5 +46,5 @@ Você pode criar um pacote de modificação manualmente usando o [MakeAppX.exe](
 
 Esse processo também dá suporte ao sistema de arquivo plug-ins e personalizações, desde que o executável do aplicativo principal não está em um sistema de arquivos virtual (VFS). Isso é para garantir que o pacote principal obterá VFS do pacote principal e o pacote de modificação. 
 
-Suporte para o sistema de arquivo plug-ins e personalizações enquanto o executável do aplicativo principal está em um VFS é planejado para a próxima versão principal do Windows. Você pode visualizar esse suporte começando no Windows 10 Insider Preview compilar 18312 ou posterior. Para obter mais informações, consulte [este artigo](modification-package-insider-preview-build-18312.md). 
+Suporte para o sistema de arquivo plug-ins e personalizações enquanto o executável do aplicativo principal está em um VFS é planejado para a próxima versão principal do Windows. Você pode visualizar esse suporte começando no Windows 10 Insider Preview compilar 18312 ou posterior. Para obter mais informações, consulte [este artigo](modification-package-1903.md). 
 

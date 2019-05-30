@@ -8,12 +8,12 @@ ms.topic: article
 keywords: ferramenta de empacotamento msix, problemas, solução de problemas conhecidos
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3853af303041fb0375557ec6e1735df9dbd793e7
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 79b06fc4e3e0ff0600f6e2ab85ec27c9e3a5840c
+ms.sourcegitcommit: 67e56f5414857671c47334c65d636d531632b8f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900728"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59468288"
 ---
 # <a name="known-issues-and-troubleshooting"></a>Problemas conhecidos e soluções de problemas
 
@@ -60,9 +60,19 @@ Recurso obtido individualmente em pacotes de demanda pode ser instalado usando a
 
 ## <a name="log-files"></a>Arquivos de log
 
-Se a conversão foi bem-sucedida, os arquivos de log são gerados para cada conversão. Eles podem ser encontrados aqui: %localappdata%\packages\Microsoft.MsixPackagingTool_8wekyb3d8bbwe\LocalState\DiagOutputDir\
+Se a conversão foi bem-sucedida, os arquivos de log são gerados para cada conversão. Eles podem ser encontrados aqui: 
+
+`%localappdata%\packages\Microsoft.MsixPackagingTool_8wekyb3d8bbwe\LocalState\DiagOutputDir\`
 
 Códigos de falha são escritos e indicam qualquer ponto de falha durante o processo de conversão. Os códigos de erro devem ser amigáveis.
+
+### <a name="log-files-from-remote-devices-or-vms"></a>Arquivos de log de dispositivos remotos ou máquinas virtuais
+
+Se a conversão é executada em uma VM ou um dispositivo remoto, recomendamos que você copie os arquivos de log desse dispositivo e anexá-los como parte do item de comentário. Isso irá nos ajudar a diagnosticar e resolver problemas com mais eficiência. 
+
+Você encontrará os logs das conversões de remoto aqui: `%localappdata%\packages\Microsoft.MsixPackagingTool_8wekyb3d8bbwe\LocalState\DiagOutputDir\<Logs_#>\RemoteServer\Log.txt`
+
+Seria ainda mais útil se você pode compartilhar a pasta de Logs inteira que incluirá a operações que ocorrem no cliente local como também o servidor remoto.
 
 ## <a name="examples-of-failures-during-conversions"></a>Exemplos de falhas durante as conversões de
 

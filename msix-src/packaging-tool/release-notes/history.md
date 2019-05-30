@@ -8,16 +8,34 @@ ms.topic: article
 keywords: Windows 10, uwp, msix, ferramenta de empacotamento msix, programa insider
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: be65c2838d189760707e859bfd97751424af2d35
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: b5d3f7742195105d2e1890a614070173277f19fe
+ms.sourcegitcommit: b3564e47328d21916cdeb4c84d638ac12be0a461
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900788"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66186155"
 ---
 # <a name="msix-packaging-tool-release-notes"></a>Notas de versão de ferramenta de empacotamento MSIX 
 
-#### <a name="ver-120194020"></a>Ver 1.2019.402.0
+#### <a name="ver-120195220"></a>Ver 1.2019.522.0
+
+Novos recursos:
+
+- Suporte para instaladores da área de trabalho que exigem reinicialização - [Saiba mais](../support-restart.md)
+    - Opção de logon automático para reinicialização 
+- Novas opções nas configurações do aplicativo
+    - Especifique um certificado padrão para assinar os pacotes com 
+    - Especifique os códigos de saída para instaladores que exigem reinicialização
+    
+Problemas conhecidos:
+
+- Códigos de saída de reinicialização negativos não têm suporte atualmente
+- Se o certificado padrão for especificado, cada fluxo de trabalho de conversão será necessário selecionar 'usar cert'
+- Durante a VM reiniciar ou remoto, pode haver um prompt de logon adicional 
+- Restaurar padrões botão não remove os códigos de saída de senha ou o instalador do certificado
+- Há alguns incongruencies da interface do usuário
+
+### <a name="ver-120194020---public-release"></a>**Ver 1.2019.402.0 - lançamento público**
 
  - Validar o ProgId COM valores de tipo, as entradas de classe COM e remover registros inválidos de COM
  - Atualizar as ferramentas do SDK do Windows que são redistribuídas na ferramenta de empacotamento MSIX 
@@ -70,3 +88,20 @@ Atualizações adicionais
 - Adicionada a capacidade de obter o status de suas conversões de linha de comando
 - Log de aviso COM aprimorado com erros legíveis por humanos
 
+ ### <a name="ver-120191100---public-release"></a>**Ver 1.2019.110.0 - lançamento público**
+  
+Novos recursos:
+
+- Tempos de empacotamento aprimorado 
+- Lista de exclusão de arquivo padrão atualizado
+- Incorporado a ferramenta reporting MSIExec logs de erros
+- Logs atualizados para adicionar mais clareza e etapas de solução de problemas
+- Suporte adicionado para capturar a instalação do ISE do PowerShell durante o empacotamento manual
+- Suporte adicionado para declarar os scripts do PowerShell como um argumento na interface do usuário e o arquivo de modelo de linha de comando do instalador
+- Adicionado um sinalizador de registro em log detalhado (-verbose | - v) para a interface de linha de comando
+- Corrigido um problema em que os caminhos de rede na VM, às vezes, eram inacessíveis
+- Corrigido um problema em que a validação de requisito de controle de versão do Store falhava ao usar a interface de linha de comando
+- Corrigido um problema em que os caminhos de arquivo em cotações não foram sendo aceitas
+- Corrigido um problema em que a VM não foi sejam limpos corretamente após a conversão
+- Corrigido um problema no qual adicionar arquivos aos pacotes no editor de pacote não estava funcionando corretamente
+- Limpeza de interface do usuário 

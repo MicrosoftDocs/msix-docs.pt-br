@@ -9,10 +9,10 @@ keywords: windows 10, uwp, instalador do aplicativo, AppInstaller, sideload
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: eb2c4e5f9e223e5dd741b53ff3943cc920a61c31
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.sourcegitcommit: 67e56f5414857671c47334c65d636d531632b8f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58900618"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>Solucionar problemas de instalação com o arquivo do Instalador de Aplicativo
@@ -35,7 +35,7 @@ Há alguns problemas comuns ao fazer sideload um aplicativo pela primeira vez na
 
 Cada versão do Windows 10 aprimora a experiência de sideload, na tabela a seguir você vai encontrar quais recursos estão disponíveis em cada versão principal. Se você tentar fazer o sideload de um aplicativo usando um método que não possui suporte na sua versão do Windows 10, você receberá um erro de implantação.
 
-| Versão | Notas de sideload |
+| Version | Notas de sideload |
 |---------|----------------|
 | Build 17134 (atualização de abril de 2018, versão 1803)    | O arquivo `.appinstaller` pode ser acessado pela pastas UNC/compartilhadas. As verificações de atualização configuráveis também estão disponíveis. |
 | Build 16299 (Fall Creators Update, versão 1709) | Introduziu o arquivo `.appinstaller` para fornecer atualizações automáticas ao seu aplicativo. Esta versão só possui suporte a pontos de extremidade HTTP. Verificações de atualização não são configuráveis e ocorrem a cada 24 horas. |
@@ -66,8 +66,8 @@ Aplicativos do Windows 10 podem ter dependências de estrutura com base na plata
 
 Ao instalar em um ponto de extremidade HTTP, é importante verificar que todos os arquivos estejam acessíveis com o tipo MIME correto. O método mais fácil de verificar esses arquivos é seguindo os links fornecidos na página HTML gerada pelo Visual Studio. Você deve verificar esses arquivos:
 
-- `.appinstaller` arquivo, disponível como `application/xml`
-- `.appx` e arquivos `.appxbundle`, disponíveis como `application/vns.ms-appx`
+- `.appinstaller` arquivo, disponível como um `application/xml`
+- `.appx` e `.appxbundle` arquivos, disponível como `application/vns.ms-appx`
 
 ## <a name="isolate-app-installer-app-issues"></a>Isolar problemas de aplicativo do Instalador de Aplicativo
 
