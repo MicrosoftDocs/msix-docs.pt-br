@@ -1,26 +1,29 @@
 ---
 Description: Este guia explica como configurar sua solução do Visual Studio para editar, depurar e empacotar o aplicativo da área de trabalho.
-title: Empacotar um aplicativo de desktop usando o Visual Studio
+title: Empacotar um aplicativo da área de trabalho do código-fonte usando o Visual Studio
 ms.date: 08/30/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: beb5096263aaae2b2bd8a32b9417c8af6891a5e3
-ms.sourcegitcommit: 958d9e8177036c8485fb79b49f35cb2deb8d553c
+ms.openlocfilehash: 0cb6807c0aa126bbbdaf8e034f9fab489e49cffa
+ms.sourcegitcommit: 6173086c11ffeb5fa836da6bd42711a9a626fc0e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66308445"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66411412"
 ---
-# <a name="package-a-desktop-application-by-using-visual-studio"></a>Empacotar um aplicativo de desktop usando o Visual Studio
+# <a name="package-a-desktop-app-from-source-code-using-visual-studio"></a>Empacotar um aplicativo da área de trabalho do código-fonte usando o Visual Studio
 
-Você pode usar o Visual Studio para gerar um pacote para seu aplicativo da área de trabalho. Em seguida, você pode publicar esse pacote para a Microsoft Store ou fazer sideload-lo em um ou mais computadores.
+Você pode usar o **Windows Application Packaging Project** projeto no Visual Studio para gerar um pacote para seu aplicativo de desktop. Em seguida, você pode publicar esse pacote para a Microsoft Store ou fazer sideload-lo em um ou mais computadores.
 
-A versão mais recente do Visual Studio fornece uma nova versão do projeto empacotamento que elimina todas as etapas manuais que costumavam ser necessárias para empacotar seu aplicativo. Basta adicionar um projeto de empacotamento, referenciar seu projeto de desktop e depois pressionar F5 para depurar seu aplicativo. Sem ajustes manuais. Essa nova experiência simplificada é uma grande melhoria em relação à experiência disponível na versão anterior do Visual Studio.
+O **Windows Application Packaging Project** projeto está disponível nas seguintes versões do Visual Studio. Para obter a melhor experiência, é recomendável que você use a versão mais recente.
 
->[!IMPORTANT]
->A capacidade de criar um pacote de aplicativo do Windows para o seu aplicativo da área de trabalho (também conhecido como a ponte de Desktop) foi introduzida no Windows 10, versão 1607, e só pode ser usado em projetos que se destinam a atualização de aniversário do Windows 10 (10.0; Build 14393) ou uma versão posterior no Visual Studio.
+* Visual Studio 2019
+* Visual Studio 2017 15.5 e posterior
+
+> [!IMPORTANT]
+> O **Windows Application Packaging Project** projeto no Visual Studio é compatível com Windows 10, versão 1607 e posterior. Ele só pode ser usado em projetos que se destinam a atualização de aniversário do Windows 10 (10.0; Build 14393) ou uma versão posterior.
 
 ## <a name="first-prepare-your-application"></a>Primeiro, prepare seu aplicativo
 
@@ -37,9 +40,6 @@ Examine este guia antes de começar a criar um pacote para seu aplicativo: [Prep
    Você não terá que adicionar nenhum código a ele. Ele existe apenas para gerar um pacote para você. Vamos nos referir a esse projeto como o "projeto de empacotamento".
 
    ![Projeto de empacotamento](images/packaging-project.png)
-
-   >[!NOTE]
-   >Este projeto aparece apenas no Visual Studio 2017 versão 15.5 ou superior.
 
 3. Defina a **Versão de destino** desse projeto como qualquer versão que deseja, mas certifique-se de definir a **Versão mínima** como **Atualização de Aniversário do Windows 10**.
 

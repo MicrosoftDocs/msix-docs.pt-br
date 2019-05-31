@@ -6,17 +6,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: 30994363260ce4dd2811283adf95439e3a8e59da
-ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
+ms.openlocfilehash: 6959d762430094cab449a9168defc8aac673fdc1
+ms.sourcegitcommit: 6173086c11ffeb5fa836da6bd42711a9a626fc0e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985756"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66411451"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Empacotar um aplicativo da área de trabalho usando o Desktop App Converter
 
 > [!NOTE]
-> A ferramenta de Desktop App Converter foi preterida. É recomendável que você use o [ferramenta de empacotamento MSIX](../mpt-overview.md) em vez disso.
+> A ferramenta de Desktop App Converter foi preterida. É recomendável que você use o [ferramenta de empacotamento MSIX](../packaging-tool/create-app-package-msi-vm.md) em vez disso.
 
 ![Ícone DAC](images/dac.png)
 
@@ -30,8 +30,8 @@ Você pode instalar esse pacote usando o cmdlet Add-AppxPackage PowerShell em su
 
 O conversor executa o instalador da área de trabalho em um ambiente Windows isolado usando uma imagem de base limpa fornecida como parte do download do conversor. Ele captura qualquer E/S do registro e do sistema de arquivos feita pelo instalador da área de trabalho e a empacota como parte da saída.
 
->[!IMPORTANT]
->A capacidade de criar um pacote de aplicativo do Windows para o seu aplicativo da área de trabalho (também conhecido como a ponte de Desktop) foi introduzida no Windows 10, versão 1607, e só pode ser usado em projetos que se destinam a atualização de aniversário do Windows 10 (10.0; Build 14393) ou uma versão posterior no Visual Studio.
+> [!IMPORTANT]
+> Há suporte para o Desktop App Converter de no Windows 10, versão 1607 e posterior. Ele só pode ser usado em projetos que se destinam a atualização de aniversário do Windows 10 (10.0; Build 14393) ou uma versão posterior no Visual Studio.
 
 > [!NOTE]
 > Confira <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">essa série</a> de vídeos de curta duração publicados na Microsoft Virtual Academy. Esses vídeos o orientam através de algumas maneiras comuns de usar o Desktop App Converter.
@@ -386,13 +386,64 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DesktopAppConverter
 
 O Desktop App Converter não possui suporte para Unicode, assim, não podem ser usados caracteres chineses ou caracteres não ASCII com a ferramenta.
 
+## <a name="known-issues-with-the-desktop-app-converter"></a>Problemas conhecidos com o Desktop App Converter
+
+### <a name="ecreatingisolatedenvfailed-an-estartingisolatedenvfailed-errors"></a>E_CREATING_ISOLATED_ENV_FAILED um E_STARTING_ISOLATED_ENV_FAILED erros    
+
+Se você receber qualquer um desses erros, verifique se você está usando uma imagem base válida da [central de download](https://aka.ms/converterimages).
+Se você estiver usando uma imagem base válida, tente usar ``-Cleanup All`` em seu comando.
+Se isso não funcionar, envie-nos seus registros para converter@microsoft.com para nos ajudar a investigar.
+
+### <a name="new-containernetwork-the-object-already-exists-error"></a>New-ContainerNetwork: O objeto já existe o erro
+
+Você pode receber esse erro ao configurar uma nova imagem base. Isso pode acontecer se você tiver versão de pré-lançamento do Windows Insider em uma máquina de desenvolvimento que anteriormente tinha o Desktop App Converter instalado.
+
+Para resolver este problema, tente executar o comando `Netsh int ipv4 reset` a partir de um prompt de comando elevado e reinicie sua máquina.
+
+### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>Seu aplicativo .NET é compilado com a opção de compilação "AnyCPU" e Falha na instalação
+
+Isso pode acontecer se o executável principal ou qualquer uma das dependências foram colocadas em qualquer lugar na hierarquia de pastas **Arquivos de Programas** ou **Windows\System32**.
+
+Para resolver este problema, tente usar seu instalador de desktop específico da arquitetura (32 bits ou 64 bits) para gerar um pacote de aplicativos do Windows.
+
+### <a name="publishing-public-side-by-side-fusion-assemblies-wont-work"></a>Publicar conjuntos públicos de Fusion lado a lado não funcionará
+
+ Durante a instalação, um aplicativo pode publicar assemblies Fusion públicos lado a lado, acessíveis para qualquer outro processo. Durante a criação do contexto de ativação do processo, esses assemblies são recuperados por um processo do sistema denominado CSRSS.exe. Quando isso é feito em um processo convertido, a criação do contexto de ativação e o carregamento do módulo desses assemblies falhará. Os conjuntos Fusion lado a lado estão registrados nos seguintes locais:
+  + Registro: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SideBySide\Winners`
+  + Sistema de arquivos: % windir %\\SideBySide
+
+Essa é uma limitação conhecida e não há atualmente nenhuma solução alternativa. Dito isso, as montagens da caixa de entrada, como o ComCtl, são fornecidas com o sistema operacional, portanto, ter uma dependência delas é seguro.
+
+### <a name="error-found-in-xml-the-executable-attribute-is-invalid---the-value-myappexe-is-invalid-according-to-its-datatype"></a>Erro encontrado no XML. O atributo 'Executável' é inválido - O valor 'MyApp.EXE' é inválido de acordo com seu tipo de dados
+
+Isso pode acontecer se os executáveis ​​em seu aplicativo tiverem uma extensão **.EXE** maiúscula. No entanto, o uso de maiusculas e minúsculas desta extensão não deve afetar se seu aplicativo é executado, isso pode causar o DAC gerar esse erro.
+
+Para resolver esse problema, tente especificar o **AppExecutable -** sinalizar quando você empacota e use as letras minúsculas ".exe" como a extensão de seu executável principal (por exemplo: MYAPP.exe).    Como alternativa, você pode alterar as maiusculas e minúsculas para todos os executáveis em seu aplicativo de letra minúscula para maiuscula (por exemplo: do. EXE .exe).
+
+### <a name="corrupted-or-malformed-authenticode-signatures"></a>Assinaturas Authenticode corrompidas ou malformadas
+
+Esta seção contém detalhes sobre como identificar problemas com arquivos PE em seu pacote de aplicativo do Windows que pode conter assinaturas Authenticode corrompidas ou malformadas. As assinaturas Authenticode inválidas em seus arquivos PE, que podem estar em qualquer formato binário (por exemplo, .exe,. dll,. chm, etc.), impedirão que o pacote seja assinado adequadamente e, portanto, impedirá que ele seja implantado de um pacote de aplicativo do Windows.
+
+O local da assinatura Authenticode de um arquivo PE é especificado pela entrada da tabela de certificados nos diretórios de dados de cabeçalho opcionais e na tabela de certificados de atributos associados. Durante a verificação da assinatura, as informações especificadas nessas estruturas são usadas para localizar a assinatura em um arquivo PE. Se esses valores forem corrompidos, será possível que um arquivo pareça estar assinado de modo inválido.
+
+Para a assinatura Authenticode estar correta, o seguinte deverá ser verdadeiro para a assinatura Authenticode:
+
+- O início da entrada **WIN_CERTIFICATE** no arquivo PE não pode ultrapassar o final do executável
+- A entrada **WIN_CERTIFCATE** deve estar localizada no final da imagem
+- O tamanho da entrada **WIN_CERTIFICATE** deve ser positiva
+- A entrada **WIN_CERTIFICATE** deve ser iniciada após a estrutura **IMAGE_NT_HEADERS32** para executáveis de 32 bits e a estrutura IMAGE_NT_HEADERS64 para executáveis de 64 bits
+
+Para obter mais detalhes, consulte a [Especificação de Authenticode Portal Executable](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx) e a [Especificação de formato de arquivo PE](https://msdn.microsoft.com/windows/hardware/gg463119.aspx).
+
+Observe que SignTool.exe pode gerar uma lista dos binários corrompidos ou malformados ao tentar assinar um pacote de aplicativo do Windows. Para fazer isso, ative o registro detalhado, definindo a variável de ambiente APPXSIP_LOG como 1 (por exemplo, ```set APPXSIP_LOG=1``` ) e execute novamente SignTool.exe.
+
+Para corrigir esses binários malformados, certifique-se de que eles estejam em conformidade com os requisitos acima.
+
 ## <a name="next-steps"></a>Próximas etapas
 
 **Encontre respostas para suas perguntas**
 
 Tem dúvidas? Pergunte-nos sobre o Stack Overflow. Nossa equipe monitora estas [marcas](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Você também pode entrar em contato conosco [aqui](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-
-Você também pode consultar [esta](desktop-to-uwp-known-issues.md#app-converter) lista de problemas conhecidos.
 
 **Fazer comentários ou sugestões de recursos**
 
@@ -400,8 +451,8 @@ Consulte [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows
 
 **Executar o aplicativo / encontrar e corrigir problemas**
 
-Consulte [executar, depurar e testar um aplicativo da área de trabalho de pacote](https://docs.microsoft.com/windows/uwp/desktop-to-uwp-debug)
+Consulte [executar, depurar e testar um aplicativo da área de trabalho de pacote](desktop-to-uwp-debug.md)
 
 **Distribuir seu aplicativo**
 
-Consulte [distribuir um aplicativo de área de trabalho do pacote](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-distribute)
+Consulte [distribuir um aplicativo de área de trabalho do pacote](/windows/apps/desktop/modernize/desktop-to-uwp-distribute)

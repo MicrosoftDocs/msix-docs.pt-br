@@ -7,44 +7,23 @@ keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8fa9188ef078de6104c14cc983b8ce9549507096
-ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
+ms.openlocfilehash: 14c27f77fae7f1af095eb0a8de5bd4836f51837f
+ms.sourcegitcommit: 6173086c11ffeb5fa836da6bd42711a9a626fc0e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985716"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66411440"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>Aplicativos da área de trabalho do pacote (ponte de Desktop)
 
-Levar seu aplicativo de área de trabalho existente e adicionar experiências modernas para usuários do Windows 10. Em seguida, obtenha maior alcance em todos os mercados internacionais ao distribuí-lo por meio da Microsoft Store. Você pode monetizar seu aplicativo de maneiras muito mais simples, aproveitando os recursos criados diretamente no repositório. Obviamente, você não precisa usar a loja. Fique à vontade para usar seus canais existentes.
-
-![Ponte de Desktop](images/desktop-bridge-4.png)
+Levar seu aplicativo de área de trabalho existente e adicionar experiências modernas para usuários do Windows 10. Em seguida, obtenha maior alcance em todos os mercados internacionais ao distribuí-lo por meio da Microsoft Store. Você pode monetizar seu aplicativo de maneiras muito mais simples, aproveitando os recursos incorporados à direita de Store. Obviamente, você não precisa usar o Store. Fique à vontade para usar seus canais existentes.
 
 Quando você cria um pacote para seu aplicativo da área de trabalho, o aplicativo receberá uma identidade e com essa identidade, seu aplicativo da área de trabalho tem acesso ao Windows UWP (plataforma Universal) APIs. Você pode usá-las para facilitar experiências envolventes e modernas, como blocos dinâmicos e notificações. Usar a compilação condicional simple e verificações de tempo de execução para executar o código UWP somente quando seu aplicativo é executado no Windows 10.
 
-O código que você pode usar para acender experiências com o Windows 10, além de seu aplicativo permanece inalterado e você pode continuar para distribuí-lo para seu existente do Windows 7, Windows Vista ou base de usuários do Windows XP. No Windows 10, seu aplicativo continua em execução em confiança total modo de usuário, como ele está fazendo hoje mesmo.
-
->[!IMPORTANT]
->A capacidade de criar um pacote de aplicativo do Windows para o seu aplicativo da área de trabalho (também conhecido como a ponte de Desktop) foi introduzida no Windows 10, versão 1607, e só pode ser usado em projetos que se destinam a atualização de aniversário do Windows 10 (10.0; Build 14393) ou uma versão posterior no Visual Studio.
+O código que você pode usar para acender experiências com o Windows 10, além de seu aplicativo permanece inalterado e você pode continuar para distribuí-lo aos usuários nas versões anteriores do Windows. No Windows 10, seu aplicativo continua em execução em confiança total modo de usuário, como ele está fazendo hoje mesmo.
 
 > [!NOTE]
-> Confira <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">essa série</a> de vídeos de curta duração publicados na Microsoft Virtual Academy. Esses vídeos percorrer todo o processo de colocar seu aplicativo da área de trabalho para Universal Windows Platform (UWP).
-
-## <a name="benefits"></a>Benefícios
-
-Aqui estão alguns motivos para criar um pacote de aplicativo do Windows para seu aplicativo da área de trabalho:
-
-:heavy_check_mark: **Implantação simplificada**. Aplicativos e jogos que usam a ponte têm uma ótima experiência de implantação. Essa experiência garante que os usuários podem instalar um aplicativo com confiança e atualizá-lo. Se um usuário optar por desinstalar o aplicativo, ele será removido por completo sem deixar rastreamento. Isso reduz o tempo para criar experiências de instalação e manter os usuários atualizados.
-
-:heavy_check_mark: **Atualizações automáticas e licenciamento**. Seu aplicativo pode participar de licenciamento interno do a Microsoft Store e as instalações de atualização automática. A atualização automática é um mecanismo altamente confiável e eficiente, pois somente as partes alteradas dos arquivos são baixadas.
-
-:heavy_check_mark: **Maior alcance e monetização simplificada**. Se optar por distribuir por meio da Microsoft Store, você poderá alcançar milhões de usuários do Windows 10, que podem adquirir aplicativos, jogos e compras realizadas em aplicativo com opções de pagamento locais.
-
-:heavy_check_mark: **Adicione recursos UWP**.  Em seu próprio ritmo, você pode adicionar recursos UWP ao pacote do seu aplicativo, como uma interface de usuário XAML, atualizações de bloco dinâmico, tarefas de UWP em segundo plano, serviços de aplicativo, e muito mais.
-
-:heavy_check_mark: **Casos de uso ampliados em dispositivos**. Usando a ponte, você pode migrar gradualmente o código para a Plataforma Universal do Windows a fim de alcançar todos os dispositivos Windows 10, inclusive telefones, Xbox One e HoloLens.
-
-Para ver uma lista mais completa dos benefícios, consulte [Ponte de Desktop ](https://developer.microsoft.com/windows/bridges/desktop).
+> Fazer check-out <a href="https://mva.microsoft.com/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">desta série</a> de vídeos curtos, publicados pela Microsoft Virtual Academy. Esses vídeos percorrer todo o processo de colocar seu aplicativo da área de trabalho para Universal Windows Platform (UWP).
 
 ## <a name="prepare"></a>Preparar
 
@@ -56,18 +35,30 @@ Primeiro, prepare seu aplicativo examinando o artigo [preparar para empacotar se
 
 Há várias maneiras diferentes de criar um pacote MSIX para seu aplicativo de desktop.
 
-### <a name="build-an-msix-from-an-existing-app-package"></a>Criar um MSIX de um pacote de aplicativo existente
+### <a name="build-an-msix-from-an-existing-app-installer"></a>Criar um MSIX de um instalador de aplicativo existente
 
-Se você já tiver um pacote do aplicativo (por exemplo, um MSI ou o instalador do App-V), é recomendável que você use o [ferramenta de empacotamento MSIX](../mpt-overview.md) reempacotar seu aplicativo de área de trabalho existente para o formato MSIX. Ele oferece uma interface do usuário interativo e uma linha de comando para conversões e lhe dá a habilidade de converter um aplicativo sem a necessidade de código-fonte.
+Se você já tiver um pacote do aplicativo (por exemplo, um MSI ou o instalador do App-V), é recomendável que você use o [ferramenta de empacotamento MSIX](../mpt-overview.md) reempacotar seu aplicativo de área de trabalho existente para o formato MSIX. Ele oferece uma interface do usuário interativo e uma linha de comando para conversões e lhe dá a habilidade de converter um aplicativo sem a necessidade de código-fonte. 
 
-> [!NOTE]
-> Uma ferramenta anterior chamada a [Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md) também ainda está disponível para reempacotamento de um pacote de aplicativo da área de trabalho existente para o formato MSIX. No entanto, essa ferramenta foi preterida e é recomendável que você use o [ferramenta de empacotamento MSIX](../mpt-overview.md) em vez disso.
+Uma ferramenta anterior chamada a [Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md) também ainda está disponível para reempacotamento de um pacote de aplicativo da área de trabalho existente. No entanto, essa ferramenta foi preterida e é recomendável que você use a ferramenta de empacotamento MSIX.
+
+A tabela a seguir mostra as versões compatíveis do Windows 10 e o pacote de formatos para essas ferramentas.
+
+|  Ferramenta  | Versões de sistema operacional com suporte para a criação de pacotes  | Versões de sistema operacional com suporte para pacotes instalados  |  Pacote de formatos com suporte  |
+|-----------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------|
+|  [Ferramenta de empacotamento MSIX](../mpt-overview.md)        |  Windows 10, versão 1809 e posterior           | Windows 10, versão 1709 e posterior            |  .msix apenas                 |
+|  [Desktop App Converter de](desktop-to-uwp-run-desktop-app-converter.md)        |  Windows 10, versão 1607 e posteriores           | Windows 10, versão 1607 e posteriores            |  somente. AppX    |
+
+Para começar a usar a ferramenta de empacotamento MSIX, consulte estes artigos:
+
+* [Criar um pacote MSIX de um instalador da área de trabalho (MSI, EXE ou App-V) em uma VM](../packaging-tool/create-app-package-msi-vm.md)
+* [Criar um pacote MSIX com outro instalador todos os tipos](../packaging-tool/create-other-installer.md)
+* [Criar um pacote MSIX usando a linha de comando](../packaging-tool/package-conversion-cli.md)
 
 ### <a name="build-an-msix-from-source-code-using-visual-studio"></a>Criar um MSIX do código-fonte usando o Visual Studio
 
 Se você mantém seu aplicativo usando o Visual Studio e esse aplicativo não tem um instalador ou seu instalador não realiza tarefas complicadas demais, considere usar o Visual Studio no lugar.
 
-Com o Visual Studio, é muito mais fácil criar um pacote. Você vai adicionar um projeto de empacotamento, referenciar seu projeto de desktop e depois pressionar F5 para depurar seu aplicativo. Sem ajustes manuais. Essa nova experiência simplificada é uma grande melhoria em relação à experiência disponível na versão anterior do Visual Studio. Aqui estão algumas outras coisas que você pode fazer com ele.
+Visual Studio torna fácil criar um pacote. Você adicionará uma **projeto de pacote de aplicativo do Windows** à sua solução, fazer referência a seu projeto da área de trabalho e, em seguida, pressione F5 para depurar seu aplicativo. Aqui estão algumas outras coisas que você pode fazer com ele.
 
 :heavy_check_mark: Gere automaticamente os ativos visuais.
 
@@ -77,7 +68,11 @@ Com o Visual Studio, é muito mais fácil criar um pacote. Você vai adicionar u
 
 :heavy_check_mark: Atribuir facilmente uma identidade para seu aplicativo de um nome que você reservou já [Partner Center](https://partner.microsoft.com/dashboard).
 
-Consulte [empacotar um aplicativo de desktop usando o Visual Studio](desktop-to-uwp-packaging-dot-net.md)
+Para obter instruções, consulte [empacotar um aplicativo de desktop usando o Visual Studio](desktop-to-uwp-packaging-dot-net.md). A tabela a seguir mostra as versões com suporte do Visual Studio, Windows 10 e formatos do pacote.
+
+|  Versões com suporte do Visual Studio | Versões de sistema operacional com suporte para a criação de pacotes  | Versões de sistema operacional com suporte para pacotes instalados  |  Pacote de formatos com suporte  |
+|-----------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------|
+|  Visual Studio 2019<br/>Visual Studio 2017 15.5 e posterior       |  Windows 10, versão 1607 e posteriores           |  Windows 10, versão 1607 e posteriores            |  .msix (para Windows 10, versão 1709 e posterior)<br/>. AppX (para Windows 10, versão 1607 e posterior)                 |
 
 ### <a name="third-party-installer"></a>Instalador de terceiros
 
@@ -147,7 +142,7 @@ Examine seu projeto InstallShield em segundos para economizar horas de trabalho 
 
 Prepare-se para a Microsoft Store e simplifique a experiência de instalação do software no Windows 10 com a criação de pacotes de aplicativo UWP de seus projetos existentes do InstallShield. Crie pacotes do Windows Installer e de aplicativo UWP para dar suporte a todos os cenários de implantação desejados por seus clientes. Dê suporte a implantações do Nano Servidor e do Windows Server 2016 ao criar pacotes WSA de seus projetos existentes do InstallShield.
 
-Desenvolva sua instalação em módulos para facilitar a implantação e a manutenção e então mescle os componentes e as dependências em tempo de compilação em um único pacote de aplicativo UWP para a Microsoft Store. Para a distribuição direta fora da loja, empacote seus Pacotes de Aplicativo UWP e outras dependências com um instalador de IU de pacote/avançado.
+Desenvolva sua instalação em módulos para facilitar a implantação e a manutenção e então mescle os componentes e as dependências em tempo de compilação em um único pacote de aplicativo UWP para a Microsoft Store. Para distribuição diretos fora a Store, agrupar seus pacotes de aplicativo UWP e outras dependências junto com um instalador de pacote/avançado da interface do usuário.
 
 Saiba mais neste [livro eletrônico](https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fresources.flexerasoftware.com%2Fweb%2Fpdf%2FeBook-IS-Your-Fast-Track-to-Profit.pdf&data=02%7C01%7Cnormesta%40microsoft.com%7C86b9a00bc8e345c2ac6208d4ba464802%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C1%7C636338258409706554&sdata=IAYNp9nFc8B5ayxwrs%2FQTWowUmOda6p%2Fn%2BjdHea257M%3D&reserved=0).
 
@@ -224,13 +219,13 @@ Ver [estender seu aplicativo da área de trabalho com componentes UWP](https://d
 Para testar seu aplicativo em uma configuração realista enquanto se prepara para distribuição, é melhor assinar seu aplicativo e, em seguida, instalá-lo. Consulte [Testar seu app](desktop-to-uwp-debug.md#test-your-app).
 
 >[!IMPORTANT]
-> Se você planeja publicar seu aplicativo para a Microsoft Store, certifique-se de que seu aplicativo funcione corretamente em dispositivos que executam o Windows 10 no modo S. Isso não é um requisito da Store. Veja [Testar seu aplicativo do Windows para o Windows 10 no modo S](desktop-to-uwp-test-windows-s.md).
+> Se você planeja publicar seu aplicativo para a Microsoft Store, certifique-se de que seu aplicativo funcione corretamente em dispositivos que executam o Windows 10 no modo S. Este é um requisito da Store. Veja [Testar seu aplicativo do Windows para o Windows 10 no modo S](desktop-to-uwp-test-windows-s.md).
 
 ## <a name="validate"></a>Validar
 
 Para fornecer a melhor chance de ser publicado em que a Microsoft Store ou torna-se ao seu aplicativo [Windows Certified](https://go.microsoft.com/fwlink/p/?LinkID=309666), validar e testá-lo localmente antes de enviá-lo para certificação.
 
-Se você estiver usando o DAC para empacotar seu aplicativo, você pode usar o novo ``-Verify`` sinalizador para validar seu pacote contra os requisitos de Store e o aplicativo de área de trabalho de pacote. Consulte [Empacotar um app, assinar o app e prepará-lo para envio à loja](desktop-to-uwp-run-desktop-app-converter.md#optional-parameters).
+Se você estiver usando o DAC para empacotar seu aplicativo, você pode usar o novo ``-Verify`` sinalizador para validar seu pacote contra os requisitos de Store e o aplicativo de área de trabalho de pacote. Ver [empacotar um aplicativo, assinar o aplicativo e prepará-lo para envio de Store](desktop-to-uwp-run-desktop-app-converter.md#optional-parameters).
 
 Se você estiver usando o Visual Studio, você pode validar seu aplicativo a partir de **criar pacotes de aplicativos** assistente. Consulte [Criar um arquivo de upload de pacote do aplicativo](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps#create-an-app-package-upload-file).
 

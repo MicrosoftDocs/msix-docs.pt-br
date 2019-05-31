@@ -6,19 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: 112c0bb7c1e2baf373f337f2f829bb80478d155a
-ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
+ms.openlocfilehash: f3d58c2e81e2d7eb56ed43286febac5cf81d717d
+ms.sourcegitcommit: bc3f2bf9fe105576d0cc047d95b3f0de36fbc8b9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985676"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400767"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>Preparar um pacote para um aplicativo de área de trabalho
 
 Este artigo lista as coisas que você precisa saber antes de empacotar seu aplicativo da área de trabalho. Talvez você não precise fazer muito para preparar seu aplicativo para o processo de empacotamento, mas se qualquer um dos itens a seguir aplica-se ao seu aplicativo, você precisará solucioná-lo antes do empacotamento. Lembre-se de que a Microsoft Store lida com o licenciamento e a atualização automática para você, portanto, você pode remover qualquer recurso relacionado a essas tarefas de seu código base.
-
->[!IMPORTANT]
->A capacidade de criar um pacote de aplicativo do Windows para o seu aplicativo da área de trabalho (também conhecido como a ponte de Desktop) foi introduzida no Windows 10, versão 1607, e só pode ser usado em projetos que se destinam a atualização de aniversário do Windows 10 (10.0; Build 14393) ou uma versão posterior no Visual Studio.
 
 + __Seu aplicativo requer uma versão do .NET anteriores a 4.6.2__. Você precisa certificar-se de que seu aplicativo é executado no .NET 4.6.2. Você não pode exigir ou redistribuir versões anteriores a 4.6.2. Esta é a versão do .NET fornecida na Atualização de Aniversário do Windows 10. Verificar que seu aplicativo funcione com esta versão garantirá que seu aplicativo continuará a ser compatível com as atualizações futuras do Windows 10.  Se seu aplicativo tem como alvo o .NET Framework 4.0 ou posterior, espera-se para ser executado no .NET 4.6.2, mas você ainda deverá testá-lo.
 

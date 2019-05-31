@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 6432a4b33b93a6340acabfd6284f5f530b2fe8b9
-ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
+ms.openlocfilehash: 3832cdceab23506da7ed16f3d07aa070222e5c0b
+ms.sourcegitcommit: bc3f2bf9fe105576d0cc047d95b3f0de36fbc8b9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65795440"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400695"
 ---
 # <a name="msix-packaging-tool"></a>Ferramenta de Empacotamento MSIX 
 
@@ -50,7 +50,7 @@ Ferramenta de empacotamento MSIX também pode ser baixada para uso offline na em
 - Usuário pode especificar códigos de saída de válidos conhecidos para conversões de CLI
 - Adicionada a capacidade para o carimbo de data / hora seu pacote assinado em todos os fluxos de trabalho em que a assinatura está disponível no momento 
     - Você pode especificar sua URL de carimbo de data / hora padrão e o tipo de servidor de carimbo de data / hora na página de configurações de ferramenta
-- Atualizado [lógica de geração de AppID](packaging-tool/release-notes/history.md#appid-generation-logic)e adicionou uma validação adicional para o aplicativo e o nome do pacote 
+- Lógica de geração de AppID atualizada e validação adicional adicionada para o aplicativo e o nome do pacote 
 
 Você pode encontrar o histórico completo das notas de versão da ferramenta de empacotamento MSIX [aqui](packaging-tool/release-notes/history.md).
 
