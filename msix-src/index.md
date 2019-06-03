@@ -9,27 +9,27 @@ ms.topic: landing-page
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 3e36c3c5031b1780513c92b2cb821aec6335eb4c
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: a19ce324f4a5993672e9f56c1b49bcadda5c7140
+ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58899580"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984411"
 ---
 # <a name="msix-documentation"></a>Documentação da MSIX
 MSIX é um formato de empacotamento criado para ser seguro, protegido e confiável, baseado em uma combinação de tecnologias de instalação .msi, .appx, App-V e ClickOnce. 
 
-<br>
-
+ > [!TIP]
+ > Visite a página da [Comunidade de Tecnologia do MSIX](https://aka.ms/msixcommunity) para as discussões e informações mais recentes.
+ 
 :::row:::
     :::column:::
         ### Package existing Windows apps
-        MSIX Packaging Tool enables you to update existing Win32 application packages to the MSIX format. [Learn more](mpt-overview.md)
+A Ferramenta de Empacotamento MSIX permite que você atualize os pacotes de aplicativos Win32 existentes para o formato MSIX. [Saiba mais](mpt-overview.md)
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">Obter a ferramenta</a></p></div>
     :::column-end:::
     :::column:::
-        ### Use MSIX anywhere
-O SDK MSIX permite que desenvolvedores de várias plataformas montem e desmontem pacotes para distribuição pela Microsoft Store ou usando as próprias redes de distribuição de conteúdo. [Saiba mais](msix-sdk/sdk-overview.md)
+        ### Use MSIX anywhere O MSIX SDK permite que desenvolvedores de várias plataformas empacotem e desempacotem pacotes para distribuição pela Microsoft Store ou usando as próprias redes de distribuição de conteúdo. [Saiba mais](msix-sdk/sdk-overview.md)
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -37,7 +37,7 @@ O SDK MSIX permite que desenvolvedores de várias plataformas montem e desmontem
         ### O Instalador de Aplicativo dos pacotes de aplicativo de MSIX permite instalar e atualizar qualquer pacote do aplicativo de MSIX que esteja disponível localmente ou em qualquer rede de distribuição de conteúdo. [Saiba mais](app-installer/app-installer-root.md)
     :::column-end:::
     :::column:::
-    ### A PSF (estrutura de suporte do pacote) permite que o seu aplicativo ignore um determinado número de limitações do ambiente moderno de tempo de execução, garantindo que a sua atual solução seja executada conforme o esperado, sem modificar o código-fonte. [Saiba mais](package-support-framework-overview.md)
+    ### A PSF (estrutura de suporte do pacote) permite que o seu aplicativo ignore um determinado número de limitações do ambiente moderno de tempo de execução, garantindo que a sua atual solução seja executada conforme o esperado, sem modificar o código-fonte. [Saiba mais](psf/package-support-framework-overview.md)
     :::column-end:::
 :::row-end:::
 
@@ -137,7 +137,7 @@ O SDK MSIX permite que desenvolvedores de várias plataformas montem e desmontem
                                     <a href="/en-us/intune/introduction-intune?context=/windows/msix/render" data-linktype="absolute-path">Microsoft Intune</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/msix/app-installer/app-installer-file-overview" data-linktype="absolute-path">Distribuição fora da Microsoft Store</a>
+                                    <a href="/en-us/windows/msix/app-installer/app-installer-file-overview" data-linktype="absolute-path">Distribuição fora da Store</a>
                                 </p>
                             </div>
                         </div>
@@ -212,7 +212,7 @@ O SDK MSIX permite que desenvolvedores de várias plataformas montem e desmontem
                                     <a href="/en-us/windows/uwp/debug-test-perf/windows-app-certification-kit?context=/windows/msix/render" data-linktype="absolute-path">Kit de Certificação de Aplicativos Windows</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/debug-test-perf/device-portal?context=/windows/msix/render" data-linktype="absolute-path">Windows Device Portal</a>
+                                    <a href="/en-us/windows/uwp/debug-test-perf/device-portal?context=/windows/msix/render" data-linktype="absolute-path">Portal de Dispositivos do Windows</a>
                                 </p>
                                 <p>
                                     <a href="/en-us/windows/uwp/publish/package-flights?context=/windows/msix/render" data-linktype="absolute-path">Liberação de versões de pré-lançamento do pacote</a>
@@ -243,7 +243,7 @@ O SDK MSIX permite que desenvolvedores de várias plataformas montem e desmontem
                                     <a href="/en-us/windows/uwp/publish/distribute-lob-apps-to-enterprises?context=/windows/msix/render" data-linktype="absolute-path">Microsoft Store para Empresas</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/packaging/create-appinstallerfile-vs?context=/windows/msix/render" data-linktype="absolute-path">Distribuição fora da Microsoft Store</a>
+                                    <a href="/en-us/windows/uwp/packaging/create-appinstallerfile-vs?context=/windows/msix/render" data-linktype="absolute-path">Distribuição fora da Store</a>
                                 </p>
                             </div>
                         </div>
@@ -286,17 +286,17 @@ O SDK MSIX permite que desenvolvedores de várias plataformas montem e desmontem
     :::column:::
     >[!VIDEO https://www.youtube.com/embed/sBOTQoi6iXQ]
         #### MSIX inside and out (Sept 2018)
-        MSIX is the future of app installation and a significant step forward in enabling enterprises to modernize their app deployment processes and stay current with Windows, Office and third-party apps. 
+O MSIX é o futuro da instalação do aplicativo e uma etapa significativa é permitir que as empresas modernizem seus processos de implantação de aplicativos e mantenham-se atualizadas com aplicativos do Windows, do Office e de terceiros. 
     :::column-end:::
     :::column:::
     >[!VIDEO https://www.youtube.com/embed/0kSwCOr7-Ao]
         #### MSIX – Accelerating Windows 10 and app deployment (Sept 2018)
-        MSIX provides lots of benefits across the app lifecycle management. Learn how to take advantage of MSIX in your enterprise and the benefits to developers, IT Pros and end users. 
+O MSIX fornece muitos benefícios no gerenciamento de ciclo de vida do aplicativo. Saiba como aproveitar o MSIX em sua empresa e conheça os benefícios para desenvolvedores, profissionais de TI e usuários finais. 
     :::column-end:::
     :::column:::
     >[!VIDEO https://www.youtube.com/embed/_wCv31TI_30]
         #### Updating your existing Configuration Manager apps to MSIX (Sept 2018)
-        MSIX simplifies and modernizes app deployment. It brings a faster, more reliable, and rot-free deployment for your enterprise. Learn the ins and outs of updating your existing System Center Configuration Manager apps to MSIX along with how it will integrate with Configuration Manager. 
+O MSIX simplifica e moderniza a implantação do aplicativo. Ele traz uma implantação mais rápida, mais confiável e livre de problemas para sua empresa. Saiba as vantagens e desvantagens de atualizar seus aplicativos existentes do System Center Configuration Manager para MSIX e como o MSIX se integrará com o Configuration Manager. 
     :::column-end:::
 
     
