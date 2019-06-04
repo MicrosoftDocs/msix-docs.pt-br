@@ -40,7 +40,7 @@
           href: mpt-overview.md
         - name: Modificar o pacote usando o editor de pacote
           href: packaging-tool/package-editor.md
-        - name: Suporte para pacote de MSIX no Windows 10 versão 1709 e posterior
+        - name: Suporte ao pacote do MSIX no Windows 10 versão 1709 e posterior
           href: packaging-tool/Support-on-1709-and-later.md
         - name: Práticas recomendadas da Ferramenta de Empacotamento MSIX
           href: mpt-best-practices.md
@@ -92,33 +92,37 @@
           href: msix-sdk/sdk-guidance.md
 - name: Pacote
   items:
-    - name: Criar um pacote do MSIX de um instalador de área de trabalho
-      items:
-        - name: 'Criar um pacote do MSIX de um MSI, EXE ou App-V em uma VM'
-          href: packaging-tool/create-app-package-MSI-VM.md
-        - name: Criar um pacote do MSIX com outros tipos de instalador
-          href: packaging-tool/create-other-installer.md
-        - name: Criar um pacote do aplicativo usando a linha de comando
-          href: packaging-tool/package-conversion-cli.md
-        - name: Automatizar a conversão usando linha de comando
-          href: packaging-tool/automate-conversion.md
-        - name: Criar um pacote do MSIX em um computador remoto
-          href: packaging-tool/remote-conversion-setup.md
-        - name: Empacotar com o Desktop App Converter
-          href: desktop/desktop-to-uwp-run-desktop-app-converter.md
-        - name: Nos bastidores do seu aplicativo da área de trabalho empacotado
-          href: desktop/desktop-to-uwp-behind-the-scenes.md
-    - name: Empacotar um aplicativo da área de trabalho com código-fonte usando o Visual Studio (Ponte de Desktop)
+    - name: Aplicativos da área de trabalho do pacote
       items:
         - name: Visão geral
           href: desktop/desktop-to-uwp-root.md
-        - name: Preparar para empacotar
+        - name: Preparar-se para empacotar um aplicativo da área de trabalho
           href: desktop/desktop-to-uwp-prepare.md
-        - name: União de um aplicativo da área de trabalho com o Visual Studio
-          href: desktop/desktop-to-uwp-packaging-dot-net.md
-        - name: Otimizar binários com imagens nativas
-          href: desktop/desktop-to-uwp-r2r.md
-    - name: Empacotar um aplicativo com o Visual Studio
+        - name: Empacotar um aplicativo da área de trabalho de um instalador existente
+          items:
+            - name: 'Criar um pacote do MSIX de um MSI, EXE ou App-V em uma VM'
+              href: packaging-tool/create-app-package-MSI-VM.md
+            - name: Criar um pacote do MSIX com outros tipos de instalador
+              href: packaging-tool/create-other-installer.md
+            - name: Criar um pacote do MSIX usando a Linha de Comando
+              href: packaging-tool/package-conversion-cli.md
+            - name: Automatizar a conversão usando linha de comando
+              href: packaging-tool/automate-conversion.md
+            - name: Criar um pacote do MSIX em um computador remoto
+              href: packaging-tool/remote-conversion-setup.md
+            - name: Empacotar com o Desktop App Converter
+              href: desktop/desktop-to-uwp-run-desktop-app-converter.md
+        - name: Empacotar um aplicativo da área de trabalho no código-fonte usando o Visual Studio
+          items:
+            - name: Visão geral
+              href: desktop/desktop-to-uwp-packaging-dot-net.md
+            - name: Otimizar binários com imagens nativas
+              href: desktop/desktop-to-uwp-r2r.md
+        - name: Nos bastidores do seu aplicativo da área de trabalho empacotado
+          href: desktop/desktop-to-uwp-behind-the-scenes.md
+        - name: Problemas conhecidos
+          href: desktop/desktop-to-uwp-known-issues.md
+    - name: União de um aplicativo UWP com o Visual Studio
       href: 'https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps?context=/windows/msix/render'
     - name: Ferramentas manuais de empacotamento
       items:
