@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, uwp, MSIX, ferramenta de empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 11461bd93c7ef4147077c34585cce8968ce6c588
-ms.sourcegitcommit: b3564e47328d21916cdeb4c84d638ac12be0a461
+ms.openlocfilehash: e7d39475cf3e0e2ae4c117418ab8a4a76f3f2a7e
+ms.sourcegitcommit: e7d974ff7b318af19aa8d578d031914e1f1ff926
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66186160"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826719"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -36,23 +36,12 @@ Se a ferramenta já estiver instalada no seu computador, verifique a versão ins
 
 ### <a name="current-insider-preview-build"></a>Compilação atual do Insider Preview 
 
-#### <a name="ver-120195220"></a>Ver 1.2019.522.0
+### <a name="ver-120196040"></a>Ver 1.2019.604.0 
 
-Novos recursos:
-
-- Suporte para instaladores da área de trabalho que exigem reinicialização - [Saiba mais](support-restart.md)
-    - Opção de logon automático para reinicialização 
-- Novas opções nas configurações do aplicativo
-    - Especifique um certificado padrão para assinar os pacotes com 
-    - Especifique os códigos de saída para instaladores que exigem reinicialização
-    
-Problemas conhecidos:
-
-- Códigos de saída de reinicialização negativos não têm suporte atualmente
-- Se o certificado padrão for especificado, cada fluxo de trabalho de conversão será necessário selecionar 'usar cert'
-- Durante a VM reiniciar ou remoto, pode haver um prompt de logon adicional 
-- Restaurar padrões botão não remove os códigos de saída de senha ou o instalador do certificado
-- Há alguns incongruencies da interface do usuário
+- O padrão é Assinando um pacote, se um certificado de assinatura padrão é especificado nas configurações de
+- Permitir códigos negativo instalador seja especificado nas configurações do
+- Respeitar os códigos de saída do instalador do PowerShell
+- Informa ao usuário quando eles precisarem de uma reinicialização do driver
 
 Você pode encontrar o histórico completo das notas de versão da ferramenta de empacotamento MSIX [aqui](release-notes/history.md).
 

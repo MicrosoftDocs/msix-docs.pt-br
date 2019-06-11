@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fd234323185200895a6eaf276988fbe7a5c363b3
-ms.sourcegitcommit: 9bbb116d1984082123f694130b4d6cc078fa8510
+ms.openlocfilehash: 5470a3e8c9b39734645da838b467aaf32bf8e79f
+ms.sourcegitcommit: e7d974ff7b318af19aa8d578d031914e1f1ff926
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59983488"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826733"
 ---
 # <a name="configure-update-settings-in-the-app-installer-file"></a>Definir configurações de atualização no arquivo do Instalador de Aplicativo
 
@@ -37,9 +37,9 @@ Especificamente, a sintaxe que está disponível para você é o seguinte:
 
     - **OnLaunch**: Verifica se há atualizações na inicialização. Esse tipo de atualização pode mostrar a interface do usuário e tem os seguintes atributos:
 
-        - **ShowPrompt**: Um booliano que determina se a interface do usuário será mostrada ao usuário.
+        - **ShowPrompt**: Um booliano que determina se a interface do usuário será mostrada ao usuário. Esse valor é compatível com Windows 10, versão 1903 e posterior.
 
-        - **UpdateBlocksActivation**: Um booliano que determina se a interface do usuário mostrado ao usuário permite que o usuário iniciar o aplicativo sem realizar a atualização, ou se o usuário deve executar a atualização antes de iniciar o aplicativo. Esse atributo pode ser definido como "true" apenas se **ShowPrompt** é definido como "true". **UpdateBlocksActivation**= "true" significa que a interface do usuário, o usuário verá, permite que o usuário fazer a atualização ou fechar o aplicativo. **UpdateBlocksActivation**= "false" significa a interface do usuário, o usuário verá, permite que o usuário fazer a atualização ou iniciar o aplicativo sem a atualização. No último caso, a atualização será aplicada silenciosamente em um momento oportuno. Disponível no Windows 10, versão 1809 e posterior.
+        - **UpdateBlocksActivation**: Um booliano que determina se a interface do usuário mostrado ao usuário permite que o usuário iniciar o aplicativo sem realizar a atualização, ou se o usuário deve executar a atualização antes de iniciar o aplicativo. Esse atributo pode ser definido como "true" apenas se **ShowPrompt** é definido como "true". **UpdateBlocksActivation**= "true" significa que a interface do usuário, o usuário verá, permite que o usuário fazer a atualização ou fechar o aplicativo. **UpdateBlocksActivation**= "false" significa a interface do usuário, o usuário verá, permite que o usuário fazer a atualização ou iniciar o aplicativo sem a atualização. No último caso, a atualização será aplicada silenciosamente em um momento oportuno. Esse valor é compatível com Windows 10, versão 1903 e posterior.
 
         > [!NOTE]
         > ShowPrompt precisa ser definido como true se UpdateBlocksActivation é definido como true.
