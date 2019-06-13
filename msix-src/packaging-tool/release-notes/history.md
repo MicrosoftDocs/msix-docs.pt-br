@@ -8,23 +8,29 @@ ms.topic: article
 keywords: Windows 10, uwp, msix, ferramenta de empacotamento msix, programa insider
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: 576ce8abf3bbbe178dbd124f250a749136f50267
-ms.sourcegitcommit: e7d974ff7b318af19aa8d578d031914e1f1ff926
+ms.openlocfilehash: 4d3826450ade25d5e6fe8a682f03435bc1f1f4d3
+ms.sourcegitcommit: 23d6e24cd3197204868091bca2f21cfd9b1bf0da
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66826708"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67027932"
 ---
-# <a name="msix-packaging-tool-release-notes"></a>Notas de versão de ferramenta de empacotamento MSIX 
+# <a name="msix-packaging-tool-release-notes"></a>Notas de versão de ferramenta de empacotamento MSIX
 
-### <a name="ver-120196040"></a>Ver 1.2019.604.0 
+## <a name="version-120196110"></a>Versão 1.2019.611.0
+
+- Restaurar as configurações padrão e itens de exclusão agora também limpa os códigos de senha e sair do certificado de assinatura
+- Corrigido um problema em que as primeiras tarefas de inicialização não foram obtendo excluídas corretamente
+- Irá ignorar os atalhos para arquivos excluídos durante a criação do pacote
+
+## <a name="version-120196040"></a>Versão 1.2019.604.0
 
 - O padrão é Assinando um pacote, se um certificado de assinatura padrão é especificado nas configurações de
 - Permitir códigos negativo instalador seja especificado nas configurações do
 - Respeitar os códigos de saída do instalador do PowerShell
 - Informa ao usuário quando eles precisarem de uma reinicialização do driver
 
-#### <a name="ver-120195220"></a>Ver 1.2019.522.0
+## <a name="version-120195220"></a>Versão 1.2019.522.0
 
 Novos recursos:
 
@@ -41,7 +47,7 @@ Problemas conhecidos:
 - Durante a VM reiniciar ou remoto, pode haver um prompt de logon adicional 
 - Restaurar padrões botão não remove os códigos de saída de senha ou o instalador do certificado
 
-### <a name="ver-120194020---public-release"></a>**Ver 1.2019.402.0 - lançamento público**
+## <a name="version-120194020---public-release"></a>Versão 1.2019.402.0 - lançamento público
 
  - Capacidade de converter em uma máquina remota - [obter mais informações](../remote-conversion-setup.md)
  - Validar o ProgId COM valores de tipo, as entradas de classe COM e remover registros inválidos de COM

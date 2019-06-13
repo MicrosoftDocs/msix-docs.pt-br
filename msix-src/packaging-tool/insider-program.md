@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, uwp, MSIX, ferramenta de empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e7d39475cf3e0e2ae4c117418ab8a4a76f3f2a7e
-ms.sourcegitcommit: e7d974ff7b318af19aa8d578d031914e1f1ff926
+ms.openlocfilehash: eb1e5400617559a3de85ce40a9ae3bf1bfcb13b0
+ms.sourcegitcommit: 23d6e24cd3197204868091bca2f21cfd9b1bf0da
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66826719"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67027920"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -22,6 +22,7 @@ O programa de Insider de ferramenta de empacotamento MSIX fornece acesso antecip
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://aka.ms/MSIXPackagingPreviewProgram" data-linktype="external">Clique aqui para ingressar</a></p></div>
 
 ## <a name="prerequisites"></a>Pré-requisitos
+
 - Windows 10, versão 1809 (ou posterior).
 - Um alias de conta válido do Microsoft para acessar o aplicativo da Microsoft Store.
 - Privilégios de administrador no seu computador para executar a ferramenta.
@@ -32,22 +33,21 @@ Depois de ingressar no programa, você receberá um email confirmando o registro
 
 Instalar a ferramenta de empacotamento MSIX da Microsoft Store [aqui](https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf). Verifique que você está conectado com a conta da Microsoft que você usou para inscrever-se o programa de Insider MSIX ferramenta de empacotamento. Em seguida, vá para a página de descrição de produto e clique em **instalar** para iniciar a instalação.
 
-Se a ferramenta já estiver instalada no seu computador, verifique a versão instalada. Execute a ferramenta de empacotamento MSIX, clique no ícone de engrenagem no canto superior direito e, em seguida, clique no **sobre** guia ver a versão. A versão do aplicativo deve corresponder a compilação atual do Insider Preview da seção [abaixo](#current-insider-preview-build). 
+Se a ferramenta já estiver instalada no seu computador, verifique a versão instalada. Execute a ferramenta de empacotamento MSIX, clique no ícone de engrenagem no canto superior direito e, em seguida, clique no **sobre** guia ver a versão. A versão do aplicativo deve corresponder a compilação atual do Insider Preview da seção [abaixo](#current-insider-preview-build).
 
-### <a name="current-insider-preview-build"></a>Compilação atual do Insider Preview 
+## <a name="current-insider-preview-build"></a>Compilação atual do Insider Preview
 
-### <a name="ver-120196040"></a>Ver 1.2019.604.0 
+Versão 1.2019.611.0:
 
-- O padrão é Assinando um pacote, se um certificado de assinatura padrão é especificado nas configurações de
-- Permitir códigos negativo instalador seja especificado nas configurações do
-- Respeitar os códigos de saída do instalador do PowerShell
-- Informa ao usuário quando eles precisarem de uma reinicialização do driver
+- Restaure as configurações padrão e itens de exclusão agora também limpa os códigos de senha e sair do certificado de assinatura.
+- Corrigido um problema em que as primeiras tarefas de inicialização não foram obtendo excluídas corretamente.
+- Irá ignorar os atalhos para arquivos excluídos durante a criação do pacote.
 
 Você pode encontrar o histórico completo das notas de versão da ferramenta de empacotamento MSIX [aqui](release-notes/history.md).
 
-## <a name="share-your-feedback"></a>Compartilhe seus comentários 
+## <a name="share-your-feedback"></a>Compartilhe seus comentários
 
-Se você tiver um problema ao usar o aplicativo, pressione **tecla Windows + F** para inicializar **Hub de comentários**. Forneça o máximo de detalhes possível sobre o problema para nos ajudar a diagnosticar e resolver o problema. 
+Se você tiver um problema ao usar o aplicativo, pressione **tecla Windows + F** para inicializar **Hub de comentários**. Forneça o máximo de detalhes possível sobre o problema para nos ajudar a diagnosticar e resolver o problema.
 
 Você também pode compartilhar comentários diretamente de dentro do aplicativo. Clique no Settings(gear icon) na tela inicial e escolha **comentários** guia e selecione o botão que melhor representa seu problema. Isso iniciará diretamente **Hub de comentários** e preencha as informações de categoria necessárias em seu nome. 
 
