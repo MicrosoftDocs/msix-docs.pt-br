@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 14c27f77fae7f1af095eb0a8de5bd4836f51837f
-ms.sourcegitcommit: 6173086c11ffeb5fa836da6bd42711a9a626fc0e
+ms.openlocfilehash: 7e831023a6d21447d1175a1f802c568c5023be87
+ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66411440"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67126818"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>Aplicativos da área de trabalho do pacote (ponte de Desktop)
 
@@ -21,9 +21,6 @@ Levar seu aplicativo de área de trabalho existente e adicionar experiências mo
 Quando você cria um pacote para seu aplicativo da área de trabalho, o aplicativo receberá uma identidade e com essa identidade, seu aplicativo da área de trabalho tem acesso ao Windows UWP (plataforma Universal) APIs. Você pode usá-las para facilitar experiências envolventes e modernas, como blocos dinâmicos e notificações. Usar a compilação condicional simple e verificações de tempo de execução para executar o código UWP somente quando seu aplicativo é executado no Windows 10.
 
 O código que você pode usar para acender experiências com o Windows 10, além de seu aplicativo permanece inalterado e você pode continuar para distribuí-lo aos usuários nas versões anteriores do Windows. No Windows 10, seu aplicativo continua em execução em confiança total modo de usuário, como ele está fazendo hoje mesmo.
-
-> [!NOTE]
-> Fazer check-out <a href="https://mva.microsoft.com/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">desta série</a> de vídeos curtos, publicados pela Microsoft Virtual Academy. Esses vídeos percorrer todo o processo de colocar seu aplicativo da área de trabalho para Universal Windows Platform (UWP).
 
 ## <a name="prepare"></a>Preparar
 

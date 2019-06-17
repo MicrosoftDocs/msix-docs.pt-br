@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: 6959d762430094cab449a9168defc8aac673fdc1
-ms.sourcegitcommit: 6173086c11ffeb5fa836da6bd42711a9a626fc0e
+ms.openlocfilehash: 4ab29d5559b118ea32b91f8a266b137bcb83bd5d
+ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66411451"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67126806"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Empacotar um aplicativo da área de trabalho usando o Desktop App Converter
 
@@ -32,9 +32,6 @@ O conversor executa o instalador da área de trabalho em um ambiente Windows iso
 
 > [!IMPORTANT]
 > Há suporte para o Desktop App Converter de no Windows 10, versão 1607 e posterior. Ele só pode ser usado em projetos que se destinam a atualização de aniversário do Windows 10 (10.0; Build 14393) ou uma versão posterior no Visual Studio.
-
-> [!NOTE]
-> Confira <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">essa série</a> de vídeos de curta duração publicados na Microsoft Virtual Academy. Esses vídeos o orientam através de algumas maneiras comuns de usar o Desktop App Converter.
 
 ## <a name="the-dac-does-more-than-just-generate-a-package-for-you"></a>O DAC faz mais do que apenas gerar um pacote para você
 
@@ -160,10 +157,6 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 > [!IMPORTANT]
 > Há dois coisas importantes para ter em mente aqui. Primeiro, certifique-se de que seu instalador esteja localizado em uma pasta independente e que apenas os arquivos relacionados a esse instalador estão na mesma pasta. O conversor copia todo o conteúdo dessa pasta para o ambiente Windows isolado. <br> Em segundo lugar, se o Partner Center atribui uma identidade para o pacote que começa com um número, certifique-se de que você também passe o <i>AppId -</i> parâmetro e usar somente o sufixo de cadeia de caracteres (após o separador de ponto) como o valor desse parâmetro.  
 
-**Vídeo**
-
-<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Convert-an-Application-That-Has-an-MSI-Installer-Kh1UU2WhD_7106218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
-
 Se o instalador incluir instaladores para bibliotecas ou estruturas dependentes, talvez você precise organizar itens de uma forma um pouco diferente. Consulte [Encadeamento de vários instaladores com a Ponte de Desktop](https://blogs.msdn.microsoft.com/appconsult/2017/09/11/chaining-multiple-installers-with-the-desktop-app-converter/).
 
 <a id="setup-conversion" />
@@ -175,14 +168,11 @@ Aponte para o executável de instalação usando o parâmetro ``Installer``.
 ```cmd
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1
 ```
+
 >[!IMPORTANT]
 >Se o Partner Center atribui uma identidade para o pacote que começa com um número, certifique-se de que você também passe o <i>AppId -</i> parâmetro e usar somente o sufixo de cadeia de caracteres (após o separador de ponto) como o valor desse parâmetro.
 
 O parâmetro ``InstallerArguments`` é um parâmetro opcional. No entanto, como o Desktop App Converter precisa seu instalador a ser executado no modo autônomo, você talvez precise usá-lo se seu aplicativo precisar silenciosas sinalizadores para ser executado silenciosamente. O sinalizador ``/S`` é um sinalizador silencioso muito comum, mas o sinalizador que você usa pode ser diferente dependendo da tecnologia do instalador que você usou para criar o arquivo de configuração.
-
-**Vídeo**
-
-<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Convert-an-Application-That-Has-a-Setup-exe-Installer-amWit2WhD_5306218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 <a id="no-installer-conversion" />
 
@@ -198,10 +188,6 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 
 >[!IMPORTANT]
 >Se o Partner Center atribui uma identidade para o pacote que começa com um número, certifique-se de que você também passe o <i>AppId -</i> parâmetro e usar somente o sufixo de cadeia de caracteres (após o separador de ponto) como o valor desse parâmetro.
-
-**Vídeo**
-
-<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Convert-a-No-Installer-Application-agAXF2WhD_3506218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 <a id="optional-parameters" />
 
@@ -342,12 +328,6 @@ Depois de fazer suas alterações, você não precisa executar o conversor novam
 
 > [!NOTE]
 > Se você fizer alterações nas configurações de registro que o instalador faz, você terá que executar o Conversor de aplicativos do desktop novamente para escolher essas alterações.
-
-**Vídeos**
-
-|Modificar e reempacotar a saída |Demo: Modificar e reempacotar a saída|
-|---|---|
-|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Modifying-and-Repackaging-Output-from-Desktop-App-Converter-OwpAJ3WhD_6706218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Modify-Output-from-Desktop-App-Converter-gEnsa3WhD_8606218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
 
 As seções a seguir descrevem algumas correções opcionais para o aplicativo empacotado que você pode considerar.
 
