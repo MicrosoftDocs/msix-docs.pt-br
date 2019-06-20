@@ -8,29 +8,34 @@ ms.topic: article
 keywords: Windows 10, uwp, msix, ferramenta de empacotamento msix, programa insider
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: 4d3826450ade25d5e6fe8a682f03435bc1f1f4d3
-ms.sourcegitcommit: 23d6e24cd3197204868091bca2f21cfd9b1bf0da
+ms.openlocfilehash: ce17fc580b19d9f47f653367184016f5c68774b7
+ms.sourcegitcommit: 0378a8897e0691bee4d9a957982961a377974856
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67027932"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67250940"
 ---
 # <a name="msix-packaging-tool-release-notes"></a>Notas de versão de ferramenta de empacotamento MSIX
 
-## <a name="version-120196110"></a>Versão 1.2019.611.0
+### <a name="version-120196180"></a>Versão 1.2019.618.0
+
+- Define automaticamente MinVersion para quando os requisitos de controle de versão do Store estiverem desativados nas configurações do 1709
+- Novas pastas podem ser adicionadas em ativos no editor de pacote
+
+### <a name="version-120196110"></a>Versão 1.2019.611.0
 
 - Restaurar as configurações padrão e itens de exclusão agora também limpa os códigos de senha e sair do certificado de assinatura
 - Corrigido um problema em que as primeiras tarefas de inicialização não foram obtendo excluídas corretamente
 - Irá ignorar os atalhos para arquivos excluídos durante a criação do pacote
 
-## <a name="version-120196040"></a>Versão 1.2019.604.0
+### <a name="version-120196040"></a>Versão 1.2019.604.0
 
 - O padrão é Assinando um pacote, se um certificado de assinatura padrão é especificado nas configurações de
 - Permitir códigos negativo instalador seja especificado nas configurações do
 - Respeitar os códigos de saída do instalador do PowerShell
 - Informa ao usuário quando eles precisarem de uma reinicialização do driver
 
-## <a name="version-120195220"></a>Versão 1.2019.522.0
+### <a name="version-120195220"></a>Versão 1.2019.522.0
 
 Novos recursos:
 
