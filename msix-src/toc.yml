@@ -118,6 +118,8 @@
               href: desktop/desktop-to-uwp-packaging-dot-net.md
             - name: Otimizar binários com imagens nativas
               href: desktop/desktop-to-uwp-r2r.md
+        - name: Formar pacote de um aplicativo da área de trabalho usando instaladores de terceiros
+          href: desktop/desktop-to-uwp-third-party-installer.md
         - name: Nos bastidores do seu aplicativo da área de trabalho empacotado
           href: desktop/desktop-to-uwp-behind-the-scenes.md
         - name: Problemas conhecidos
