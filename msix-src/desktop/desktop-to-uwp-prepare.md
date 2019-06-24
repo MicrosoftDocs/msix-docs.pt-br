@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: f3d58c2e81e2d7eb56ed43286febac5cf81d717d
-ms.sourcegitcommit: bc3f2bf9fe105576d0cc047d95b3f0de36fbc8b9
+ms.openlocfilehash: c439ce279f3f0298af4208972e05a22cf7f6517b
+ms.sourcegitcommit: 2667ddb6b0d3c2e8686af7b048d1354f9b7b7e00
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66400767"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67314176"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>Preparar um pacote para um aplicativo de área de trabalho
 
@@ -45,7 +45,7 @@ Este artigo lista as coisas que você precisa saber antes de empacotar seu aplic
 
 + __Seu aplicativo requer UIAccess__. Se o seu aplicativo especifica `UIAccess=true` no elemento `requestedExecutionLevel` do manifesto UAC, a conversão em UWP não será possível no momento. Para obter mais informações, consulte [Visão geral sobre a Automação da Interface do Usuário](https://msdn.microsoft.com/library/ms742884.aspx).
 
-+ __Seu aplicativo expõe objetos COM__. Processos e extensões de dentro do pacote podem registrar e usar servidores COM & OLE, tanto dentro do processo como fora do processo (OOP).  A Atualização dos Criadores adiciona suporte para COM integrados, o que fornece a habilidade de registrar servidores OOP COM & OLE que estão agora visíveis fora do pacote.  Consulte [Suporte ao Servido COM e ao Documento OLE para Ponte de Desktop](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#bjPyETFgtpZBGrS1.97).
++ __Seu aplicativo expõe objetos COM__. Processos e extensões de dentro do pacote podem registrar e usar servidores COM & OLE, tanto dentro do processo como fora do processo (OOP).  A Atualização dos Criadores adiciona suporte para COM integrados, o que fornece a habilidade de registrar servidores OOP COM & OLE que estão agora visíveis fora do pacote.  Consulte [Suporte ao Servido COM e ao Documento OLE para Ponte de Desktop](https://blogs.windows.com/windowsdeveloper/2017/04/13/com-server-ole-document-support-desktop-bridge).
 
    O suporte ao COM Integrado funciona para APIs COM existentes, mas não funcionará para extensões de aplicativo que dependem da leitura direta do registro, uma vez que a localização do COM Integrado é privada.
 
