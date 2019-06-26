@@ -1,32 +1,32 @@
-# <a name="signing-windows-10-app-package"></a>Assinatura do pacote de aplicativo do Windows 10 
+# <a name="signing-windows-10-app-package"></a>Como assinar o pacote do aplicativo do Windows 10 
 
-Assinatura de pacote de aplicativo é uma etapa necessária no processo de criação de um pacote de aplicativo do Windows 10 que pode ser implantado. Windows 10 requer que todos os aplicativos sejam assinados com um certificado de assinatura de código válido. 
+A assinatura de pacote do aplicativo é uma etapa necessária no processo de criação de um pacote do aplicativo do Windows 10 que pode ser implantado. O Windows 10 exige que todos os aplicativos sejam assinados com um certificado de assinatura de código válido. 
 
-Para instalar com êxito um aplicativo do Windows 10, o pacote não só precisa ser assinado, mas também confiável no dispositivo. Isso significa que o certificado tenha encadear para uma das raízes confiáveis no dispositivo. Windows 10 ser padrão, confia em certificados da maioria da autoridade de certificação que forneça certificados de assinatura de código. 
+Para instalar um aplicativo do Windows 10 com êxito, o pacote não só precisa ser assinado, mas também confiável no dispositivo. Isso significa que o certificado precisa ser encadeado para uma das raízes confiáveis no dispositivo. Por padrão, o Windows 10 confia em certificados da maioria da autoridades de certificação que fornecem certificados de assinatura de código. 
 
 |Tópico| Descrição |
 |:---|:---|
-|[Pré-requisitos para assinatura](https://docs.microsoft.com/en-us/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render#prerequisites)| Esta seção aborda os pré-requisitos necessários para assinar o pacote de aplicativo do Windows 10. | 
-|[Usando o SignTool](https://docs.microsoft.com/en-us/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render#using-signtool)| Esta seção discute como usar o SignTool do SDK do Windows 10 para assinar o pacote do aplicativo.|
+|[Pré-requisitos para assinatura](https://docs.microsoft.com/en-us/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render#prerequisites)| Esta seção aborda os pré-requisitos necessários para assinar o pacote do aplicativo do Windows 10. | 
+|[Como usar a SignTool](https://docs.microsoft.com/en-us/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render#using-signtool)| Esta seção aborda como usar a SignTool do SDK do Windows 10 para assinar o pacote do aplicativo.|
 
-## <a name="timestamping"></a>Carimbo de hora 
+## <a name="timestamping"></a>Carimbo de data/hora 
 
-Além da assinatura do pacote de aplicativo com um certificado, é outra característica importante que determina a validade do código do certificado de autenticação **carimbo**. Carimbo preserva a assinatura, permitindo que o pacote do aplicativo aceita pela plataforma de implantação do aplicativo, mesmo depois que o certificado expirou. No momento de inspeção de pacote, o carimbo de hora permite que a assinatura do pacote a ser validado em relação a hora em que ele foi assinado. Isso permite que pacotes sejam aceitas, mesmo depois que o certificado não é mais válido. Pacotes que não estão em data/hora serão avaliados em relação a hora atual e se o certificado não for válido, o Windows não aceitará o pacote. 
+Além da assinatura do pacote do aplicativo com um certificado, outra característica importante que determina a validade do certificado de assinatura de código é o **carimbo de data/hora**. O carimbo de data/hora preserva a assinatura, permitindo que o pacote do aplicativo seja aceito pela plataforma de implantação do aplicativo, mesmo após a expiração do certificado. No momento da inspeção do pacote, o carimbo de data/hora permite que a assinatura do pacote seja validada em relação à hora em que ele foi assinado. Isso permite que os pacotes sejam aceitos, mesmo depois que o certificado não seja mais válido. Os pacotes que não têm o carimbo de data/hora serão avaliados em relação à hora atual e, se o certificado não for mais válido, o Windows não aceitará o pacote. 
 
-A seguir estão os diferentes cenários em torno de carimbo com entrada/saída de assinatura do aplicativo:
+Estes são os diferentes cenários referentes ao carimbo de data/hora com e sem a assinatura do aplicativo:
 
-| |Aplicativo está assinado sem carimbo de hora | Aplicativo é assinado com carimbo de hora |
+| |O aplicativo é assinado sem o carimbo de data/hora | O aplicativo é assinado com o carimbo de data/hora |
 |---|---------------------------------- | ------------------------------- |
-| O certificado é válido |Aplicativo será instalado | Aplicativo será instalado |
-| O certificado é invalid(expired) | Aplicativo não será instalado | Aplicativo será instalado como a autenticidade do certificado foi verificada durante a assinatura pela autoridade de carimbo de hora |
+| O certificado é válido |O aplicativo será instalado | O aplicativo será instalado |
+| O certificado é inválido (expirado) | O aplicativo não será instalado | O aplicativo será instalado, pois a autenticidade do certificado foi verificada durante a assinatura pela autoridade de carimbo de data/hora |
 
  > [!NOTE]
- > Se o aplicativo é instalado com êxito em um dispositivo, ele continuará a executar até mesmo após a expiração do certificado, independentemente de ele sendo data/hora ou não. 
+ > Se o aplicativo for instalado com êxito em um dispositivo, ele continuará sendo executado mesmo após a expiração do certificado, independentemente de ele ter ou não o carimbo de data/hora. 
 
-## <a name="device-mode"></a>Modo de dispositivo
+## <a name="device-mode"></a>Modo do dispositivo
 
-Windows 10 permite que os usuários selecionem o modo no qual executar o seu dispositivo no aplicativo configurações. Os modos são aplicativos da Microsoft Store, aplicativos de Sideload e modo de desenvolvedor. 
+O Windows 10 permite que os usuários selecionem o modo no qual seus dispositivos serão executados no aplicativo de Configurações. Os modos são Aplicativos da Microsoft Store, Aplicativos de sideload e Modo de desenvolvedor. 
 
-**Aplicativos da Microsoft Store** é mais seguro, pois ele apenas permite a instalação de aplicativos da Microsoft Store. Aplicativos em que a Microsoft Store passam pelo processo de certificação para garantir que os aplicativos são seguros para uso. 
+**Aplicativos da Microsoft Store** é a opção mais segura, pois só permite a instalação de aplicativos da Microsoft Store. Os aplicativos da Microsoft Store passam por um processo de certificação para garantir que sejam seguros para uso. 
 
-**Aplicativos de sideload** e **modo de desenvolvedor** são mais permissivas de aplicativos que são assinados por outros certificados, desde que esses certificados são confiáveis e de cadeia para uma das raízes confiáveis no dispositivo. Somente Selecione modo de desenvolvedor, se você for um desenvolvedor e aplicativos do Windows 10 compilação ou de depuração. Encontre mais informações sobre o modo de desenvolvedor e o que ele oferece [aqui](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development). 
+**Aplicativos de sideload** e **Modo de desenvolvedor** são opções mais permissivas de aplicativos que são assinados por outros certificados, desde que esses certificados sejam confiáveis e encadeados para uma das raízes confiáveis no dispositivo. Só selecione o Modo de desenvolvedor se você for um desenvolvedor e estiver compilando ou depurando aplicativos do Windows 10. Encontre mais informações sobre o Modo de desenvolvedor e o que ele oferece [aqui](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development). 

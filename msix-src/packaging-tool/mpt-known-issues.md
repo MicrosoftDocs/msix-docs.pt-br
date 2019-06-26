@@ -1,101 +1,101 @@
 ---
 title: Problemas conhecidos e soluções de problemas
-description: Descreve problemas conhecidos e fornece dicas de solução de problemas para a ferramenta de empacotamento MSIX.
+description: Descreve os problemas conhecidos e fornece dicas de solução de problemas para a Ferramenta de Empacotamento MSIX.
 author: dianmsft
 ms.author: diahar
 ms.date: 02/26/2019
 ms.topic: article
-keywords: ferramenta de empacotamento msix, problemas, solução de problemas conhecidos
+keywords: Ferramenta de Empacotamento MSIX, problemas conhecidos, solução de problemas
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 79b06fc4e3e0ff0600f6e2ab85ec27c9e3a5840c
-ms.sourcegitcommit: 67e56f5414857671c47334c65d636d531632b8f3
-ms.translationtype: MT
+ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "59468288"
 ---
 # <a name="known-issues-and-troubleshooting"></a>Problemas conhecidos e soluções de problemas
 
-Este artigo descreve problemas conhecidos e fornece dicas de solução de problemas a serem considerados ao converter seus aplicativos em MSIX usando a ferramenta de empacotamento MSIX.
+Este artigo descreve os problemas conhecidos e fornece dicas de solução de problemas a serem considerados ao converter seus aplicativos em MSIX usando a Ferramenta de Empacotamento MSIX.
 
 ## <a name="known-issues"></a>Problemas conhecidos
 
-### <a name="msix-packaging-tool-driver-considerations"></a>Considerações sobre a ferramenta de empacotamento MSIX driver
+### <a name="msix-packaging-tool-driver-considerations"></a>Considerações sobre o driver da Ferramenta de Empacotamento MSIX
 
-Driver da ferramenta de empacotamento MSIX é entregue como um [recurso na demanda FOD ()](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities) do pacote do Windows Update e não será instalado se o serviço Windows Update está desabilitado no computador ou as configurações do Windows Insider voo anel não fazem nenhuma correspondência o sistema operacional compilação da máquina.
+O driver da Ferramenta de Empacotamento MSIX é entregue como um pacote [FOD (Recurso sob Demanda)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities) do Windows Update e não será instalado se o serviço Windows Update estiver desabilitado no computador ou se as configurações do anel da versão de pré-lançamento do Usuário do Windows Insider não corresponderem ao build de sistema operacional do computador.
 
-### <a name="installing-msix-packaging-tool-driver-fod-on-windows-insider-builds"></a>Instalando a ferramenta de empacotamento MSIX compilações de driver FOD no Windows Insider
+### <a name="installing-msix-packaging-tool-driver-fod-on-windows-insider-builds"></a>Como instalar o FOD do driver da Ferramenta de Empacotamento MSIX em builds do Usuário do Windows Insider
 
 Se você estiver tendo problemas ao instalar o driver em um build do Windows 10 Insider Preview:
 
-- Navegue até **as configurações** > **atualizações e segurança** > **Windows Insider Program**.
-- Se você vir uma mensagem de que as configurações de build do Insider Preview precisam de atenção, clique no **corrigir me** botão fazer logon novamente. Talvez você precise ir para página de atualização do Windows e verifique se há atualização antes da alteração das configurações entra em vigor.
-- Tente executar a ferramenta novamente para baixar o driver MSIX ferramenta de empacotamento. Se você ainda estiver enfrentando problemas, tente alterar o anel de voo para Insider rápido, instale as atualizações mais recentes do Windows e tente novamente.
+- Procure **Configurações** > **Atualizações e Segurança** > **Programa Windows Insider**.
+- Se uma mensagem for exibida informando que as configurações de build do Insider Preview precisam de atenção, clique no botão **Corrigir-me** para fazer logon novamente. Talvez você precise acessar a página do Windows Update e verificar se há alguma atualização antes que a alteração das configurações entre em vigor.
+- Tente executar a ferramenta novamente para baixar o driver da Ferramenta de Empacotamento MSIX. Caso ainda esteja tendo problemas, tente alterar o anel da versão de pré-lançamento para Participante do Programa Windows Insider – Modo Rápido, instale as atualizações mais recentes do Windows e tente novamente.
 
-### <a name="installing-msix-packaging-tool-driver-fod-in-wsus"></a>Instalar o driver da ferramenta de empacotamento MSIX FOD no WSUS
+### <a name="installing-msix-packaging-tool-driver-fod-in-wsus"></a>Como instalar o FOD do driver da Ferramenta de Empacotamento MSIX no WSUS
 
-As organizações que usam o Windows Server Update Services (WSUS) devem tomar medidas para instalar manualmente o driver:
+As organizações que usam o WSUS (Windows Server Update Services) precisam executar ações para instalar o driver manualmente:
 
-- [Verifique sua versão do Windows](https://support.microsoft.com/help/13443/windows-which-operating-system). Você deve ter pelo menos Windows 10, versão 1809 (build 17763).
-- Baixe o arquivo. cab FOD para [Windows 10, versão 1809](https://download.microsoft.com/download/8/4/3/8436215A-42DB-4FD2-966D-60D436D6EEFC/Msix-PackagingTool-Driver-Package~31bf3856ad364e35~amd64~~.cab).
-- Recurso obtido individualmente em pacotes de demanda FOD () pode ser instalado usando [opções de linha de comando DISM](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options). Em um tipo de janela do PowerShell com privilégios elevados: ```Dism /Online /add-package /packagepath:(path)```
+- [Verifique sua versão do Windows](https://support.microsoft.com/help/13443/windows-which-operating-system). É necessário ter, pelo menos, o Windows 10, versão 1809 (build 17763).
+- Baixe o arquivo .cab FOD para o [Windows 10, versão 1809](https://download.microsoft.com/download/8/4/3/8436215A-42DB-4FD2-966D-60D436D6EEFC/Msix-PackagingTool-Driver-Package~31bf3856ad364e35~amd64~~.cab).
+- Os pacotes FOD (Recurso sob Demanda) obtidos individualmente podem ser instalados usando [opções de linha de comando do DISM](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options). Em uma janela do PowerShell com privilégios elevados, digite: ```Dism /Online /add-package /packagepath:(path)```
 
-Os administradores de TI também podem criar [(pasta compartilhada) do repositório de recursos lado a lado](https://docs.microsoft.com/windows-server/administration/server-manager/configure-features-on-demand-in-windows-server) para permitir o acesso ao driver de ferramenta de empacotamento MSIX FOD. Você pode encontrar mais detalhes na parte inferior deste [postagem de blog](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/Language-pack-acquisition-and-retention-for-enterprise-devices/ba-p/275404).
+Os administradores de TI também podem criar um [Repositório de recursos lado a lado (pasta compartilhada)](https://docs.microsoft.com/windows-server/administration/server-manager/configure-features-on-demand-in-windows-server) para permitir o acesso ao FOD do driver da Ferramenta de Empacotamento MSIX. Encontre mais detalhes ao final desta [postagem no blog](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/Language-pack-acquisition-and-retention-for-enterprise-devices/ba-p/275404).
 
-Caso contrário, se você tiver acesso ao enterprise ou canais OEM pode obter o driver de recursos do Windows 10 na mídia de demanda de uma das seguintes fontes:
+Caso contrário, se você tiver acesso aos canais empresariais ou do OEM, poderá obter o driver da mídia de Recursos sob Demanda do Windows 10 em uma das seguintes fontes:
 
-- [Volume Licensing Service Center (VLSC)](https://www.microsoft.com/Licensing/servicecenter/default.aspx): É necessário acesso de licença de volume.
-- [Portal de OEM](https://www.microsoftoem.com): É necessário acesso de OEM.
-- [Download do MSDN](https://my.visualstudio.com/Downloads/Featured): Assinatura do MSDN é necessária.
+- [VLSC (Centro de Serviços de Licenciamento por Volume)](https://www.microsoft.com/Licensing/servicecenter/default.aspx): É necessário ter acesso à licença de volume.
+- [Portal do OEM](https://www.microsoftoem.com): É necessário ter acesso do OEM.
+- [Download do MSDN](https://my.visualstudio.com/Downloads/Featured): É necessário ter uma assinatura do MSDN.
 
-Recurso obtido individualmente em pacotes de demanda pode ser instalado usando as opções de linha de comando DISM.
+Os pacotes de Recurso sob Demanda obtidos individualmente podem ser instalados usando opções de linha de comando do DISM.
 
 ## <a name="other-known-issues"></a>Outros problemas conhecidos
 
-- Não há suporte para reiniciar o computador durante a instalação do aplicativo. Ignorar a solicitação de reinicialização se possível ou passar um argumento para o instalador para não exigir uma reinicialização.
-- Instaladores podem exigir determinadas estruturas ou os drivers sejam instalados antes da instalação. Para consultar estruturas e drivers no computador que está sendo usado para converter aplicativos, use as seguintes consultas: ```driverquery /v | Out-File``` ou ```driverquery /v | Out-File "path to text file"```
+- Não há suporte para a reinicialização do computador durante a instalação do aplicativo. Ignore a solicitação de reinicialização, se possível, ou passe um argumento ao instalador para não exigir uma reinicialização.
+- Os instaladores podem exigir que estruturas ou drivers específicos sejam instalados antes da instalação. Para pesquisar as estruturas e os drivers no computador que estão sendo usados para converter aplicativos, use as seguintes consultas: ```driverquery /v | Out-File``` ou ```driverquery /v | Out-File "path to text file"```
 
 # <a name="troubleshooting"></a>Solução de problemas
 
 ## <a name="log-files"></a>Arquivos de log
 
-Se a conversão foi bem-sucedida, os arquivos de log são gerados para cada conversão. Eles podem ser encontrados aqui: 
+Independentemente de a conversão ter sido bem-sucedida ou não, os arquivos de log são gerados para cada conversão. Eles podem ser encontrados aqui: 
 
 `%localappdata%\packages\Microsoft.MsixPackagingTool_8wekyb3d8bbwe\LocalState\DiagOutputDir\`
 
-Códigos de falha são escritos e indicam qualquer ponto de falha durante o processo de conversão. Os códigos de erro devem ser amigáveis.
+Os códigos de falha são escritos e indicam qualquer ponto de falha durante o processo de conversão. Os códigos de erro destinam-se a ser amigáveis.
 
-### <a name="log-files-from-remote-devices-or-vms"></a>Arquivos de log de dispositivos remotos ou máquinas virtuais
+### <a name="log-files-from-remote-devices-or-vms"></a>Arquivos de log de dispositivos remotos ou VMs
 
-Se a conversão é executada em uma VM ou um dispositivo remoto, recomendamos que você copie os arquivos de log desse dispositivo e anexá-los como parte do item de comentário. Isso irá nos ajudar a diagnosticar e resolver problemas com mais eficiência. 
+Se a conversão for executada em um dispositivo remoto ou uma VM, recomendaremos que você copie os arquivos de log desse dispositivo e anexe-os como parte do item de comentário. Isso nos ajudará a diagnosticar e resolver problemas com mais eficiência. 
 
-Você encontrará os logs das conversões de remoto aqui: `%localappdata%\packages\Microsoft.MsixPackagingTool_8wekyb3d8bbwe\LocalState\DiagOutputDir\<Logs_#>\RemoteServer\Log.txt`
+Você encontrará os logs das conversões remotas aqui: `%localappdata%\packages\Microsoft.MsixPackagingTool_8wekyb3d8bbwe\LocalState\DiagOutputDir\<Logs_#>\RemoteServer\Log.txt`
 
-Seria ainda mais útil se você pode compartilhar a pasta de Logs inteira que incluirá a operações que ocorrem no cliente local como também o servidor remoto.
+Seria ainda mais útil se você pudesse compartilhar toda a pasta Logs que incluirá as operações ocorridas no cliente local, bem como no servidor remoto.
 
-## <a name="examples-of-failures-during-conversions"></a>Exemplos de falhas durante as conversões de
+## <a name="examples-of-failures-during-conversions"></a>Exemplos de falhas durante conversões
 
-### <a name="uninstallation-error---exit-code-259"></a>Erro de desinstalação - código de saída 259
+### <a name="uninstallation-error---exit-code-259"></a>Erro de desinstalação – código de saída 259
 
-Alguns instaladores podem falhar ao converter com código de saída 259. Isso indica que o instalador gerado de um thread e não aguardou a conclusão. Em outras palavras, o thread principal concluir a instalação, mas ele foi encerrado com erro 259 porque ele gerado de um thread que ainda está em execução. É recomendável que você use a opção de instalação apropriado para setup.exe.
+Alguns instaladores podem falhar ao fazer a conversão com o código de saída 259. Isso indica que o instalador gerou um thread e não aguardou a conclusão dele. Em outras palavras, o thread principal concluiu a instalação, mas ele foi encerrado com o erro 259 porque gerou um thread que ainda está em execução. Recomendamos que você use a opção de instalação apropriada para setup.exe.
 
-### <a name="internal-warning-messages"></a>Mensagens de aviso interna
+### <a name="internal-warning-messages"></a>Mensagens de aviso internas
 
-Você pode encontrar mensagens de aviso, como: **[aviso] W_COM_PUBFAIL_INPROC_SERVER_NOT_SUPPORTED**.
-Isso indica que a ferramenta de empacotamento MSIX detectou um registro COM que não têm uma correspondência com MSIX hoje mesmo. Se você converte um aplicativo e ele funciona, provavelmente que eles eram entradas desnecessárias do COM. No entanto, se você vir falta de comportamento, que significa que esse comportamento COM não foi capturado durante a conversão.
+Você pode encontrar mensagens de aviso como: **[Aviso] W_COM_PUBFAIL_INPROC_SERVER_NOT_SUPPORTED**.
+Isso indica que a Ferramenta de Empacotamento MSIX detectou um registro COM que, atualmente, não têm uma correspondência com o MSIX. Se você converter um aplicativo e ele funcionar, provavelmente essas serão as entradas COM desnecessárias. No entanto, se você observar um comportamento ausente, isso significará que esse comportamento COM não foi capturado durante a conversão.
 
-## <a name="sending-feedback"></a>Enviando comentários
+## <a name="sending-feedback"></a>Como enviar comentários
 
-A melhor maneira de enviar seus comentários é por meio de **Hub de comentários**.
-1. Abra **Hub de comentários** ou digite **Windows + F**.
+A melhor maneira de enviar seus comentários é por meio do **Hub de Feedback**.
+1. Abra o **Hub de Feedback** ou digite **Windows + F**.
 2. Forneça um título e as etapas necessárias para reproduzir o problema.
-3. Sob **categoria**, selecione **Apps** e selecione **ferramenta de empacotamento MSIX**.
-4. Anexe qualquer [arquivos de log](#log-files) associado à conversão. Você pode encontrar os logs na pasta fornecida acima.
+3. Em **Categoria**, selecione **Aplicativos** e selecione **Ferramenta de Empacotamento MSIX**.
+4. Anexe os [arquivos de log](#log-files) associados à conversão. Encontre os logs na pasta fornecida acima.
 5. Anexe o pacote MSIX convertido (se possível).
 6. Clique em **Enviar**.
 
-Você também pode enviar comentários diretamente da ferramenta de empacotamento MSIX indo para o **Feedback** guia sob **configurações**. 
+Envie-nos também comentários diretamente da Ferramenta de Empacotamento MSIX acessando a guia **Comentários** em **Configurações**. 
 
 > [!NOTE]
-> Pode levar 24 horas para que seus comentários obter a nós. Portanto, se você estiver usando uma VM para converter seu pacote, convém manter sua VM no e no estado atual por 24 horas após a conversão. 
+> Poderá levar 24 horas até recebermos seus comentários. Portanto, se você estiver usando uma VM para converter o pacote, o ideal será manter a VM ligada e em seu estado atual durante 24 horas após a conversão. 

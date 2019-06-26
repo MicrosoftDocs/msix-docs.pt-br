@@ -9,30 +9,30 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 7dcd522a1c1b79fe59a5b6e1fd04c7aec19ed419
-ms.sourcegitcommit: 67e56f5414857671c47334c65d636d531632b8f3
-ms.translationtype: MT
+ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/15/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "59566500"
 ---
-# <a name="conversion-with-command-line-interface-cli"></a>Conversão com Interface de linha de comando (CLI)
+# <a name="conversion-with-command-line-interface-cli"></a>Conversão com a CLI (interface de linha de comando)
 
-<div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">Obter a ferramenta de empacotamento MSIX</a></p></div>
+<div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">Obter a Ferramenta de Empacotamento MSIX</a></p></div>
       
-Para criar um novo pacote MSIX para seu aplicativo, execute o comando Criar pacote de MsixPackagingTool.exe em uma janela de prompt de comando do administrador. 
+Para criar um pacote MSIX para seu aplicativo, execute o comando create-package de MsixPackagingTool.exe em uma janela do prompt de comando do administrador. 
 
-Aqui estão os parâmetros que podem ser passados como argumentos de linha de comando:
+Estes são os parâmetros que podem ser passados como argumentos de linha de comando:
 
 |**Parâmetro** |    **Descrição**|
 |---------|---------|
-|-? --help  |Mostrar informações de ajuda|
-|-modelo | [obrigatório] caminho para o arquivo XML de modelo de conversão que contém informações de pacote e as configurações para essa conversão|
-|--virtualMachinePassword   | [opcional] A senha para a máquina Virtual a ser usado para o ambiente de conversão. Observações: O arquivo de modelo deve conter um elemento de máquina virtual e o atributo Settings::AllowPromptForPassword não deve ser definido como true.|
-|-v – detalhado   |[opcional] Logs detalhados para o console de impressão.|
+|-? --help  |Mostra informações da Ajuda|
+|--template | [obrigatório] Caminho para o arquivo XML do modelo de conversão que contém informações do pacote e configurações para essa conversão|
+|--virtualMachinePassword   | [opcional] A senha para a Máquina Virtual ser usada para o ambiente de conversão. Observações: O arquivo de modelo precisa conter um elemento VirtualMachine e o atributo Settings::AllowPromptForPassword não deve ser definido como verdadeiro.|
+|-v --verbose   |[opcional] Imprime os logs detalhados no console.|
 
 Exemplos:
 
-' ' prompt de comando
+``` prompt de comando
 
     MsixPackagingTool.exe create-package --template c:\users\documents\ConversionTemplate.xml -v
 
@@ -157,46 +157,46 @@ Exemplos:
 </MsixPackagingToolTemplate>
 ```
 
-**Referência de parâmetro de modelo de conversão**
+**Referência de parâmetros do modelo de conversão**
 
-Aqui está a lista completa de parâmetros que você pode usar no arquivo de modelo de conversão.
+Esta é a lista completa de parâmetros que você pode usar no arquivo de modelo de conversão.
 
 |**ConversionSettings** |   **Descrição** |
 |---------|---------|
-|Configurações:: AllowTelemetry |        [opcional] Habilita o log de telemetria para essa invocação da ferramenta.|
-|Configurações:: ApplyAllPrepareComputerFixes     |  [opcional] Aplica-se todos recomendável preparar computador correções. Não é possível configurar outros atributos são usados.|
-|Configurações:: GenerateCommandLineFile  |  [opcional] Copia a entrada do arquivo de modelo para o diretório SaveLocation para uso futuro.|
-|Configurações:: AllowPromptForPassword |        [opcional] Instrui a ferramenta para solicitar que o usuário digitar senhas para a máquina Virtual e o certificado de autenticação, se for necessário e não especificado.|
-|Configurações:: EnforceMicrosoftStoreVersioningRequirements |       [opcional] Instrui a ferramenta para impor o esquema de controle de versão do pacote necessário para a implantação da Microsoft Store e Microsoft Store para empresas.|
-|ExclusionItems |       [opcional] 0 ou mais elementos FileExclusion ou RegistryExclusion. Todos os elementos de FileExclusion devem aparecer antes de quaisquer elementos RegistryExclusion.|
+|Settings:: AllowTelemetry |        [opcional] Habilita o log de telemetria para essa invocação da ferramenta.|
+|Settings:: ApplyAllPrepareComputerFixes     |  [opcional] Aplica todas as correções de preparação do computador recomendadas. Não pode ser definida quando outros atributos são usados.|
+|Settings:: GenerateCommandLineFile  |  [opcional] Copia a entrada do arquivo de modelo para o diretório SaveLocation para uso futuro.|
+|Settings:: AllowPromptForPassword |        [opcional] Instrui a ferramenta a solicitar que o usuário insira senhas para a Máquina Virtual e o certificado de autenticação, caso ele seja necessário e não especificado.|
+|Settings:: EnforceMicrosoftStoreVersioningRequirements |       [opcional] Instrui a ferramenta a impor o esquema de controle de versão do pacote necessário para a implantação por meio da Microsoft Store e da Microsoft Store para Empresas.|
+|ExclusionItems |       [opcional] 0 ou mais elementos FileExclusion ou RegistryExclusion. Todos os elementos FileExclusion precisam aparecer antes dos elementos RegistryExclusion.|
 |ExclusionItems::FileExclusion |        [opcional] Um arquivo a ser excluído para o empacotamento.|
 |ExclusionItems::FileExclusion::ExcludePath |       Caminho do arquivo a ser excluído para o empacotamento.|
-|ExclusionItems::RegistryExclusion |        [opcional] Uma chave do registro a ser excluído para o empacotamento.|
-|ExclusionItems::RegistryExclusion:: ExcludePath |      Caminho do registro a ser excluído para o empacotamento.|
-|PrepareComputer::DisableDefragService |        [opcional] Desabilita o Desfragmentador do Windows enquanto o aplicativo está sendo convertido. Se definido como false, substituirá ApplyAllPrepareComputerFixes.|
-|PrepareComputer:: DisableWindowsSearchService |        [opcional] Desabilita o Windows Search enquanto o aplicativo está sendo convertido. Se definido como false, substituirá ApplyAllPrepareComputerFixes.|
-|PrepareComputer:: DisableSmsHostService     |  [opcional] Desabilita o Host do SMS enquanto o aplicativo está sendo convertido. Se definido como false, substituirá ApplyAllPrepareComputerFixes.|
-|PrepareComputer:: DisableWindowsUpdateService   |  [opcional] Desabilita a atualização do Windows enquanto o aplicativo está sendo convertido. Se definido como false, substituirá ApplyAllPrepareComputerFixes.|
-|SaveLocation     |[opcional] Um elemento para especificar o salvamento local da ferramenta. Se não for especificado, o pacote será salvo na pasta da área de trabalho.         |
-|SaveLocation::PackagePath     |[opcional] O caminho para o arquivo ou pasta em que o pacote MSIX resultante é salvo.         |
-|SaveLocation::TemplatePath    |[opcional] O caminho para o arquivo ou pasta em que o modelo resultante da CLI é salvo.    |
-|Installer::path |      O caminho para o instalador do aplicativo.|
-|Installer::arguments |     [opcional] Os argumentos para passar para o instalador.  A ferramenta será executada automaticamente os instaladores MSI silenciosamente usando o argumento "/qn /norestart INSTALLSTARTMENUSHORTCUTS = 1 DISABLEADVTSHORTCUTS = 1". OBSERVAÇÃO: Você deve passar os argumentos para forçar o instalador seja executado silenciosamente, se você estiver usando .exe instaladores.|
-|Installer::InstallLocation |       [opcional] O caminho completo para a pasta do aplicativo raiz para os arquivos instalados se estivesse instalado (por exemplo "Arquivos (x86) de C:\Program \MyAppInstalllocation").|
-|Computador Virtual |       [opcional] Um elemento para especificar que a conversão será executada em uma máquina Virtual local.|
-|VrtualMachine::Name     |  O nome da máquina Virtual a ser usado para o ambiente de conversão.|
-|VirtualMachine::Username |     [opcional] O nome de usuário para a máquina Virtual a ser usado para o ambiente de conversão.|
-|PackageInformation::PackageName |      O nome do pacote para o seu pacote MSIX.|
-|PackageInformation::PackageDisplayName |       O nome de exibição do pacote para o seu pacote MSIX.|
-|PackageInformation::PublisherName |        O publicador para o seu pacote MSIX.|
-|PackageInformation::PublisherDisplayName |     O nome de exibição do publicador para o seu pacote MSIX.|
+|ExclusionItems::RegistryExclusion |        [opcional] Uma chave do Registro a ser excluído para o empacotamento.|
+|ExclusionItems::RegistryExclusion:: ExcludePath |      Caminho do Registro a ser excluído para o empacotamento.|
+|PrepareComputer::DisableDefragService |        [opcional] Desabilita o Desfragmentador do Windows enquanto o aplicativo está sendo convertido. Se for definido como false, substituirá ApplyAllPrepareComputerFixes.|
+|PrepareComputer:: DisableWindowsSearchService |        [opcional] Desabilita o Windows Search enquanto o aplicativo está sendo convertido. Se for definido como false, substituirá ApplyAllPrepareComputerFixes.|
+|PrepareComputer:: DisableSmsHostService     |  [opcional] Desabilita o Host do SMS enquanto o aplicativo está sendo convertido. Se for definido como false, substituirá ApplyAllPrepareComputerFixes.|
+|PrepareComputer:: DisableWindowsUpdateService   |  [opcional] Desabilita o Windows Update enquanto o aplicativo está sendo convertido. Se for definido como false, substituirá ApplyAllPrepareComputerFixes.|
+|SaveLocation     |[opcional] Um elemento para especificar a localização de salvamento da ferramenta. Se não for especificado, o pacote será salvo na pasta Área de Trabalho.         |
+|SaveLocation::PackagePath     |[opcional] O caminho para o arquivo ou a pasta em que o pacote MSIX resultante é salvo.         |
+|SaveLocation::TemplatePath    |[opcional] O caminho para o arquivo ou a pasta em que o modelo da CLI resultante é salvo.    |
+|Installer::Path |      O caminho para o Instalador de Aplicativo.|
+|Installer::Arguments |     [opcional] Os argumentos a serem passados para o instalador.  A ferramenta executará de forma automática os instaladores MSI silenciosamente usando o argumento "/qn /norestart INSTALLSTARTMENUSHORTCUTS=1 DISABLEADVTSHORTCUTS=1". OBSERVAÇÃO: Você precisará passar os argumentos para forçar o instalador a ser executado silenciosamente, caso esteja usando instaladores .exe.|
+|Installer::InstallLocation |       [opcional] O caminho completo para a pasta raiz do aplicativo dos arquivos instalados se ele estiver instalado (por exemplo, "C:\Program Files (x86)\MyAppInstalllocation").|
+|Computador Virtual |       [opcional] Um elemento para especificar que a conversão será executada em uma Máquina Virtual local.|
+|VrtualMachine::Name     |  O nome da Máquina Virtual a ser usado para o ambiente de conversão.|
+|VirtualMachine::Username |     [opcional] O nome de usuário da Máquina Virtual a ser usado para o ambiente de conversão.|
+|PackageInformation::PackageName |      O nome do pacote MSIX.|
+|PackageInformation::PackageDisplayName |       O nome de exibição do pacote MSIX.|
+|PackageInformation::PublisherName |        O fornecedor do pacote MSIX.|
+|PackageInformation::PublisherDisplayName |     O nome de exibição do fornecedor do pacote MSIX.|
 |PackageInformation::Version |      O número de versão do pacote MSIX.|
-|PackageInformation:: MainPackageNameForModificationPackage |       [opcional] O nome de identidade do pacote do nome do pacote principal. Isso é usado ao criar um pacote de modificação que leva uma dependência em um aplicativo principal (pai).|
-|Aplicativos |     [opcional] 0 ou mais elementos do aplicativo para configurar as entradas de aplicativo em seu pacote MSIX.|
-|Application::Id |      A ID do aplicativo para seu aplicativo MSIX. Essa ID será usada para a entrada do aplicativo detectado que corresponde a ExecutableName especificado. Você pode ter vários valores de ID do aplicativo para executáveis no pacote.<br/><br/>Esse valor é o identificador exclusivo do aplicativo dentro do pacote. Às vezes, esse valor é referenciado como o identificador de pacote relativo de aplicativo (PRAID). A ID deve ser exclusiva dentro do pacote (a mesma ID não pode ser usada mais de uma vez no mesmo pacote). No entanto, a ID não deve ser exclusivo globalmente. Pode haver outro pacote no sistema que usa a mesma ID.<br/><br/>Essa cadeia de caracteres contém campos de alfa-numéricos separados por pontos. Cada campo deve começar com um caractere alfabético de ASCII. Você não pode usá-las como valores de campo: "CON", "PRN", "AUX", "NUL", "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9", "LPT1", "LPT2", "LPT3", "LPT4", "LPT5", "LPT6", "LPT7", "LPT8", and "LPT9".|
-|Application::ExecutableName |      O nome do executável do aplicativo de MSIX que será adicionado ao manifesto do pacote. A entrada de aplicativo correspondente será ignorada não se for detectado nenhum aplicativo com esse nome.|
-|Application::Description |     [opcional] A descrição do aplicativo para seu aplicativo MSIX. Se não usado, o DisplayName do aplicativo será usado. Essa descrição será usada para a entrada do aplicativo detectado que corresponde a ExecutableName especificado|
-|Application::DisplayName    |  O nome de exibição do aplicativo para seu pacote MSIX. Este nome de exibição será usado para a entrada do aplicativo detectado que corresponde a ExecutableName especificado|
-|Funcionalidades |     [opcional] 0 ou mais elementos de recurso para adicionar recursos personalizados para seu pacote MSIX. o recurso de "runFullTrust" é adicionado por padrão durante a conversão.|
-|Capability::Name | A capacidade de adicionar ao seu pacote MSIX.
+|PackageInformation:: MainPackageNameForModificationPackage |       [opcional] O nome da identidade do pacote do nome do pacote principal. Isso é usado durante a criação de um pacote de modificação que tem uma dependência de um aplicativo principal (pai).|
+|Aplicativos |     [opcional] 0 ou mais elementos Application para configurar as entradas de Application no pacote MSIX.|
+|Application::Id |      A ID do Aplicativo MSIX. Essa ID será usada para a entrada Application detectada que corresponde ao ExecutableName especificado. Você pode ter vários valores da ID do Aplicativo para executáveis no pacote.<br/><br/>Esse valor é o identificador exclusivo do aplicativo no pacote. Às vezes, esse valor é denominado PRAID (identificador do aplicativo relativo do pacote). A ID precisa ser exclusiva no pacote (a mesma ID não pode ser usada mais de uma vez no mesmo pacote). No entanto, a ID não precisa ser globalmente exclusiva. Pode haver outro pacote no sistema que usa a mesma ID.<br/><br/>Essa cadeia de caracteres contém campos alfanuméricos separados por pontos. Cada campo precisa começar com um caractere alfabético ASCII. Não é possível usar os seguintes como valores de campo: "CON", "PRN", "AUX", "NUL", "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9", "LPT1", "LPT2", "LPT3", "LPT4", "LPT5", "LPT6", "LPT7", "LPT8" e "LPT9".|
+|Application::ExecutableName |      O nome do executável do aplicativo MSIX que será adicionado ao manifesto do pacote. A entrada de aplicativo correspondente será ignorada se nenhum aplicativo com esse nome for detectado.|
+|Application::Description |     [opcional] A descrição do aplicativo MSIX. Se não for usado, o Application DisplayName será usado. Essa descrição será usada para a entrada do aplicativo detectada que corresponde ao ExecutableName especificado|
+|Application::DisplayName    |  O nome de exibição do aplicativo para o pacote MSIX. Esse nome de exibição será usado para a entrada do aplicativo detectada que corresponde ao ExecutableName especificado|
+|Funcionalidades |     [opcional] 0 ou mais elementos Capability para adicionar funcionalidades personalizadas ao pacote MSIX. A funcionalidade “runFullTrust” é adicionada por padrão durante a conversão.|
+|Capability::Name | A capacidade a ser adicionada ao pacote MSIX.
 

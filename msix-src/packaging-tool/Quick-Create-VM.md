@@ -1,30 +1,30 @@
 ---
-title: Ambiente de empacotamento MSIX na criação rápida do Hyper-V
-description: Crie um ambiente virtual para projetos de empacotamento MSIX usando o recurso de criação rápida do Hyper-V.
+title: Ambiente de empacotamento MSIX na Criação Rápida do Hyper-V
+description: Crie um ambiente virtual para projetos de empacotamento MSIX usando o recurso Criação Rápida do Hyper-V.
 author: c-don
 ms.author: cdon
 ms.date: 04/04/2019
 ms.topic: article
-keywords: Criar MSIX, NTAR, ferramenta de empacotamento MSIX, rápida do Hyper-V
+keywords: MSIX, MPT, Ferramenta de Empacotamento MSIX, Criação Rápida do Hyper-V
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 807c8467338f8b01aa1643ab570c82e9675b1264
-ms.sourcegitcommit: 9bbb116d1984082123f694130b4d6cc078fa8510
-ms.translationtype: MT
+ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "59983418"
 ---
-# <a name="msix-packaging-environment-on-hyper-v-quick-create"></a>Ambiente de empacotamento MSIX na criação rápida do Hyper-V
+# <a name="msix-packaging-environment-on-hyper-v-quick-create"></a>Ambiente de empacotamento MSIX na Criação Rápida do Hyper-V
  
-Você pode criar um ambiente virtual para projetos de empacotamento MSIX usando o [criação rápida do Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine) recurso. Esse recurso está disponível a partir do Windows 10, versão 1709.
+Crie um ambiente virtual para projetos de empacotamento MSIX usando o recurso [Criação Rápida do Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine). Esse recurso está disponível no Windows 10, versão 1709 em diante.
 
-Para começar, digite 'Hyper-V criação rápida' no menu Iniciar, selecione **MSIX ambiente da ferramenta de empacotamento**e clique em **criar Máquina Virtual**. Depois de concluir o assistente, inicie a ferramenta de empacotamento MSIX na VM do menu Iniciar. Abra ou se você tiver o Gerenciador do Hyper-V, clique em 'Criação rápida...' e ele exibirá a mesma interface do usuário.
+Para começar, digite 'Criação Rápida do Hyper-V' no menu Iniciar, selecione **Ambiente da Ferramenta de Empacotamento MSIX** e clique em **Criar Máquina Virtual**. Depois de concluir o assistente, inicie a Ferramenta de Empacotamento MSIX na VM por meio do menu Iniciar. Ou, se o Gerenciador do Hyper-V estiver aberto, clique em 'Criação Rápida...' e ele exibirá a mesma interface do usuário.
 
-O ambiente de ferramenta de empacotamento de MSIX é uma compilação personalizada do Windows 10 que inclui o aplicativo com a ferramenta de empacotamento MSIX e outros pré-requisitos para que você possa começar rapidamente com as tarefas de configuração limitada.
+O Ambiente da Ferramenta de Empacotamento MSIX é um build personalizado do Windows 10 que inclui o aplicativo da Ferramenta de Empacotamento MSIX e outros pré-requisitos, de modo que você possa começar rapidamente a usar tarefas de configuração limitada.
 
 ![quickCreatepic1](images/quickCreatepic1.png)
 
 > [!NOTE]
-> Este recurso requer o Hyper-V. Você pode aprender mais sobre o Hyper-V e como habilitá-lo [aqui](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v).
+> Este recurso exige o Hyper-V. Saiba mais sobre o Hyper-V e como habilitá-lo [aqui](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v).
 

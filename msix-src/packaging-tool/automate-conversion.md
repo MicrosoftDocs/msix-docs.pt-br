@@ -1,6 +1,6 @@
 ---
-title: Automatizar a conversão dos instaladores do Windows para pacotes MSIX
-description: Automatizar a conversão de instaladores do windows existente usando a interface de linha de comando para gerar pacotes msix
+title: Automatizar a conversão de instaladores do Windows em pacotes MSIX
+description: Automatizar a conversão dos instaladores do Windows existentes usando a interface de linha de comando para gerar pacotes MSIX
 author: mcleanbyron
 ms.author: mcleans
 ms.date: 09/07/2018
@@ -9,19 +9,19 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4408381a0ebbcc7fbdad7c517c1b64bbec2254da
-ms.sourcegitcommit: 67e56f5414857671c47334c65d636d531632b8f3
-ms.translationtype: MT
+ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "58900168"
 ---
-# <a name="automate-conversion-of-windows-installers-to-msix-packages"></a>Automatizar a conversão dos instaladores do Windows para pacotes MSIX
+# <a name="automate-conversion-of-windows-installers-to-msix-packages"></a>Automatizar a conversão de instaladores do Windows em pacotes MSIX
 
-<div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">Obter a ferramenta de empacotamento MSIX</a></p></div>
+<div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">Obter a Ferramenta de Empacotamento MSIX</a></p></div>
 
-Ferramenta de empacotamento MSIX dá suporte à interface de linha de comando para a criação de pacotes de aplicativos MSIX que permite ao usuário automatizar o reempacotamento e fazendo conversões em massa com um simple script do PowerShell.
+A Ferramenta de Empacotamento MSIX dá suporte à interface de linha de comando para a criação de pacotes de aplicativos MSIX, que permite ao usuário automatizar o reempacotamento e fazer conversões em massa com um script simples do PowerShell.
 
-Abaixo está um script do powershell simples que cria modelos correspondentes para cada instalador em um caminho de pasta usando um modelo de conversão de exemplo e passa os modelos para a ferramenta de empacotamento MSIX para criar pacotes de MSIX.
+Veja abaixo um script simples do PowerShell que, usando um modelo de conversão de exemplo, cria modelos correspondentes para cada instalador em um caminho de pasta e passa os modelos à Ferramenta de Empacotamento MSIX para a criação de pacotes MSIX.
 
 
 ```ps1

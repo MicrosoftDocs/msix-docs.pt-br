@@ -1,75 +1,75 @@
 ---
-title: Visão geral da ferramenta de empacotamento MSIX
-description: Documento de visão geral sobre como começar com a ferramenta de empacotamento Msix
+title: Visão geral da Ferramenta de Empacotamento MSIX
+description: Documento de visão geral sobre como começar a usar a Ferramenta de Empacotamento MSIX
 author: mcleanbyron
 ms.author: mcleans
 ms.date: 02/19/2019
 ms.topic: article
-keywords: Windows 10, uwp, msix
+keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
 ms.openlocfilehash: 3832cdceab23506da7ed16f3d07aa070222e5c0b
-ms.sourcegitcommit: bc3f2bf9fe105576d0cc047d95b3f0de36fbc8b9
-ms.translationtype: MT
+ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "66400695"
 ---
 # <a name="msix-packaging-tool"></a>Ferramenta de Empacotamento MSIX 
 
-<div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">Obter a ferramenta de empacotamento MSIX</a></p></div>
+<div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">Obter a Ferramenta de Empacotamento MSIX</a></p></div>
 
-A ferramenta de empacotamento MSIX permite que você reempacotar os aplicativos Win32 existentes para o formato MSIX. Ele oferece uma interface do usuário interativo e uma linha de comando para conversões e lhe dá a habilidade de converter um aplicativo sem a necessidade de código-fonte. Queremos permitir que os profissionais de TI converter seus ativos existentes para MSIX, para fornecer-lhes uma maneira melhor de fazer o empacotamento e gerenciamento de aplicativo.
+A Ferramenta de Empacotamento MSIX permite que você empacote novamente os aplicativos Win32 existentes para o formato MSIX. Ela oferece uma interface do usuário interativa e uma linha de comando para conversões e proporciona a capacidade de converter um aplicativo sem a necessidade do código-fonte. Queremos permitir que os Profissionais de TI convertam seus ativos existentes para MSIX, visando fornecer a eles uma maneira melhor de fazer o empacotamento e o gerenciamento de aplicativos.
 
-Ferramenta de empacotamento MSIX agora está disponível da Microsoft Store. Você pode executar seus instaladores da área de trabalho por essa ferramenta e obter um pacote MSIX que podem ser instalados em seu computador.
+A Ferramenta de Empacotamento MSIX agora está disponível na Microsoft Store. Execute os instaladores da área de trabalho por meio dessa ferramenta e obtenha um pacote MSIX que pode ser instalado no computador.
 
-Interessado ser insider uma ferramenta de empacotamento MSIX, clique em [aqui](packaging-tool/insider-program.md) para obter mais detalhes.
+Caso esteja interessado em ser um Participante do programa Ferramenta de Empacotamento MSIX, clique [aqui](packaging-tool/insider-program.md) para obter mais detalhes.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Windows 10, versão 1809 (ou posterior)
-- Participação no programa Windows Insider (se você estiver usando um build do Insider)
-- Um alias MSA (conta) da Microsoft válido para acessar o aplicativo da Microsoft Store 
-- Privilégios de administrador no seu computador para executar a ferramenta
+- Participação no Programa Windows Insider (caso esteja usando um build do Insider)
+- Um alias válido da MSA (conta Microsoft) para acessar o aplicativo na Microsoft Store 
+- Privilégios de administrador no computador para executar a ferramenta
  
  ## <a name="install"></a>Instalar
  
-Para instalar a ferramenta de empacotamento MSIX da Microsoft Store, acesse [aqui](https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf), tornando-se de que você está conectado com a MSA que é usada para o seu programa do Windows Insider. Em seguida, vá para a página de descrição de produto e clique no ícone de instalação para iniciar a instalação.
+Para instalar a Ferramenta de Empacotamento MSIX por meio da Microsoft Store, acesse [aqui](https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf), verificando se você está conectado com a MSA que é usada para o Programa Windows Insider. Em seguida, acesse a página de descrição do produto e clique no ícone Instalar para iniciar a instalação.
 
-Ferramenta de empacotamento MSIX também pode ser baixada para uso offline na empresa da Microsoft Store para empresas [portal da web](https://businessstore.microsoft.com/). Você pode aprender mais sobre a distribuição off-line [aqui](https://docs.microsoft.com/en-us/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app).
+A Ferramenta de Empacotamento MSIX também pode ser baixada para uso offline no [portal da Web](https://businessstore.microsoft.com/) da Microsoft Store para Empresas. Saiba mais sobre a distribuição offline [aqui](https://docs.microsoft.com/en-us/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app).
 
  
-## <a name="latest-public-version---120194020"></a>Versão mais recente do público - 1.2019.402.0
+## <a name="latest-public-version---120194020"></a>Última versão pública – 1.2019.402.0
 
 ### <a name="new-features"></a>Novos recursos:
 
-- Capacidade de converter em uma máquina remota - [obter mais informações](packaging-tool/remote-conversion-setup.md)
+- Capacidade de conversão em um computador remoto – [mais informações](packaging-tool/remote-conversion-setup.md)
 - Melhor experiência de gerenciamento no editor de pacote
     - Recomendações de controle de versão automático ao salvar no editor de pacote
-    - Agora dá suporte à adição de pasta existente para o pacote no VFS
-- Usuário pode especificar códigos de saída de válidos conhecidos para conversões de CLI
-- Adicionada a capacidade para o carimbo de data / hora seu pacote assinado em todos os fluxos de trabalho em que a assinatura está disponível no momento 
-    - Você pode especificar sua URL de carimbo de data / hora padrão e o tipo de servidor de carimbo de data / hora na página de configurações de ferramenta
-- Lógica de geração de AppID atualizada e validação adicional adicionada para o aplicativo e o nome do pacote 
+    - Agora dá suporte à adição de pasta existente ao pacote no VFS
+- O usuário pode especificar códigos de saída válidos conhecidos para conversões da CLI
+- Adição da capacidade de aplicar um carimbo de data/hora ao pacote assinado em todos os fluxos de trabalho em que a assinatura esteja disponível no momento 
+    - Você pode especificar a URL do carimbo de data/hora padrão e o tipo de servidor de carimbo de data/hora na página Configurações da ferramenta
+- Atualização da lógica de geração da AppID e adição da validação extra ao aplicativo e ao nome do pacote 
 
-Você pode encontrar o histórico completo das notas de versão da ferramenta de empacotamento MSIX [aqui](packaging-tool/release-notes/history.md).
+Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](packaging-tool/release-notes/history.md).
 
  ## <a name="tasks"></a>Tarefas
  
-Aqui está o que você pode esperar ser capaz de fazer com essa ferramenta:
+Isto é o que você pode esperar estar apto a fazer com essa ferramenta:
  
-- Empacotar o aplicativo favorito (msi, exe, App-V 5. x e scripts personalizados) no formato MSIX iniciando a ferramenta e selecionando o **pacote de aplicativo** ícone.
-- Criar um pacote de modificação de um pacote MSIX iniciando a ferramenta e selecionando o **pacote de modificação** ícone. 
-- Abra seu pacote MSIX para exibir e editar suas propriedades/conteúdo selecionando o **editor de pacote** ícone, navegando até o pacote MSIX e selecionando **Abrir pacote**.
+- Empacotar seu aplicativo favorito (msi, exe, App-V 5.x e scripts personalizados) no formato MSIX iniciando a ferramenta e selecionando o ícone do **pacote de aplicativos**.
+- Criar um pacote de modificação para um Pacote MSIX iniciando a ferramenta e selecionando o ícone do **Pacote de modificação**. 
+- Abrir seu pacote MSIX para exibir e editar o conteúdo/as propriedades selecionando o ícone do **Editor de pacote**, procurando o pacote MSIX e selecionando **Abrir pacote**.
 
 ## <a name="try-it-out"></a>Experimente 
 
-Os artigos a seguir estão os tutoriais sobre como usar a ferramenta de empacotamento MSIX para converter os aplicativos da área de trabalho: 
+Os seguintes artigos são tutoriais sobre como usar a Ferramenta de Empacotamento MSIX para converter os aplicativos da área de trabalho: 
 
 | Artigo | Descrição |
 |-------|-------------|
-| [Criar pacote MSIX de um arquivo MSI/App-V](packaging-tool/create-app-package-MSI-VM.md) | Este tutorial percorrer como usar a interface de usuário da ferramenta de empacotamento MSIX para converter seus aplicativos de área de trabalho (particularmente os instaladores, como MSI, EXE ou App-V) para um pacote MSIX. |
-| [Criar pacote MSIX de outro tipo de instalador](packaging-tool/create-other-installer.md) | Este tutorial passarão a utilização da interface do usuário da ferramenta de empacotamento MSIX para converter seu aplicativo da área de trabalho (instaladores como scripts em lotes, o PowerShell etc) para um pacote MSIX. |
-| [Crie um pacote MSIX usando a interface de linha de comando da ferramenta de empacotamento MSIX](packaging-tool/package-conversion-cli.md) | Este tutorial percorrer como usar a interface de linha de comando da ferramenta de empacotamento MSIX para converter seu aplicativo da área de trabalho a um pacote MSIX. |
-| [Automatizar a conversão de pacote MSIX](packaging-tool/automate-conversion.md) | Este tutorial sobre como você pode usar a interface de linha de comando para automatizar a conversão de aplicativos da área de trabalho em pacotes MSIX. |
-| [Criar pacote MSIX em um dispositivo remoto](packaging-tool/remote-conversion-setup.md) | Este artigo fornece as instruções necessárias para executar a conversão de aplicativos da área de trabalho em pacotes MSIX em um dispositivo remoto. |
+| [Criar um pacote MSIX com base em um arquivo MSI/App-V](packaging-tool/create-app-package-MSI-VM.md) | Este tutorial descreverá como usar a interface do usuário da Ferramenta de Empacotamento MSIX para converter seus aplicativos da área de trabalho (particularmente, instaladores como MSI, EXE ou App-V) em um Pacote MSIX. |
+| [Criar um pacote MSIX com base em outros tipos de instalador](packaging-tool/create-other-installer.md) | Este tutorial descreverá como usar a interface do usuário da Ferramenta de Empacotamento MSIX para converter seus aplicativos da área de trabalho (instaladores como scripts em lotes, PowerShell etc.) em um Pacote MSIX. |
+| [Criar um pacote MSIX usando a interface de linha de comando da Ferramenta de Empacotamento MSIX](packaging-tool/package-conversion-cli.md) | Este tutorial descreverá como usar a interface de linha de comando da Ferramenta de Empacotamento MSIX para converter seus aplicativos da área de trabalho em um Pacote MSIX. |
+| [Automatizar a conversão de pacote MSIX](packaging-tool/automate-conversion.md) | Este tutorial abordará como você pode usar a interface de linha de comando para automatizar a conversão de aplicativos da área de trabalho em Pacotes MSIX. |
+| [Criar um pacote MSIX em um computador remoto](packaging-tool/remote-conversion-setup.md) | Este artigo fornecerá as instruções necessárias para executar a conversão de aplicativos da área de trabalho em pacotes MSIX em um dispositivo remoto. |

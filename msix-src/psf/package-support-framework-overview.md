@@ -1,50 +1,50 @@
 ---
 author: mcleanbyron
-Description: A estrutura de suporte de pacote ajuda a corrigir problemas que impedem que seu aplicativo da área de trabalho seja executado em um contêiner de MSIX.
+Description: O Package Support Framework ajuda você a corrigir problemas que impedem que seu aplicativo da área de trabalho seja executado em um contêiner MSIX.
 title: PSF (estrutura de suporte do pacote)
 ms.author: mcleans
 ms.date: 09/05/2018
 ms.topic: article
-keywords: Windows 10, uwp, msix
+keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: f009690a704347e70db716b5491a873a820a0434
-ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
-ms.translationtype: MT
+ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "65985916"
 ---
 # <a name="package-support-framework"></a>PSF (estrutura de suporte do pacote)
 
-A estrutura de suporte do pacote é um kit de software livre que ajuda você a aplicar correções para o seu aplicativo win32 quando você não tem acesso ao código-fonte, para que ele pode ser executado em um contêiner de MSIX. A estrutura de suporte de pacote ajuda seu aplicativo siga as práticas recomendadas do ambiente moderno do tempo de execução.
+O Package Support Framework é um kit de software livre que ajuda você a aplicar correções ao seu aplicativo Win32 quando você não tem acesso ao software livre, de modo que ele possa ser executado em um contêiner MSIX. O Package Support Framework ajuda seu aplicativo a seguir as melhores práticas do ambiente moderno do tempo de execução.
 
-Para criar a estrutura de suporte do pacote, aproveitamos os [desvios](https://www.microsoft.com/en-us/research/project/detours) tecnologia que é uma estrutura de software livre desenvolvida pela Microsoft Research (MSR) e ajuda com o redirecionamento de API e interceptação.
+Para criar o Package Support Framework, aproveitamos a tecnologia [Detours](https://www.microsoft.com/en-us/research/project/detours), que é uma estrutura de software livre desenvolvida pela MSR (Microsoft Research) e que ajuda com o redirecionamento de API e a vinculação.
 
-Essa estrutura é um software livre, leve, e você pode usá-lo para solucionar problemas de aplicativo rapidamente. Ele também oferece a oportunidade de consultar com a comunidade em todo o mundo e criar com base em investimentos de outras pessoas.
+Essa estrutura é software livre, leve e você pode usá-la para solucionar problemas do aplicativo rapidamente. Ela também oferece a oportunidade de consultar a comunidade em todo o mundo e aproveitar os investimentos de outras pessoas.
 
-Para obter um guia passo a passo, consulte [tempo de execução de aplicar correções a um pacote MSIX usando a estrutura de suporte do pacote](https://docs.microsoft.com/windows/uwp/porting/package-support-framework).
+Para obter um guia passo a passo, confira [Aplicar correções em tempo de execução em um pacote MSIX usando o Package Support Framework](https://docs.microsoft.com/windows/uwp/porting/package-support-framework).
 
-## <a name="a-quick-look-inside-of-the-package-support-framework"></a>Uma olhada rápida dentro a estrutura de suporte do pacote
+## <a name="a-quick-look-inside-of-the-package-support-framework"></a>Uma visão rápida do Package Support Framework
 
-A estrutura de suporte do pacote contém um executável, uma DLL do Gerenciador de tempo de execução e um conjunto de correções de tempo de execução.
+O Package Support Framework contém um executável, uma DLL do gerenciador de tempo de execução e um conjunto de correções em tempo de execução.
 
 ![PSF (estrutura de suporte do pacote)](images/package-support-framework.png)
 
-Veja como funciona. Você criará um arquivo de configuração que especifica as correções que você deseja aplicar ao seu aplicativo. Em seguida, você modificará o pacote para apontar para o arquivo executável do iniciador de estrutura de suporte do pacote (PSF).
+Veja como funciona. Você criará um arquivo de configuração que especifica as correções que deseja aplicar ao seu aplicativo. Em seguida, você modificará o pacote para apontar para o arquivo executável do iniciador do PSF (Package Support Framework).
 
-Quando os usuários iniciam seu aplicativo, o iniciador de estrutura de suporte do pacote é o primeiro executável que é executado. Ele lê o arquivo de configuração e injeta as correções de tempo de execução e a DLL do Gerenciador de tempo de execução do processo do aplicativo. O Gerenciador de tempo de execução se aplica a correção quando ela é necessária para o aplicativo seja executado dentro de um contêiner MSIX.
+Quando os usuários iniciarem seu aplicativo, o iniciador do Package Support Framework será o primeiro executável que será executado. Ele lê o arquivo de configuração e injeta as correções em tempo de execução e a DLL do gerenciador de tempo de execução no processo do aplicativo. O gerenciador de tempo de execução aplica a correção quando ela é necessária para que o aplicativo seja executado em um contêiner MSIX.
 
-![Injeção de DLL de estrutura de suporte de pacote](images/package-support-framework-2.png)
+![Injeção de DLL do Package Support Framework](images/package-support-framework-2.png)
 
-## <a name="how-to-use-the-package-support-framework"></a>Como usar a estrutura de suporte do pacote
+## <a name="how-to-use-the-package-support-framework"></a>Como usar o Package Support Framework
 
-Depois de criar um pacote para seu aplicativo, instalar e executá-lo e observar seu comportamento. Você pode receber mensagens de erro que podem ajudá-lo a identificar um problema de compatibilidade. Você também pode usar [Process Monitor](https://docs.microsoft.com/sysinternals/downloads/procmon) para identificar problemas.
+Depois de criar um pacote para seu aplicativo, instale e execute-o e observe seu comportamento. Você poderá receber mensagens de erro que podem ajudá-lo a identificar um problema de compatibilidade. Use também o [Monitor do Processo](https://docs.microsoft.com/sysinternals/downloads/procmon) para identificar problemas.
 
-Depois de encontrar um problema, você pode verificar nossos [GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework/) página uma correção. Se você encontrar um, você pode aplicá-lo ao seu pacote. Nossos [guia passo a passo](https://docs.microsoft.com/windows/uwp/porting/package-support-framework) mostra como fazer isso. Ela também mostrará como usar o depurador do Visual Studio para depurar seu aplicativo e verificar se a correção está funcionando e que ela resolveu o problema de compatibilidade.
+Depois de encontrar um problema, confira nossa página do [GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework/) para obter uma correção. Caso encontre uma, aplique-a ao seu pacote. Nosso [Guia passo a passo](https://docs.microsoft.com/windows/uwp/porting/package-support-framework) mostra como fazer isso. Ele também mostrará como usar o depurador do Visual Studio para depurar seu aplicativo e verificar se a correção está funcionando e se ela resolveu o problema de compatibilidade.
 
-Se você não encontrar uma correção de tempo de execução que resolve o problema, você pode criar um. Para fazer o que, você identificará qual função chamadas falham quando seu aplicativo é executado em um contêiner de MSIX. Em seguida, você pode criar funções de substituição que você gostaria que o Gerenciador de tempo de execução para chamar em vez disso. Isso lhe dá uma oportunidade para substituir a implementação de uma função com o comportamento está de acordo com as regras do ambiente moderno do tempo de execução.
+Caso não encontre uma correção em tempo de execução que resolva o problema, crie uma. Para fazer isso, você identificará quais chamadas de função falham quando seu aplicativo é executado em um contêiner MSIX. Em seguida, você poderá criar funções de substituição que você deseja que sejam chamadas pelo gerenciador de tempo de execução. Isso oferecerá uma oportunidade de substituir a implementação de uma função por um comportamento que esteja de acordo com as regras do ambiente moderno do tempo de execução.
 
-## <a name="get-started-with-the-package-support-framework"></a>Comece com a estrutura de suporte do pacote
+## <a name="get-started-with-the-package-support-framework"></a>Introdução ao Package Support Framework
 
-Se você estiver pronto para começar a usar a estrutura de suporte do pacote para solucionar problemas de compatibilidade, consulte nosso guia passo a passo em [tempo de execução de aplicar correções a um pacote MSIX usando a estrutura de suporte do pacote](https://docs.microsoft.com/windows/uwp/porting/package-support-framework).
+Se você estiver pronto para começar a usar o Package Support Framework para solucionar problemas de compatibilidade, confira nosso guia passo a passo em [Aplicar correções em tempo de execução a um pacote MSIX usando o Package Support Framework](https://docs.microsoft.com/windows/uwp/porting/package-support-framework).

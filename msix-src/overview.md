@@ -5,14 +5,14 @@ author: mcleanbyron
 ms.author: mcleans
 ms.date: 09/12/2018
 ms.topic: article
-keywords: Windows 10, uwp, msix
+keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 73f659cd827bbcbb69c7f6179422a692dc1e50aa
-ms.sourcegitcommit: 9bbb116d1984082123f694130b4d6cc078fa8510
-ms.translationtype: MT
+ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "59983348"
 ---
 # <a name="what-is-msix"></a>O que é MSIX?
@@ -34,11 +34,11 @@ ms.locfileid: "59983348"
     :::column-end:::
 :::row-end:::
 
-O MSIX é o formato de pacote do aplicativo do Windows que oferece uma experiência de empacotamento moderna para todos os aplicativos do Windows. O formato de pacote MSIX preserva a funcionalidade de pacotes existentes do aplicativo e/ou instalar arquivos, além de habilitar novos e modernos recursos de empacotamento e implantação para aplicativos Win32, WPF e WinForm.
+O MSIX é o formato de pacote do aplicativo do Windows que oferece uma experiência de empacotamento moderna para todos os aplicativos do Windows. O formato de pacote MSIX preserva a funcionalidade de pacotes de aplicativos e/ou arquivos de instalação existentes, além de habilitar novos e modernos recursos de empacotamento e implantação para aplicativos Win32, WPF e WinForm.
 
-Use a ferramenta de empacotamento MSIX para criar um pacote MSIX para qualquer aplicativo do Windows, antigo ou novo. A ferramenta de empacotamento MSIX simplifica a experiência de empacotamento, oferecendo uma interface do usuário interativa ou linha de comando para converter e empacotar aplicativos do Windows. A ferramenta de empacotamento MSIX está disponível em que a Microsoft Store, suporte para as compilações mais recentes do Windows Insider.
+Use a Ferramenta de Empacotamento MSIX para criar um pacote MSIX para qualquer aplicativo do Windows, antigo ou novo. A Ferramenta de Empacotamento MSIX simplifica a experiência de empacotamento, oferecendo uma interface do usuário interativa ou uma linha de comando para converter e empacotar aplicativos do Windows. A Ferramenta de Empacotamento MSIX está disponível na Microsoft Store, compatível com os builds mais recentes do Usuário do Windows Insider.
 
-Com o SDK de MSIX de software livre, os pacotes MSIX são mais versáteis e independente de plataforma. O SDK fornece todas as APIs necessárias para verificar, validar e descompactar um pacote do aplicativo em qualquer plataforma. 
+Com o SDK do MSIX de software livre, os pacotes MSIX são mais versáteis e independentes de plataforma. O SDK fornece todas as APIs necessárias para verificar, validar e desempacotar um pacote do aplicativo em qualquer plataforma. 
 
 
 
