@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: eb1e5400617559a3de85ce40a9ae3bf1bfcb13b0
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: d1c68d687e07b4e018358bb32c09c8094e10688f
+ms.sourcegitcommit: 0378a8897e0691bee4d9a957982961a377974856
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67027920"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67250979"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -37,11 +37,10 @@ Se a ferramenta já estiver instalada no computador, verifique a versão instala
 
 ## <a name="current-insider-preview-build"></a>Build atual do Insider Preview
 
-Versão 1.2019.611.0:
+### <a name="version-120196180"></a>Versão 1.2019.618.0
 
-- A restauração das configurações padrão e dos itens de exclusão agora também limpa os códigos de saída e a senha do certificado de autenticação.
-- Correção de um problema em que as primeiras tarefas de inicialização não eram excluídas corretamente.
-- Os atalhos para os arquivos excluídos serão ignorados durante a criação do pacote.
+- Define automaticamente MinVersion para 1709 quando requisitos de controle de versão do Store estiverem desativados nas configurações.
+- Novas pastas podem ser adicionadas em ativos no editor de pacote.
 
 Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](release-notes/history.md).
 
