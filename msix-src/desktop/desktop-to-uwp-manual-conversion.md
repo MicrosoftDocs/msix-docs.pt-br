@@ -3,16 +3,18 @@ Description: Mostra como empacotar manualmente um aplicativo de área de trabalh
 title: Empacotar um aplicativo manualmente (ponte de Desktop)
 ms.date: 05/18/2018
 ms.topic: article
-keywords: windows 10, uwp
+author: dianmsft
+ms.author: diahar
+keywords: Windows 10, UWP, MSIX
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f645df3d1375924303540cd9d1f86402c5f34a3c
-ms.sourcegitcommit: 6173086c11ffeb5fa836da6bd42711a9a626fc0e
+ms.openlocfilehash: 0c3bf9cec02d2db18fba3d6246a740e7d62a401c
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66411394"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555523"
 ---
 # <a name="package-a-desktop-application-manually"></a>Empacotar manualmente um aplicativo da área de trabalho
 

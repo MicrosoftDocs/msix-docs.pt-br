@@ -3,16 +3,18 @@ Description: Crie um pacote de aplicativo do Windows moderno para seu app ou jog
 title: Aplicativos da área de trabalho do pacote
 ms.date: 09/05/2018
 ms.topic: article
-keywords: windows 10, uwp
+author: dianmsft
+ms.author: diahar
+keywords: Windows 10, UWP, MSIX
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8012fd10e45c718cf1136f4da51a7a8cdac5d376
-ms.sourcegitcommit: 0378a8897e0691bee4d9a957982961a377974856
+ms.openlocfilehash: 388de972a2ac97418e2f684c57c7aff550292b9e
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67250937"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555503"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>Aplicativos da área de trabalho do pacote (ponte de Desktop)
 
@@ -34,7 +36,7 @@ Há várias maneiras diferentes de criar um pacote MSIX para seu aplicativo de d
 
 ### <a name="build-an-msix-from-an-existing-app-installer"></a>Criar um MSIX de um instalador de aplicativo existente
 
-Se você já tiver um pacote do aplicativo (por exemplo, um MSI ou o instalador do App-V), é recomendável que você use o [ferramenta de empacotamento MSIX](../mpt-overview.md) reempacotar seu aplicativo de área de trabalho existente para o formato MSIX. Ele oferece uma interface do usuário interativo e uma linha de comando para conversões e lhe dá a habilidade de converter um aplicativo sem a necessidade de código-fonte. 
+Se você já tiver um pacote do aplicativo (por exemplo, um MSI ou o instalador do App-V), é recomendável que você use o [ferramenta de empacotamento MSIX](../mpt-overview.md) reempacotar seu aplicativo de área de trabalho existente para o formato MSIX. Ela oferece uma interface do usuário interativa e uma linha de comando para conversões e proporciona a capacidade de converter um aplicativo sem a necessidade do código-fonte. 
 
 Uma ferramenta anterior chamada a [Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md) também ainda está disponível para reempacotamento de um pacote de aplicativo da área de trabalho existente. No entanto, essa ferramenta foi preterida e é recomendável que você use a ferramenta de empacotamento MSIX.
 

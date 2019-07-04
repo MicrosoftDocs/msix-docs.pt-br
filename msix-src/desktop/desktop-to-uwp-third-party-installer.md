@@ -1,19 +1,21 @@
 ---
 Description: Este guia fornece uma lista de produtos de terceiros e instaladores de aplicativos da área de trabalho do pacote.
-title: Empacotar um aplicativo da área de trabalho usando os instaladores de terceiros
+title: Formar pacote de um aplicativo da área de trabalho usando instaladores de terceiros
 ms.date: 06/17/2019
 ms.topic: article
+author: dianmsft
+ms.author: diahar
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e07d44d2a809a183d57b59f3121683bf0e2ab971
-ms.sourcegitcommit: 0378a8897e0691bee4d9a957982961a377974856
+ms.openlocfilehash: 586314c33e3b33bdcfdd15ad95d415233355c99e
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67253481"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555548"
 ---
-# <a name="package-a-desktop-app-using-third-party-installers"></a>Empacotar um aplicativo da área de trabalho usando os instaladores de terceiros
+# <a name="package-a-desktop-app-using-third-party-installers"></a>Formar pacote de um aplicativo da área de trabalho usando instaladores de terceiros
 
 Abaixo está uma lista de produtos de terceiros populares e instaladores que dão suporte a capacidade de empacotar um aplicativo da área de trabalho. Você pode usá-los para gerar instaladores MSI ou pacotes do aplicativo com apenas alguns cliques. Embora não produza documentação sobre como usar essas ferramentas, visite seus sites para saber mais.
 

@@ -3,14 +3,16 @@ Description: Teste seu aplicativo para Windows 10 no modo S.
 title: Testar seu aplicativo do Windows para o Windows 10 S
 ms.date: 05/11/2017
 ms.topic: article
-keywords: windows 10 S, uwp
+author: dianmsft
+ms.author: diahar
+keywords: Windows 10 S, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: 548349bbca82694c38509a5f4dc1f14a9c79b82f
-ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
+ms.openlocfilehash: 63803681601e03392273a1606f77c49d17fe11e8
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985566"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555596"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>Testar seu aplicativo do Windows para o Windows 10 no modo S
 
@@ -54,7 +56,7 @@ Esse modo é seguro e não impede que o sistema seja inicializado.
 #### <a name="optional-find-specific-failure-points-in-the-call-stack"></a>(Opcional) Encontrar pontos de falha específicos na pilha de chamadas
 Para encontrar pontos específicos na pilha de chamadas onde ocorrem problemas de bloqueio, adicione esta chave do Registro e depois [configure um ambiente de depuração do modo kernel](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-#span-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanset-up-a-kernel-mode-debugging).
 
-|Chave|Nome|Tipo|Valor|
+|Chave|Nome|type|Valor|
 |--|---|--|--|
 |HKEY_LOCAL_MACHINE\SYSTEM\CurentControlSet\Control\CI| DebugFlags |REG_DWORD | 1 |
 

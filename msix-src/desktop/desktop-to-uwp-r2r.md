@@ -1,25 +1,24 @@
 ---
 Description: Este guia explica como configurar sua solução do Visual Studio para otimizar os binários do aplicativo com as imagens nativas.
 title: Otimize seus aplicativos de área de trabalho do .NET com imagens nativas
-ms.date: 06/11/2018
+ms.date: 07/03/2019
 ms.topic: article
-keywords: Windows 10, o compilador de imagem nativa
+author: dianmsft
+ms.author: diahar
+keywords: Windows 10, uwp, msix, compilador de imagem nativa
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fa6d50f6dbb7e16d00a656f8fd931595a4ce69e
-ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
+ms.openlocfilehash: f49622ad78b50b5cf38918034fda9fbbd9087a11
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985496"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555585"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>Otimize seus aplicativos de área de trabalho do .NET com imagens nativas
 
-> [!NOTE]
-> Algumas informações estão relacionadas a produtos de pré-lançamento que poderão ser substancialmente modificados antes do lançamento comercial. A Microsoft não faz nenhuma garantia, expressa ou implícita, com relação às informações fornecidas aqui.
-
 Você pode melhorar o tempo de inicialização do aplicativo do .NET Framework, pré-compilando os binários. Você pode usar essa tecnologia em aplicativos grandes que você empacotar e distribuir por meio do Microsoft Store. Em alguns casos, observamos uma melhoria de desempenho de 20%. Você pode aprender mais sobre essa tecnologia na [visão geral técnica](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md).
 
-Lançamos uma versão prévia do compilador de imagem nativa como um [pacote do NuGet](https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler). Você pode aplicar esse pacote a qualquer aplicativo .NET Framework que tem como alvo o .NET Framework versão 4.6.2 ou posterior. Esse pacote adiciona uma etapa de compilação de post que inclui uma carga nativa para todos os binários usados pelo seu aplicativo. Essa carga otimizada seja carregada quando o aplicativo é executado no .NET 4.7.2 e posterior enquanto as versões anteriores ainda carregará o código MSIL.
+Lançamos o compilador de imagem nativa como um [pacote do NuGet](https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler). Você pode aplicar esse pacote a qualquer aplicativo .NET Framework que tem como alvo o .NET Framework versão 4.6.2 ou posterior. Esse pacote adiciona uma etapa de compilação de post que inclui uma carga nativa para todos os binários usados pelo seu aplicativo. Essa carga otimizada seja carregada quando o aplicativo é executado no .NET 4.7.2 e posterior enquanto as versões anteriores ainda carregará o código MSIL.
 
 O [.NET framework 4.7.2](https://blogs.msdn.microsoft.com/dotnet/2018/04/30/announcing-the-net-framework-4-7-2/) está incluído na [Windows 10 de abril de 2018 update](https://blogs.windows.com/windowsexperience/2018/04/30/how-to-get-the-windows-10-april-2018-update/). Você também pode instalar esta versão do .NET Framework em PCs que executam o Windows 7 + e Windows Server 2008 R2 +.
 
@@ -72,11 +71,8 @@ Repita essa etapa para `Release/x64` se você quiser produzir x64 binários.
 O compilador de imagem nativa é fornecido como um pacote do NuGet que você precisa adicionar ao projeto do Visual Studio que produz o arquivo executável. Isso é normalmente seu projeto Windows Forms ou WPF. Use este comando do PowerShell para fazer isso.
 
 ```PS
-PM> Install-Package Microsoft.DotNet.Framework.NativeImageCompiler -Version 0.0.1-prerelease-00002  -PRE
+PM> Install-Package Microsoft.DotNet.Framework.NativeImageCompiler -Version 1.0.0
 ```
-
-> [!NOTE]
-> Os pacotes de visualização são publicados em NuGet.org como não listados. Você não encontrá-los procurando no NuGet.org ou usando a UI do Gerenciador de pacotes no Visual Studio. No entanto, você pode instalá-los no Console do Gerenciador de pacotes e quando você restaurar de um computador diferente. Faremos os pacotes totalmente acessível ao publicar a primeira versão de não-preview.
 
 ## <a name="create-a-release-build"></a>Criar um Build de versão
 

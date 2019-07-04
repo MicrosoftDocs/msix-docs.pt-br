@@ -8,34 +8,43 @@ ms.topic: article
 keywords: Windows 10, uwp, msix, ferramenta de empacotamento msix, programa insider
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: ce17fc580b19d9f47f653367184016f5c68774b7
-ms.sourcegitcommit: 0378a8897e0691bee4d9a957982961a377974856
+ms.openlocfilehash: 30370a49eb168353fcadbeeed21d0e2caf399b3e
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67250940"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555631"
 ---
 # <a name="msix-packaging-tool-release-notes"></a>Notas de versão de ferramenta de empacotamento MSIX
 
-### <a name="version-120196180"></a>Versão 1.2019.618.0
+## <a name="version-120197010"></a>Versão 1.2019.701.0
+
+- Correções de bugs para cenários de reinicialização.
+
+## <a name="version-120196210"></a>Versão 1.2019.621.0
+
+- Código de saída para a lista de reinicializações nas configurações inclui os valores padrão comuns.
+- Capacidade de adicionar recursos novos, desconhecidos e personalizados por meio do editor de pacote.
+
+## <a name="version-120196180"></a>Versão 1.2019.618.0
 
 - Define automaticamente MinVersion para quando os requisitos de controle de versão do Store estiverem desativados nas configurações do 1709
 - Novas pastas podem ser adicionadas em ativos no editor de pacote
 
-### <a name="version-120196110"></a>Versão 1.2019.611.0
+## <a name="version-120196110"></a>Versão 1.2019.611.0
 
 - Restaurar as configurações padrão e itens de exclusão agora também limpa os códigos de senha e sair do certificado de assinatura
 - Corrigido um problema em que as primeiras tarefas de inicialização não foram obtendo excluídas corretamente
 - Irá ignorar os atalhos para arquivos excluídos durante a criação do pacote
 
-### <a name="version-120196040"></a>Versão 1.2019.604.0
+## <a name="version-120196040"></a>Versão 1.2019.604.0
 
 - O padrão é Assinando um pacote, se um certificado de assinatura padrão é especificado nas configurações de
 - Permitir códigos negativo instalador seja especificado nas configurações do
 - Respeitar os códigos de saída do instalador do PowerShell
 - Informa ao usuário quando eles precisarem de uma reinicialização do driver
 
-### <a name="version-120195220"></a>Versão 1.2019.522.0
+## <a name="version-120195220"></a>Versão 1.2019.522.0
 
 Novos recursos:
 
@@ -54,18 +63,18 @@ Problemas conhecidos:
 
 ## <a name="version-120194020---public-release"></a>Versão 1.2019.402.0 - lançamento público
 
- - Capacidade de converter em uma máquina remota - [obter mais informações](../remote-conversion-setup.md)
+ - Capacidade de conversão em um computador remoto – [mais informações](../remote-conversion-setup.md)
  - Validar o ProgId COM valores de tipo, as entradas de classe COM e remover registros inválidos de COM
  - Atualizar as ferramentas do SDK do Windows que são redistribuídas na ferramenta de empacotamento MSIX 
  - Dividir automaticamente argumentos em uma campos separados para manifestada executáveis de com
  - Tratamento robusto de argumentos do instalador do PowerShell
  - Serviço de atualização do Windows desabilitando feito uma etapa necessária na fase de preparação de máquina
-- Adicionada a capacidade para o carimbo de data / hora seu pacote assinado em todos os fluxos de trabalho em que a assinatura está disponível no momento
-    - Você pode especificar sua URL de carimbo de data / hora padrão e o tipo de servidor de carimbo de data / hora na página de configurações de ferramenta 
+- Adição da capacidade de aplicar um carimbo de data/hora ao pacote assinado em todos os fluxos de trabalho em que a assinatura esteja disponível no momento
+    - Você pode especificar a URL do carimbo de data/hora padrão e o tipo de servidor de carimbo de data/hora na página Configurações da ferramenta 
 - As pastas vazias criadas no VFS do Editor de pacote persistirão depois de salvar o pacote
 - Usuário pode especificar códigos de saída esperado válido para conversões de CLI
 - Pastas vazias, geradas durante uma conversão serão mantido por meio de empacotamento
-- Lógica de geração de AppID atualizada e validação adicional adicionada para o aplicativo e o nome do pacote 
+- Atualização da lógica de geração da AppID e adição da validação extra ao aplicativo e ao nome do pacote 
 - Melhor experiência de gerenciamento no editor de pacote
 - Recomendações de controle de versão automático ao salvar no editor de pacote
 - Adicionada a capacidade de usar "." o campo de versão de progresso
