@@ -7,12 +7,12 @@ ms.date: 04/04/2019
 ms.topic: article
 keywords: MSIX, MPT, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: eaafc015baa320eacfd977e070f7fafdd8c8990e
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: 1ffff072b712545a0e956dfae1addc2e49ceeee7
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "65795265"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555535"
 ---
 # <a name="create-an-msix-package-with-all-other-installer-types"></a>Criar um pacote MSIX com todos os outros tipos de instaladores
 
@@ -98,6 +98,9 @@ Quando terminar de preparar o computador, clique em **Avançar**.
 
 Neste momento, se você não nos forneceu um instalador, siga em frente e execute todos os instaladores necessários. Isso inclui programas e scripts personalizados. A ferramenta está monitorando as alterações no dispositivo, incluindo os itens que estão sendo instalados no dispositivo.
 
+> [!NOTE]
+> Durante a conversão, os instaladores podem executar os serviços. Os serviços não são capturados durante a conversão. Como resultado, o aplicativo pode ser instalado, mas ser executado com problemas.
+
 ## <a name="manage-first-launch-tasks"></a>Gerenciar as primeiras tarefas de inicialização
 
 Essa página mostra os executáveis do aplicativo capturados pela ferramenta. Se houver vários aplicativos, marque a caixa que corresponde ao ponto de entrada principal. Se o aplicativo .exe não for exibido aqui, procure-o manualmente e execute-o.
@@ -115,4 +118,4 @@ Clique em **Avançar** e você verá um pop-up que solicitará a confirmação d
 - Caso deseje continuar para editar o conteúdo e as propriedades do pacote antes de salvar o pacote MSIX, selecione **Editor de pacote** e ir para o [editor de pacote]("https://docs.microsoft.com/en-us/windows/msix/packaging-tool/package-editor")
 - Clique em **Criar** para criar o pacote MSIX.
 
-Você verá o pop-se quando o pacote for criado. Esse pop-up incluirá o nome, o fornecedor, a localização de salvamento dos logs e a localização de salvamento do pacote recém-criado. Feche esse pop-up e seja redirecionado para a página inicial. Selecione também um editor de pacote para ver e modificar as propriedades e o conteúdo do pacote.
+Depois que o pacote for criado, a ferramenta exibirá uma janela pop-up com o nome, o distribuidor, o local de salvamento dos logs e o local de salvamento do pacote recém-criado. Você pode fechar essa janela pop-up para ser redirecionado à página de boas-vindas. Você também pode selecionar o **Editor de pacote** para ver e modificar as propriedades e o conteúdo do pacote.

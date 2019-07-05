@@ -1,4 +1,20 @@
-# <a name="signing-windows-10-app-package"></a>Como assinar o pacote do aplicativo do Windows 10 
+---
+Description: Este artigo descreve os requisitos de assinatura para aplicativos do Windows 10.
+title: Assinar um pacote do aplicativo do Windows 10
+ms.date: 07/03/2019
+ms.topic: article
+author: dianmsft
+ms.author: diahar
+keywords: Windows 10, UWP, MSIX
+ms.localizationpriority: medium
+ms.openlocfilehash: e568a8371c7f68383bd57f10e999d1398e11825a
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555474"
+---
+# <a name="sign-a-windows-10-app-package"></a>Assinar um pacote do aplicativo do Windows 10 
 
 A assinatura de pacote do aplicativo é uma etapa necessária no processo de criação de um pacote do aplicativo do Windows 10 que pode ser implantado. O Windows 10 exige que todos os aplicativos sejam assinados com um certificado de assinatura de código válido. 
 

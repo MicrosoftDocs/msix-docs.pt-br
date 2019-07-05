@@ -3,17 +3,17 @@ title: Programa Insider da Ferramenta de Empacotamento MSIX
 description: Saiba mais sobre o Programa Insider da Ferramenta de Empacotamento e como ingressar nele
 author: c-don
 ms.author: cdon
-ms.date: 02/14/2019
+ms.date: 06/25/2019
 ms.topic: article
 keywords: Windows 10, UWP, MSIX, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d1c68d687e07b4e018358bb32c09c8094e10688f
-ms.sourcegitcommit: 0378a8897e0691bee4d9a957982961a377974856
+ms.openlocfilehash: ad6e30c3964dae41d6d479aa292c69dffb4e9af8
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67250979"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555645"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -37,10 +37,9 @@ Se a ferramenta já estiver instalada no computador, verifique a versão instala
 
 ## <a name="current-insider-preview-build"></a>Build atual do Insider Preview
 
-### <a name="version-120196180"></a>Versão 1.2019.618.0
+Versão 1.2019.701.0:
 
-- Define automaticamente MinVersion para 1709 quando requisitos de controle de versão do Store estiverem desativados nas configurações.
-- Novas pastas podem ser adicionadas em ativos no editor de pacote.
+- Correções de bug para cenários de reinicialização.
 
 Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](release-notes/history.md).
 

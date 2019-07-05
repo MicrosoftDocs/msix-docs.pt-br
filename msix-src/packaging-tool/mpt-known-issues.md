@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Ferramenta de Empacotamento MSIX, problemas conhecidos, solução de problemas
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 79b06fc4e3e0ff0600f6e2ab85ec27c9e3a5840c
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: 6da45ad324e55dfbe3a95ec76993f28a38380da6
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "59468288"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555621"
 ---
 # <a name="known-issues-and-troubleshooting"></a>Problemas conhecidos e soluções de problemas
 
@@ -55,6 +55,7 @@ Os pacotes de Recurso sob Demanda obtidos individualmente podem ser instalados u
 
 - Não há suporte para a reinicialização do computador durante a instalação do aplicativo. Ignore a solicitação de reinicialização, se possível, ou passe um argumento ao instalador para não exigir uma reinicialização.
 - Os instaladores podem exigir que estruturas ou drivers específicos sejam instalados antes da instalação. Para pesquisar as estruturas e os drivers no computador que estão sendo usados para converter aplicativos, use as seguintes consultas: ```driverquery /v | Out-File``` ou ```driverquery /v | Out-File "path to text file"```
+- Durante a conversão, os instaladores podem executar os serviços. Os serviços não são capturados durante a conversão. Como resultado, o aplicativo pode ser instalado, mas ser executado com problemas.
 
 # <a name="troubleshooting"></a>Solução de problemas
 

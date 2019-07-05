@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 457f9a0358cb8e72abd9539d1a4fe3131ffd2a54
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: 2997fa46ebf2c7c027d20772e619234a93a821e6
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "66400811"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555571"
 ---
 # <a name="create-an-msix-package-from-a-desktop-installer-msi-exe-or-app-v-on-a-vm"></a>Criar um pacote MSIX com base em um instalador da área de trabalho (MSI, EXE ou App-V) em uma VM
 
@@ -23,6 +23,9 @@ Use a [Ferramenta de Empacotamento MSIX](../mpt-overview.md) para criar um pacot
 
 - Ela precisa ser configurada para [receber comandos remotos](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/remotely-manage-hyper-v-hosts) (execute o comando [Enable-PSRemoting](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Enable-PSRemoting?view=powershell-5.1) na VM)
 - Ele precisa executar o Windows 10, versão 1809 ou uma versão posterior do Windows.
+
+> [!NOTE]
+> No momento, a Ferramenta de Empacotamento MSIX é compatível com o App-V 5.1. Se você tiver um pacote com o App-V 4.x, recomendamos que o converta para o App-V 5.1 antes de usar a Ferramenta de Empacotamento MSIX para converter em MSIX. 
 
 Quando a ferramenta for iniciada pela primeira vez, você deverá fornecer consentimento para enviar dados telemétricos. É importante observar que os dados de diagnóstico que você compartilha são provenientes apenas do aplicativo e nunca são usados para identificá-lo ou contatá-lo. Isso apenas nos ajuda a corrigir as coisas mais rapidamente para você.
 
@@ -107,6 +110,9 @@ Quando terminar de preparar o computador, clique em **Avançar**.
 
 ![images/pic6](images/pic6.png)
 
+> [!NOTE]
+> Durante a conversão, os instaladores podem executar os serviços. Os serviços não são capturados durante a conversão. Como resultado, o aplicativo pode ser instalado, mas ser executado com problemas.
+
 - Esta é a fase de instalação em que a ferramenta monitora e captura as operações de instalação do aplicativo.
 - A ferramenta iniciará o instalador na Janela da Máquina Virtual que ele abriu em um estágio anterior, e você precisará passar pelo assistente de instalação para instalar o aplicativo.
     - Verifique se o caminho de instalação corresponde ao que foi definido anteriormente na página de informações do pacote.
@@ -141,3 +147,4 @@ Clique em **Avançar** e você verá um pop-up que solicitará a confirmação d
 - Clique em **Criar** para criar o pacote MSIX.
 
 Você verá o pop-se quando o pacote for criado. Esse pop-up incluirá o nome, o fornecedor e a localização de salvamento do pacote recém-criado. Feche esse pop-up e seja redirecionado para a página inicial. Selecione também um editor de pacote para ver e modificar as propriedades e o conteúdo do pacote.
+
