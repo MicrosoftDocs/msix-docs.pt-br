@@ -40,8 +40,10 @@
       items:
         - name: Visão geral
           href: mpt-overview.md
-        - name: Modificar o pacote usando o editor de pacote
+        - name: Modificar um pacote usando o editor de pacote
           href: packaging-tool/package-editor.md
+        - name: Editar ícones e ativos
+          href: packaging-tool/edit-icons-and-assets.md
         - name: Suporte ao pacote do MSIX no Windows 10 versão 1709 e posterior
           href: packaging-tool/Support-on-1709-and-later.md
         - name: Práticas recomendadas da Ferramenta de Empacotamento MSIX
