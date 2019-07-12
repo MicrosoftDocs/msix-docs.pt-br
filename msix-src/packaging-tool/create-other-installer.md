@@ -1,18 +1,16 @@
 ---
 title: Criar um pacote de aplicativos com todos os outros instaladores
 description: Criar um pacote MSIX com nossa ferramenta de conversão com todos os outros instaladores
-author: dianmsft
-ms.author: diahar
 ms.date: 04/04/2019
 ms.topic: article
 keywords: MSIX, MPT, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ffff072b712545a0e956dfae1addc2e49ceeee7
-ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
+ms.openlocfilehash: b0f54a4ee19c801353f0d31854297cec0dc5cfb4
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67555535"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829285"
 ---
 # <a name="create-an-msix-package-with-all-other-installer-types"></a>Criar um pacote MSIX com todos os outros tipos de instaladores
 

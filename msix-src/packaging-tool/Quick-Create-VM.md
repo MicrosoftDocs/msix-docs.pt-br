@@ -1,19 +1,17 @@
 ---
 title: Ambiente de empacotamento MSIX na Criação Rápida do Hyper-V
 description: Crie um ambiente virtual para projetos de empacotamento MSIX usando o recurso Criação Rápida do Hyper-V.
-author: c-don
-ms.author: cdon
 ms.date: 04/04/2019
 ms.topic: article
 keywords: MSIX, MPT, Ferramenta de Empacotamento MSIX, Criação Rápida do Hyper-V
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 807c8467338f8b01aa1643ab570c82e9675b1264
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: f22e81e26cda7c8e94f8f89cc1551b8771f640dd
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "59983418"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829329"
 ---
 # <a name="msix-packaging-environment-on-hyper-v-quick-create"></a>Ambiente de empacotamento MSIX na Criação Rápida do Hyper-V
  

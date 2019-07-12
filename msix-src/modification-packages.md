@@ -1,19 +1,17 @@
 ---
 title: Personalizar seus aplicativos empresariais com pacotes de modificação
 description: Saiba como personalizar seus aplicativos corporativos
-author: mcleanbyron
-ms.author: mcleans
 ms.date: 01/15/2019
 ms.topic: article
-keywords: Windows 10, uwp, msix
+keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 142fce0927d916376733a0380fab6a0dc026a55e
-ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
+ms.openlocfilehash: a36c02d26e8c83ab43ceddd0704c78af68219649
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65795410"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829376"
 ---
 # <a name="customize-your-enterprise-apps-with-modification-packages"></a>Personalizar seus aplicativos empresariais com pacotes de modificação 
 
@@ -25,7 +23,7 @@ No Windows 10 versão 1809, apresentamos um novo tipo de pacote MSIX chamado um 
 
 Pacotes de modificação são projetados para as empresas que não possuem o código do aplicativo e ter apenas o instalador. Você pode criar um pacote de modificação, usando a versão mais recente da ferramenta de empacotamento MSIX (Windows 10 versão 1809 ou posterior). Se você tiver o código do aplicativo, você também pode criar uma [extensão do aplicativo](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-an-extension). 
 
-<div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">Obter a ferramenta de empacotamento MSIX</a></p></div>
+<div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">Obter a Ferramenta de Empacotamento MSIX</a></p></div>
 
 Se você quiser criar um pacote de modificação que possui uma associação estrita para o aplicativo principal, você pode declarar o aplicativo principal como uma dependência no manifesto do pacote de modificação. 
 

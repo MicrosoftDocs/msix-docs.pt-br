@@ -1,19 +1,17 @@
 ---
-author: ridomin
-title: Solucionar problemas de instalação com o arquivo do instalador de aplicativo | Microsoft Docs
+title: Solucionar problemas de instalação com o arquivo do Instalador de Aplicativo
 description: Problemas comuns ao fazer sideload de aplicativos com o arquivo do Instalador de Aplicativo.
-ms.author: rmpablos
 ms.date: 5/2/2018
 ms.topic: article
 keywords: windows 10, uwp, instalador do aplicativo, AppInstaller, sideload
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: eb2c4e5f9e223e5dd741b53ff3943cc920a61c31
-ms.sourcegitcommit: 67e56f5414857671c47334c65d636d531632b8f3
+ms.openlocfilehash: fd0dbb8160fc1c3a384afc6a52121db71e295975
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58900618"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828678"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>Solucionar problemas de instalação com o arquivo do Instalador de Aplicativo
 

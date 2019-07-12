@@ -3,18 +3,16 @@ Description: Crie um pacote de aplicativo do Windows moderno para seu app ou jog
 title: Aplicativos da área de trabalho do pacote
 ms.date: 09/05/2018
 ms.topic: article
-author: dianmsft
-ms.author: diahar
 keywords: Windows 10, UWP, MSIX
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 388de972a2ac97418e2f684c57c7aff550292b9e
-ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
+ms.openlocfilehash: 07477630e9fc9987aa609244301d8f6b44bbb0e1
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67555503"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828965"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>Aplicativos da área de trabalho do pacote (ponte de Desktop)
 
@@ -105,7 +103,7 @@ Algumas experiências do Windows 10 (por exemplo, uma página da interface do us
 
 Ver [estender seu aplicativo da área de trabalho com componentes UWP](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extend).
 
-## <a name="test"></a>Testar
+## <a name="test"></a>Teste
 
 Para testar seu aplicativo em uma configuração realista enquanto se prepara para distribuição, é melhor assinar seu aplicativo e, em seguida, instalá-lo. Consulte [Testar seu app](desktop-to-uwp-debug.md#test-your-app).
 

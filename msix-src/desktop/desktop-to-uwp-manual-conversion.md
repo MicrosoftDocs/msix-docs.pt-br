@@ -3,18 +3,16 @@ Description: Mostra como empacotar manualmente um aplicativo de área de trabalh
 title: Empacotar um aplicativo manualmente (ponte de Desktop)
 ms.date: 05/18/2018
 ms.topic: article
-author: dianmsft
-ms.author: diahar
 keywords: Windows 10, UWP, MSIX
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0c3bf9cec02d2db18fba3d6246a740e7d62a401c
-ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
+ms.openlocfilehash: 82bc2465b5980a536e684ff057d587e20ea7918f
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67555523"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828891"
 ---
 # <a name="package-a-desktop-application-manually"></a>Empacotar manualmente um aplicativo da área de trabalho
 
@@ -118,7 +116,7 @@ Para aplicativos da área de trabalho que você cria um pacote para, sempre defi
 </Dependencies>
 ```
 
-### <a name="capabilities"></a>Funcionalidades
+### <a name="capabilities"></a>Capacidades
 Para aplicativos da área de trabalho que você criar um pacote para, você terá de adicionar o ``runFullTrust`` funcionalidade.
 
 ```XML

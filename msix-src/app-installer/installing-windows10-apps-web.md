@@ -1,19 +1,17 @@
 ---
-author: mcleanbyron
 title: Instalar aplicativos do Windows 10 de uma página da web
 description: Nesta seção, analisaremos as etapas que você precisa executar para permitir que os usuários instalem seus aplicativos diretamente a partir da página da Web.
-ms.author: mcleans
 ms.date: 11/16/2017
 ms.topic: article
 keywords: windows 10, uwp, instalador de aplicativo, AppInstaller, sideload, conjunto relacionado, pacotes opcionais
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2a2645ae4527342af85d747a2217e576a91c0c2c
-ms.sourcegitcommit: 9bbb116d1984082123f694130b4d6cc078fa8510
+ms.openlocfilehash: c6007dfb124e308dad5d17bf7643a7021957e277
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59983528"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828699"
 ---
 # <a name="installing-windows-10-apps-from-a-web-page"></a>Instalar aplicativos do Windows 10 de uma página da web
 

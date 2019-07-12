@@ -3,17 +3,15 @@ Description: Este artigo se aprofunda no funcionamento da Ponte de Desktop nos b
 title: Nos bastidores da ponte da área de trabalho
 ms.date: 04/25/2019
 ms.topic: article
-author: dianmsft
-ms.author: diahar
 keywords: Windows 10, UWP, MSIX
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.localizationpriority: medium
-ms.openlocfilehash: ed9e98adba65eed187479f7752ba8e0685f5545f
-ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
+ms.openlocfilehash: 8e7a435ca3394152cedaafa01033e5f510f6d8f3
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67555518"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828797"
 ---
 # <a name="behind-the-scenes-of-your-packaged-desktop-application"></a>Nos bastidores do seu aplicativo da área de trabalho de pacote
 

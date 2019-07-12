@@ -1,19 +1,17 @@
 ---
 title: Problemas conhecidos e soluções de problemas
 description: Descreve os problemas conhecidos e fornece dicas de solução de problemas para a Ferramenta de Empacotamento MSIX.
-author: dianmsft
-ms.author: diahar
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Ferramenta de Empacotamento MSIX, problemas conhecidos, solução de problemas
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6da45ad324e55dfbe3a95ec76993f28a38380da6
-ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
+ms.openlocfilehash: c5227d8a394e6af211e2409e34dfcb3648cd2c93
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67555621"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829196"
 ---
 # <a name="known-issues-and-troubleshooting"></a>Problemas conhecidos e soluções de problemas
 

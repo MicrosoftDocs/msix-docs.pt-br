@@ -2,17 +2,15 @@
 Description: Este artigo descreve os requisitos de assinatura para aplicativos do Windows 10.
 title: Assinar um pacote do aplicativo do Windows 10
 ms.date: 07/03/2019
-ms.topic: article
-author: dianmsft
 ms.author: diahar
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: e568a8371c7f68383bd57f10e999d1398e11825a
-ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
+ms.openlocfilehash: 2fc4d6003c26cbfc41d65f533de20273c0037e6a
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67555474"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829318"
 ---
 # <a name="sign-a-windows-10-app-package"></a>Assinar um pacote do aplicativo do Windows 10 
 

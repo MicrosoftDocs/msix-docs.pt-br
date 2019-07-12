@@ -3,17 +3,15 @@ Description: Execute seu app empacotado e veja sua aparência sem ter que assin�
 title: Executar, depurar e testar um aplicativo da área de trabalho empacotado (Ponte de Desktop)
 ms.date: 08/31/2017
 ms.topic: article
-author: dianmsft
-ms.author: diahar
 keywords: Windows 10, UWP, MSIX
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c186fe3baf543a459e9b65003d41ec52f4def2d
-ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
+ms.openlocfilehash: e41ff9d7f0464bf5443207bd26331764f8bbb1c2
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67555556"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828882"
 ---
 # <a name="run-debug-and-test-a-packaged-desktop-application"></a>Executar, depurar e testar um aplicativo da área de trabalho de pacote
 

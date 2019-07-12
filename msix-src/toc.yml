@@ -39,7 +39,7 @@
     - name: Ferramenta de Empacotamento MSIX
       items:
         - name: Visão geral
-          href: mpt-overview.md
+          href: packaging-tool/mpt-overview.md
         - name: Modificar um pacote usando o editor de pacote
           href: packaging-tool/package-editor.md
         - name: Editar ícones e ativos
@@ -47,7 +47,7 @@
         - name: Suporte ao pacote do MSIX no Windows 10 versão 1709 e posterior
           href: packaging-tool/Support-on-1709-and-later.md
         - name: Práticas recomendadas da Ferramenta de Empacotamento MSIX
-          href: mpt-best-practices.md
+          href: packaging-tool/mpt-best-practices.md
         - name: Usar a criação rápida do Hyper-V para empacotar
           href: packaging-tool/Quick-Create-VM.md
         - name: Problemas conhecidos e soluções de problemas

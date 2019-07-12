@@ -3,27 +3,31 @@ Description: Este artigo lista as coisas que você precisa saber antes de empaco
 title: Preparar para empacotar um aplicativo da área de trabalho (ponte de Desktop)
 ms.date: 07/03/2019
 ms.topic: article
-author: dianmsft
-ms.author: diahar
 keywords: Windows 10, UWP, MSIX
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: 338ac2a974905670f8223045acaeaa2a73f14e33
-ms.sourcegitcommit: e90f6c00a1ecbd6af2cfef206f233a21831285b4
+ms.openlocfilehash: 649af332b13e1f50e0d89c174955fcc99855927e
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67557916"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829011"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>Preparar um pacote para um aplicativo de área de trabalho
 
 Este artigo lista as coisas que você precisa saber antes de empacotar seu aplicativo da área de trabalho. Talvez você não precise fazer muito para preparar seu aplicativo para o processo de empacotamento, mas se qualquer um dos itens a seguir aplica-se ao seu aplicativo, você precisará solucioná-lo antes do empacotamento. Lembre-se de que a Microsoft Store lida com o licenciamento e a atualização automática para você, portanto, você pode remover qualquer recurso relacionado a essas tarefas de seu código base.
 
-+ __Seu aplicativo requer uma versão do .NET anteriores a 4.6.2__. Você precisa certificar-se de que seu aplicativo é executado no .NET 4.6.2. Você não pode exigir ou redistribuir versões anteriores a 4.6.2. Esta é a versão do .NET fornecida na Atualização de Aniversário do Windows 10. Verificar que seu aplicativo funcione com esta versão garantirá que seu aplicativo continuará a ser compatível com as atualizações futuras do Windows 10.  Se seu aplicativo tem como alvo o .NET Framework 4.0 ou posterior, espera-se para ser executado no .NET 4.6.2, mas você ainda deverá testá-lo.
++ __Seu aplicativo .NET requer uma versão do .NET Framework anteriores a 4.6.2__. Se você estiver criando um aplicativo .NET, é recomendável que o destino do aplicativo .NET Framework 4.6.2 ou posterior. A capacidade de instalar e executar pacotes de aplicativos da área de trabalho foi introduzido pela primeira vez no Windows 10, versão 1607 (também chamado de atualização de aniversário) e essa versão do sistema operacional inclui o .NET Framework 4.6.2 por padrão. Em versões posteriores do sistema operacional incluem as versões posteriores do .NET Framework. Para obter uma lista completa de quais versões do .NET estão incluídos em versões posteriores do Windows 10, consulte [deste artigo](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies).
+
+  Direcionamento de versões do .NET Framework anteriores a 4.6.2 em pacotes de aplicativos da área de trabalho deve funcionar na maioria dos casos. No entanto, se você direcionar uma versão anterior ao 4.6.2, você deve testar totalmente o aplicativo empacotado da área de trabalho antes de distribuí-lo aos usuários.
+
+  + 4.0 - 4.6.1: Aplicativos que se destinam a essas versões do .NET Framework serão executados sem problemas no 4.6.2 ou posterior. Portanto, esses aplicativos devem instalar e executar sem alterações no Windows 10, versão 1607 ou posterior com a versão do .NET Framework que está incluído com o sistema operacional.
+
+  + 2.0 e 3.5: Em nossos testes, pacotes de aplicativos da área de trabalho que se destinam a essas versões do .NET Framework geralmente funcionam, mas podem apresentar problemas de desempenho em alguns cenários. Para que esses pacotes de aplicativos para instalar e executar, o [recurso .NET Framework 3.5](https://docs.microsoft.com/dotnet/framework/install/dotnet-35-windows-10) deve ser instalado no computador de destino (esse recurso também inclui o .NET Framework 2.0 e 3.0). Você também deve testar esses aplicativos completamente depois de empacotá-las.
 
 + __Seu aplicativo sempre é executado com privilégios de segurança elevada__. Seu aplicativo precisa trabalhar durante a execução como usuário interativo. Os usuários que instalam o Microsoft Store o seu aplicativo podem não ser administradores de sistema, portanto, exigir que o aplicativo seja executado com privilégios elevados significa que ele não será executado corretamente para usuários padrão. Os aplicativos que exigem a elevação para qualquer parte da funcionalidade não serão aceitos na Microsoft Store.
 
-+ __Seu aplicativo requer um driver de modo kernel ou um serviço Windows__. A ponte é adequada para um aplicativo, mas não dá suporte a um driver de modo kernel ou um serviço Windows que precisa ser executado em uma conta do sistema. Em vez de um serviço Windows, use uma [tarefa em segundo plano](/windows/uwp/launch-resume/create-and-register-a-background-task).
++ __Seu aplicativo requer um driver de modo kernel ou um serviço Windows__. A ponte de Desktop é adequada para um aplicativo, mas ele não oferece suporte a um driver de modo kernel ou um serviço do Windows que precisa ser executado sob uma conta do sistema. Em vez de um serviço Windows, use uma [tarefa em segundo plano](/windows/uwp/launch-resume/create-and-register-a-background-task).
 
 + __Os módulos do seu aplicativo são carregados em processo, para processos que não estão no seu pacote do aplicativo do Windows__. Isso não é permitido, o que significa que extensões de processo, como [extensões do shell](https://msdn.microsoft.com/library/windows/desktop/dd758089.aspx), não têm suporte. Mas se você tiver dois aplicativos no mesmo pacote, será possível fazer comunicação entre processos entre eles.
 

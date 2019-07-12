@@ -3,16 +3,14 @@ Description: Este guia explica como configurar sua solução do Visual Studio pa
 title: Otimize seus aplicativos de área de trabalho do .NET com imagens nativas
 ms.date: 07/03/2019
 ms.topic: article
-author: dianmsft
-ms.author: diahar
 keywords: Windows 10, uwp, msix, compilador de imagem nativa
 ms.localizationpriority: medium
-ms.openlocfilehash: f49622ad78b50b5cf38918034fda9fbbd9087a11
-ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
+ms.openlocfilehash: 1a4db70df07adfe48f70e4f84e25af0744974945
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67555585"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828911"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>Otimize seus aplicativos de área de trabalho do .NET com imagens nativas
 
@@ -83,7 +81,7 @@ Para verificar se a ferramenta processou os binários, você pode examinar a sa�
 Native image obj\x86\Release\\R2R\DesktopApp1.exe generated successfully.
 ```
 
-## <a name="faq"></a>Perguntas frequentes
+## <a name="faq"></a>Perguntas Frequentes
 
 **P. Os novos binários funcionam em computadores sem o .NET Framework 4.7.2?**
 

@@ -1,19 +1,17 @@
 ---
-author: c-don
 title: Distribuir um aplicativo do Windows 10 de um aplicativo web do Azure
 description: Este tutorial demonstra como configurar um servidor Web do Azure. Verifique se o aplicativo Web pode hospedar pacotes de aplicativo host, invocar e usar o Instalador de aplicativo de maneira eficaz.
-ms.author: cdon
 ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp, instalador de aplicativo, AppInstaller, sideload, conjunto relacionado, pacotes opcionais, servidor Web do Azure
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 7dbe2592d0ed60a88d77476f797f1575fee3f172
-ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
+ms.openlocfilehash: 63c7163c9db550293da93b56434694c742462562
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65795450"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828808"
 ---
 # <a name="distribute-a-windows-10-app-from-an-azure-web-app"></a>Distribuir um aplicativo do Windows 10 de um aplicativo web do Azure
 

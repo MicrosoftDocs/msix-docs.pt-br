@@ -3,16 +3,14 @@ Description: Teste seu aplicativo para Windows 10 no modo S.
 title: Testar seu aplicativo do Windows para o Windows 10 S
 ms.date: 05/11/2017
 ms.topic: article
-author: dianmsft
-ms.author: diahar
 keywords: Windows 10 S, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: 63803681601e03392273a1606f77c49d17fe11e8
-ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
+ms.openlocfilehash: 18789e9c4294befc6a730b4763fb0a847b8c622d
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67555596"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829031"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>Testar seu aplicativo do Windows para o Windows 10 no modo S
 

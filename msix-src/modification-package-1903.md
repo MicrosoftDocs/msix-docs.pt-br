@@ -1,18 +1,16 @@
 ---
-author: dianmsft
 title: Pacotes de modificação MSIX no Windows 10 versão 1903
 description: Nesta seção, examinaremos os pacotes de modificação no Windows 10 Atualização 1903
-ms.author: diahar
 ms.date: 01/14/2019
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: bca7001b4db8ac2e6ced6763d4eca7bb7c8d294d
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: e9b8059d61910a7ffa7c5ff789ce1263769e0c01
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "65802372"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828690"
 ---
 # <a name="msix-modification-packages-on-windows-10-version-1903"></a>Pacotes de modificação MSIX no Windows 10 versão 1903
  

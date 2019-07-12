@@ -1,19 +1,17 @@
 ---
-author: mcleanbyron
 title: Criar manualmente um arquivo do Instalador de Aplicativo
 description: Este artigo descreve como instalar um conjunto relacionado por meio do instalador do aplicativo. Também explicaremos as etapas para construir um arquivo *.appinstaller que definirão o conjunto relacionado.
-ms.author: mcleans
 ms.date: 1/4/2018
 ms.topic: article
 keywords: windows 10, uwp, instalador de aplicativo, AppInstaller, sideload, conjunto relacionado, pacotes opcionais
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 4256e95aa02e73330213034304abbe1354223641
-ms.sourcegitcommit: 9bbb116d1984082123f694130b4d6cc078fa8510
+ms.openlocfilehash: 61b98b924015f021950c5f6a022d383f940443c8
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59983398"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828482"
 ---
 # <a name="create-an-app-installer-file-manually"></a>Criar manualmente um arquivo do Instalador de Aplicativo
 

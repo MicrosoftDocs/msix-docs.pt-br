@@ -1,19 +1,17 @@
 ---
-author: joshusto
 title: Documentação relacionada de arquivo de instalador de aplicativo
 description: Lista informações sobre o esquema de arquivo do instalador de aplicativos e APIs.
-ms.author: joshusto
 ms.date: 2/20/2019
 ms.topic: article
 keywords: Windows 10, uwp, o instalador do aplicativo, AppInstaller, carregar, API, XML, esquema
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 38a18c50ac1be215819b870215f89b9042d060d8
-ms.sourcegitcommit: 67e56f5414857671c47334c65d636d531632b8f3
+ms.openlocfilehash: 48ca61da7e4e568e9ae9381c353a658be6d80ae9
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58900688"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828651"
 ---
 # <a name="related-app-installer-file-documentation"></a>Documentação relacionada de arquivo de instalador de aplicativo
 

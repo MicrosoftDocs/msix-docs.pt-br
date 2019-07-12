@@ -1,18 +1,16 @@
 ---
 title: Duplicar as configurações da Ferramenta de Empacotamento MSIX entre vários dispositivos
 description: Saiba como duplicar as configurações da Ferramenta de Empacotamento MSIX entre vários dispositivos
-author: dianmsft
-ms.author: diahar
 ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: ea3f1d5b49be685315eda55c2fbb96704568337f
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: 4e153b384594fc9981ff44327bb5ff0afa918913
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "59983428"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829273"
 ---
 # <a name="duplicate-msix-packaging-tool-settings-across-multiple-devices"></a>Duplicar as configurações da Ferramenta de Empacotamento MSIX entre vários dispositivos 
 

@@ -1,19 +1,17 @@
 ---
-author: mcleanbyron
 title: Pacotes opcionais e conjuntos relacionados
 description: Este artigo lista recursos de aprendizagem sobre a instalação conjuntos relacionados por meio do instalador do aplicativo.
-ms.author: mcleans
 ms.date: 1/4/2018
 ms.topic: article
 keywords: windows 10, uwp, instalador de aplicativo, AppInstaller, sideload, conjunto relacionado, pacotes opcionais
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: a18b5e11ec87e625b757764994762cf0e29cab99
-ms.sourcegitcommit: 67e56f5414857671c47334c65d636d531632b8f3
+ms.openlocfilehash: 5b77ceced9ce8f897d2f5f776a14e68eaa75530e
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58900458"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828581"
 ---
 # <a name="optional-packages-and-related-sets"></a>Pacotes opcionais e conjuntos relacionados
 

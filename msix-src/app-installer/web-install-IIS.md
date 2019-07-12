@@ -1,21 +1,19 @@
 ---
-author: mcleanbyron
-title: Distribuir um aplicativo de um servidor IIS do Windows 10 | Microsoft Docs
+title: Distribuir um aplicativo do Windows 10 por um servidor de IIS
 description: Este tutorial demonstra como configurar um servidor IIS, verifique se seu aplicativo web pode hospedar pacotes de aplicativos e invocar e usar o instalador de aplicativos com eficiência.
-ms.author: mcleans
 ms.date: 05/30/2018
 ms.topic: article
 keywords: Windows 10, uwp, o instalador do aplicativo, AppInstaller, carregar, relacionadas a pacotes definidos, opcionais, servidor do IIS
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 1e3762ca4cbca110cb17867c3e8e2cebd992b370
-ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
+ms.openlocfilehash: bacf7ab3125d651ef30320072dd45a94bffc677f
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65795281"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828742"
 ---
-# <a name="distribute-a-windows-10-app-from-an-iis-server"></a>Distribuir um aplicativo do Windows 10 de um servidor IIS
+# <a name="distribute-a-windows-10-app-from-an-iis-server"></a>Distribuir um aplicativo do Windows 10 por um servidor de IIS
 
 Este tutorial demonstra como configurar um servidor IIS, verifique se seu aplicativo web pode hospedar pacotes de aplicativos e invocar e usar o instalador de aplicativos com eficiência.
 

@@ -5,16 +5,16 @@ ms.date: 07/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 837ca1566fb0ccf60288e1ca5020f26eed8ca7c8
-ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
+ms.openlocfilehash: ea4d2bae04d019d754d97aea33f5ba7d201f1011
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985976"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829240"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>Aplicar correções de tempo de execução em um pacote MSIX usando a estrutura de suporte do pacote
 
-A estrutura de suporte do pacote é um kit de software livre que ajuda você a aplicar correções para o seu aplicativo win32 quando você não tem acesso ao código-fonte, para que ele pode ser executado em um contêiner de MSIX. A estrutura de suporte de pacote ajuda seu aplicativo siga as práticas recomendadas do ambiente moderno do tempo de execução.
+O Package Support Framework é um kit de software livre que ajuda você a aplicar correções ao seu aplicativo Win32 quando você não tem acesso ao software livre, de modo que ele possa ser executado em um contêiner MSIX. O Package Support Framework ajuda seu aplicativo a seguir as melhores práticas do ambiente moderno do tempo de execução.
 
 Para obter mais informações, consulte [estrutura de suporte do pacote](package-support-framework-overview.md).
 
@@ -24,7 +24,7 @@ Este guia ajudará você a identificar problemas de compatibilidade de aplicativ
 
 ## <a name="identify-packaged-application-compatibility-issues"></a>Identificar problemas de compatibilidade de aplicativo empacotado
 
-Primeiro, crie um pacote para seu aplicativo. Em seguida, instalá-lo, executá-lo e observar seu comportamento. Você pode receber mensagens de erro que podem ajudá-lo a identificar um problema de compatibilidade. Você também pode usar [Process Monitor](https://docs.microsoft.com/sysinternals/downloads/procmon) para identificar problemas.  Problemas comuns se relacionam com as suposições de aplicativo em relação a permissões de caminho de diretório e o programa de trabalho.
+Primeiro, crie um pacote para seu aplicativo. Em seguida, instalá-lo, executá-lo e observar seu comportamento. Você poderá receber mensagens de erro que podem ajudá-lo a identificar um problema de compatibilidade. Use também o [Monitor do Processo](https://docs.microsoft.com/sysinternals/downloads/procmon) para identificar problemas.  Problemas comuns se relacionam com as suposições de aplicativo em relação a permissões de caminho de diretório e o programa de trabalho.
 
 ### <a name="using-process-monitor-to-identify-an-issue"></a>Usando o Monitor de processos para identificar um problema
 
@@ -347,9 +347,9 @@ A referência, com o botão direito e, em seguida, o **propriedades** janela, ap
 
 | Propriedade | Valor |
 |-------|-----------|
-| Copiar local | True |
-| Copiar Assemblies de satélite de Local | True |
-| Saída do Assembly de referência | True |
+| Copiar local | verdadeiro |
+| Copiar Assemblies de satélite de Local | verdadeiro |
+| Saída do Assembly de referência | verdadeiro |
 | Dependências de biblioteca de link | False |
 | Entradas de dependência de biblioteca de link | False |
 
@@ -446,7 +446,7 @@ Se não há ainda um tempo de execução corrige o problema que você deseja res
 
 ### <a name="replacement-functions"></a>Funções de substituição
 
-Primeiro, identifique qual função chamadas falham quando seu aplicativo é executado em um contêiner MSIX. Em seguida, você pode criar funções de substituição que você gostaria que o Gerenciador de tempo de execução para chamar em vez disso. Isso lhe dá uma oportunidade para substituir a implementação de uma função com o comportamento está de acordo com as regras do ambiente moderno do tempo de execução.
+Primeiro, identifique qual função chamadas falham quando seu aplicativo é executado em um contêiner MSIX. Em seguida, você poderá criar funções de substituição que você deseja que sejam chamadas pelo gerenciador de tempo de execução. Isso oferecerá uma oportunidade de substituir a implementação de uma função por um comportamento que esteja de acordo com as regras do ambiente moderno do tempo de execução.
 
 No Visual Studio, abra o projeto de correção de tempo de execução que você criou anteriormente neste guia.
 

@@ -1,19 +1,17 @@
 ---
-author: mcleanbyron
 Description: O Package Support Framework ajuda você a corrigir problemas que impedem que seu aplicativo da área de trabalho seja executado em um contêiner MSIX.
 title: PSF (estrutura de suporte do pacote)
-ms.author: mcleans
 ms.date: 09/05/2018
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f009690a704347e70db716b5491a873a820a0434
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: 98e837669feda0147ad9465330907c930132b43d
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "65985916"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829112"
 ---
 # <a name="package-support-framework"></a>PSF (estrutura de suporte do pacote)
 
