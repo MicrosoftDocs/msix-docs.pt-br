@@ -1,19 +1,17 @@
 ---
 title: Parceiros de MSIX
 description: Fornece links para documentação adicional de nossos parceiros confiáveis sobre suporte e ferramentas do MSIX.
-author: mcleanbyron
-ms.author: mcleans
 ms.date: 09/14/2018
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 011fe229491114299e9085be780798a68ddb2cbc
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: 64204a73e3547083783cc7367f8bfafc4b2f3eda
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "65488514"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829186"
 ---
 # <a name="msix-partners"></a>Parceiros de MSIX
 
