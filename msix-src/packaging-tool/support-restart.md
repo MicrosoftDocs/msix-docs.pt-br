@@ -1,3 +1,18 @@
+---
+title: Suporte para instaladores da área de trabalho que exigem a reinicialização do dispositivo
+description: Descreve como dar suporte para instaladores da área de trabalho que exigem a reinicialização do dispositivo.
+ms.date: 04/04/2019
+ms.topic: article
+keywords: MSIX, MPT, Ferramenta de Empacotamento MSIX, 1709, 16299
+ms.localizationpriority: medium
+ms.custom: RS5
+ms.openlocfilehash: 8a48358c94e9c799ff285cd3d1e20940e79f4731
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829126"
+---
 # <a name="support-for-desktop-installers-that-require-device-restart"></a>Suporte para instaladores da área de trabalho que exigem a reinicialização do dispositivo
 
  > [!NOTE] 
