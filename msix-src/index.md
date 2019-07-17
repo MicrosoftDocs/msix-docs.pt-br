@@ -7,12 +7,12 @@ ms.topic: landing-page
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: a01de1bf8d0539317c5276c114dcc88269af5a14
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 4e31f0cf5af1ec9a637d0c59ed54f26c3ed80d31
+ms.sourcegitcommit: 70036a054d1a5da24f535ddd4ea0fae78c30d469
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829361"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238951"
 ---
 # <a name="msix-documentation"></a>Documentação da MSIX
 MSIX é um formato de empacotamento criado para ser seguro, protegido e confiável, baseado em uma combinação de tecnologias de instalação .msi, .appx, App-V e ClickOnce. 
@@ -277,27 +277,23 @@ A Ferramenta de Empacotamento MSIX permite que você atualize os pacotes de apli
 
 <br>
 
-## <a name="conference-talks-by-msix-team"></a>Palestras na conferência realizadas pela equipe de MSIX
-***
-
+## <a name="msix-training-videos"></a>Vídeos de treinamento do MSIX
 :::row:::
     :::column:::
-    >[!VIDEO https://www.youtube.com/embed/sBOTQoi6iXQ]
-        #### MSIX inside and out (Sept 2018)
-O MSIX é o futuro da instalação do aplicativo e uma etapa significativa é permitir que as empresas modernizem seus processos de implantação de aplicativos e mantenham-se atualizadas com aplicativos do Windows, do Office e de terceiros. 
+    >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3ig2l]
+#### <a name="msix-overview"></a>Visão geral do MSIX
+O MSIX fornece muitos benefícios no gerenciamento de ciclo de vida do aplicativo. Saiba como aproveitar o MSIX em sua empresa e conheça os benefícios para desenvolvedores, profissionais de TI e usuários finais.
     :::column-end:::
     :::column:::
-    >[!VIDEO https://www.youtube.com/embed/0kSwCOr7-Ao]
-        #### MSIX – Accelerating Windows 10 and app deployment (Sept 2018)
-O MSIX fornece muitos benefícios no gerenciamento de ciclo de vida do aplicativo. Saiba como aproveitar o MSIX em sua empresa e conheça os benefícios para desenvolvedores, profissionais de TI e usuários finais. 
+    >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3i5DH]
+#### <a name="msix-for-developers"></a>MSIX para desenvolvedores
+Saiba como os desenvolvedores podem aproveitar os benefícios do MSIX.
     :::column-end:::
     :::column:::
-    >[!VIDEO https://www.youtube.com/embed/_wCv31TI_30]
-        #### Updating your existing Configuration Manager apps to MSIX (Sept 2018)
-O MSIX simplifica e moderniza a implantação do aplicativo. Ele traz uma implantação mais rápida, mais confiável e livre de problemas para sua empresa. Saiba as vantagens e desvantagens de atualizar seus aplicativos existentes do System Center Configuration Manager para MSIX e como o MSIX se integrará com o Configuration Manager. 
+    >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3iiD5]
+#### <a name="evolving-and-enhancing-desktop-apps-with-msix"></a>Evoluindo e aprimorando aplicativos da área de trabalho com o MSIX
+Evolua e aprimore aplicativos da área de trabalho com o MSIX. Aproveite as novas APIs, novos controles e outros recursos. 
     :::column-end:::
-
-    
 :::row-end:::
 
 
