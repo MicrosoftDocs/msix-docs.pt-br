@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4acb1f829d724b27be8745958f08d5e180af7ce6
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: fec62c4a37529cf9f27828096c473a620c443419
+ms.sourcegitcommit: 70036a054d1a5da24f535ddd4ea0fae78c30d469
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829308"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238965"
 ---
 # <a name="create-an-msix-package-from-a-desktop-installer-msi-exe-or-app-v-on-a-vm"></a>Criar um pacote MSIX com base em um instalador da área de trabalho (MSI, EXE ou App-V) em uma VM
 
