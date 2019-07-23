@@ -7,10 +7,10 @@ keywords: Windows 10, UWP, instalador de aplicativos, AppInstaller, Sideload, co
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
 ms.openlocfilehash: bacf7ab3125d651ef30320072dd45a94bffc677f
-ms.sourcegitcommit: 70036a054d1a5da24f535ddd4ea0fae78c30d469
+ms.sourcegitcommit: 6a0a40ba5d941ff4c5b24569e15cdd588e143b6b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
+ms.lasthandoff: 07/23/2019
 ms.locfileid: "67828742"
 ---
 # <a name="distribute-a-windows-10-app-from-an-iis-server"></a>Distribuir um aplicativo do Windows 10 por um servidor de IIS
@@ -120,10 +120,12 @@ Abra o arquivo **Web. config** no Gerenciador de soluções e adicione as linhas
 
 Devido ao isolamento de rede, os aplicativos do Windows 10, como o instalador do aplicativo, são http://localhost/ restritos a usar endereços IP loopback como. Ao usar o servidor IIS local, o instalador de aplicativo deve ser adicionado à lista de isenção de auto-retorno. 
 
-Para fazer isso, abra o **prompt de comando** como **administrador** e insira o seguinte: ' ' ' linha de comando CheckNetIsolation. exe LoopbackExempt-a-n = Microsoft. desktopappinstaller_8wekyb3d8bbwe
+Para fazer isso, abra o **prompt de comando** como **administrador** e insira o seguinte:
+```Command Line
+CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.desktopappinstaller_8wekyb3d8bbwe
 ```
 
-To verify that the app is added to the exempt list, use the following command to display the apps in the loopback exempt list: 
+Para verificar se o aplicativo foi adicionado à lista de isenção, use o seguinte comando para exibir os aplicativos na lista de isenção de auto-retorno: 
 ```Command Line
 CheckNetIsolation.exe LoopbackExempt -s
 ```
@@ -132,28 +134,29 @@ Você deve encontrar `microsoft.desktopappinstaller_8wekyb3d8bbwe` na lista.
 
 Depois que a validação local da instalação do aplicativo por meio do instalador do aplicativo for concluída, você poderá remover a isenção de auto-retorno adicionada nesta etapa:
 
-' ' ' Linha de comando CheckNetIsolation. exe LoopbackExempt-d-n = Microsoft. desktopappinstaller_8wekyb3d8bbwe
+```Command Line
+CheckNetIsolation.exe LoopbackExempt -d -n=microsoft.desktopappinstaller_8wekyb3d8bbwe
 ```
 
-## Step 9 - Run the Web App 
+## <a name="step-9---run-the-web-app"></a>Etapa 9 – executar o aplicativo Web 
 
-Build and run the web application by clicking on the run button on the VS Ribbon as shown in the image below:
+Crie e execute o aplicativo Web clicando no botão Executar na faixa de faixas do VS, conforme mostrado na imagem abaixo:
 
-![Screenshot of running web app in Visual Studio](images/run.png)
+![Captura de tela da execução do aplicativo Web no Visual Studio](images/run.png)
 
-A web page will open in your browser:
+Uma página da Web será aberta em seu navegador:
 
-![Screenshot of installing app from web page](images/web-page.png)
+![Captura de tela da instalação do aplicativo na página da Web](images/web-page.png)
 
-Click on the link in the web page to launch the App Installer app and install your Windows 10 app package.
+Clique no link na página da Web para iniciar o aplicativo instalador do aplicativo e instalar o pacote de aplicativos do Windows 10.
 
 
-## Troubleshooting issues
+## <a name="troubleshooting-issues"></a>Solucionando problemas
 
-### Not sufficient privilege 
+### <a name="not-sufficient-privilege"></a>Privilégio insuficiente 
 
-If running the web app in Visual Studio displays an error such as "You do not have sufficient privilege to access IIS web sites on your machine", you will need to run Visual Studio as an administrator. Close the current instance of Visual Studio and reopen it as an admin.
+Se a execução do aplicativo Web no Visual Studio exibir um erro como "você não tem privilégios suficientes para acessar sites do IIS em seu computador", será necessário executar o Visual Studio como administrador. Feche a instância atual do Visual Studio e abra-a novamente como administrador.
 
-### Set start page 
+### <a name="set-start-page"></a>Definir página inicial 
 
-If running the web app causes the browser to load with an HTTP 403.14 - Forbidden error, it's because the web app doesn't have a defined start page. Refer to Step 6 in this tutorial to learn how to define a start page.
+Se a execução do aplicativo Web fizer com que o navegador seja carregado com um erro HTTP 403,14-proibido, isso ocorre porque o aplicativo Web não tem uma página inicial definida. Consulte a etapa 6 deste tutorial para saber como definir uma página inicial.
