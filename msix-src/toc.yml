@@ -144,6 +144,8 @@
           href: package/signing-package-overview.md
         - name: Assinar um pacote do aplicativo usando a SignTool
           href: 'https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render'
+        - name: Assinar um pacote do MSIX com a autenticação do Device Guard
+          href: package/signing-package-device-guard-signing.md
 - name: Validar
   items:
     - name: Kit de certificação de aplicativos Windows
