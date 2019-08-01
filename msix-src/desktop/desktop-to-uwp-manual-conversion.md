@@ -1,35 +1,35 @@
 ---
 Description: Mostra como empacotar manualmente um aplicativo de área de trabalho do Windows (Win32, WPF e Windows Forms) para Windows 10.
-title: Empacotar um aplicativo manualmente (ponte de Desktop)
-ms.date: 05/18/2018
+title: Empacotar um aplicativo manualmente (ponte de desktop)
+ms.date: 07/29/2019
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 82bc2465b5980a536e684ff057d587e20ea7918f
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: e36cfe1a0ed1c16d2778d33599133d7bc9e06c1c
+ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67828891"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68685376"
 ---
-# <a name="package-a-desktop-application-manually"></a>Empacotar manualmente um aplicativo da área de trabalho
+# <a name="package-a-desktop-app-manually"></a>Empacotar um aplicativo de área de trabalho manualmente
 
-Este tópico mostra como empacotar seu aplicativo sem usar ferramentas como o Visual Studio ou o Desktop App Converter (DAC).
+Este artigo mostra como empacotar seu aplicativo sem usar ferramentas como o Visual Studio ou a ferramenta de empacotamento MSIX.
 
-Para empacotar seu aplicativo manualmente, crie um arquivo de manifesto do pacote e, em seguida, execute uma ferramenta de linha de comando para gerar um pacote de aplicativos do Windows.
+Para empacotar manualmente seu aplicativo, crie um arquivo de manifesto de pacote e execute a ferramenta de linha de comando **MakeAppx. exe** para gerar um pacote de aplicativo do Windows.
 
-Considere empacotamento manual, se você instala o aplicativo usando o comando xcopy ou você está familiarizado com as alterações que o instalador do seu aplicativo faz ao sistema e deseja que um controle mais granular sobre o processo.
+Considere o empacotamento manual se você instalar seu aplicativo usando o comando xcopy ou se estiver familiarizado com as alterações que o instalador do aplicativo faz no sistema e quiser um controle mais granular sobre o processo.
 
 Se não tiver certeza sobre quais alterações seu instalador faz no sistema, ou se você preferir usar ferramentas automatizadas para geral seu manifesto do pacote, considere qualquer uma [dessas](desktop-to-uwp-root.md#convert) opções.
 
 > [!IMPORTANT]
-> A capacidade de criar um pacote de aplicativo do Windows para o seu aplicativo da área de trabalho (também conhecido como a ponte de Desktop) foi introduzida no Windows 10, versão 1607, e só pode ser usado em projetos que se destinam a atualização de aniversário do Windows 10 (10.0; Build 14393) ou uma versão posterior no Visual Studio.
+> A capacidade de criar um pacote de aplicativo do Windows para seu aplicativo de desktop (também conhecido como ponte de desktop) foi introduzida no Windows 10, versão 1607, e ela só pode ser usada em projetos direcionados à atualização de aniversário do Windows 10 (10,0; Build 14393) ou uma versão posterior no Visual Studio.
 
 ## <a name="first-prepare-your-application"></a>Primeiro, prepare seu aplicativo
 
-Examine este guia antes de começar a criar um pacote para seu aplicativo: [Preparar para empacotar um aplicativo da área de trabalho](desktop-to-uwp-prepare.md).
+Examine este guia antes de começar a criar um pacote para seu aplicativo: [Prepare-se para empacotar um aplicativo de área de trabalho](desktop-to-uwp-prepare.md).
 
 ## <a name="create-a-package-manifest"></a>Criar um manifesto do pacote
 
@@ -83,11 +83,11 @@ Aqui está um exemplo de elemento **Identidade** com texto de espaço reservado 
                 ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> Se você tiver reservado o nome do aplicativo em que a Microsoft Store, você pode obter o nome e o publicador usando [Partner Center](https://partner.microsoft.com/dashboard). Se você planeja fazer sideload de seu aplicativo em outros sistemas, você pode fornecer seus próprios nomes para esses desde que o nome do editor que você escolher que corresponde ao nome no certificado que você usa para assinar seu aplicativo.
+> Se você reservou o nome do aplicativo no Microsoft Store, poderá obter o nome e o Publicador usando o [Partner Center](https://partner.microsoft.com/dashboard). Se você planeja Sideload seu aplicativo em outros sistemas, você pode fornecer seus próprios nomes, desde que o nome do Publicador que você escolher corresponda ao nome no certificado que você usa para assinar seu aplicativo.
 
-### <a name="properties"></a>Propriedades
+### <a name="properties"></a>Properties
 
-O elemento [Propriedades](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) possui 3 elementos filho necessários. Aqui está um nó exemplo **Propriedades** com texto de espaço reservado para os elementos. O **DisplayName** é o nome do aplicativo que você reservar na Store, para aplicativos que são carregados para a Store.
+O elemento [Propriedades](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) possui 3 elementos filho necessários. Aqui está um nó exemplo **Propriedades** com texto de espaço reservado para os elementos. O **DisplayName** é o nome do aplicativo que você reserva no repositório, para aplicativos que são carregados no repositório.
 
 ```XML
 <Properties>
@@ -108,7 +108,7 @@ Aqui está um nó exemplo [Recursos](https://docs.microsoft.com/uwp/schemas/appx
 ```
 ### <a name="dependencies"></a>Dependências
 
-Para aplicativos da área de trabalho que você cria um pacote para, sempre defina as ``Name`` atributo ``Windows.Desktop``.
+Para aplicativos de área de trabalho para os quais você cria um pacote ``Name`` , sempre ``Windows.Desktop``defina o atributo como.
 
 ```XML
 <Dependencies>
@@ -117,7 +117,7 @@ Para aplicativos da área de trabalho que você cria um pacote para, sempre defi
 ```
 
 ### <a name="capabilities"></a>Capacidades
-Para aplicativos da área de trabalho que você criar um pacote para, você terá de adicionar o ``runFullTrust`` funcionalidade.
+Para aplicativos de área de trabalho para os quais você cria um pacote, você precisará adicionar o ``runFullTrust`` recurso.
 
 ```XML
 <Capabilities>
@@ -130,7 +130,7 @@ Preencha este modelo com informações que descrevem o seu aplicativo.
 
 ### <a name="application-element"></a>Elemento do aplicativo
 
-Para aplicativos da área de trabalho que você criar um pacote, o ``EntryPoint`` atributo do elemento de aplicativo é sempre ``Windows.FullTrustApplication``.
+Para aplicativos de área de trabalho para os quais você cria ``EntryPoint`` um pacote, o atributo do elemento ``Windows.FullTrustApplication``Application é sempre.
 
 ```XML
 <Applications>
@@ -173,7 +173,7 @@ Os ativos baseados no destino são para ícones e blocos que aparecem na barra d
 
 ### <a name="generate-a-package-resource-index-pri-file"></a>Gerar um arquivo PRI (Índice de Recurso do Pacote)
 
-Se você criar ativos com base no destino, conforme descrito na seção acima, ou modificar qualquer um dos ativos de visual do seu aplicativo depois de criar o pacote, você precisará gerar um novo arquivo PRI.
+Se você criar ativos baseados em destino, conforme descrito na seção acima, ou modificar qualquer um dos ativos visuais de seu aplicativo depois de criar o pacote, terá que gerar um novo arquivo PRI.
 
 1.  Abra um **Prompt de comando de desenvolvedor para o VS 2017**.
 
@@ -183,7 +183,7 @@ Se você criar ativos com base no destino, conforme descrito na seção acima, o
 
 5.  Crie o(s) arquivo(s) resources.pri usando o comando ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``.
 
-    Por exemplo, o comando para o seu aplicativo pode ser assim: ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``.
+    Por exemplo, o comando para seu aplicativo pode ter a seguinte aparência ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``:.
 
 6.  Empacote seu pacote do aplicativo do Windows usando as instruções da próxima etapa.
 
@@ -193,18 +193,18 @@ Se você criar ativos com base no destino, conforme descrito na seção acima, o
 
 Use o **MakeAppx.exe** para gerar um pacote do aplicativo do Windows para seu projeto. Ele é fornecido com o SDK do Windows 10 e, se você tiver o Visual Studio instalado, poderá ser facilmente acessado por meio do Prompt de Comando do Desenvolvedor para a sua versão do Visual Studio.
 
-Consulte [Criar um pacote do aplicativo com a ferramenta MakeAppx.exe](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)
+Consulte [Criar um pacote do aplicativo com a ferramenta MakeAppx.exe](../package/create-app-package-with-makeappx-tool.md)
 
 ## <a name="run-the-packaged-app"></a>Execute o app empacotado
 
-Você pode executar seu aplicativo para testá-lo localmente, sem precisar obter um certificado e assiná-lo. Basta executar este cmdlet do PowerShell:
+Você pode executar seu aplicativo para testá-lo localmente sem ter que obter um certificado e conectá-lo. Basta executar este cmdlet do PowerShell:
 
 ```Add-AppxPackage –Register AppxManifest.xml```
 
 Para atualizar os arquivos .exe ou .dll do seu aplicativo, substitua os arquivos existentes em seu pacote pelos novos, aumente o número de versão em AppxManifest.xml e, em seguida, execute o comando acima novamente.
 
 > [!NOTE]
-> Um aplicativo empacotado sempre é executado como um usuário interativo, e qualquer unidade que você instala o aplicativo empacotado em deve ser formatada para o formato NTFS.
+> Um aplicativo empacotado sempre é executado como um usuário interativo, e qualquer unidade na qual você instala o aplicativo empacotado deve ser formatada para o formato NTFS.
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -212,14 +212,14 @@ Para atualizar os arquivos .exe ou .dll do seu aplicativo, substitua os arquivos
 
 Tem dúvidas? Pergunte-nos sobre o Stack Overflow. Nossa equipe monitora esses [tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Você também pode perguntar [aqui](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
-**Fazer comentários ou sugestões de recursos**
+**Fornecer comentários ou fazer sugestões de recursos**
 
 Consulte [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
 
-**Percorrer o código / encontrar e corrigir problemas**
+**Percorrer código/localizar e corrigir problemas**
 
-Consulte [executar, depurar e testar um aplicativo da área de trabalho de pacote](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-debug)
+Consulte [Executar, depurar e testar um aplicativo de área de trabalho empacotado](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-debug)
 
 **Assinar seu aplicativo e, em seguida, distribuí-lo**
 
-Consulte [distribuir um aplicativo de área de trabalho do pacote](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-distribute)
+Consulte [distribuir um aplicativo de área de trabalho empacotado](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-distribute)

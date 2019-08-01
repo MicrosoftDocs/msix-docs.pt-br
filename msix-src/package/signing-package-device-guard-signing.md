@@ -1,17 +1,17 @@
 ---
 Description: Este artigo descreve a assinatura com a assinatura do Device Guard
-title: Assinar um pacote MSIX com a assinatura do Device Guard
+title: Assinar um pacote do MSIX com a autenticação do Device Guard
 ms.date: 07/12/2019
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: 0784d6c3bb8cf563d5238698f42653e7747f00e0
-ms.sourcegitcommit: c5aafec124a1b5e5bce364768f6f9127a8500f73
+ms.openlocfilehash: 61d2b3f62d8fa7cbcbf81fa7ae6a8cb046e5c4b3
+ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68663851"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68685297"
 ---
-# <a name="sign-an-msix-package-with-device-guard-signing"></a>Assinar um pacote MSIX com a assinatura do Device Guard
+# <a name="sign-an-msix-package-with-device-guard-signing"></a>Assinar um pacote do MSIX com a autenticação do Device Guard
 
 A [assinatura do Device Guard](https://docs.microsoft.com/microsoft-store/device-guard-signing-portal) é um recurso do Device Guard que está disponível no Microsoft Store para negócios e educação. Ele permite que as empresas garantam que cada aplicativo vem de uma fonte confiável. A partir do Build 18945 do Windows 10 Insider Preview, você pode usar SignTool no SDK do Windows para assinar seus aplicativos MSIX com a assinatura do Device Guard. Esse suporte ao recurso permite que você incorpore facilmente a assinatura do Device Guard no fluxo de trabalho de criação e assinatura de pacotes MSIX.
 
@@ -101,7 +101,7 @@ signtool sign /fd sha256 /dlib DgssLib.dll /dmdf <Azure AAD in .json format> /t 
 ```
 
 > [!NOTE]
-> * Recomendamos que você use uma das opções de carimbo de data/hora ao assinar seu pacote. Se você não aplicar um carimbo de data/hora, a assinatura expirará em um ano e o aplicativo precisará ser assinado novamente.
+> * Recomendamos que você use uma das opções de carimbo de data/hora ao assinar seu pacote. Se você não aplicar um [carimbo de data/hora](signing-package-overview.md#timestamping), a assinatura expirará em um ano e o aplicativo precisará ser assinado novamente.
 > * Verifique se o nome do Publicador no manifesto do pacote corresponde ao certificado que você está usando para assinar o pacote. Com esse recurso, será seu certificado de folha. Por exemplo, se o certificado de folha for **CompanyName**, o nome do editor no manifesto deverá ser **CN = CompanyName**. Caso contrário, a operação de assinatura falhará.
 > * Há suporte apenas para o algoritmo SHA256.
 > * Quando você assina seu pacote com a assinatura do Device Guard, seu pacote não está sendo enviado pela Internet.

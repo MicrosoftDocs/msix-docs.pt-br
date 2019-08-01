@@ -1,16 +1,16 @@
 ---
-Description: Teste seu aplicativo para Windows 10 no modo S.
+Description: Teste seu aplicativo para o Windows 10 no modo S.
 title: Testar seu aplicativo do Windows para o Windows 10 S
-ms.date: 05/11/2017
+ms.date: 07/29/2019
 ms.topic: article
-keywords: Windows 10 S, uwp, msix
+keywords: Windows 10 S, UWP, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: 18789e9c4294befc6a730b4763fb0a847b8c622d
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: d9517a7f350d58838e0b1de30a11b325dfe7cf1a
+ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829031"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68685227"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>Testar seu aplicativo do Windows para o Windows 10 no modo S
 
@@ -45,7 +45,7 @@ Aqui está um pouco mais informações sobre cada política.
 ### <a name="audit-mode-policy"></a>Política do modo de auditoria
 Com este modo, seu aplicativo é executado, mesmo que ele execute tarefas que não são suportadas no Windows 10 S. O Windows registra todos os executáveis que teriam sido bloqueados nos Registros de eventos de integridade do código.
 
-Você pode encontrar esses logs, abrindo o **Visualizador de eventos**e, em seguida, navegando até este local: Logs de aplicativos e serviços -> Microsoft -> Windows -> CodeIntegrity -> operacionais.
+Você pode encontrar esses logs abrindo o **Visualizador de eventos**e, em seguida, navegando até este local: Logs de aplicativos e serviços-> Microsoft-> Windows-> CodeIntegrity-> operacional.
 
 ![code-integrity-event-logs](images/code-integrity-logs.png)
 
@@ -75,7 +75,7 @@ Recomendamos que você aplique essas políticas a uma máquina virtual porque es
 
 Se você deseja aplicar essas políticas à sua máquina local, é melhor começar com a política de Modo de auditoria. Com esta política, você pode revisar os registros de eventos de integridade do código para garantir que nada crítico seja bloqueado em uma política forçada.
 
-Quando você estiver pronto para aplicar uma política, localize o. Arquivo p7b para a política que você escolheu, renomeie-o para **SIPolicy.P7B**e, em seguida, salve esse arquivo para esse local em seu sistema: **C:\Windows\System32\CodeIntegrity\\** .
+Quando estiver pronto para aplicar uma política, localize o. Arquivo P7B para a política que você escolheu, renomeie-o como **SIPolicy. p7b**e, em seguida, salve esse arquivo nesse local no seu sistema: **C:\Windows\System32\CodeIntegrity\\** .
 
 Em seguida, reinicie o sistema.
 
@@ -88,14 +88,14 @@ Em seguida, reinicie o sistema.
 
 Tem dúvidas? Pergunte-nos sobre o Stack Overflow. Nossa equipe monitora estas [marcas](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Você também pode entrar em contato conosco [aqui](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
-**Fazer comentários ou sugestões de recursos**
+**Fornecer comentários ou fazer sugestões de recursos**
 
 Consulte [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
 
-**Examine um artigo de blog detalhadas que foi lançado pela nossa equipe de aplicativo, consulte**
+**Examine um artigo de blog detalhado que foi Postado por nossa equipe de Consultoria de Aplicativos**
 
 Consulte [Como portar e testar seus aplicativos da área de trabalho clássicos no Windows 10 S com a Ponte de Desktop](https://blogs.msdn.microsoft.com/appconsult/2017/06/15/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge/).
 
-**Saiba mais sobre as ferramentas que facilitam o teste para Windows no modo S**
+**Saiba mais sobre as ferramentas que facilitam o teste do Windows no modo S**
 
 Consulte [Descompactar, modificar, reempacotar, assinar um APPX](https://blogs.msdn.microsoft.com/appconsult/2017/08/07/unpack-modify-repack-sign-appx/).

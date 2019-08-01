@@ -1,17 +1,17 @@
 ---
 Description: Este guia explica como configurar sua solução do Visual Studio para editar, depurar e empacotar o aplicativo de área de trabalho.
 title: Empacotar um aplicativo da área de trabalho no código-fonte usando o Visual Studio
-ms.date: 08/30/2017
+ms.date: 07/18/2019
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: aad9f460a9589e58d55583c7ffb80dd18e4bcbde
-ms.sourcegitcommit: 6a0a40ba5d941ff4c5b24569e15cdd588e143b6b
+ms.openlocfilehash: 8effa64d5b06739d1251423fc0776e3e010b73e2
+ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68315701"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68685416"
 ---
 # <a name="package-a-desktop-app-from-source-code-using-visual-studio"></a>Empacotar um aplicativo da área de trabalho no código-fonte usando o Visual Studio
 
@@ -84,7 +84,7 @@ Examine este guia antes de começar a criar um pacote para seu aplicativo: [Prep
 
    ![Gerenciador de configuração](images/config-manager.png)
 
-8. Use o assistente para [criar pacotes de aplicativos](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps) para gerar um arquivo. msixupload/. appxupload.
+8. Use o assistente para [criar pacotes de aplicativos](../package/packaging-uwp-apps.md) para gerar um arquivo. msixupload/. appxupload.
 
    Você pode carregar esse arquivo diretamente no repositório.
 

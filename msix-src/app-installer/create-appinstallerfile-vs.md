@@ -6,16 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp, instalador do aplicativo, AppInstaller, sideload
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 3dd4a48722cca9296769adfb7c0bb570b11cc82f
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: a8596581cb68d7fe9347528e4e206482d39a0be9
+ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67828569"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68685239"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>Criar um arquivo do Instalador de Aplicativo com o Visual Studio
 
-Começando com o Windows 10, versão 1803 e Visual Studio 2017 15.7 de atualização, os aplicativos com sideload podem ser configurados para receber atualizações automáticas usando um `.appinstaller` arquivo. O Visual Studio permite ativar essas atualizações.
+A partir do Windows 10, versão 1803 e Visual Studio 2017, atualização 15,7, os aplicativos Sideload podem ser configurados para receber atualizações `.appinstaller` automáticas usando um arquivo. O Visual Studio permite ativar essas atualizações.
 
 ## <a name="app-installer-file-location"></a>Local do arquivo do Instalador de Aplicativo
 O arquivo `.appinstaller` pode ser hospedado em um local compartilhado como um ponto de extremidade HTTP ou uma pasta compartilhada UNC e inclui o caminho para encontrar os pacotes de aplicativos a serem instalados. Os usuários instalam o aplicativo a partir do local compartilhado e ativam verificações periódicas de novas atualizações. 
@@ -26,12 +26,12 @@ O arquivo `.appinstaller` pode ser hospedado em um local compartilhado como um p
 Você pode configurar a propriedade `TargetPlatformMinVersion` quando cria o projeto ou alterá-la mais tarde nas propriedades do projeto. 
 
 >[!IMPORTANT]
-> O arquivo do instalador de aplicativo só é gerado quando o `TargetPlatformMinVersion` é o Windows 10, versão 1803 ou posterior.
+> O arquivo do instalador do aplicativo é gerado somente `TargetPlatformMinVersion` quando o é o Windows 10, versão 1803 ou superior.
 
 
 ## <a name="create-packages"></a>Criar pacotes
 
-Para distribuir um aplicativo por meio de sideload, você deve criar um pacote do aplicativo (.appx/.msix) ou um pacote de aplicativos (.appxbundle/.msixbundle) e publicá-lo em um local compartilhado.
+Para distribuir um aplicativo por meio de Sideload, você deve criar um pacote de aplicativo (. Appx/. msix) ou um pacote de aplicativo (. appxbundle/. msixbundle) e publicá-lo em um local compartilhado.
 
 Para fazer isso, use o assistente **Criar pacotes de aplicativo** no Visual Studio com as etapas a seguir.
 
@@ -47,7 +47,7 @@ Para fazer isso, use o assistente **Criar pacotes de aplicativo** no Visual Stud
 
     **Ativar atualizações automáticas** só será ativado se o `TargetPlatformMinVersion` do projeto for definido como a versão correta do Windows 10.
 
-3. A caixa de diálogo **Selecionar e configurar pacotes** permite selecionar as configurações de arquitetura compatíveis. Se você selecionar um pacote, um instalador único será gerado. No entanto, se você não quiser um pacote e preferir um pacote por arquitetura, também receberá um arquivo do instalador por arquitetura.  Se você não tiver certeza de quais arquiteturas escolher ou deseja saber mais sobre quais arquiteturas são usadas por vários dispositivos, consulte [Arquiteturas de pacote do aplicativo](https://docs.microsoft.com/windows/uwp/packaging/device-architecture?context=/windows/msix/render).
+3. A caixa de diálogo **Selecionar e configurar pacotes** permite selecionar as configurações de arquitetura compatíveis. Se você selecionar um pacote, um instalador único será gerado. No entanto, se você não quiser um pacote e preferir um pacote por arquitetura, também receberá um arquivo do instalador por arquitetura.  Se você não tiver certeza de quais arquiteturas escolher ou deseja saber mais sobre quais arquiteturas são usadas por vários dispositivos, consulte [Arquiteturas de pacote do aplicativo](../package/device-architecture.md).
 
 4. Configure todos os detalhes adicionais, como a numeração de versão ou o local de saída do pacote.
 
@@ -55,7 +55,7 @@ Para fazer isso, use o assistente **Criar pacotes de aplicativo** no Visual Stud
 
 5. Se você marcou **Ativar atualizações automáticas** na etapa 2, a caixa de diálogo **Definir configurações de atualização** será exibida. Aqui, você pode especificar o **URL de instalação** e a frequência das verificações de atualização.
 
-    ![Configurar a janela de configurações de atualização com configuração de local de publicação](images/sideloading-screen.png)  
+    ![Definir a janela de configurações de atualização com a configuração do local de publicação](images/sideloading-screen.png)  
 
 6. Quando seu aplicativo tiver sido empacotado, uma caixa de diálogo exibirá o local da pasta de saída que contém o pacote do aplicativo. A pasta de saída inclui todos os arquivos necessários para fazer o sideload do aplicativo, incluindo uma página HTML que pode ser usada para promover seu aplicativo.
 
