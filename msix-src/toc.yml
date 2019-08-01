@@ -7,15 +7,23 @@
     - name: Formatos de pacote do aplicativo
       items:
         - name: Visão geral
-          href: 'https://docs.microsoft.com/windows/uwp/launch-resume/extend-your-app-with-services-extensions-packages?context=/windows/msix/render'
+          href: package/app-package-formats.md
         - name: Pacotes opcionais
-          href: 'https://docs.microsoft.com/windows/uwp/packaging/optional-packages?context=/windows/msix/render'
-        - name: Instalação de streaming de aplicativo do Windows
-          href: 'https://docs.microsoft.com/windows/uwp/packaging/streaming-install?context=/windows/msix/render'
+          items:
+            - name: Visão geral
+              href: package/optional-packages.md
+            - name: Pacotes opcionais com código executável
+              href: package/optional-packages-with-executable-code.md
+        - name: Instalação de streaming de aplicativo
+          items:
+            - name: Visão geral
+              href: package/streaming-install.md
+            - name: Criar e converter um mapa de grupo de conteúdo de origem
+              href: package/create-cgm.md
         - name: Pacotes de aplicativo do pacote simples
-          href: 'https://docs.microsoft.com/windows/uwp/packaging/flat-bundles?context=/windows/msix/render'
+          href: package/flat-bundles.md
         - name: Pacotes de ativos
-          href: 'https://docs.microsoft.com/windows/uwp/packaging/asset-packages?context=/windows/msix/render'
+          href: package/asset-packages.md
         - name: Pacotes de modificação
           items:
             - name: Visão geral
@@ -25,7 +33,7 @@
             - name: Pacotes de modificação no Windows 10 versão 1903
               href: modification-package-1903.md
             - name: Arquiteturas de pacote do aplicativo
-              href: 'https://docs.microsoft.com/windows/uwp/packaging/device-architecture?context=/windows/msix/render'
+              href: package/device-architecture.md
     - name: Atualizações de pacote do aplicativo
       href: app-package-updates.md
     - name: Suporte para MSIX nas versões 1709 e 1803
@@ -122,6 +130,8 @@
               href: desktop/desktop-to-uwp-packaging-dot-net.md
             - name: Otimizar binários com imagens nativas
               href: desktop/desktop-to-uwp-r2r.md
+        - name: Empacotar um aplicativo da área de trabalho manualmente
+          href: desktop/desktop-to-uwp-manual-conversion.md
         - name: Formar pacote de um aplicativo da área de trabalho usando instaladores de terceiros
           href: desktop/desktop-to-uwp-third-party-installer.md
         - name: Nos bastidores do seu aplicativo da área de trabalho empacotado
@@ -129,13 +139,19 @@
         - name: Problemas conhecidos
           href: desktop/desktop-to-uwp-known-issues.md
     - name: União de um aplicativo UWP com o Visual Studio
-      href: 'https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps?context=/windows/msix/render'
-    - name: Ferramentas manuais de empacotamento
+      href: package/packaging-uwp-apps.md
+    - name: Empacotamento manual de aplicativo
       items:
         - name: Visão geral
-          href: 'https://docs.microsoft.com/windows/uwp/packaging/manual-packaging-root?context=/windows/msix/render'
-        - name: Empacotar aplicativos de área de trabalho manualmente
-          href: desktop/desktop-to-uwp-manual-conversion.md
+          href: package/manual-packaging-root.md
+        - name: Criar um pacote de aplicativo com a ferramenta MakeAppx.exe
+          href: package/create-app-package-with-makeappx-tool.md
+        - name: Criar um certificado para a assinatura de pacote
+          href: package/create-certificate-package-signing.md
+        - name: Desenvolvendo com os pacotes de ativo e dobramento de pacote
+          href: package/package-folding.md
+        - name: Criação do pacote com o layout de empacotamento
+          href: package/packaging-layout.md
     - name: Agrupar pacotes de MSIX
       href: packaging-tool/bundle-msix-packages.md
     - name: Assinar um pacote do aplicativo
@@ -143,7 +159,7 @@
         - name: Visão geral
           href: package/signing-package-overview.md
         - name: Assinar um pacote do aplicativo usando a SignTool
-          href: 'https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render'
+          href: package/sign-app-package-using-signtool.md
         - name: Assinar um pacote do MSIX com a autenticação do Device Guard
           href: package/signing-package-device-guard-signing.md
 - name: Validar

@@ -7,12 +7,12 @@ ms.topic: landing-page
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 4e31f0cf5af1ec9a637d0c59ed54f26c3ed80d31
-ms.sourcegitcommit: 70036a054d1a5da24f535ddd4ea0fae78c30d469
+ms.openlocfilehash: d3800d9af4808501afd5ad7862cf1bc62790dad3
+ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68238951"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68685348"
 ---
 # <a name="msix-documentation"></a>Documentação da MSIX
 MSIX é um formato de empacotamento criado para ser seguro, protegido e confiável, baseado em uma combinação de tecnologias de instalação .msi, .appx, App-V e ClickOnce. 
@@ -57,7 +57,7 @@ A Ferramenta de Empacotamento MSIX permite que você atualize os pacotes de apli
                             <div class="cardText">
                                 <h3>Introdução</h3>                                
                 <p>
-                                    <a href="/en-us/windows/msix/packaging-tool/create-app-package-msi-vm" data-linktype="absolute-path">Atualizar instaladores existentes para MSIX</a>
+                                    <a href="/windows/msix/packaging-tool/create-app-package-msi-vm" data-linktype="absolute-path">Atualizar instaladores existentes para MSIX</a>
                                 </p>
                             </div>
                         </div>
@@ -76,13 +76,13 @@ A Ferramenta de Empacotamento MSIX permite que você atualize os pacotes de apli
                             <div class="cardText">
                                 <h3>Pacote</h3>
                                 <p>
-                                    <a href="/en-us/windows/msix/mpt-overview" data-linktype="absolute-path">Usar a Ferramenta de Empacotamento MSIX</a>
+                                    <a href="/windows/msix/mpt-overview" data-linktype="absolute-path">Usar a Ferramenta de Empacotamento MSIX</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/msix/packaging-tool/package-conversion-cli" data-linktype="absolute-path">Usar a linha de comando</a>
+                                    <a href="/windows/msix/packaging-tool/package-conversion-cli" data-linktype="absolute-path">Usar a linha de comando</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render" data-linktype="absolute-path">Assinatura de pacotes</a>
+                                    <a href="/windows/msix/package/sign-app-package-using-signtool" data-linktype="absolute-path">Assinatura de pacotes</a>
                                 </p>
                             </div>
                         </div>
@@ -101,10 +101,10 @@ A Ferramenta de Empacotamento MSIX permite que você atualize os pacotes de apli
                             <div class="cardText">
                                 <h3>Validar</h3>
                                 <p>
-                                    <a href="/en-us/windows/uwp/publish/package-flights?context=/windows/msix/render" data-linktype="absolute-path">Liberação de versões de pré-lançamento na Microsoft Store</a>
+                                    <a href="/windows/uwp/publish/package-flights?context=/windows/msix/render" data-linktype="absolute-path">Liberação de versões de pré-lançamento na Microsoft Store</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/porting/desktop-to-uwp-test-windows-s?context=/windows/msix/render#first-download-the-policies-and-then-choose-one" data-linktype="absolute-path">Testar para o Windows 10 no modo S</a>
+                                    <a href="/windows/uwp/porting/desktop-to-uwp-test-windows-s?context=/windows/msix/render#first-download-the-policies-and-then-choose-one" data-linktype="absolute-path">Testar para o Windows 10 no modo S</a>
                                 </p>
                             </div>
                         </div>
@@ -123,19 +123,19 @@ A Ferramenta de Empacotamento MSIX permite que você atualize os pacotes de apli
                             <div class="cardText">
                                 <h3>Distribuir</h3>
                                 <p>
-                                    <a href="/en-us/windows/uwp/publish/app-submissions?context=/windows/msix/render" data-linktype="absolute-path">Microsoft Store</a>
+                                    <a href="/windows/uwp/publish/app-submissions?context=/windows/msix/render" data-linktype="absolute-path">Microsoft Store</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/publish/distribute-lob-apps-to-enterprises?context=/windows/msix/render" data-linktype="absolute-path">Microsoft Store para Empresas</a>
+                                    <a href="/windows/uwp/publish/distribute-lob-apps-to-enterprises?context=/windows/msix/render" data-linktype="absolute-path">Microsoft Store para Empresas</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/sccm/apps/understand/introduction-to-application-management?context=/windows/msix/render" data-linktype="absolute-path">System Center Configuration Manager</a>
+                                    <a href="/sccm/apps/understand/introduction-to-application-management?context=/windows/msix/render" data-linktype="absolute-path">System Center Configuration Manager</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/intune/introduction-intune?context=/windows/msix/render" data-linktype="absolute-path">Microsoft Intune</a>
+                                    <a href="/intune/introduction-intune?context=/windows/msix/render" data-linktype="absolute-path">Microsoft Intune</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/msix/app-installer/app-installer-file-overview" data-linktype="absolute-path">Distribuição fora da Store</a>
+                                    <a href="/windows/msix/app-installer/app-installer-file-overview" data-linktype="absolute-path">Distribuição fora da Store</a>
                                 </p>
                             </div>
                         </div>
@@ -160,10 +160,10 @@ A Ferramenta de Empacotamento MSIX permite que você atualize os pacotes de apli
                             <div class="cardText">
                                 <h3>Introdução</h3>
                                 <p>
-                                    <a href="/en-us/windows/msix/overview">O que é MSIX?</a>
+                                    <a href="/windows/msix/overview">O que é MSIX?</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/msix/app-package-updates?context=/windows/msix/render">Atualizações de aplicativo de MSIX</a>
+                                    <a href="/windows/msix/app-package-updates?context=/windows/msix/render">Atualizações de aplicativo de MSIX</a>
                                 </p>
                             </div>
                         </div>
@@ -182,13 +182,19 @@ A Ferramenta de Empacotamento MSIX permite que você atualize os pacotes de apli
                             <div class="cardText">
                                 <h3>Compilação</h3>
                                 <p>
-                                    <a href="/en-us/windows/uwp/packaging/packaging-uwp-apps?context=/windows/msix/render" data-linktype="absolute-path">Empacotar um aplicativo com o Visual Studio</a>
+                                    <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Empacotar um aplicativo da área de trabalho com o Visual Studio</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/packaging/manual-packaging-root?context=/windows/msix/render" data-linktype="absolute-path">Ferramentas manuais de empacotamento</a>
+                                    <a href="/windows/msix/package/packaging-uwp-apps" data-linktype="absolute-path">Empacotar um aplicativo UWP com o Visual Studio</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render" data-linktype="absolute-path">Assinar um pacote do aplicativo</a>
+                                    <a href="/windows/msix/package/manual-packaging-root" data-linktype="absolute-path">Ferramentas manuais de empacotamento</a>
+                                </p>
+                                <p>
+                                    <a href="/windows/msix/package/sign-app-package-using-signtool" data-linktype="absolute-path">Assinar um pacote do aplicativo</a>
+                                </p>
+                                <p>
+                                    <a href="/windows/msix/package/streaming-install" data-linktype="absolute-path">Instalação de streaming de aplicativo</a>
                                 </p>
                             </div>
                         </div>
@@ -207,16 +213,16 @@ A Ferramenta de Empacotamento MSIX permite que você atualize os pacotes de apli
                             <div class="cardText">
                                 <h3>Validar</h3>
                                 <p>
-                                    <a href="/en-us/windows/uwp/debug-test-perf/windows-app-certification-kit?context=/windows/msix/render" data-linktype="absolute-path">Kit de Certificação de Aplicativos Windows</a>
+                                    <a href="/windows/uwp/debug-test-perf/windows-app-certification-kit?context=/windows/msix/render" data-linktype="absolute-path">Kit de Certificação de Aplicativos Windows</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/debug-test-perf/device-portal?context=/windows/msix/render" data-linktype="absolute-path">Portal de Dispositivos do Windows</a>
+                                    <a href="/windows/uwp/debug-test-perf/device-portal?context=/windows/msix/render" data-linktype="absolute-path">Portal de Dispositivos do Windows</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/publish/package-flights?context=/windows/msix/render" data-linktype="absolute-path">Liberação de versões de pré-lançamento do pacote</a>
+                                    <a href="/windows/uwp/publish/package-flights?context=/windows/msix/render" data-linktype="absolute-path">Liberação de versões de pré-lançamento do pacote</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/porting/desktop-to-uwp-test-windows-s?context=/windows/msix/render" data-linktype="absolute-path">Testar para o Windows 10 no modo S</a>
+                                    <a href="/windows/uwp/porting/desktop-to-uwp-test-windows-s?context=/windows/msix/render" data-linktype="absolute-path">Testar para o Windows 10 no modo S</a>
                                 </p>
                             </div>
                         </div>
@@ -235,13 +241,13 @@ A Ferramenta de Empacotamento MSIX permite que você atualize os pacotes de apli
                             <div class="cardText">
                                 <h3>Distribuir</h3>
                                 <p>
-                                    <a href="/en-us/windows/uwp/publish/?context=/windows/msix/render" data-linktype="absolute-path">Microsoft Store</a>
+                                    <a href="/windows/uwp/publish/?context=/windows/msix/render" data-linktype="absolute-path">Microsoft Store</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/publish/distribute-lob-apps-to-enterprises?context=/windows/msix/render" data-linktype="absolute-path">Microsoft Store para Empresas</a>
+                                    <a href="/windows/uwp/publish/distribute-lob-apps-to-enterprises?context=/windows/msix/render" data-linktype="absolute-path">Microsoft Store para Empresas</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/packaging/create-appinstallerfile-vs?context=/windows/msix/render" data-linktype="absolute-path">Distribuição fora da Store</a>
+                                    <a href="/windows/uwp/packaging/create-appinstallerfile-vs?context=/windows/msix/render" data-linktype="absolute-path">Distribuição fora da Store</a>
                                 </p>
                             </div>
                         </div>
