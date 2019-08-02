@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: b6f49d25628b4cd2358aa4054c9ca19e77013f99
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 48e3eb8414b827ba1675214e9c0eec7ca451103f
+ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829403"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68685370"
 ---
 # <a name="msix-modification-packages-on-windows-10-version-1809"></a>Pacotes de modificação MSIX no Windows 10 versão 1809 
 
@@ -31,7 +31,7 @@ Crie um pacote de modificação com a Ferramenta de Empacotamento MSIX:
 
 ## <a name="create-a-modification-package-using-makeappxexe"></a>Criar um pacote de modificação usando o MakeAppx.exe
 
-Crie um pacote de modificação manualmente usando a ferramenta [MakeAppX.exe](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool) que está incluída no SDK do Windows 10:
+Crie um pacote de modificação manualmente usando a ferramenta [MakeAppX.exe](package/create-app-package-with-makeappx-tool.md) que está incluída no SDK do Windows 10:
 * No manifesto, especifique o pacote principal. Inclua o fornecedor e o nome do pacote principal.
 
     ```xml

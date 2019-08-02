@@ -2,28 +2,27 @@
 Description: Este artigo descreve os requisitos de assinatura para aplicativos do Windows 10.
 title: Assinar um pacote do aplicativo do Windows 10
 ms.date: 07/03/2019
-ms.author: diahar
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fc4d6003c26cbfc41d65f533de20273c0037e6a
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 5068d3adc3926a589d1f440146098e1e19265671
+ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829318"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68685148"
 ---
-# <a name="sign-a-windows-10-app-package"></a>Assinar um pacote do aplicativo do Windows 10 
+# <a name="sign-a-windows-10-app-package"></a>Assinar um pacote do aplicativo do Windows 10
 
-A assinatura de pacote do aplicativo é uma etapa necessária no processo de criação de um pacote do aplicativo do Windows 10 que pode ser implantado. O Windows 10 exige que todos os aplicativos sejam assinados com um certificado de assinatura de código válido. 
+A assinatura de pacote do aplicativo é uma etapa necessária no processo de criação de um pacote do aplicativo do Windows 10 que pode ser implantado. O Windows 10 exige que todos os aplicativos sejam assinados com um certificado de assinatura de código válido.
 
 Para instalar um aplicativo do Windows 10 com êxito, o pacote não só precisa ser assinado, mas também confiável no dispositivo. Isso significa que o certificado precisa ser encadeado para uma das raízes confiáveis no dispositivo. Por padrão, o Windows 10 confia em certificados da maioria da autoridades de certificação que fornecem certificados de assinatura de código. 
 
 |Tópico| Descrição |
 |:---|:---|
-|[Pré-requisitos para assinatura](https://docs.microsoft.com/en-us/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render#prerequisites)| Esta seção aborda os pré-requisitos necessários para assinar o pacote do aplicativo do Windows 10. | 
-|[Como usar a SignTool](https://docs.microsoft.com/en-us/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render#using-signtool)| Esta seção aborda como usar a SignTool do SDK do Windows 10 para assinar o pacote do aplicativo.|
+|[Pré-requisitos para assinatura](sign-app-package-using-signtool.md#prerequisites)| Esta seção aborda os pré-requisitos necessários para assinar o pacote do aplicativo do Windows 10. | 
+|[Como usar a SignTool](sign-app-package-using-signtool.md#using-signtool)| Esta seção aborda como usar a SignTool do SDK do Windows 10 para assinar o pacote do aplicativo.|
 
-## <a name="timestamping"></a>Carimbo de data/hora 
+## <a name="timestamping"></a>Carimbo de data/hora
 
 Além da assinatura do pacote do aplicativo com um certificado, outra característica importante que determina a validade do certificado de assinatura de código é o **carimbo de data/hora**. O carimbo de data/hora preserva a assinatura, permitindo que o pacote do aplicativo seja aceito pela plataforma de implantação do aplicativo, mesmo após a expiração do certificado. No momento da inspeção do pacote, o carimbo de data/hora permite que a assinatura do pacote seja validada em relação à hora em que ele foi assinado. Isso permite que os pacotes sejam aceitos, mesmo depois que o certificado não seja mais válido. Os pacotes que não têm o carimbo de data/hora serão avaliados em relação à hora atual e, se o certificado não for mais válido, o Windows não aceitará o pacote. 
 
