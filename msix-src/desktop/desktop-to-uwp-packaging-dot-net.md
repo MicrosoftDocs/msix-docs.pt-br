@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: 8effa64d5b06739d1251423fc0776e3e010b73e2
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: f97fc474aa9c25a381362a55120797d2a3c5131c
+ms.sourcegitcommit: 6c28c590cd563ba69b2350e556dbd2ae55d9d7f4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685416"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68730400"
 ---
 # <a name="package-a-desktop-app-from-source-code-using-visual-studio"></a>Empacotar um aplicativo da área de trabalho no código-fonte usando o Visual Studio
 
@@ -61,24 +61,33 @@ Examine este guia antes de começar a criar um pacote para seu aplicativo: [Prep
 
     1. No Gerenciador de Soluções, clique com o botão direito do mouse no nó do projeto de empacotamento e selecione **Editar arquivo de projeto**.
 
-    2. Adicione o seguinte XML ao arquivo de projeto, imediatamente antes do elemento `</Project>` de fechamento.
+    2. Localize o elemento `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` no arquivo.
+
+    3. Substitua este elemento pelo XML a seguir.
 
         ``` xml
-        <!-- Stomp the path to application executable. This task will copy the main exe to the appx root folder. -->
+        <ItemGroup>
+          <SDKReference Include="Microsoft.VCLibs,Version=14.0">
+            <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
+            <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
+            <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
+            <Implicit>true</Implicit>
+          </SDKReference>
+        </ItemGroup>
+        <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
         <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
           <ItemGroup>
-            <!-- Stomp all "SourceProject" values for all incoming dependencies to flatten the package. -->
             <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
             <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
             <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-              <!-- Blank the SourceProject here to vend all files into the root of the package. -->
-              <SourceProject></SourceProject>
+              <SourceProject>
+              </SourceProject>
             </_FilteredNonWapProjProjectOutput>
           </ItemGroup>
         </Target>
         ```
 
-    3. Salve o arquivo de projeto e feche-o.
+    4. Salve o arquivo de projeto e feche-o.
 
 7. Crie o projeto de empacotamento para garantir que nenhum erro apareça. Se você receber erros, abra **Configuration Manager** e verifique se seus projetos se destinam à mesma plataforma.
 
