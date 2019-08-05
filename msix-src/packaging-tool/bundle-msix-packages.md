@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 14045d6bd5d78ba364c82b190d065d8630983fdb
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 7742ca5e52ed5ee435ee3c8765fa45cfbdc903dc
+ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829293"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68685428"
 ---
 # <a name="bundle-msix-packages"></a>Agrupar pacotes de MSIX 
 
@@ -48,29 +48,32 @@ Mova os pacotes de aplicativos que deseja agrupar para um diretório, conforme m
 
 O MakeAppx.exe tem a sintaxe de linha de comando a seguir.
 
-```Prompt de Comando C:\> "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\MakeAppx.exe" bundle /d input_directorypath /p <filepath>.msixbundle
+```Command Prompt
+C:\> "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\MakeAppx.exe" bundle /d input_directorypath 
+/p <filepath>.msixbundle
 ```
 
-Here is an example command.
+Veja a seguir um comando de exemplo.
 
 ```
-C:\> "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\MakeAppx.exe" bundle /d c:\AppPackages\ /p c:\MyLOBApp_10.0.0.0_ph32m9x8skttmg.msixbundle
+C:\> "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\MakeAppx.exe" bundle /d c:\AppPackages\ 
+/p c:\MyLOBApp_10.0.0.0_ph32m9x8skttmg.msixbundle
 ```
 
-After running the command, an unsigned .msixbundle will be created in the path specified. Packages do not need to be signed before bundling.  
+Após executar o comando, um .msixbundle não assinado será criado no caminho especificado. Os pacotes não necessitam ser assinados antes do agrupamento.  
 
-## Step 3: Sign the bundle
+## <a name="step-3-sign-the-bundle"></a>Etapa 3: Assinar o lote
 
-After you create the bundle, you must sign the package before you can distribute the app to your users or install it. 
+Após criar o lote, você deve assinar o pacote antes de distribuir o aplicativo para os usuários ou instalá-lo. 
 
-To sign a package, you will need a general code signing certificate and use SignTool.exe from the Windows 10 SDK. 
+Para assinar um pacote, você precisará de um certificado de assinatura de código geral e usar o SignTool.exe do SDK do Windows 10. 
 
-We strongly recommend that you use a trusted cert from certificate authority as that allows for the package to be distributed and deployed on your end users devices seamlessly. Once you have access to the private certificate (.pfx file), you can sign the package as shown below.
+É altamente recomendável que você use um certificado confiável da autoridade de certificação, pois isso permite que o pacote seja distribuído e implantado nos dispositivos dos usuários finais diretamente. Após ter acesso ao certificado privado (arquivo. pfx), você pode assinar o pacote conforme mostrado abaixo.
 
 >[!NOTE]
-> SignTool.exe is available in the same directory as MakeAppx.exe in the Windows 10 SDK. 
+> O SignTool. exe está disponível no mesmo diretório que o MakeAppx. exe no SDK do Windows 10. 
 
-SignTool.exe has the following command line syntax.
+O MakeAppx.exe tem a sintaxe de linha de comando a seguir.
 
 ```Command Prompt
 C:\> "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\SignTool.exe" sign /fd <Hash Algorithm> /a 
@@ -84,7 +87,7 @@ C:\> "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\SignTool.exe" 
 /f c:\private-cert.pfx /p aaabbb123 c:\MyLOBApp_10.0.0.0_ph32m9x8skttmg.msixbundle
 ```
 
-Para obter mais informações sobre como assinar pacotes de aplicativos com SignTool.exe, confira [este artigo](https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool). 
+Para obter mais informações sobre como assinar pacotes de aplicativos com SignTool.exe, confira [este artigo](../package/sign-app-package-using-signtool.md). 
 
 Depois de assinar o pacote com êxito, você estará pronto para hospedá-lo em um compartilhamento de rede ou em qualquer rede de distribuição de conteúdo para distribuí-lo para seus usuários. 
 
