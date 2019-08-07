@@ -7,12 +7,12 @@ ms.topic: landing-page
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: d3800d9af4808501afd5ad7862cf1bc62790dad3
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 067a6b9730fe7de37e0c90587534fe67edf5d1ad
+ms.sourcegitcommit: 163d233b3f8bdf5d811ba1953aef7617926d9031
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685348"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68786989"
 ---
 # <a name="msix-documentation"></a>Documentação da MSIX
 MSIX é um formato de empacotamento criado para ser seguro, protegido e confiável, baseado em uma combinação de tecnologias de instalação .msi, .appx, App-V e ClickOnce. 
@@ -21,22 +21,22 @@ MSIX é um formato de empacotamento criado para ser seguro, protegido e confiáv
  > Visite a página da [Comunidade de Tecnologia do MSIX](https://aka.ms/msixcommunity) para as discussões e informações mais recentes.
  
 :::row:::
-    :::column:::
-        ### Package existing Windows apps
-A Ferramenta de Empacotamento MSIX permite que você atualize os pacotes de aplicativos Win32 existentes para o formato MSIX. [Saiba mais](mpt-overview.md)
-<div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">Obter a ferramenta</a></p></div>
-    :::column-end:::
-    :::column:::
-        ### Use MSIX anywhere O MSIX SDK permite que desenvolvedores de várias plataformas empacotem e desempacotem pacotes para distribuição pela Microsoft Store ou usando as próprias redes de distribuição de conteúdo. [Saiba mais](msix-sdk/sdk-overview.md)
-    :::column-end:::
+   :::column:::
+      ### <a name="package-existing-windows-apps"></a>Empacotar aplicativos do Windows existentes
+      A Ferramenta de Empacotamento MSIX permite que você atualize os pacotes de aplicativos Win32 existentes para o formato MSIX. [Saiba mais](mpt-overview.md)
+      <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">Obter a ferramenta</a></p></div>
+   :::column-end:::
+   :::column:::
+      ### Use o MSIX em qualquer lugar O MSIX SDK permite que desenvolvedores de várias plataformas empacotem e desempacotem pacotes para distribuição pela Microsoft Store ou usando as próprias redes de distribuição de conteúdo. [Saiba mais](msix-sdk/sdk-overview.md)
+   :::column-end:::
 :::row-end:::
 :::row:::
-        :::column:::
-        ### O Instalador de Aplicativo dos pacotes de aplicativo de MSIX permite instalar e atualizar qualquer pacote do aplicativo de MSIX que esteja disponível localmente ou em qualquer rede de distribuição de conteúdo. [Saiba mais](app-installer/app-installer-root.md)
-    :::column-end:::
-    :::column:::
-    ### A PSF (estrutura de suporte do pacote) permite que o seu aplicativo ignore um determinado número de limitações do ambiente moderno de tempo de execução, garantindo que a sua atual solução seja executada conforme o esperado, sem modificar o código-fonte. [Saiba mais](psf/package-support-framework-overview.md)
-    :::column-end:::
+   :::column:::
+      ### O Instalador de Aplicativo dos pacotes de aplicativo de MSIX permite instalar e atualizar qualquer pacote do aplicativo de MSIX que esteja disponível localmente ou em qualquer rede de distribuição de conteúdo. [Saiba mais](app-installer/app-installer-root.md)
+   :::column-end:::
+   :::column:::
+      ### A PSF (estrutura de suporte do pacote) permite que o seu aplicativo ignore um determinado número de limitações do ambiente moderno de tempo de execução, garantindo que a sua atual solução seja executada conforme o esperado, sem modificar o código-fonte. [Saiba mais](psf/package-support-framework-overview.md)
+   :::column-end:::
 :::row-end:::
 
 <br>
@@ -285,21 +285,19 @@ A Ferramenta de Empacotamento MSIX permite que você atualize os pacotes de apli
 
 ## <a name="msix-training-videos"></a>Vídeos de treinamento do MSIX
 :::row:::
-    :::column:::
-    >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3ig2l]
-#### <a name="msix-overview"></a>Visão geral do MSIX
-O MSIX fornece muitos benefícios no gerenciamento de ciclo de vida do aplicativo. Saiba como aproveitar o MSIX em sua empresa e conheça os benefícios para desenvolvedores, profissionais de TI e usuários finais.
-    :::column-end:::
-    :::column:::
-    >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3i5DH]
-#### <a name="msix-for-developers"></a>MSIX para desenvolvedores
-Saiba como os desenvolvedores podem aproveitar os benefícios do MSIX.
-    :::column-end:::
-    :::column:::
-    >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3iiD5]
-#### <a name="evolving-and-enhancing-desktop-apps-with-msix"></a>Evoluindo e aprimorando aplicativos da área de trabalho com o MSIX
-Evolua e aprimore aplicativos da área de trabalho com o MSIX. Aproveite as novas APIs, novos controles e outros recursos. 
-    :::column-end:::
+   :::column:::
+      >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3ig2l]
+      #### <a name="msix-overview"></a>Visão geral do MSIX
+      O MSIX fornece muitos benefícios no gerenciamento de ciclo de vida do aplicativo. Saiba como aproveitar o MSIX em sua empresa e conheça os benefícios para desenvolvedores, profissionais de TI e usuários finais.
+   :::column-end:::
+   :::column:::
+      >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3i5DH]
+      #### <a name="msix-for-developers"></a>MSIX para desenvolvedores
+      Saiba como os desenvolvedores podem aproveitar os benefícios do MSIX.
+   :::column-end:::
+   :::column:::
+      >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3iiD5]
+      #### <a name="evolving-and-enhancing-desktop-apps-with-msix"></a>Evoluindo e aprimorando aplicativos da área de trabalho com o MSIX
+      Evolua e aprimore aplicativos da área de trabalho com o MSIX. Aproveite as novas APIs, novos controles e outros recursos. 
+   :::column-end:::
 :::row-end:::
-
-
