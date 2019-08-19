@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fec62c4a37529cf9f27828096c473a620c443419
-ms.sourcegitcommit: 70036a054d1a5da24f535ddd4ea0fae78c30d469
+ms.openlocfilehash: 855e80bfc859cf2ff4b2f46ce921841080cb7fce
+ms.sourcegitcommit: b014ea712802a2845468182770c7acd5ae6aea70
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68238965"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68935583"
 ---
 # <a name="create-an-msix-package-from-a-desktop-installer-msi-exe-or-app-v-on-a-vm"></a>Criar um pacote MSIX com base em um instalador da área de trabalho (MSI, EXE ou App-V) em uma VM
 
@@ -25,29 +25,31 @@ Use a [Ferramenta de Empacotamento MSIX](../mpt-overview.md) para criar um pacot
 > [!NOTE]
 > No momento, a Ferramenta de Empacotamento MSIX é compatível com o App-V 5.1. Se você tiver um pacote com o App-V 4.x, recomendamos que o converta para o App-V 5.1 antes de usar a Ferramenta de Empacotamento MSIX para converter em MSIX. 
 
-Quando a ferramenta for iniciada pela primeira vez, você deverá fornecer consentimento para enviar dados telemétricos. É importante observar que os dados de diagnóstico que você compartilha são provenientes apenas do aplicativo e nunca são usados para identificá-lo ou contatá-lo. Isso apenas nos ajuda a corrigir as coisas mais rapidamente para você.
+Quando a ferramenta for iniciada pela primeira vez, você deverá fornecer consentimento para enviar dados telemétricos. É importante observar que os dados de diagnóstico que você compartilha são provenientes apenas do aplicativo e nunca são usados para identificá-lo ou contatá-lo.
 
 A criação de um pacote do aplicativo é a opção mais comumente usada. É nesse local em que você criará um pacote MSIX com base em um instalador ou pela instalação manual do conteúdo do aplicativo.
 
-![pic1](images/pic1.png)
+![pic1](images/pic1.PNG)
 
 ## <a name="choose-the-installer-you-want-to-package"></a>Escolher o instalador que você deseja empacotar
 
-![pic2](images/pic2.png)
+![pic2](images/pic2.jpg)
 
 Navegue até o instalador MSI ou App-V clicando em **Procurar** e selecionando o instalador no seletor de arquivos. Em seguida, clique em **Avançar**.
 
 Opcionalmente:
-- Marque a caixa em **Usar pacote MSIX existente**, procure e selecione um pacote MSIX existente que deseja atualizar.
+- Marque a caixa em **Assinar pacote**, procure e selecione o arquivo de certificado .pfx. Se o certificado for protegido por senha, digite a senha na caixa de senha. Também é possível definir como padrão nas configurações. Desse modo, você pula algumas etapas na hora da conversão. 
 - Marque a caixa em **Usar argumentos do instalador** e insira o argumento desejado no campo fornecido. Esse campo aceita qualquer cadeia de caracteres.
-- Marque a caixa em **Assinar pacote para teste**, procure e selecione o arquivo de certificado .pfx. Se o certificado for protegido por senha, digite a senha na caixa de senha.
 
 ## <a name="packaging-method"></a>Método de compactação
 
-![images/pic3](images/pic3.png)
+![images/pic3](images/pic3.jpg)
 
-- Selecione a máquina virtual para o ambiente de empacotamento.
-  - Selecione **Criar o pacote em uma máquina virtual existente** e, na lista suspensa, selecione um nome de máquina virtual existente. Você verá os campos de usuário e senha para fornecer credenciais para a VM, se houver.
+Selecione uma opção no computador de conversão:
+- Se você já estiver trabalhando em um ambiente limpo, selecione **Criar pacote neste computador**
+- Se você quiser se conectar a uma VM existente ou a um computador remoto, selecione **Criar pacote em um computador remoto**
+  - Será preciso configurar o computador remoto antes de poder realizar conversões nele
+- Se você tiver uma VM local no computador em que deseja converter, selecione **Criar pacote em uma máquina virtual local**
   - Clique em **Avançar**.
 
 ## <a name="package-information"></a>Informações do pacote
