@@ -1,17 +1,17 @@
 ---
 Description: Este artigo lista as coisas que você precisa saber antes de empacotar seu aplicativo de desktop. Talvez você não precise fazer muito para preparar seu app para o processo de empacotamento.
 title: Preparar para empacotar um aplicativo de desktop (ponte de desktop)
-ms.date: 07/29/2019
+ms.date: 08/22/2019
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: b46dfe767f84987e6f4930b8a263812904274e3d
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 4e907e4008389a5075575431dcb74d93fe3b4ddd
+ms.sourcegitcommit: 641ab68bc55d09291dbc26748658e64f15eaedee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685394"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69979233"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>Preparar um pacote para um aplicativo de área de trabalho
 
@@ -65,12 +65,12 @@ Este artigo lista as coisas que você precisa saber antes de empacotar seu aplic
 
     <table>
     <th>Versão do Visual Studio</td><th>Vinculação dinâmica</th><th>Vinculação estática</th></th>
-    <tr><td>2005 (VC 8)</td><td>Sem suporte</td><td>Com suporte</td>
-    <tr><td>2008 (VC 9)</td><td>Sem suporte</td><td>Com suporte</td>
-    <tr><td>2010 (VC 10)</td><td>Com suporte</td><td>Com suporte</td>
-    <tr><td>2012 (VC 11)</td><td>Com suporte</td><td>Sem suporte</td>
-    <tr><td>2013 (VC 12)</td><td>Com suporte</td><td>Sem suporte</td>
-    <tr><td>2015 e 2017 (VC 14)</td><td>Com suporte</td><td>Com suporte</td>
+    <tr><td>2005 (VC 8)</td><td>Sem suporte</td><td>Suportado</td>
+    <tr><td>2008 (VC 9)</td><td>Sem suporte</td><td>Suportado</td>
+    <tr><td>2010 (VC 10)</td><td>Suportado</td><td>Suportado</td>
+    <tr><td>2012 (VC 11)</td><td>Suportado</td><td>Sem suporte</td>
+    <tr><td>2013 (VC 12)</td><td>Suportado</td><td>Sem suporte</td>
+    <tr><td>2015 e 2017 (VC 14)</td><td>Suportado</td><td>Suportado</td>
     </table>
 
     Observação: Em todos os casos, você deve vincular ao CRT disponível publicamente mais recente.
@@ -79,17 +79,29 @@ Este artigo lista as coisas que você precisa saber antes de empacotar seu aplic
 
 + __Seu aplicativo usa uma dependência na pasta system32/SysWOW64__. Para fazer essas DLLs funcionarem, você deve incluí-las na parte do sistema de arquivos virtual do pacote de aplicativo do Windows. Isso garante que o aplicativo se comporta como se as DLLs estivessem instaladas na pasta **System32**/**SysWOW64** . Na raiz do pacote, crie uma pasta chamada **VFS**. Dentro dessa pasta, crie uma pasta **SystemX64** e uma **SystemX86**. Em seguida, coloque a versão de 32 bits de sua DLL na pasta **SystemX86** e a versão de 64 bits na pasta **SystemX64**.
 
-+ __Seu app usa um pacote de estrutura VCLibs__. As bibliotecas VCLibs podem ser instaladas diretamente da Microsoft Store, caso estejam definidas como uma dependência no pacote de aplicativo do Windows. Por exemplo, se seu aplicativo usar pacotes Dev11 VCLibs, faça a seguinte alteração no manifesto do pacote de aplicativos: `<Dependencies>` No nó, adicione:  
-`<PackageDependency Name="Microsoft.VCLibs.110.00.UWPDesktop" MinVersion="11.0.24217.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />`  
-Durante a instalação a partir da Microsoft Store, a versão apropriada (x86 ou x64) da estrutura VCLibs será instalada antes da instalação do app.  
-As dependências não serão instaladas se o aplicativo for instalado pelo Sideload. Para instalar as dependências manualmente no seu computador, você deve baixar e instalar o pacote de estrutura VCLibs apropriado para Ponte de Desktop. Para obter mais informações sobre esses cenários, consulte [Usando o Visual C++ Runtime em um projeto Centennial](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/).
++ __Seu app usa um pacote de estrutura VCLibs__. Se você estiver convertendo C++ um aplicativo Win32, deverá lidar com a implantação do tempo C++ de execução Visual. O Visual Studio 2019 e o SDK do Windows incluem os pacotes mais recentes do Framework para a versão 11,0, 12,0 e C++ 14,0 do tempo de execução Visual nas seguintes pastas:
 
-  **Pacotes de estrutura**:
+    * **Pacotes do VC 14,0 Framework**: C:\Arquivos de programas (x86) \Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop\14.0
 
-  * [Pacotes do VC 14,0 Framework para ponte de desktop](https://www.microsoft.com/download/details.aspx?id=53175)
-  * [Pacotes do VC 12,0 Framework para ponte de desktop](https://www.microsoft.com/download/details.aspx?id=53176)
-  * [Pacotes do VC 11,0 Framework para ponte de desktop](https://www.microsoft.com/download/details.aspx?id=53340)
+    * **Pacotes do VC 12,0 Framework**: C:\Arquivos de programas (x86) \Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop.120\14.0
 
+    * **Pacotes do VC 11,0 Framework**: C:\Arquivos de programas (x86) \Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop.110\14.0
+
+    Para usar um desses pacotes, você deve fazer referência ao pacote como uma dependência no manifesto do pacote. Quando os clientes instalam a versão comercial do seu aplicativo da Microsoft Store, o pacote será instalado da loja junto com seu aplicativo. As dependências não serão instaladas se você carregar seu aplicativo. Para instalar as dependências manualmente, você deve instalar o pacote de estrutura apropriado usando o pacote. Appx apropriado para x86, x64 ou ARM localizado nas pastas de instalação listadas acima.
+
+    Para fazer referência a C++ um pacote do Visual Runtime Framework em seu aplicativo:
+
+    1. Vá para a pasta de instalação do pacote do Framework listada acima para a C++ versão do tempo de execução Visual usada pelo seu aplicativo.
+
+    2. Abra o arquivo SDKManifest. xml nessa pasta `FrameworkIdentity-Debug` , localize o atributo ou `FrameworkIdentity-Retail` (dependendo se você estiver usando a versão de depuração ou de varejo do tempo de execução) e copie os `Name` valores e `MinVersion` desse atributo. Por exemplo, este é o `FrameworkIdentity-Retail` atributo para o pacote de estrutura vc 14,0 atual.
+        ```xml
+        FrameworkIdentity-Retail = "Name = Microsoft.VCLibs.140.00.UWPDesktop, MinVersion = 14.0.27323.0, Publisher = 'CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US'"
+        ```
+
+    3. No manifesto do pacote para seu aplicativo, adicione o seguinte `<PackageDependency>` elemento sob o `<Dependencies>` nó. Certifique-se de substituir `Name` os `MinVersion` valores e pelos valores copiados na etapa anterior. O exemplo a seguir especifica uma dependência para a versão atual do pacote da estrutura VC 14,0.
+        ```xml
+        <PackageDependency Name="Microsoft.VCLibs.140.00.UWPDesktop" MinVersion="14.0.27323.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+        ```
 
 + __Seu aplicativo contém uma lista de atalhos personalizada__. Há vários problemas e limitações a que é preciso estar atento ao usar listas de atalhos.
 
