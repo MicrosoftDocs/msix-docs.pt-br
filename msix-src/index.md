@@ -7,12 +7,12 @@ ms.topic: landing-page
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 067a6b9730fe7de37e0c90587534fe67edf5d1ad
-ms.sourcegitcommit: 163d233b3f8bdf5d811ba1953aef7617926d9031
+ms.openlocfilehash: 704da0b007ad6ff82341b01db38944476388a4de
+ms.sourcegitcommit: f5cd0d2d004bb93e60ec5231426b99deecb49601
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68786989"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69882531"
 ---
 # <a name="msix-documentation"></a>Documentação da MSIX
 MSIX é um formato de empacotamento criado para ser seguro, protegido e confiável, baseado em uma combinação de tecnologias de instalação .msi, .appx, App-V e ClickOnce. 
@@ -26,16 +26,20 @@ MSIX é um formato de empacotamento criado para ser seguro, protegido e confiáv
       A Ferramenta de Empacotamento MSIX permite que você atualize os pacotes de aplicativos Win32 existentes para o formato MSIX. [Saiba mais](mpt-overview.md)
       <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">Obter a ferramenta</a></p></div>
    :::column-end:::
+   
    :::column:::
-      ### Use o MSIX em qualquer lugar O MSIX SDK permite que desenvolvedores de várias plataformas empacotem e desempacotem pacotes para distribuição pela Microsoft Store ou usando as próprias redes de distribuição de conteúdo. [Saiba mais](msix-sdk/sdk-overview.md)
+      ### <a name="use-msix-anywhere"></a>Usar o MSIX em qualquer lugar
+      O SDK MSIX permite que desenvolvedores de várias plataformas montem e desmontem pacotes para distribuição pela Microsoft Store ou usando as próprias redes de distribuição de conteúdo. [Saiba mais](msix-sdk/sdk-overview.md)
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
-      ### O Instalador de Aplicativo dos pacotes de aplicativo de MSIX permite instalar e atualizar qualquer pacote do aplicativo de MSIX que esteja disponível localmente ou em qualquer rede de distribuição de conteúdo. [Saiba mais](app-installer/app-installer-root.md)
+      ### <a name="install-msix-app-packages"></a>Instalar pacotes do aplicativo do MSIX
+      O Instalador de Aplicativo permite instalar e atualizar qualquer pacote do aplicativo do MSIX que esteja disponível localmente ou em qualquer rede de distribuição de conteúdo. [Saiba mais](app-installer/app-installer-root.md)
    :::column-end:::
    :::column:::
-      ### A PSF (estrutura de suporte do pacote) permite que o seu aplicativo ignore um determinado número de limitações do ambiente moderno de tempo de execução, garantindo que a sua atual solução seja executada conforme o esperado, sem modificar o código-fonte. [Saiba mais](psf/package-support-framework-overview.md)
+      ### <a name="package-support-framework"></a>Estrutura de suporte do pacote
+      A PSF permite que o seu aplicativo ignore um determinado número de limitações do ambiente moderno de tempo de execução, para que sua solução atual seja executada conforme o esperado, sem modificar o código-fonte. [Saiba mais](psf/package-support-framework-overview.md)
    :::column-end:::
 :::row-end:::
 
