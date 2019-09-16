@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 98e837669feda0147ad9465330907c930132b43d
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 3efb0ef21810ba4e5aa8cf9071c2ed3e985ebc12
+ms.sourcegitcommit: 9cb3d2cdbe03b300bef60ed949e5e4d3b24d35ba
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829112"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70864032"
 ---
 # <a name="package-support-framework"></a>PSF (estrutura de suporte do pacote)
 
@@ -42,6 +42,9 @@ Depois de criar um pacote para seu aplicativo, instale e execute-o e observe seu
 Depois de encontrar um problema, confira nossa página do [GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework/) para obter uma correção. Caso encontre uma, aplique-a ao seu pacote. Nosso [Guia passo a passo](https://docs.microsoft.com/windows/uwp/porting/package-support-framework) mostra como fazer isso. Ele também mostrará como usar o depurador do Visual Studio para depurar seu aplicativo e verificar se a correção está funcionando e se ela resolveu o problema de compatibilidade.
 
 Caso não encontre uma correção em tempo de execução que resolva o problema, crie uma. Para fazer isso, você identificará quais chamadas de função falham quando seu aplicativo é executado em um contêiner MSIX. Em seguida, você poderá criar funções de substituição que você deseja que sejam chamadas pelo gerenciador de tempo de execução. Isso oferecerá uma oportunidade de substituir a implementação de uma função por um comportamento que esteja de acordo com as regras do ambiente moderno do tempo de execução.
+
+## <a name="limitation-of-package-support-framework"></a>Limitação do Package Support Framework 
+O Package Support Framework não é compatível com as substituições do registro. Ele resolverá problemas relacionados ao tempo de execução. Escolha as seguintes DLLs que se ajustarão às suas necessidades. 
 
 ## <a name="get-started-with-the-package-support-framework"></a>Introdução ao Package Support Framework
 

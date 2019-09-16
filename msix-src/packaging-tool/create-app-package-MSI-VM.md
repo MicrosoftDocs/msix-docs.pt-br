@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 855e80bfc859cf2ff4b2f46ce921841080cb7fce
-ms.sourcegitcommit: b014ea712802a2845468182770c7acd5ae6aea70
+ms.openlocfilehash: 0fccdcbf9a5d03155695e420871d6b204d9a83d7
+ms.sourcegitcommit: 9cb3d2cdbe03b300bef60ed949e5e4d3b24d35ba
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68935583"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70864085"
 ---
 # <a name="create-an-msix-package-from-a-desktop-installer-msi-exe-or-app-v-on-a-vm"></a>Criar um pacote MSIX com base em um instalador da área de trabalho (MSI, EXE ou App-V) em uma VM
 
@@ -39,6 +39,7 @@ Navegue até o instalador MSI ou App-V clicando em **Procurar** e selecionando o
 
 Opcionalmente:
 - Marque a caixa em **Assinar pacote**, procure e selecione o arquivo de certificado .pfx. Se o certificado for protegido por senha, digite a senha na caixa de senha. Também é possível definir como padrão nas configurações. Desse modo, você pula algumas etapas na hora da conversão. 
+  - Ao assinar é possível adicionar um **carimbo de data/hora** ao seu certificado para que a validade possa ultrapassar a data do término. O formato aceito é uma [URL do servidor com carimbo de data/hora RFC 3161](https://docs.microsoft.com/windows/win32/seccrypto/signtool). 
 - Marque a caixa em **Usar argumentos do instalador** e insira o argumento desejado no campo fornecido. Esse campo aceita qualquer cadeia de caracteres.
 
 ## <a name="packaging-method"></a>Método de compactação

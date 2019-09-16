@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Ferramenta de Empacotamento MSIX, problemas conhecidos, solução de problemas
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c5227d8a394e6af211e2409e34dfcb3648cd2c93
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: b38231f6cf918ecbcd598c01e17c68e4e072cfd5
+ms.sourcegitcommit: 9cb3d2cdbe03b300bef60ed949e5e4d3b24d35ba
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829196"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70863999"
 ---
 # <a name="known-issues-and-troubleshooting"></a>Problemas conhecidos e soluções de problemas
 
@@ -49,9 +49,15 @@ Caso contrário, se você tiver acesso aos canais empresariais ou do OEM, poder�
 
 Os pacotes de Recurso sob Demanda obtidos individualmente podem ser instalados usando opções de linha de comando do DISM.
 
+### <a name="getting-the-msix-packaging-tool-for-offline-use"></a>Como obter a Ferramenta de Empacotamento MSIX para uso offline
+
+A Ferramenta de Empacotamento MSIX pode ser baixada para uso offline na empresa no [portal da Web](https://businessstore.microsoft.com/store) do Microsoft Store para Empresas. Saiba mais sobre a distribuição offline [aqui](https://docs.microsoft.com/microsoft-store/distribute-offline-apps). Caso tenha problemas com a cópia offline da ferramenta de empacotamento, verifique se você tem a [cópia offline da licença](https://docs.microsoft.com/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app) para a ferramenta. 
+
+Após obter a versão offline do aplicativo é possível usar o [PowerShell](https://docs.microsoft.com/powershell/module/dism/add-appxprovisionedpackage?view=win10-ps) para adicionar o pacote do aplicativo e a licença ao seu computador.
+
+
 ## <a name="other-known-issues"></a>Outros problemas conhecidos
 
-- Não há suporte para a reinicialização do computador durante a instalação do aplicativo. Ignore a solicitação de reinicialização, se possível, ou passe um argumento ao instalador para não exigir uma reinicialização.
 - Os instaladores podem exigir que estruturas ou drivers específicos sejam instalados antes da instalação. Para pesquisar as estruturas e os drivers no computador que estão sendo usados para converter aplicativos, use as seguintes consultas: ```driverquery /v | Out-File``` ou ```driverquery /v | Out-File "path to text file"```
 - Durante a conversão, os instaladores podem executar os serviços. Os serviços não são capturados durante a conversão. Como resultado, o aplicativo pode ser instalado, mas ser executado com problemas.
 

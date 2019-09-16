@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5997ac7b870d5030440fcf357f298d776db9d87e
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 4e9f066ee57d06c5cf0f7cde4a68683c99fa8792
+ms.sourcegitcommit: 9cb3d2cdbe03b300bef60ed949e5e4d3b24d35ba
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829248"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70864016"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -35,9 +35,13 @@ Se a ferramenta já estiver instalada no computador, verifique a versão instala
 
 ## <a name="current-insider-preview-build"></a>Build atual do Insider Preview
 
-Acabamos de lançar nossa versão de build público mais recente 1.2019.701.0
-
-Fique atento à primeira versão prévia da nossa próxima versão!
+### <a name="version-120198080"></a>Versão 1.2019.808.0
+- Melhorias nas configurações
+    - Separação dos padrões da ferramenta de outras configurações
+    - Capacidade adicionada para importar e exportar configurações
+- Melhorias na assinatura
+    - Agora você pode escolher uma opção de assinatura padrão para os fluxos de trabalho
+- Atualização das etapas durante o empacotamento para melhorar a experiência
 
 Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](release-notes/history.md).
 
