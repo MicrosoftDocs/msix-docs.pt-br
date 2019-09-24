@@ -6,21 +6,25 @@ ms.topic: article
 keywords: Windows 10, UWP, msix, ferramenta de empacotamento msix, programa Insider
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: 676c58574457261adbeaf150279a8eda82b7fc7a
-ms.sourcegitcommit: 031e481716f6f02ad2d5dd67d5eea35869c99c0c
+ms.openlocfilehash: 03a5b366f028a8686658cd3836c8b2ba5af84c55
+ms.sourcegitcommit: 1c3a0f5c27ee741d26f693ad657754c4ab29ac73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68991422"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71189888"
 ---
 # <a name="msix-packaging-tool-release-notes"></a>Notas de versão da ferramenta de empacotamento MSIX
 
-### <a name="version-120198080"></a>1\.2019.808.0 da versão
-- Aprimoramentos de configurações
+### <a name="version-120199190"></a>1\.2019.919.0 da versão
+- A assinatura do Device Guard agora está disponível. Essa opção de assinatura requer uma conta do Active Microsoft Azure Active Directory configurada para o Microsoft Store para empresas. Para obter mais informações, consulte [este artigo](https://docs.microsoft.com/windows/msix/package/signing-package-device-guard-signing).
+- O **Editor de pacote** agora dá suporte à capacidade de selecionar vários itens nos quais executar uma ação.
+
+### <a name="version-120198080"></a>Versão 1.2019.808.0
+- Melhorias nas configurações
     - Separação dos padrões da ferramenta de outras configurações
-    - Adicionada a capacidade de importar e exportar configurações
-- Aprimoramentos de assinatura
-    - Agora você pode escolher uma opção de assinatura padrão para fluxos de trabalho
+    - Capacidade adicionada para importar e exportar configurações
+- Melhorias na assinatura
+    - Agora você pode escolher uma opção de assinatura padrão para os fluxos de trabalho
 - Atualização das etapas durante o empacotamento para melhorar a experiência
 
 ## <a name="version-120197010---public-release"></a>Versão 1.2019.701.0 – versão pública
