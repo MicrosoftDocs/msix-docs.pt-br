@@ -5,20 +5,21 @@ ms.date: 08/07/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eb14019a86a17cb78b48bf199a9d2794b81a70ff
-ms.sourcegitcommit: b014ea712802a2845468182770c7acd5ae6aea70
+ms.openlocfilehash: 56d3f293782befa65357d62e249851e6c137667e
+ms.sourcegitcommit: cc7fe74ea7c7b8c06190330023b3dff43034960e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68935589"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71310987"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>Aplicar correções de tempo de execução a um pacote MSIX usando a estrutura de suporte do pacote
 
-O Package Support Framework é um kit de software livre que ajuda você a aplicar correções ao seu aplicativo Win32 quando você não tem acesso ao software livre, de modo que ele possa ser executado em um contêiner MSIX. O Package Support Framework ajuda seu aplicativo a seguir as melhores práticas do ambiente moderno do tempo de execução.
+O [Package support Framework](package-support-framework-overview.md) é um Open Source kit que ajuda a aplicar correções ao seu aplicativo de área de trabalho existente (sem modificar o código) para que ele possa ser executado em um contêiner MSIX. O Package Support Framework ajuda seu aplicativo a seguir as melhores práticas do ambiente moderno do tempo de execução.
 
-Para saber mais, confira [estrutura de suporte do pacote](package-support-framework-overview.md).
+Este artigo ajuda você a identificar problemas de compatibilidade de aplicativos e a localizar, aplicar e estender correções de tempo de execução que os resolvem. As seções deste artigo destinam-se a diferentes funções:
 
-Este guia ajudará você a identificar problemas de compatibilidade de aplicativos e a localizar, aplicar e estender correções de tempo de execução que os resolvem.
+* Profissionais de ti ou administradores: As seções mais relevantes são [identificar problemas de compatibilidade de aplicativos empacotados](#identify-packaged-application-compatibility-issues), [encontrar uma correção de tempo de execução](#find-a-runtime-fix)e [aplicar uma correção de tempo de execução](#apply-a-runtime-fix).
+* Programa Embora os desenvolvedores possam encontrar o artigo inteiro útil, as seções mais relevantes são [depurar, estender ou criar uma correção em tempo de execução](#debug-extend-or-create-a-runtime-fix), [criar uma correção de tempo de execução](#create-a-runtime-fix)e [outras técnicas de depuração](#other-debugging-techniques). d
 
 <a id="identify" />
 
@@ -62,9 +63,9 @@ O PSF contém correções de tempo de execução que você pode usar no momento,
 
 ### <a name="file-redirection-fixup"></a>Correção de redirecionamento de arquivo
 
-Você pode usar a [correção](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup) de redirecionamento de arquivo para redirecionar tentativas de gravação ou leitura de dados em um diretório que não está acessível a partir de um aplicativo que é executado em um contêiner MSIX.
+Você pode usar a [correção de redirecionamento de arquivo](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup) para redirecionar tentativas de gravação ou leitura de dados em um diretório que não está acessível a partir de um aplicativo que é executado em um contêiner MSIX.
 
-Por exemplo, se seu aplicativo gravar em um arquivo de log que está no mesmo diretório que o executável de seus aplicativos, você poderá usar a correção de redirecionamento de [arquivo](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup) para criar esse arquivo de log em outro local, como o armazenamento de dados do aplicativo local.
+Por exemplo, se seu aplicativo gravar em um arquivo de log que está no mesmo diretório que o executável de seus aplicativos, você poderá usar a [correção de redirecionamento de arquivo](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup) para criar esse arquivo de log em outro local, como o armazenamento de dados do aplicativo local.
 
 ### <a name="runtime-fixes-from-the-community"></a>Correções de tempo de execução da Comunidade
 
@@ -188,11 +189,11 @@ Veja a seguir um guia para o esquema config. JSON:
 | Array | key | Valor |
 |-------|-----------|-------|
 | applications | id |  Use o valor do `Id` atributo `Application` do elemento no manifesto do pacote. |
-| applications | executável | O caminho relativo do pacote para o executável que você deseja iniciar. Na maioria dos casos, você pode obter esse valor do arquivo de manifesto do pacote antes de modificá-lo. É o valor do `Executable` atributo `Application` do elemento. |
-| applications | workingDirectory | Adicional Um caminho relativo de pacote a ser usado como o diretório de trabalho do aplicativo que é iniciado. Se você não definir esse valor, o sistema operacional usará `System32` o diretório como o diretório de trabalho do aplicativo. |
-| processos | executável | Na maioria dos casos, esse será o nome do `executable` configurado acima com o caminho e a extensão de arquivo removidos. |
+| applications | executá | O caminho relativo do pacote para o executável que você deseja iniciar. Na maioria dos casos, você pode obter esse valor do arquivo de manifesto do pacote antes de modificá-lo. É o valor do `Executable` atributo `Application` do elemento. |
+| applications | WorkingDirectory | Adicional Um caminho relativo de pacote a ser usado como o diretório de trabalho do aplicativo que é iniciado. Se você não definir esse valor, o sistema operacional usará `System32` o diretório como o diretório de trabalho do aplicativo. |
+| processos | executá | Na maioria dos casos, esse será o nome do `executable` configurado acima com o caminho e a extensão de arquivo removidos. |
 | ajustes | dll | Caminho relativo ao pacote para a correção,. msix/. Appx a ser carregado. |
-| ajustes | configuração | Adicional Controla a forma com que a DL de correção se comporta. O formato exato desse valor varia de acordo com a correção, pois cada correção pode interpretar esse "blob" como desejado. |
+| ajustes | configuração | Adicional Controla como a DLL de correção se comporta. O formato exato desse valor varia de acordo com a correção, pois cada correção pode interpretar esse "blob" como desejado. |
 
 As `applications`chaves `processes`, e`fixups` são matrizes. Isso significa que você pode usar o arquivo config. JSON para especificar mais de um aplicativo, processo e DLL de correção.
 
@@ -268,7 +269,7 @@ Vamos examinar cada projeto neste exemplo.
 
 | Projeto | Finalidade |
 |-------|-----------|
-| DesktopApplicationPackage | Este projeto é baseado no projeto de empacotamento de [aplicativos do Windows](../desktop/desktop-to-uwp-packaging-dot-net.md) e gera o pacote MSIX. |
+| DesktopApplicationPackage | Este projeto é baseado no [projeto de empacotamento de aplicativos do Windows](../desktop/desktop-to-uwp-packaging-dot-net.md) e gera o pacote MSIX. |
 | Runtimefix | Este é um C++ projeto de biblioteca vinculado dinâmico que contém uma ou mais funções de substituição que servem como correção de tempo de execução. |
 | PSFLauncher | Este é C++ um projeto vazio. Este projeto é um local para coletar os arquivos distribuíveis de tempo de execução da estrutura de suporte do pacote. Ele gera um arquivo executável. Esse executável é a primeira coisa que é executada quando você inicia a solução. |
 | WinFormsDesktopApplication | Este projeto contém o código-fonte de um aplicativo de área de trabalho. |
@@ -287,7 +288,7 @@ Talvez você também queira adicionar qualquer projeto de aplicativo que você t
 
 ### <a name="add-a-packaging-project"></a>Adicionar um projeto de empacotamento
 
-Se você ainda não tiver um **projeto**de empacotamento de aplicativos do Windows, crie um e adicione-o à sua solução.
+Se você ainda não tiver um **projeto de empacotamento de aplicativos do Windows**, crie um e adicione-o à sua solução.
 
 ![Modelo de projeto de pacote](images/package-project-template.png)
 
@@ -351,9 +352,9 @@ Clique com o botão direito do mouse na referência e, em seguida, na janela **P
 
 | Propriedade | Valor |
 |-------|-----------|
-| Copiar local | verdadeiro |
-| Copiar assemblies satélite locais | verdadeiro |
-| Saída do assembly de referência | verdadeiro |
+| Copiar local | True |
+| Copiar assemblies satélite locais | True |
+| Saída do assembly de referência | True |
 | Vincular dependências de biblioteca | False |
 | Entradas de dependência da biblioteca de links | False |
 
@@ -405,9 +406,9 @@ Forneça um valor para cada chave. Use esta tabela como um guia.
 | Array | key | Valor |
 |-------|-----------|-------|
 | applications | id |  Use o valor do `Id` atributo `Application` do elemento no manifesto do pacote. |
-| applications | executável | O caminho relativo do pacote para o executável que você deseja iniciar. Na maioria dos casos, você pode obter esse valor do arquivo de manifesto do pacote antes de modificá-lo. É o valor do `Executable` atributo `Application` do elemento. |
-| applications | workingDirectory | Adicional Um caminho relativo de pacote a ser usado como o diretório de trabalho do aplicativo que é iniciado. Se você não definir esse valor, o sistema operacional usará `System32` o diretório como o diretório de trabalho do aplicativo. |
-| processos | executável | Na maioria dos casos, esse será o nome do `executable` configurado acima com o caminho e a extensão de arquivo removidos. |
+| applications | executá | O caminho relativo do pacote para o executável que você deseja iniciar. Na maioria dos casos, você pode obter esse valor do arquivo de manifesto do pacote antes de modificá-lo. É o valor do `Executable` atributo `Application` do elemento. |
+| applications | WorkingDirectory | Adicional Um caminho relativo de pacote a ser usado como o diretório de trabalho do aplicativo que é iniciado. Se você não definir esse valor, o sistema operacional usará `System32` o diretório como o diretório de trabalho do aplicativo. |
+| processos | executá | Na maioria dos casos, esse será o nome do `executable` configurado acima com o caminho e a extensão de arquivo removidos. |
 | ajustes | dll | Caminho relativo do pacote para o DLL de correção a ser carregado. |
 | ajustes | configuração | Adicional Controla como a DLL de correção se comporta. O formato exato desse valor varia de acordo com a correção, pois cada correção pode interpretar esse "blob" como desejado. |
 
@@ -510,6 +511,17 @@ if (auto configRoot = ::FixupQueryCurrentDllConfig())
     }
 }
 ```
+
+### <a name="fixup-metadata"></a>Metadados de correção
+
+Cada correção e o aplicativo iniciador PSF tem um arquivo de metadados XML que contém as seguintes informações:
+
+* Versão: A versão do PSF está em MAJOR. Secundária. Formato de PATCH de acordo com [sem versão 2](https://semver.org/).
+* Plataforma mínima do Windows: A versão mínima do Windows necessária para o iniciador de correção ou PSF.
+* Descrição: Uma breve descrição da correção.
+* WhenToUse: Heurística sobre quando você deve aplicar a correção.
+
+Para obter um exemplo, consulte o arquivo de metadados [FileRedirectionFixupMetadata. xml](https://github.com/microsoft/MSIX-PackageSupportFramework/blob/master/fixups/FileRedirectionFixup/FileRedirectionFixupMetadata.xml) para a correção de redirecionamento. O esquema de metadados está disponível [aqui](https://github.com/microsoft/MSIX-PackageSupportFramework/blob/master/MetadataSchema.xsd).
 
 ## <a name="other-debugging-techniques"></a>Outras técnicas de depuração
 
