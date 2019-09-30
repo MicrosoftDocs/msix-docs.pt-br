@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3efb0ef21810ba4e5aa8cf9071c2ed3e985ebc12
-ms.sourcegitcommit: 9cb3d2cdbe03b300bef60ed949e5e4d3b24d35ba
+ms.openlocfilehash: b62a73942ad0bd8324aa76b0df43f6aa52237e8b
+ms.sourcegitcommit: cc7fe74ea7c7b8c06190330023b3dff43034960e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70864032"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71310975"
 ---
 # <a name="package-support-framework"></a>PSF (estrutura de suporte do pacote)
 
@@ -35,17 +35,25 @@ Quando os usuários iniciarem seu aplicativo, o iniciador do Package Support Fra
 
 ![Injeção de DLL do Package Support Framework](images/package-support-framework-2.png)
 
-## <a name="how-to-use-the-package-support-framework"></a>Como usar o Package Support Framework
+## <a name="get-started-using-the-package-support-framework"></a>Introdução ao uso do Package Support Framework
 
 Depois de criar um pacote para seu aplicativo, instale e execute-o e observe seu comportamento. Você poderá receber mensagens de erro que podem ajudá-lo a identificar um problema de compatibilidade. Use também o [Monitor do Processo](https://docs.microsoft.com/sysinternals/downloads/procmon) para identificar problemas.
 
-Depois de encontrar um problema, confira nossa página do [GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework/) para obter uma correção. Caso encontre uma, aplique-a ao seu pacote. Nosso [Guia passo a passo](https://docs.microsoft.com/windows/uwp/porting/package-support-framework) mostra como fazer isso. Ele também mostrará como usar o depurador do Visual Studio para depurar seu aplicativo e verificar se a correção está funcionando e se ela resolveu o problema de compatibilidade.
+Depois de encontrar um problema, confira nossa página do [GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework/) para obter uma correção. Caso encontre uma, aplique-a ao seu pacote. Nosso [guia passo a passo](https://docs.microsoft.com/windows/uwp/porting/package-support-framework) mostra como fazer isso. Ele também mostrará como usar o depurador do Visual Studio para depurar seu aplicativo e verificar se a correção está funcionando e se ela resolveu o problema de compatibilidade.
 
-Caso não encontre uma correção em tempo de execução que resolva o problema, crie uma. Para fazer isso, você identificará quais chamadas de função falham quando seu aplicativo é executado em um contêiner MSIX. Em seguida, você poderá criar funções de substituição que você deseja que sejam chamadas pelo gerenciador de tempo de execução. Isso oferecerá uma oportunidade de substituir a implementação de uma função por um comportamento que esteja de acordo com as regras do ambiente moderno do tempo de execução.
+Caso não encontre uma correção de tempo de execução que resolva o problema, [crie uma](package-support-framework.md#create-a-runtime-fix). Para fazer isso, você identificará quais chamadas de função falham quando seu aplicativo é executado em um contêiner MSIX. Em seguida, você poderá criar funções de substituição que você deseja que sejam chamadas pelo gerenciador de tempo de execução. Isso oferecerá uma oportunidade de substituir a implementação de uma função por um comportamento que esteja de acordo com as regras do ambiente moderno do tempo de execução.
 
-## <a name="limitation-of-package-support-framework"></a>Limitação do Package Support Framework 
-O Package Support Framework não é compatível com as substituições do registro. Ele resolverá problemas relacionados ao tempo de execução. Escolha as seguintes DLLs que se ajustarão às suas necessidades. 
+Também é possível usar o Package Support Framework para executar scripts a fim de personalizar dinamicamente um aplicativo para o ambiente do usuário. Para obter mais informações, consulte [este artigo](run-scripts-with-package-support-framework.md).
 
-## <a name="get-started-with-the-package-support-framework"></a>Introdução ao Package Support Framework
+## <a name="limitations"></a>Limitações
 
-Se você estiver pronto para começar a usar o Package Support Framework para solucionar problemas de compatibilidade, confira nosso guia passo a passo em [Aplicar correções em tempo de execução a um pacote MSIX usando o Package Support Framework](https://docs.microsoft.com/windows/uwp/porting/package-support-framework).
+O Package Support Framework não é compatível com as substituições do registro. Ele foi criado para resolver problemas de tempo de execução.
+
+## <a name="data-and-telemetry"></a>Dados e telemetria
+
+O Package Support Framework inclui a telemetria que coleta dados de uso e os envia para a Microsoft para ajudar a melhorar nossos produtos e serviços. Leia a [política de privacidade da Microsoft para saber mais](https://privacy.microsoft.com/en-US/privacystatement). No entanto, os dados serão coletados somente quando as duas condições a seguir forem atendidas:
+
+* Os binários do Package Support Framework são usados do [pacote NuGet](https://www.nuget.org/packages?q=packagesupportframework) em um computador com Windows 10.
+* O usuário habilitou a coleta de dados no computador.
+
+O pacote NuGet contém binários assinados e coletará dados de uso do computador. A telemetria não é coletada quando os binários são criados localmente clonando o repositório ou baixando os binários diretamente.

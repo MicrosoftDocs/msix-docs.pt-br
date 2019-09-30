@@ -180,6 +180,8 @@
           href: desktop/desktop-to-uwp-test-windows-s.md
     - name: Aplicar correções de tempo de execução em um pacote do aplicativo da área de trabalho
       href: psf/package-support-framework.md
+    - name: Executar scripts com o Package Support Framework
+      href: psf/run-scripts-with-package-support-framework.md
 - name: Distribuir
   items:
     - name: Publicar na Microsoft Store
