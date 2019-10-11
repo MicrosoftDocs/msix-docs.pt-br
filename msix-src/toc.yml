@@ -92,6 +92,8 @@
       items:
         - name: Visão geral
           href: msix-sdk/sdk-overview.md
+        - name: Usar o SDK do MSIX para distribuir um pacote MSIX
+          href: msix-sdk/sdk-guidance.md
         - name: Notas de versão
           items:
             - name: MSIX SDK versão 1.4
@@ -102,8 +104,6 @@
               href: msix-sdk/release-notes/sdk-release-notes-1.6.md
             - name: MSIX SDK versão 1.7
               href: msix-sdk/release-notes/sdk-release-notes-1.7.md
-        - name: Use o MSIX SDK para distribuir um pacote MSIX em plataformas não Windows 10
-          href: msix-sdk/sdk-guidance.md
 - name: Pacote
   items:
     - name: Aplicativos da área de trabalho do pacote
