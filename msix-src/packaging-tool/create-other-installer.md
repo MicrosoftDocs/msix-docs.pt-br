@@ -5,12 +5,12 @@ ms.date: 04/04/2019
 ms.topic: article
 keywords: MSIX, MPT, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: b0f54a4ee19c801353f0d31854297cec0dc5cfb4
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
-ms.translationtype: HT
+ms.openlocfilehash: 9ee45813396a0342a0ea2ad3a9c1784820f7dbdc
+ms.sourcegitcommit: 3b780f7599f1777e99ba66baf66e42e2c8dd2d97
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829285"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72561203"
 ---
 # <a name="create-an-msix-package-with-all-other-installer-types"></a>Criar um pacote MSIX com todos os outros tipos de instaladores
 
@@ -41,7 +41,7 @@ Depois de optar por empacotar o aplicativo em uma máquina virtual existente, vo
   - Não é mostrado ao usuário final.
   - Diferencia maiúsculas de minúsculas e não pode ter um espaço.
   - Pode aceitar uma cadeia de caracteres entre 3 e 50 caracteres que consiste em caracteres alfanuméricos, ponto e traço.
-  - Não pode terminar com um ponto nem ser um dos seguintes: "CON", "PRN", "AUX", "NUL", "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9", "LPT1", "LPT2", "LPT3", "LPT4", "LPT5", "LPT6", "LPT7", "LPT8" e "LPT9."
+  - Não é possível terminar com um ponto e ser um destes: "CON", "PRN", "AUX", "NUL", "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9", "LPT1", "LPT2", "LPT3", "LPT4", "LPT5", "LPT6", "LPT7", "LPT8" e "LPT9".
 
 - Nome de exibição do pacote:
   - Obrigatório; corresponde ao pacote no manifesto para exibir um nome de pacote amigável para o usuário no menu Iniciar e nas páginas de configurações.
@@ -60,7 +60,7 @@ Depois de optar por empacotar o aplicativo em uma máquina virtual existente, vo
 - Versão:
 
   - Obrigatório; corresponde ao pacote no manifesto para descrever o número de versão do pacote.
-  - Este campo aceita uma cadeia de caracteres de versão na notação quadrupleto: "Major.Minor.Build.Revision".
+  - Este campo aceita uma cadeia de caracteres de versão na notação quádrupla: "Major. Minor. Build. Revision".
 
 - Local de instalação:
 
@@ -113,7 +113,7 @@ Clique em **Avançar** e você verá um pop-up que solicitará a confirmação d
 - Forneça uma localização para salvar o pacote MSIX.
 - A localização de salvamento padrão é a área de trabalho.
 - Você pode definir a localização de salvamento padrão no menu Configurações.
-- Caso deseje continuar para editar o conteúdo e as propriedades do pacote antes de salvar o pacote MSIX, selecione **Editor de pacote** e ir para o [editor de pacote]("https://docs.microsoft.com/en-us/windows/msix/packaging-tool/package-editor")
+- Caso deseje continuar para editar o conteúdo e as propriedades do pacote antes de salvar o pacote MSIX, selecione **Editor de pacote** e ir para o [editor de pacote](https://docs.microsoft.com/windows/msix/packaging-tool/package-editor)
 - Clique em **Criar** para criar o pacote MSIX.
 
 Depois que o pacote for criado, a ferramenta exibirá uma janela pop-up com o nome, o distribuidor, o local de salvamento dos logs e o local de salvamento do pacote recém-criado. Você pode fechar essa janela pop-up para ser redirecionado à página de boas-vindas. Você também pode selecionar o **Editor de pacote** para ver e modificar as propriedades e o conteúdo do pacote.
