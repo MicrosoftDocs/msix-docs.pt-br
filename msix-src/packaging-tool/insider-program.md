@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: eea73079a33821cbd1c97653e83f0bec0ab95a5b
-ms.sourcegitcommit: 1c3a0f5c27ee741d26f693ad657754c4ab29ac73
-ms.translationtype: HT
+ms.openlocfilehash: 6584abe50111bba8215acae2d4ab34a8b9675be1
+ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71189875"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72776550"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -35,9 +35,11 @@ Se a ferramenta já estiver instalada no computador, verifique a versão instala
 
 ## <a name="current-insider-preview-build"></a>Build atual do Insider Preview
 
-### <a name="version-120199190"></a>Versão 1.2019.919.0
+### <a name="version-1201910180-public"></a>Versão 1.2019.1018.0 (pública)
 - Agora a autenticação do Device Guard está disponível. Essa opção de autenticação requer uma conta do Microsoft Azure Active Directory configurada para a Microsoft Store para Empresas. Para obter mais informações, consulte [este artigo](https://docs.microsoft.com/windows/msix/package/signing-package-device-guard-signing).
 - O **Editor de pacote** agora dá suporte à capacidade de selecionar vários itens nos quais uma ação será executada.
+- Agora há suporte para o clique com o botão direito do mouse para editar um pacote MSIX.
+- Melhorias de UX para o fluxo de trabalho de empacotamento.
 
 Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](release-notes/history.md).
 
