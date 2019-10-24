@@ -5,12 +5,12 @@ ms.date: 07/29/2019
 ms.topic: article
 keywords: Windows 10, UWP, msix, compilador de imagem nativa
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ce41bafb2debfb8c2d99135634ba30c91f4400a
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 1327a48d40576dc47eebd8c0bad6fc075dea23d4
+ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685401"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72776518"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>Otimize seus aplicativos de área de trabalho .NET com imagens nativas
 
@@ -41,7 +41,7 @@ Para configurar seu projeto para o destino .NET Framework 4.6.2, você precisar�
 
 ![Instalar ferramentas de desenvolvimento do .NET 4.6.2](images/install-4.6.2-devpack.png)
 
-Como alternativa, você pode obter os pacotes de desenvolvedor do .NET de:[https://www.microsoft.com/net/download/visual-studio-sdks](https://www.microsoft.com/net/download/visual-studio-sdks)
+Como alternativa, você pode obter os pacotes de desenvolvedor do .NET de: [https://www.microsoft.com/net/download/visual-studio-sdks](https://www.microsoft.com/net/download/visual-studio-sdks)
 
 ## <a name="configure-the-target-platform-as-x86-or-x64"></a>Configurar a plataforma de destino como x86 ou x64
 
@@ -81,20 +81,22 @@ Para verificar se a ferramenta processou os binários, você pode examinar a sa�
 Native image obj\x86\Release\\R2R\DesktopApp1.exe generated successfully.
 ```
 
-## <a name="faq"></a>Perguntas Frequentes
+A compilação de imagem nativa pode ser disparada em compilações sem lançamento, definindo a propriedade `NgenR2R` como `true` no arquivo de projeto.
 
-**PERGUNTAS. Os novos binários funcionam em computadores sem .NET Framework 4.7.2?**
+## <a name="faq"></a>Perguntas frequentes
+
+**P. os novos binários funcionam em computadores sem .NET Framework 4.7.2?**
 
 A. Os binários otimizados se beneficiarão das melhorias ao serem executados com .NET Framework 4.7.2. Os clientes que executam versões anteriores do .NET Framework carregarão o código MSIL não otimizado do binário.
 
-**PERGUNTAS. Como posso fornecer comentários ou relatar problemas?**
+**P. como posso fornecer comentários ou relatar problemas?**
 
 A. Relate um problema usando a ferramenta de comentários no Visual Studio 2017. [Mais informações](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017).
 
-**PERGUNTAS. Qual é o impacto da adição da imagem nativa aos binários existentes?**
+**P. qual é o impacto da adição da imagem nativa aos binários existentes?**
 
 A. Os binários otimizados contêm o código gerenciado e nativo, tornando os arquivos finais maiores.
 
-**PERGUNTAS. Posso liberar binários usando essa tecnologia?**
+**P. posso liberar binários usando essa tecnologia?**
 
 A. Esta versão inclui uma licença do Go Live que você pode usar atualmente.

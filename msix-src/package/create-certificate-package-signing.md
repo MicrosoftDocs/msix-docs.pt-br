@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
-ms.openlocfilehash: d4ee3cae57fc5e344edd8a7daf48a24b49baeb80
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 49686fcfbe9ab4e414047c996e5d69ef0c1b3fa4
+ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689715"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72776490"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>Criar um certificado para a assinatura de pacote
 
@@ -30,7 +30,7 @@ Você precisa de cmdlets de PKI para criar e exportar o certificado de assinatur
 Um certificado autoassinado é útil para testar seu aplicativo antes que você esteja pronto para publicá-lo na loja. Siga as etapas descritas nesta seção para criar um certificado autoassinado.
 
 > [!NOTE]
-> Os certificados autoassinados são estritamente para teste. Quando você estiver pronto para publicar seu aplicativo na loja ou em outros locais, mude o certificado para uma fonte respeitável. A falha em fazer isso pode resultar na incapacidade de seu aplicativo ser instalado por seus clientes.
+> Quando você cria e usa um certificado autoassinado, somente os usuários que instalam e confiam em seu certificado podem executar seu aplicativo. Isso é fácil de implementar para teste, mas pode impedir que usuários adicionais instalem seu aplicativo. Quando você estiver pronto para publicar seu aplicativo, recomendamos que você use um certificado emitido por uma fonte confiável. Esse sistema de confiança centralizada ajuda a garantir que o ecossistema de aplicativos tenha níveis de verificação para proteger os usuários contra atores mal-intencionados.
 
 ### <a name="determine-the-subject-of-your-packaged-app"></a>Determine o assunto do seu app empacotado  
 
@@ -58,13 +58,13 @@ New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso 
 
 Observe os seguintes detalhes sobre alguns dos parâmetros:
 
-- **Uso**de Key: Esse parâmetro define para que o certificado pode ser usado. Para um certificado de assinatura automática, esse parâmetro deve ser definido como **DigitalSignature**.
+- **KeyUsage**: esse parâmetro define para que o certificado pode ser usado. Para um certificado de assinatura automática, esse parâmetro deve ser definido como **DigitalSignature**.
 
-- **Textextension**: Esse parâmetro inclui configurações para as seguintes extensões:
+- **Textextension**: esse parâmetro inclui configurações para as seguintes extensões:
 
-  - EKU (uso estendido de chave): Essa extensão indica finalidades adicionais para as quais a chave pública certificada pode ser usada. Para um certificado de assinatura automática, esse parâmetro deve incluir a cadeia de caracteres de extensão **"2.5.29.37 = {Text} 1.3.6.1.5.5.7.3.3"** , que indica que o certificado deve ser usado para a assinatura de código.
+  - EKU (uso estendido de chave): essa extensão indica finalidades adicionais para as quais a chave pública certificada pode ser usada. Para um certificado de assinatura automática, esse parâmetro deve incluir a cadeia de caracteres de extensão **"2.5.29.37 = {Text} 1.3.6.1.5.5.7.3.3"** , que indica que o certificado deve ser usado para a assinatura de código.
 
-  - Restrições básicas: Essa extensão indica se o certificado é uma autoridade de certificação (CA) ou não. Para um certificado de assinatura automática, esse parâmetro deve incluir a cadeia de caracteres de extensão **"2.5.29.19 = {Text}"** , que indica que o certificado é uma entidade final (não uma CA).
+  - Restrições básicas: essa extensão indica se o certificado é uma autoridade de certificação (CA) ou não. Para um certificado de assinatura automática, esse parâmetro deve incluir a cadeia de caracteres de extensão **"2.5.29.19 = {Text}"** , que indica que o certificado é uma entidade final (não uma CA).
 
 Depois de executar esse comando, o certificado será adicionado ao repositório de certificados local, conforme especificado no parâmetro "-CertStoreLocation". O resultado do comando também produzirá a impressão digital do certificado.  
 
@@ -98,6 +98,6 @@ Export-PfxCertificate -cert Cert:\CurrentUser\My\<Certificate Thumbprint> -FileP
 
 Depois de criar e exportar o certificado, você está pronto para assinar seu pacote de apps com **SignTool**. Para a próxima etapa no processo de empacotamento manual, consulte [Assinar um pacote de apps usando a SignTool](sign-app-package-using-signtool.md).
 
-## <a name="security-considerations"></a>Considerações sobre segurança
+## <a name="security-considerations"></a>Considerações sobre a segurança
 
 Ao adicionar um certificado em [repositórios de certificados do computador local](https://docs.microsoft.com/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores), você afetará a confiança do certificado de todos os usuários no computador. É recomendável que você remova esses certificados quando eles não são mais necessários para evitar que eles sejam usados para comprometer a confiança do sistema.

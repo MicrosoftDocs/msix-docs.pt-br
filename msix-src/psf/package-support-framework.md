@@ -5,12 +5,12 @@ ms.date: 08/07/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 56d3f293782befa65357d62e249851e6c137667e
-ms.sourcegitcommit: cc7fe74ea7c7b8c06190330023b3dff43034960e
+ms.openlocfilehash: 1a2427340b4de957ee25a1ce963990be30068da3
+ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71310987"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72776526"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>Aplicar correções de tempo de execução a um pacote MSIX usando a estrutura de suporte do pacote
 
@@ -18,8 +18,8 @@ O [Package support Framework](package-support-framework-overview.md) é um Open 
 
 Este artigo ajuda você a identificar problemas de compatibilidade de aplicativos e a localizar, aplicar e estender correções de tempo de execução que os resolvem. As seções deste artigo destinam-se a diferentes funções:
 
-* Profissionais de ti ou administradores: As seções mais relevantes são [identificar problemas de compatibilidade de aplicativos empacotados](#identify-packaged-application-compatibility-issues), [encontrar uma correção de tempo de execução](#find-a-runtime-fix)e [aplicar uma correção de tempo de execução](#apply-a-runtime-fix).
-* Programa Embora os desenvolvedores possam encontrar o artigo inteiro útil, as seções mais relevantes são [depurar, estender ou criar uma correção em tempo de execução](#debug-extend-or-create-a-runtime-fix), [criar uma correção de tempo de execução](#create-a-runtime-fix)e [outras técnicas de depuração](#other-debugging-techniques). d
+* Profissionais de ti ou administradores: as seções mais relevantes são [identificar problemas de compatibilidade de aplicativos empacotados](#identify-packaged-application-compatibility-issues), [encontrar uma correção de tempo de execução](#find-a-runtime-fix)e [aplicar uma correção de tempo de execução](#apply-a-runtime-fix).
+* Desenvolvedores: embora os desenvolvedores possam encontrar o artigo inteiro útil, as seções mais relevantes são [depurar, estender ou criar uma correção de tempo de execução](#debug-extend-or-create-a-runtime-fix), [criar uma correção de tempo de execução](#create-a-runtime-fix)e [outras técnicas de depuração](#other-debugging-techniques). d
 
 <a id="identify" />
 
@@ -86,7 +86,7 @@ Vamos examinar cada tarefa.
 
 ### <a name="create-the-package-layout-folder"></a>Criar a pasta de layout do pacote
 
-Se você já tiver um arquivo. msix (ou. AppX), poderá desempacotar seu conteúdo em uma pasta de layout que servirá como a área de preparo para seu pacote. Você pode fazer isso em um prompt de comando usando a ferramenta MakeAppx, com base no caminho de instalação do SDK, é aqui que você encontrará a ferramenta MakeAppx. exe em seu PC com Windows 10: x86: C:\Arquivos de programas (x86) \Windows Kits\10\bin\x86\makeappx.exe x64: C:\Arquivos de programas (x86) \Windows Kits\10\bin\x64\makeappx.exe
+Se você já tiver um arquivo. msix (ou. AppX), poderá desempacotar seu conteúdo em uma pasta de layout que servirá como a área de preparo para seu pacote. Você pode fazer isso em um prompt de comando usando a ferramenta MakeAppx, com base no caminho de instalação do SDK, é aqui que você encontrará a ferramenta MakeAppx. exe em seu PC com Windows 10: x86: C:\Arquivos de programas (x86) \Windows Kits\10\bin\x86\makeappx.exe x64: C:\Arquivos de programas ( x86) \Windows Kits\10\bin\x64\makeappx.exe
 
 ```powershell
 makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
@@ -105,11 +105,13 @@ Você pode obter o pacote NuGet do PSF usando a ferramenta de linha de comando d
 
 #### <a name="get-the-package-by-using-the-command-line-tool"></a>Obter o pacote usando a ferramenta de linha de comando
 
-Instale a ferramenta de linha de comando do NuGet deste https://www.nuget.org/downloads local:. Em seguida, na linha de comando do NuGet, execute este comando:
+Instale a ferramenta de linha de comando do NuGet deste local: https://www.nuget.org/downloads. Em seguida, na linha de comando do NuGet, execute este comando:
 
 ```powershell
 nuget install Microsoft.PackageSupportFramework
 ```
+
+Como alternativa, você pode renomear a extensão do pacote para. zip e descompactá-la. Todos os arquivos de que você precisa estarão na pasta/bin.
 
 #### <a name="get-the-package-by-using-visual-studio"></a>Obter o pacote usando o Visual Studio
 
@@ -131,7 +133,7 @@ O conteúdo do pacote agora deve ser semelhante a este.
 
 ### <a name="modify-the-package-manifest"></a>Modificar o manifesto do pacote
 
-Abra o manifesto do pacote em um editor de texto e defina o `Executable` atributo `Application` do elemento como o nome do arquivo executável do iniciador PSF.  Se você souber a arquitetura do seu aplicativo de destino, selecione a versão apropriada, PSFLauncher32. exe ou PSFLauncher64. exe.  Caso contrário, o PSFLauncher32. exe funcionará em todos os casos.  Aqui está um exemplo.
+Abra o manifesto do pacote em um editor de texto e, em seguida, defina o atributo `Executable` do elemento `Application` como o nome do arquivo executável do iniciador PSF.  Se você souber a arquitetura do seu aplicativo de destino, selecione a versão apropriada, PSFLauncher32. exe ou PSFLauncher64. exe.  Caso contrário, o PSFLauncher32. exe funcionará em todos os casos.  Veja um exemplo.
 
 ```xml
 <Package ...>
@@ -148,7 +150,7 @@ Abra o manifesto do pacote em um editor de texto e defina o `Executable` atribut
 
 ### <a name="create-a-configuration-file"></a>Criar um arquivo de configuração
 
-Crie um nome ``config.json``de arquivo e salve esse arquivo na pasta raiz do seu pacote. Modifique a ID do aplicativo declarado do arquivo config. JSON para apontar para o executável que você acabou de substituir. Usando o conhecimento obtido usando o Process Monitor, você também pode definir o diretório de trabalho, bem como usar a correção de redirecionamento de arquivo para redirecionar leituras/gravações para arquivos. log no diretório "PSFSampleApp" relativo ao pacote.
+Crie um nome de arquivo ``config.json`` e salve esse arquivo na pasta raiz do seu pacote. Modifique a ID do aplicativo declarado do arquivo config. JSON para apontar para o executável que você acabou de substituir. Usando o conhecimento obtido usando o Process Monitor, você também pode definir o diretório de trabalho, bem como usar a correção de redirecionamento de arquivo para redirecionar leituras/gravações para arquivos. log no diretório "PSFSampleApp" relativo ao pacote.
 
 ```json
 {
@@ -186,16 +188,16 @@ Crie um nome ``config.json``de arquivo e salve esse arquivo na pasta raiz do seu
 
 Veja a seguir um guia para o esquema config. JSON:
 
-| Array | key | Valor |
+| variedade | key | Valor |
 |-------|-----------|-------|
-| applications | id |  Use o valor do `Id` atributo `Application` do elemento no manifesto do pacote. |
-| applications | executá | O caminho relativo do pacote para o executável que você deseja iniciar. Na maioria dos casos, você pode obter esse valor do arquivo de manifesto do pacote antes de modificá-lo. É o valor do `Executable` atributo `Application` do elemento. |
-| applications | WorkingDirectory | Adicional Um caminho relativo de pacote a ser usado como o diretório de trabalho do aplicativo que é iniciado. Se você não definir esse valor, o sistema operacional usará `System32` o diretório como o diretório de trabalho do aplicativo. |
-| processos | executá | Na maioria dos casos, esse será o nome do `executable` configurado acima com o caminho e a extensão de arquivo removidos. |
+| applications | id |  Use o valor do atributo `Id` do elemento `Application` no manifesto do pacote. |
+| applications | Executá | O caminho relativo do pacote para o executável que você deseja iniciar. Na maioria dos casos, você pode obter esse valor do arquivo de manifesto do pacote antes de modificá-lo. É o valor do atributo `Executable` do elemento `Application`. |
+| applications | WorkingDirectory | Adicional Um caminho relativo de pacote a ser usado como o diretório de trabalho do aplicativo que é iniciado. Se você não definir esse valor, o sistema operacional usará o diretório `System32` como o diretório de trabalho do aplicativo. |
+| processos | Executá | Na maioria dos casos, esse será o nome do `executable` configurado acima com o caminho e a extensão de arquivo removidos. |
 | ajustes | dll | Caminho relativo ao pacote para a correção,. msix/. Appx a ser carregado. |
 | ajustes | configuração | Adicional Controla como a DLL de correção se comporta. O formato exato desse valor varia de acordo com a correção, pois cada correção pode interpretar esse "blob" como desejado. |
 
-As `applications`chaves `processes`, e`fixups` são matrizes. Isso significa que você pode usar o arquivo config. JSON para especificar mais de um aplicativo, processo e DLL de correção.
+As chaves `applications`, `processes` e `fixups` são matrizes. Isso significa que você pode usar o arquivo config. JSON para especificar mais de um aplicativo, processo e DLL de correção.
 
 ### <a name="package-and-test-the-app"></a>Empacotar e testar o aplicativo
 
@@ -403,16 +405,16 @@ Adicione um arquivo chamado ``config.json`` ao seu projeto de empacotamento e co
 
 Forneça um valor para cada chave. Use esta tabela como um guia.
 
-| Array | key | Valor |
+| variedade | key | Valor |
 |-------|-----------|-------|
-| applications | id |  Use o valor do `Id` atributo `Application` do elemento no manifesto do pacote. |
-| applications | executá | O caminho relativo do pacote para o executável que você deseja iniciar. Na maioria dos casos, você pode obter esse valor do arquivo de manifesto do pacote antes de modificá-lo. É o valor do `Executable` atributo `Application` do elemento. |
-| applications | WorkingDirectory | Adicional Um caminho relativo de pacote a ser usado como o diretório de trabalho do aplicativo que é iniciado. Se você não definir esse valor, o sistema operacional usará `System32` o diretório como o diretório de trabalho do aplicativo. |
-| processos | executá | Na maioria dos casos, esse será o nome do `executable` configurado acima com o caminho e a extensão de arquivo removidos. |
+| applications | id |  Use o valor do atributo `Id` do elemento `Application` no manifesto do pacote. |
+| applications | Executá | O caminho relativo do pacote para o executável que você deseja iniciar. Na maioria dos casos, você pode obter esse valor do arquivo de manifesto do pacote antes de modificá-lo. É o valor do atributo `Executable` do elemento `Application`. |
+| applications | WorkingDirectory | Adicional Um caminho relativo de pacote a ser usado como o diretório de trabalho do aplicativo que é iniciado. Se você não definir esse valor, o sistema operacional usará o diretório `System32` como o diretório de trabalho do aplicativo. |
+| processos | Executá | Na maioria dos casos, esse será o nome do `executable` configurado acima com o caminho e a extensão de arquivo removidos. |
 | ajustes | dll | Caminho relativo do pacote para o DLL de correção a ser carregado. |
 | ajustes | configuração | Adicional Controla como a DLL de correção se comporta. O formato exato desse valor varia de acordo com a correção, pois cada correção pode interpretar esse "blob" como desejado. |
 
-Quando terminar, o arquivo terá ``config.json`` uma aparência semelhante a esta.
+Quando terminar, seu arquivo de ``config.json`` será semelhante a este.
 
 ```json
 {
@@ -434,11 +436,11 @@ Quando terminar, o arquivo terá ``config.json`` uma aparência semelhante a est
 ```
 
 >[!NOTE]
-> As `applications`chaves `processes`, e`fixups` são matrizes. Isso significa que você pode usar o arquivo config. JSON para especificar mais de um aplicativo, processo e DLL de correção.
+> As chaves `applications`, `processes` e `fixups` são matrizes. Isso significa que você pode usar o arquivo config. JSON para especificar mais de um aplicativo, processo e DLL de correção.
 
 ### <a name="debug-a-runtime-fix"></a>Depurar uma correção de tempo de execução
 
-No Visual Studio, pressione F5 para iniciar o depurador.  A primeira coisa que inicia é o aplicativo iniciador PSF, que, por sua vez, inicia o aplicativo de área de trabalho de destino.  Para depurar o aplicativo de área de trabalho de destino, você precisará anexar manualmente ao processo do aplicativo de desktop escolhendo **depurar**->**anexar para processar**e, em seguida, selecionando o processo do aplicativo. Para permitir a depuração de um aplicativo .NET com uma DLL de correção de tempo de execução nativa, selecione tipos de código gerenciados e nativos (depuração de modo misto).  
+No Visual Studio, pressione F5 para iniciar o depurador.  A primeira coisa que inicia é o aplicativo iniciador PSF, que, por sua vez, inicia o aplicativo de área de trabalho de destino.  Para depurar o aplicativo de área de trabalho de destino, você precisará anexar manualmente ao processo do aplicativo de desktop escolhendo **depurar** ->**anexar ao processo**e, em seguida, selecionando o processo do aplicativo. Para permitir a depuração de um aplicativo .NET com uma DLL de correção de tempo de execução nativa, selecione tipos de código gerenciados e nativos (depuração de modo misto).  
 
 Depois de configurar isso, você pode definir pontos de interrupção ao lado das linhas de código no código do aplicativo da área de trabalho e no projeto de correção de tempo de execução. Se você não tiver o código-fonte para seu aplicativo, poderá definir pontos de interrupção somente ao lado das linhas de código em seu projeto de correção de tempo de execução.
 
@@ -455,7 +457,7 @@ Primeiro, identifique quais chamadas de função falham quando seu aplicativo é
 
 No Visual Studio, abra o projeto de correção de tempo de execução que você criou anteriormente neste guia.
 
-Declare a ``FIXUP_DEFINE_EXPORTS`` macro e, em seguida, adicione uma instrução `fixup_framework.h` include para a na parte superior de cada uma. Arquivo CPP no qual você pretende adicionar as funções de sua correção de tempo de execução.
+Declare a macro ``FIXUP_DEFINE_EXPORTS`` e, em seguida, adicione uma instrução include para o `fixup_framework.h` na parte superior de cada um. Arquivo CPP no qual você pretende adicionar as funções de sua correção de tempo de execução.
 
 ```c++
 #define FIXUP_DEFINE_EXPORTS
@@ -463,9 +465,9 @@ Declare a ``FIXUP_DEFINE_EXPORTS`` macro e, em seguida, adicione uma instrução
 ```
 
 >[!IMPORTANT]
->Verifique se a `FIXUP_DEFINE_EXPORTS` macro aparece antes da instrução include.
+>Verifique se a macro `FIXUP_DEFINE_EXPORTS` aparece antes da instrução include.
 
-Crie uma função que tenha a mesma assinatura da função que é o comportamento que você deseja modificar. Aqui está uma função de exemplo que substitui `MessageBoxW` a função.
+Crie uma função que tenha a mesma assinatura da função que é o comportamento que você deseja modificar. Aqui está uma função de exemplo que substitui a função `MessageBoxW`.
 
 ```c++
 auto MessageBoxWImpl = &::MessageBoxW;
@@ -481,19 +483,19 @@ int WINAPI MessageBoxWFixup(
 DECLARE_FIXUP(MessageBoxWImpl, MessageBoxWFixup);
 ```
 
-A chamada para `DECLARE_FIXUP` mapeia a `MessageBoxW` função para a nova função de substituição. Quando o aplicativo tentar chamar a `MessageBoxW` função, ele chamará a função de substituição em vez disso.
+A chamada para `DECLARE_FIXUP` mapeia a função `MessageBoxW` para a nova função de substituição. Quando o aplicativo tentar chamar a função de `MessageBoxW`, ele chamará a função de substituição em vez disso.
 
 #### <a name="protect-against-recursive-calls-to-functions-in-runtime-fixes"></a>Proteger contra chamadas recursivas para funções em correções de tempo de execução
 
-Opcionalmente, você pode aplicar `reentrancy_guard` o tipo às funções que protegem contra chamadas recursivas para funções em correções de tempo de execução.
+Opcionalmente, você pode aplicar o tipo de `reentrancy_guard` às funções que protegem contra chamadas recursivas para funções em correções de tempo de execução.
 
-Por exemplo, você pode produzir uma função de substituição para `CreateFile` a função. Sua implementação pode chamar a `CopyFile` função, mas a implementação `CopyFile` da função pode chamar a `CreateFile` função. Isso pode levar a um ciclo recursivo infinito de chamadas para a `CreateFile` função.
+Por exemplo, você pode produzir uma função de substituição para a função `CreateFile`. Sua implementação pode chamar a função `CopyFile`, mas a implementação da função `CopyFile` pode chamar a função `CreateFile`. Isso pode levar a um ciclo recursivo infinito de chamadas para a função `CreateFile`.
 
-Para obter mais informações `reentrancy_guard` sobre o, consulte [Authoring.MD](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/Authoring.md)
+Para obter mais informações sobre `reentrancy_guard` consulte [Authoring.MD](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/Authoring.md)
 
 ### <a name="configuration-data"></a>Dados de configuração
 
-Se você quiser adicionar dados de configuração à correção de tempo de execução, considere adicioná- ``config.json``los ao. Dessa forma, você pode usar o `FixupQueryCurrentDllConfig` para analisar facilmente esses dados. Este exemplo analisa um valor booliano e de cadeia de caracteres desse arquivo de configuração.
+Se você quiser adicionar dados de configuração à correção de tempo de execução, considere adicioná-los ao ``config.json``. Dessa forma, você pode usar o `FixupQueryCurrentDllConfig` para analisar facilmente esses dados. Este exemplo analisa um valor booliano e de cadeia de caracteres desse arquivo de configuração.
 
 ```c++
 if (auto configRoot = ::FixupQueryCurrentDllConfig())
@@ -516,10 +518,10 @@ if (auto configRoot = ::FixupQueryCurrentDllConfig())
 
 Cada correção e o aplicativo iniciador PSF tem um arquivo de metadados XML que contém as seguintes informações:
 
-* Versão: A versão do PSF está em MAJOR. Secundária. Formato de PATCH de acordo com [sem versão 2](https://semver.org/).
-* Plataforma mínima do Windows: A versão mínima do Windows necessária para o iniciador de correção ou PSF.
-* Descrição: Uma breve descrição da correção.
-* WhenToUse: Heurística sobre quando você deve aplicar a correção.
+* Versão: a versão do PSF está em MAJOR. Secundária. Formato de PATCH de acordo com [sem versão 2](https://semver.org/).
+* Plataforma mínima do Windows: a versão mínima do Windows necessária para a correção ou o inicializador PSF.
+* Descrição: uma breve descrição da correção.
+* WhenToUse: heurística sobre quando você deve aplicar a correção.
 
 Para obter um exemplo, consulte o arquivo de metadados [FileRedirectionFixupMetadata. xml](https://github.com/microsoft/MSIX-PackageSupportFramework/blob/master/fixups/FileRedirectionFixup/FileRedirectionFixupMetadata.xml) para a correção de redirecionamento. O esquema de metadados está disponível [aqui](https://github.com/microsoft/MSIX-PackageSupportFramework/blob/master/MetadataSchema.xsd).
 
@@ -529,19 +531,19 @@ Embora o Visual Studio ofereça a você a experiência de desenvolvimento e depu
 
 Primeiro, a depuração F5 executa o aplicativo implantando arquivos soltos do caminho da pasta de layout do pacote, em vez de instalar de um pacote. msix/. Appx.  A pasta de layout normalmente não tem as mesmas restrições de segurança que uma pasta de pacote instalada. Como resultado, talvez não seja possível reproduzir os erros de negação de acesso ao caminho do pacote antes de aplicar uma correção de tempo de execução.
 
-Para resolver esse problema, use a implantação de pacote. msix/. Appx em vez de F5 implantação de arquivo flexível.  Para criar um arquivo de pacote. msix/. Appx, use o utilitário [MakeAppx](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) do SDK do Windows, conforme descrito acima. Ou, no Visual Studio, clique com o botão direito do mouse no nó do projeto de aplicativo e selecione **armazenar**->**criar pacotes de aplicativos**.
+Para resolver esse problema, use a implantação de pacote. msix/. Appx em vez de F5 implantação de arquivo flexível.  Para criar um arquivo de pacote. msix/. Appx, use o utilitário [MakeAppx](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) do SDK do Windows, conforme descrito acima. Ou, no Visual Studio, clique com o botão direito do mouse no nó do projeto de aplicativo e selecione **armazenar** ->**criar pacotes de aplicativos**.
 
 Outro problema com o Visual Studio é que ele não tem suporte interno para anexar a processos filho iniciados pelo depurador.   Isso dificulta a depuração da lógica no caminho de inicialização do aplicativo de destino, que deve ser anexado manualmente pelo Visual Studio após a inicialização.
 
 Para resolver esse problema, use um depurador que dá suporte à anexação de processo filho.  Observe que geralmente não é possível anexar um depurador JIT (just-in-time) ao aplicativo de destino.  Isso ocorre porque a maioria das técnicas de JIT envolve a inicialização do depurador no lugar do aplicativo de destino, por meio da chave do registro ImageFileExecutionOptions.  Isso anula o mecanismo de despasseio usado pelo PSFLauncher. exe para injetar FixupRuntime. dll no aplicativo de destino.  O WinDbg, incluído nas [ferramentas de depuração para Windows](https://docs.microsoft.com/windows-hardware/drivers/debugger/index), e obtido do [SDK do Windows](https://developer.microsoft.com/windows/downloads/windows-10-sdk), dá suporte à anexação do processo filho.  Agora, ele também dá suporte à [inicialização e à depuração direta de um aplicativo UWP](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg#span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app).
 
-Para depurar a inicialização do aplicativo de destino como um processo ``WinDbg``filho, inicie.
+Para depurar a inicialização do aplicativo de destino como um processo filho, inicie ``WinDbg``.
 
 ```powershell
 windbg.exe -plmPackage PSFSampleWithFixup_1.0.59.0_x86__7s220nvg1hg3m -plmApp PSFSample
 ```
 
-No prompt ``WinDbg`` , habilite a depuração de filho e defina os pontos de interrupção apropriados.
+No prompt de ``WinDbg``, habilite a depuração de filho e defina os pontos de interrupção apropriados.
 
 ```powershell
 .childdbg 1
