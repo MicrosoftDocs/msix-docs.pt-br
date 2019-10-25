@@ -6,20 +6,37 @@ ms.topic: article
 keywords: MSIX, MPT, Ferramenta de Empacotamento MSIX, 1709, 16299
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: da38578d63fe3d27d04e32c4993ff6b70e548016
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
-ms.translationtype: HT
+ms.openlocfilehash: f4a27ce99eb949400b319bed6977a4e93338251a
+ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829357"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72776508"
 ---
 # <a name="msix-package-support-on-windows-10-version-1709-and-later"></a>Suporte ao pacote do MSIX no Windows 10 versão 1709 e posterior
 
 Se você converter um aplicativo existente em MSIX, o ideal será usar o aplicativo em versões do sistema operacional anteriores ao Windows 10, versão 1809 (build 17763). Este artigo descreve como dar suporte ao pacote MSIX no Windows 10 versão 1709 (build 16299) e posterior.
 
+## <a name="msix-packaging-tool-version-120197010-and-later"></a>Ferramenta de empacotamento MSIX versão 1.2019.701.0 e posterior
+
+Ao converter um aplicativo com a ferramenta de empacotamento MSIX na versão 1.2019.701.0 e posterior, a ferramenta de empacotamento tem a opção de definir a versão mínima como 1709.  Isso pode ser habilitado definindo o padrão de ferramenta a seguir.
+
+1. Iniciar a ferramenta de empacotamento MSIX
+
+2. Clique na engrenagem **configurações** no canto superior direito
+
+3. Selecionar **padrões de ferramenta** no painel de navegação
+
+4. Desmarque **impor Microsoft Store requisitos de controle de versão**
+
+5. Clique em **salvar configurações**
+
+Isso definirá a versão mínima para o Windows 1709 para conversões futuras.  Ele não alterará a versão mínima ao editar um pacote no editor de pacote.  
+
+
 ## <a name="problem"></a>Problema
 
-Você converteu seu aplicativo existente em MSIX usando a Ferramenta de Empacotamento MSIX e ele está funcionando bem no Windows 10, versão 1809 e posterior. Mas agora que você sabe que estamos adicionando suporte ao MSIX no build do Windows 10 versão 1709, você deseja executar seu aplicativo MSIX nessa ou em qualquer versão posterior do Windows 10. Atualmente, se você apenas tentar instalar o pacote MSIX em um computador com o Windows 10 versão 1709 ou o Windows 10 versão 1803, você receberá esta mensagem de erro:
+Você converteu seu aplicativo existente para MSIX usando a ferramenta de empacotamento MSIX anterior ao 1.2019.701.0, importou Microsoft Store controle de versão no requiremnts ou usou outra ferramenta para criar seu pacote que não definiu a versão mínima para 10.0.16299.0 (compilação do Windows 10 1709 número).  Você deseja executar seu aplicativo MSIX no Windows 10 1709 ou em qualquer versão posterior do Windows 10. Atualmente, se você apenas tentar instalar o pacote MSIX em um computador com o Windows 10 versão 1709 ou o Windows 10 versão 1803, você receberá esta mensagem de erro:
 
 ![Instalação do MSIX por meio do PowerShell](images/mpt_blog_0.jpg)
 
@@ -46,7 +63,7 @@ Estamos trabalhando para atualizar a Ferramenta de Empacotamento MSIX para resol
 
 Neste ponto, você pode instalar o aplicativo em um computador que executa o Windows 10, versão 1709 ou posterior.
 
-## <a name="troubleshooting-tips"></a>Dicas de solução de problemas
+## <a name="troubleshooting-tips"></a>Dicas para solução de problemas
 
 Por enquanto, em computadores que executam o Windows 10, versão 1709 (build 16299 ao 17700), você poderá instalar aplicativos MSIX por meio do PowerShell.
 Especificamente, você precisará deste comando no PowerShell:
