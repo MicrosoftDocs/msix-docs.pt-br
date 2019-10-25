@@ -7,12 +7,12 @@ ms.topic: landing-page
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 704da0b007ad6ff82341b01db38944476388a4de
-ms.sourcegitcommit: f5cd0d2d004bb93e60ec5231426b99deecb49601
+ms.openlocfilehash: 43a351aaffaf56ed312dad1bc318dbba316416d1
+ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69882531"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72776505"
 ---
 # <a name="msix-documentation"></a>Documentação da MSIX
 MSIX é um formato de empacotamento criado para ser seguro, protegido e confiável, baseado em uma combinação de tecnologias de instalação .msi, .appx, App-V e ClickOnce. 
@@ -22,23 +22,23 @@ MSIX é um formato de empacotamento criado para ser seguro, protegido e confiáv
  
 :::row:::
    :::column:::
-      ### <a name="package-existing-windows-apps"></a>Empacotar aplicativos do Windows existentes
+      **Empacotar aplicativos do Windows existentes**  
       A Ferramenta de Empacotamento MSIX permite que você atualize os pacotes de aplicativos Win32 existentes para o formato MSIX. [Saiba mais](mpt-overview.md)
       <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">Obter a ferramenta</a></p></div>
    :::column-end:::
    
    :::column:::
-      ### <a name="use-msix-anywhere"></a>Usar o MSIX em qualquer lugar
+      **Usar o MSIX em qualquer lugar**  
       O SDK MSIX permite que desenvolvedores de várias plataformas montem e desmontem pacotes para distribuição pela Microsoft Store ou usando as próprias redes de distribuição de conteúdo. [Saiba mais](msix-sdk/sdk-overview.md)
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
-      ### <a name="install-msix-app-packages"></a>Instalar pacotes do aplicativo do MSIX
+      **Instalar pacotes do aplicativo do MSIX**  
       O Instalador de Aplicativo permite instalar e atualizar qualquer pacote do aplicativo do MSIX que esteja disponível localmente ou em qualquer rede de distribuição de conteúdo. [Saiba mais](app-installer/app-installer-root.md)
    :::column-end:::
    :::column:::
-      ### <a name="package-support-framework"></a>Estrutura de suporte do pacote
+      **Estrutura de suporte do pacote**  
       A PSF permite que o seu aplicativo ignore um determinado número de limitações do ambiente moderno de tempo de execução, para que sua solução atual seja executada conforme o esperado, sem modificar o código-fonte. [Saiba mais](psf/package-support-framework-overview.md)
    :::column-end:::
 :::row-end:::
@@ -291,17 +291,16 @@ MSIX é um formato de empacotamento criado para ser seguro, protegido e confiáv
 :::row:::
    :::column:::
       >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3ig2l]
-      #### <a name="msix-overview"></a>Visão geral do MSIX
-      O MSIX fornece muitos benefícios no gerenciamento de ciclo de vida do aplicativo. Saiba como aproveitar o MSIX em sua empresa e conheça os benefícios para desenvolvedores, profissionais de TI e usuários finais.
+      **Visão geral do MSIX** O MSIX fornece muitos benefícios no gerenciamento de ciclo de vida do aplicativo. Saiba como aproveitar o MSIX em sua empresa e conheça os benefícios para desenvolvedores, profissionais de TI e usuários finais.
    :::column-end:::
    :::column:::
       >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3i5DH]
-      #### <a name="msix-for-developers"></a>MSIX para desenvolvedores
+      **MSIX para desenvolvedores**  
       Saiba como os desenvolvedores podem aproveitar os benefícios do MSIX.
    :::column-end:::
    :::column:::
       >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3iiD5]
-      #### <a name="evolving-and-enhancing-desktop-apps-with-msix"></a>Evoluindo e aprimorando aplicativos da área de trabalho com o MSIX
+      **Evoluir e aprimorar aplicativos da área de trabalho com o MSIX**  
       Evolua e aprimore aplicativos da área de trabalho com o MSIX. Aproveite as novas APIs, novos controles e outros recursos. 
    :::column-end:::
 :::row-end:::
