@@ -5,18 +5,18 @@ ms.date: 07/03/2019
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: d1a779be300de2b29703455874d823374bc8d708
-ms.sourcegitcommit: 2eb663be861f2eb29f4882a15a4913ced9da833a
+ms.openlocfilehash: ddd7a8769bd2d09122153cc42aecd4d686e25d40
+ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70014851"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72776459"
 ---
 # <a name="sign-a-windows-10-app-package"></a>Assinar um pacote do aplicativo do Windows 10
 
 A assinatura de pacote do aplicativo é uma etapa necessária no processo de criação de um pacote do aplicativo do Windows 10 que pode ser implantado. O Windows 10 exige que todos os aplicativos sejam assinados com um certificado de assinatura de código válido.
 
-Para instalar um aplicativo do Windows 10 com êxito, o pacote não só precisa ser assinado, mas também confiável no dispositivo. Isso significa que o certificado precisa ser encadeado para uma das raízes confiáveis no dispositivo. Por padrão, o Windows 10 confia em certificados da maioria da autoridades de certificação que fornecem certificados de assinatura de código. 
+Para instalar um aplicativo do Windows 10 com êxito, além de o pacote ser assinado, ele também precisa estar identificado como confiável no dispositivo. Isso significa que o certificado precisa ser encadeado para uma das raízes confiáveis no dispositivo. Por padrão, o Windows 10 confia em certificados da maioria das autoridades de certificação que fornecem certificados de assinatura de código.
 
 |Tópico| Descrição |
 |:---|:---|
