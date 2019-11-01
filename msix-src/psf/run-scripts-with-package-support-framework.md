@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ea76000a25fd8e3af76309cdd7c4b7cc28629c9a
-ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
+ms.openlocfilehash: 1ba8767e2fbbe5eb6ace39e14518462bfb7d853d
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72776454"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328234"
 ---
 # <a name="run-scripts-with-the-package-support-framework"></a>Executar scripts com o Package Support Framework
 
@@ -38,7 +38,7 @@ Aqui estão os locais de cada executável.
 * computador de 32 bits:
   * executável de 32 bits:%SystemRoot%\system32\WindowsPowerShell\v1.0\powershell.exe
 
-Para obter mais informações sobre as políticas de execução do PowerShell, consulte [Este artigo](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6).
+Para obter mais informações sobre as políticas de execução do PowerShell, consulte [Este artigo](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6).
 
 Certifique-se de incluir o seguinte "StartingScriptWrapper. ps1" em seu pacote e localize-o na mesma pasta em que o seu executável é. Você pode copiá-lo do pacote NuGet da estrutura de suporte do pacote (https://www.nuget.org/packages/Microsoft.PackageSupportFramework/).
 

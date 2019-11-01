@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: c1a8d489ca93c075ce8b87e98fb2ada3bade7d91
-ms.sourcegitcommit: 9cb3d2cdbe03b300bef60ed949e5e4d3b24d35ba
+ms.openlocfilehash: bac524ead0db9d7c56502b534571989aa9e6d0d9
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70864024"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328917"
 ---
 # <a name="troubleshoot-runtime-issues-in-an-msix-container"></a>Solucionar problemas de tempo de execução em um contêiner MSIX 
 
@@ -19,7 +19,7 @@ Neste artigo, examinaremos como você pode solucionar problemas de tempo de exec
 
 Pode haver casos em que a ordem em que esses aplicativos são instalados pode causar problemas de imprevistos em que as chaves de registro esperadas podem ser substituídas e os arquivos esperados podem ser substituídos. 
 
-Para ajudar a diagnosticar esses problemas, o [Invoke-CommandInDesktopPackage](https://docs.microsoft.com/en-us/powershell/module/appx/invoke-commandindesktoppackage?view=win10-ps) é um cmdlet do PowerShell que pode ser usado para executar um aplicativo dentro do contêiner MSIX. Isso permite que os usuários executem o prompt de comando, o editor do registro, o PowerShell dentro do contêiner MSIX e obtenham uma exibição do sistema de arquivos mesclado e do hive do registro mesclado. 
+Para ajudar a diagnosticar esses problemas, o [Invoke-CommandInDesktopPackage](https://docs.microsoft.com/powershell/module/appx/invoke-commandindesktoppackage?view=win10-ps) é um cmdlet do PowerShell que pode ser usado para executar um aplicativo dentro do contêiner MSIX. Isso permite que os usuários executem o prompt de comando, o editor do registro, o PowerShell dentro do contêiner MSIX e obtenham uma exibição do sistema de arquivos mesclado e do hive do registro mesclado. 
 
  > [!IMPORTANT]
  > Invoke-CommandInDesktopPackage exige que o dispositivo esteja no modo de desenvolvedor para os builds do Windows 10 anteriores a 18922.

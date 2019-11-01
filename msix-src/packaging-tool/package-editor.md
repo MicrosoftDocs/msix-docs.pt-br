@@ -1,17 +1,17 @@
 ---
 title: Modificar um pacote usando o editor de pacote
-description: Use o Editor de Pacote para modificar as informações do pacote
+description: Este artigo descreve como usar o editor de pacote na ferramenta de pacote MSIX para modificar informações de pacote, como as propriedades no manifesto.
 ms.date: 09/07/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f809283c3a77f4127b90e9131e697e64314ab215
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
-ms.translationtype: HT
+ms.openlocfilehash: 8d93cc9ecb8c56ca00cf003c598e95fd62726580
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829202"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328460"
 ---
 # <a name="modify-a-package-using-package-editor"></a>Modificar um pacote usando o editor de pacote
 
@@ -60,16 +60,16 @@ Na página **Arquivos de pacote**, clique duas vezes para expandir o sistema de 
 
 Clique com o botão direito do mouse em uma pasta para executar essas operações:
 
-- Adicionar arquivo: Adicionar um arquivo à pasta selecionada.
-- Nova pasta: Criar uma pasta vazia.
-- Adicionar pasta: Procurar para adicionar uma pasta existente.
-- Excluir: Excluir a pasta selecionada.
-- Mover: Renomear ou mover a pasta para uma nova localização.
+- Adicionar arquivo: Adiciona um arquivo à pasta selecionada.
+- Nova pasta: Crie uma nova pasta vazia.
+- Adicionar pasta: Navegue para adicionar uma pasta existente.
+- Excluir: exclui a pasta selecionada.
+- Mover: renomear ou mover a pasta para um novo local.
 
 Clique com o botão direito do mouse em um arquivo para executar essas operações:
 
-- Excluir: Excluir o arquivo selecionado.
-- Mover: Renomear ou mover o arquivo para uma nova localização.
+- Excluir: exclui o arquivo selecionado.
+- Mover: renomear ou mover o arquivo para um novo local.
 
 ![pic13](images/pic13.png)
 

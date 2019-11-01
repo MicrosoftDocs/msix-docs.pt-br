@@ -14,7 +14,7 @@ ms.locfileid: "72776526"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>Aplicar correções de tempo de execução a um pacote MSIX usando a estrutura de suporte do pacote
 
-O [Package support Framework](package-support-framework-overview.md) é um Open Source kit que ajuda a aplicar correções ao seu aplicativo de área de trabalho existente (sem modificar o código) para que ele possa ser executado em um contêiner MSIX. O Package Support Framework ajuda seu aplicativo a seguir as melhores práticas do ambiente moderno do tempo de execução.
+O [Package support Framework](package-support-framework-overview.md) é um Open Source kit que ajuda a aplicar correções ao seu aplicativo de área de trabalho existente (sem modificar o código) para que ele possa ser executado em um contêiner MSIX. O Package Support Framework ajuda seu aplicativo a seguir as melhores práticas do ambiente moderno do runtime.
 
 Este artigo ajuda você a identificar problemas de compatibilidade de aplicativos e a localizar, aplicar e estender correções de tempo de execução que os resolvem. As seções deste artigo destinam-se a diferentes funções:
 
@@ -453,7 +453,7 @@ Se ainda não houver uma correção de tempo de execução para o problema que v
 
 ### <a name="replacement-functions"></a>Funções de substituição
 
-Primeiro, identifique quais chamadas de função falham quando seu aplicativo é executado em um contêiner MSIX. Em seguida, você poderá criar funções de substituição que você deseja que sejam chamadas pelo gerenciador de tempo de execução. Isso oferecerá uma oportunidade de substituir a implementação de uma função por um comportamento que esteja de acordo com as regras do ambiente moderno do tempo de execução.
+Primeiro, identifique quais chamadas de função falham quando seu aplicativo é executado em um contêiner MSIX. Em seguida, você poderá criar funções de substituição que você deseja que sejam chamadas pelo gerenciador de runtime. Isso oferecerá uma oportunidade de substituir a implementação de uma função por um comportamento que esteja de acordo com as regras do ambiente moderno do runtime.
 
 No Visual Studio, abra o projeto de correção de tempo de execução que você criou anteriormente neste guia.
 

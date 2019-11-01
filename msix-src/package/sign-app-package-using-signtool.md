@@ -1,17 +1,17 @@
 ---
 title: Assinar um pacote do aplicativo usando a SignTool
-description: Use SignTool para assinar um pacote de aplicativos com um certificado manualmente.
+description: Este artigo descreve como usar SignTool para assinar manualmente um pacote de aplicativo ou um pacote com um certificado.
 ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ece6feed1b012bd2f51e4211b8719fbb48e6d63
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 564492c8eb590680725d4a894126e8f825bf761b
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689975"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328707"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>Assinar um pacote do aplicativo usando a SignTool
 
@@ -32,8 +32,8 @@ Para obter mais informações sobre assinatura de código e certificados em gera
 
 - **SignTool. exe**  
     Dependendo do seu caminho de instalação do SDK, a **SignTool** é instalada no computador Windows 10 nos seguintes locais:
-    - x86 C:\Arquivos de programas (x86) \Windows Kits\10\bin\x86\SignTool.exe
-    - x64: C:\Arquivos de programas (x86) \Windows Kits\10\bin\x64\SignTool.exe
+    - x86: C:\Arquivos de Programas (x86)\Windows Kits\10\bin\x86\SignTool.exe
+    - x64: C:\Arquivos de Programas (x86)\Windows Kits\10\bin\x64\SignTool.exe
 
 ## <a name="using-signtool"></a>Usando o SignTool
 
@@ -130,13 +130,13 @@ Um erro mais comum é o 0x8007000B. Para esse tipo de erro, você pode encontrar
  
 Para obter mais informações no log de eventos:
 - Execute Eventvwr.msc
-- Abra o log de eventos: Visualizador de Eventos (local)-> logs de aplicativos e serviços-> Microsoft-> Windows-> AppxPackagingOM-> Microsoft-Windows-AppxPackaging/Operational
+- Abra o log de eventos: Visualizador de Eventos (Local) -> Aplicativos e Logs de Serviços -> Microsoft -> Windows -> AppxPackagingOM -> Microsoft-Windows-AppxPackaging/Operational
 - Localize o evento de erro mais recente
 
 O erro interno 0x8007000B geralmente corresponde a um destes valores:
 
 | **ID do evento** | **Exemplo de cadeia de caracteres de evento** | **Sugerir** |
 |--------------|--------------------------|----------------|
-| 150          | erro 0x8007000B: O nome do editor do manifesto do aplicativo (CN = Contoso) deve corresponder ao nome da entidade do certificado de autenticação (CN = Contoso, C = US). | O nome do editor de manifesto de aplicativo deve corresponder exatamente ao nome do assunto após a assinatura.               |
-| 151          | erro 0x8007000B: O método de hash de assinatura especificado (SHA512) deve corresponder ao método de hash usado no mapa de blocos do pacote de aplicativo (SHA256).     | O hashAlgorithm especificado no parâmetro /fd está incorreto. Execute o **SignTool** usando o hashAlgorithm que corresponda ao mapa de blocos do pacote de aplicativos (usado para criar o pacote de aplicativos)  |
-| 152          | erro 0x8007000B: O conteúdo do pacote do aplicativo deve ser validado em relação ao seu mapa de blocos.                                                           | O pacote de aplicativos está corrompido e precisa ser recompilado para gerar um novo mapa de blocos. Para saber mais sobre como criar um pacote de aplicativos, consulte [Criar um pacote de aplicativos com a ferramenta MakeAppx.exe](create-app-package-with-makeappx-tool.md). |
+| 150          | Erro 0x8007000B: O nome do editor de manifesto de aplicativo (CN = Contoso) deve coincidir com o nome do requerente do certificado de autenticação (CN = Contoso, C = US). | O nome do editor de manifesto de aplicativo deve corresponder exatamente ao nome do assunto após a assinatura.               |
+| 151          | Erro 0x8007000B: O método de hash de assinatura especificado (SHA512) deve coincidir com o método de hash usado no mapa de blocos do pacote de aplicativos (SHA256).     | O hashAlgorithm especificado no parâmetro /fd está incorreto. Execute o **SignTool** usando o hashAlgorithm que corresponda ao mapa de blocos do pacote de aplicativos (usado para criar o pacote de aplicativos)  |
+| 152          | Erro 0x8007000B: O conteúdo do pacote de aplicativos deve ser validado em relação ao mapa de blocos.                                                           | O pacote de aplicativos está corrompido e precisa ser recompilado para gerar um novo mapa de blocos. Para saber mais sobre como criar um pacote de aplicativos, consulte [Criar um pacote de aplicativos com a ferramenta MakeAppx.exe](create-app-package-with-makeappx-tool.md). |

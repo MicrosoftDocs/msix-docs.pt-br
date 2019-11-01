@@ -1,19 +1,19 @@
 ---
 ms.assetid: ff2523cb-8109-42be-9dfc-cb5d09002574
 title: Criar e converter um mapa de grupo de conteúdo de origem
-description: Para preparar seu aplicativo para a instalação de streaming, você precisará criar um mapa de grupo de conteúdo. Este artigo irá ajudá-lo com as especificidades de criar e converter um mapa de grupo de conteúdo, fornecendo algumas dicas e truques ao longo do caminho.
+description: Este artigo descreve como criar um mapa de grupo de conteúdo. Um mapa de grupo de conteúdo necessário para preparar seu aplicativo para a instalação de streaming.
 ms.date: 07/02/2019
 author: dianmsft
 ms.author: diahar
 ms.topic: article
 keywords: Windows 10, msix, UWP, mapa de grupo de conteúdo, instalação de streaming, instalação de streaming de aplicativo, mapa de grupo de conteúdo de origem
 ms.localizationpriority: medium
-ms.openlocfilehash: 4908c03e9c300b56ac21b7f8b268b78ee27af915
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 09b5d42033082971ee490ef83de59fb30837e227
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689885"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328822"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>Criar e converter um mapa de grupo de conteúdo de origem
 
@@ -80,7 +80,7 @@ Há algumas coisas importantes a serem observadas aqui:
 Uma maneira fácil de começar a escrever este arquivo é abrir uma nova página em seu editor de texto favorito, clicar rapidamente a função "Salvar como" do seu arquivo na pasta do projeto do seu aplicativo e nomear o arquivo recém-criado: `SourceAppxContentGroupMap.xml`.
 
 > [!IMPORTANT]
-> Se você estiver desenvolvendo um C++ aplicativo, precisará ajustar as propriedades do arquivo do seu `SourceAppxContentGroupMap.xml`. Defina a propriedade `Content` para **verdadeiro** e a propriedade `File Type` para **arquivo XML**.
+> Se você estiver desenvolvendo um C++ aplicativo, precisará ajustar as propriedades do arquivo de seu `SourceAppxContentGroupMap.xml`. Defina a propriedade `Content` para **verdadeiro** e a propriedade `File Type` para **arquivo XML**.
 
 Quando você estiver criando o `SourceAppxContentGroupMap.xml`, é útil tirar proveito do uso de curingas em nomes de arquivo, para obter mais informações, consulte a seção [Dicas e truques para o uso de curingas](#wildcards).
 

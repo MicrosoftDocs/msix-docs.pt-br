@@ -1,18 +1,18 @@
 ---
-Description: Teste seu aplicativo para o Windows 10 no modo S.
-title: Testar seu aplicativo do Windows para o Windows 10 S
+description: Este artigo descreve como testar seu aplicativo do Windows para garantir que ele funcionará corretamente em dispositivos que executam o Windows 10 no modo S.
+title: Testar seu aplicativo do Windows para Windows 10 S
 ms.date: 07/29/2019
 ms.topic: article
 keywords: Windows 10 S, UWP, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: d9517a7f350d58838e0b1de30a11b325dfe7cf1a
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 953bad6b9cc1da5019bb5967d548db9af1d990b4
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685227"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328539"
 ---
-# <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>Testar seu aplicativo do Windows para o Windows 10 no modo S
+# <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>Testar seu aplicativo do Windows para Windows 10 no modo S
 
 Você pode testar seu aplicativo do Windows para garantir que ele funcione corretamente em dispositivos que executam o Windows 10 no modo S. Na verdade, se planeja publicar o aplicativo na Microsoft Store, você deve fazer isso, pois é um requisito da Store. Para testar seu aplicativo, você pode aplicar uma política de integridade de código do Device Guard em um dispositivo que estiver executando o Windows 10 Pro.
 
@@ -45,7 +45,7 @@ Aqui está um pouco mais informações sobre cada política.
 ### <a name="audit-mode-policy"></a>Política do modo de auditoria
 Com este modo, seu aplicativo é executado, mesmo que ele execute tarefas que não são suportadas no Windows 10 S. O Windows registra todos os executáveis que teriam sido bloqueados nos Registros de eventos de integridade do código.
 
-Você pode encontrar esses logs abrindo o **Visualizador de eventos**e, em seguida, navegando até este local: Logs de aplicativos e serviços-> Microsoft-> Windows-> CodeIntegrity-> operacional.
+Você pode encontrar esses logs ao abrir o **Visualizador de Eventos** e então navegar até este local: Logs de Aplicativo e Serviços -> Microsoft -> Windows -> CodeIntegrity -> Operacional.
 
 ![code-integrity-event-logs](images/code-integrity-logs.png)
 
@@ -54,7 +54,7 @@ Esse modo é seguro e não impede que o sistema seja inicializado.
 #### <a name="optional-find-specific-failure-points-in-the-call-stack"></a>(Opcional) Encontrar pontos de falha específicos na pilha de chamadas
 Para encontrar pontos específicos na pilha de chamadas onde ocorrem problemas de bloqueio, adicione esta chave do Registro e depois [configure um ambiente de depuração do modo kernel](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-#span-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanset-up-a-kernel-mode-debugging).
 
-|Chave|Nome|type|Valor|
+|Chave|Nome|Digite|Valor|
 |--|---|--|--|
 |HKEY_LOCAL_MACHINE\SYSTEM\CurentControlSet\Control\CI| DebugFlags |REG_DWORD | 1 |
 
@@ -75,7 +75,7 @@ Recomendamos que você aplique essas políticas a uma máquina virtual porque es
 
 Se você deseja aplicar essas políticas à sua máquina local, é melhor começar com a política de Modo de auditoria. Com esta política, você pode revisar os registros de eventos de integridade do código para garantir que nada crítico seja bloqueado em uma política forçada.
 
-Quando estiver pronto para aplicar uma política, localize o. Arquivo P7B para a política que você escolheu, renomeie-o como **SIPolicy. p7b**e, em seguida, salve esse arquivo nesse local no seu sistema: **C:\Windows\System32\CodeIntegrity\\** .
+Quando estiver pronto para aplicar uma política, localize o. Arquivo P7B para a política que você escolheu, renomeie-o como **SIPolicy. p7b**e, em seguida, salve esse arquivo nesse local em seu sistema: **C:\Windows\System32\CodeIntegrity\\** .
 
 Em seguida, reinicie o sistema.
 

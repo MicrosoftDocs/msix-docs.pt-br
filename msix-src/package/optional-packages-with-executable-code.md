@@ -7,12 +7,12 @@ author: dianmsft
 ms.author: diahar
 keywords: Windows 10, msix, UWP, instalador de aplicativos, AppInstaller, Sideload, conjunto relacionado, pacotes opcionais
 ms.localizationpriority: medium
-ms.openlocfilehash: 3549794387d63b668c3c6062a0c52a3df23ec46f
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 35ecf422e3a5b6db8b95d17011b46c09cbdb0218
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689755"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328783"
 ---
 # <a name="optional-packages-with-executable-code"></a>Pacotes opcionais com código executável
  
@@ -30,7 +30,7 @@ Para obter as ferramentas de desenvolvimento mais recentes, consulte [Downloads 
 > Para enviar um aplicativo que usa pacotes opcionais e/ou conjuntos relacionados para a Store, você precisará de permissão. Os pacotes opcionais e os conjuntos relacionados podem ser usados para LOB (linha de negócios) ou aplicativos empresariais sem a permissão do Partner Center se não forem enviados para a loja. Consulte [Suporte do desenvolvedor Windows](https://developer.microsoft.com/windows/support) para obter permissão para enviar um aplicativo que usa pacotes opcionais e conjuntos relacionados.
 
 > [!NOTE]
-> Pacotes opcionais contendo código executável devem fazer parte de um [conjunto relacionado](optional-packages.md#related-sets). Você não poderá executar o código de um pacote opcional, a menos que ele faça parte de um conjunto relacionado.
+> Pacotes opcionais contendo código executável devem fazer parte de um [conjunto relacionado](optional-packages.md#related_sets). Você não poderá executar o código de um pacote opcional, a menos que ele faça parte de um conjunto relacionado.
 
 ## <a name="c-optional-packages-with-executable-code"></a>Pacotes opcionais do C++ com código executável
 
@@ -60,7 +60,7 @@ Para começar a criar um pacote opcional de código em C#, siga as etapas a segu
     <uap3:MainPackageDependency Name="12345.MainAppProjectTest" />
     ```
 
-6. Adicione um arquivo `Bundle.mapping.txt` ao aplicativo principal. Siga as etapas na seção [Conjuntos relacionados](optional-packages.md#related-sets) para criar um conjunto relacionado contendo ambos os aplicativos.
+6. Adicione um arquivo `Bundle.mapping.txt` ao aplicativo principal. Siga as etapas na seção [Conjuntos relacionados](optional-packages.md#related_sets) para criar um conjunto relacionado contendo ambos os aplicativos.
 
 7. Compile o projeto do pacote opcional e vá até a pasta de Referência do pacote na saída da compilação encontrada em `..\[PathToOptionalPackageProject]\bin\[architecture]\[configuration]\Reference`. Observe que você pode escolher qualquer arquitetura no caminho para a pasta de Referência, pois o arquivo `.winmd` (etapa 8) não depende de arquitetura.
 

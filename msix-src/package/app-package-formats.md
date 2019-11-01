@@ -1,16 +1,16 @@
 ---
 title: Formatos de pacote do aplicativo
-description: Descreve os diferentes tipos de pacotes MSIX para aplicativos do Windows.
+description: Este artigo descreve os diferentes tipos de formatos de pacote MSIX que são úteis para determinados cenários.
 ms.date: 07/02/2019
 ms.topic: article
 keywords: Windows 10, msix, UWP, desktop, pacote
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a4020a5d4697cc871959210a142126b4191b840
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 14edefeffa26749f504a629919386a9e5cc0639d
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689895"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328884"
 ---
 # <a name="app-package-formats"></a>Formatos de pacote do aplicativo
 

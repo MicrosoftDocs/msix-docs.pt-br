@@ -1,16 +1,16 @@
 ---
-Description: Este artigo descreve a assinatura com a assinatura do Device Guard
+description: Este artigo descreve como assinar um pacote MSIX com a assinatura do Device Guard, que permite às empresas garantir que os aplicativos venham de uma fonte confiável.
 title: Assinar um pacote do MSIX com a autenticação do Device Guard
 ms.date: 07/12/2019
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: f373b5a67e5af6eb0c88ae45c0a2b8f6e092ad39
-ms.sourcegitcommit: 2eb663be861f2eb29f4882a15a4913ced9da833a
+ms.openlocfilehash: cd79074fa8cd74d6a32d3fc2c517e1930ee7ff68
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70014859"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328692"
 ---
 # <a name="sign-an-msix-package-with-device-guard-signing"></a>Assinar um pacote do MSIX com a autenticação do Device Guard
 
@@ -44,10 +44,10 @@ Para obter mais informações, consulte [Funções e permissões na Microsoft St
 
 Para registrar seu aplicativo com as configurações apropriadas para que você possa usar a autenticação do Azure AD com o Microsoft Store para negócios:
 
-1. Entre no [portal do Azure](https://portal.azure.com/) e siga as instruções em [início rápido: Registre um aplicativo com a plataforma](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app) de identidade da Microsoft para registrar o aplicativo que usará a assinatura do Device Guard.
+1. Entre no [portal do Azure](https://portal.azure.com/) e siga as instruções em [início rápido: registrar um aplicativo com a plataforma de identidade da Microsoft](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app) para registrar o aplicativo que usará a assinatura do Device Guard.
 
     > [!NOTE]
-    > Na seção **URI** de redirecionamento, recomendamos que você escolha **cliente público (Mobile & Desktop)** . Caso contrário, se você escolher **Web** para o tipo de aplicativo, será necessário fornecer um [segredo do cliente](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-access-web-apis#add-credentials-to-your-web-application) ao obter um token de acesso do Azure ad posteriormente neste processo.
+    > Na seção **URI de redirecionamento** , recomendamos que você escolha **cliente público (Mobile & Desktop)** . Caso contrário, se você escolher **Web** para o tipo de aplicativo, será necessário fornecer um [segredo do cliente](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-access-web-apis#add-credentials-to-your-web-application) ao obter um token de acesso do Azure ad posteriormente neste processo.
 
 2. Depois de registrar seu aplicativo, na página principal para seu aplicativo no portal do Azure, clique em **permissões de API** e adicione uma permissão para a **API da Windows Store para empresas**.
 
@@ -55,7 +55,7 @@ Para registrar seu aplicativo com as configurações apropriadas para que você 
 
 ## <a name="get-an-azure-ad-access-token"></a>Obter um token de acesso do AD do Azure
 
-Em seguida, obtenha um token de acesso do Azure AD para seu aplicativo do Azure AD no formato JSON. Você pode fazer isso usando uma variedade de linguagens de programação e script. Para obter mais informações sobre esse processo, consulte autorizar o [acesso a Azure Active Directory aplicativos Web usando o fluxo de concessão de código OAuth 2,0](https://docs.microsoft.com/azure/active-directory/develop/v1-protocols-oauth-code). Recomendamos que você recupere um [token de atualização](https://docs.microsoft.com/azure/active-directory/develop/v1-protocols-oauth-code#refreshing-the-access-tokens) junto com o token de acesso, pois seu token de acesso expirará em uma hora.
+Em seguida, obtenha um token de acesso do Azure AD para seu aplicativo do Azure AD no formato JSON. Você pode fazer isso usando uma variedade de linguagens de programação e script. Para obter mais informações sobre esse processo, consulte [autorizar o acesso a Azure Active Directory aplicativos Web usando o fluxo de concessão de código OAuth 2,0](https://docs.microsoft.com/azure/active-directory/develop/v1-protocols-oauth-code). Recomendamos que você recupere um [token de atualização](https://docs.microsoft.com/azure/active-directory/develop/v1-protocols-oauth-code#refreshing-the-access-tokens) junto com o token de acesso, pois seu token de acesso expirará em uma hora.
 
 > [!NOTE]
 > Se você registrou seu aplicativo como um aplicativo **Web** no portal do Azure, deverá fornecer um segredo do cliente quando solicitar o token. Para obter mais informações, consulte a seção anterior.
@@ -107,7 +107,7 @@ signtool sign /fd sha256 /dlib DgssLib.dll /dmdf <Azure AAD in .json format> /t 
 > * Há suporte apenas para o algoritmo SHA256.
 > * Quando você assina seu pacote com a assinatura do Device Guard, seu pacote não está sendo enviado pela Internet.
 
-## <a name="test"></a>Teste
+## <a name="test"></a>Testar
 
 Para testar a assinatura do Device Guard, baixe o certificado raiz do organização da Microsoft Store para o portal de negócios.
 
@@ -123,4 +123,4 @@ Implante este certificado em seu dispositivo. Instale seu aplicativo assinado re
 
 Aqui estão erros comuns que podem ser encontrados.
 
-* 0x800700d: Esse erro comum significa que o formato do arquivo JSON do Azure AD é inválido.
+* 0x800700d: esse erro comum significa que o formato do arquivo JSON do Azure AD é inválido.

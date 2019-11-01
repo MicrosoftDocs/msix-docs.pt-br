@@ -1,49 +1,49 @@
 ---
 title: Configurações de atualização de arquivo do instalador de aplicativo
-description: Saiba como configurar atualizações de aplicativo usando o arquivo do instalador do aplicativo.
+description: Este artigo descreve as opções de como configurar o comportamento de atualizações de aplicativo usando o arquivo do instalador do aplicativo.
 ms.date: 12/12/2018
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b95398ad0a63dde2a29c83d233099441aa2c8809
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: f5e050c111cb7587a714b9335173fd4d7a385417
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67828617"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328272"
 ---
 # <a name="configure-update-settings-in-the-app-installer-file"></a>Definir configurações de atualização no arquivo do Instalador de Aplicativo
 
-Conforme mencionado na [visão geral de arquivo do instalador do aplicativo](app-installer-file-overview.md), você pode configurar o comportamento de atualização do aplicativo no arquivo de instalador de aplicativo. Este artigo explora as opções de atualização e seus respectivas prós e contras.
+Conforme mencionado na [visão geral do arquivo do instalador do aplicativo](app-installer-file-overview.md), você pode configurar o comportamento de atualização do aplicativo no arquivo do instalador do aplicativo. Este artigo explora as opções de atualização e suas respectivas compensações.
 
-Você pode configurar o comportamento de atualização do aplicativo usando o [UpdateSettings](https://docs.microsoft.com/uwp/schemas/appinstallerschema/element-update-settings) elemento. Aqui, exploraremos as opções de atualização e seus respectivas prós e contras.
+Você pode configurar o comportamento de atualização do aplicativo usando o elemento [UpdateSettings](https://docs.microsoft.com/uwp/schemas/appinstallerschema/element-update-settings) . Aqui, exploramos as opções de atualização e suas respectivas compensações.
 
-Em resumo, você pode optar por verificar se há atualizações de duas maneiras diferentes:
-1. Independentemente do usuário iniciar o aplicativo.
+Em suma, você pode optar por verificar se há atualizações de duas maneiras diferentes:
+1. Independentemente do usuário que está iniciando o aplicativo.
 2. Somente quando o usuário inicia o aplicativo.
 
-Além disso, você pode optar por aplicar as atualizações de duas maneiras diferentes:
-1. Por informando ao usuário com um prompt.
-2. Modo silencioso, sem informando ao usuário.
+Além disso, você pode optar por aplicar atualizações de duas maneiras diferentes:
+1. Informando ao usuário um prompt.
+2. Silenciosamente, sem informar o usuário.
 
-Por fim, quando você informar o usuário de uma atualização, você pode forçar para que tenham a atualização antes de permitir iniciar o aplicativo, ou você pode permitir que eles possam iniciar o aplicativo e aplicar a atualização em um momento oportuno.
+Por fim, ao informar ao usuário uma atualização, você pode forçá-los a fazer a atualização antes de permitir que eles iniciem o aplicativo ou você pode permitir que eles iniciem o aplicativo e apliquem a atualização em um horário Opportune.
 
-Especificamente, a sintaxe que está disponível para você é o seguinte:
+Especificamente, a sintaxe que está disponível para você é a seguinte:
 
-- O [UpdateSettings](https://docs.microsoft.com/uwp/schemas/appinstallerschema/element-update-settings) elemento pode ter os seguintes elementos:
+- O elemento [UpdateSettings](https://docs.microsoft.com/uwp/schemas/appinstallerschema/element-update-settings) pode ter os seguintes elementos:
 
-    - **OnLaunch**: Verifica se há atualizações na inicialização. Esse tipo de atualização pode mostrar a interface do usuário e tem os seguintes atributos:
+    - **OnLaunch**: verifica se há atualizações na inicialização. Esse tipo de atualização pode mostrar a interface do usuário e tem os seguintes atributos:
 
-        - **ShowPrompt**: Um booliano que determina se a interface do usuário será mostrada ao usuário. Esse valor é compatível com Windows 10, versão 1903 e posterior.
+        - **Mostrar**: um booliano que determina se a IU será mostrada ao usuário. Esse valor tem suporte no Windows 10, versão 1903 e posterior.
 
-        - **UpdateBlocksActivation**: Um booliano que determina se a interface do usuário mostrado ao usuário permite que o usuário iniciar o aplicativo sem realizar a atualização, ou se o usuário deve executar a atualização antes de iniciar o aplicativo. Esse atributo pode ser definido como "true" apenas se **ShowPrompt** é definido como "true". **UpdateBlocksActivation**= "true" significa que a interface do usuário, o usuário verá, permite que o usuário fazer a atualização ou fechar o aplicativo. **UpdateBlocksActivation**= "false" significa a interface do usuário, o usuário verá, permite que o usuário fazer a atualização ou iniciar o aplicativo sem a atualização. No último caso, a atualização será aplicada silenciosamente em um momento oportuno. Esse valor é compatível com Windows 10, versão 1903 e posterior.
+        - **UpdateBlocksActivation**: um booliano que determina se a interface do usuário mostrada para a usuária permite que o usuário inicie o aplicativo sem fazer a atualização ou se o usuário deve fazer a atualização antes de iniciar o aplicativo. Esse atributo pode ser definido como "true" **somente se o** "true" for definido como "verdadeiro". **UpdateBlocksActivation**= "true" significa que a interface do usuário será exibida, permite que o usuário faça a atualização ou feche o aplicativo. **UpdateBlocksActivation**= "false" significa que a interface do usuário será exibida, permite que o usuário faça a atualização ou inicie o aplicativo sem Atualizar. No último caso, a atualização será aplicada silenciosamente em um horário Opportune. Esse valor tem suporte no Windows 10, versão 1903 e posterior.
 
         > [!NOTE]
-        > ShowPrompt precisa ser definido como true se UpdateBlocksActivation é definido como true.
+        > O @ prompt precisa ser definido como true se UpdateBlocksActivation estiver definido como true.
 
-        - **HoursBetweenUpdateChecks**: Um inteiro que indica a frequência (em quantas horas) o sistema verificará se há atualizações para o aplicativo. "0" a "255" inclusivo. O valor padrão é 24 (se esse valor não for especificado). Por exemplo se HoursBetweenUpdateChecks = 3, em seguida, quando o usuário inicia o aplicativo, se o sistema não foi verificado para atualizações de dentro das últimas 3 horas, ele verificará se há atualizações agora.  
+        - **HoursBetweenUpdateChecks**: um inteiro que indica com que frequência (em quantas horas) o sistema verificará se há atualizações para o aplicativo. "0" a "255" inclusivo. O valor padrão é 24 (se esse valor não for especificado). Por exemplo, se HoursBetweenUpdateChecks = 3, quando o usuário iniciar o aplicativo, se o sistema não tiver verificado se há atualizações nas últimas 3 horas, ele verificará se há atualizações agora.  
 
-    - **AutomaticBackgroundTask**: Verifica se há atualizações em segundo plano, independentemente se o usuário iniciou o aplicativo a cada 8 horas. Esse tipo de atualização não é possível mostrar a interface do usuário.
+    - **AutomaticBackgroundTask**: verifica se há atualizações em segundo plano a cada 8 horas independentemente de o usuário ter iniciado o aplicativo. Esse tipo de atualização não pode mostrar a interface do usuário.
 
-    - **ForceUpdateFromAnyVersion**: Permite que o aplicativo para atualizar da versão x para versão x + + ou fazer o downgrade da versão x para versão x-. Sem esse elemento, o aplicativo só pode mover para uma versão superior.
+    - **ForceUpdateFromAnyVersion**: permite que o aplicativo atualize da versão x para a versão x + + ou para fazer downgrade da versão x para a versão x--. Sem esse elemento, o aplicativo só pode mudar para uma versão superior.

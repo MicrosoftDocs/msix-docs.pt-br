@@ -1,17 +1,17 @@
 ---
 title: Instalação de conversão remota na Ferramenta de Empacotamento MSIX
-description: Instruções de instalação para conversão remota
+description: Este artigo descreve como configurar e conectar-se a um computador remoto para executar conversões de aplicativo usando a ferramenta de empacotamento MSIX.
 ms.date: 02/26/2019
 ms.topic: article
 keywords: MSIX, MPT, Ferramenta de Empacotamento MSIX, IP remoto
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 444b4a98d183f2473543c0ca2472f0fddf50052e
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
-ms.translationtype: HT
+ms.openlocfilehash: fa508c3e5729cc9910bb4e54398a45c1660e108e
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829132"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328423"
 ---
 # <a name="setup-instructions-for-remote-machine-conversions"></a>Instruções de instalação para conversões de computador remoto 
 

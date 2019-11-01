@@ -1,19 +1,19 @@
 ---
 ms.assetid: 3a59ff5e-f491-491c-81b1-6aff15886aad
 title: Criação de pacotes opcionais e conjunto relacionado
-description: Os pacotes opcionais contêm conteúdo que pode ser integrado com um pacote principal. Estes são úteis para o conteúdo para download (DLC), dividindo um aplicativo grande para restrições de tamanho ou para enviar qualquer conteúdo adicional para separado do seu aplicativo original.
+description: Os pacotes opcionais contêm conteúdo que pode ser integrado com um pacote principal. Eles são úteis para o conteúdo para download (DLC) e outros cenários.
 ms.date: 07/02/2019
 ms.topic: article
 author: dianmsft
 ms.author: diahar
 keywords: Windows 10, msix, UWP, pacotes opcionais, conjunto relacionado, extensão do pacote, Visual Studio
 ms.localizationpriority: medium
-ms.openlocfilehash: 5106708742ec134e760db333ff939c456b124659
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 34922f5067d7e1c934b85745f7dc947149f024e2
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68690055"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328761"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>Criação de pacotes opcionais e conjunto relacionado
 
@@ -80,7 +80,7 @@ Se você quiser carregar o código do pacote opcional no pacote principal, você
 
 Quando sua solução for configurada dessa maneira, o Visual Studio criará um manifesto de pacote para o pacote principal com todos os metadados necessários para conjuntos relacionados. 
 
-Observe que, assim como os pacotes `Bundle.Mapping.txt` opcionais, um arquivo para conjuntos relacionados só funcionará no Windows 10, versão 1703 ou superior. Além disso, a versão mínima da plataforma de destino do seu aplicativo deve ser definida como 10.0.15063.0 ou superior.
+Observe que, assim como os pacotes opcionais, um arquivo `Bundle.Mapping.txt` para conjuntos relacionados só funcionará no Windows 10, versão 1703 ou superior. Além disso, a versão mínima da plataforma de destino do seu aplicativo deve ser definida como 10.0.15063.0 ou superior.
 
 ## Problemas conhecidos<a name="known_issues"></a>
 

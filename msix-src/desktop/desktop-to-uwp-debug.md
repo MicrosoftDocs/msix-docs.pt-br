@@ -1,17 +1,17 @@
 ---
-Description: Execute seu app empacotado e veja sua aparência sem ter que assiná-lo. Em seguida, defina pontos de interrupção e percorra o código. Quando você estiver pronto para testar seu aplicativo em um ambiente de produção, assine seu aplicativo e então instale-o.
+description: Este artigo fornece orientação sobre como executar, depurar e testar seu aplicativo de área de trabalho empacotado para prepará-lo para implantação.
 title: Executar, depurar e testar um aplicativo da área de trabalho empacotado (Ponte de Desktop)
 ms.date: 07/29/2019
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
-ms.openlocfilehash: c80db39b7814d7a262cc838169544c924ca5eb88
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 7c8faa1ec1c6e8fcd86a59be46143d0d42b3b5ad
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685289"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328305"
 ---
 # <a name="run-debug-and-test-a-packaged-desktop-application"></a>Executar, depurar e testar um aplicativo de área de trabalho empacotado
 
@@ -73,7 +73,7 @@ Você pode usar o [o plmdebug](https://msdn.microsoft.com/library/windows/hardwa
 
 O [PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx) está incluso no SDK do Windows.
 
-## <a name="test-your-app"></a>Teste seu aplicativo
+## <a name="test-your-app"></a>Testar o app
 
 Para testar seu aplicativo em uma configuração realista enquanto você se prepara para a distribuição, é melhor assinar seu aplicativo e instalá-lo.
 
@@ -83,7 +83,7 @@ O Visual Studio assina seu aplicativo usando um certificado de teste. Você enco
 
 ### <a name="test-an-application-that-you-packaged-by-using-the-desktop-app-converter-dac"></a>Testar um aplicativo que você empacota usando o conversor de aplicativo de área de trabalho (DAC)
 
-Se você empacotar seu aplicativo usando o conversor de aplicativo de desktop, poderá usar ``sign`` o parâmetro para assinar automaticamente seu aplicativo usando um certificado gerado. Você precisará instalar esse certificado e, em seguida, instalar o aplicativo. Consulte [Executar o aplicativo empacotado](desktop-to-uwp-run-desktop-app-converter.md#run-app).
+Se você empacotar seu aplicativo usando o conversor de aplicativo de desktop, poderá usar o parâmetro ``sign`` para assinar automaticamente seu aplicativo usando um certificado gerado. Você precisará instalar esse certificado e, em seguida, instalar o aplicativo. Consulte [Executar o aplicativo empacotado](desktop-to-uwp-run-desktop-app-converter.md#run-app).
 
 
 ### <a name="manually-sign-apps-optional"></a>Assinar aplicativos manualmente (opcional)
@@ -110,7 +110,7 @@ Antes de publicar seu aplicativo, certifique-se de que ele funcionará corretame
 
 Consulte [testar seu aplicativo do Windows para Windows 10 S](desktop-to-uwp-test-windows-s.md).
 
-### <a name="run-another-process-inside-the-full-trust-container"></a>Executar outro processo dentro do contêiner de confiança total
+### <a name="run-another-process-inside-the-full-trust-container"></a>Executar outro processo dentro do recipiente de confiança total
 
 Você pode chamar processos personalizados dentro do contêiner de um pacote do aplicativo especificado. Isso pode ser útil para testar os cenários (por exemplo, se você tiver um utilitário de teste personalizado e deseja testar a saída do aplicativo). Para fazer isso, use o cmdlet do PowerShell ```Invoke-CommandInDesktopPackage```:
 

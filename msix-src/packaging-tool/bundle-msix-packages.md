@@ -1,19 +1,19 @@
 ---
 title: Como agrupar pacotes MSIX
-description: Como agrupar pacotes MSIX de arquiteturas diferentes
+description: Este artigo descreve o processo de criação de um pacote após a conversão de versões x86 e x64 de seus instaladores de aplicativo usando a ferramenta de empacotamento MSIX.
 ms.date: 10/25/2018
 ms.topic: article
 keywords: Windows 10, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 7742ca5e52ed5ee435ee3c8765fa45cfbdc903dc
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
-ms.translationtype: HT
+ms.openlocfilehash: b8dfc909cd962e23970397bf673f9a3041cbcb4f
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68685428"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328745"
 ---
-# <a name="bundle-msix-packages"></a>Agrupar pacotes de MSIX 
+# <a name="bundle-msix-packages"></a>Agrupar pacotes de MSIX
 
 Este artigo descreve o processo de criação de um pacote depois de converter as versões x86 e x64 dos instaladores do Windows usando a Ferramenta de Empacotamento MSIX. 
 
@@ -22,29 +22,33 @@ Ao agrupar várias versões de arquitetura do instalador em uma só entidade, ap
 A seção a seguir apresenta uma abordagem passo a passo para a criação de um .msixbundle. Ela pressupõe que você já tenha [convertido as versões x86 e x64 existentes](https://docs.microsoft.com/windows/msix/mpt-best-practices) do instalador do Windows em pacotes MSIX. 
 
 ### <a name="setup"></a>Configuração
-Você precisará da seguinte configuração para compilar com êxito um pacote MSIX:
-- [SDK do Windows 10](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk) (versão 1809 ou superior)
-- Pacotes MSIX x64 e x86 convertidos 
 
-## <a name="step-1-find-makeappxexe"></a>Etapa 1: Localizar o MakeAppx.exe
-O [MakeAppx.exe](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) é uma ferramenta disponível no SDK do Windows 10 que permite o empacotamento e o agrupamento de pacotes MSIX. Você usará essa ferramenta para agrupar os dois pacotes MSIX. 
+Você precisará da seguinte configuração para compilar com êxito um pacote MSIX:
+
+- [SDK do Windows 10](https://developer.microsoft.com/windows/downloads/windows-10-sdk) (versão 1809 ou superior)
+- Pacotes MSIX x64 e x86 convertidos
+
+## <a name="step-1-find-makeappxexe"></a>Etapa 1: localizar MakeAppx. exe
+
+O [MakeAppx.exe](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) é uma ferramenta disponível no SDK do Windows 10 que permite o empacotamento e o agrupamento de pacotes MSIX. Você usará essa ferramenta para agrupar os dois pacotes MSIX.
 
 O MakeAppx.exe pode ser usado para extrair o conteúdo do arquivo de um pacote ou um pacote do aplicativo do Windows 10. Ele também criptografa e descriptografa pacotes e pacotes de aplicativos.
 
-Após a instalação do SDK do Windows 10, MakeAppx.exe é geralmente encontrado aqui: 
+Após a instalação do SDK do Windows 10, MakeAppx.exe é geralmente encontrado aqui:
+
 - [x86] – C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\MakeAppx.exe
 - [x64] – C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x64\MakeAppx.exe
 
-## <a name="step-2-bundle-the-packages"></a>Etapa 2: Agrupar os pacotes
+## <a name="step-2-bundle-the-packages"></a>Etapa 2: agrupar os pacotes
 
-A maneira mais fácil de agrupar pacotes com o MakeApp.exe é adicionar todos os pacotes que você deseja agrupar a uma pasta. O diretório precisa estar livre de todo o resto, exceto os pacotes que devem ser agrupados. 
+A maneira mais fácil de agrupar pacotes com o MakeApp.exe é adicionar todos os pacotes que você deseja agrupar a uma pasta. O diretório precisa estar livre de todo o resto, exceto os pacotes que devem ser agrupados.
 
 Mova os pacotes de aplicativos que deseja agrupar para um diretório, conforme mostrado na captura de tela a seguir.
 
 ![Agrupar pacotes em um diretório](images/bundle-pic1.png)
 
->[!NOTE] 
-> O MakeAppx.exe só agrupa os pacotes que têm a mesma identidade, o que significa que a AppID, o fornecedor e a versão precisam ser iguais. Somente a arquitetura do processador de pacote de um pacote do aplicativo pode ser diferente. 
+>[!NOTE]
+> O MakeAppx.exe só agrupa os pacotes que têm a mesma identidade, o que significa que a AppID, o fornecedor e a versão precisam ser iguais. Somente a arquitetura do processador de pacote de um pacote do aplicativo pode ser diferente.
 
 O MakeAppx.exe tem a sintaxe de linha de comando a seguir.
 
@@ -62,7 +66,7 @@ C:\> "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\MakeAppx.exe" 
 
 Após executar o comando, um .msixbundle não assinado será criado no caminho especificado. Os pacotes não necessitam ser assinados antes do agrupamento.  
 
-## <a name="step-3-sign-the-bundle"></a>Etapa 3: Assinar o lote
+## <a name="step-3-sign-the-bundle"></a>Etapa 3: assinar o pacote
 
 Após criar o lote, você deve assinar o pacote antes de distribuir o aplicativo para os usuários ou instalá-lo. 
 

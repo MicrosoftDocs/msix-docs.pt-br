@@ -1,25 +1,25 @@
 ---
-title: Problemas de API do arquivo do instalador do aplicativo
-description: Listas de problemas conhecidos com as APIs de arquivos do instalador do aplicativo.
+title: Problemas de API de arquivo do instalador de aplicativo
+description: Este artigo lista problemas conhecidos com o Pacotemanager e as APIs de pacote para o gerenciamento de arquivos do instalador de aplicativos.
 ms.date: 2/20/2019
 ms.topic: article
-keywords: Windows 10, uwp, o instalador do aplicativo, AppInstaller, fazer sideload de API
+keywords: Windows 10, UWP, instalador de aplicativos, AppInstaller, Sideload, API
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f0ad59509ce95c94b790419cb46b159475be0f05
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: ca759a80d443daeb58dd66913be2b2acd9e17eef
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67828466"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328269"
 ---
-# <a name="app-installer-file-api-issues"></a>Problemas de API do arquivo do instalador do aplicativo
+# <a name="app-installer-file-api-issues"></a>Problemas de API de arquivo do instalador de aplicativo
 
-## <a name="javascript-support-for-app-installer-file-apis"></a>Suporte a JavaScript para APIs de arquivo de instalador de aplicativo
+## <a name="javascript-support-for-app-installer-file-apis"></a>Suporte a JavaScript para APIs de arquivo do instalador de aplicativo
 
-O [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager) e [pacote](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package) classes no SDK do Windows fornecem métodos que você pode usar para adicionar ou modificar os pacotes por meio de arquivos do instalador do aplicativo ou para recuperar informações sobre os aplicativos com um instalador de aplicativo associação. Para obter mais informações, confira [Documentação relacionada](app-installer-documentation.md).
+As classes [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager) e [Package](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package) no SDK do Windows fornecem métodos que você pode usar para adicionar ou modificar pacotes por meio de arquivos do instalador de aplicativos ou para recuperar informações sobre aplicativos com uma associação de instalador de aplicativo. Para obter mais informações, confira [Documentação relacionada](app-installer-documentation.md).
 
-Esses métodos, [PackageManager.AddPackageByAppInstallerFileAsync](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.addpackagebyappinstallerfileasync), [PackageManager.RequestAddPackageByAppInstallerFileAsync](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.requestaddpackagebyappinstallerfileasync), e [ Package.CheckUpdateAvailabilityAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package.checkupdateavailabilityasync) não têm suporte em JavaScript. No entanto, você pode criar uma [componente de tempo de execução do Windows](https://docs.microsoft.com/windows/uwp/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript) que chama esses métodos e, em seguida, chamar este componente de um aplicativo JavaScript UWP.
+Desses métodos, [PackageManager. AddPackageByAppInstallerFileAsync](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.addpackagebyappinstallerfileasync), [PackageManager. RequestAddPackageByAppInstallerFileAsync](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.requestaddpackagebyappinstallerfileasync)e [Package. CheckUpdateAvailabilityAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package.checkupdateavailabilityasync) não têm suporte em JavaScript. No entanto, você pode criar um [componente de Windows Runtime](https://docs.microsoft.com/windows/uwp/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript) que chama esses métodos e, em seguida, chamar esse componente de um aplicativo UWP JavaScript.
 
 Aqui está um exemplo.
 

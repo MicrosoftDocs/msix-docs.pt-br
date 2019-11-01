@@ -1,17 +1,17 @@
 ---
 title: Melhores práticas da Ferramenta de Empacotamento MSIX
-description: Melhores práticas da Ferramenta de Empacotamento MSIX
+description: Este artigo aborda as melhores práticas para reempacotar seu aplicativo para MSIX e usar a Ferramenta de Empacotamento MSIX.
 ms.date: 09/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a6dbbb8fb70b0fb9db1941e3918abcaa873569ed
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
-ms.translationtype: HT
+ms.openlocfilehash: 85b01da2e8f36ebe632380cfbf87382c51a5c959
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67840720"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328489"
 ---
 # <a name="best-practices-for-the-msix-packaging-tool"></a>Melhores práticas da Ferramenta de Empacotamento MSIX
 
@@ -36,7 +36,7 @@ Quando você está usando a Ferramenta de Empacotamento MSIX, há algumas melhor
 - Ao criar pacotes de modificação, você precisa declarar o nome do pacote (nome da identidade) do aplicativo pai na interface do usuário da ferramenta para que a ferramenta defina a dependência de pacote correta no manifesto do pacote de modificação.
 - Declarar um campo de local de instalação na página **Informações do pacote** é opcional, mas recomendado. Certifique-se de que esse caminho corresponde ao local de instalação do instalador do aplicativo.
 - Executar as etapas de preparação na página **Preparar computador** é opcional, mas altamente recomendável.
-ms.custom: RS5
+MS. Custom: RS5
 
 
 ## <a name="best-practices-while-bundling-msix-packages"></a>Melhores práticas ao agrupar pacotes MSIX

@@ -1,16 +1,16 @@
 ---
 title: Criação do pacote com o layout de empacotamento
-description: O layout de empacotamento é um documento único que descreve a estrutura de empacotamento do aplicativo. Ele especifica os pacotes de um aplicativo (principal e opcional), os pacotes no lote e os arquivos nos pacotes.
+description: O layout de empacotamento é um único documento que descreve a estrutura de empacotamento do aplicativo, como os pacotes de um aplicativo (primário e opcional).
 ms.date: 04/30/2018
 ms.topic: article
 keywords: windows 10, empacotamento, layout do pacote, pacote do ativo
 ms.localizationpriority: medium
-ms.openlocfilehash: 50284e2878a649380c842f82d03d6530aa493c99
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 92e14f8d7b8e1b3a7508f673b81a7ea6bb14ea42
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689955"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328779"
 ---
 # <a name="package-creation-with-the-packaging-layout"></a>Criação do pacote com o layout de empacotamento  
 
@@ -166,6 +166,6 @@ Usando o exemplo de layout de empacotamento avançado nesta página, se você qu
 MakeAppx.exe build /f PackagingLayout.xml /id "Themes" /op OutputPackages\ /bc /nbp
 ```
 
-O sinalizador `/bc` é usado para indicar que os filhos do lote **Themes** também devem ser compilados (neste caso **Themes.main** será compilado). O sinalizador `/nbp` é usado para indicar que o responsável do lote **Themes** não deve ser compilado. O pai de **temas**, que é um pacote de aplicativo opcional, é o pacote de aplicativo primário: **MyGame**. Geralmente para um pacote opcional em um conjunto relacionado, o lote de aplicativo principal deve também ser criado para o pacote a ser instalado, desde que o pacote opcional também seja referenciado no lote de aplicativo principal quando ele estiver em um conjunto relacionado (para garantir o controle de versão entre os pacotes principais e opcionais). A relação do responsável entre pacotes é ilustrada no diagrama a seguir:
+O sinalizador `/bc` é usado para indicar que os filhos do lote **Themes** também devem ser compilados (neste caso **Themes.main** será compilado). O sinalizador `/nbp` é usado para indicar que o responsável do lote **Themes** não deve ser compilado. O responsável de **Themes**, que é um lote de aplicativo opcional, é o lote de aplicativo principal: **MyGame**. Geralmente para um pacote opcional em um conjunto relacionado, o lote de aplicativo principal deve também ser criado para o pacote a ser instalado, desde que o pacote opcional também seja referenciado no lote de aplicativo principal quando ele estiver em um conjunto relacionado (para garantir o controle de versão entre os pacotes principais e opcionais). A relação do responsável entre pacotes é ilustrada no diagrama a seguir:
 
 ![Diagrama do layout de empacotamento](images/packaging-layout.png)

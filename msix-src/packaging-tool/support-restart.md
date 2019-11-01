@@ -6,12 +6,12 @@ ms.topic: article
 keywords: MSIX, MPT, Ferramenta de Empacotamento MSIX, 1709, 16299
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8a48358c94e9c799ff285cd3d1e20940e79f4731
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
-ms.translationtype: HT
+ms.openlocfilehash: 2be11523b1af099b168a9d7744dc3f11bd7407df
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829126"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328896"
 ---
 # <a name="support-for-desktop-installers-that-require-device-restart"></a>Suporte para instaladores da área de trabalho que exigem a reinicialização do dispositivo
 
@@ -27,5 +27,5 @@ Especifique quais códigos de saída indicam uma reinicialização na **página 
 
 Dispare uma reinicialização por meio da interface do usuário durante o fluxo de trabalho de conversão ou por meio do menu Iniciar do computador de conversão. Após a reinicialização, você retornará ao mesmo local em que estava na ferramenta para continuar com a conversão.
 
-Tenha em mente que esse recurso ainda está em desenvolvimento e pode haver alguns bugs. Se você encontrar algum, não se esqueça de [enviar comentários](https://docs.microsoft.com/en-us/windows/msix/packaging-tool/insider-program#share-your-feedback) para que possamos corrigi-lo.
+Tenha em mente que esse recurso ainda está em desenvolvimento e pode haver alguns bugs. Se você encontrar algum, não se esqueça de [enviar comentários](https://docs.microsoft.com/windows/msix/packaging-tool/insider-program#share-your-feedback) para que possamos corrigi-lo.
 

@@ -1,5 +1,5 @@
 ---
-Description: Crie um pacote de aplicativo do Windows moderno para seu app ou jogo Win32, WPF ou Windows Forms. Adicione experiências modernas para usuários do Windows 10 e simplifique a implantação e o monetização.
+description: Este artigo descreve o processo de ponta a ponta para criar um pacote de aplicativo do Windows 10 moderno para seu aplicativo Windows Forms, WPF ou Win32 existente ou jogo.
 title: Aplicativos da área de trabalho do pacote
 ms.date: 07/29/2019
 ms.topic: article
@@ -7,12 +7,12 @@ keywords: Windows 10, UWP, MSIX
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 36fb3f580d02ce6e33a1894dbd17ce9577376d94
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: e6be05b4d935718046c33c4be64d4f66c7122e4a
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685409"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328556"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>Empacotar aplicativos de desktop (ponte de desktop)
 
@@ -57,13 +57,13 @@ Se você mantém seu aplicativo usando o Visual Studio e esse aplicativo não te
 
 O Visual Studio facilita a criação de um pacote. Você adicionará um **projeto de pacote de aplicativos do Windows** à sua solução, fará referência ao seu projeto de desktop e, em seguida, pressionará F5 para depurar seu aplicativo. Aqui estão algumas outras coisas que você pode fazer com ele.
 
-:heavy_check_mark: Gere automaticamente ativos visuais.
+:heavy_check_mark: Gerar automaticamente ativos visuais.
 
-:heavy_check_mark: Faça alterações em seu manifesto usando um designer visual.
+:heavy_check_mark: Fazer alterações no seu manifesto usando um designer visual.
 
-:heavy_check_mark: Gere seu pacote usando um assistente.
+:heavy_check_mark: Gerar seu pacote usando um assistente.
 
-:heavy_check_mark: Atribua facilmente uma identidade ao seu aplicativo a partir de um nome que você já reservou no [Partner Center](https://partner.microsoft.com/dashboard).
+: heavy_check_mark: atribua facilmente uma identidade ao seu aplicativo a partir de um nome que você já reservou no [Partner Center](https://partner.microsoft.com/dashboard).
 
 Para obter instruções, confira [empacotar um aplicativo de área de trabalho usando o Visual Studio](desktop-to-uwp-packaging-dot-net.md). A tabela a seguir mostra as versões com suporte do Visual Studio, do Windows 10 e dos formatos de pacote.
 
@@ -103,7 +103,7 @@ Algumas experiências do Windows 10 (por exemplo, uma página da interface do us
 
 Consulte [estender seu aplicativo de área de trabalho com componentes UWP](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extend).
 
-## <a name="test"></a>Teste
+## <a name="test"></a>Testar
 
 Para testar seu aplicativo em uma configuração realista enquanto você se prepara para a distribuição, é melhor assinar seu aplicativo e instalá-lo. Consulte [Testar seu app](desktop-to-uwp-debug.md#test-your-app).
 
@@ -114,7 +114,7 @@ Para testar seu aplicativo em uma configuração realista enquanto você se prep
 
 Para dar ao seu aplicativo a melhor chance de ser publicado no Microsoft Store ou se tornar o [Windows certificado](https://go.microsoft.com/fwlink/p/?LinkID=309666), valide-o e teste-o localmente antes de enviá-lo para certificação.
 
-Se você estiver usando o DAC para empacotar seu aplicativo, poderá usar o novo ``-Verify`` sinalizador para validar seu pacote em relação ao aplicativo de área de trabalho empacotado e armazenar os requisitos. Consulte [empacotar um aplicativo, assinar o aplicativo e prepará-lo para envio da loja](desktop-to-uwp-run-desktop-app-converter.md#optional-parameters).
+Se você estiver usando o DAC para empacotar seu aplicativo, poderá usar o novo sinalizador ``-Verify`` para validar seu pacote em relação ao aplicativo de área de trabalho empacotado e armazenar os requisitos. Consulte [empacotar um aplicativo, assinar o aplicativo e prepará-lo para envio da loja](desktop-to-uwp-run-desktop-app-converter.md#optional-parameters).
 
 Se você estiver usando o Visual Studio, poderá validar seu aplicativo do assistente para **criar pacotes de aplicativos** . Consulte [Criar um arquivo de upload de pacote do aplicativo](../package/packaging-uwp-apps.md#create-an-app-package-upload-file).
 

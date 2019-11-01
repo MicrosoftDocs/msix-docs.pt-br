@@ -1,17 +1,17 @@
 ---
-Description: Este artigo contém problemas conhecidos com a Ponte de Desktop.
+description: Este artigo descreve os problemas conhecidos que podem ocorrer quando você cria um pacote MSIX para seu aplicativo de área de trabalho.
 title: Problemas conhecidos com aplicativos de área de trabalho empacotados
 ms.date: 07/29/2019
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: bdcc41c077433a02c39e6d9838fb6f4a7b9cb689
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: d82306906f09f5c07882da5a996a8a45a846e6c6
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685357"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328565"
 ---
 # <a name="known-issues-with-packaged-desktop-apps"></a>Problemas conhecidos com aplicativos de área de trabalho empacotados
 
@@ -25,9 +25,9 @@ Estamos cientes desse problema e estamos trabalhando em um solução de longo pr
 
 ``<AppxGeneratePrisForPortableLibrariesEnabled>false</AppxGeneratePrisForPortableLibrariesEnabled>``
 
-## <a name="blue-screen-with-error-code-0x139-kernelsecuritycheckfailure"></a>Tela azul com código de erro 0x139 (KERNEL_SECURITY_CHECK_FAILURE)
+## <a name="blue-screen-with-error-code-0x139-kernel_security_check_failure"></a>Tela azul com código de erro 0x139 (KERNEL_SECURITY_CHECK_FAILURE)
 
-Depois de instalar ou iniciar determinados aplicativos do Microsoft Store, seu computador pode ser reinicializado inesperadamente com o erro: **0x139 (falha\_na\_verificação\_ de segurança do kernel)** .
+Depois de instalar ou iniciar determinados aplicativos do Microsoft Store, seu computador pode ser reinicializado inesperadamente com o erro: **0x139 (KERNEL\_SECURITY\_verificar\_ falha)** .
 
 Entre os aplicativos afetados conhecidos estão Kodi, JT2Go, Ear Trumpet, Teslagrad e outros.
 
@@ -45,7 +45,7 @@ Os detalhes a respeito do Windows Update podem ser encontrados em:
 
 ## <a name="common-errors-that-can-appear-when-you-sign-your-app"></a>Erros comuns que podem aparecer quando você assina seu aplicativo
 
-### <a name="publisher-and-cert-mismatch-causes-signtool-error-error-signersign-failed--21470248850x8007000b"></a>Incompatibilidade de fornecedor e CERT causa erro de SignTool "erro: Falha de SignerSign () "(-2147024885/0x8007000B)
+### <a name="publisher-and-cert-mismatch-causes-signtool-error-error-signersign-failed--21470248850x8007000b"></a>O fornecedor e algumas incompatibilidades causam um erro Signtool "Error: SignerSign() Failed" (-2147024885/0x8007000b)
 
 A entrada de Fornecedor no manifesto do pacote de aplicativo do Windows deve corresponder ao Assunto do certificado que você está assinando.  Você pode usar qualquer um dos seguintes métodos para ver o assunto do certificado.
 
@@ -57,7 +57,7 @@ Execute o seguinte comando do PowerShell: Ambos .cer ou .pfx pode ser usado como
 (Get-PfxCertificate <cert_file>).Subject
 ```
 
-**Opção 2: Explorador de arquivos**
+**Opção 2: explorador de arquivos**
 
 Clique duas vezes no certificado no Explorador de Arquivos, selecione a guia *Detalhes* e depois o campo *Assunto* na lista. Em seguida, você pode copiar o conteúdo.
 
@@ -79,11 +79,11 @@ Isso pode acontecer quando o pacote contém um binário que tem um certificado c
 
 * O tamanho do certificado não é positivo.
 
-* O certificado iniciado não é após `IMAGE_NT_HEADERS32` a estrutura de um executável de 32 bits ou após `IMAGE_NT_HEADERS64` a estrutura de um executável de 64 bits.
+* O certificado iniciado não é posterior à estrutura de `IMAGE_NT_HEADERS32` de um executável de 32 bits ou após a estrutura de `IMAGE_NT_HEADERS64` para um executável de 64 bits.
 
 * O ponteiro do certificado não está alinhado corretamente para uma estrutura WIN_CERTIFICATE.
 
-Para localizar arquivos que contenham um certificado PE insatisfatório, abra um **prompt de comando**e defina a `APPXSIP_LOG` variável de ambiente chamada com um valor de 1.
+Para localizar arquivos que contenham um certificado PE insatisfatório, abra um **prompt de comando**e defina a variável de ambiente chamada `APPXSIP_LOG` como um valor de 1.
 
 ```
 set APPXSIP_LOG=1
