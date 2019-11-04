@@ -1,17 +1,17 @@
 ---
 title: O que é MSIX?
-description: Conheça os fundamentos do formato de empacotamento MSIX.
+description: Este artigo apresenta os conceitos básicos do formato de empacotamento MSIX, uma experiência moderna para todos os aplicativos do Windows.
 ms.date: 09/12/2018
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 86054c61b870dd36c7a7635fd55e83dc40a4873d
-ms.sourcegitcommit: 1c3a0f5c27ee741d26f693ad657754c4ab29ac73
+ms.openlocfilehash: 53147e31c0bef58541a9f240eb7a1c3e758ee160
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71189884"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328878"
 ---
 # <a name="what-is-msix"></a>O que é MSIX?
 

@@ -1,21 +1,21 @@
 ---
 title: Visão geral da Ferramenta de Empacotamento MSIX
-description: Documento de visão geral sobre como começar a usar a Ferramenta de Empacotamento MSIX
+description: Este artigo apresenta a Ferramenta de Empacotamento MSIX, que permite que você empacote novamente seus aplicativos existentes da área de trabalho do Windows no formato MSIX.
 ms.date: 02/19/2019
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: ee9d47ef88f8281a707550b67cf976da29efe9e2
-ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
+ms.openlocfilehash: b8afc46195c1c7f467ddf302edd9553a2ba0c049
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72776539"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328463"
 ---
 # <a name="msix-packaging-tool"></a>Ferramenta de Empacotamento MSIX 
 
-<div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">Obter a Ferramenta de Empacotamento MSIX</a></p></div>
+<div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">Obter a Ferramenta de Empacotamento MSIX</a></p></div>
 
 A Ferramenta de Empacotamento MSIX permite que você empacote novamente os aplicativos Win32 existentes para o formato MSIX. Ela oferece uma interface do usuário interativa e uma linha de comando para conversões e proporciona a capacidade de converter um aplicativo sem a necessidade do código-fonte. Queremos permitir que os Profissionais de TI convertam seus ativos existentes para MSIX, visando fornecer a eles uma maneira melhor de fazer o empacotamento e o gerenciamento de aplicativos.
 
@@ -32,9 +32,9 @@ Caso esteja interessado em ser um Participante do programa Ferramenta de Empacot
  
  ## <a name="install"></a>Instalar
  
-Para instalar a Ferramenta de Empacotamento MSIX por meio da Microsoft Store, acesse [aqui](https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf), verificando se você está conectado com a MSA que é usada para o Programa Windows Insider. Em seguida, acesse a página de descrição do produto e clique no ícone Instalar para iniciar a instalação.
+Para instalar a Ferramenta de Empacotamento MSIX por meio da Microsoft Store, acesse [aqui](https://www.microsoft.com/p/msix-packaging-tool/9n5lw3jbcxkf), verificando se você está conectado com a MSA que é usada para o Programa Windows Insider. Em seguida, acesse a página de descrição do produto e clique no ícone Instalar para iniciar a instalação.
 
-A Ferramenta de Empacotamento MSIX também pode ser baixada para uso offline no [portal da Web](https://businessstore.microsoft.com/) da Microsoft Store para Empresas. Saiba mais sobre a distribuição offline [aqui](https://docs.microsoft.com/en-us/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app).
+A Ferramenta de Empacotamento MSIX também pode ser baixada para uso offline no [portal da Web](https://businessstore.microsoft.com/) da Microsoft Store para Empresas. Saiba mais sobre a distribuição offline [aqui](https://docs.microsoft.com/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app).
 
  
 ## <a name="latest-public-version---1201910180"></a>Última versão pública – 1.2019.1018.0

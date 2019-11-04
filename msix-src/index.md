@@ -1,18 +1,18 @@
 ---
 layout: LandingPage
 title: Documentação de MSIX
-description: Encontre documentação sobre MSIX, um formato de empacotamento atualizado, criado para ser seguro, protegido e confiável e que é uma combinação de tecnologias de instalação .msi, .appx, App-V e ClickOnce.
+description: Fornece diretrizes para MSIX, o formato de empacotamento moderno, seguro e confiável para aplicativos do Windows 10.
 ms.date: 09/07/2018
 ms.topic: landing-page
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 43a351aaffaf56ed312dad1bc318dbba316416d1
-ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
+ms.openlocfilehash: 76f31462dbfcab60b23e81281b6b0b0eaaaf5785
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72776505"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328910"
 ---
 # <a name="msix-documentation"></a>Documentação da MSIX
 MSIX é um formato de empacotamento criado para ser seguro, protegido e confiável, baseado em uma combinação de tecnologias de instalação .msi, .appx, App-V e ClickOnce. 

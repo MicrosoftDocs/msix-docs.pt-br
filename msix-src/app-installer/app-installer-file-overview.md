@@ -1,17 +1,17 @@
 ---
 title: Visão geral do arquivo do Instalador de Aplicativo
-description: Saiba mais sobre o conteúdo dos arquivos do Instalador do Aplicativo e como eles funcionam.
+description: Este artigo descreve o conteúdo dos arquivos do Instalador de Aplicativo e como eles funcionam para ajudar a gerenciar a distribuição e a instalação de seus aplicativos da área de trabalho.
 ms.date: 12/12/2018
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: a470b406c1e4f155e297fd0d278b89fd5d0fdab5
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 070d948417c01fbf4f278bf37959af58b368fa99
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67828595"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328312"
 ---
 # <a name="app-installer-file-overview"></a>Visão geral do arquivo do Instalador de Aplicativo
 

@@ -1,16 +1,16 @@
 ---
-Description: Este artigo descreve os requisitos de assinatura para aplicativos do Windows 10.
+description: Este artigo descreve os requisitos de assinatura para aplicativos do Windows 10. A assinatura é uma etapa necessária no processo de criação de um pacote do aplicativo que pode ser implantado.
 title: Assinar um pacote do aplicativo do Windows 10
 ms.date: 07/03/2019
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: ddd7a8769bd2d09122153cc42aecd4d686e25d40
-ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
+ms.openlocfilehash: f136235f5b67c6c987b44e9c2b10168103bf6ae6
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72776459"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328734"
 ---
 # <a name="sign-a-windows-10-app-package"></a>Assinar um pacote do aplicativo do Windows 10
 
@@ -43,4 +43,4 @@ O Windows 10 permite que os usuários selecionem o modo no qual seus dispositivo
 
 **Aplicativos da Microsoft Store** é a opção mais segura, pois só permite a instalação de aplicativos da Microsoft Store. Os aplicativos da Microsoft Store passam por um processo de certificação para garantir que sejam seguros para uso. 
 
-**Aplicativos de sideload** e **Modo de desenvolvedor** são opções mais permissivas de aplicativos que são assinados por outros certificados, desde que esses certificados sejam confiáveis e encadeados para uma das raízes confiáveis no dispositivo. Só selecione o Modo de desenvolvedor se você for um desenvolvedor e estiver compilando ou depurando aplicativos do Windows 10. Encontre mais informações sobre o Modo de desenvolvedor e o que ele oferece [aqui](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development). 
+**Aplicativos de sideload** e **Modo de desenvolvedor** são opções mais permissivas de aplicativos que são assinados por outros certificados, desde que esses certificados sejam confiáveis e encadeados para uma das raízes confiáveis no dispositivo. Só selecione o Modo de desenvolvedor se você for um desenvolvedor e estiver compilando ou depurando aplicativos do Windows 10. Encontre mais informações sobre o Modo de desenvolvedor e o que ele oferece [aqui](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development). 

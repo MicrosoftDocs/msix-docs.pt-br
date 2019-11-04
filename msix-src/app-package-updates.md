@@ -1,17 +1,17 @@
 ---
 title: Atualizações de pacote do aplicativo
-description: Saiba como os aplicativos são atualizados de forma diferencial.
+description: Descreve como pacotes MSIX são otimizados para garantir que somente os bits alterados essenciais do aplicativo sejam baixados para atualizar um aplicativo do Windows já existente.
 ms.date: 09/10/2018
 ms.topic: article
 keywords: Windows 10, UWP, pacote do aplicativo, atualização do aplicativo, MSIX, appx
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 3ea46f938440ae7265673d138373582083deffc4
-ms.sourcegitcommit: 9cb3d2cdbe03b300bef60ed949e5e4d3b24d35ba
+ms.openlocfilehash: 56db11754c5f9db0480abf0ec249b97486b3e614
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70863993"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328285"
 ---
 # <a name="app-package-updates"></a>Atualizações de pacote do aplicativo
 
@@ -55,7 +55,7 @@ Em uma escala maior, se um arquivo inteiro não for alterado (determinado por um
 A família de pacotes é composta pelo Nome do Pacote e pelo Fornecedor. Para conseguir fazer a atualização, os novos metadados de pacote precisarão ser os mesmos do pacote instalado anteriormente. 
 
 #### <a name="app-updates-must-increment-to-a-higher-version"></a>As atualizações de aplicativo precisam ser incrementada para uma versão superior
-No geral, as atualizações de aplicativo exigem que a versão do novo pacote sejam superiores à atual. O processo de atualização de aplicativo não permitirá que os pacotes de versões anteriores sejam instalados por padrão. A partir da versão 1809 do Windows 10, é possível usar ForceUpdateToAnyVersion para permitir que pacotes de versões anteriores sejam instalados quando se forneça uma opção de substituição como parte dos argumentos de atualização. No momento, ele está disponível no PowerShell usando a opção [ForceUpdateFromAnyVersion](https://docs.microsoft.com/en-us/powershell/module/appx/add-appxpackage?view=win10-ps), por meio da [API do PackageManager](https://docs.microsoft.com/en-us/uwp/api/windows.management.deployment.deploymentoptions), do [CSP do EnterpriseModernAppManagement](https://docs.microsoft.com/en-us/windows/client-management/mdm/enterprisemodernappmanagement-csp) e no [arquivo AppInstaller](https://docs.microsoft.com/windows/msix/app-installer/update-settings).  
+No geral, as atualizações de aplicativo exigem que a versão do novo pacote sejam superiores à atual. O processo de atualização de aplicativo não permitirá que os pacotes de versões anteriores sejam instalados por padrão. A partir da versão 1809 do Windows 10, é possível usar ForceUpdateToAnyVersion para permitir que pacotes de versões anteriores sejam instalados quando se forneça uma opção de substituição como parte dos argumentos de atualização. No momento, ele está disponível no PowerShell usando a opção [ForceUpdateFromAnyVersion](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps), por meio da [API do PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.deploymentoptions), do [CSP do EnterpriseModernAppManagement](https://docs.microsoft.com/windows/client-management/mdm/enterprisemodernappmanagement-csp) e no [arquivo AppInstaller](https://docs.microsoft.com/windows/msix/app-installer/update-settings).  
 
 > [!NOTE]
 > Caso use o ForceUpdateToAnyVersion em um aplicativo do Windows Store, o Windows Update atualizará automaticamente para a versão aplicável mais recente.
