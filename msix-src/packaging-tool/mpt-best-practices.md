@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 85b01da2e8f36ebe632380cfbf87382c51a5c959
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 975ed03b8c3a0e436dff9dac8469e24556557b3c
+ms.sourcegitcommit: 073a228653f004914851c3461b9ad6eef343f915
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328489"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74309017"
 ---
 # <a name="best-practices-for-the-msix-packaging-tool"></a>Melhores práticas da Ferramenta de Empacotamento MSIX
 
@@ -21,21 +21,22 @@ Este artigo aborda as melhores práticas para reempacotar seu aplicativo para MS
 
 ## <a name="best-practices-during-setup"></a>Melhores práticas durante a configuração
  
-Para começar, você deve ter a versão da Ferramenta de Empacotamento MSIX para a Atualização de outubro de 2018 para o Windows 10 (também conhecida como versão 1809). Para o processo de conversão, há algumas outras coisas que recomendamos que você considere antes de começar. 
+Para começar, verifique se você tem a [versão mais recente da ferramenta de empacotamento MSIX](https://docs.microsoft.com/en-us/windows/msix/packaging-tool/mpt-overview#latest-public-version---1201910180). Para o processo de conversão, há algumas outras coisas que recomendamos que você considere antes de começar. 
 
-- Entendemos que nem todo mundo está usando a Atualização de outubro de 2018 para o Windows 10 ou nem mesmo o Windows 10. Portanto, é recomendável que você crie uma VM limpa pré-configurada para a versão mínima do suporte para MSIX. 
+- O requisito mínimo de versão do sistema operacional para a ferramenta de empacotamento MSIX é o Windows 10 1809. Entendemos que nem todo mundo está usando a Atualização de outubro de 2018 para o Windows 10 ou nem mesmo o Windows 10. Portanto, é recomendável que você crie uma VM limpa pré-configurada para a versão mínima do suporte para MSIX. Se não for algo que você também oferece uma VM de criação rápida, o [ambiente da ferramenta de empacotamento MSIX](https://docs.microsoft.com/en-us/windows/msix/packaging-tool/quick-create-vm) no Hyper-V, que está pronto para ser convertido. 
 
 - Outro motivo pelo qual isso é uma recomendação é que durante a conversão de GUI interativa usando a Ferramenta de Empacotamento MSIX, escutaremos tudo no dispositivo e isso ajudará a evitar dados irrelevantes no seu pacote. 
 
-- Também é bom saber que tipo de dependências você tem para que possa entender quais devem ser executadas com o seu aplicativo e quais devem ser empacotadas como um pacote de modificação. Por exemplo, se você tem dependências de tempo de execução, é uma boa ideia incluí-las em seu aplicativo principal. Se você tem um plug-in, deve empacotá-lo como um pacote de modificação associado. 
+- Também é bom saber que tipo de dependências você tem para que possa entender quais devem ser executadas com o seu aplicativo e quais devem ser empacotadas como um pacote de modificação. Por exemplo, se você tem dependências de runtime, é uma boa ideia incluí-las em seu aplicativo principal. Se você tiver um plug-in, deverá empacotá-lo como um pacote de modificação para associá-lo ao aplicativo principal. 
 
 
 ## <a name="best-practices-during-repackaging"></a>Melhores práticas durante o reempacotamento 
 Quando você está usando a Ferramenta de Empacotamento MSIX, há algumas melhores práticas que também recomendamos que você faça:
 - Ao empacotar os instaladores do ClickOnce, é necessário enviar um atalho para a área de trabalho caso o instalador ainda não esteja fazendo isso. Em geral, é uma boa prática sempre lembrar de enviar um atalho para a área de trabalho do executável do aplicativo principal.
 - Ao criar pacotes de modificação, você precisa declarar o nome do pacote (nome da identidade) do aplicativo pai na interface do usuário da ferramenta para que a ferramenta defina a dependência de pacote correta no manifesto do pacote de modificação.
-- Declarar um campo de local de instalação na página **Informações do pacote** é opcional, mas recomendado. Certifique-se de que esse caminho corresponde ao local de instalação do instalador do aplicativo.
-- Executar as etapas de preparação na página **Preparar computador** é opcional, mas altamente recomendável.
+- Executar as etapas de preparação na página **preparar computador** é opcional, mas altamente recomendado, pois isso ajudará a reduzir os dados estranhos em seu pacote. 
+- É necessário que você assine seu pacote para instalá-lo, mas também recomendamos que você faça o carimbo de data/hora do seu certificado para que seu aplicativo possa ser instalado, mesmo que seu certificado expire. 
+- A declaração de um campo local de instalação na página **informações do pacote** é opcional. Certifique-se de que esse caminho corresponde ao local de instalação do instalador do aplicativo.
 MS. Custom: RS5
 
 

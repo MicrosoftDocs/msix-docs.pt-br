@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1ba8767e2fbbe5eb6ace39e14518462bfb7d853d
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 39a4731daece164b89f2c2df1df1965c2c0543e3
+ms.sourcegitcommit: 073a228653f004914851c3461b9ad6eef343f915
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328234"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74309014"
 ---
 # <a name="run-scripts-with-the-package-support-framework"></a>Executar scripts com o Package Support Framework
 
@@ -21,11 +21,10 @@ Você pode usar a estrutura de suporte de pacote (PSF) para executar um script d
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para permitir que os scripts sejam executados, você precisa definir a política de execução do PowerShell para `Unrestricted` ou `RemoteSigned`. Você pode fazer isso executando um destes comandos:
+Para permitir que os scripts sejam executados, você precisa definir a política de execução do PowerShell como `RemoteSigned`. Você pode fazer isso executando este comando:
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 ```
 
 A política de execução precisa ser definida para o executável do PowerShell de 64 bits e o executável do PowerShell de 32 bits. Certifique-se de abrir cada versão do PowerShell e execute um dos comandos mostrados acima.
@@ -54,11 +53,11 @@ A seguir estão os itens de configuração disponíveis para os scripts. O scrip
 |-------------------------|------------|-----------|----------|---------|
 | `scriptPath`              | sequência     | Sim       | N/D      | O caminho para o script, incluindo o nome e a extensão. O caminho é iniciado a partir do diretório raiz do aplicativo.
 | `scriptArguments`         | sequência     | Não        | vazio    | Lista de argumentos delimitados por espaço. O formato é o mesmo para uma chamada de script do PowerShell. Essa cadeia de caracteres é anexada a `scriptPath` para fazer uma chamada PowerShell. exe válida.
-| `runInVirtualEnvironment` | booliano    | Não        | true     | Especifica se o script deve ser executado no mesmo ambiente virtual em que o aplicativo empacotado é executado.
-| `runOnce`                 | booliano    | Não        | true     | Especifica se o script deve ser executado uma vez por usuário, por versão.
+| `runInVirtualEnvironment` | booliano    | Não        | verdadeiro     | Especifica se o script deve ser executado no mesmo ambiente virtual em que o aplicativo empacotado é executado.
+| `runOnce`                 | booliano    | Não        | verdadeiro     | Especifica se o script deve ser executado uma vez por usuário, por versão.
 | `showWindow`              | booliano    | Não        | false    | Especifica se a janela do PowerShell é mostrada.
 | `stopOnScriptError`       | booliano    | Não        | false    | Especifica se deseja sair do aplicativo se o script inicial falhar.
-| `waitForScriptToFinish`   | booliano    | Não        | true     | Especifica se o aplicativo empacotado deve aguardar a conclusão do script inicial antes de iniciar.
+| `waitForScriptToFinish`   | booliano    | Não        | verdadeiro     | Especifica se o aplicativo empacotado deve aguardar a conclusão do script inicial antes de iniciar.
 | `timeout`                 | DWORD      | Não        | LOOP | Quanto tempo o script terá permissão para ser executado. Quando o tempo decorrido, o script será interrompido.
 
 > [!NOTE]

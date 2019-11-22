@@ -5,12 +5,12 @@ ms.date: 07/12/2019
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: cd79074fa8cd74d6a32d3fc2c517e1930ee7ff68
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 73ed0fcb5ef4bb1656eda01dcb8ecbdd2bb5b65e
+ms.sourcegitcommit: 073a228653f004914851c3461b9ad6eef343f915
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328692"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74308999"
 ---
 # <a name="sign-an-msix-package-with-device-guard-signing"></a>Assinar um pacote do MSIX com a autenticação do Device Guard
 
@@ -124,3 +124,4 @@ Implante este certificado em seu dispositivo. Instale seu aplicativo assinado re
 Aqui estão erros comuns que podem ser encontrados.
 
 * 0x800700d: esse erro comum significa que o formato do arquivo JSON do Azure AD é inválido.
+* Talvez seja necessário aceitar os termos e a condição de Microsoft Store para negócios antes de downloadidng o certificado raiz da assinatura do Device Guard. Isso pode ser feito por meio do obtenção de um aplicativo gratuito no Portal.
