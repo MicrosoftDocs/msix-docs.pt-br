@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX, 1709, 1803
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 9e2a4864d8f5f15f70a48eb04e787c80cd7c90a8
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 700656bb7a6de66a876d8d46a9ac724d01caa11a
+ms.sourcegitcommit: 073a228653f004914851c3461b9ad6eef343f915
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829396"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74309029"
 ---
 # <a name="msix-support-on-windows-10-version-1709-and-1803"></a>Suporte do MSIX no Windows 10 versão 1709 e 1803
 
@@ -52,7 +52,7 @@ A versão mínima compatível do sistema operacional de um pacote MSIX está lis
 
 No Windows 10, versões 1709, 1803 e 1809, damos suporte aos cenários de implantação corporativos convencionais. Eles incluem a instalação por meio do SCCM, do Microsoft Intune, do PowerShell ou da instalação de clique duplo.
 
-Atualmente, a instalação do MSIX por meio da Microsoft Store e da Microsoft Store para Empresas exige o Windows 10 versão 1809.
+Atualmente, a instalação do MSIX por meio da Microsoft Store e da Microsoft Store para Empresas exige o Windows 10 versão 1803.
 
 ## <a name="packaging-and-signing"></a>Empacotamento e assinatura
 
