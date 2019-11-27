@@ -51,8 +51,8 @@ A seguir estão os itens de configuração disponíveis para os scripts. O scrip
 
 | Nome da chave                | Tipo de valor | Necessário? | Padrão  | Descrição
 |-------------------------|------------|-----------|----------|---------|
-| `scriptPath`              | sequência     | Sim       | N/D      | O caminho para o script, incluindo o nome e a extensão. O caminho é iniciado a partir do diretório raiz do aplicativo.
-| `scriptArguments`         | sequência     | Não        | vazio    | Lista de argumentos delimitados por espaço. O formato é o mesmo para uma chamada de script do PowerShell. Essa cadeia de caracteres é anexada a `scriptPath` para fazer uma chamada PowerShell. exe válida.
+| `scriptPath`              | cadeia de caracteres     | Sim       | N/D      | O caminho para o script, incluindo o nome e a extensão. O caminho é iniciado a partir do diretório raiz do aplicativo.
+| `scriptArguments`         | cadeia de caracteres     | Não        | vazio    | Lista de argumentos delimitados por espaço. O formato é o mesmo para uma chamada de script do PowerShell. Essa cadeia de caracteres é anexada a `scriptPath` para fazer uma chamada PowerShell. exe válida.
 | `runInVirtualEnvironment` | booliano    | Não        | verdadeiro     | Especifica se o script deve ser executado no mesmo ambiente virtual em que o aplicativo empacotado é executado.
 | `runOnce`                 | booliano    | Não        | verdadeiro     | Especifica se o script deve ser executado uma vez por usuário, por versão.
 | `showWindow`              | booliano    | Não        | false    | Especifica se a janela do PowerShell é mostrada.
