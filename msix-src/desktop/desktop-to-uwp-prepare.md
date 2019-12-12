@@ -1,17 +1,17 @@
 ---
 Description: Este artigo lista as coisas que você precisa saber antes de empacotar seu aplicativo de desktop. Talvez você não precise fazer muito para preparar seu app para o processo de empacotamento.
-title: Preparar para empacotar um aplicativo de desktop (ponte de desktop)
+title: Preparar para empacotar um aplicativo de área de trabalho (MSIX)
 ms.date: 08/22/2019
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e907e4008389a5075575431dcb74d93fe3b4ddd
-ms.sourcegitcommit: 641ab68bc55d09291dbc26748658e64f15eaedee
+ms.openlocfilehash: 6842263efa77515753f14941ee8b5eac36f03ec7
+ms.sourcegitcommit: d749fa662214bddaa6854f1ee95761c547db8dae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69979233"
+ms.lasthandoff: 12/12/2019
+ms.locfileid: "75008116"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>Preparar um pacote para um aplicativo de área de trabalho
 
@@ -21,9 +21,9 @@ Este artigo lista as coisas que você precisa saber antes de empacotar seu aplic
 
   Espera-se que as versões de destino das .NET Framework anteriores à 4.6.2 em aplicativos de desktop empacotados funcionem na maioria dos casos. No entanto, se você visar uma versão anterior à 4.6.2, deverá testar completamente o aplicativo de área de trabalho empacotado antes de distribuí-lo aos usuários.
 
-  + 4,0-4.6.1: Os aplicativos que visam essas versões do .NET Framework devem ser executados sem problemas no 4.6.2 ou posterior. Portanto, esses aplicativos devem ser instalados e executados sem alterações no Windows 10, versão 1607 ou posterior, com a versão do .NET Framework que está incluído no sistema operacional.
+  + 4,0-4.6.1: os aplicativos destinados a essas versões do .NET Framework devem ser executados sem problemas no 4.6.2 ou posterior. Portanto, esses aplicativos devem ser instalados e executados sem alterações no Windows 10, versão 1607 ou posterior, com a versão do .NET Framework que está incluído no sistema operacional.
 
-  + 2,0 e 3,5: Em nossos testes, os aplicativos de área de trabalho empacotados que visam essas versões do .NET Framework geralmente funcionam, mas podem apresentar problemas de desempenho em alguns cenários. Para que esses aplicativos empacotados sejam instalados e executados, o [recurso .NET Framework 3,5](https://docs.microsoft.com/dotnet/framework/install/dotnet-35-windows-10) deve ser instalado no computador de destino (esse recurso também inclui .NET Framework 2,0 e 3,0). Você também deve testar esses aplicativos cuidadosamente depois de empacotá-los.
+  + 2,0 e 3,5: em nossos testes, os aplicativos de área de trabalho empacotados que visam essas versões do .NET Framework geralmente funcionam, mas podem apresentar problemas de desempenho em alguns cenários. Para que esses aplicativos empacotados sejam instalados e executados, o [recurso .NET Framework 3,5](https://docs.microsoft.com/dotnet/framework/install/dotnet-35-windows-10) deve ser instalado no computador de destino (esse recurso também inclui .NET Framework 2,0 e 3,0). Você também deve testar esses aplicativos cuidadosamente depois de empacotá-los.
 
 + __Seu aplicativo sempre é executado com privilégios de segurança elevados__. Seu aplicativo precisa funcionar durante a execução como usuário interativo. Os usuários que instalam seu aplicativo da Microsoft Store podem não ser administradores do sistema, portanto, exigir que seu aplicativo seja executado com privilégios elevados significa que ele não será executado corretamente para usuários padrão. Os aplicativos que exigem a elevação para qualquer parte da funcionalidade não serão aceitos na Microsoft Store.
 
@@ -33,23 +33,26 @@ Este artigo lista as coisas que você precisa saber antes de empacotar seu aplic
 
 + __Seu aplicativo usa uma AUMID (ID de modelo de usuário de aplicativo) personalizada__. Se o processo chamar [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422.aspx) para definir seu próprio AUMID, ele só poderá usar o AUMID gerado para ele pelo pacote de aplicativos do Windows/ambiente do modelo de aplicativo. Não é possível definir AUMIDs personalizadas.
 
-+ __Seu aplicativo modifica o hive HKEY_LOCAL_MACHINE (HKLM) Registry__. Qualquer tentativa feita pelo aplicativo de criar uma chave HKLM ou para abrir uma para modificação resultará em uma falha de acesso negado. Lembre-se de que seu aplicativo tem sua própria exibição virtualizada privada do registro, portanto, a noção de um hive de registro de todo o usuário e máquina (que é o que é HKLM) não se aplica. Você precisará encontrar outra maneira de fazer o que o HKLM faz, como, por exemplo, gravar em HKEY_CURRENT_USER (HKCU).
++ __Seu aplicativo modifica o hive do registro HKEY_LOCAL_MACHINE (HKLM)__ . Qualquer tentativa feita pelo aplicativo de criar uma chave HKLM ou para abrir uma para modificação resultará em uma falha de acesso negado. Lembre-se de que seu aplicativo tem sua própria exibição virtualizada privada do registro, portanto, a noção de um hive de registro de todo o usuário e máquina (que é o que é HKLM) não se aplica. Você precisará encontrar outra maneira de fazer o que o HKLM faz, como, por exemplo, gravar em HKEY_CURRENT_USER (HKCU).
 
 + __Seu aplicativo usa uma subchave do registro ddeexec como um meio de iniciar outro aplicativo__. Em vez disso, use um dos manipuladores de verbo DelegateExecute conforme configurado pelas várias extensões ativáveis* no [manifesto de pacote do aplicativo](https://msdn.microsoft.com/library/windows/apps/br211474.aspx).
 
-+ __Seu aplicativo grava na pasta AppData ou no registro com a intenção de compartilhar dados com outro aplicativo__. Após a conversão, a pasta AppData é redirecionada para o armazenamento de dados de aplicativo local, que é um repositório particular para cada aplicativo UWP.
++ __Seu aplicativo grava na pasta AppData ou no registro com a intenção de compartilhar dados com outro aplicativo__. Após a conversão, o AppData é redirecionado para o armazenamento de dados do aplicativo local, que é um armazenamento privado para cada aplicativo.
 
-  Todas as entradas que seu aplicativo grava no hive do registro HKEY_LOCAL_MACHINE são redirecionadas para um arquivo binário isolado e todas as entradas que seu aplicativo grava no hive do registro HKEY_CURRENT_USER são colocadas em um local privado por usuário e por aplicativo. Para obter mais detalhes sobre o redirecionamento de arquivos e do Registro, consulte [Bastidores da Ponte de Desktop](desktop-to-uwp-behind-the-scenes.md).  
+  Todas as entradas que seu aplicativo grava no HKEY_LOCAL_MACHINE hive do registro são redirecionadas para um arquivo binário isolado e as entradas que seu aplicativo grava no hive do registro de HKEY_CURRENT_USER são colocadas em um local privado por usuário e por aplicativo. Para obter mais detalhes sobre o redirecionamento de arquivos e do Registro, consulte [Bastidores da Ponte de Desktop](desktop-to-uwp-behind-the-scenes.md).  
 
-  Use uma maneira diferente de compartilhamento de dados entre processos. Para saber mais, consulte [Armazene e recupere configurações e outros dados de aplicativos](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data).
+  Use uma maneira diferente de compartilhamento de dados entre processos. Para obter mais informações, consulte [Armazene e recupere configurações e outros dados de aplicativo](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data).
 
 + __Seu aplicativo grava no diretório de instalação para seu aplicativo__. Por exemplo, seu aplicativo grava em um arquivo de log que você colocou no mesmo diretório que o exe. Isso não é aceito, portanto, você precisará encontrar outro local, como o armazenamento de dados de aplicativo local.
 
-+ __A instalação do aplicativo requer interação do usuário__. O instalador do aplicativo deve ser capaz de executar silenciosamente e deve instalar todos os seus pré-requisitos que não estão ativados por padrão em uma imagem limpa do sistema operacional.
-
 + __Seu aplicativo usa o diretório de trabalho atual__. Em tempo de execução, o aplicativo de área de trabalho empacotado não obterá o mesmo diretório de trabalho que você especificou anteriormente na área de trabalho. O atalho LNK. Você precisa alterar seu CWD em tempo de execução se tiver o diretório correto para que seu aplicativo funcione corretamente.
 
-+ __Seu aplicativo requer o UIAccess__. Se o seu aplicativo especifica `UIAccess=true` no elemento `requestedExecutionLevel` do manifesto UAC, a conversão em UWP não será possível no momento. Para obter mais informações, consulte [Visão geral sobre a Automação da Interface do Usuário](https://msdn.microsoft.com/library/ms742884.aspx).
+  > [!NOTE]
+  > Se seu aplicativo precisar gravar no diretório de instalação ou usar o diretório de trabalho atual, você também pode considerar adicionar uma correção de tempo de execução usando a [estrutura de suporte do pacote](https://github.com/microsoft/MSIX-PackageSupportFramework) ao seu pacote. Para obter mais detalhes, consulte [Este artigo](../psf/package-support-framework.md). 
+
++ __A instalação do aplicativo requer interação do usuário__. O instalador do aplicativo deve ser capaz de executar silenciosamente e deve instalar todos os seus pré-requisitos que não estão ativados por padrão em uma imagem limpa do sistema operacional.
+
++ __Seu aplicativo requer o UIAccess__. Se seu aplicativo especificar `UIAccess=true` no elemento `requestedExecutionLevel` do manifesto do UAC, a conversão para MSIX não terá suporte no momento. Para obter mais informações, consulte [Visão geral sobre a Segurança da Automação da Interface de Usuário](https://msdn.microsoft.com/library/ms742884.aspx).
 
 + __Seu aplicativo expõe objetos com__. Processos e extensões de dentro do pacote podem registrar e usar servidores COM & OLE, tanto dentro do processo como fora do processo (OOP).  A Atualização dos Criadores adiciona suporte para COM integrados, o que fornece a habilidade de registrar servidores OOP COM & OLE que estão agora visíveis fora do pacote.  Consulte [Suporte ao Servido COM e ao Documento OLE para Ponte de Desktop](https://blogs.windows.com/windowsdeveloper/2017/04/13/com-server-ole-document-support-desktop-bridge).
 
@@ -57,7 +60,7 @@ Este artigo lista as coisas que você precisa saber antes de empacotar seu aplic
 
 + __Seu aplicativo expõe assemblies do GAC para uso por outros processos__. Na versão atual, seu aplicativo não pode expor assemblies GAC para uso por processos provenientes de executáveis externos ao seu pacote de aplicativo do Windows. Os processos de dentro do pacote podem registrar e usar conjuntos GAC normalmente, mas eles não estarão visíveis externamente. Isso significa que cenários de interoperabilidade como OLE não funcionarão se forem invocados por processos externos.
 
-+ __Seu aplicativo está vinculando as bibliotecas de tempo de execução C (CRT) de forma não__suportada. A biblioteca de tempo de execução C/C++ da Microsoft oferece rotinas de programação para o sistema operacional Microsoft Windows. Essas rotinas automatizam muitas tarefas comuns de programação que não são fornecidas pelas linguagens C e C++. Se seu aplicativo utilizar a biblioteca CC++ /Runtime, você precisará garantir que ela esteja vinculada de uma maneira com suporte.
++ __Seu aplicativo está vinculando as bibliotecas de tempo de execução C (CRT) de forma não suportada__. A biblioteca de tempo de execução C/C++ da Microsoft oferece rotinas de programação para o sistema operacional Microsoft Windows. Essas rotinas automatizam muitas tarefas comuns de programação que não são fornecidas pelas linguagens C e C++. Se seu aplicativo utilizar a biblioteca CC++ /Runtime, você precisará garantir que ela esteja vinculada de uma maneira com suporte.
 
     O Visual Studio 2017 oferece suporte à vinculação estática e dinâmica para permitir que o código use arquivos DLL comuns, ou a vinculação estática, a fim de vincular a biblioteca diretamente no código para a versão atual da CRT. Se possível, recomendamos que seu aplicativo use a vinculação dinâmica com o VS 2017.
 
@@ -65,15 +68,15 @@ Este artigo lista as coisas que você precisa saber antes de empacotar seu aplic
 
     <table>
     <th>Versão do Visual Studio</td><th>Vinculação dinâmica</th><th>Vinculação estática</th></th>
-    <tr><td>2005 (VC 8)</td><td>Sem suporte</td><td>Suportado</td>
-    <tr><td>2008 (VC 9)</td><td>Sem suporte</td><td>Suportado</td>
-    <tr><td>2010 (VC 10)</td><td>Suportado</td><td>Suportado</td>
-    <tr><td>2012 (VC 11)</td><td>Suportado</td><td>Sem suporte</td>
-    <tr><td>2013 (VC 12)</td><td>Suportado</td><td>Sem suporte</td>
-    <tr><td>2015 e 2017 (VC 14)</td><td>Suportado</td><td>Suportado</td>
+    <tr><td>2005 (VC 8)</td><td>Sem suporte</td><td>Com suporte</td>
+    <tr><td>2008 (VC 9)</td><td>Sem suporte</td><td>Com suporte</td>
+    <tr><td>2010 (VC 10)</td><td>Com suporte</td><td>Com suporte</td>
+    <tr><td>2012 (VC 11)</td><td>Com suporte</td><td>Sem suporte</td>
+    <tr><td>2013 (VC 12)</td><td>Com suporte</td><td>Sem suporte</td>
+    <tr><td>2015 e 2017 (VC 14)</td><td>Com suporte</td><td>Com suporte</td>
     </table>
 
-    Observação: Em todos os casos, você deve vincular ao CRT disponível publicamente mais recente.
+    Observação: em todos os casos, você deve vincular ao CRT disponível publicamente mais recente.
 
 + __Seu aplicativo instala e carrega assemblies da pasta lado a lado do Windows__. Por exemplo, seu aplicativo usa as bibliotecas de tempo de execução C VC8 ou VC9 e está vinculando-as dinamicamente da pasta lado a lado do Windows, o que significa que seu código está usando os arquivos DLL comuns de uma pasta compartilhada. Isso não tem suporte. Você precisará vinculá-las de forma estática vinculando-as aos arquivos da biblioteca redistribuível diretamente no código.
 
@@ -83,9 +86,9 @@ Este artigo lista as coisas que você precisa saber antes de empacotar seu aplic
 
     * **Pacotes do VC 14,0 Framework**: C:\Arquivos de programas (x86) \Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop\14.0
 
-    * **Pacotes do VC 12,0 Framework**: C:\Arquivos de programas (x86) \Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop.120\14.0
+    * **Pacotes do VC 12,0 Framework**: C:\Arquivos de programas (x86) \Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.desktop.120\14.0
 
-    * **Pacotes do VC 11,0 Framework**: C:\Arquivos de programas (x86) \Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop.110\14.0
+    * **Pacotes do VC 11,0 Framework**: C:\Arquivos de programas (x86) \Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.desktop.110\14.0
 
     Para usar um desses pacotes, você deve fazer referência ao pacote como uma dependência no manifesto do pacote. Quando os clientes instalam a versão comercial do seu aplicativo da Microsoft Store, o pacote será instalado da loja junto com seu aplicativo. As dependências não serão instaladas se você carregar seu aplicativo. Para instalar as dependências manualmente, você deve instalar o pacote de estrutura apropriado usando o pacote. Appx apropriado para x86, x64 ou ARM localizado nas pastas de instalação listadas acima.
 
@@ -93,12 +96,12 @@ Este artigo lista as coisas que você precisa saber antes de empacotar seu aplic
 
     1. Vá para a pasta de instalação do pacote do Framework listada acima para a C++ versão do tempo de execução Visual usada pelo seu aplicativo.
 
-    2. Abra o arquivo SDKManifest. xml nessa pasta `FrameworkIdentity-Debug` , localize o atributo ou `FrameworkIdentity-Retail` (dependendo se você estiver usando a versão de depuração ou de varejo do tempo de execução) e copie os `Name` valores e `MinVersion` desse atributo. Por exemplo, este é o `FrameworkIdentity-Retail` atributo para o pacote de estrutura vc 14,0 atual.
+    2. Abra o arquivo SDKManifest. xml nessa pasta, localize o atributo `FrameworkIdentity-Debug` ou `FrameworkIdentity-Retail` (dependendo se você estiver usando a versão de depuração ou de varejo do tempo de execução) e copie os valores `Name` e `MinVersion` desse atributo. Por exemplo, aqui está o atributo `FrameworkIdentity-Retail` para o pacote de estrutura VC 14,0 atual.
         ```xml
         FrameworkIdentity-Retail = "Name = Microsoft.VCLibs.140.00.UWPDesktop, MinVersion = 14.0.27323.0, Publisher = 'CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US'"
         ```
 
-    3. No manifesto do pacote para seu aplicativo, adicione o seguinte `<PackageDependency>` elemento sob o `<Dependencies>` nó. Certifique-se de substituir `Name` os `MinVersion` valores e pelos valores copiados na etapa anterior. O exemplo a seguir especifica uma dependência para a versão atual do pacote da estrutura VC 14,0.
+    3. No manifesto do pacote para seu aplicativo, adicione o seguinte elemento `<PackageDependency>` sob o nó `<Dependencies>`. Substitua os valores de `Name` e `MinVersion` pelos valores que você copiou na etapa anterior. O exemplo a seguir especifica uma dependência para a versão atual do pacote da estrutura VC 14,0.
         ```xml
         <PackageDependency Name="Microsoft.VCLibs.140.00.UWPDesktop" MinVersion="14.0.27323.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
         ```

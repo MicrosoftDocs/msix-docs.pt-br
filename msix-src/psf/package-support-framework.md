@@ -5,12 +5,12 @@ ms.date: 08/07/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a2427340b4de957ee25a1ce963990be30068da3
-ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
+ms.openlocfilehash: 0c280cbff2d2151cb2a791165df9dd5f23d10c7d
+ms.sourcegitcommit: d749fa662214bddaa6854f1ee95761c547db8dae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72776526"
+ms.lasthandoff: 12/12/2019
+ms.locfileid: "75008136"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>Aplicar correções de tempo de execução a um pacote MSIX usando a estrutura de suporte do pacote
 
@@ -95,7 +95,7 @@ makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContent
 
 Isso fornecerá algo parecido com o seguinte.
 
-![Layout do pacote](images/package_contents.png)
+![Layout do Pacote](images/package_contents.png)
 
 Se você não tiver um arquivo. msix (ou. AppX) para começar, poderá criar a pasta e os arquivos do pacote do zero.
 
@@ -105,7 +105,7 @@ Você pode obter o pacote NuGet do PSF usando a ferramenta de linha de comando d
 
 #### <a name="get-the-package-by-using-the-command-line-tool"></a>Obter o pacote usando a ferramenta de linha de comando
 
-Instale a ferramenta de linha de comando do NuGet deste local: https://www.nuget.org/downloads. Em seguida, na linha de comando do NuGet, execute este comando:
+Instale a ferramenta de linha de comando do NuGet deste local: https://www.nuget.org/downloads. Em seguida, na linha de comando do NuGet, execute este comando: 
 
 ```powershell
 nuget install Microsoft.PackageSupportFramework
@@ -150,7 +150,7 @@ Abra o manifesto do pacote em um editor de texto e, em seguida, defina o atribut
 
 ### <a name="create-a-configuration-file"></a>Criar um arquivo de configuração
 
-Crie um nome de arquivo ``config.json`` e salve esse arquivo na pasta raiz do seu pacote. Modifique a ID do aplicativo declarado do arquivo config. JSON para apontar para o executável que você acabou de substituir. Usando o conhecimento obtido usando o Process Monitor, você também pode definir o diretório de trabalho, bem como usar a correção de redirecionamento de arquivo para redirecionar leituras/gravações para arquivos. log no diretório "PSFSampleApp" relativo ao pacote.
+Crie um nome de arquivo ``config.json``e salve esse arquivo na pasta raiz do seu pacote. Modifique a ID do aplicativo declarado do arquivo config. JSON para apontar para o executável que você acabou de substituir. Usando o conhecimento obtido usando o Process Monitor, você também pode definir o diretório de trabalho, bem como usar a correção de redirecionamento de arquivo para redirecionar leituras/gravações para arquivos. log no diretório "PSFSampleApp" relativo ao pacote.
 
 ```json
 {
@@ -188,16 +188,16 @@ Crie um nome de arquivo ``config.json`` e salve esse arquivo na pasta raiz do se
 
 Veja a seguir um guia para o esquema config. JSON:
 
-| variedade | key | Valor |
+| Array | key | Valor |
 |-------|-----------|-------|
 | applications | id |  Use o valor do atributo `Id` do elemento `Application` no manifesto do pacote. |
-| applications | Executá | O caminho relativo do pacote para o executável que você deseja iniciar. Na maioria dos casos, você pode obter esse valor do arquivo de manifesto do pacote antes de modificá-lo. É o valor do atributo `Executable` do elemento `Application`. |
-| applications | WorkingDirectory | Adicional Um caminho relativo de pacote a ser usado como o diretório de trabalho do aplicativo que é iniciado. Se você não definir esse valor, o sistema operacional usará o diretório `System32` como o diretório de trabalho do aplicativo. |
-| processos | Executá | Na maioria dos casos, esse será o nome do `executable` configurado acima com o caminho e a extensão de arquivo removidos. |
+| applications | executável | O caminho relativo do pacote para o executável que você deseja iniciar. Na maioria dos casos, você pode obter esse valor do arquivo de manifesto do pacote antes de modificá-lo. É o valor do atributo `Executable` do elemento `Application`. |
+| applications | workingDirectory | Adicional Um caminho relativo de pacote a ser usado como o diretório de trabalho do aplicativo que é iniciado. Se você não definir esse valor, o sistema operacional usará o diretório `System32` como o diretório de trabalho do aplicativo. |
+| processos | executável | Na maioria dos casos, esse será o nome do `executable` configurado acima com o caminho e a extensão de arquivo removidos. |
 | ajustes | dll | Caminho relativo ao pacote para a correção,. msix/. Appx a ser carregado. |
-| ajustes | configuração | Adicional Controla como a DLL de correção se comporta. O formato exato desse valor varia de acordo com a correção, pois cada correção pode interpretar esse "blob" como desejado. |
+| ajustes | config | Adicional Controla como a DLL de correção se comporta. O formato exato desse valor varia de acordo com a correção, pois cada correção pode interpretar esse "blob" como desejado. |
 
-As chaves `applications`, `processes` e `fixups` são matrizes. Isso significa que você pode usar o arquivo config. JSON para especificar mais de um aplicativo, processo e DLL de correção.
+As chaves `applications`, `processes`e `fixups` são matrizes. Isso significa que você pode usar o arquivo config. JSON para especificar mais de um aplicativo, processo e DLL de correção.
 
 ### <a name="package-and-test-the-app"></a>Empacotar e testar o aplicativo
 
@@ -328,7 +328,7 @@ Clique no ícone de configurações próximo ao campo.
 
 Procure o pacote NuGet *PSF** e instale-o para este projeto.
 
-![pacote NuGet](images/psf-package.png)
+![pacote nuget](images/psf-package.png)
 
 Se você quiser depurar ou estender uma correção de tempo de execução existente, adicione os arquivos de correção de tempo de execução obtidos usando as diretrizes descritas na seção [encontrar uma correção de tempo de execução](#find) deste guia.
 
@@ -357,7 +357,7 @@ Clique com o botão direito do mouse na referência e, em seguida, na janela **P
 | Copiar local | True |
 | Copiar assemblies satélite locais | True |
 | Saída do assembly de referência | True |
-| Vincular dependências de biblioteca | False |
+| Dependências da Biblioteca de Links | False |
 | Entradas de dependência da biblioteca de links | False |
 
 ### <a name="configure-the-packaging-project"></a>Configurar o projeto de empacotamento
@@ -403,16 +403,16 @@ Adicione um arquivo chamado ``config.json`` ao seu projeto de empacotamento e co
 }
 ```
 
-Forneça um valor para cada chave. Use esta tabela como um guia.
+Forneça um valor para cada chave. Use essa tabela como um guia.
 
-| variedade | key | Valor |
+| Array | key | Valor |
 |-------|-----------|-------|
 | applications | id |  Use o valor do atributo `Id` do elemento `Application` no manifesto do pacote. |
-| applications | Executá | O caminho relativo do pacote para o executável que você deseja iniciar. Na maioria dos casos, você pode obter esse valor do arquivo de manifesto do pacote antes de modificá-lo. É o valor do atributo `Executable` do elemento `Application`. |
-| applications | WorkingDirectory | Adicional Um caminho relativo de pacote a ser usado como o diretório de trabalho do aplicativo que é iniciado. Se você não definir esse valor, o sistema operacional usará o diretório `System32` como o diretório de trabalho do aplicativo. |
-| processos | Executá | Na maioria dos casos, esse será o nome do `executable` configurado acima com o caminho e a extensão de arquivo removidos. |
+| applications | executável | O caminho relativo do pacote para o executável que você deseja iniciar. Na maioria dos casos, você pode obter esse valor do arquivo de manifesto do pacote antes de modificá-lo. É o valor do atributo `Executable` do elemento `Application`. |
+| applications | workingDirectory | Adicional Um caminho relativo de pacote a ser usado como o diretório de trabalho do aplicativo que é iniciado. Se você não definir esse valor, o sistema operacional usará o diretório `System32` como o diretório de trabalho do aplicativo. |
+| processos | executável | Na maioria dos casos, esse será o nome do `executable` configurado acima com o caminho e a extensão de arquivo removidos. |
 | ajustes | dll | Caminho relativo do pacote para o DLL de correção a ser carregado. |
-| ajustes | configuração | Adicional Controla como a DLL de correção se comporta. O formato exato desse valor varia de acordo com a correção, pois cada correção pode interpretar esse "blob" como desejado. |
+| ajustes | config | Adicional Controla como a DLL de correção se comporta. O formato exato desse valor varia de acordo com a correção, pois cada correção pode interpretar esse "blob" como desejado. |
 
 Quando terminar, seu arquivo de ``config.json`` será semelhante a este.
 
@@ -436,11 +436,11 @@ Quando terminar, seu arquivo de ``config.json`` será semelhante a este.
 ```
 
 >[!NOTE]
-> As chaves `applications`, `processes` e `fixups` são matrizes. Isso significa que você pode usar o arquivo config. JSON para especificar mais de um aplicativo, processo e DLL de correção.
+> As chaves `applications`, `processes`e `fixups` são matrizes. Isso significa que você pode usar o arquivo config. JSON para especificar mais de um aplicativo, processo e DLL de correção.
 
 ### <a name="debug-a-runtime-fix"></a>Depurar uma correção de tempo de execução
 
-No Visual Studio, pressione F5 para iniciar o depurador.  A primeira coisa que inicia é o aplicativo iniciador PSF, que, por sua vez, inicia o aplicativo de área de trabalho de destino.  Para depurar o aplicativo de área de trabalho de destino, você precisará anexar manualmente ao processo do aplicativo de desktop escolhendo **depurar** ->**anexar ao processo**e, em seguida, selecionando o processo do aplicativo. Para permitir a depuração de um aplicativo .NET com uma DLL de correção de tempo de execução nativa, selecione tipos de código gerenciados e nativos (depuração de modo misto).  
+No Visual Studio, pressione F5 para iniciar o depurador.  A primeira coisa que inicia é o aplicativo iniciador PSF, que, por sua vez, inicia o aplicativo de área de trabalho de destino.  Para depurar o aplicativo de área de trabalho de destino, você precisará anexar manualmente ao processo do aplicativo de desktop escolhendo **depurar**->**anexar ao processo**e, em seguida, selecionando o processo do aplicativo. Para permitir a depuração de um aplicativo .NET com uma DLL de correção de tempo de execução nativa, selecione tipos de código gerenciados e nativos (depuração de modo misto).  
 
 Depois de configurar isso, você pode definir pontos de interrupção ao lado das linhas de código no código do aplicativo da área de trabalho e no projeto de correção de tempo de execução. Se você não tiver o código-fonte para seu aplicativo, poderá definir pontos de interrupção somente ao lado das linhas de código em seu projeto de correção de tempo de execução.
 
@@ -531,7 +531,7 @@ Embora o Visual Studio ofereça a você a experiência de desenvolvimento e depu
 
 Primeiro, a depuração F5 executa o aplicativo implantando arquivos soltos do caminho da pasta de layout do pacote, em vez de instalar de um pacote. msix/. Appx.  A pasta de layout normalmente não tem as mesmas restrições de segurança que uma pasta de pacote instalada. Como resultado, talvez não seja possível reproduzir os erros de negação de acesso ao caminho do pacote antes de aplicar uma correção de tempo de execução.
 
-Para resolver esse problema, use a implantação de pacote. msix/. Appx em vez de F5 implantação de arquivo flexível.  Para criar um arquivo de pacote. msix/. Appx, use o utilitário [MakeAppx](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) do SDK do Windows, conforme descrito acima. Ou, no Visual Studio, clique com o botão direito do mouse no nó do projeto de aplicativo e selecione **armazenar** ->**criar pacotes de aplicativos**.
+Para resolver esse problema, use a implantação de pacote. msix/. Appx em vez de F5 implantação de arquivo flexível.  Para criar um arquivo de pacote. msix/. Appx, use o utilitário [MakeAppx](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) do SDK do Windows, conforme descrito acima. Ou, no Visual Studio, clique com o botão direito do mouse no nó do projeto de aplicativo e selecione **armazenar**->**criar pacotes de aplicativos**.
 
 Outro problema com o Visual Studio é que ele não tem suporte interno para anexar a processos filho iniciados pelo depurador.   Isso dificulta a depuração da lógica no caminho de inicialização do aplicativo de destino, que deve ser anexado manualmente pelo Visual Studio após a inicialização.
 

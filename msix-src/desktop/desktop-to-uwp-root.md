@@ -7,18 +7,18 @@ keywords: Windows 10, UWP, MSIX
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e6be05b4d935718046c33c4be64d4f66c7122e4a
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: fc70cab0074087d7ae2d2ea123ed9b41bfdac8ea
+ms.sourcegitcommit: d749fa662214bddaa6854f1ee95761c547db8dae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328556"
+ms.lasthandoff: 12/12/2019
+ms.locfileid: "75008086"
 ---
-# <a name="package-desktop-applications-desktop-bridge"></a>Empacotar aplicativos de desktop (ponte de desktop)
+# <a name="package-desktop-applications-msix"></a>Aplicativos de desktop de pacote (MSIX)
 
 Pegue seu aplicativo de área de trabalho existente e adicione experiências modernas para usuários do Windows 10. Em seguida, obtenha maior alcance em todos os mercados internacionais ao distribuí-lo por meio da Microsoft Store. Você pode monetizar seu aplicativo de maneiras muito mais simples, aproveitando os recursos criados diretamente na loja. É claro que você não precisa usar a loja. Fique à vontade para usar seus canais existentes.
 
-Quando você cria um pacote para seu aplicativo de área de trabalho, seu aplicativo receberá uma identidade e com essa identidade, seu aplicativo de área de trabalho terá acesso às APIs da UWP (plataforma universal do Windows). Você pode usá-las para facilitar experiências envolventes e modernas, como blocos dinâmicos e notificações. Use a compilação condicional simples e as verificações de tempo de execução para executar o código UWP somente quando seu aplicativo for executado no Windows 10.
+Quando você cria um pacote MSIX para seu aplicativo de área de trabalho, seu aplicativo receberá uma identidade e com essa identidade, seu aplicativo de área de trabalho terá acesso às APIs da UWP (plataforma universal do Windows). Você pode usá-las para facilitar experiências envolventes e modernas, como blocos dinâmicos e notificações. Use a compilação condicional simples e as verificações de tempo de execução para executar o código UWP somente quando seu aplicativo for executado no Windows 10.
 
 Além do código que você usa para aprimorar as experiências do Windows 10, seu aplicativo permanece inalterado e você pode continuar a distribuí-lo aos usuários em versões anteriores do Windows. No Windows 10, seu aplicativo continua a ser executado no modo de usuário de confiança total, assim como está fazendo hoje.
 

@@ -1,24 +1,24 @@
 ---
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
-title: Empacotando aplicativos UWP
-description: Para distribuir ou vender seu aplicativo UWP (Plataforma Universal do Windows), será necessário criar um pacote de apps para ele.
+title: Empacotando aplicativos MSIX
+description: Para distribuir ou vender seu aplicativo do Windows, você precisa criar um pacote de aplicativo para ele.
 ms.date: 07/18/2019
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP, MSIX
 f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: c876ad4311b9f7a05ed748cd866c7cc88eccc1fd
-ms.sourcegitcommit: 5e253ff41330ac0cd6f85ed481da307713277eee
+ms.openlocfilehash: e151cf2edb41b8a26b48189e4ab91a342a3ddaa8
+ms.sourcegitcommit: d749fa662214bddaa6854f1ee95761c547db8dae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71210374"
+ms.lasthandoff: 12/12/2019
+ms.locfileid: "75008126"
 ---
-# <a name="package-a-uwp-app-with-visual-studio"></a>União de um aplicativo UWP com o Visual Studio
+# <a name="package-an-msix-app-with-visual-studio"></a>Empacotar um aplicativo MSIX com o Visual Studio
 
-Para vender seu aplicativo UWP (Plataforma Universal do Windows) ou distribuí-lo para outros usuários, você precisa empacotá-lo. Se você não quiser distribuir seu app por meio da Microsoft Store, poderá fazer o sideload do pacote do app diretamente para um dispositivo ou distribuí-lo através de [Instalação Web](../app-installer/installing-windows10-apps-web.md). Este artigo descreve o processo de configuração, criação e teste de um pacote do aplicativo UWP usando o Visual Studio. Para obter mais informações sobre como gerenciar e implantar aplicativos da linha de negócios (LOB), consulte [Gerenciamento de aplicativos corporativos](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management).
+Para vender seu aplicativo do Windows ou distribuí-lo a outros usuários, você precisa empacotá-lo. Se você não quiser distribuir seu app por meio da Microsoft Store, poderá fazer o sideload do pacote do app diretamente para um dispositivo ou distribuí-lo através de [Instalação Web](../app-installer/installing-windows10-apps-web.md). Este artigo descreve o processo de configuração, criação e teste de um pacote de aplicativos MSIX usando o Visual Studio. Para obter mais informações sobre como gerenciar e implantar aplicativos da linha de negócios (LOB), consulte [Gerenciamento de aplicativos corporativos](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management).
 
 No Windows 10, você pode enviar um pacote do aplicativo, um pacote de aplicativos ou um arquivo de carregamento completo do pacote de aplicativo para o [Partner Center](https://partner.microsoft.com/dashboard). Dessas opções, o envio de um arquivo de upload de pacote de aplicativo fornecerá a melhor experiência.
 
@@ -47,13 +47,14 @@ Depois de concluir as etapas acima, você estará pronto para distribuir seu apl
 
 ## <a name="before-packaging-your-app"></a>Antes de empacotar o aplicativo
 
-1. **Teste seu aplicativo.** Antes de empacotar seu aplicativo para o envio do Partner Center, verifique se ele funciona conforme o esperado em todas as famílias de dispositivos às quais você planeja dar suporte. Essas famílias de dispositivos podem incluir desktop, celular, Surface Hub, Xbox, dispositivos IoT ou outros. Para obter mais informações sobre como implantar e testar seu aplicativo usando o Visual Studio, consulte Implantando [e Depurando aplicativos UWP](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
+1. **Teste seu aplicativo.** Antes de empacotar seu aplicativo para o envio do Partner Center, verifique se ele funciona conforme o esperado em todas as famílias de dispositivos às quais você planeja dar suporte. Essas famílias de dispositivos podem incluir desktop, celular, Surface Hub, Xbox, dispositivos IoT ou outros. Para obter mais informações sobre como implantar e testar seu aplicativo usando o Visual Studio, consulte [Implantando e Depurando aplicativos UWP](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
 
 2. **Otimize seu aplicativo.** Você pode usar as ferramentas de criação de perfil e depuração do Visual Studio para otimizar o desempenho do aplicativo UWP. Por exemplo, a ferramenta de linha do tempo para capacidade de resposta da interface do usuário, a ferramenta de uso da memória, a ferramenta de uso da CPU e muito mais. Para obter mais informações sobre essas ferramentas, consulte o tópico [Tour sobre recurso de perfil](https://docs.microsoft.com/visualstudio/profiling/profiling-feature-tour).
 
 3. **Verifique a compatibilidade de .NET Native (para C# vb e aplicativos).** Na Plataforma Universal do Windows, existe um compilador nativo que melhorará o desempenho do tempo de execução do app. Com essa alteração, você deverá testar seu aplicativo nesse ambiente de compilação. Por padrão, a configuração de build **Release** habilita a cadeia de ferramentas .NET Native, então é importante testar seu aplicativo com essa configuração **Release** e verificar se seu aplicativo se comporta como o esperado. Alguns problemas de depuração comuns que podem acontecer com o .NET Native serão explicados mais detalhadamente em [Depuração de aplicativos universais do Windows do .NET Native](https://devblogs.microsoft.com/devops/debugging-net-native-windows-universal-apps/).
 
-## <a name="configure-an-app-package"></a>Configurar um pacote do aplicativo
+
+## <a name="configure-an-app-package"></a>Configurar um pacote do app
 
 O arquivo de manifesto do app (Package.appxmanifest.xml) é um arquivo XML que contém as propriedades e as configurações necessárias para criar o pacote do app. Por exemplo, as propriedades no arquivo de manifesto do aplicativo descrevem a imagem a ser usada como o bloco do aplicativo e as orientações compatíveis com o aplicativo quando um usuário gira o dispositivo.
 
@@ -67,14 +68,15 @@ O designer de manifesto do Visual Studio permite a atualização do arquivo de m
 
 3. Agora é possível decidir como configurar o aplicativo. Cada guia contém informações que você pode configurar sobre o aplicativo e links para obter mais informações, se necessário.
 
+
     ![Designer de manifesto do Visual Studio](images/packaging-screen1.jpg)
 
-    Verifique se você tem todas as imagens exigidas para um aplicativo UWP na guia **Ativos visuais**.
+    Verifique se você tem todas as imagens necessárias para um aplicativo na guia **ativos visuais** .
 
-    Da guia **Empacotamento**, você pode inserir dados de publicação. É aqui que você pode escolher qual certificado usar para assinar seu aplicativo. Todos os aplicativos UWP devem ser assinados com um certificado.
+    Da guia **Empacotamento**, você pode inserir dados de publicação. É aqui que você pode escolher qual certificado usar para assinar seu aplicativo. Todos os aplicativos MSIX devem ser assinados com um certificado.
 
     > [!NOTE]
-    > A partir do Visual Studio 2019, um certificado temporário não é mais gerado em projetos UWP. Para criar ou exportar certificados, use os cmdlets do PowerShell descritos neste [artigo](create-certificate-package-signing.md).
+    > A partir do Visual Studio 2019, um certificado temporário não é mais gerado em projetos MSIX ou UWP. Para criar ou exportar certificados, use os cmdlets do PowerShell descritos neste [artigo](create-certificate-package-signing.md).
 
     > [!IMPORTANT]
     > Se você estiver publicando seu aplicativo na Microsoft Store, seu aplicativo será assinado com um certificado confiável para você. Isso permite que o usuário instale e execute seu aplicativo sem precisar instalar o certificado de autenticação do aplicativo associado.
@@ -83,7 +85,7 @@ O designer de manifesto do Visual Studio permite a atualização do arquivo de m
 
 4. Salve seu arquivo **Package.appxmanifest** depois de fazer as edições necessárias para o aplicativo.
 
-Se você estiver distribuindo seu aplicativo por meio do Microsoft Store, o Visual Studio poderá associar seu pacote à loja. Para fazer isso, clique com o botão direito do mouse no nome do projeto em Gerenciador de soluções e escolha **publicar**->**aplicativo associado com a loja** (antes do Visual Studio 2019 versão 16,3, o menu **publicar** é chamado de **repositório**). Você também pode fazer isso no Assistente para **criar pacotes de aplicativos** , que é descrito na seção a seguir. Quando você associa seu aplicativo, alguns dos campos na guia Empacotamento do designer de manifesto são atualizados automaticamente.
+Se você estiver distribuindo seu aplicativo por meio do Microsoft Store, o Visual Studio poderá associar seu pacote à loja. Para fazer isso, clique com o botão direito do mouse no nome do projeto em Gerenciador de Soluções e escolha **publicar**->**associar aplicativo à loja** (antes do Visual Studio 2019 versão 16,3, o menu **publicar** é chamado de **repositório**). Você também pode fazer isso no Assistente para **criar pacotes de aplicativos** , que é descrito na seção a seguir. Quando você associa seu aplicativo, alguns dos campos na guia Empacotamento do designer de manifesto são atualizados automaticamente.
 
 ## <a name="create-an-app-package-upload-file"></a>Crie um arquivo de upload de pacote do aplicativo
 
@@ -125,7 +127,7 @@ Para distribuir um aplicativo por meio do Microsoft Store você deve criar um pa
 
 8. Clique em **Criar** para gerar o pacote do aplicativo. Se você selecionou um dos **desejo criar pacotes para carregar** nas opções de Microsoft Store na etapa 3 e estiver criando um pacote para o envio do Partner Center, o assistente criará um arquivo de upload de pacote (. appxupload ou. msixupload). Se você selecionou **desejo criar pacotes para Sideload** na etapa 3, o assistente criará um único pacote de aplicativo ou um pacote de aplicativo com base em suas seleções na etapa 6.
 
-9. Quando seu aplicativo tiver sido empacotado com êxito, você verá essa caixa de diálogo e poderá recuperar o arquivo de carregamento do pacote do aplicativo do local de saída especificado. Neste ponto, você pode [validar o pacote do aplicativo no computador local ou em um computador remoto](#validate-your-app-package) e automatizar os envios de [armazenamento](#automate-store-submissions).
+9. Quando seu aplicativo tiver sido empacotado com êxito, você verá essa caixa de diálogo e poderá recuperar o arquivo de carregamento do pacote do aplicativo do local de saída especificado. Neste ponto, você pode [validar o pacote do aplicativo no computador local ou em um computador remoto](#validate-your-app-package) e [automatizar os envios de armazenamento](#automate-store-submissions).
 
     ![Janela Criação de pacote concluída com opções de validação mostradas](images/packaging-screen6.jpg)
 
@@ -140,9 +142,9 @@ Para distribuir um aplicativo por meio do Microsoft Store você deve criar um pa
 
 3. Altere o nome da extensão de pasta compactada de. zip para. msixupload ou. appxupload.
 
-## <a name="validate-your-app-package"></a>Validar o pacote do aplicativo
+## <a name="validate-your-app-package"></a>Validar seu pacote de aplicativos
 
-Valide seu aplicativo antes de enviá-lo para o Partner Center para certificação em um computador local ou remoto. Você pode validar apenas compilações de lançamento para o pacote do app e não compilações de depuração. Para obter mais informações sobre como enviar seu aplicativo para o Partner Center, consulte envios de [aplicativos](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
+Valide seu aplicativo antes de enviá-lo para o Partner Center para certificação em um computador local ou remoto. Você pode validar apenas compilações de lançamento para o pacote do app e não compilações de depuração. Para obter mais informações sobre como enviar seu aplicativo para o Partner Center, consulte [envios de aplicativos](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
 
 ### <a name="validate-your-app-package-locally"></a>Validar o pacote do aplicativo localmente
 
@@ -152,7 +154,7 @@ Valide seu aplicativo antes de enviá-lo para o Partner Center para certificaç�
 
     Se você tiver um dispositivo Windows 10 remoto que deseja usar para teste, será necessário instalar manualmente o kit de certificação de aplicativos do Windows nesse dispositivo. A próxima seção o guiará pelas etapas. Depois de ter feito isso, você pode selecionar **Máquina remota** e clicar em **Iniciar o Kit de Certificação de Aplicativos Windows** para se conectar ao dispositivo remoto e executar os testes de validação.
 
-2. Depois que o WACK tiver terminado e seu aplicativo tiver passado certificação, você estará pronto para enviar seu aplicativo para o Partner Center. Certifique-se de carregar o arquivo correto. O local padrão do arquivo pode ser encontrado na pasta raiz da sua solução `\[AppName]\AppPackages` e terminará com a extensão de arquivo. appxupload ou. msixupload. O nome será do formulário `[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload` ou `[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload` se você tiver optado por um pacote de aplicativo com toda a arquitetura de pacote selecionada.
+2. Depois que o WACK tiver terminado e seu aplicativo tiver passado certificação, você estará pronto para enviar seu aplicativo para o Partner Center. Certifique-se de carregar o arquivo correto. O local padrão do arquivo pode ser encontrado na pasta raiz da sua solução `\[AppName]\AppPackages` e terminará com a extensão de arquivo. appxupload ou. msixupload. O nome estará no formato `[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload` ou `[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload` se você tiver optado por um pacote de aplicativo com toda a arquitetura de pacote selecionada.
 
 ### <a name="validate-your-app-package-on-a-remote-windows10-device"></a>Validar o pacote do aplicativo em um dispositivo Windows 10 remoto
 
@@ -204,7 +206,7 @@ Em seguida, você pode recuperar as credenciais do Partner Center necessárias p
 
 Depois de concluir as etapas anteriores, você pode configurar envios automáticos de armazenamento no Visual Studio 2019.
 
-1. No final do [Assistente para criar pacotes de aplicativos](#create-your-app-package-upload-file-using-visual-studio), selecione **Enviar automaticamente para o Microsoft Store após a validação do kit de certificação de aplicativos do Windows** e clique em reconfigurar.
+1. No final do [Assistente para criar pacotes de aplicativos](#create-your-app-package-upload-file-using-visual-studio), selecione **Enviar automaticamente para o Microsoft Store após a validação do kit de certificação de aplicativos do Windows** e clique em **reconfigurar**.
 
 2. Na caixa de diálogo **definir configurações de envio de Microsoft Store** , insira a ID de locatário do Azure, a ID do cliente e a chave do cliente.
 
@@ -221,11 +223,11 @@ O envio será iniciado após a conclusão do teste WACK. Você pode acompanhar o
 
 ## <a name="sideload-your-app-package"></a>Fazer o sideload do pacote do aplicativo
 
-Com os pacotes de aplicativos UWP, os aplicativos não são instalados em um dispositivo como estão com aplicativos da área de trabalho. Normalmente, você baixa os aplicativos UWP da Microsoft Store, que também instala o app em seu dispositivo para você. Os apps podem ser instalados sem ser publicados à Store (sideload). Isso permite que você instale e teste aplicativos usando o arquivo de pacote do aplicativo que você criou. Caso tenha um aplicativo que não queira vender na Loja, como um aplicativo de linha de negócios (LOB), você pode fazer o sideload desse aplicativo de maneira que outros usuários na empresa possam usá-lo.
+Com os pacotes de aplicativos do MSIX, os aplicativos não são instalados em um dispositivo como estão com aplicativos da área de trabalho. Normalmente, você baixa os aplicativos empacotados do MSIX da Microsoft Store, que também instala o aplicativo em seu dispositivo para você. Os apps podem ser instalados sem ser publicados à Store (sideload). Isso permite que você instale e teste aplicativos usando o arquivo de pacote do aplicativo que você criou. Caso tenha um aplicativo que não queira vender na Loja, como um aplicativo de linha de negócios (LOB), você pode fazer o sideload desse aplicativo de maneira que outros usuários na empresa possam usá-lo.
 
 Antes de poder Sideload seu aplicativo em um dispositivo de destino, você deve [habilitar seu dispositivo para desenvolvimento](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
 
-### <a name="create-an-app-package-for-slideloading"></a>Criar um pacote de aplicativo para slideloading
+### <a name="create-an-app-package-for-sideloading"></a>Criar um pacote de aplicativo para Sideload
 
 > [!NOTE]
 > As instruções e capturas de tela a seguir descrevem o processo a partir do Visual Studio 2019 versão 16,3. Se você estiver usando uma versão anterior, parte da interface do usuário poderá parecer diferente.
@@ -271,9 +273,9 @@ Introduzido na atualização de aniversário do Windows 10 (Windows 10, versão 
 
 2.  No dispositivo de destino, abra a pasta `*_Test`.
 3.  Clique com botão direito do mouse no arquivo **Add-AppDevPackage.ps1**. Escolha **Executar com PowerShell** e siga os prompts.  
-    ![O explorador de arquivos navegou para o script do PowerShell mostrado](images/packaging-screen7.jpg)
+    ![explorador de arquivos navegou até o script do PowerShell mostrado](images/packaging-screen7.jpg)
 
-    Quando o pacote do aplicativo tiver sido instalado, a janela do PowerShell exibirá esta mensagem: **Seu aplicativo foi instalado com êxito.**
+    Quando o pacote do app tiver sido instalado, a janela do PowerShell exibirá esta mensagem: **Seu aplicativo foi instalado com êxito.**
     >[!TIP]
     > Para abrir o menu de atalho em um Tablet, toque na tela onde você deseja clicar com o botão direito do mouse, segurar até que um círculo completo seja exibido e, em seguida, levante o dedo. O menu de atalho será exibido depois que você levantar o dedo.
 
