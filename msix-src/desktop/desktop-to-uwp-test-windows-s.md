@@ -5,12 +5,12 @@ ms.date: 07/29/2019
 ms.topic: article
 keywords: Windows 10 S, UWP, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: 953bad6b9cc1da5019bb5967d548db9af1d990b4
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 195f202595a4c1474f5fc1c3f5389ad8657889a7
+ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328539"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75303323"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>Testar seu aplicativo do Windows para Windows 10 no modo S
 
@@ -87,10 +87,6 @@ Em seguida, reinicie o sistema.
 **Encontre respostas para suas perguntas**
 
 Tem dúvidas? Pergunte-nos sobre o Stack Overflow. Nossa equipe monitora estas [marcas](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Você também pode entrar em contato conosco [aqui](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-
-**Fornecer comentários ou fazer sugestões de recursos**
-
-Consulte [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
 
 **Examine um artigo de blog detalhado que foi Postado por nossa equipe de Consultoria de Aplicativos**
 

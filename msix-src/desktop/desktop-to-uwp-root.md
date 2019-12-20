@@ -7,12 +7,12 @@ keywords: Windows 10, UWP, MSIX
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fc70cab0074087d7ae2d2ea123ed9b41bfdac8ea
-ms.sourcegitcommit: d749fa662214bddaa6854f1ee95761c547db8dae
+ms.openlocfilehash: f43326b8465e2adb74487a4bf5302ec4b1c16d13
+ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2019
-ms.locfileid: "75008086"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75303260"
 ---
 # <a name="package-desktop-applications-msix"></a>Aplicativos de desktop de pacote (MSIX)
 
@@ -128,12 +128,6 @@ Você pode distribuir seu aplicativo publicando-o na Microsoft Store ou fazendo 
 
 Consulte [distribuir um aplicativo de área de trabalho empacotado](/windows/apps/desktop/modernize/desktop-to-uwp-distribute).
 
-## <a name="support-and-feedback"></a>Suporte e comentários
-
-**Encontre respostas para suas perguntas**
+## <a name="find-answers-to-your-questions"></a>Encontrar respostas para suas dúvidas
 
 Tem dúvidas? Pergunte-nos sobre o Stack Overflow. Nossa equipe monitora estas [marcas](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Você também pode entrar em contato conosco [aqui](https://social.msdn.microsoft.com/Forums/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-
-**Fornecer comentários ou fazer sugestões de recursos**
-
-Consulte [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).

@@ -7,14 +7,14 @@ keywords: Windows 10, UWP, MSIX
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e36cfe1a0ed1c16d2778d33599133d7bc9e06c1c
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 04b92d8b8665fb75f2484e5e0e1bebcf01e93d22
+ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685376"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75303307"
 ---
-# <a name="package-a-desktop-app-manually"></a>Empacotar um aplicativo de área de trabalho manualmente
+# <a name="package-a-desktop-app-manually"></a>Empacotar um aplicativo da área de trabalho manualmente
 
 Este artigo mostra como empacotar seu aplicativo sem usar ferramentas como o Visual Studio ou a ferramenta de empacotamento MSIX.
 
@@ -85,7 +85,7 @@ Aqui está um exemplo de elemento **Identidade** com texto de espaço reservado 
 > [!NOTE]
 > Se você reservou o nome do aplicativo no Microsoft Store, poderá obter o nome e o Publicador usando o [Partner Center](https://partner.microsoft.com/dashboard). Se você planeja Sideload seu aplicativo em outros sistemas, você pode fornecer seus próprios nomes, desde que o nome do Publicador que você escolher corresponda ao nome no certificado que você usa para assinar seu aplicativo.
 
-### <a name="properties"></a>Properties
+### <a name="properties"></a>Propriedades
 
 O elemento [Propriedades](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) possui 3 elementos filho necessários. Aqui está um nó exemplo **Propriedades** com texto de espaço reservado para os elementos. O **DisplayName** é o nome do aplicativo que você reserva no repositório, para aplicativos que são carregados no repositório.
 
@@ -108,7 +108,7 @@ Aqui está um nó exemplo [Recursos](https://docs.microsoft.com/uwp/schemas/appx
 ```
 ### <a name="dependencies"></a>Dependências
 
-Para aplicativos de área de trabalho para os quais você cria um pacote ``Name`` , sempre ``Windows.Desktop``defina o atributo como.
+Para aplicativos de área de trabalho para os quais você cria um pacote, sempre defina o atributo ``Name`` como ``Windows.Desktop``.
 
 ```XML
 <Dependencies>
@@ -116,8 +116,8 @@ Para aplicativos de área de trabalho para os quais você cria um pacote ``Name`
 </Dependencies>
 ```
 
-### <a name="capabilities"></a>Capacidades
-Para aplicativos de área de trabalho para os quais você cria um pacote, você precisará adicionar o ``runFullTrust`` recurso.
+### <a name="capabilities"></a>Recursos
+Para aplicativos de área de trabalho para os quais você cria um pacote, você precisará adicionar o recurso de ``runFullTrust``.
 
 ```XML
 <Capabilities>
@@ -130,7 +130,7 @@ Preencha este modelo com informações que descrevem o seu aplicativo.
 
 ### <a name="application-element"></a>Elemento do aplicativo
 
-Para aplicativos de área de trabalho para os quais você cria ``EntryPoint`` um pacote, o atributo do elemento ``Windows.FullTrustApplication``Application é sempre.
+Para aplicativos de área de trabalho para os quais você cria um pacote, o atributo ``EntryPoint`` do elemento Application sempre é ``Windows.FullTrustApplication``.
 
 ```XML
 <Applications>
@@ -183,7 +183,7 @@ Se você criar ativos baseados em destino, conforme descrito na seção acima, o
 
 5.  Crie o(s) arquivo(s) resources.pri usando o comando ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``.
 
-    Por exemplo, o comando para seu aplicativo pode ter a seguinte aparência ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``:.
+    Por exemplo, o comando para seu aplicativo pode ser assim: ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``.
 
 6.  Empacote seu pacote do aplicativo do Windows usando as instruções da próxima etapa.
 
@@ -211,10 +211,6 @@ Para atualizar os arquivos .exe ou .dll do seu aplicativo, substitua os arquivos
 **Encontre respostas para suas perguntas**
 
 Tem dúvidas? Pergunte-nos sobre o Stack Overflow. Nossa equipe monitora esses [tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Você também pode perguntar [aqui](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-
-**Fornecer comentários ou fazer sugestões de recursos**
-
-Consulte [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
 
 **Percorrer código/localizar e corrigir problemas**
 

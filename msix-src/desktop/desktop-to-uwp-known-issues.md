@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: d82306906f09f5c07882da5a996a8a45a846e6c6
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 2f56cc122f82f2806b0cc1d014c9ab4c14307895
+ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328565"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75303194"
 ---
 # <a name="known-issues-with-packaged-desktop-apps"></a>Problemas conhecidos com aplicativos de área de trabalho empacotados
 
@@ -81,7 +81,7 @@ Isso pode acontecer quando o pacote contém um binário que tem um certificado c
 
 * O certificado iniciado não é posterior à estrutura de `IMAGE_NT_HEADERS32` de um executável de 32 bits ou após a estrutura de `IMAGE_NT_HEADERS64` para um executável de 64 bits.
 
-* O ponteiro do certificado não está alinhado corretamente para uma estrutura WIN_CERTIFICATE.
+* O ponteiro do certificado não está alinhado corretamente para uma estrutura de WIN_CERTIFICATE.
 
 Para localizar arquivos que contenham um certificado PE insatisfatório, abra um **prompt de comando**e defina a variável de ambiente chamada `APPXSIP_LOG` como um valor de 1.
 
@@ -104,12 +104,7 @@ ERROR: [AppxSipCustomLoggerCallback] File has malformed certificate: uninstall.e
 
 ...   
 ```
+
 ## <a name="next-steps"></a>Próximas etapas
 
-**Encontre respostas para suas perguntas**
-
 Tem dúvidas? Pergunte-nos sobre o Stack Overflow. Nossa equipe monitora estas [marcas](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Você também pode entrar em contato conosco [aqui](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-
-**Fornecer comentários ou fazer sugestões de recursos**
-
-Consulte [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).

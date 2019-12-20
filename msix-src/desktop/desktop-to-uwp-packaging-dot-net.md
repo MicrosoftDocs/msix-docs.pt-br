@@ -6,24 +6,24 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: f97fc474aa9c25a381362a55120797d2a3c5131c
-ms.sourcegitcommit: 6c28c590cd563ba69b2350e556dbd2ae55d9d7f4
+ms.openlocfilehash: cc4a113c53b9c061764d2cdbcc32c105c51de3fa
+ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68730400"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75303140"
 ---
 # <a name="package-a-desktop-app-from-source-code-using-visual-studio"></a>Empacotar um aplicativo da área de trabalho no código-fonte usando o Visual Studio
 
-Você pode usar o projeto de projeto de empacotamento de **aplicativos do Windows** no Visual Studio para gerar um pacote para seu aplicativo de área de trabalho. Em seguida, você pode publicar esse pacote no Microsoft Store ou Sideload-lo em um ou mais computadores.
+Você pode usar o projeto de **projeto de empacotamento de aplicativos do Windows** no Visual Studio para gerar um pacote para seu aplicativo de área de trabalho. Em seguida, você pode publicar esse pacote no Microsoft Store ou Sideload-lo em um ou mais computadores.
 
-O projeto de projeto de empacotamento de **aplicativos do Windows** está disponível nas seguintes versões do Visual Studio. Para obter a melhor experiência, recomendamos que você use a versão mais recente.
+O projeto de **projeto de empacotamento de aplicativos do Windows** está disponível nas seguintes versões do Visual Studio. Para obter a melhor experiência, recomendamos que você use a versão mais recente.
 
 * Visual Studio 2019
 * Visual Studio 2017 15,5 e posterior
 
 > [!IMPORTANT]
-> O projeto de projeto de empacotamento de **aplicativos do Windows** no Visual Studio tem suporte no Windows 10, versão 1607 e posterior. Ele só pode ser usado em projetos que visam a atualização de aniversário do Windows 10 (10,0; Build 14393) ou uma versão posterior.
+> O projeto de **projeto de empacotamento de aplicativos do Windows** no Visual Studio tem suporte no Windows 10, versão 1607 e posterior. Ele só pode ser usado em projetos que visam a atualização de aniversário do Windows 10 (10,0; Build 14393) ou uma versão posterior.
 
 ## <a name="prepare-your-application"></a>Preparar seu aplicativo
 
@@ -107,10 +107,6 @@ Examine este guia antes de começar a criar um pacote para seu aplicativo: [Prep
 **Encontre respostas para suas perguntas**
 
 Tem dúvidas? Pergunte-nos sobre o Stack Overflow. Nossa equipe monitora estas [marcas](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Você também pode entrar em contato conosco [aqui](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-
-**Fornecer comentários ou fazer sugestões de recursos**
-
-Consulte [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
 
 **Executar, depurar ou testar seu aplicativo de desktop**
 

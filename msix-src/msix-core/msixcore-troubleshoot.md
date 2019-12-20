@@ -6,19 +6,20 @@ ms.topic: article
 keywords: Windows 10, Windows 7, Windows 8, Windows Server, UWP, msix, msixcore, 1709, 1703, 1607, 1511, 1507
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 1833991c9f052e1379f79fa34332734fab46322b
-ms.sourcegitcommit: 0adaf0b61b5d259d3d157bc3255d56ead0655c60
+ms.openlocfilehash: abd3165eb23cf90e86a80ca685e5c3794648a54f
+ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/18/2019
-ms.locfileid: "75187478"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75303277"
 ---
-# <a name="troubleshooting-tips-for-msix-core"></a>Dicas de solução de problemas do MSIX Core 
+# <a name="troubleshooting-issues-for-msix-core"></a>Solucionando problemas do MSIX Core
 
-Você pode encontrar alguns problemas ao instalar pacotes. msix com o MSIX Core em várias versões do Windows. Este artigo lista os códigos de erro e dicas de solução de problemas a serem usados. 
+Este artigo descreve os códigos de erro que você pode encontrar ao instalar pacotes do MSIX com o MSIX Core e dicas de solução de problemas.
 
-## <a name="error-codes"></a>Códigos de erro 
-Aqui estão mensagens de erro comuns que você pode encontrar. 
+## <a name="error-codes"></a>Códigos de erro
+
+Aqui estão mensagens de erro comuns que você pode encontrar.
 
 | Código de erro |Descrição |
 |------------|------------|
@@ -26,8 +27,7 @@ Aqui estão mensagens de erro comuns que você pode encontrar.
 | 0x80070032 | O pacote contém comentários que o MSIX Core não dá suporte. Por exemplo, não há suporte para algumas funcionalidades da estrutura de suporte do pacote. Essas são a estrutura de suporte a pacotes que chama um script que é executado no final da instalação, os scripts que são definidos para execução são iguais a falsas ou a estruturas de suporte a pacotes formatados incorretamente. | 
 |0x8BAD0071 | Esse erro significa que você está tentando instalar um pacote. O MSIX Core atualmente não dá suporte a pacotes.|
 
-
-Os erros a seguir ocorrem quando há um problema com o formato do pacote. 
+Os erros a seguir ocorrem quando há um problema com o formato do pacote.
 
 | Código de erro |Descrição |
 |------------|:------------|
@@ -37,7 +37,7 @@ Os erros a seguir ocorrem quando há um problema com o formato do pacote.
 | 0x8BAD0034 | MissingAppxManifestXML|
 | 0x8BAD0035 | DuplicateFootprintFile |
 | 0x8BAD0036 | UnknownFileNameEncoding |
-| 0x8BAD0037 | Duplicatafile | 
+| 0x8BAD0037 | Duplicatafile |
 
 Os erros a seguir estão relacionados a problemas de arquivo
 
@@ -89,22 +89,28 @@ Outros problemas que você pode encontrar
 | 0x8BAD1003 | Xmlfatal |
 | 0x8BAD1004 | XmlInvalidData |
 
-Para procurar outros códigos de erro, acesse [aqui](https://docs.microsoft.com/windows/win32/debug/system-error-codes). 
+Para procurar outros códigos de erro, acesse [aqui](https://docs.microsoft.com/windows/win32/debug/system-error-codes).
 
 Para obter uma lista completa, visite a página de [código de erro do MSIX Core](https://github.com/microsoft/msix-packaging/blob/master/src/inc/public/MsixErrors.hpp) . 
 
 ## <a name="msix-tracing-powershell-script"></a>Script do PowerShell de rastreamento de MSIX
+
 Vá para nossa [página de lançamento](https://github.com/microsoft/msix-packaging/releases/tag/MSIX-Core-1.1-release) e baixe **msixtrace. ps1**. Este é o script do PowerShell de rastreamento MSIX que gerará logs para ajudar se você estiver se estendo em um problema com a instalação do MSIX.
 
 Use os comandos a seguir
-```
+
+```PowerShell
 msixtrace.ps1 -wait
 ``` 
-Siga o prompt que o script apresenta para gerar os logs. Ou use os comandos a seguir.  
-```
+
+Siga o prompt que o script apresenta para gerar os logs. Ou use os comandos a seguir.
+
+```PowerShell
 msixtrace.ps1 -start
 ```
-Instale o pacote MSIX. Ao concluir, conclua com o comando a seguir. 
-```
+
+Instale o pacote MSIX. Ao concluir, conclua com o comando a seguir.
+
+```PowerShell
 msixtrace.ps1 -stop
 ```

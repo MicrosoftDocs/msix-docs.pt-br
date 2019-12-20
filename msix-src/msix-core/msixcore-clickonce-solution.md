@@ -1,21 +1,21 @@
 ---
 title: Criando o pacote MSIX com o MSIX Core do código-fonte
-description: Este artigo fornece instruções passo a passo sobre como aproveitar o bootstrapper MSIX Core, que cria um aplicativo usando o ClickOnce que permitirá que os usuários baixem apenas um setup. exe e instalem seu aplicativo MSIX por meio do instalador do MSIX Core.
-ms.date: 11/15/2019
+description: Descreve como criar um pacote MSIX do código-fonte com o MSIX Core.
+ms.date: 12/19/2019
 ms.topic: article
 keywords: Windows 10, Windows 7, Windows 8, Windows Server, UWP, msix, msixcore, 1709, 1703, 1607, 1511, 1507
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: b98a26ce313b0c828fbad788541ed42a975f40fc
-ms.sourcegitcommit: 8aafaa9ac4087ef2e95030343add8fe2ee1cccc9
+ms.openlocfilehash: 349eb1e99a752d56126936dde5517050fae9f090
+ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/18/2019
-ms.locfileid: "75186802"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75303338"
 ---
-# <a name="creating-msix-package-with-msix-core-from-source-code"></a>Criando o pacote MSIX com o MSIX Core do código-fonte 
+# <a name="create-an-msix-package-with-msix-core-from-source-code"></a>Criar um pacote MSIX com o MSIX Core do código-fonte
 
-Se você tiver aplicativos de área de trabalho existentes e quiser dar suporte a seus clientes que usam o Windows 7 SP1, Windows 8.1, atualmente com suporte no Windows Server (com experiência desktop) e versões do Windows 10 anteriores à 1709 (atualização de aniversário de outono), você pode aproveitar o MSIX Instalador principal para criar um aplicativo usando o ClickOnce. Isso permitirá que os usuários baixem um setup. exe e instalem o aplicativo MSIX por meio do instalador do MSIX Core.
+O [MSIX Core](msixcore.md) traz a implantação do MSIX para selecionar versões anteriores do Windows. Você pode aproveitar o instalador do MSIX Core para criar um aplicativo usando o ClickOnce. Isso permitirá que os usuários baixem um setup. exe e instalem o aplicativo MSIX por meio do instalador do MSIX Core.
 
 ## <a name="host-your-app-on-a-web-server"></a>Hospedar seu aplicativo em um servidor Web
 
@@ -48,14 +48,13 @@ Adicione um novo arquivo chamado Web. config ao aplicativo Web. Abra o arquivo W
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
-    <system.webServer>
+  <system.webServer>
     <!--This is to allow the web server to serve resources with the appropriate file extensions-->
-        <staticContent>
-            <mimeMap fileExtension=".appx" mimeType="application/appx" />
-            <mimeMap fileExtension=".msix" mimeType="application/msix" />
-        </staticContent>
-    
-    </system.webServer>
+    <staticContent>
+      <mimeMap fileExtension=".appx" mimeType="application/appx" />
+      <mimeMap fileExtension=".msix" mimeType="application/msix" />
+    </staticContent>
+  </system.webServer>
 </configuration>
 ```
 
@@ -70,7 +69,7 @@ O IIS é um recurso opcional do Windows. Para instalar o IIS:
 
 O Visual Studio 2017 (ou uma versão posterior) e as ferramentas de desenvolvimento para a Web são necessários. Se você já tiver o Visual Studio 2017 ou uma versão posterior instalada, verifique se você tem as cargas de trabalho de desenvolvimento de ASP.NET e Web instaladas. Caso contrário, instale o Visual Studio [aqui](https://docs.microsoft.com/visualstudio/install/install-visual-studio).
 
-#### <a name="build-a-web-app"></a>Crie um aplicativo Web
+#### <a name="build-a-web-app"></a>Compilar um aplicativo Web
 
 Inicie o Visual Studio como administrador e crie um novo projeto de **aplicativo Web Visual C#**  com um modelo de projeto vazio.
 
@@ -98,11 +97,11 @@ Abra o arquivo **Web. config** no Gerenciador de soluções e adicione o seguint
 
 ```xml
 <system.webServer>
-    <!--This is to allow the web server to serve resources with the appropriate file extensions-->
-    <staticContent>
-        <mimeMap fileExtension=".appx" mimeType="application/appx" />
-        <mimeMap fileExtension=".msix" mimeType="application/msix" />
-    </staticContent>
+  <!--This is to allow the web server to serve resources with the appropriate file extensions-->
+  <staticContent>
+    <mimeMap fileExtension=".appx" mimeType="application/appx" />
+    <mimeMap fileExtension=".msix" mimeType="application/msix" />
+  </staticContent>
 </system.webServer>
 ```
 
@@ -119,7 +118,9 @@ O Amazon S3 (Simple Storage Service) é uma oferta AWS para coletar, armazenar e
 3. Quando tiver terminado, carregue seus pacotes MSIX e páginas da Web para o Bucket S3.
 
 #### <a name="configure-the-web-app-for-app-package-mime-types"></a>Configurar o aplicativo Web para tipos de MIME do pacote de aplicativos
-Usar uma interface de serviço da Web como de [navegador S3](https://s3browser.com/features-content-mime-types-editor.aspx) para adicionar novos **cabeçalhos HTTP padrão**. 
+
+Usar uma interface de serviço da Web como de [navegador S3](https://s3browser.com/features-content-mime-types-editor.aspx) para adicionar novos **cabeçalhos HTTP padrão**.
+
 1. Navegue até **ferramentas** e selecione **cabeçalhos HTTP padrão**.
 2. Na caixa de diálogo **cabeçalhos HTTP padrão** , clique em **Adicionar**.
 3. Na caixa de diálogo **Adicionar novos cabeçalhos HTTP padrão** , especifique o nome do Bucket, o nome do arquivo, o nome do cabeçalho e o valor do cabeçalho e, em seguida, clique em **Adicionar novo cabeçalho**.
@@ -129,17 +130,19 @@ Usar uma interface de serviço da Web como de [navegador S3](https://s3browser
     * **Valor do cabeçalho**: Application/msix
 
 > [!NOTE]
-> AWS têm algumas diretrizes estritas que você precisará seguir. Por exemplo, os nomes de buckets devem ser exclusivos e, portanto, se você estiver usando o exemplo acima, será necessário alterar o nome do Bucket. 
+> AWS têm algumas diretrizes estritas que você precisará seguir. Por exemplo, os nomes de buckets devem ser exclusivos e, portanto, se você estiver usando o exemplo acima, será necessário alterar o nome do Bucket.
 
 ## <a name="use-the-msix-core-installer-to-build-the-clickonce-application"></a>Usar o instalador do MSIX Core para compilar o aplicativo ClickOnce
 
-Localize o aplicativo de aplicativo ClickOnce setup. exe. 
-### <a name="run-url-command-to-create-new-setupexe"></a>Execute o comando URL para criar um novo setup. exe
-#### <a name="prerequisite"></a>Pré-requisito 
-Verifique se você seguiu as instruções para clonar, compilar e publicar a solução MSIX Core no Visual estúdios. 
+Localize o aplicativo de aplicativo ClickOnce setup. exe.
 
-Navegue até o diretório em que você baixou o arquivo setup. exe e execute este comando: 
-```
+### <a name="run-url-command-to-create-new-setupexe"></a>Execute o comando URL para criar um novo setup. exe
+
+Verifique se você seguiu as instruções para clonar, criar e publicar a solução MSIX Core no Visual Studio.
+
+Navegue até o diretório em que você baixou o arquivo setup. exe e execute este comando:
+
+```PowerShell
 setup-exe - url=<location of your msix in the webservice>
 ```
 
@@ -150,7 +153,6 @@ Como a etapa anterior criou um novo setup. exe, será necessário assinar o apli
 ### <a name="distribute-the-application-to-your-users"></a>Distribua o aplicativo para seus usuários
 
 Agora você pode apontar para o novo setup. exe com um link ou botão de download em seu site. O MSIX Core destina-se a usuários no Windows 10, versão 1703 e anteriores. O [instalador do aplicativo](https://docs.microsoft.com/windows/msix/app-installer/installing-windows10-apps-web) é o processo de instalação ideal para pacotes MSIX no Windows 1709 ou uma versão posterior. O instalador do aplicativo otimiza o espaço em disco no lado do consumidor e pode instalar aplicativos diretamente de locais HTTP. O MSIX Core detectará se um consumidor está no Windows 1709 ou em uma versão posterior e os redirecionará para o instalador do aplicativo. 
-
 
 No Microsoft Edge, você pode chamar o método [getHostEnvironmentValue ()](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/mt795399%28v%3dvs.85%29) e o campo *so-Build* no valor de retorno especificará a versão do sistema operacional do usuário. A partir daí, você pode solicitar que o processo de instalação use o MSIX Core (para Windows 10, versão 1703 e anterior) ou o instalador do aplicativo (para Windows 10, versão 1709 e posterior).
 
