@@ -39,7 +39,17 @@
     - name: Suporte para MSIX nas versões 1709 e 1803
       href: msix-1709-and-1803-support.md
     - name: MSIX Core
-      href: msix-sdk/msixcore.md
+      items:
+        - name: Visão geral
+          href: msix-core/msixcore.md
+        - name: Atualizar o pacote MSIX para oferecer suporte ao MSIX Core
+          href: msix-core/support-msix-core.md
+        - name: Implantar um pacote MSIX com o MSIX Core
+          href: msix-core/deploy-with-msix-core.md
+        - name: Criar um pacote MSIX com o MSIX Core com base no código-fonte
+          href: msix-core/msixcore-clickonce-solution.md
+        - name: Solução de problemas
+          href: msix-core/msixcore-troubleshoot.md
     - name: Aplicativos de política de grupo e do MSIX empacotados
       href: group-policy-msix.md
 - name: Ferramentas
@@ -178,7 +188,7 @@
           href: desktop/desktop-to-uwp-debug.md
         - name: Testar para o Windows 10 no modo S
           href: desktop/desktop-to-uwp-test-windows-s.md
-    - name: Aplicar correções de tempo de execução em um pacote do aplicativo da área de trabalho
+    - name: Aplicar correções de runtime em um pacote do aplicativo da área de trabalho
       href: psf/package-support-framework.md
     - name: Executar scripts com o Package Support Framework
       href: psf/run-scripts-with-package-support-framework.md
