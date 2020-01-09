@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7201d3907d84e4a42fbcb3d9f19adf84d5fe353f
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 0d5c124f4f7655fb3685ee13eeef8c116f8432d6
+ms.sourcegitcommit: 44b9510ea76623d668d87ddca575a7921c60a19a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328475"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75322631"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -35,11 +35,10 @@ Se a ferramenta já estiver instalada no computador, verifique a versão instala
 
 ## <a name="current-insider-preview-build"></a>Build atual do Insider Preview
 
-### <a name="version-1201910180-public"></a>Versão 1.2019.1018.0 (pública)
-- Agora a autenticação do Device Guard está disponível. Essa opção de autenticação requer uma conta do Microsoft Azure Active Directory configurada para a Microsoft Store para Empresas. Para obter mais informações, consulte [este artigo](https://docs.microsoft.com/windows/msix/package/signing-package-device-guard-signing).
-- O **Editor de pacote** agora dá suporte à capacidade de selecionar vários itens nos quais uma ação será executada.
-- Agora há suporte para o clique com o botão direito do mouse para editar um pacote MSIX.
-- Melhorias da experiência do usuário para o fluxo de trabalho de empacotamento.
+## <a name="version-1201912180"></a>1\.2019.1218.0 da versão
+- Adicionada a capacidade de arrastar e soltar arquivos para movê-los no editor de pacotes
+- Nova configuração para adicionar integridade de pacote a aplicativos
+- Mostrar local de salvamento padrão na página Criar pacote
 
 Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](release-notes/history.md).
 
@@ -51,7 +50,7 @@ Compartilhe também os comentários diretamente no aplicativo. Clique em Configu
 
 O **Hub de Feedback** também é uma ótima maneira de compartilhar ideias e sugestões de novos recursos que você deseja ver no aplicativo.  
 
-## <a name="faqs"></a>Perguntas frequentes
+## <a name="faqs"></a>Perguntas Frequentes
 
 1. Não recebi nenhum email confirmando minha inscrição no Programa Insider. 
     - [Ingresse no programa](https://aka.ms/MSIXPackagingPreviewProgram) novamente.  
