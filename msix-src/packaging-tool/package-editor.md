@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8d93cc9ecb8c56ca00cf003c598e95fd62726580
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 66e140987fda894d8eb3af8df8594acf07f33059
+ms.sourcegitcommit: 71c49de79d061909fb1ab632ec7550227d2287bd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328460"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75754898"
 ---
 # <a name="modify-a-package-using-package-editor"></a>Modificar um pacote usando o editor de pacote
 
@@ -20,6 +20,8 @@ ms.locfileid: "73328460"
 Para fazer alterações em um pacote MSIX existente, como modificar as propriedades no manifesto ou o conteúdo do pacote sem precisar empacotar o instalador novamente, você pode usar o **Editor de pacote** na Ferramenta de Empacotamento MSIX.
 
 Na página principal da Ferramenta de Empacotamento MSIX, selecione o ícone **Editor de pacote**, procure o pacote MSIX e selecione **Abrir pacote**.
+
+Você pode desempacotar o pacote MSIX do editor de pacote por meio do botão ' desempacotar ' na parte inferior. Em seguida, você pode selecionar o local onde deseja desempacotar o pacote MSIX. 
 
 ## <a name="package-information-page"></a>Página Informações do pacote
 
@@ -72,4 +74,3 @@ Clique com o botão direito do mouse em um arquivo para executar essas operaçõ
 - Mover: renomear ou mover o arquivo para um novo local.
 
 ![pic13](images/pic13.png)
-

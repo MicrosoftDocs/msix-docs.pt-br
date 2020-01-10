@@ -6,16 +6,24 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5206c4e90ca780c80e1ac6dd4e3ae33aa6c4c0e0
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 4ebdb73779821c1ba0dc5fbae844b02df4d204cb
+ms.sourcegitcommit: 71c49de79d061909fb1ab632ec7550227d2287bd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328444"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75754826"
 ---
 # <a name="conversion-with-command-line-interface-cli"></a>Conversão com a CLI (interface de linha de comando)
 
+## <a name="automate-conversion-of-windows-installers-to-msix-packages-using-scripts"></a>Automatizar a conversão de instaladores do Windows em pacotes do MSIX usando scripts
+
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">Obter a Ferramenta de Empacotamento MSIX</a></p></div>
+
+A Ferramenta de Empacotamento MSIX é compatível com uma interface de linha de comando para a criação de pacotes de aplicativo MSIX. Isso permite que você automatize o processo de reempacotamento de instaladores de aplicativos e execute conversões em massa.
+
+Para os scripts PowerShell e Bash de exemplo que demonstram como automatizar o processo de empacotamento, assinatura, gerenciamento e distribuição de pacotes MSIX, consulte a pasta [scripts](https://github.com/microsoft/MSIX-Toolkit/tree/master/Scripts) do Kit de Ferramentas MSIX.
+
+## <a name="use-the-command-line-interface-cli-with-the-command-prompt"></a>Usar a CLI (interface de linha de comando) com o prompt de comando
 
 Para criar um novo pacote MSIX para seu aplicativo, execute o comando `MsixPackagingTool.exe create-package` em uma janela de prompt de comando do administrador.
 
@@ -191,11 +199,11 @@ Esta é a lista completa de parâmetros que você pode usar no arquivo de modelo
 |PackageInformation::PublisherDisplayName |     O nome de exibição do fornecedor do pacote MSIX.|
 |PackageInformation::Version |      O número de versão do pacote MSIX.|
 |PackageInformation:: MainPackageNameForModificationPackage |       [opcional] O nome da identidade do pacote do nome do pacote principal. Isso é usado durante a criação de um pacote de modificação que tem uma dependência de um aplicativo principal (pai).|
-|Aplicativos |     [opcional] 0 ou mais elementos Application para configurar as entradas de Application no pacote MSIX.|
+|Aplicativo |     [opcional] 0 ou mais elementos Application para configurar as entradas de Application no pacote MSIX.|
 |Application::Id |      A ID do Aplicativo MSIX. Essa ID será usada para a entrada Application detectada que corresponde ao ExecutableName especificado. Você pode ter vários valores da ID do Aplicativo para executáveis no pacote.<br/><br/>Esse valor é o identificador exclusivo do aplicativo no pacote. Às vezes, esse valor é denominado PRAID (identificador do aplicativo relativo do pacote). A ID precisa ser exclusiva no pacote (a mesma ID não pode ser usada mais de uma vez no mesmo pacote). No entanto, a ID não precisa ser globalmente exclusiva. Pode haver outro pacote no sistema que usa a mesma ID.<br/><br/>Essa cadeia de caracteres contém campos alfanuméricos separados por pontos. Cada campo precisa começar com um caractere alfabético ASCII. Você não pode usá-los como valores de campo: "CON", "PRN", "AUX", "NUL", "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9", "LPT1", "LPT2", "LPT3", "LPT4", "LPT5", "LPT6", "LPT7", "LPT8" e "LPT9".|
 |Application::ExecutableName |      O nome do executável do aplicativo MSIX que será adicionado ao manifesto do pacote. A entrada de aplicativo correspondente será ignorada se nenhum aplicativo com esse nome for detectado.|
 |Application::Description |     [opcional] A descrição do aplicativo MSIX. Se não for usado, o Application DisplayName será usado. Essa descrição será usada para a entrada do aplicativo detectada que corresponde ao ExecutableName especificado|
 |Application::DisplayName    |  O nome de exibição do aplicativo para o pacote MSIX. Esse nome de exibição será usado para a entrada do aplicativo detectada que corresponde ao ExecutableName especificado|
-|Recursos |     [opcional] 0 ou mais elementos Capability para adicionar funcionalidades personalizadas ao pacote MSIX. A funcionalidade “runFullTrust” é adicionada por padrão durante a conversão.|
+|Capacidades |     [opcional] 0 ou mais elementos Capability para adicionar funcionalidades personalizadas ao pacote MSIX. A funcionalidade “runFullTrust” é adicionada por padrão durante a conversão.|
 |Capability::Name | A capacidade a ser adicionada ao pacote MSIX.
 

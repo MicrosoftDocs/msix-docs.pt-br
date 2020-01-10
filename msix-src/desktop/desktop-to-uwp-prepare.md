@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dde98d7e5d92b3f3e9fe3afe5dc5eb9485f7b57
-ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
+ms.openlocfilehash: 3511b3f7bef1bc3a8ace27b5bc2eb6bd5b47cb45
+ms.sourcegitcommit: 71c49de79d061909fb1ab632ec7550227d2287bd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75303282"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75754856"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>Preparar um pacote para um aplicativo de área de trabalho
 
@@ -30,6 +30,8 @@ Este artigo lista as coisas que você precisa saber antes de empacotar seu aplic
 + __Seu aplicativo requer um driver de modo kernel ou um serviço do Windows__. A ponte de desktop é adequada para um aplicativo, mas não dá suporte a um driver de modo kernel ou a um serviço do Windows que precisa ser executado em uma conta do sistema. Em vez de um serviço Windows, use uma [tarefa em segundo plano](/windows/uwp/launch-resume/create-and-register-a-background-task).
 
 + __Os módulos do seu aplicativo são carregados em processo, para processos que não estão no seu pacote do aplicativo do Windows__. Isso não é permitido, o que significa que extensões de processo, como [extensões do shell](https://msdn.microsoft.com/library/windows/desktop/dd758089.aspx), não têm suporte. Mas se você tiver dois aplicativos no mesmo pacote, será possível fazer comunicação entre processos entre eles.
+
++ __Verifique se todas as extensões instaladas pelo aplicativo irão instalar onde o aplicativo está instalado__. O Windows permite que usuários e gerentes de ti alterem o local de instalação padrão para pacotes.  Consulte "Configurações-> armazenamento de > do sistema-> mais configurações de armazenamento-> Alterar onde o novo conteúdo é salvo em-> novos aplicativos serão salvos em".  Se você estiver instalando uma extensão com seu aplicativo, certifique-se de que a extensão não tenha restrições de pasta de instalação adicionais.  Por exemplo, algumas extensões podem desabilitar a instalação de seus extensão em unidades que não são do sistema.  Isso resultará em um erro 0x80073D01 (ERROR_DEPLOYMENT_BLOCKED_BY_POLICY) se o local padrão tiver sido alterado. 
 
 + __Seu aplicativo usa uma AUMID (ID de modelo de usuário de aplicativo) personalizada__. Se o processo chamar [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422.aspx) para definir seu próprio AUMID, ele só poderá usar o AUMID gerado para ele pelo pacote de aplicativos do Windows/ambiente do modelo de aplicativo. Não é possível definir AUMIDs personalizadas.
 
