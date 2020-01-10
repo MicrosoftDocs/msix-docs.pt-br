@@ -68,6 +68,8 @@
           href: packaging-tool/mpt-best-practices.md
         - name: Usar a criação rápida do Hyper-V para empacotar
           href: packaging-tool/Quick-Create-VM.md
+        - name: Converter um instalador que inclui os serviços
+          href: packaging-tool/convert-an-installer-with-services.md
         - name: Problemas conhecidos e soluções de problemas
           href: packaging-tool/mpt-known-issues.md
         - name: Duplicar configurações da Ferramenta de Empacotamento MSIX entre vários dispositivos
@@ -98,7 +100,7 @@
           href: app-installer/install-related-set.md
         - name: Documentação relacionada
           href: app-installer/app-installer-documentation.md
-    - name: MSIX SDK
+    - name: SDK do MSIX
       items:
         - name: Visão geral
           href: msix-sdk/sdk-overview.md
@@ -130,8 +132,6 @@
               href: packaging-tool/create-other-installer.md
             - name: Criar um pacote do MSIX usando a Linha de Comando
               href: packaging-tool/package-conversion-cli.md
-            - name: Automatizar a conversão usando linha de comando
-              href: packaging-tool/automate-conversion.md
             - name: Criar um pacote do MSIX em um computador remoto
               href: packaging-tool/remote-conversion-setup.md
             - name: Empacotar com o Desktop App Converter
@@ -176,7 +176,7 @@
           href: package/signing-package-device-guard-signing.md
 - name: Validar
   items:
-    - name: Kit de certificação de aplicativos Windows
+    - name: Kit de certificação de aplicativos do Windows
       href: 'https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit?context=/windows/msix/render'
     - name: Portal de dispositivos do Windows
       href: 'https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal?context=/windows/msix/render'
@@ -216,13 +216,13 @@
           href: app-installer/how-to-create-appinstaller-file.md
         - name: Definir configurações de atualização no arquivo do Instalador de Aplicativo
           href: app-installer/update-settings.md
-- name: Gerenciar
+- name: assinaturas
   items:
     - name: Solucionar problemas de contêiner MSIX
       href: manage/troubleshoot-msix-container.md
     - name: Gerenciamento de serviços de geração de imagens de implantação
       href: 'https://docs.microsoft.com/windows-hardware/manufacture/desktop/what-is-dism?context=/windows/msix/render'
-    - name: Windows PowerShell
+    - name: Usando o Windows PowerShell
       href: 'https://docs.microsoft.com/powershell/module/appx/?view=win10-ps?context=/windows/msix/render'
 - name: Referência de API e esquema
   items:
