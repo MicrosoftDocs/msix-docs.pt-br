@@ -9,12 +9,12 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: e151cf2edb41b8a26b48189e4ab91a342a3ddaa8
-ms.sourcegitcommit: d749fa662214bddaa6854f1ee95761c547db8dae
+ms.openlocfilehash: 548981deb38ce651367bec2207013eff56cf511d
+ms.sourcegitcommit: 90eed7d23240aefa3761085955a193323f4661d4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2019
-ms.locfileid: "75008126"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75831488"
 ---
 # <a name="package-an-msix-app-with-visual-studio"></a>Empacotar um aplicativo MSIX com o Visual Studio
 
@@ -89,10 +89,12 @@ Se você estiver distribuindo seu aplicativo por meio do Microsoft Store, o Visu
 
 ## <a name="create-an-app-package-upload-file"></a>Crie um arquivo de upload de pacote do aplicativo
 
-Para distribuir um aplicativo por meio do Microsoft Store você deve criar um pacote de aplicativo (. Appx ou. msix), pacote de aplicativo (. appxbundle ou. msixbundle) ou um arquivo de carregamento de pacote de aplicativo (. appxupload ou. msixupload) e [enviar o aplicativo empacotado para o Partner Center](https://docs.microsoft.com/windows/uwp/publish/app-submissions). Embora seja possível enviar um pacote do aplicativo ou um pacote de aplicativos para o Partner Center sozinho, recomendamos que você envie um arquivo de carregamento do pacote do aplicativo. Você pode criar um arquivo de carregamento de pacote de aplicativo usando o assistente para **criar pacotes de aplicativos** no Visual Studio, ou você pode criar um manualmente a partir de pacotes de aplicativo existentes ou de grupos de aplicativos.
+Para distribuir um aplicativo por meio do Microsoft Store você deve criar um pacote de aplicativo (. Appx ou. msix), pacote de aplicativo (. appxbundle ou. msixbundle) ou um arquivo de carregamento de pacote de aplicativo (. appxupload ou. msixupload) e [enviar o aplicativo empacotado para o Partner Center](https://docs.microsoft.com/windows/uwp/publish/app-submissions). 
 
->[!NOTE]
+> [!NOTE]
 > Se você quiser criar um pacote de aplicativo (. Appx ou. msix) ou um pacote de aplicativo (. appxbundle ou. msixbundle) manualmente, consulte [criar um pacote de aplicativo com a ferramenta MakeAppx. exe](create-app-package-with-makeappx-tool.md).
+
+Embora seja possível enviar um pacote do aplicativo ou um pacote de aplicativos para o Partner Center sozinho, recomendamos que você envie um **arquivo de carregamento do pacote do aplicativo**. Você pode criar um arquivo de carregamento de pacote de aplicativo usando o assistente para **criar pacotes de aplicativos** no Visual Studio, ou pode criar um manualmente a partir de pacotes de aplicativos ou grupos de aplicativos existentes, confira [criar o arquivo de carregamento do pacote do aplicativo manualmente](#create-your-app-package-upload-file-manually).
 
 ### <a name="create-your-app-package-upload-file-using-visual-studio"></a>Criar o arquivo de carregamento do pacote do aplicativo usando o Visual Studio
 
@@ -138,9 +140,9 @@ Para distribuir um aplicativo por meio do Microsoft Store você deve criar um pa
     - Um ou mais pacotes de aplicativos (. msix ou. AppX) ou um pacote de aplicativo (. msixbundle ou. appxbundle).
     - Um arquivo. appxsym. Este é um arquivo. pdb compactado que contém símbolos públicos de seu aplicativo usado para o [Crash Analytics](https://docs.microsoft.com/windows/uwp/publish/health-report) no Partner Center. Você pode omitir esse arquivo, mas se você fizer isso, nenhuma informação analítica ou de depuração de pane estará disponível para seu aplicativo.
 
-2. Compactar a pasta.
+2. Selecione todos os arquivos dentro da pasta, clique com o botão direito do mouse nos arquivos e selecione **Enviar para** -> **pasta compactada (zipada)** .
 
-3. Altere o nome da extensão de pasta compactada de. zip para. msixupload ou. appxupload.
+3. Altere o nome da extensão do novo arquivo zip de. zip para. msixupload ou. appxupload.
 
 ## <a name="validate-your-app-package"></a>Validar seu pacote de aplicativos
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, Windows 7, Windows 8, Windows Server, UWP, msix, msixcore, 1709, 1703, 1607, 1511, 1507
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 38285c6fd3cd5e47a2f7570163ef85302d8b9fb7
-ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
+ms.openlocfilehash: fdab2cf07a3a9e7ecbcae82120422647eaf145d5
+ms.sourcegitcommit: 90eed7d23240aefa3761085955a193323f4661d4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75303399"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75831478"
 ---
 # <a name="msix-core"></a>MSIX Core
 
@@ -32,10 +32,12 @@ O MSIX Core foi projetado para desenvolvedores e profissionais de ti. Os desenvo
 
 ## <a name="considerations-of-msix-core"></a>Considerações do MSIX Core
 
-O objetivo do MSIX Core é habilitar a instalação, a consulta e a remoção de aplicativos empacotados do MSIX (que já funcionam nessas versões do Windows) e fornecer o máximo possível de uma desinstalação. O MSIX core fornece um subconjunto de recursos do MSIX nativo, funcionando de forma semelhante aos tipos existentes do Win32 Installer. O MSIX Core não fornece os benefícios do contêiner do MSIX nativo, nem permite que um aplicativo que usa recursos específicos do Windows 10 funcione em versões anteriores do Windows.
+O objetivo do MSIX Core é habilitar a instalação, a consulta e a remoção de aplicativos empacotados do MSIX (que já funcionam nessas versões do Windows) e fornecer o máximo possível de uma desinstalação. O MSIX core fornece um subconjunto de recursos do MSIX nativo, funcionando de forma semelhante aos tipos existentes do Win32 Installer.
 
-O MSIX Core também não dará suporte à integração Microsoft Store. Os desenvolvedores que desejam publicar seus aplicativos no Microsoft Store podem seguir a documentação [aqui](https://docs.microsoft.com/windows/uwp/publish/).
+* O MSIX Core não fornece os benefícios do contêiner do MSIX nativo, nem permite que um aplicativo que usa recursos específicos do Windows 10 funcione em versões anteriores do Windows.
+* Ao usar o MSIX Core em um sistema operacional de nível inferior, OS [aliases de execução de aplicativo](/windows/apps/desktop/modernize/desktop-to-uwp-extensions#start-your-application-by-using-an-alias) só funcionarão do **Win + R** e não do prompt de comando nem do PowerShell.
+* O MSIX Core não dá suporte à integração Microsoft Store. Os desenvolvedores que desejam publicar seus aplicativos na loja podem seguir a documentação [aqui](https://docs.microsoft.com/windows/uwp/publish/).
 
 ## <a name="get-started"></a>Introdução
 
-Para implantar o pacote MSIX com o MSIX Core, você deve primeiro [atualizar o manifesto existente do MSIX](https://docs.microsoft.com/windows/msix/msix-core/support-msix-core). Em seguida, você pode [implantar seu pacote MSIX com o MSIX Core](https://docs.microsoft.com/windows/msix/msix-core/deploy-with-msix-core) (se você tiver apenas o pacote) ou pode [criar um pacote do MSIX com o MSIX Core do código-fonte](https://docs.microsoft.com/windows/msix/msix-core/msixcore-clickonce-solution) (se você tiver o código-fonte).
+Para implantar o pacote MSIX com o MSIX Core, você deve primeiro [atualizar o manifesto existente do MSIX](support-msix-core.md). Em seguida, você pode [implantar seu pacote MSIX com o MSIX Core](deploy-with-msix-core.md) (se você tiver apenas o pacote) ou pode [criar um pacote do MSIX com o MSIX Core do código-fonte](msixcore-clickonce-solution.md) (se você tiver o código-fonte).

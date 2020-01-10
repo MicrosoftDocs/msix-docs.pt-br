@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 89a3e99d1ac7c10993570763add20b92f5cd1685
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 6db2a7aa009f0a4bce9a2aa8950e029473df63aa
+ms.sourcegitcommit: 90eed7d23240aefa3761085955a193323f4661d4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328598"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75831458"
 ---
 # <a name="customize-your-enterprise-apps-with-modification-packages"></a>Personalizar seus aplicativos empresariais com pacotes de modificação 
 
@@ -54,6 +54,9 @@ Aqui estão as maneiras típicas de criar um arquivo. dat:
 
 Depois de fazer as alterações necessárias, você pode criar o pacote de modificação como qualquer outro pacote MSIX. Em seguida, você pode implantar o pacote com a configuração de implantação atual. Ao reiniciar o aplicativo principal, você pode ver as alterações feitas pelo pacote de modificação. Se você optar por remover o pacote de modificação, seu aplicativo principal será revertido para um estado sem o pacote de modificação. 
 
-## <a name="see-also"></a>Consulte também
+## <a name="find-out-what-modification-packages-are-installed-on-your-device"></a>Descubra quais pacotes de modificação estão instalados em seu dispositivo
+Usando o PowerShell, você pode ver os pacotes de modificação instalados usando: Get-AppPackage-PackageTypeFilter opcional
+
+## <a name="see-also"></a>Veja também
 - [Pacotes de modificação no Windows 10 versão 1809](modification-package-1809-update.md)
 - [Pacotes de modificação no Windows 10 versão 1903](modification-package-1903.md)

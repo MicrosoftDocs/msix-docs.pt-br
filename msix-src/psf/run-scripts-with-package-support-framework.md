@@ -6,14 +6,15 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 39a4731daece164b89f2c2df1df1965c2c0543e3
-ms.sourcegitcommit: 073a228653f004914851c3461b9ad6eef343f915
+ms.openlocfilehash: 5de118ddf9e55567c80b38ffe4a453e2391cfff9
+ms.sourcegitcommit: 90eed7d23240aefa3761085955a193323f4661d4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74309014"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75831462"
 ---
 # <a name="run-scripts-with-the-package-support-framework"></a>Executar scripts com o Package Support Framework
+
 
 Os scripts permitem que os profissionais de ti personalizem um aplicativo dinamicamente para o ambiente do usuário depois que ele é empacotado usando MSIX. Por exemplo, você pode usar scripts para configurar seu banco de dados, configurar uma VPN, montar uma unidade compartilhada ou executar uma verificação de licença dinamicamente. Os scripts fornecem muita flexibilidade. Eles podem alterar as chaves do registro ou executar modificações de arquivo com base na configuração do computador ou do servidor.
 
@@ -39,7 +40,7 @@ Aqui estão os locais de cada executável.
 
 Para obter mais informações sobre as políticas de execução do PowerShell, consulte [Este artigo](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6).
 
-Certifique-se de incluir o seguinte "StartingScriptWrapper. ps1" em seu pacote e localize-o na mesma pasta em que o seu executável é. Você pode copiá-lo do pacote NuGet da estrutura de suporte do pacote (https://www.nuget.org/packages/Microsoft.PackageSupportFramework/).
+Certifique-se também de incluir o arquivo StartingScriptWrapper. ps1 em seu pacote e colocá-lo na mesma pasta que o executável. Você pode copiar esse arquivo do [pacote NuGet do PSF](https://www.nuget.org/packages/Microsoft.PackageSupportFramework/).
 
 ## <a name="enable-scripts"></a>Habilitar scripts
 
@@ -51,20 +52,20 @@ A seguir estão os itens de configuração disponíveis para os scripts. O scrip
 
 | Nome da chave                | Tipo de valor | Necessário? | Padrão  | Descrição
 |-------------------------|------------|-----------|----------|---------|
-| `scriptPath`              | cadeia de caracteres     | Sim       | N/D      | O caminho para o script, incluindo o nome e a extensão. O caminho é iniciado a partir do diretório raiz do aplicativo.
-| `scriptArguments`         | cadeia de caracteres     | Não        | vazio    | Lista de argumentos delimitados por espaço. O formato é o mesmo para uma chamada de script do PowerShell. Essa cadeia de caracteres é anexada a `scriptPath` para fazer uma chamada PowerShell. exe válida.
+| `scriptPath`              | sequência     | Sim       | N/D      | O caminho para o script, incluindo o nome e a extensão. O caminho é iniciado a partir do diretório raiz do aplicativo.
+| `scriptArguments`         | sequência     | Não        | vazio    | Lista de argumentos delimitados por espaço. O formato é o mesmo para uma chamada de script do PowerShell. Essa cadeia de caracteres é anexada a `scriptPath` para fazer uma chamada PowerShell. exe válida.
 | `runInVirtualEnvironment` | booliano    | Não        | verdadeiro     | Especifica se o script deve ser executado no mesmo ambiente virtual em que o aplicativo empacotado é executado.
 | `runOnce`                 | booliano    | Não        | verdadeiro     | Especifica se o script deve ser executado uma vez por usuário, por versão.
 | `showWindow`              | booliano    | Não        | false    | Especifica se a janela do PowerShell é mostrada.
 | `stopOnScriptError`       | booliano    | Não        | false    | Especifica se deseja sair do aplicativo se o script inicial falhar.
 | `waitForScriptToFinish`   | booliano    | Não        | verdadeiro     | Especifica se o aplicativo empacotado deve aguardar a conclusão do script inicial antes de iniciar.
-| `timeout`                 | DWORD      | Não        | LOOP | Quanto tempo o script terá permissão para ser executado. Quando o tempo decorrido, o script será interrompido.
+| `timeout`                 | DWORD      | Não        | INFINITE | Quanto tempo o script terá permissão para ser executado. Quando o tempo decorrido, o script será interrompido.
 
 > [!NOTE]
 > Não há suporte para a definição de `stopOnScriptError: true` e `waitForScriptToFinish: false` para o aplicativo de exemplo. Se você definir esses dois itens de configuração, PSF retornará o erro ERROR_BAD_CONFIGURATION.
 
 
-## <a name="sample-configuration"></a>Exemplo de configuração
+## <a name="sample-configuration"></a>Configuração de exemplo
 
 Aqui está um exemplo de configuração usando dois executáveis de aplicativo diferentes.
 
