@@ -1,7 +1,7 @@
 - name: MSIX
   items:
     - name: Visão geral
-      href: index.md
+      href: index.yml
     - name: O que é MSIX?
       href: overview.md
     - name: Formatos de pacote do aplicativo
