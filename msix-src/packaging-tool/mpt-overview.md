@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: b8afc46195c1c7f467ddf302edd9553a2ba0c049
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 0dd681286b8bfcec432b566e11e6234854301a71
+ms.sourcegitcommit: 71c49de79d061909fb1ab632ec7550227d2287bd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328463"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75754817"
 ---
 # <a name="msix-packaging-tool"></a>Ferramenta de Empacotamento MSIX 
 
@@ -36,6 +36,12 @@ Para instalar a Ferramenta de Empacotamento MSIX por meio da Microsoft Store, ac
 
 A Ferramenta de Empacotamento MSIX também pode ser baixada para uso offline no [portal da Web](https://businessstore.microsoft.com/) da Microsoft Store para Empresas. Saiba mais sobre a distribuição offline [aqui](https://docs.microsoft.com/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app).
 
+Após obter a versão offline do aplicativo é possível usar o [PowerShell](https://docs.microsoft.com/powershell/module/dism/add-appxprovisionedpackage?view=win10-ps) para adicionar o pacote do aplicativo e a licença ao seu computador. 
+
+### <a name="example-of-offline-installation"></a>Exemplo de instalação offline
+```
+PS C:\> Add-AppxProvisionedPackage -Path C:\offline -PackagePath C:\MSIX\MyPackage.msix -LicensePath C:\MSIX\MyLicense.xml
+```
  
 ## <a name="latest-public-version---1201910180"></a>Última versão pública – 1.2019.1018.0
 
@@ -62,7 +68,6 @@ Os seguintes artigos são tutoriais sobre como usar a Ferramenta de Empacotament
 | Artigo | Descrição |
 |-------|-------------|
 | [Criar um pacote MSIX com base em um arquivo MSI/App-V](create-app-package-MSI-VM.md) | Este tutorial descreverá como usar a interface do usuário da Ferramenta de Empacotamento MSIX para converter seus aplicativos da área de trabalho (particularmente, instaladores como MSI, EXE ou App-V) em um Pacote MSIX. |
-| [Criar um pacote MSIX com base em outros tipos de instalador](create-other-installer.md) | Este tutorial descreverá como usar a interface do usuário da Ferramenta de Empacotamento MSIX para converter seus aplicativos da área de trabalho (instaladores como scripts em lotes, PowerShell etc.) em um Pacote MSIX. |
+| [Criar um pacote MSIX com base em outros tipos de instalador](create-other-installer.md) | Este tutorial descreverá como usar a interface do usuário da Ferramenta de Empacotamento MSIX para converter seus aplicativos da área de trabalho (instaladores, como scripts de conversão em lote, PowerShell etc.) em um pacote MSIX. |
 | [Criar um pacote MSIX usando a interface de linha de comando da Ferramenta de Empacotamento MSIX](package-conversion-cli.md) | Este tutorial descreverá como usar a interface de linha de comando da Ferramenta de Empacotamento MSIX para converter seus aplicativos da área de trabalho em um Pacote MSIX. |
-| [Automatizar a conversão de pacote MSIX](automate-conversion.md) | Este tutorial abordará como você pode usar a interface de linha de comando para automatizar a conversão de aplicativos da área de trabalho em Pacotes MSIX. |
 | [Criar um pacote MSIX em um computador remoto](remote-conversion-setup.md) | Este artigo fornecerá as instruções necessárias para executar a conversão de aplicativos da área de trabalho em pacotes MSIX em um dispositivo remoto. |
