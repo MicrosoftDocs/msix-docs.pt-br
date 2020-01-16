@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 21f12e081dbda622be7d6f3d5800425fdf1f2305
-ms.sourcegitcommit: 71c49de79d061909fb1ab632ec7550227d2287bd
+ms.openlocfilehash: 00c3831995383cea4b558c6353f4b545ae5b94ac
+ms.sourcegitcommit: 0bd5ebc32feba8a4f4669f232129a8953d5cf773
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75754835"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022014"
 ---
 # <a name="best-practices-for-the-msix-packaging-tool"></a>Melhores práticas da Ferramenta de Empacotamento MSIX
 
@@ -21,7 +21,7 @@ Este artigo aborda as melhores práticas para reempacotar seu aplicativo para MS
 
 ## <a name="best-practices-for-environment-setup"></a>Práticas recomendadas para a configuração do ambiente
  
-Verifique se você tem a [versão mais recente da ferramenta de empacotamento MSIX](mpt-overview.md#latest-public-version---1201910180). Para o processo de conversão, há algumas outras coisas que recomendamos que você considere antes de começar.
+Verifique se você tem a [versão mais recente da ferramenta de empacotamento MSIX](mpt-overview.md#latest-public-version---1201912200). Para o processo de conversão, há algumas outras coisas que recomendamos que você considere antes de começar.
 
 - O requisito mínimo de versão do sistema operacional para a ferramenta de empacotamento MSIX é o Windows 10 1809. Entendemos que nem todo mundo está usando a Atualização de outubro de 2018 para o Windows 10 ou nem mesmo o Windows 10. Portanto, é recomendável que você crie uma VM limpa pré-configurada para a versão mínima do suporte para MSIX.
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 0d5c124f4f7655fb3685ee13eeef8c116f8432d6
-ms.sourcegitcommit: 44b9510ea76623d668d87ddca575a7921c60a19a
+ms.openlocfilehash: 5f354ac1ffa74c0fc17bda210b0abb12fd736528
+ms.sourcegitcommit: 0bd5ebc32feba8a4f4669f232129a8953d5cf773
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75322631"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76021990"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -35,10 +35,8 @@ Se a ferramenta já estiver instalada no computador, verifique a versão instala
 
 ## <a name="current-insider-preview-build"></a>Build atual do Insider Preview
 
-## <a name="version-1201912180"></a>1\.2019.1218.0 da versão
-- Adicionada a capacidade de arrastar e soltar arquivos para movê-los no editor de pacotes
-- Nova configuração para adicionar integridade de pacote a aplicativos
-- Mostrar local de salvamento padrão na página Criar pacote
+## <a name="version-1201912200"></a>1\.2019.1220.0 da versão
+- A ferramenta de empacotamento MSIX acabou de lançar a versão pública do aplicativo. As versões de visualização retornarão em breve.
 
 Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](release-notes/history.md).
 
