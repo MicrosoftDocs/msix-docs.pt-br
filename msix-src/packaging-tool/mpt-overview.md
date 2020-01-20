@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 0dd681286b8bfcec432b566e11e6234854301a71
-ms.sourcegitcommit: 71c49de79d061909fb1ab632ec7550227d2287bd
+ms.openlocfilehash: 71ce462f6c696d500b5627a1bf96ab04d336ac3f
+ms.sourcegitcommit: 0bd5ebc32feba8a4f4669f232129a8953d5cf773
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75754817"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76021932"
 ---
 # <a name="msix-packaging-tool"></a>Ferramenta de Empacotamento MSIX 
 
@@ -43,13 +43,12 @@ Após obter a versão offline do aplicativo é possível usar o [PowerShell](htt
 PS C:\> Add-AppxProvisionedPackage -Path C:\offline -PackagePath C:\MSIX\MyPackage.msix -LicensePath C:\MSIX\MyLicense.xml
 ```
  
-## <a name="latest-public-version---1201910180"></a>Última versão pública – 1.2019.1018.0
+## <a name="latest-public-version---1201912200"></a>Última versão pública – 1.2019.1220.0
 
 ### <a name="new-features"></a>Novos recursos:
-- Agora a autenticação do Device Guard está disponível. Essa opção de autenticação requer uma conta do Microsoft Azure Active Directory configurada para a Microsoft Store para Empresas. Para obter mais informações, consulte [este artigo](https://docs.microsoft.com/windows/msix/package/signing-package-device-guard-signing).
-- O **Editor de pacote** agora dá suporte à capacidade de selecionar vários itens nos quais uma ação será executada.
-- Agora há suporte para o clique com o botão direito do mouse para editar um pacote MSIX.
-- Melhorias da experiência do usuário para o fluxo de trabalho de empacotamento.
+- O suporte para a conversão de um instalador existente com serviços agora está disponível
+  - Veja todos os serviços detectados e modifique-os na nova [página do Relatório de serviços](https://docs.microsoft.com/windows/msix/packaging-tool/convert-an-installer-with-services)
+- Nova configuração para adicionar integridade de pacote a aplicativos
 
 Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](release-notes/history.md).
 
