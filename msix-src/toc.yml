@@ -35,11 +35,18 @@
             - name: Arquiteturas de pacote do aplicativo
               href: package/device-architecture.md
     - name: Atualizações de pacote do aplicativo
-      href: app-package-updates.md
+      items:
+        - name: Visão geral
+          href: app-package-updates.md
+        - name: 'Atualizar, por meio do seu código, aplicativos publicados na Store'
+          href: store-developer-package-update.md
+        - name: 'Atualizar, por meio do seu código, aplicativos publicados fora da Store'
+          href: non-store-developer_updates.md
+    - name: Suporte para MSIX nas versões 1709 e 1803
+      href: msix-1709-and-1803-support.md
     - name: Suporte ao MSIX no Windows Server 2019
       href: msix-server-2019.md
     - name: Suporte do MSIX no Windows 10 versão 1709 e 1803
-      href: msix-1709-and-1803-support.md
     - name: MSIX Core
       items:
         - name: Visão geral
@@ -144,8 +151,6 @@
               href: desktop/desktop-to-uwp-packaging-dot-net.md
             - name: Otimizar binários com imagens nativas
               href: desktop/desktop-to-uwp-r2r.md
-        - name: Empacotar um aplicativo da área de trabalho manualmente
-          href: desktop/desktop-to-uwp-manual-conversion.md
         - name: Formar pacote de um aplicativo da área de trabalho usando instaladores de terceiros
           href: desktop/desktop-to-uwp-third-party-installer.md
         - name: Nos bastidores do seu aplicativo da área de trabalho empacotado
@@ -158,6 +163,8 @@
       items:
         - name: Visão geral
           href: package/manual-packaging-root.md
+        - name: Gerar um pacote
+          href: desktop/desktop-to-uwp-manual-conversion.md
         - name: Criar um pacote de aplicativo com a ferramenta MakeAppx.exe
           href: package/create-app-package-with-makeappx-tool.md
         - name: Criar um certificado para a assinatura de pacote
@@ -190,6 +197,8 @@
           href: desktop/desktop-to-uwp-debug.md
         - name: Testar para o Windows 10 no modo S
           href: desktop/desktop-to-uwp-test-windows-s.md
+        - name: Detectar a identidade do pacote e o contexto do runtime
+          href: detect-package-identity.md
     - name: Aplicar correções de runtime em um pacote do aplicativo da área de trabalho
       href: psf/package-support-framework.md
     - name: Executar scripts com o Package Support Framework

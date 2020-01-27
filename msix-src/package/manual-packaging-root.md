@@ -1,19 +1,19 @@
 ---
 ms.assetid: ee51eae3-ed55-419e-ad74-6adf1e1fb8b9
-title: Empacotamento manual de app
+title: Empacotamento manual de aplicativo
 description: Esta seção contém ou links para artigos sobre o empacotamento manual de aplicativos do Windows.
 ms.date: 07/30/2019
 ms.topic: article
 keywords: windows 10, uwp, empacotamento
 ms.localizationpriority: medium
-ms.openlocfilehash: b1e367050f0c1b84aafb0ead037120bd24dea448
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 95b84bb77a99a5bec8138eed8267aebf7d5c377c
+ms.sourcegitcommit: 97166b4a273cea789aedcfbb3cba4ce074958ed8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689985"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723333"
 ---
-# <a name="manual-app-packaging"></a>Empacotamento manual de app
+# <a name="manual-app-packaging"></a>Empacotamento manual de aplicativo
 
 Se você quiser criar e assinar um pacote de aplicativo do Windows, mas não usou o Visual Studio para desenvolver seu aplicativo, você precisará usar as ferramentas de empacotamento manual do aplicativo.
 
@@ -26,7 +26,8 @@ Esta seção contém ou links para artigos sobre o empacotamento manual de aplic
 
 | Tópico | Descrição |
 |-------|-------------|
-| [Criar um pacote de aplicativo com a ferramenta MakeAppx. exe](create-app-package-with-makeappx-tool.md) | A MakeAppx.exe cria, criptografa, descriptografa e extrai arquivos de pacotes e lotes de aplicativos. |
+| [Gerando artefatos de pacote](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-manual-conversion) | Criar um manifesto de pacote e adicionar ativos não folheados baseados em destino (opcional) |
+| [Criar um pacote de aplicativo com a ferramenta MakeAppx. exe](create-app-package-with-makeappx-tool.md) | MakeAppx.exe cria, criptografa, descriptografa e extrai arquivos de pacotes e lotes de apps. |
 | [Empacotar um aplicativo de área de trabalho manualmente](../desktop/desktop-to-uwp-manual-conversion.md) | Saiba como usar o **MakeApp. exe** para empacotar um aplicativo de área de trabalho. |
 | [Criar um certificado para assinatura de pacote](create-certificate-package-signing.md) | Criar e exportar um certificado para a assinatura de pacote de apps com as ferramentas do PowerShell. |
 | [Assinar um pacote de aplicativo usando SignTool](sign-app-package-using-signtool.md) | Use SignTool para assinar um pacote de aplicativos com um certificado manualmente. |

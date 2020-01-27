@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a687e94182c2516040d0e061ed26e35b1b937a9
-ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
-ms.translationtype: MT
+ms.openlocfilehash: 7f84ce726518eee6e916ad7e7c73e236451a4fcd
+ms.sourcegitcommit: 97166b4a273cea789aedcfbb3cba4ce074958ed8
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75303311"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723343"
 ---
 # <a name="run-debug-and-test-a-packaged-desktop-application"></a>Executar, depurar e testar um aplicativo de área de trabalho empacotado
 
@@ -27,9 +27,9 @@ Você pode executar seu aplicativo para testá-lo localmente sem ter que obter u
 
 Defina o projeto de empacotamento como o projeto de inicialização e, em seguida, pressione CTRL+F5 para iniciar seu aplicativo.
 
-### <a name="you-created-the-package-manually-or-by-using-the-desktop-app-converter"></a>Você criou o pacote manualmente ou usando o Desktop App Converter
+### <a name="you-created-the-package-using-a-different-tool"></a>Você criou o pacote usando uma ferramenta diferente
 
-Abra um aviso de comando do Windows PowerShell e, na subpasta **PackageFiles** da sua pasta de saída, execute este cmdlet:
+Abra um prompt de comando do Windows PowerShell e, no diretório raiz de seus arquivos de pacote, execute este cmdlet:
 
 ```
 Add-AppxPackage –Register AppxManifest.xml
@@ -45,9 +45,9 @@ Para iniciar seu aplicativo, encontre-o no menu Iniciar do Windows.
 
 A forma como você depura o aplicativo depende de qual ferramenta você usou para criar o pacote.
 
-Se você criou seu pacote usando o [novo projeto de empacotamento](desktop-to-uwp-packaging-dot-net.md#new-packaging-project) disponível na versão 15.4 do Visual Studio 2017, defina o projeto de empacotamento como o projeto de inicialização e, em seguida, pressione F5 para depurar seu aplicativo.
+Se você criou seu pacote usando o [novo projeto de empacotamento](desktop-to-uwp-packaging-dot-net.md#new-packaging-project) disponível no Visual Studio 2017 versão 15,4 e posterior (incluindo o Visual Studio 2019), basta definir o projeto de empacotamento como o projeto de inicialização e, em seguida, pressionar F5 para depurar seu aplicativo.
 
-Se você criou seu pacote usando qualquer outra ferramenta, siga estas etapas.
+Se você criou seu pacote usando qualquer outra ferramenta, siga estas etapas:
 
 1. Certifique-se de iniciar o aplicativo empacotado pelo menos uma vez para que ele seja instalado no computador local.
 
@@ -75,24 +75,23 @@ O [PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.8
 
 ## <a name="test-your-app"></a>Testar o app
 
-Para testar seu aplicativo em uma configuração realista enquanto você se prepara para a distribuição, é melhor assinar seu aplicativo e instalá-lo.
+Para implantar o aplicativo empacotado para testes de produção de ponta a ponta ao se preparar para a distribuição, você precisa assinar seu pacote com um certificado confiável no computador em que você está implantando o aplicativo.
 
 ### <a name="test-an-application-that-you-packaged-by-using-visual-studio"></a>Testar um aplicativo que você empacotau usando o Visual Studio
 
-O Visual Studio assina seu aplicativo usando um certificado de teste. Você encontrará esse certificado na pasta de saída gerada pelo assistente **Criar pacotes de aplicativo**. O arquivo de certificado tem a extensão *. cer* e você precisará instalar esse certificado no repositório de **autoridades de certificação raiz confiáveis** no computador no qual você deseja testar seu aplicativo. Consulte [Fazer o sideload do pacote](../package/packaging-uwp-apps.md#sideload-your-app-package).
+O Visual Studio assina seu aplicativo usando um certificado de teste. Você encontrará esse certificado na pasta de saída gerada pelo assistente **Criar pacotes de aplicativo**. O arquivo de certificado tem a extensão *. cer* e você precisará instalar esse certificado no repositório de certificados de **pessoas confiáveis** no computador no qual você deseja testar seu aplicativo. Consulte [Fazer o sideload do pacote](../package/packaging-uwp-apps.md#sideload-your-app-package).
 
-### <a name="test-an-application-that-you-packaged-by-using-the-desktop-app-converter-dac"></a>Testar um aplicativo que você empacota usando o conversor de aplicativo de área de trabalho (DAC)
+### <a name="test-an-application-that-you-packaged-using-a-different-tool"></a>Testar um aplicativo que você empacota usando uma ferramenta diferente
 
-Se você empacotar seu aplicativo usando o conversor de aplicativo de desktop, poderá usar o parâmetro ``sign`` para assinar automaticamente seu aplicativo usando um certificado gerado. Você precisará instalar esse certificado e, em seguida, instalar o aplicativo. Consulte [Executar o aplicativo empacotado](desktop-to-uwp-run-desktop-app-converter.md#run-app).
+Se você empacotar seu aplicativo fora do Visual Studio, poderá assinar seu pacote de aplicativos usando a ferramenta de assinatura. Se o certificado usado para assinatura não for confiável no computador em que você está testando, você precisará instalar o certificado no repositório de certificados de pessoas confiáveis antes de instalar o pacote do aplicativo. 
 
+#### <a name="sign-your-application-package"></a>Assinar seu pacote de aplicativos
 
-### <a name="manually-sign-apps-optional"></a>Assinar aplicativos manualmente (opcional)
-
-Você também pode assinar seu aplicativo manualmente. Veja como
+Para assinar manualmente o pacote de aplicativos:
 
 1. Crie um certificado. Consulte [Criar um certificado](../package/create-certificate-package-signing.md).
 
-2. Instale esse certificado para no repositório de certificados **Trusted Root** ou **Trusted People** em seu sistema.
+2. Instale esse certificado no repositório de certificados de **pessoas confiáveis** no seu sistema.
 
 3. Assine seu aplicativo usando esse certificado, consulte [assinar um pacote de aplicativo usando Signtool](../package/sign-app-package-using-signtool.md).
 
@@ -121,4 +120,4 @@ Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Tem dúvidas? Pergunte-nos sobre o Stack Overflow. Nossa equipe monitora estas [marcas](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Você também pode entrar em contato conosco [aqui](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Tem dúvidas? Pergunte-nos na [comunidade de MSIX Tech](https://techcommunity.microsoft.com/t5/msix/ct-p/MSIX).
