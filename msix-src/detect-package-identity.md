@@ -1,5 +1,5 @@
 ---
-title: Detectar a identidade do pacote e o contexto de tempo de execução
+title: Detectar a identidade do pacote e o contexto do runtime
 description: Descreve como um aplicativo pode determinar se ele foi enviado como um pacote MSIX no Win 1709 ou posterior.
 author: Huios
 ms.date: 01/23/2020
@@ -14,7 +14,7 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76726586"
 ---
-# <a name="detect-package-identity-and-runtime-context"></a>Detectar a identidade do pacote e o contexto de tempo de execução
+# <a name="detect-package-identity-and-runtime-context"></a>Detectar a identidade do pacote e o contexto do runtime
 
 Você pode ter algumas versões do seu aplicativo que não foram distribuídas em um pacote MSIX. Em tempo de execução, seu aplicativo pode detectar se ele foi implantado como um pacote MSIX usando a API do Gerenciador de pacotes do Windows ou seu próprio instalador personalizado. Talvez você queira alterar o comportamento do aplicativo, como configurações de atualização, ou talvez queira aproveitar a funcionalidade disponível somente para pacotes MSIX.
 

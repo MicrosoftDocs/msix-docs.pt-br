@@ -1,5 +1,5 @@
 ---
-title: Atualizar aplicativos publicados no repositório a partir do seu código
+title: Atualizar, por meio do seu código, aplicativos publicados na Store
 description: Descreve como os pacotes do MSIX podem ser atualizados por desenvolvedores no código.
 author: Huios
 ms.date: 01/24/2020
@@ -14,7 +14,7 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76726626"
 ---
-# <a name="update-store-published-apps-from-your-code"></a>Atualizar aplicativos publicados no repositório a partir do seu código
+# <a name="update-store-published-apps-from-your-code"></a>Atualizar, por meio do seu código, aplicativos publicados na Store
 
 A partir do Windows 10, versão 1607 (Build 14393), o Windows 10 permite que os desenvolvedores tomem garantias mais fortes em relação às atualizações de aplicativos da loja. Fazer isso requer algumas APIs simples, cria uma experiência de usuário consistente e previsível e permite que os desenvolvedores se concentrem no que fazem melhor, ao mesmo tempo em que permitem que o Windows faça o trabalho pesado.
 
@@ -131,7 +131,7 @@ Para aproveitar ao máximo as atualizações obrigatórias, você precisará faz
 
 Em seguida, você precisará criar uma caixa de diálogo personalizada no aplicativo para informar ao usuário que há uma atualização obrigatória e que ela deve instalá-la para continuar o uso completo do aplicativo. Se o usuário recusar a atualização, o aplicativo poderá degradar a funcionalidade (por exemplo, impedir o acesso online) ou terminar completamente (por exemplo, jogos somente online).
 
-### <a name="partner-center"></a>Partner Center
+### <a name="partner-center"></a>Centro de Parceiros
 
 Para garantir que o [StorePackageUpdate](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StorePackageUpdate) mostra true para uma atualização obrigatória, você precisará marcar a atualização como obrigatória no Partner Center na página **pacotes** .
 

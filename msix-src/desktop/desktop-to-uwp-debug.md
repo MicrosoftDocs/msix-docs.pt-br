@@ -73,7 +73,7 @@ Você pode usar o [o plmdebug](https://msdn.microsoft.com/library/windows/hardwa
 
 O [PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx) está incluso no SDK do Windows.
 
-## <a name="test-your-app"></a>Testar o app
+## <a name="test-your-app"></a>Teste seu aplicativo
 
 Para implantar o aplicativo empacotado para testes de produção de ponta a ponta ao se preparar para a distribuição, você precisa assinar seu pacote com um certificado confiável no computador em que você está implantando o aplicativo.
 
@@ -109,7 +109,7 @@ Antes de publicar seu aplicativo, certifique-se de que ele funcionará corretame
 
 Consulte [testar seu aplicativo do Windows para Windows 10 S](desktop-to-uwp-test-windows-s.md).
 
-### <a name="run-another-process-inside-the-full-trust-container"></a>Executar outro processo dentro do recipiente de confiança total
+### <a name="run-another-process-inside-the-full-trust-container"></a>Executar outro processo dentro do contêiner de confiança total
 
 Você pode chamar processos personalizados dentro do contêiner de um pacote do aplicativo especificado. Isso pode ser útil para testar os cenários (por exemplo, se você tiver um utilitário de teste personalizado e deseja testar a saída do aplicativo). Para fazer isso, use o cmdlet do PowerShell ```Invoke-CommandInDesktopPackage```:
 
@@ -118,6 +118,6 @@ Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [
     <string>]  [<CommonParameters>]
 ```
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 Tem dúvidas? Pergunte-nos na [comunidade de MSIX Tech](https://techcommunity.microsoft.com/t5/msix/ct-p/MSIX).
