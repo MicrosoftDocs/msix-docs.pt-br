@@ -1,5 +1,5 @@
 ---
-title: Atualizar aplicativos publicados não armazenados do seu código
+title: Atualizar, por meio do seu código, aplicativos publicados fora da Store
 description: Descreve como os pacotes MSIX enviados fora da loja podem ser atualizados por desenvolvedores em código.
 author: Huios
 ms.date: 01/24/2020
@@ -14,7 +14,7 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76726606"
 ---
-# <a name="update-non-store-published-apps-from-your-code"></a>Atualizar aplicativos publicados não armazenados do seu código
+# <a name="update-non-store-published-apps-from-your-code"></a>Atualizar, por meio do seu código, aplicativos publicados fora da Store
 
 Ao enviar seu aplicativo como um MSIX, você pode iniciar de forma programática uma atualização do seu aplicativo. Se você implantar seu aplicativo fora da loja, tudo o que você precisa fazer é verificar o servidor em busca de uma nova versão do seu aplicativo e instalar a nova versão. Você pode atualizar para uma nova versão tirando proveito do método [PackageManager. UpdatePackageAsync](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.updatepackageasync) . Isso requer que seu aplicativo declare o recurso de `packageManagement`.
 

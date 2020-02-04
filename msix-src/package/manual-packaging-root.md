@@ -27,12 +27,12 @@ Esta seção contém ou links para artigos sobre o empacotamento manual de aplic
 | Tópico | Descrição |
 |-------|-------------|
 | [Gerando artefatos de pacote](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-manual-conversion) | Criar um manifesto de pacote e adicionar ativos não folheados baseados em destino (opcional) |
-| [Criar um pacote de aplicativo com a ferramenta MakeAppx. exe](create-app-package-with-makeappx-tool.md) | MakeAppx.exe cria, criptografa, descriptografa e extrai arquivos de pacotes e lotes de apps. |
+| [Criar um pacote de aplicativo com a ferramenta MakeAppx. exe](create-app-package-with-makeappx-tool.md) | A MakeAppx.exe cria, criptografa, descriptografa e extrai arquivos de pacotes e lotes de aplicativos. |
 | [Empacotar um aplicativo de área de trabalho manualmente](../desktop/desktop-to-uwp-manual-conversion.md) | Saiba como usar o **MakeApp. exe** para empacotar um aplicativo de área de trabalho. |
 | [Criar um certificado para assinatura de pacote](create-certificate-package-signing.md) | Criar e exportar um certificado para a assinatura de pacote de apps com as ferramentas do PowerShell. |
 | [Assinar um pacote de aplicativo usando SignTool](sign-app-package-using-signtool.md) | Use SignTool para assinar um pacote de aplicativos com um certificado manualmente. |
 
-### <a name="advanced-topics"></a>Tópicos avançados
+### <a name="advanced-topics"></a>Tópicos Avançados
 
 Esta seção contém tópicos mais avançados para inserir componentes em um aplicativo grande e/ou complexo para um empacotamento e a instalação mais eficientes. 
 
