@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: 564492c8eb590680725d4a894126e8f825bf761b
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 484f2ba6df7044b628154fd73990089652cede20
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328707"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072546"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>Assinar um pacote do aplicativo usando a SignTool
 
@@ -22,7 +22,7 @@ ms.locfileid: "73328707"
 
 Para obter mais informações sobre assinatura de código e certificados em geral, consulte [Introdução à Assinatura de Código](https://docs.microsoft.com/windows/desktop/SecCrypto/cryptography-tools).
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 
 - **Um aplicativo empacotado**  
     Para saber mais sobre como criar manualmente um pacote de aplicativos, consulte [Criar um pacote do aplicativo com a ferramenta MakeAppx.exe](create-app-package-with-makeappx-tool.md).
@@ -32,8 +32,8 @@ Para obter mais informações sobre assinatura de código e certificados em gera
 
 - **SignTool. exe**  
     Dependendo do seu caminho de instalação do SDK, a **SignTool** é instalada no computador Windows 10 nos seguintes locais:
-    - x86: C:\Arquivos de Programas (x86)\Windows Kits\10\bin\x86\SignTool.exe
-    - x64: C:\Arquivos de Programas (x86)\Windows Kits\10\bin\x64\SignTool.exe
+    - x86: C:\Arquivos de programas (x86) \Windows Kits\10\bin\\&lt;SDK versão&gt;\x86\SignTool.exe
+    - x64: C:\Arquivos de programas (x86) \Windows Kits\10\bin\\&lt;SDK versão&gt;\x64\SignTool.exe
 
 ## <a name="using-signtool"></a>Usando o SignTool
 
@@ -109,34 +109,3 @@ SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 Observe que alguns certificados não usam uma senha. Se o certificado não tiver uma senha, omita "/p &lt;Sua Senha&gt;" dos comandos de amostra.
 
 Depois que o pacote de aplicativos é assinado com um certificado válido, você está pronto para carregar o pacote para a Loja. Para obter mais orientações sobre como carregar e enviar aplicativos para a Loja, consulte [Envios de aplicativos](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
-
-## <a name="common-errors-and-troubleshooting"></a>Erros comuns e solução de problemas
-Os tipos mais comuns de erros ao usar o **SignTool** são internos e normalmente se parecem com isso:
-
-```syntax
-SignTool Error: An unexpected internal error has occurred.
-Error information: "Error: SignerSign() failed." (-2147024885 / 0x8007000B) 
-```
-
-Se o código de erro começa com 0x8008, como 0x80080206 (APPX_E_CORRUPT_CONTENT), o pacote que está sendo assinado não é válido. Se você receber esse tipo de erro, você deve recriar o pacote e executar o **SignTool** novamente.
-
-O **SignTool** tem uma opção de depuração disponível para mostrar erros de certificado e filtragem. Para usar o recurso de depuração, coloque a opção `/debug` diretamente após `sign`, seguida pelo comando **SignTool** completo.
-
-```syntax
-SignTool sign /debug [options]
-``` 
-
-Um erro mais comum é o 0x8007000B. Para esse tipo de erro, você pode encontrar mais informações no log de eventos.
- 
-Para obter mais informações no log de eventos:
-- Execute Eventvwr.msc
-- Abra o log de eventos: Visualizador de Eventos (Local) -> Aplicativos e Logs de Serviços -> Microsoft -> Windows -> AppxPackagingOM -> Microsoft-Windows-AppxPackaging/Operational
-- Localize o evento de erro mais recente
-
-O erro interno 0x8007000B geralmente corresponde a um destes valores:
-
-| **ID do evento** | **Exemplo de cadeia de caracteres de evento** | **Sugerir** |
-|--------------|--------------------------|----------------|
-| 150          | Erro 0x8007000B: O nome do editor de manifesto de aplicativo (CN = Contoso) deve coincidir com o nome do requerente do certificado de autenticação (CN = Contoso, C = US). | O nome do editor de manifesto de aplicativo deve corresponder exatamente ao nome do assunto após a assinatura.               |
-| 151          | Erro 0x8007000B: O método de hash de assinatura especificado (SHA512) deve coincidir com o método de hash usado no mapa de blocos do pacote de aplicativos (SHA256).     | O hashAlgorithm especificado no parâmetro /fd está incorreto. Execute o **SignTool** usando o hashAlgorithm que corresponda ao mapa de blocos do pacote de aplicativos (usado para criar o pacote de aplicativos)  |
-| 152          | Erro 0x8007000B: O conteúdo do pacote de aplicativos deve ser validado em relação ao mapa de blocos.                                                           | O pacote de aplicativos está corrompido e precisa ser recompilado para gerar um novo mapa de blocos. Para saber mais sobre como criar um pacote de aplicativos, consulte [Criar um pacote de aplicativos com a ferramenta MakeAppx.exe](create-app-package-with-makeappx-tool.md). |

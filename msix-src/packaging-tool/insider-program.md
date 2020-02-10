@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5f354ac1ffa74c0fc17bda210b0abb12fd736528
-ms.sourcegitcommit: 0bd5ebc32feba8a4f4669f232129a8953d5cf773
+ms.openlocfilehash: a373ecc4801402ba72ba64e51ab4e6dfffb02499
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76021990"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072676"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -19,7 +19,7 @@ O Programa Insider da Ferramenta de Empacotamento MSIX fornece acesso antecipado
 
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://aka.ms/MSIXPackagingPreviewProgram" data-linktype="external">Clique aqui para ingressar</a></p></div>
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 
 - Windows 10, versão 1809 (ou posterior).
 - Um alias válido da conta Microsoft para acessar o aplicativo na Microsoft Store.
@@ -29,14 +29,16 @@ O Programa Insider da Ferramenta de Empacotamento MSIX fornece acesso antecipado
 
 Depois de ingressar no programa, você receberá um email confirmando sua inscrição. 
 
-Instale a Ferramenta de Empacotamento MSIX por meio da Microsoft Store [aqui](https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf). Verifique se você está conectado com a conta Microsoft que você usou para se inscrever no Programa Insider da Ferramenta de Empacotamento MSIX. Em seguida, acesse a página de descrição do produto e clique em **Instalar** para iniciar a instalação.
+Instale a Ferramenta de Empacotamento MSIX por meio da Microsoft Store [aqui](https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf). Verifique se você está conectado com a conta Microsoft que você usou para se inscrever no Programa Insider da Ferramenta de Empacotamento MSIX. Em seguida, acesse a página de descrição do produto e clique em **Instalar** para iniciar a instalação. As compilações internas não estão disponíveis para distribuição offline.
 
 Se a ferramenta já estiver instalada no computador, verifique a versão instalada. Execute a Ferramenta de Empacotamento MSIX, clique no ícone de engrenagem no canto superior direito e, em seguida, clique na guia **Sobre** para ver a versão. A versão do aplicativo deve corresponder ao build atual do Insider Preview da seção [abaixo](#current-insider-preview-build).
 
 ## <a name="current-insider-preview-build"></a>Build atual do Insider Preview
 
-## <a name="version-1201912200"></a>1\.2019.1220.0 da versão
-- A ferramenta de empacotamento MSIX acabou de lançar a versão pública do aplicativo. As versões de visualização retornarão em breve.
+## <a name="version-120202030"></a>1\.2020.203.0 da versão
+
+-A configuração de integridade do pacote está ativada por padrão
+- Capacidade de exportar seus arquivos de registro (. reg)
 
 Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](release-notes/history.md).
 
@@ -48,7 +50,7 @@ Compartilhe também os comentários diretamente no aplicativo. Clique em Configu
 
 O **Hub de Feedback** também é uma ótima maneira de compartilhar ideias e sugestões de novos recursos que você deseja ver no aplicativo.  
 
-## <a name="faqs"></a>Perguntas Frequentes
+## <a name="faqs"></a>Perguntas frequentes
 
 1. Não recebi nenhum email confirmando minha inscrição no Programa Insider. 
     - [Ingresse no programa](https://aka.ms/MSIXPackagingPreviewProgram) novamente.  

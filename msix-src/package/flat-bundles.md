@@ -1,20 +1,20 @@
 ---
-title: Pacotes do lote simples de aplicativo
+title: Pacotes de aplicativo do pacote simples
 description: Descreve como criar um lote simples de pacote para empacotar seus arquivos de pacote .appx com referências aos pacotes de aplicativos.
-ms.date: 07/02/2019
+ms.date: 02/05/2020
 author: dianmsft
 ms.author: diahar
 ms.topic: article
 keywords: Windows 10, msix, empacotamento, configuração de pacote, pacote simples
 ms.localizationpriority: medium
-ms.openlocfilehash: a1e06484476c82a856da6ad4713ef6bdcac0e051
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 3647723a4d193b95d5dab2e9ec15ebaf9e93b0eb
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68690015"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77073096"
 ---
-# <a name="flat-bundle-app-packages"></a>Pacotes do lote simples de aplicativo 
+# <a name="flat-bundle-app-packages"></a>Pacotes de aplicativo do pacote simples 
 
 > [!IMPORTANT]
 > Se você pretender enviar seu aplicativo para a Store, precisará entrar em contato com [Suporte ao desenvolvedor Windows](https://developer.microsoft.com/windows/support) para obter aprovação para usar lotes simples.
@@ -32,7 +32,7 @@ Um lote simples pode ser criado usando a ferramenta MakeAppx.exe ou usando o lay
 
 ### <a name="using-makeappxexe"></a>Usando a MakeAppx.exe
 
-Para criar um pacote simples usando MakeAppx. exe, use o comando "pacote de MakeAppx. exe" como de costume, mas com a opção/FB para gerar o arquivo de pacote de aplicativo simples (que será extremamente pequeno, já que ele faz referência apenas aos arquivos de pacote do aplicativo e não contém nenhuma carga real ). 
+Para criar um pacote simples usando MakeAppx. exe, use o comando "pacote de MakeAppx. exe" como de costume, mas com a opção/FB para gerar o arquivo de pacote de aplicativo simples (que será extremamente pequeno, já que ele faz referência apenas aos arquivos de pacote do aplicativo e não contém nenhuma carga real). 
 
 Eis um exemplo da sintaxe do comando:
 
@@ -54,6 +54,6 @@ Depois que os pacotes são assinados, você pode instalar o aplicativo por meio 
 * Clique duas vezes no arquivo de pacote de aplicativo para instalar com o instalador do aplicativo.
 * Use o [cmdlet Add-AppxPackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) no PowerShell e aponte para o arquivo de pacote de aplicativo (supondo que os pacotes de aplicativo sejam onde o pacote de aplicativo espera que sejam). 
 
-Você não pode implantar os pacotes. Appx/. msix individuais de um pacote simples por si só. Eles devem ser implantados por meio de. appxbundle/. msixbundle. No entanto, você pode atualizar pacotes. Appx/. msix individuais de um pacote simples após a instalação inicial. 
+Você não pode implantar os pacotes. Appx/. msix individuais de um pacote simples por si só. Eles devem ser implantados por meio de. appxbundle/. msixbundle. No entanto, você pode atualizar pacotes. Appx/. msix individuais de um pacote simples após a instalação inicial. Se você atualizar o pacote. Appx/. msix individual, também será necessário atualizar o manifesto do pacote simples.
 
 Por exemplo, se seu pacote simples v1 é composto de um. msixbundle, um x86. msix, um x64. msix e um Asset. msix, e você sabe que o seu pacote V2 tem apenas alterações no pacote de ativos, você só precisa criar o. msixbundle e o Asset. msix para poder instalar o th atualização e. Você deve compilar o. msixbundle para v2 porque o pacote mantém o controle de todas as versões de seus pacotes. msix. Ao aumentar a versão do Asset. msix para a v2, você precisa de um New. msixbundle que tenha essa nova referência. O v2. msixbundle pode conter referências para o v1 x86. msix e x64. msix; os pacotes. msix de um pacote simples não precisam ter o mesmo número de versão.  

@@ -7,18 +7,18 @@ author: dianmsft
 ms.author: diahar
 keywords: Windows 10, msix, UWP, instalador de aplicativos, AppInstaller, Sideload, conjunto relacionado, pacotes opcionais
 ms.localizationpriority: medium
-ms.openlocfilehash: 35ecf422e3a5b6db8b95d17011b46c09cbdb0218
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 17c225c13f026f2707c392ccaf4d77655faaeebb
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328783"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072536"
 ---
 # <a name="optional-packages-with-executable-code"></a>Pacotes opcionais com código executável
  
-Os pacotes opcionais com código executável são úteis para dividir um aplicativo grande ou complexo, ou para adicionar em um aplicativo já publicado. Com o Visual Studio 2017, versão 15.7 e .NET Native 2.1, você pode carregar o código executável dos pacotes opcionais C++ e C#.
+[Pacotes opcionais](optional-packages.md) com código executável são úteis para dividir um aplicativo grande ou complexo, ou para adicionar em um aplicativo que já foi publicado. Com o Visual Studio 2017, versão 15.7 e .NET Native 2.1, você pode carregar o código executável dos pacotes opcionais C++ e C#.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 
 - Visual Studio 2019 ou Visual Studio 2017 (versão 15,7 ou posterior)
 - Windows 10, versão 1709 ou posterior

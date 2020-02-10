@@ -5,12 +5,12 @@ ms.date: 07/02/2019
 ms.topic: article
 keywords: Windows 10, msix, empacotamento, layout de pacote, pacote de ativos
 ms.localizationpriority: medium
-ms.openlocfilehash: 90cfd4f477333210f4347e029c239c4e173f26ee
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 0571f61579f95dbe3465f106b4d8860be636dea8
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328831"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072796"
 ---
 # <a name="introduction-to-asset-packages"></a>Introdução aos pacotes de ativo
 
@@ -47,7 +47,7 @@ A maneira mais fácil para criar pacotes de ativo é usando o layout de empacota
 "Video.mp4"         "Video.mp4"
 ```
 
-Use um desses comandos para criar o pacote de ativos usando MakeAppx. exe (para AppX e MSIX).
+Use um desses comandos para criar o pacote de ativos usando MakeAppx. exe (para MSIX e. AppX).
 
 ```cmd
 MakeAppx.exe pack /r /m AppxManifest.xml /f MappingFile.txt /p Videos.appx

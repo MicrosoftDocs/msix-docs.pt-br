@@ -5,12 +5,12 @@ ms.date: 07/02/2019
 ms.topic: article
 keywords: Windows 10, msix, UWP, desktop, pacote
 ms.localizationpriority: medium
-ms.openlocfilehash: 14edefeffa26749f504a629919386a9e5cc0639d
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: eb21995fc382aa45d51caa5fed47d71bc6ae0c50
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328884"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072916"
 ---
 # <a name="app-package-formats"></a>Formatos de pacote do aplicativo
 
@@ -57,6 +57,9 @@ Os aplicativos não podem carregar o código a partir das extensões. Se você p
 Os serviços de aplicativos do Windows permitem a comunicação entre aplicativos, permitindo que seu aplicativo forneça serviços para outro aplicativo. Os serviços de aplicativo permitem que você crie serviços sem interface do usuário que os aplicativos podem chamar no mesmo dispositivo e, a partir do Windows 10, versão 1607, nos dispositivos remotos. Consulte [Criar e consumir um serviço de aplicativo](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) para obter mais detalhes.
 
 Os serviços de aplicativo são análogos aos serviços Web em um dispositivo. Um serviço de aplicativo é executado como uma tarefa em segundo plano no aplicativo host e pode fornecer seu serviço a outros aplicativos. Por exemplo, um serviço de aplicativo pode fornecer um serviço de scanner de código de barras que outros aplicativos podem usar. Ou talvez um conjunto de aplicativos Enterprise tenha um serviço de verificação ortográfica que está disponível para os outros aplicativos no pacote.
+
+## <a name="modification-packages"></a>Pacotes de modificação 
+Os pacotes de modificação permitem que os profissionais de ti personalizem os aplicativos sem precisar reempacotar. No Windows 10 versão 1809, apresentamos um novo tipo de pacote MSIX chamado de *pacote de modificação*. Os pacotes de modificação também podem ser plug-ins/complementos que podem não ter um ponto de ativação. Os profissionais de ti podem usar esse recurso para alterar de maneira flexível os contêineres de MSIX para que os aplicativos sejam sobrepostos pelas personalizações da sua empresa. 
 
 ## <a name="see-also"></a>Consulte também
 

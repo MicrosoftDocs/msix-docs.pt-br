@@ -6,86 +6,86 @@ ms.topic: article
 keywords: MSIX, MPT, Ferramenta de Empacotamento MSIX, IP remoto
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fa508c3e5729cc9910bb4e54398a45c1660e108e
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 14b33ecb6f204b496065723e160f7a475b4eeb8a
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328423"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77073462"
 ---
-# <a name="setup-instructions-for-remote-machine-conversions"></a>Instruções de instalação para conversões de computador remoto 
+# <a name="setup-instructions-for-remote-machine-conversions"></a>Instruções de instalação para conversões de computador remoto
 
-A capacidade de se conectar a um computador remoto para executar a conversão agora está disponível. Há algumas etapas que você precisará seguir antes de começar a usar as conversões remotas.  
+Conectar-se a um computador remoto é uma opção para garantir que você esteja seguindo a recomendação de [práticas recomendadas](prepare-your-environment.md)para seu ambiente de conversão, pois pode ser um ambiente mais limpo do que o computador local. Há algumas etapas que você precisará seguir antes de começar a usar as conversões remotas.  
 
-A comunicação remota do PowerShell precisa ser habilitada no computador remoto para acesso seguro. Você também precisa ter uma conta do administrador no computador remoto.  Caso deseje se conectar usando um endereço IP, siga as instruções para se conectar a um computador remoto não ingressado no domínio. 
+A comunicação remota do PowerShell precisa ser habilitada no computador remoto para acesso seguro. Você também deve ter uma conta de administrador para seu computador remoto.  Caso deseje se conectar usando um endereço IP, siga as instruções para se conectar a um computador remoto não ingressado no domínio.
 
-## <a name="connecting-to-a-remote-machine-in-a-trusted-domain"></a>Como se conectar a um computador remoto em um domínio confiável 
+## <a name="connecting-to-a-remote-machine-in-a-trusted-domain"></a>Como se conectar a um computador remoto em um domínio confiável
 
-Para habilitar a comunicação remota do PowerShell, execute o seguinte no computador remoto em uma janela **admin** do PowerShell: 
+Para habilitar a comunicação remota do PowerShell, execute o seguinte no computador remoto de uma janela do PowerShell como **administrador**: 
 
 ``` PowerShell
-Enable-PSRemoting -Force -SkipNetworkProfileCheck 
+Enable-PSRemoting -Force -SkipNetworkProfileCheck
 ```
 
-Entre no computador ingressado no domínio usando uma conta de domínio e não uma conta local ou você precisará seguir as instruções de configuração para um computador não ingressado no domínio. 
+Entre no computador ingressado no domínio usando uma conta de domínio e não uma conta local ou você precisará seguir as instruções de configuração para um computador não ingressado no domínio.
 
-### <a name="port-configuration"></a>Configuração de porta 
+### <a name="port-configuration"></a>Configuração de porta
 
 Se o computador remoto fizer parte de um grupo de segurança (como o Azure), você precisará configurar as regras de segurança de rede para acessar o servidor da Ferramenta de Empacotamento MSIX.  
 
-#### <a name="azure"></a>Azure 
+#### <a name="azure"></a>Azure
 
-1. No portal do Azure, acesse **Rede** > **Adicionar porta de entrada** 
+1. No portal do Azure, acesse **Rede** > **Adicionar porta de entrada**
 2. Clique em **Básico**
 3. O campo de serviço deve permanecer definido como **Personalizado**
-4. Defina o número da porta como **1599** (valor da porta padrão da Ferramenta de Empacotamento MSIX – isso pode ser alterado nas Configurações da ferramenta) e dê um nome à regra (por exemplo, AllowMPTServerInBound) 
+4. Defina o número da porta como **1599** (valor da porta padrão da Ferramenta de Empacotamento MSIX – isso pode ser alterado nas Configurações da ferramenta) e dê um nome à regra (por exemplo, AllowMPTServerInBound)
 
-#### <a name="other-infrastructure"></a>Outras infraestruturas 
+#### <a name="other-infrastructure"></a>Outras infraestruturas
 
-Verifique se a configuração de porta do servidor está alinhada com o valor de porta da Ferramenta de Empacotamento MSIX (o valor padrão da porta da Ferramenta de Empacotamento MSIX é 1599 – isso pode ser alterado nas Configurações da ferramenta) 
+Verifique se a configuração de porta do servidor está alinhada com o valor de porta da Ferramenta de Empacotamento MSIX (o valor padrão da porta da Ferramenta de Empacotamento MSIX é 1599 – isso pode ser alterado nas Configurações da ferramenta)
 
-## <a name="connecting-to-a-non-domain-joined-remote-machineincludes-ip-addresses"></a>Como se conectar a um computador remoto não ingressado no domínio (inclui os endereços IP) 
+## <a name="connecting-to-a-non-domain-joined-remote-machineincludes-ip-addresses"></a>Como se conectar a um computador remoto não ingressado no domínio (inclui os endereços IP)
 
-Para um computador não ingressado no domínio, é necessário configurar um certificado para se conectar via HTTPS. 
+Para um computador não ingressado no domínio, é necessário configurar um certificado para se conectar via HTTPS.
 
-1. Habilite a comunicação remota do PowerShell e as regras de firewall apropriadas executando o seguinte no computador remoto em uma janela **admin** do PowerShell: 
+1. Habilite a comunicação remota do PowerShell e as regras de firewall apropriadas executando o seguinte no computador remoto em uma janela do PowerShell como **administrador**:
 
 ``` PowerShell
 Enable-PSRemoting -Force -SkipNetworkProfileCheck  
 
-New-NetFirewallRule -Name "Allow WinRM HTTPS" -DisplayName "WinRM HTTPS" -Enabled  True -Profile Any -Action Allow -Direction Inbound -LocalPort 5986 -Protocol TCP 
+New-NetFirewallRule -Name "Allow WinRM HTTPS" -DisplayName "WinRM HTTPS" -Enabled  True -Profile Any -Action Allow -Direction Inbound -LocalPort 5986 -Protocol TCP
 ```
  
-2. Gerar um certificado autoassinado, definir a configuração HTTPS do WinRM e exportar o certificado 
+2. Gerar um certificado autoassinado, definir a configuração HTTPS do WinRM e exportar o certificado
 
 ``` PowerShell
-$thumbprint = (New-SelfSignedCertificate -DnsName $env:COMPUTERNAME -CertStoreLocation Cert:\LocalMachine\My -KeyExportPolicy NonExportable).Thumbprint 
+$thumbprint = (New-SelfSignedCertificate -DnsName $env:COMPUTERNAME -CertStoreLocation Cert:\LocalMachine\My -KeyExportPolicy NonExportable).Thumbprint
 
-$command = "winrm create winrm/config/Listener?Address=*+Transport=HTTPS @{Hostname=""$env:computername"";CertificateThumbprint=""$thumbprint""}" 
+$command = "winrm create winrm/config/Listener?Address=*+Transport=HTTPS @{Hostname=""$env:computername"";CertificateThumbprint=""$thumbprint""}"
 
-cmd.exe /C $command 
+cmd.exe /C $command
 
-Export-Certificate -Cert Cert:\LocalMachine\My\$thumbprint -FilePath <path_to_cer_file> 
+Export-Certificate -Cert Cert:\LocalMachine\My\$thumbprint -FilePath <path_to_cer_file>
 ```
 
-3. No computador local, copie o certificado exportado e instale-o no repositório de raiz confiável 
+3. No computador local, copie o certificado exportado e instale-o no repositório de raiz confiável
 
 ``` PowerShell
-Import-Certificate -FilePath <path> -CertStoreLocation Cert:\LocalMachine\Root 
-``` 
+Import-Certificate -FilePath <path> -CertStoreLocation Cert:\LocalMachine\Root
+```
 
 ### <a name="port-configuration"></a>Configuração de porta 
 
 Se o computador remoto fizer parte de um grupo de segurança (como o Azure), você precisará configurar as regras de segurança de rede para acessar o servidor da Ferramenta de Empacotamento MSIX.  
 
-#### <a name="azure"></a>Azure 
+#### <a name="azure"></a>Azure
 
-Siga as instruções para [adicionar uma porta personalizada](#azure) à Ferramenta de Empacotamento MSIX, bem como adicionar uma regra de segurança de rede ao HTTPS do WinRM 
+Siga as instruções para [adicionar uma porta personalizada](#azure) à Ferramenta de Empacotamento MSIX, bem como adicionar uma regra de segurança de rede ao HTTPS do WinRM
 
-1. No portal do Azure, acesse **Rede** > **Adicionar porta de entrada** 
-2. Clique em **Básico** 
+1. No portal do Azure, acesse **Rede** > **Adicionar porta de entrada**
+2. Clique em **Básico**
 3. Defina o campo Serviço como **WinRM**
 
 #### <a name="other-infrastructure"></a>Outras infraestruturas 
 
-Verifique se a configuração de porta do servidor está alinhada com o valor de porta da Ferramenta de Empacotamento MSIX (o valor padrão da porta da Ferramenta de Empacotamento MSIX é 1599 – isso pode ser alterado nas Configurações da ferramenta) 
+Verifique se a configuração de porta do servidor está alinhada com o valor de porta da Ferramenta de Empacotamento MSIX (o valor padrão da porta da Ferramenta de Empacotamento MSIX é 1599 – isso pode ser alterado nas Configurações da ferramenta)

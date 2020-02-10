@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: b8dfc909cd962e23970397bf673f9a3041cbcb4f
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: d7eaa493577c4a83739829c1bee51acbb41640a8
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328745"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072926"
 ---
 # <a name="bundle-msix-packages"></a>Agrupar pacotes de MSIX
 
@@ -19,9 +19,9 @@ Este artigo descreve o processo de criação de um pacote depois de converter as
 
 Ao agrupar várias versões de arquitetura do instalador em uma só entidade, apenas o pacote precisa ser carregado na Store ou em outro local de distribuição. A plataforma de implantação do Windows 10 reconhece o tipo de pacote .msixbundle e só baixará os arquivos aplicáveis à arquitetura do dispositivo. Tenha em mente que, se você decidir distribuir um .msixbundle para determinado aplicativo, não será possível reverter para a distribuição de apenas um pacote MSIX. 
 
-A seção a seguir apresenta uma abordagem passo a passo para a criação de um .msixbundle. Ela pressupõe que você já tenha [convertido as versões x86 e x64 existentes](https://docs.microsoft.com/windows/msix/mpt-best-practices) do instalador do Windows em pacotes MSIX. 
+A seção a seguir apresenta uma abordagem passo a passo para a criação de um .msixbundle. Ela pressupõe que você já tenha [convertido as versões x86 e x64 existentes](https://docs.microsoft.com/windows/msix/tool-best-practices) do instalador do Windows em pacotes MSIX. 
 
-### <a name="setup"></a>Configuração
+### <a name="setup"></a>Instalação
 
 Você precisará da seguinte configuração para compilar com êxito um pacote MSIX:
 
