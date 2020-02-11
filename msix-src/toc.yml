@@ -4,16 +4,30 @@
       href: index.yml
     - name: O que é MSIX?
       href: overview.md
+    - name: Plataformas compatíveis
+      href: supported-platforms.md
+    - name: Contêiner do MSIX
+      href: msix-container.md
+    - name: Noções básicas sobre como os pacotes MSIX são executados no Windows
+      href: desktop/desktop-to-uwp-behind-the-scenes.md
+    - name: Assinatura do pacote MSIX
+      items:
+        - name: Visão geral
+          href: package/signing-package-overview.md
+        - name: Assinar um pacote do aplicativo usando a SignTool
+          href: package/sign-app-package-using-signtool.md
+        - name: Assinar um pacote do MSIX com a autenticação do Device Guard
+          href: package/signing-package-device-guard-signing.md
+        - name: Problemas conhecidos e soluções de problemas
+          href: package/signing-known-issues.md
     - name: Formatos de pacote do aplicativo
       items:
         - name: Visão geral
           href: package/app-package-formats.md
+        - name: Arquiteturas de pacote do aplicativo
+          href: package/device-architecture.md
         - name: Pacotes opcionais
-          items:
-            - name: Visão geral
-              href: package/optional-packages.md
-            - name: Pacotes opcionais com código executável
-              href: package/optional-packages-with-executable-code.md
+          href: package/optional-packages.md
         - name: Instalação de streaming de aplicativo
           items:
             - name: Visão geral
@@ -24,95 +38,28 @@
           href: package/flat-bundles.md
         - name: Pacotes de ativos
           href: package/asset-packages.md
+        - name: Pacotes de recursos
+          href: package/resource-package.md
         - name: Pacotes de modificação
-          items:
-            - name: Visão geral
-              href: modification-packages.md
-            - name: Pacotes de modificação no Windows 10 versão 1809
-              href: modification-package-1809-update.md
-            - name: Pacotes de modificação no Windows 10 versão 1903
-              href: modification-package-1903.md
-            - name: Arquiteturas de pacote do aplicativo
-              href: package/device-architecture.md
-    - name: Atualizações de pacote do aplicativo
+          href: modification-packages.md
+    - name: Referência de API e esquema
       items:
-        - name: Visão geral
-          href: app-package-updates.md
-        - name: 'Atualizar, por meio do seu código, aplicativos publicados na Store'
-          href: store-developer-package-update.md
-        - name: 'Atualizar, por meio do seu código, aplicativos publicados fora da Store'
-          href: non-store-developer_updates.md
-    - name: Suporte para MSIX nas versões 1709 e 1803
-      href: msix-1709-and-1803-support.md
-    - name: Suporte ao MSIX no Windows Server 2019
-      href: msix-server-2019.md
-    - name: Suporte do MSIX no Windows 10 versão 1709 e 1803
-    - name: MSIX Core
-      items:
-        - name: Visão geral
-          href: msix-core/msixcore.md
-        - name: Atualizar o pacote MSIX para oferecer suporte ao MSIX Core
-          href: msix-core/support-msix-core.md
-        - name: Implantar um pacote MSIX com o MSIX Core
-          href: msix-core/deploy-with-msix-core.md
-        - name: Criar um pacote MSIX com o MSIX Core com base no código-fonte
-          href: msix-core/msixcore-clickonce-solution.md
-        - name: Solução de problemas
-          href: msix-core/msixcore-troubleshoot.md
-    - name: Aplicativos de política de grupo e do MSIX empacotados
-      href: group-policy-msix.md
-- name: Ferramentas
-  items:
-    - name: Ferramenta de Empacotamento MSIX
-      items:
-        - name: Visão geral
-          href: packaging-tool/mpt-overview.md
-        - name: Modificar um pacote usando o editor de pacote
-          href: packaging-tool/package-editor.md
-        - name: Editar ícones e ativos
-          href: packaging-tool/edit-icons-and-assets.md
-        - name: Suporte ao pacote do MSIX no Windows 10 versão 1709 e posterior
-          href: packaging-tool/Support-on-1709-and-later.md
-        - name: Práticas recomendadas da Ferramenta de Empacotamento MSIX
-          href: packaging-tool/mpt-best-practices.md
-        - name: Usar a criação rápida do Hyper-V para empacotar
-          href: packaging-tool/Quick-Create-VM.md
-        - name: Converter um instalador que inclui os serviços
-          href: packaging-tool/convert-an-installer-with-services.md
-        - name: Problemas conhecidos e soluções de problemas
-          href: packaging-tool/mpt-known-issues.md
-        - name: Duplicar configurações da Ferramenta de Empacotamento MSIX entre vários dispositivos
-          href: packaging-tool/duplicate-mpt-settings-across-devices.md
-        - name: Programa Insider da Ferramenta de Empacotamento MSIX
-          items:
-            - name: Visão geral
-              href: packaging-tool/insider-program.md
-            - name: Notas de versão
-              href: packaging-tool/release-notes/history.md
-    - name: PSF (estrutura de suporte do pacote)
-      items:
-        - name: Visão geral
-          href: psf/package-support-framework-overview.md
-    - name: Instalador de Aplicativo
-      items:
-        - name: Visão geral
-          href: app-installer/app-installer-root.md
-        - name: Visão geral do arquivo do Instalador de Aplicativo
-          href: app-installer/app-installer-file-overview.md
-        - name: Problemas conhecidos
-          items:
-            - name: Solucionar problemas de instalação com o arquivo do Instalador de Aplicativo
-              href: app-installer/troubleshoot-appinstaller-issues.md
-            - name: Problemas de API
-              href: app-installer/app-installer-api-issues.md
-        - name: Pacotes opcionais e conjuntos relacionados
-          href: app-installer/install-related-set.md
-        - name: Documentação relacionada
-          href: app-installer/app-installer-documentation.md
+        - name: API do Gerenciador de Pacotes
+          href: 'https://docs.microsoft.com/uwp/api/windows.management.deployment?context=/windows/msix/render'
+        - name: APIs de empacotamento
+          href: 'https://docs.microsoft.com/windows/desktop/appxpkg/interfaces?context=/windows/msix/render'
+        - name: Esquema do manifesto do aplicativo
+          href: 'https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest?context=/windows/msix/render'
+        - name: Esquema do arquivo do Instalador de Aplicativo
+          href: 'https://docs.microsoft.com/uwp/schemas/appinstallerschema/app-installer-file?context=/windows/msix/render'
+    - name: Recursos do MSIX
+      href: resources.md
     - name: SDK do MSIX
       items:
         - name: Visão geral
           href: msix-sdk/sdk-overview.md
+        - name: Como criar um pacote MSIX no Linux
+          href: msix-sdk/msix-linux.md
         - name: Usar o SDK do MSIX para distribuir um pacote MSIX
           href: msix-sdk/sdk-guidance.md
         - name: Notas de versão
@@ -125,129 +72,235 @@
               href: msix-sdk/release-notes/sdk-release-notes-1.6.md
             - name: MSIX SDK versão 1.7
               href: msix-sdk/release-notes/sdk-release-notes-1.7.md
-- name: Pacote
+- name: Criar um pacote MSIX com base em um instalador existente
   items:
-    - name: Aplicativos da área de trabalho do pacote
+    - name: Visão geral
+      href: packaging-tool/create-an-msix-overview.md
+    - name: Conheça o instalador
+      href: packaging-tool/know-your-installer.md
+    - name: Parceiros de MSIX
       items:
         - name: Visão geral
-          href: desktop/desktop-to-uwp-root.md
-        - name: Preparar-se para empacotar um aplicativo da área de trabalho
-          href: desktop/desktop-to-uwp-prepare.md
-        - name: Empacotar um aplicativo da área de trabalho de um instalador existente
-          items:
-            - name: 'Criar um pacote do MSIX de um MSI, EXE ou App-V em uma VM'
-              href: packaging-tool/create-app-package-MSI-VM.md
-            - name: Criar um pacote do MSIX com outros tipos de instalador
-              href: packaging-tool/create-other-installer.md
-            - name: Criar um pacote do MSIX usando a Linha de Comando
-              href: packaging-tool/package-conversion-cli.md
-            - name: Criar um pacote do MSIX em um computador remoto
-              href: packaging-tool/remote-conversion-setup.md
-            - name: Empacotar com o Desktop App Converter
-              href: desktop/desktop-to-uwp-run-desktop-app-converter.md
-        - name: Empacotar um aplicativo da área de trabalho no código-fonte usando o Visual Studio
-          items:
-            - name: Visão geral
-              href: desktop/desktop-to-uwp-packaging-dot-net.md
-            - name: Otimizar binários com imagens nativas
-              href: desktop/desktop-to-uwp-r2r.md
+          href: partners.md
         - name: Formar pacote de um aplicativo da área de trabalho usando instaladores de terceiros
           href: desktop/desktop-to-uwp-third-party-installer.md
-        - name: Nos bastidores do seu aplicativo da área de trabalho empacotado
+    - name: Configurar seu ambiente
+      items:
+        - name: Preparar o ambiente para a conversão
+          href: packaging-tool/prepare-your-environment.md
+        - name: Ambiente de empacotamento MSIX na Criação Rápida do Hyper-V
+          href: packaging-tool/Quick-Create-VM.md
+        - name: Configurar instruções para conversões de computador da área de trabalho remota
+          href: packaging-tool/remote-conversion-setup.md
+        - name: Usar a Ferramenta de Empacotamento MSIX em um ambiente desconectado
+          href: packaging-tool/disconnected-environment.md
+    - name: Configurar a Ferramenta de Empacotamento MSIX
+      items:
+        - name: Visão geral da Ferramenta de Empacotamento de MSIX
+          href: packaging-tool/tool-overview.md
+        - name: Melhores práticas da Ferramenta de Empacotamento MSIX
+          href: packaging-tool/tool-best-practices.md
+        - name: Problemas conhecidos e dicas de solução de problemas para a Ferramenta de Empacotamento MSIX
+          href: packaging-tool/tool-known-issues.md
+        - name: Duplicar as configurações da Ferramenta de Empacotamento MSIX entre dispositivos
+          href: packaging-tool/duplicate-tool-settings-across-devices.md
+        - name: Gerar um arquivo de modelo de conversão
+          href: packaging-tool/generate-template-file.md
+        - name: Programa Insider da Ferramenta de Empacotamento MSIX
+          href: packaging-tool/insider-program.md
+        - name: Notas sobre a versão da Ferramenta de Empacotamento MSIX
+          href: packaging-tool/release-notes/history.md
+    - name: Usar a Ferramenta de Empacotamento MSIX
+      items:
+        - name: Criar um pacote MSIX de qualquer instalador de área de trabalho
+          href: packaging-tool/create-app-package.md
+        - name: Conversão com a linha de comando
+          href: packaging-tool/package-conversion-command-line.md
+        - name: Converter um instalador que inclui os serviços
+          href: packaging-tool/convert-an-installer-with-services.md
+        - name: Editar um pacote usando o Editor de Pacotes
+          href: packaging-tool/package-editor.md
+        - name: Editar ícones e ativos usando a Ferramenta de Empacotamento MSIX
+          href: packaging-tool/edit-icons-and-assets.md
+    - name: Tarefas para depois de criar um pacote MSIX
+      items:
+        - name: PSF (estrutura de suporte do pacote)
+          items:
+            - name: Visão geral
+              href: psf/package-support-framework-overview.md
+            - name: Aplicar correções de runtime em um pacote do aplicativo da área de trabalho
+              href: psf/package-support-framework.md
+            - name: Executar scripts com o Package Support Framework
+              href: psf/run-scripts-with-package-support-framework.md
+        - name: Agrupar pacotes MSIX
+          href: packaging-tool/bundle-msix-packages.md
+    - name: MSIX Toolkit
+      items:
+        - name: Visão geral
+          href: toolkit/msix-toolkit-overview.md
+        - name: Modificar script do editor de pacote
+          href: toolkit/msix-toolkit-modifypackagepublisher.md
+        - name: Scripts de conversão em lote
+          href: toolkit/msix-toolkit-msixbatchconversion.md
+        - name: Ferramenta Criador de Arquivos do AppInstaller
+          href: toolkit/msix-toolkit-appinstallerfilebuilder.md
+- name: Criar um pacote MSIX usando o código-fonte
+  items:
+    - name: Visão geral
+      href: desktop/source-code-overview.md
+    - name: Principais conceitos a serem conhecidos antes do empacotamento
+      items:
+        - name: Visão geral
+          href: desktop/before-packaging-overview.md
+        - name: Preparar-se para empacotar um aplicativo da área de trabalho
+          href: desktop/desktop-to-uwp-prepare.md
+        - name: Noções básicas sobre como os aplicativos da área de trabalho empacotados são executados no Windows
           href: desktop/desktop-to-uwp-behind-the-scenes.md
-        - name: Problemas conhecidos
-          href: desktop/desktop-to-uwp-known-issues.md
-    - name: Empacotar um aplicativo MSIX com o Visual Studio
-      href: package/packaging-uwp-apps.md
-    - name: Empacotamento manual de aplicativo
+        - name: Agrupar pacotes MSIX
+          href: package/bundling-overview.md
+    - name: Empacotar no Visual Studio
+      items:
+        - name: Visão geral
+          href: desktop/vs-package-overview.md
+        - name: Configurar o aplicativo da área de trabalho para empacotamento no Visual Studio
+          href: desktop/desktop-to-uwp-packaging-dot-net.md
+        - name: Empacotar um aplicativo UWP ou da área de trabalho no Visual Studio
+          href: package/packaging-uwp-apps.md
+        - name: Otimizar binários com imagens nativas
+          href: desktop/desktop-to-uwp-r2r.md
+    - name: Pipelines de CI/CD para builds do MSIX
+      href: desktop/azure-dev-ops.md
+    - name: Empacotar da linha de comando
       items:
         - name: Visão geral
           href: package/manual-packaging-root.md
-        - name: Gerar um pacote
+        - name: Gerar artefatos de pacote
           href: desktop/desktop-to-uwp-manual-conversion.md
-        - name: Criar um pacote de aplicativo com a ferramenta MakeAppx.exe
+        - name: Criar um pacote MSIX com a ferramenta MakeAppx.exe
           href: package/create-app-package-with-makeappx-tool.md
         - name: Criar um certificado para a assinatura de pacote
           href: package/create-certificate-package-signing.md
-        - name: Desenvolvendo com os pacotes de ativo e dobramento de pacote
-          href: package/package-folding.md
+        - name: Assinar um pacote MSIX usando o SignTool
+          href: package/sign-app-package-using-signtool.md
         - name: Criação do pacote com o layout de empacotamento
           href: package/packaging-layout.md
-    - name: Agrupar pacotes de MSIX
-      href: packaging-tool/bundle-msix-packages.md
-    - name: Assinar um pacote do aplicativo
+        - name: Desenvolvendo com os pacotes de ativo e dobramento de pacote
+          href: package/package-folding.md
+    - name: Estenda seu aplicativo
       items:
         - name: Visão geral
-          href: package/signing-package-overview.md
-        - name: Assinar um pacote do aplicativo usando a SignTool
-          href: package/sign-app-package-using-signtool.md
-        - name: Assinar um pacote do MSIX com a autenticação do Device Guard
-          href: package/signing-package-device-guard-signing.md
-- name: Validar
+          href: desktop/extend-overview.md
+        - name: Extensões de aplicativos
+          href: 'https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-an-extension?context=/windows/msix/render'
+        - name: Propriedades personalizadas para extensões de aplicativo
+          href: desktop/custom-props-app-extensions.md
+        - name: Pacotes opcionais
+          href: package/optional-packages-with-executable-code.md
+        - name: Criar um aplicativo com um pacote de modificação
+          href: package/modification-package-developers.md
+- name: Gerenciar a implantação do MSIX
   items:
-    - name: Kit de certificação de aplicativos do Windows
-      href: 'https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit?context=/windows/msix/render'
-    - name: Portal de dispositivos do Windows
-      href: 'https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal?context=/windows/msix/render'
-    - name: Liberação de versões de pré-lançamento do pacote
-      href: 'https://docs.microsoft.com/windows/uwp/publish/package-flights?context=/windows/msix/render'
-    - name: Depurar e testar um aplicativo da área de trabalho empacotado
+    - name: Visão geral
+      href: desktop/managing-your-msix-deployment-overview.md
+    - name: Planejar a implantação
+      href: desktop/Managing-your-MSIX-deployment-targetdevices.md
+    - name: Instalar o MSIX com o Instalador de Aplicativo
+      href: app-installer/app-installer-root.md
+    - name: Distribuir o MSIX em um ambiente corporativo
       items:
         - name: Visão geral
-          href: desktop/desktop-to-uwp-debug.md
-        - name: Testar para o Windows 10 no modo S
-          href: desktop/desktop-to-uwp-test-windows-s.md
-        - name: Detectar a identidade do pacote e o contexto do runtime
-          href: detect-package-identity.md
-    - name: Aplicar correções de runtime em um pacote do aplicativo da área de trabalho
-      href: psf/package-support-framework.md
-    - name: Executar scripts com o Package Support Framework
-      href: psf/run-scripts-with-package-support-framework.md
-- name: Distribuir
-  items:
-    - name: Publicar na Microsoft Store
-      href: 'https://docs.microsoft.com/windows/uwp/publish/?context=/windows/msix/render'
-    - name: Publicar na Microsoft Store para Empresas
-      href: 'https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises?context=/windows/msix/render'
-    - name: Distribuir aplicativos fora da Microsoft Store (Instalador de Aplicativo)
+          href: desktop/managing-your-msix-deployment-enterprise.md
+        - name: Console de administração do Gerenciador de Ponto de Extremidade da Microsoft
+          href: desktop/managing-your-msix-deployment-mem-adminconsole.md
+        - name: Microsoft Endpoint Configuration Manager
+          href: desktop/managing-your-msix-deployment-configmgr.md
+        - name: Microsoft Intune
+          href: desktop/managing-your-msix-deployment-intune.md
+        - name: Cmdlets do PowerShell do MSIX
+          href: desktop/powershell-msix-cmdlets.md
+        - name: Usar a Política de Grupo
+          href: group-policy-msix.md
+        - name: Implantar aplicativos pré-instalados
+          href: desktop/deploy-preinstalled-apps.md
+        - name: Instalar o aplicativo para todos os usuários
+          href: desktop/managing-your-msix-deployment-dism-provisioning.md
+        - name: Instalar versões anteriores de um pacote do aplicativo MSIX
+          href: desktop/managing-your-msix-deployment-downgrading.md
+    - name: Implantar o MSIX com um arquivo do Instalador de Aplicativo
       items:
-        - name: Distribuir um aplicativo do Windows 10 pela Web usando o Instalador de Aplicativo
-          items:
-            - name: Visão geral
-              href: app-installer/installing-windows10-apps-web.md
-            - name: Distribuir um aplicativo do Windows 10 por um aplicativo Web do Azure
-              href: app-installer/web-install-azure.md
-            - name: Distribuir um aplicativo do Windows 10 por um servidor de IIS
-              href: app-installer/web-install-IIS.md
-            - name: Distribuir um aplicativo do Windows 10 por um serviço Web AWS
-              href: app-installer/web-install-aws.md
+        - name: Visão geral do arquivo do Instalador de Aplicativo
+          href: app-installer/app-installer-file-overview.md
         - name: Criar um arquivo do Instalador de Aplicativo no Visual Studio
           href: app-installer/create-appinstallerfile-vs.md
         - name: Criar manualmente um arquivo do Instalador de Aplicativo
           href: app-installer/how-to-create-appinstaller-file.md
-        - name: Definir configurações de atualização no arquivo do Instalador de Aplicativo
+        - name: Definir as configurações de atualização
           href: app-installer/update-settings.md
-- name: assinaturas
+        - name: APIs do arquivo do Instalador de Aplicativo
+          href: app-installer/app-installer-documentation.md
+        - name: Problemas conhecidos
+          items:
+            - name: Solucionar problemas de instalação com o arquivo do Instalador de Aplicativo
+              href: app-installer/troubleshoot-appinstaller-issues.md
+            - name: Problemas de API
+              href: app-installer/app-installer-api-issues.md
+    - name: Distribuir o MSIX por meio da Web com o Instalador de Aplicativo
+      items:
+        - name: Visão geral
+          href: app-installer/installing-windows10-apps-web.md
+        - name: Distribuir um aplicativo do Windows 10 por um aplicativo Web do Azure
+          href: app-installer/web-install-azure.md
+        - name: Distribuir um aplicativo do Windows 10 por um servidor de IIS
+          href: app-installer/web-install-IIS.md
+        - name: Distribuir um aplicativo do Windows 10 por um serviço Web AWS
+          href: app-installer/web-install-aws.md
+    - name: Distribuir o MSIX em um ambiente do consumidor
+      items:
+        - name: Visão geral
+          href: desktop/managing-your-msix-deployment-retail.md
+        - name: Microsoft Store
+          href: 'https://docs.microsoft.com/windows/uwp/publish/?context=/windows/msix/render'
+    - name: Atualizações de pacote MSIX
+      items:
+        - name: Visão geral
+          href: app-package-updates.md
+        - name: Atualizações diferenciais para pacotes do aplicativo MSIX
+          href: desktop/managing-your-msix-deployment-update.md
+        - name: 'Atualizar, por meio do seu código, aplicativos publicados na Store'
+          href: store-developer-package-update.md
+        - name: 'Atualizar, por meio do seu código, aplicativos publicados fora da Store'
+          href: non-store-developer-updates.md
+    - name: Implantar o MSIX Core para Windows 10 1703 e anterior
+      items:
+        - name: Visão geral
+          href: msix-core/msixcore.md
+        - name: Atualizar o pacote MSIX para oferecer suporte ao MSIX Core
+          href: msix-core/support-msix-core.md
+        - name: Implantar um pacote MSIX com o MSIX Core
+          href: msix-core/deploy-with-msix-core.md
+        - name: Criar um pacote MSIX com o MSIX Core com base no código-fonte
+          href: msix-core/msixcore-clickonce-solution.md
+        - name: Solução de problemas
+          href: msix-core/msixcore-troubleshoot.md
+    - name: Validação e solução de problemas da implantação
+      href: desktop\managing-your-msix-deployment-troubleshooting.md
+- name: Validação e solução de problemas do MSIX
   items:
-    - name: Solucionar problemas de contêiner MSIX
+    - name: Suporte ao MSIX no Windows Server 2019
+      href: msix-server-2019.md
+    - name: Portal de dispositivos do Windows
+      href: 'https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal?context=/windows/msix/render'
+    - name: Solucionar problemas de runtime em um contêiner do MSIX
       href: manage/troubleshoot-msix-container.md
-    - name: Gerenciamento de serviços de geração de imagens de implantação
-      href: 'https://docs.microsoft.com/windows-hardware/manufacture/desktop/what-is-dism?context=/windows/msix/render'
-    - name: Usando o Windows PowerShell
-      href: 'https://docs.microsoft.com/powershell/module/appx/?view=win10-ps?context=/windows/msix/render'
-- name: Referência de API e esquema
-  items:
-    - name: API do Gerenciador de Pacotes
-      href: 'https://docs.microsoft.com/uwp/api/windows.management.deployment?context=/windows/msix/render'
-    - name: APIs de empacotamento
-      href: 'https://docs.microsoft.com/windows/desktop/appxpkg/interfaces?context=/windows/msix/render'
-    - name: Esquema do manifesto do aplicativo
-      href: 'https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest?context=/windows/msix/render'
-    - name: Esquema do arquivo do Instalador de Aplicativo
-      href: 'https://docs.microsoft.com/uwp/schemas/appinstallerschema/app-installer-file?context=/windows/msix/render'
-- name: Recursos
-  items:
-    - name: Parceiros de MSIX
-      href: partners.md
-    - name: Vídeos de MSIX
-      href: team-video.md
+    - name: Depurar e testar um aplicativo empacotado
+      items:
+        - name: 'Executar, depurar e testar um aplicativo da área de trabalho empacotado'
+          href: desktop/desktop-to-uwp-debug.md
+        - name: Detectar a identidade do pacote e o contexto do runtime
+          href: detect-package-identity.md
+        - name: Registrar um layout de pacote de um compartilhamento de rede
+          href: desktop/register-from-network.md
+        - name: Testar no Windows 10 S
+          href: desktop/desktop-to-uwp-test-windows-s.md
+        - name: Problemas conhecidos ao empacotar um MSIX
+          href: desktop/desktop-to-uwp-known-issues.md
