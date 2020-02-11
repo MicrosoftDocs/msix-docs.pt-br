@@ -8,20 +8,22 @@ author: dianmsft
 ms.author: diahar
 keywords: Windows 10, msix, UWP, pacotes opcionais, conjunto relacionado, extensão do pacote, Visual Studio
 ms.localizationpriority: medium
-ms.openlocfilehash: 34922f5067d7e1c934b85745f7dc947149f024e2
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 2e314c9c64588fdfd95ba7775fd40ca0bd2f0088
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328761"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072906"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>Criação de pacotes opcionais e conjunto relacionado
 
 Os pacotes opcionais contêm conteúdo que pode ser integrado com um pacote principal. Estes são úteis para o conteúdo para download (DLC), dividindo um aplicativo grande para restrições de tamanho ou para enviar qualquer conteúdo adicional para separado do seu aplicativo original.
 
-Conjuntos relacionados são uma extensão de pacotes opcionais - eles permitem que você imponha um conjunto rigoroso de versões em pacotes principais e opcionais. Eles também permitem carregar código nativo (C ++) de pacotes opcionais. 
+Conjuntos relacionados são uma extensão de pacotes opcionais - eles permitem que você imponha um conjunto rigoroso de versões em pacotes principais e opcionais. Eles também permitem carregar código nativo (C ++) de pacotes opcionais. Os conjuntos relacionados podem ter editores diferentes do aplicativo principal se ele for implantado fora do repositório.
 
-## <a name="prerequisites"></a>Pré-requisitos
+Pacotes opcionais e conjuntos relacionados todos são executados dentro do contêiner MSIX do aplicativo principal.
+
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 
 - Visual Studio 2019 ou Visual Studio 2017 (versão 15,1 ou posterior)
 - Windows 10, versão 1703 ou posterior
@@ -32,7 +34,7 @@ Para obter todas as ferramentas de desenvolvimento mais recentes, consulte [Down
 > [!NOTE]
 > Para enviar um aplicativo que usa pacotes opcionais e/ou conjuntos relacionados para o Microsoft Store, você precisará de permissão. Os pacotes opcionais e os conjuntos relacionados podem ser usados para LOB (linha de negócios) ou aplicativos empresariais sem a permissão do Partner Center se não forem enviados para a loja. Consulte [Suporte do desenvolvedor Windows](https://developer.microsoft.com/windows/support) para obter permissão para enviar um aplicativo que usa pacotes opcionais e conjuntos relacionados.
 
-## <a name="code-sample"></a>Exemplo de código
+## <a name="code-sample"></a>Exemplos de código
 
 Enquanto você está lendo este artigo, recomenda-se que você acompanhe o [exemplo de código do pacote opcional](https://github.com/AppInstaller/OptionalPackageSample) no GitHub para obter um conhecimento prático de como os pacotes opcionais e conjuntos relacionados funcionam no Visual Studio.
 
@@ -81,6 +83,28 @@ Se você quiser carregar o código do pacote opcional no pacote principal, você
 Quando sua solução for configurada dessa maneira, o Visual Studio criará um manifesto de pacote para o pacote principal com todos os metadados necessários para conjuntos relacionados. 
 
 Observe que, assim como os pacotes opcionais, um arquivo `Bundle.Mapping.txt` para conjuntos relacionados só funcionará no Windows 10, versão 1703 ou superior. Além disso, a versão mínima da plataforma de destino do seu aplicativo deve ser definida como 10.0.15063.0 ou superior.
+
+## <a name="removing-optional-packages"></a>Removendo pacotes opcionais 
+Os usuários podem acessar seu aplicativo de **configurações** e remover os pacotes opcionais. Da mesma forma, os desenvolvedores podem usar o [RemoveOptionalPackageAsync](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.PackageCatalog) para remover uma lista de pacotes opcionais. 
+
+```
+ 
+    PackageCatalog catalog = PackageCatalog.OpenForCurrentPackage();
+    List<string> optionalList = new List<string>();
+    optionalList.Add("FabrikamAgeAnalysis_kwpnjs8c36mz0");
+    
+     //Warn user that application will be restarted. 
+    var result = await catalog.RemoveOptionalPackagesAsync(optionalList);
+    if(result.ExtendedError != null)
+    {
+        throw removalResult.ExtendedError;
+    }
+    
+```
+> [!NOTE]
+> No caso de um conjunto relacionado, a plataforma precisará reiniciar o aplicativo principal para finalizar a remoção para evitar situações em que o aplicativo tem conteúdo carregado do pacote que está sendo removido. Os aplicativos devem notificar os usuários de que o aplicativo precisará ser reiniciado antes que o aplicativo chame a API.
+
+Se o pacote opcional for somente conteúdo, o desenvolvedor deverá informar explicitamente à plataforma que o pacote que está prestes a remover não está em uso pelo aplicativo antes que o desenvolvedor remova o pacote opcional. Isso também permite que o desenvolvedor remova o pacote sem uma reinicialização.
 
 ## Problemas conhecidos<a name="known_issues"></a>
 
