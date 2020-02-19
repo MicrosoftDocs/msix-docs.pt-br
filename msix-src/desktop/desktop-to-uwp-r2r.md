@@ -1,102 +1,102 @@
 ---
-Description: Este guia explica como configurar sua solução do Visual Studio para otimizar os binários de aplicativo com imagens nativas.
-title: Otimize seus aplicativos de área de trabalho .NET com imagens nativas
+Description: Este guia explica como configurar a solução do Visual Studio para otimizar os binários do aplicativo com imagens nativas.
+title: Otimize os aplicativos de área de trabalho .NET com imagens nativas
 ms.date: 07/29/2019
 ms.topic: article
-keywords: Windows 10, UWP, msix, compilador de imagem nativa
+keywords: windows 10, uwp, msix, compilador de imagem nativa
 ms.localizationpriority: medium
-ms.openlocfilehash: 1327a48d40576dc47eebd8c0bad6fc075dea23d4
-ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
-ms.translationtype: MT
+ms.openlocfilehash: ebc2c7351fef0856d83529e55ba4ebf012aaaeed
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72776518"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77073086"
 ---
-# <a name="optimize-your-net-desktop-apps-with-native-images"></a>Otimize seus aplicativos de área de trabalho .NET com imagens nativas
+# <a name="optimize-your-net-desktop-apps-with-native-images"></a>Otimize os aplicativos de área de trabalho .NET com imagens nativas
 
-Você pode melhorar o tempo de inicialização do seu aplicativo .NET Framework compilando previamente seus binários. Você pode usar essa tecnologia em aplicativos grandes que você empacota e distribui por meio do Microsoft Store. Em alguns casos, observamos uma melhoria de desempenho de 20%. Você pode aprender mais sobre essa tecnologia na [visão geral técnica](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md).
+Você pode melhorar o tempo de inicialização do aplicativo .NET Framework compilando previamente os binários. Você pode usar essa tecnologia em aplicativos grandes, empacotando-os e distribuindo-os pela Microsoft Store. Em alguns casos, observamos uma melhoria de desempenho de 20%. Você pode saber mais sobre essa tecnologia na [visão geral técnica](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md).
 
-Lançamos o compilador de imagem nativa como um [pacote NuGet](https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler). Você pode aplicar esse pacote a qualquer aplicativo .NET Framework que tenha como destino a .NET Framework versão 4.6.2 ou posterior. Esse pacote adiciona uma etapa de Build de postagem que inclui uma carga nativa a todos os binários usados pelo seu aplicativo. Essa carga otimizada será carregada quando o aplicativo for executado no .NET 4.7.2 e versões anteriores ainda carregará o código MSIL.
+Lançamos o compilador de imagem nativa como um [pacote NuGet](https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler). Você pode aplicar esse pacote a qualquer aplicativo .NET Framework que tenha como destino o .NET Framework versão 4.6.2 ou posterior. Esse pacote adiciona uma etapa pós-build que inclui uma carga nativa a todos os binários usados pelo aplicativo. Essa carga otimizada será carregada quando o aplicativo for executado no .NET 4.7.2 ou posterior; versões anteriores ainda carregarão o código MSIL.
 
-O [4.7.2 do .NET Framework](https://blogs.msdn.microsoft.com/dotnet/2018/04/30/announcing-the-net-framework-4-7-2/) está incluído na [atualização do Windows 10 de abril de 2018](https://blogs.windows.com/windowsexperience/2018/04/30/how-to-get-the-windows-10-april-2018-update/). Você também pode instalar essa versão do .NET Framework em computadores que executam o Windows 7 + e o Windows Server 2008 R2 +.
+O [.NET framework 4.7.2](https://blogs.msdn.microsoft.com/dotnet/2018/04/30/announcing-the-net-framework-4-7-2/) está incluído na [atualização de abril de 2018 do Windows 10](https://blogs.windows.com/windowsexperience/2018/04/30/how-to-get-the-windows-10-april-2018-update/). Você também pode instalar essa versão do .NET Framework em computadores que executam o Windows 7+ e o Windows Server 2008 R2+.
 
 > [!IMPORTANT]
-> Se você quiser produzir imagens nativas para seu aplicativo empacotado pelo projeto de empacotamento de aplicativos do Windows, certifique-se de definir a versão mínima da plataforma de destino do projeto para a atualização de aniversário do Windows.
+> Se você quiser produzir imagens nativas para o aplicativo empacotado pelo Projeto de Empacotamento de Aplicativo do Windows, assegure-se de definir a versão mínima da plataforma de destino do projeto para a Atualização de Aniversário do Windows.
 
 ## <a name="how-to-produce-native-images"></a>Como produzir imagens nativas
 
-Siga estas instruções para configurar seus projetos.
+Siga essas instruções para configurar os projetos.
 
-1. Configurar a estrutura de destino como 4.6.2 ou superior
+1. Configure a estrutura de destino como 4.6.2 ou superior
 
 2. Configurar a plataforma de destino como x86 ou x64 
 
-3. Adicione os pacotes NuGet.
+3. Adicionar os pacotes NuGet.
 
-4. Crie uma compilação de versão.
+4. Crie um build de lançamento.
 
-## <a name="configure-the-target-framework-as-462-or-above"></a>Configurar a estrutura de destino como 4.6.2 ou superior
+## <a name="configure-the-target-framework-as-462-or-above"></a>Configure a estrutura de destino como 4.6.2 ou superior
 
-Para configurar seu projeto para o destino .NET Framework 4.6.2, você precisará das ferramentas de desenvolvimento .NET Framework 4.6.2 ou mais recente. Essas ferramentas estão disponíveis por meio do instalador do Visual Studio como componentes opcionais na carga de trabalho de desenvolvimento de desktops .NET:
+Para configurar o projeto para dar preferência ao .NET Framework 4.6.2, será necessário ter as ferramentas de desenvolvimento do .NET Framework 4.6.2 ou mais recentes. Essas ferramentas estão disponíveis pelo instalador do Visual Studio como componentes opcionais na carga de trabalho de desenvolvimento de área de trabalho .NET:
 
-![Instalar ferramentas de desenvolvimento do .NET 4.6.2](images/install-4.6.2-devpack.png)
+![Instalar ferramentas de desenvolvimento .NET 4.6.2](images/install-4.6.2-devpack.png)
 
-Como alternativa, você pode obter os pacotes de desenvolvedor do .NET de: [https://www.microsoft.com/net/download/visual-studio-sdks](https://www.microsoft.com/net/download/visual-studio-sdks)
+Como alternativa, é possível obter os pacotes de desenvolvedor do .NET em: [https://www.microsoft.com/net/download/visual-studio-sdks](https://www.microsoft.com/net/download/visual-studio-sdks)
 
-## <a name="configure-the-target-platform-as-x86-or-x64"></a>Configurar a plataforma de destino como x86 ou x64
+## <a name="configure-the-target-platform-as-x86-or-x64"></a>Configure a plataforma de destino como x86 ou x64
 
-O compilador de imagem nativa otimiza o código para uma determinada plataforma. Para usá-lo, você precisa configurar seu aplicativo para direcionar uma plataforma específica, como x86 ou x64.
+O compilador de imagem nativa otimiza o código para uma determinada plataforma. Para usá-lo, você precisa configurar o aplicativo para visar uma plataforma específica, como x86 ou x64.
 
 Se você tiver vários projetos em sua solução, somente o projeto de ponto de entrada (provavelmente o projeto que produz um arquivo executável) precisará ser compilado como x86 ou x64. Os binários adicionais referenciados do projeto principal serão processados com a arquitetura especificada no projeto principal, mesmo se eles forem compilados como AnyCPU.
 
 Para configurar seu projeto:
 
-1. Clique com o botão direito do mouse em sua solução e selecione **Configuration Manager**.
+1. Clique com o botão direito do mouse na solução e selecione **Gerenciador de Configurações**.
 
-2. Selecione **< novo.. >** no menu suspenso **plataforma** ao lado do nome do projeto que produz o arquivo executável.
+2. Selecione **<Novo...>** no menu suspenso **Plataforma** ao lado do nome do projeto que produz o arquivo executável.
 
-3. Na caixa de diálogo **nova plataforma de projeto** , verifique se as **configurações de cópia da** lista suspensa estão definidas para **qualquer CPU**.
+3. Na caixa de diálogo **Nova Plataforma de Projeto**, verifique se a lista suspensa **Copiar Configurações de** está definida como **AnyCPU**.
 
-![Configurar x86](images/configure-x86.png)
+![Configure o x86](images/configure-x86.png)
 
-Repita essa etapa para `Release/x64` se você quiser produzir binários x64.
+Repita essa etapa para `Release/x64` se desejar produzir binários x64.
 
 >[!IMPORTANT]
-> O compilador de imagem nativa não dá suporte à configuração AnyCPU.
+> A configuração AnyCPU não é compatível com o compilador de imagem nativa.
 
-## <a name="add-the-nuget-packages"></a>Adicionar os pacotes NuGet
+## <a name="add-the-nuget-packages"></a>Adicione os pacotes NuGet
 
-O compilador de imagem nativa é fornecido como um pacote NuGet que você precisa adicionar ao projeto do Visual Studio que produz o arquivo executável. Normalmente, é o projeto Windows Forms ou WPF. Use este comando do PowerShell para fazer isso.
+O compilador de imagem nativa é fornecido como um pacote NuGet que você precisa adicionar ao projeto do Visual Studio que produz o arquivo executável. Isso normalmente é projeto WPF ou Windows Forms. Use esse comando do PowerShell para fazer isso.
 
 ```PS
 PM> Install-Package Microsoft.DotNet.Framework.NativeImageCompiler -Version 1.0.0
 ```
 
-## <a name="create-a-release-build"></a>Criar uma compilação de versão
+## <a name="create-a-release-build"></a>Crie um build de lançamento
 
-O pacote NuGet configura o projeto para executar uma ferramenta adicional para Builds de versão. Essa ferramenta adiciona o código nativo aos mesmos binários.
-Para verificar se a ferramenta processou os binários, você pode examinar a saída da compilação para ter certeza de que ela inclui uma mensagem como esta:
+O pacote NuGet configura o projeto para executar uma ferramenta adicional nos builds de lançamento. Essa ferramenta adiciona o código nativo aos mesmos binários.
+Para verificar se a ferramenta processou os binários, é possível rever a saída do build para garantir que ele inclua uma mensagem como esta:
 
 ```
 Native image obj\x86\Release\\R2R\DesktopApp1.exe generated successfully.
 ```
 
-A compilação de imagem nativa pode ser disparada em compilações sem lançamento, definindo a propriedade `NgenR2R` como `true` no arquivo de projeto.
+A compilação de imagem nativa pode ser acionada em builds que não sejam de lançamento ao definir a propriedade `NgenR2R` como `true` no arquivo do projeto.
 
 ## <a name="faq"></a>Perguntas frequentes
 
-**P. os novos binários funcionam em computadores sem .NET Framework 4.7.2?**
+**P. Os novos binários funcionam em computadores sem o .NET Framework 4.7.2?**
 
-A. Os binários otimizados se beneficiarão das melhorias ao serem executados com .NET Framework 4.7.2. Os clientes que executam versões anteriores do .NET Framework carregarão o código MSIL não otimizado do binário.
+A. Os binários otimizados vão se beneficiar das melhorias se forem executados com o .NET Framework 4.7.2. Os clientes com versões anteriores do .NET framework vão carregar o código MSIL não otimizado do binário.
 
-**P. como posso fornecer comentários ou relatar problemas?**
+**P. Como posso fornecer comentários ou relatar problemas?**
 
-A. Relate um problema usando a ferramenta de comentários no Visual Studio 2017. [Mais informações](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017).
+A. Informe um problema usando a ferramenta Comentários no Visual Studio 2017. [Mais informações](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017).
 
-**P. qual é o impacto da adição da imagem nativa aos binários existentes?**
+**P. Qual é o impacto de adicionar a imagem nativa aos binários existentes?**
 
-A. Os binários otimizados contêm o código gerenciado e nativo, tornando os arquivos finais maiores.
+A. Os binários otimizados contêm o código nativo e gerenciado, tornando os arquivos finais maiores.
 
-**P. posso liberar binários usando essa tecnologia?**
+**P. Posso lançar binários usando essa tecnologia?**
 
-A. Esta versão inclui uma licença do Go Live que você pode usar atualmente.
+A. Essa versão inclui uma licença do Go Live que você pode usar hoje mesmo.

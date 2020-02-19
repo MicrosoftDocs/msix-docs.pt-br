@@ -1,41 +1,34 @@
 ---
-Description: Mostra como empacotar manualmente um aplicativo de área de trabalho do Windows (Win32, WPF e Windows Forms) para Windows 10.
-title: Empacotar um aplicativo manualmente (ponte de desktop)
+Description: Mostra como empacotar manualmente um aplicativo de área de trabalho do Windows (como Win32, WPF e Windows Forms) para Windows 10.
+title: Empacotar um aplicativo manualmente (Ponte de Desktop)
 ms.date: 07/29/2019
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 04b92d8b8665fb75f2484e5e0e1bebcf01e93d22
-ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
-ms.translationtype: MT
+ms.openlocfilehash: 6799625432b42303b81ddcc7fcaacfb72e36f8fe
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75303307"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072696"
 ---
-# <a name="package-a-desktop-app-manually"></a>Empacotar um aplicativo da área de trabalho manualmente
+# <a name="generating-msix-package-components"></a>Geração de componentes do pacote MSIX
 
-Este artigo mostra como empacotar seu aplicativo sem usar ferramentas como o Visual Studio ou a ferramenta de empacotamento MSIX.
+Este artigo mostra como gerar componentes do pacote MSIX para empacotar o aplicativo usando ferramentas de linha de comando (sem usar o Visual Studio ou a Ferramenta de Empacotamento MSIX).
 
-Para empacotar manualmente seu aplicativo, crie um arquivo de manifesto de pacote e execute a ferramenta de linha de comando **MakeAppx. exe** para gerar um pacote de aplicativo do Windows.
+Para empacotar o aplicativo manualmente, é necessário criar um arquivo de manifesto do pacote, adicionar os componentes do pacote e executar a ferramenta de linha de comando **MakeAppx.exe** para gerar um pacote MSIX.
 
-Considere o empacotamento manual se você instalar seu aplicativo usando o comando xcopy ou se estiver familiarizado com as alterações que o instalador do aplicativo faz no sistema e quiser um controle mais granular sobre o processo.
+## <a name="first-prepare-to-package"></a>Primeiro, prepare para empacotar
 
-Se não tiver certeza sobre quais alterações seu instalador faz no sistema, ou se você preferir usar ferramentas automatizadas para geral seu manifesto do pacote, considere qualquer uma [dessas](desktop-to-uwp-root.md#convert) opções.
+Caso ainda não tenha feito isso, revise esta seção sobre [o que você precisa saber antes de empacotar o aplicativo](../desktop/before-packaging-overview.md).
 
-> [!IMPORTANT]
-> A capacidade de criar um pacote de aplicativo do Windows para seu aplicativo de desktop (também conhecido como ponte de desktop) foi introduzida no Windows 10, versão 1607, e ela só pode ser usada em projetos direcionados à atualização de aniversário do Windows 10 (10,0; Build 14393) ou uma versão posterior no Visual Studio.
+## <a name="create-a-package-manifest"></a>Crie um manifesto do pacote
 
-## <a name="first-prepare-your-application"></a>Primeiro, prepare seu aplicativo
+Crie um arquivo, chame-o de **appxmanifest.xml**, e, em seguida, adicione esse XML a ele.
 
-Examine este guia antes de começar a criar um pacote para seu aplicativo: [Prepare-se para empacotar um aplicativo de área de trabalho](desktop-to-uwp-prepare.md).
-
-## <a name="create-a-package-manifest"></a>Criar um manifesto do pacote
-
-Crie um arquivo, nomeie ele **appxmanifest.xml**, e, em seguida, adicione esse XML a ele.
-
-É um modelo básico que contém os elementos e atributos que seu pacote precisa. Vamos adicionar valores a eles na próxima seção.
+É um modelo básico que contém os elementos e atributos de que seu pacote precisa. Vamos adicionar valores a eles na próxima seção.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -68,13 +61,13 @@ Crie um arquivo, nomeie ele **appxmanifest.xml**, e, em seguida, adicione esse X
   </Package>
 ```
 
-## <a name="fill-in-the-package-level-elements-of-your-file"></a>Preencha os elementos de nível de pacote do seu arquivo
+## <a name="fill-in-the-package-level-elements-of-your-file"></a>Preencha os elementos em nível de pacote do arquivo
 
-Preencha este modelo com informações que descrevem o seu pacote.
+Preencha este modelo com informações que descrevem o pacote.
 
 ### <a name="identity-information"></a>Informações de identidade
 
-Aqui está um exemplo de elemento **Identidade** com texto de espaço reservado para os atributos. Você pode definir o atributo ``ProcessorArchitecture`` para ``x64`` ou ``x86``.
+Este é um exemplo do elemento **Identity** com texto de espaço reservado para os atributos. Você pode definir o atributo ``ProcessorArchitecture`` como ``x64`` ou ``x86``.
 
 ```XML
 <Identity Name="MyCompany.MySuite.MyApp"
@@ -83,11 +76,11 @@ Aqui está um exemplo de elemento **Identidade** com texto de espaço reservado 
                 ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> Se você reservou o nome do aplicativo no Microsoft Store, poderá obter o nome e o Publicador usando o [Partner Center](https://partner.microsoft.com/dashboard). Se você planeja Sideload seu aplicativo em outros sistemas, você pode fornecer seus próprios nomes, desde que o nome do Publicador que você escolher corresponda ao nome no certificado que você usa para assinar seu aplicativo.
+> Se tiver reservado o nome do aplicativo na Microsoft Store, será possível obter o Nome e o Editor usando o [Partner Center](https://partner.microsoft.com/dashboard). Se pretende fazer o sideload do aplicativo para outros sistemas, é possível fornecer seus próprios nomes para eles, desde que o nome de editor que você escolher corresponda ao nome no certificado usado para assinar o aplicativo.
 
 ### <a name="properties"></a>Propriedades
 
-O elemento [Propriedades](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) possui 3 elementos filho necessários. Aqui está um nó exemplo **Propriedades** com texto de espaço reservado para os elementos. O **DisplayName** é o nome do aplicativo que você reserva no repositório, para aplicativos que são carregados no repositório.
+O elemento [Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) tem 3 elementos filhos necessários. Este é um exemplo do nó **Propriedades** com texto de espaço reservado para os elementos. O **DisplayName** é o nome do aplicativo que você reserva na Microsoft Store para aplicativos que são carregados na Microsoft Store.
 
 ```XML
 <Properties>
@@ -99,7 +92,7 @@ O elemento [Propriedades](https://docs.microsoft.com/uwp/schemas/appxpackage/app
 
 ### <a name="resources"></a>Recursos
 
-Aqui está um nó exemplo [Recursos](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-resources).
+Este é um exemplo do nó [Recursos](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-resources).
 
 ```XML
 <Resources>
@@ -108,7 +101,7 @@ Aqui está um nó exemplo [Recursos](https://docs.microsoft.com/uwp/schemas/appx
 ```
 ### <a name="dependencies"></a>Dependências
 
-Para aplicativos de área de trabalho para os quais você cria um pacote, sempre defina o atributo ``Name`` como ``Windows.Desktop``.
+Nos aplicativos da área de trabalho para os quais você cria um pacote, sempre defina o atributo ``Name`` como ``Windows.Desktop``.
 
 ```XML
 <Dependencies>
@@ -116,21 +109,21 @@ Para aplicativos de área de trabalho para os quais você cria um pacote, sempre
 </Dependencies>
 ```
 
-### <a name="capabilities"></a>Recursos
-Para aplicativos de área de trabalho para os quais você cria um pacote, você precisará adicionar o recurso de ``runFullTrust``.
+### <a name="capabilities"></a>Capacidades
+Nos aplicativos da área de trabalho para os quais você cria um pacote, será preciso adicionar o recurso ``runFullTrust``.
 
 ```XML
 <Capabilities>
   <rescap:Capability Name="runFullTrust"/>
 </Capabilities>
 ```
-## <a name="fill-in-the-application-level-elements"></a>Preencha os elementos de nível de aplicativo
+## <a name="fill-in-the-application-level-elements"></a>Preencha os elementos no nível do aplicativo
 
-Preencha este modelo com informações que descrevem o seu aplicativo.
+Preencha este modelo com informações que descrevem o aplicativo.
 
-### <a name="application-element"></a>Elemento do aplicativo
+### <a name="application-element"></a>Elemento Application
 
-Para aplicativos de área de trabalho para os quais você cria um pacote, o atributo ``EntryPoint`` do elemento Application sempre é ``Windows.FullTrustApplication``.
+Nos aplicativos de área de trabalho para os quais você cria um pacote, o atributo ``EntryPoint`` do elemento Application é sempre ``Windows.FullTrustApplication``.
 
 ```XML
 <Applications>
@@ -142,7 +135,7 @@ Para aplicativos de área de trabalho para os quais você cria um pacote, o atri
 
 ### <a name="visual-elements"></a>Elementos visuais
 
-Aqui está um nó exemplo [VisualElements](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements).
+Este é um exemplo do nó [VisualElements](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements).
 
 ```XML
 <uap:VisualElements
@@ -154,68 +147,62 @@ Aqui está um nó exemplo [VisualElements](https://docs.microsoft.com/uwp/schema
 ```
 <a id="target-based-assets" />
 
-## <a name="optional-add-target-based-unplated-assets"></a>(Opcional) Adicionar ativos não incluídos no destino
+## <a name="optional-add-target-based-unplated-assets"></a>(Opcional) Adicione ativos não incluídos no destino
 
-Os ativos baseados no destino são para ícones e blocos que aparecem na barra de tarefas do Windows, na visão de tarefas, em ALT+TAB, no Assistente de Ajuste e no canto inferior direito dos blocos em Iniciar. Você pode ler mais sobre eles [aqui](https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos#unplated-assets).
+Os ativos baseados no destino são para ícones e blocos que aparecem na barra de tarefas do Windows, na visão de tarefas, em ALT+TAB, no Assistente de Ajuste e no canto inferior direito dos blocos em Iniciar. Você pode ler mais sobre isso [aqui](https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos#unplated-assets).
 
-1. Obtenha as imagens de 44x44 corretas e então copie-as na pasta que contém suas imagens (i.e., Ativos).
+1. Obtenha as imagens 44x44 corretas e copie-as para a pasta que contém as imagens (ou seja, Ativos).
 
-2. Para cada imagem de 44 x 44, crie uma cópia na mesma pasta e acrescente **.targetsize-44_altform-unplated** ao nome do arquivo. Você deve ter duas cópias de cada ícone, cada uma nomeada de uma maneira específica. Por exemplo, após concluir o processo, sua pasta de ativos pode conter **MYAPP_44x44.png** e **MYAPP_44x44.targetsize-44_altform-unplated.png**.
+2. Para cada imagem de 44 x 44, crie uma cópia na mesma pasta e acrescente **.targetsize-44_altform-unplated** ao nome do arquivo. Você deve ter duas cópias de cada ícone, cada uma nomeada de uma maneira específica. Por exemplo, depois de concluir o processo, sua pasta de ativos poderá conter **MYAPP_44x44.png** e **MYAPP_44x44.targetsize-44_altform-unplated.png**.
 
    > [!NOTE]
-   > Neste exemplo, o ícone chamado **MYAPP_44x44.png** é o ícone que você irá referenciar no atributo logo ``Square44x44Logo`` do seu pacote do aplicativo do Windows.
+   > Neste exemplo, o ícone chamado **MYAPP_44x44.png** é o ícone ao qual você vai fazer referência no atributo ``Square44x44Logo`` do logotipo do pacote MSIX.
 
-3.  No pacote do aplicativo do Windows, defina a ``BackgroundColor`` para todo ícone que fizer transparente.
+3. No arquivo de manifesto, defina o ``BackgroundColor`` para cada ícone que está tornando transparente.
 
-4. Continue até a próxima subseção para gerar um novo arquivo de Índice de recurso do pacote.
+4. Continue até a próxima subseção para gerar um novo arquivo de índice de recurso do pacote.
 
 <a id="make-pri" />
 
-### <a name="generate-a-package-resource-index-pri-file"></a>Gerar um arquivo PRI (Índice de Recurso do Pacote)
+### <a name="generate-a-package-resource-index-pri-file-using-makepri"></a>Gerar um arquivo PRI (índice de recurso do pacote) usando MakePri
 
-Se você criar ativos baseados em destino, conforme descrito na seção acima, ou modificar qualquer um dos ativos visuais de seu aplicativo depois de criar o pacote, terá que gerar um novo arquivo PRI.
+Se você criar ativos com base no destino como descrito na seção acima, ou se modificar qualquer um dos ativos visuais do aplicativo depois de criar o pacote, será necessário gerar um novo arquivo PRI.
 
-1.  Abra um **Prompt de comando de desenvolvedor para o VS 2017**.
+Com base no caminho da instalação do SDK, é aqui que o **MakePri.exe** fica localizado no computador com Windows 10:
+- x86: C:\Arquivos de Programas (x86)\Windows Kits\10\bin\\&lt;número do build&gt;\x86\makepri.exe
+- x64: C:\Arquivos de Programas (x86)\Windows Kits\10\bin\\&lt;número do build&gt;\x64\makepri.exe
 
-    ![prompt de comando de desenvolvedor](images/developer-command-prompt.png)
+Não há nenhuma versão ARM dessa ferramenta.
 
-2.  Altere o diretório para a pasta raiz do pacote e crie um arquivo priconfig.xml executando o comando ``makepri createconfig /cf priconfig.xml /dq en-US``.
+1.  Abra um Prompt de Comando ou uma janela do PowerShell.
 
-5.  Crie o(s) arquivo(s) resources.pri usando o comando ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``.
+2.  Altere o diretório para a pasta raiz do pacote e crie um arquivo priconfig.xml executando o comando ``<path>\makepri.exe createconfig /cf priconfig.xml /dq en-US``.
 
-    Por exemplo, o comando para seu aplicativo pode ser assim: ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``.
+5.  Crie os arquivos resources.pri usando o comando ``<path>\makepri.exe new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``.
 
-6.  Empacote seu pacote do aplicativo do Windows usando as instruções da próxima etapa.
+    Por exemplo, o comando do aplicativo pode ter essa aparência: ``<path>\makepri.exe new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``.
+
+6.  Empacote o aplicativo usando as instruções da próxima etapa.
 
 <a id="make-appx" />
 
-## <a name="generate-a-windows-app-package"></a>Gerar um pacote do aplicativo do Windows
+## <a name="test-your-application-before-packaging"></a>Teste o aplicativo antes de empacotar
 
-Use o **MakeAppx.exe** para gerar um pacote do aplicativo do Windows para seu projeto. Ele é fornecido com o SDK do Windows 10 e, se você tiver o Visual Studio instalado, poderá ser facilmente acessado por meio do Prompt de Comando do Desenvolvedor para a sua versão do Visual Studio.
-
-Consulte [Criar um pacote do aplicativo com a ferramenta MakeAppx.exe](../package/create-app-package-with-makeappx-tool.md)
-
-## <a name="run-the-packaged-app"></a>Execute o app empacotado
-
-Você pode executar seu aplicativo para testá-lo localmente sem ter que obter um certificado e conectá-lo. Basta executar este cmdlet do PowerShell:
+Você pode implantar o aplicativo não empacotado e testá-lo antes de empacotar ou assinar. Para isso, execute o cmdlet abaixo de uma janela do PowerShell. Assegure-se de passar o arquivo de manifesto do aplicativo localizado na raiz do diretório com todos os outros componentes de pacote:
 
 ```Add-AppxPackage –Register AppxManifest.xml```
 
-Para atualizar os arquivos .exe ou .dll do seu aplicativo, substitua os arquivos existentes em seu pacote pelos novos, aumente o número de versão em AppxManifest.xml e, em seguida, execute o comando acima novamente.
+Depois de fazer isso, o aplicativo deverá ser implantado no sistema e você poderá testá-lo para assegurar que tudo esteja funcionando antes de empacotar. Para atualizar os arquivos .exe ou .dll do aplicativo, substitua os arquivos existentes no pacote pelos novos, aumente o número da versão no AppxManifest.xml e execute o comando acima novamente.
+
+## <a name="package-your-components-into-an-msix"></a>Empacote os componentes em um MSIX
+
+A próxima etapa é usar o **MakeAppx.exe** para gerar um pacote MSIX para o aplicativo. O Makeappx.exe está incluído com o SDK do Windows 10 e, caso você tenha o Visual Studio instalado, ele poderá ser acessado com facilidade pelo Prompt de Comando do Desenvolvedor para Visual Studio.
+
+Consulte [Criar um pacote ou grupo MSIX com a ferramenta MakeAppx.exe](../package/create-app-package-with-makeappx-tool.md)
+
+
 
 > [!NOTE]
-> Um aplicativo empacotado sempre é executado como um usuário interativo, e qualquer unidade na qual você instala o aplicativo empacotado deve ser formatada para o formato NTFS.
+> Um aplicativo empacotado sempre é executado como um usuário interativo e qualquer unidade na qual você instale seu aplicativo empacotado deve estar formatada em NTFS.
 
-## <a name="next-steps"></a>Próximas etapas
 
-**Encontre respostas para suas perguntas**
-
-Tem dúvidas? Pergunte-nos sobre o Stack Overflow. Nossa equipe monitora esses [tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Você também pode perguntar [aqui](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-
-**Percorrer código/localizar e corrigir problemas**
-
-Consulte [Executar, depurar e testar um aplicativo de área de trabalho empacotado](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-debug)
-
-**Assinar seu aplicativo e, em seguida, distribuí-lo**
-
-Consulte [distribuir um aplicativo de área de trabalho empacotado](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-distribute)

@@ -1,69 +1,80 @@
 ---
-Description: Este guia explica como configurar sua solução do Visual Studio para editar, depurar e empacotar o aplicativo de área de trabalho.
+Description: Este guia explica como configurar a Solução do Visual Studio para editar, depurar e empacotar o aplicativo da área de trabalho.
 title: Empacotar um aplicativo da área de trabalho no código-fonte usando o Visual Studio
-ms.date: 07/18/2019
+ms.date: 02/02/2020
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: cc4a113c53b9c061764d2cdbcc32c105c51de3fa
-ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
-ms.translationtype: MT
+ms.openlocfilehash: d8f2e1dbf6a9d40ec9e913088a6aa8e8f1c039b4
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75303140"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072756"
 ---
-# <a name="package-a-desktop-app-from-source-code-using-visual-studio"></a>Empacotar um aplicativo da área de trabalho no código-fonte usando o Visual Studio
+# <a name="set-up-your-desktop-application-for-msix-packaging-in-visual-studio"></a>Configurar o aplicativo da área de trabalho para empacotamento MSIX no Visual Studio
 
-Você pode usar o projeto de **projeto de empacotamento de aplicativos do Windows** no Visual Studio para gerar um pacote para seu aplicativo de área de trabalho. Em seguida, você pode publicar esse pacote no Microsoft Store ou Sideload-lo em um ou mais computadores.
+Você pode usar o projeto do **Projeto de Empacotamento de Aplicativo do Windows** no Visual Studio para gerar um pacote para o aplicativo de área de trabalho. Em seguida, é possível publicar o pacote na Microsoft Store ou fazer sideload dele em um ou mais computadores.
 
-O projeto de **projeto de empacotamento de aplicativos do Windows** está disponível nas seguintes versões do Visual Studio. Para obter a melhor experiência, recomendamos que você use a versão mais recente.
+Um projeto do **Projeto de Empacotamento de Aplicativo do Windows** está disponível nas versões a seguir do Visual Studio. Para ter a melhor experiência, recomendamos usar a versão mais recente.
 
 * Visual Studio 2019
-* Visual Studio 2017 15,5 e posterior
+* Visual Studio 2017 15.5 e posterior
 
 > [!IMPORTANT]
-> O projeto de **projeto de empacotamento de aplicativos do Windows** no Visual Studio tem suporte no Windows 10, versão 1607 e posterior. Ele só pode ser usado em projetos que visam a atualização de aniversário do Windows 10 (10,0; Build 14393) ou uma versão posterior.
+> Um projeto do **Projeto de Empacotamento de Aplicativo do Windows** no Visual Studio é compatível com o Windows 10, versão 1607 e posteriores. Ele só pode ser usado em projetos que visam a Atualização de Aniversário do Windows 10 (10.0; Build 14393) ou uma versão posterior.
 
-## <a name="prepare-your-application"></a>Preparar seu aplicativo
+Estas são outras coisas que você pode fazer pelo Projeto de Empacotamento de Aplicativo do Windows:
 
-Examine este guia antes de começar a criar um pacote para seu aplicativo: [Prepare-se para empacotar um aplicativo de área de trabalho](desktop-to-uwp-prepare.md).
+:heavy_check_mark: Gerar ativos visuais automaticamente.
+
+:heavy_check_mark: Faça alterações no manifesto usando um designer virtual.
+
+:heavy_check_mark: Gere o pacote usando um assistente.
+
+:heavy_check_mark: (Caso vá publicar na Microsoft Store) Atribua com facilidade uma identidade ao aplicativo com um nome já reservado no [Partner Center](https://partner.microsoft.com/dashboard).
+
+
+## <a name="prepare-your-application"></a>Prepare seu aplicativo
+
+Examine este guia antes de começar a criar um pacote para o aplicativo: [Preparar um pacote de um aplicativo de área de trabalho](desktop-to-uwp-prepare.md).
 
 <a id="new-packaging-project"/>
 
-## <a name="create-a-package"></a>Crie um pacote
+## <a name="setup-the-windows-application-packaging-project-in-your-solution"></a>Configure o Projeto de Empacotamento de Aplicativo do Windows na solução
 
-1. No Visual Studio, abra a solução que contém seu projeto de aplicativo da área de trabalho.
+1. No Visual Studio, abra a solução que contém o projeto de aplicativo da área de trabalho.
 
-2. Adicione um **Projeto de empacotamento de aplicativo do Windows** à sua solução.
+2. Adicione um projeto do **Projeto de Empacotamento de Aplicativo do Windows** à solução.
 
-   Você não terá que adicionar nenhum código a ele. Ele existe apenas para gerar um pacote para você. Vamos nos referir a esse projeto como o "projeto de empacotamento".
+   Não será necessário adicionar nenhum código. Ele está ali somente para gerar um pacote para você. Vamos nos referir a esse projeto como o "projeto de empacotamento".
 
    ![Projeto de empacotamento](images/packaging-project.png)
 
-3. Defina a **Versão de destino** desse projeto como qualquer versão que deseja, mas certifique-se de definir a **Versão mínima** como **Atualização de Aniversário do Windows 10**.
+3. Defina a **Versão de Destino** desse projeto como qualquer versão desejada, mas assegure-se de definir a **Versão Mínima** para a **Atualização de Aniversário do Windows 10**.
 
    ![Caixa de diálogo do seletor de versão de empacotamento](images/packaging-version.png)
 
-4. Em Gerenciador de Soluções, clique com o botão direito do mouse na pasta **aplicativos** no projeto empacotamento e escolha **Adicionar referência**.
+4. No Gerenciador de Soluções, clique com o botão direito do mouse na pasta **Aplicativos** no projeto do pacote e escolha **Adicionar Referência**.
 
-   ![Adicionar referência de projeto](images/add-project-reference.png)
+   ![Adicionar Referência de Projeto](images/add-project-reference.png)
 
-5. Escolha seu projeto de aplicativo da área de trabalho e, em seguida, escolha o botão **OK**.
+5. Escolha seu projeto de aplicativo da área de trabalho e o botão **OK**.
 
-   ![Projeto de desktop](images/reference-project.png)
+   ![Projeto de área de trabalho](images/reference-project.png)
 
-   Você pode incluir vários aplicativos da área de trabalho em seu pacote, mas apenas um deles é iniciado quando os usuários escolhem o bloco do seu aplicativo. No nó **Aplicativos**, clique com botão direito no aplicativo que você quer que os usuários iniciem ao escolherem o bloco do aplicativo e escolha **Definir como ponto de entrada**.
+   Você pode incluir vários aplicativos da área de trabalho em seu pacote, mas apenas um deles será iniciado quando os usuários escolhem o bloco do aplicativo. No nó **Aplicativos**, clique com botão direito do mouse no aplicativo que você quer que os usuários iniciem ao escolherem o bloco do aplicativo e escolha **Definir como Ponto de Entrada**.
 
    ![Definir ponto de entrada](images/entry-point-set.png)
 
-6. Se o aplicativo que você está empacotando for o .NET Core 3, siga estas etapas para adicionar um novo destino de compilação ao arquivo de projeto. Isso só é necessário para aplicativos direcionados ao .NET Core 3.  
+6. Se o aplicativo sendo empacotado visa o .NET Core 3, siga estas etapas para adicionar um novo destino de build ao arquivo do projeto. Isso só é necessário em aplicativos que visam o .NET Core 3.  
 
-    1. No Gerenciador de Soluções, clique com o botão direito do mouse no nó do projeto de empacotamento e selecione **Editar arquivo de projeto**.
+    1. No Gerenciador de Soluções, clique com o botão direito do mouse no nó do projeto de empacotamento e selecione **Editar Arquivo de Projeto**.
 
     2. Localize o elemento `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` no arquivo.
 
-    3. Substitua este elemento pelo XML a seguir.
+    3. Substitua esse elemento pelo XML a seguir.
 
         ``` xml
         <ItemGroup>
@@ -87,39 +98,40 @@ Examine este guia antes de começar a criar um pacote para seu aplicativo: [Prep
         </Target>
         ```
 
-    4. Salve o arquivo de projeto e feche-o.
+    4. Salve o arquivo do projeto e feche-o.
 
-7. Crie o projeto de empacotamento para garantir que nenhum erro apareça. Se você receber erros, abra **Configuration Manager** e verifique se seus projetos se destinam à mesma plataforma.
+7. Crie o projeto de empacotamento para garantir que nenhum erro apareça. Se você receber erros, abra **Gerenciador de Configurações** e verifique se os projetos se destinam à mesma plataforma.
 
-   ![Gerenciador de configuração](images/config-manager.png)
+   ![Gerenciador de Configurações](images/config-manager.png)
 
-8. Use o assistente para [criar pacotes de aplicativos](../package/packaging-uwp-apps.md) para gerar um arquivo. msixupload/. appxupload.
+8. Use o assistente de [Criar Pacotes de Aplicativos](../package/packaging-uwp-apps.md) para gerar um pacote/grupo MSIX ou um arquivo .msixupload/.appxupload (para publicação na Microsoft Store).
 
-   Você pode carregar esse arquivo diretamente no repositório.
+
+## <a name="next-steps"></a>Próximas etapas
+
+**Empacote o aplicativo de área de trabalho no Visual Studio**
+
+Veja [Empacotar um aplicativo UWP ou da área de trabalho no Visual Studio](../package/packaging-uwp-apps.md)
+
+**Executar, depurar ou testar o aplicativo da área de trabalho**
+
+Veja [Executar, depurar e testar um aplicativo empacotado](desktop-to-uwp-debug.md)
+
+## <a name="additional-resources"></a>Recursos adicionais
 
 **Vídeo**
 
 &nbsp;
 > [!VIDEO https://www.youtube-nocookie.com/embed/fJkbYPyd08w]
 
-## <a name="next-steps"></a>Próximas etapas
+**Aprimorar o aplicativo de área de trabalho adicionando APIs da UWP**
 
-**Encontre respostas para suas perguntas**
+Veja [Aprimorar o aplicativo de área de trabalho para o Windows 10](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance)
 
-Tem dúvidas? Pergunte-nos sobre o Stack Overflow. Nossa equipe monitora estas [marcas](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Você também pode entrar em contato conosco [aqui](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+**Estenda o aplicativo da área de trabalho adicionando projetos UWP e Componentes do Windows Runtime**
 
-**Executar, depurar ou testar seu aplicativo de desktop**
+Veja [Estender o aplicativo de área de trabalho com componentes UWP modernos](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extend).
 
-Consulte [Executar, depurar e testar um aplicativo de área de trabalho empacotado](desktop-to-uwp-debug.md)
+**Distribuir o aplicativo**
 
-**Aprimore seu aplicativo de desktop adicionando APIs UWP**
-
-Consulte [Aprimorar seu aplicativo da área de trabalho para Windows 10](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance)
-
-**Estenda seu aplicativo de desktop adicionando projetos UWP e componentes Windows Runtime**
-
-Consulte [Estender seu aplicativo da área de trabalho com componentes UWP modernos](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extend).
-
-**Distribua seu aplicativo**
-
-Consulte [distribuir um aplicativo de área de trabalho empacotado](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-distribute)
+Veja [Distribuir um aplicativo de área de trabalho empacotado](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-distribute).
