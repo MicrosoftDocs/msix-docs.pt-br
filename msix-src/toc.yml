@@ -92,14 +92,14 @@
           href: packaging-tool/Quick-Create-VM.md
         - name: Configurar instruções para conversões de computador da área de trabalho remota
           href: packaging-tool/remote-conversion-setup.md
-        - name: Usar a Ferramenta de Empacotamento MSIX em um ambiente desconectado
-          href: packaging-tool/disconnected-environment.md
     - name: Configurar a Ferramenta de Empacotamento MSIX
       items:
         - name: Visão geral da Ferramenta de Empacotamento de MSIX
           href: packaging-tool/tool-overview.md
         - name: Melhores práticas da Ferramenta de Empacotamento MSIX
           href: packaging-tool/tool-best-practices.md
+        - name: Usar a Ferramenta de Empacotamento MSIX em um ambiente desconectado
+          href: packaging-tool/disconnected-environment.md
         - name: Problemas conhecidos e dicas de solução de problemas para a Ferramenta de Empacotamento MSIX
           href: packaging-tool/tool-known-issues.md
         - name: Duplicar as configurações da Ferramenta de Empacotamento MSIX entre dispositivos
