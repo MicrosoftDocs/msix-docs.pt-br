@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: a373ecc4801402ba72ba64e51ab4e6dfffb02499
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 3dc664ede52dc757bc3a74ba3e5fb5ebc17141d3
+ms.sourcegitcommit: 4d912f89e385268757e87bf8fd9ca1828b99e109
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072676"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77544740"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -44,9 +44,9 @@ Encontre o histórico completo das notas sobre a versão da Ferramenta de Empaco
 
 ## <a name="share-your-feedback"></a>Compartilhe seus comentários
 
-Caso você tenha um problema ao usar o aplicativo, pressione a **tecla Windows + F** para inicializar o **Hub de Feedback**. Forneça o máximo possível de detalhes sobre o problema para nos ajudar a diagnosticá-lo e resolvê-lo.
+Caso você tenha um problema ao usar o aplicativo, pressione a **tecla Windows + F** para inicializar o **Hub de Feedback**. Forneça o máximo possível de detalhes sobre o problema para nos ajudar a diagnosticá-lo e resolvê-lo. Use a categoria **aplicativos** > a **ferramenta de empacotamento MSIX** para obter os comentários diretamente para nós.
 
-Compartilhe também os comentários diretamente no aplicativo. Clique em Configurações (ícone de engrenagem) na tela inicial, escolha a guia **Comentários** e selecione o botão que melhor representa seu problema. Isso iniciará o **Hub de Feedback** diretamente e preencha as informações de categoria necessárias em seu nome. 
+Você também pode compartilhar comentários de dentro do aplicativo. Clique em Configurações (ícone de engrenagem) na tela inicial, escolha a guia **Comentários** e selecione o botão que melhor representa seu problema. Isso iniciará o **Hub de Feedback** diretamente e preencha as informações de categoria necessárias em seu nome. 
 
 O **Hub de Feedback** também é uma ótima maneira de compartilhar ideias e sugestões de novos recursos que você deseja ver no aplicativo.  
 

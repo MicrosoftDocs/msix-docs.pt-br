@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7bc8d140d0d62e0e844ca2f51f407349bd85baf7
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 3918f583a8462a0813bd4104448111c322e739eb
+ms.sourcegitcommit: 4d912f89e385268757e87bf8fd9ca1828b99e109
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073632"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77544722"
 ---
 # <a name="supported-platforms"></a>Plataformas compatíveis
 
@@ -25,7 +25,7 @@ Atualmente, o MSIX tem suporte nas seguintes versões do Windows:
 Este artigo descreve como os principais recursos do MSIX têm suporte nessas versões do Windows.
 
 > [!NOTE]
-> O Windows Server 2019 LTSC e o Windows Enterprise 2019 LTSC exigem que o aplicativo **instalador de aplicativo** seja instalado para dar suporte a recursos do MSIX, como a instalação de um. MSIX,. msixbundle,. Appx ou. appxbundle. Para obter mais considerações sobre o Windows Server 2019 LTSC, consulte [Este artigo](msix-server-2019.md).
+> O Windows Server 2019 LTSC e o Windows Enterprise 2019 LTSC exigem que o aplicativo **instalador de aplicativos** seja necessário apenas para dar suporte ao clique duplo em instalar ou instalar diretamente de um site para. msix,. msixbundle,. Appx ou. appxbundle. Sem o aplicativo, os pacotes podem ser instalados por meio do PowerShell, API ou usam um produto de gerenciamento de sistemas com suporte. Para obter mais considerações sobre o Windows Server 2019 LTSC, consulte [Este artigo](msix-server-2019.md).
 
 > [!NOTE]
 > Para versões do Windows anteriores ao Windows 10 versão 1709, use o [MSIX Core](msix-core/msixcore.md) para instalar pacotes MSIX.
@@ -37,7 +37,7 @@ A tabela a seguir mostra quais recursos e cenários do MSIX têm suporte em dife
 > [!div class="mx-tableFixed"]
 | Recursos | 1709 | 1803 | 1809 | 1903 | 1909 | 2004| Windows Server 2019 LTSC | Windows Enterprise 2019 LTSC|
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| Instalação e desinstalação do MSIX nativo | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :x: | :x: |
+| Instalação e desinstalação do MSIX nativo | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark: |
 | [Suporte ao arquivo do instalador do aplicativo](app-installer/installing-windows10-apps-web.md)| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 | Identidade para aplicativos de desktop empacotados | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 | Permitir elevação | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
@@ -45,8 +45,8 @@ A tabela a seguir mostra quais recursos e cenários do MSIX têm suporte em dife
 | Forçar atualização de qualquer downgrade de versão |  :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
 | Estrutura de suporte do pacote (PSF) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:|  :heavy_check_mark: | :heavy_check_mark:|  
 | Serviços Windows | :x: | :x: | :x: | :x:| :x: | :heavy_check_mark:| :x:| :x: | 
-| Adiar sinalizador de registro |  :x: | :x: | :x: | :x:| :heavy_check_mark: | :heavy_check_mark:| :x: | :x: |
-| Forçar provisionamento |  :x: | :x: | :x: | :x:| :heavy_check_mark: | :heavy_check_mark:| :x: | :x: |
+| Adiar sinalizador de registro |  :x: | :x: | :x: | :x:| :x: | :heavy_check_mark:| :x: | :x: |
+| Forçar provisionamento |  :x: | :x: | :x: | :x:| :x: | :heavy_check_mark:| :x: | :x: |
 
 ## <a name="package-format-support"></a>Suporte a formato de pacote
 

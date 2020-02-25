@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9eddb31a6be06afb824bee5bdb6534adef44996c
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: a22f4cbc2f96746fea48cb1bca1199e6006f938b
+ms.sourcegitcommit: 4d912f89e385268757e87bf8fd9ca1828b99e109
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073792"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77544609"
 ---
 # <a name="best-practices-for-the-msix-packaging-tool"></a>Melhores práticas da Ferramenta de Empacotamento MSIX
 
@@ -21,10 +21,10 @@ Se você ainda não configurou seu ambiente para conversão, você pode seguir n
 
 ### <a name="tool-defaults"></a>Padrões de ferramenta
 
-- **Gerar uma linha de comando com cada pacote** Essa configuração fará com que você gere automaticamente um arquivo de modelo de linha de comando para que, se você estiver Reempacotando o mesmo aplicativo (como uma nova versão) por meio da linha de comando mais tarde, você pode ter um arquivo temmplate de linha de comando pré-configurado para esse aplicativo. Você precisará fornecer um instalador para gerar um arquivo de modelo durante o fluxo de trabalho. 
+- **Gerar uma linha de comando com cada pacote** Essa configuração fará com que você gere automaticamente um arquivo de modelo de linha de comando para que, se você estiver Reempacotando o mesmo aplicativo (como uma nova versão) por meio da linha de comando mais tarde, você pode ter um arquivo de modelo de linha de comando pré-configurado para esse aplicativo. Você precisará fornecer um instalador para gerar um arquivo de modelo durante o fluxo de trabalho.
 - **Selecionar todas as correções por padrão para preparar computador** Essa configuração permite que você tenha todas as correções recomendadas previamente selecionadas para que, durante o estágio preparar computador, você possa simplesmente optar por desabilitar tudo sem precisar selecioná-las individualmente.
 - **Impor requisitos de controle de versão Microsoft Store** Se você estiver planejando implantar seu aplicativo por meio do Microsoft Store, certifique-se de que isso esteja selecionado para que ele esteja em conformidade com os requisitos da loja (isso afetará os requisitos de versão do pacote e o suporte mínimo da versão do sistema operacional). Se essa opção estiver desmarcada, o pacote terá uma versão mínima definida como Windows 10 1709 e você terá controle total sobre os 4 dígitos da versão do pacote. Se esta opção estiver marcada, o pacote terá uma versão mínima definida para o Windows 10 1809 e a versão deverá terminar em. 0 (por exemplo, 1.5.6.0).
-- **Adicionar integridade do pacote ao gerar um pacote** Se essa opção estiver selecionada, a integridade do pacote será adicionada automaticamente a todos os pacotes gerados. A integridade do pacote tem suporte no Windows 10 2004 e posterior.
+- **Adicionar integridade do pacote ao gerar um pacote** Se essa opção estiver selecionada, a integridade do pacote será adicionada automaticamente a todos os pacotes gerados. A [integridade do pacote](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-packageintegrity) tem suporte no Windows 10 2004 e posterior.
 - **Local de salvamento padrão** Especifique o local de salvamento padrão onde os pacotes gerados e os arquivos associados serão salvos.
 - **Local de procura do instalador padrão** Especifique o local padrão para localizar instaladores a serem convertidos.
 - **Número da porta do servidor** Especifique o número da porta do servidor para a ferramenta de empacotamento MSIX. Isso será relevante se você estiver planejando converter usando um [computador remoto](remote-conversion-setup.md). 
@@ -38,7 +38,7 @@ Se você ainda não configurou seu ambiente para conversão, você pode seguir n
 
 ### <a name="other-settings"></a>Outras configurações
 
-- **Exlusions de arquivo e registro** Embora tenhamos um conjunto padrão de itens de exclusão, recomendamos dar uma olhada e adicionar ou remover quaisquer itens de exclusão para suas necessidades específicas. 
+- **Exclusões de arquivo e registro** Embora tenhamos um conjunto padrão de itens de exclusão, recomendamos dar uma olhada e adicionar ou remover quaisquer itens de exclusão para suas necessidades específicas. 
 - **Códigos de saída do instalador** Se você tiver códigos de saída do instalador específicos que deseja disparar uma reinicialização durante a conversão, poderá especificá-los aqui. Por padrão, temos as comuns já adicionadas, mas você pode removê-las se nunca quiser que as reinicializações sejam disparadas. Para observar, uma reinicialização nunca será disparada automaticamente pela ferramenta de empacotamento se você estiver usando a interface do usuário, mas será se você estiver usando a opção de linha de comando. 
  
 Você também pode importar ou exportar suas configurações para compartilhamento usando estas [instruções](duplicate-tool-settings-across-devices.md). 

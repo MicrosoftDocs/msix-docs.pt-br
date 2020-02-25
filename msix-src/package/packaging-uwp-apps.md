@@ -9,14 +9,14 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: 18530e9f2b0c75c62bf41d5240350685ef7dbfad
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 7ecdc839618d7a0e050b89623bf106c2554463f3
+ms.sourcegitcommit: 4d912f89e385268757e87bf8fd9ca1828b99e109
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072956"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77544782"
 ---
-# <a name="package-a-desktop-or-uwp-app-in-visual-studio"></a>Empacotar um aplicativo de área de trabalho ou UWP no Visual Studio
+# <a name="package-a-desktop-or-uwp-app-in-visual-studio"></a>Empacotar um aplicativo UWP ou da área de trabalho no Visual Studio
 
 Antes de distribuir seu aplicativo, você precisa empacotá-lo. Este artigo descreve o processo de configuração, criação e teste de um pacote MSIX usando o Visual Studio.
 
@@ -74,7 +74,7 @@ O designer de manifesto do Visual Studio permite a atualização do arquivo de m
     Da guia **Empacotamento**, você pode inserir dados de publicação. É ali que você pode escolher qual certificado usar para assinar seu aplicativo. Todos os aplicativos MSIX devem ser assinados com um certificado.
 
     > [!NOTE]
-    > A partir do Visual Studio 2019, um certificado temporário não é mais gerado em projetos de desktop ou UWP empacotados. Para criar ou exportar certificados, use os cmdlets do PowerShell descritos neste [artigo](create-certificate-package-signing.md).
+    > A partir do Visual Studio 2019, um certificado temporário não é mais gerado em projetos de desktop ou UWP empacotados. Para criar ou exportar certificados, use os cmdlets do PowerShell descritos [neste artigo](create-certificate-package-signing.md).
 
     > [!IMPORTANT]
     > Se você estiver publicando seu aplicativo na Microsoft Store, seu aplicativo será assinado com um certificado confiável para você. Isso permite que o usuário instale e execute seu aplicativo sem precisar instalar o certificado de autenticação do aplicativo associado.
@@ -103,8 +103,7 @@ Os aplicativos podem ser instalados sem serem publicados no armazenamento, publi
 
 3. Selecione **Sideload** na primeira página do assistente e clique em **Avançar**.
 
-    ![Janela da caixa de diálogo Crie Seus Pacotes mostrada](images/packaging-screen10.png
-)
+    ![Janela da caixa de diálogo Crie Seus Pacotes mostrada](images/packaging-screen10.png)
 
 4. Na página **selecionar método de assinatura** , selecione se deseja ignorar a assinatura de empacotamento ou selecionar um certificado para assinatura. Você pode selecionar um certificado do repositório de certificados local, selecionar um arquivo de certificado ou criar um novo certificado. Para que um pacote MSIX seja instalado na máquina de um usuário final, ele deve ser assinado com um certificado confiável no computador. 
 
@@ -135,12 +134,12 @@ Consulte [Executar, depurar e testar um pacote de aplicativo](../desktop/desktop
 
 ## <a name="generate-an-app-package-upload-file-for-store-submission"></a>Gerar um arquivo de carregamento de pacote de aplicativo para envio de armazenamento
 
-Para distribuir seu aplicativo para o Microsoft Store, é recomendável que você gere um arquivo de carregamento de pacote do aplicativo (. msixupload ou. appxupload).
+Para distribuir seu aplicativo para o Microsoft Store, recomendamos que você gere um **arquivo de carregamento de pacote de aplicativo** (. msixupload ou. appxupload) e envie esse arquivo para o Partner Center. Embora seja possível enviar um pacote do aplicativo ou um pacote de aplicativos para o Partner Center sozinho, recomendamos que você envie um arquivo de carregamento do pacote do aplicativo.
+
+Você pode criar um arquivo de carregamento de pacote de aplicativo usando o assistente para **criar pacotes de aplicativos** no Visual Studio, ou você pode criar um manualmente a partir de pacotes de aplicativo existentes ou de grupos de aplicativos.
 
 > [!NOTE]
 > Se você quiser criar um pacote de aplicativo (. msix ou. AppX) ou um pacote de aplicativo (. msixbundle ou. appxbundle) manualmente, consulte [criar um pacote de aplicativo com a ferramenta MakeAppx. exe](create-app-package-with-makeappx-tool.md).
-
-Embora seja possível enviar um pacote do aplicativo ou um pacote de aplicativos para o Partner Center sozinho, recomendamos que você envie um **arquivo de carregamento do pacote do aplicativo**. Você pode criar um arquivo de carregamento de pacote de aplicativo usando o assistente para **criar pacotes de aplicativos** no Visual Studio, ou você pode criar um manualmente a partir de pacotes de aplicativo existentes ou de grupos de aplicativos.
 
 ### <a name="create-your-app-package-upload-file-using-visual-studio"></a>Criar o arquivo de carregamento do pacote do aplicativo usando o Visual Studio
 
@@ -268,4 +267,3 @@ Depois de concluir as etapas anteriores, você pode configurar envios automátic
 O envio será iniciado após a conclusão do teste WACK. Você pode acompanhar o progresso de envio na janela **verificar e publicar** .
 
 ![Verificar e publicar o progresso](images/packaging-screen9.jpg)
-

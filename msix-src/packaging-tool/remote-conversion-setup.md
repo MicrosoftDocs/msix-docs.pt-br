@@ -6,16 +6,16 @@ ms.topic: article
 keywords: MSIX, MPT, Ferramenta de Empacotamento MSIX, IP remoto
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 14b33ecb6f204b496065723e160f7a475b4eeb8a
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: a13b2a2725cc8c3750cbd22d4238ae41f5406fdc
+ms.sourcegitcommit: 4d912f89e385268757e87bf8fd9ca1828b99e109
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073462"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77544768"
 ---
 # <a name="setup-instructions-for-remote-machine-conversions"></a>Instruções de instalação para conversões de computador remoto
 
-Conectar-se a um computador remoto é uma opção para garantir que você esteja seguindo a recomendação de [práticas recomendadas](prepare-your-environment.md)para seu ambiente de conversão, pois pode ser um ambiente mais limpo do que o computador local. Há algumas etapas que você precisará seguir antes de começar a usar as conversões remotas.  
+Conectar-se a um computador remoto é uma opção para garantir que você esteja seguindo a recomendação de [práticas recomendadas](prepare-your-environment.md) para seu ambiente de conversão, pois pode ser um ambiente mais limpo do que o computador local. Há algumas etapas que você precisará seguir antes de começar a usar as conversões remotas.  
 
 A comunicação remota do PowerShell precisa ser habilitada no computador remoto para acesso seguro. Você também deve ter uma conta de administrador para seu computador remoto.  Caso deseje se conectar usando um endereço IP, siga as instruções para se conectar a um computador remoto não ingressado no domínio.
 

@@ -5,12 +5,12 @@ ms.date: 01/28/2020
 ms.topic: article
 keywords: MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e5fd913de5e1c057e335c8b3102a14a9b75adf3
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 00c7997673f6c0ed3fc79f425c90e283b7a1f25c
+ms.sourcegitcommit: 4d912f89e385268757e87bf8fd9ca1828b99e109
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073502"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77544621"
 ---
 # <a name="how-to-generate-a-template-file-for-command-line-conversions"></a>Como gerar um arquivo de modelo para conversões de linha de comando
 
@@ -23,19 +23,17 @@ Há duas maneiras de obter um arquivo de modelo que funciona para você:
 
 ## <a name="generate-a-conversion-template-file-from-the-msix-packaging-tool"></a>Gerar um arquivo de modelo de conversão da ferramenta de empacotamento MSIX
 
-- Iniciar a ferramenta de empacotamento MSIX
-- Vá para as configurações no canto superior direito do aplicativo
-- Verifique se o ' gerar arquivo de modelo de conversão para cada pacote '
-- Faça outras alterações ou modificações nas configurações necessárias (por exemplo, itens de exclusão, códigos de saída)
-- Salvar as configurações
-
-- Percorrer o fluxo de trabalho do pacote de aplicativos usando um instalador
-    - Se você não selecionar um instalador, não será possível gerar um arquivo de modelo de conversão
-    - Se você estiver usando um exe, será necessário passar um sinalizador silencioso para o instalador a fim de gerar o arquivo de modelo de conversão
-- No final da conversão, você terá um arquivo de modelo configurado com base no instalador escolhido e suas configurações atuais que agora podem ser reutilizadas para conversões futuras
-    - Por padrão, o arquivo de modelo de conversão será salvo no mesmo local que o pacote MSIX, mas você pode especificar um local de salvamento separado para o arquivo de modelo na página Criar pacote
-    - Você ainda precisará fazer algumas modificações com base no que MSIX você deseja que a saída no final de cada conversão
-
+1. Inicie a ferramenta de empacotamento MSIX.
+2. Vá para as configurações no canto superior direito do aplicativo.
+3. Verifique se a opção ' gerar um arquivo de linha de comando com cada pacote ' está selecionada.
+4. Faça outras alterações ou modificações nas configurações necessárias (por exemplo, itens de exclusão, códigos de saída).
+5. Salvar as configurações
+6. Percorra o fluxo de trabalho do pacote de aplicativos usando um instalador.
+    - Se você não selecionar um instalador, não será possível gerar um arquivo de modelo de conversão.
+    - Se você estiver usando um exe, será necessário passar um sinalizador silencioso para o instalador a fim de gerar o arquivo de modelo de conversão.
+7. No final da conversão, você terá um arquivo de modelo configurado com base no instalador escolhido e as configurações atuais que podem ser reutilizadas para futuras conversões.
+    - Por padrão, o arquivo de modelo de conversão será salvo no mesmo local que o pacote MSIX, mas você poderá especificar um local de salvamento separado para o arquivo de modelo na página Criar pacote.
+    - Você ainda precisará fazer algumas modificações com base no que MSIX você deseja que a saída no final de cada conversão.
 
 ## <a name="manually-edit-the-conversion-template-file"></a>Editar manualmente o arquivo de modelo de conversão
 
