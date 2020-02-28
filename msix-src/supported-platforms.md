@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3918f583a8462a0813bd4104448111c322e739eb
-ms.sourcegitcommit: 4d912f89e385268757e87bf8fd9ca1828b99e109
+ms.openlocfilehash: 3e01fa41354e8c6fa0b1d1096a597dc0b16fa9a9
+ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77544722"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77779074"
 ---
 # <a name="supported-platforms"></a>Plataformas compatíveis
 
@@ -25,7 +25,7 @@ Atualmente, o MSIX tem suporte nas seguintes versões do Windows:
 Este artigo descreve como os principais recursos do MSIX têm suporte nessas versões do Windows.
 
 > [!NOTE]
-> O Windows Server 2019 LTSC e o Windows Enterprise 2019 LTSC exigem que o aplicativo **instalador de aplicativos** seja necessário apenas para dar suporte ao clique duplo em instalar ou instalar diretamente de um site para. msix,. msixbundle,. Appx ou. appxbundle. Sem o aplicativo, os pacotes podem ser instalados por meio do PowerShell, API ou usam um produto de gerenciamento de sistemas com suporte. Para obter mais considerações sobre o Windows Server 2019 LTSC, consulte [Este artigo](msix-server-2019.md).
+> O Windows Server 2019 LTSC e o Windows Enterprise 2019 LTSC exigem que o aplicativo **instalador de aplicativo** dê suporte ao clique duas vezes em instalar ou instalar diretamente de um site para. msix,. msixbundle,. Appx ou. appxbundle. Sem o aplicativo, os pacotes podem ser instalados por meio do PowerShell, API ou usam um produto de gerenciamento de sistemas com suporte. Para obter mais considerações sobre o Windows Server 2019 LTSC, consulte [Este artigo](msix-server-2019.md).
 
 > [!NOTE]
 > Para versões do Windows anteriores ao Windows 10 versão 1709, use o [MSIX Core](msix-core/msixcore.md) para instalar pacotes MSIX.
@@ -65,7 +65,7 @@ A tabela a seguir mostra quais recursos de Microsoft Store têm suporte em difer
 
 | Recursos | 1709 | 1803 | 1809 | 1903 | 1909 | 2004
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| Publicando             | :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
+| Publicação             | :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 | Notificação de atualização| :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 | Instalação de streaming | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| 
 | Atualizações Delta | :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
