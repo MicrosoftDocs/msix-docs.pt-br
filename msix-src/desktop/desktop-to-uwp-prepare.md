@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: 67eac6151eda2ad53fe37d4635d8b7f94c4290c3
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 432017a083ae3f9553bea88902378ca3e6556bcb
+ms.sourcegitcommit: a7f677e024e415168f8bf0080f4e115307833a1d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072616"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77576913"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>Preparar um pacote para um aplicativo de área de trabalho
 
@@ -25,7 +25,7 @@ Este artigo lista o que você precisa saber antes de empacotar o aplicativo da �
 
   + 2.0 e 3.5: Em nossos testes, os aplicativos de área de trabalho empacotados que visam essas versões do .NET Framework geralmente funcionam, mas podem apresentar problemas de desempenho em alguns cenários. Para que esses aplicativos empacotados sejam instalados e funcionem, o [recurso .NET Framework 3.5](https://docs.microsoft.com/dotnet/framework/install/dotnet-35-windows-10) precisa estar instalado no computador de destino (esse recurso também inclui o .NET Framework 2.0 e 3.0). Você também deve testar esses aplicativos totalmente depois de empacotá-los.
 
-+ __O aplicativo sempre é executado com privilégios de segurança elevados__. O aplicativo precisa funcionar sendo executado como o usuário interativo. Os usuários que instalam o aplicativo poderão não ser administradores de sistema, então exigir privilégios elevados para o aplicativo significa que ele não funcionará corretamente para usuários padrão. Caso planeje publicar o aplicativo na Microsoft Store, os aplicativos que precisem de elevação de qualquer parte da funcionalidade deles não serão aceitos na Store.
++ __O aplicativo sempre é executado com privilégios de segurança elevados__. O aplicativo precisa funcionar sendo executado como o usuário interativo. Os usuários que instalam o aplicativo poderão não ser administradores de sistema, então exigir privilégios elevados para o aplicativo significa que ele não funcionará corretamente para usuários padrão. Caso planeje publicar o aplicativo na Microsoft Store, aplicativos que precisem de elevação de qualquer parte da funcionalidade não serão aceitos na Store.
 
 + __O aplicativo precisa de um driver de modo kernel ou de um serviço do Windows__. O MSIX não é compatível com um driver de modo kernel ou com um serviço do Windows que precisa funcionar em uma conta do sistema. Em vez de um serviço Windows, use uma [tarefa em segundo plano](/windows/uwp/launch-resume/create-and-register-a-background-task).
 

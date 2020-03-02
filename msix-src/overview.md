@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ded407cb57d9697ad87719aab5fed4687a132ed7
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: d1c3e4c0b9ff6a0617755a2f7a0ad1674a8ea72e
+ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073056"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77779064"
 ---
 # <a name="what-is-msix"></a>O que é MSIX?
 
@@ -21,8 +21,8 @@ O MSIX possibilita que as empresas permaneçam atualizadas e garantam que os apl
 
 ## <a name="key-features"></a>Principais recursos
 
-* **Confiabilidade.** O MSIX oferece uma instalação confiável com uma taxa de sucesso de 99,96% em milhões de instalações com desinstalação garantida.
-* **Otimização da largura de banda da rede.** O MSIX reduz o impacto na largura de banda da rede pelo download apenas do bloco 64k. Isso é feito aproveitando o arquivo AppxBlockMap.xml contido no pacote do aplicativo MSIX (veja abaixo para obter mais detalhes). O MSIX é projetado para sistemas modernos e para a nuvem.
+* **Confiabilidade.** O MSIX oferece uma instalação confiável, com uma taxa de sucesso de 99,96% em milhões de instalações com desinstalação garantida.
+* **Otimização da largura de banda da rede.** O MSIX reduz o impacto na largura de banda da rede por meio do download apenas do bloco 64k. Isso é feito aproveitando o arquivo AppxBlockMap.xml contido no pacote do aplicativo MSIX (veja abaixo para obter mais detalhes). O MSIX é projetado para sistemas modernos e para a nuvem.
 * **Otimizações do espaço em disco.** Com o MSIX não há duplicação de arquivos entre aplicativos e o Windows gerencia os arquivos compartilhados entre os aplicativos. Os aplicativos ainda são independentes uns dos outros, então as atualizações não vão afetar outros aplicativos que compartilham o arquivo. Uma desinstalação limpa é garantida, mesmo que a plataforma gerencie arquivos compartilhados entre aplicativos.
 
 ## <a name="highlights"></a>Destaques

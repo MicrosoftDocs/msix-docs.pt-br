@@ -6,15 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f2761b87db7b9f6f69d9cda20b63b45c5184ccf6
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: aa43076c9ef3e0c8af5735b7a01b39c11f2c703b
+ms.sourcegitcommit: a7f677e024e415168f8bf0080f4e115307833a1d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77074072"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77576904"
 ---
 # <a name="package-your-app-as-an-msix-in-visual-studio"></a>Empacotar o aplicativo como um MSIX no Visual Studio
-O Visual Studio facilita a geração de pacotes MSIX e é a ferramenta recomendada para empacotar aplicativos em desenvolvimento. Os aplicativos da área de trabalho (Windows Forms, WPF, Win32 etc.) podem usar o Projeto de Empacotamento de Aplicativo do Windows para gerar um pacote MSIX e aplicativos UWP e têm a geração de MSIX integrada ao tipo de projeto padrão. Para gerar um pacote MSIX para um aplicativo da área de trabalho, primeiro é preciso adicionar o Projeto de Empacotamento de Aplicativo do Windows à solução. Essa etapa não é necessária para aplicativos UWP.
+
+O Visual Studio facilita a geração de pacotes MSIX e é a ferramenta recomendada para empacotar aplicativos em desenvolvimento. Os aplicativos da área de trabalho (Windows Forms, WPF, Win32 etc.) podem usar o Projeto de Empacotamento de Aplicativo do Windows para gerar um pacote MSIX. Aplicativos UWP (Plataforma Universal do Windows) têm a capacidade de geração de pacotes MSIX integrada ao tipo de projeto padrão. Para gerar um pacote MSIX para um aplicativo da área de trabalho, primeiro é preciso adicionar o Projeto de Empacotamento de Aplicativo do Windows à solução. Essa etapa não é necessária para aplicativos UWP.
 
 |Tópico| Descrição |
 |:---|:---|
