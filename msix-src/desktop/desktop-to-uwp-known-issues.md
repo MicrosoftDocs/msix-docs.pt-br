@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, MSIX
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f56cc122f82f2806b0cc1d014c9ab4c14307895
-ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
+ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75303194"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78909630"
 ---
 # <a name="known-issues-with-packaged-desktop-apps"></a>Problemas conhecidos com aplicativos de área de trabalho empacotados
 
@@ -105,6 +105,6 @@ ERROR: [AppxSipCustomLoggerCallback] File has malformed certificate: uninstall.e
 ...   
 ```
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
-Tem dúvidas? Pergunte-nos sobre o Stack Overflow. Nossa equipe monitora estas [marcas](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Você também pode entrar em contato conosco [aqui](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Tem dúvidas? Pergunte-nos no Stack Overflow. Nossa equipe monitora estas [marcas](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Você também pode entrar em contato conosco [aqui](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
