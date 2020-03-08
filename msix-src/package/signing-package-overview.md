@@ -5,12 +5,12 @@ ms.date: 07/03/2019
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: f136235f5b67c6c987b44e9c2b10168103bf6ae6
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
-ms.translationtype: HT
+ms.openlocfilehash: e116e9d3631ebacc337dd3faa9cd240e05d51226
+ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328734"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78909661"
 ---
 # <a name="sign-a-windows-10-app-package"></a>Assinar um pacote do aplicativo do Windows 10
 
@@ -22,10 +22,11 @@ Para instalar um aplicativo do Windows 10 com êxito, além de o pacote ser assi
 |:---|:---|
 |[Pré-requisitos para assinatura](sign-app-package-using-signtool.md#prerequisites)| Esta seção aborda os pré-requisitos necessários para assinar o pacote do aplicativo do Windows 10. | 
 |[Como usar a SignTool](sign-app-package-using-signtool.md#using-signtool)| Esta seção aborda como usar a SignTool do SDK do Windows 10 para assinar o pacote do aplicativo.|
+|[Assinar um pacote MSIX com a assinatura do Device Guard](https://docs.microsoft.com/windows/msix/package/signing-package-device-guard-signing)| Esta seção discute como assinar seu aplicativo com a assinatura do Device Guard.|
 
 ## <a name="timestamping"></a>Carimbo de data/hora
 
-Além da assinatura do pacote do aplicativo com um certificado, outra característica importante que determina a validade do certificado de assinatura de código é o **carimbo de data/hora**. O carimbo de data/hora preserva a assinatura, permitindo que o pacote do aplicativo seja aceito pela plataforma de implantação do aplicativo, mesmo após a expiração do certificado. No momento da inspeção do pacote, o carimbo de data/hora permite que a assinatura do pacote seja validada em relação à hora em que ele foi assinado. Isso permite que os pacotes sejam aceitos, mesmo depois que o certificado não seja mais válido. Os pacotes que não têm o carimbo de data/hora serão avaliados em relação à hora atual e, se o certificado não for mais válido, o Windows não aceitará o pacote. 
+É altamente recomendável que o **carimbo de data/hora** seja usado ao assinar seu aplicativo com um certificado. O carimbo de data/hora preserva a assinatura, permitindo que o pacote do aplicativo seja aceito pela plataforma de implantação do aplicativo, mesmo após a expiração do certificado. No momento da inspeção do pacote, o carimbo de data/hora permite que a assinatura do pacote seja validada em relação à hora em que ele foi assinado. Isso permite que os pacotes sejam aceitos, mesmo depois que o certificado não seja mais válido. Os pacotes que não têm o carimbo de data/hora serão avaliados em relação à hora atual e, se o certificado não for mais válido, o Windows não aceitará o pacote. 
 
 Estes são os diferentes cenários referentes ao carimbo de data/hora com e sem a assinatura do aplicativo:
 
