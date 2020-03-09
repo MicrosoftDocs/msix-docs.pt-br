@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.openlocfilehash: 73ed0fcb5ef4bb1656eda01dcb8ecbdd2bb5b65e
-ms.sourcegitcommit: 073a228653f004914851c3461b9ad6eef343f915
+ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74308999"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78909666"
 ---
 # <a name="sign-an-msix-package-with-device-guard-signing"></a>Assinar um pacote do MSIX com a autenticação do Device Guard
 
@@ -107,7 +107,7 @@ signtool sign /fd sha256 /dlib DgssLib.dll /dmdf <Azure AAD in .json format> /t 
 > * Há suporte apenas para o algoritmo SHA256.
 > * Quando você assina seu pacote com a assinatura do Device Guard, seu pacote não está sendo enviado pela Internet.
 
-## <a name="test"></a>Testar
+## <a name="test"></a>{1&gt;Testar&lt;1}
 
 Para testar a assinatura do Device Guard, baixe o certificado raiz do organização da Microsoft Store para o portal de negócios.
 
