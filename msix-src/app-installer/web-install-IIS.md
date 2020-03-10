@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, instalador de aplicativos, AppInstaller, Sideload, co
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
 ms.openlocfilehash: bacf7ab3125d651ef30320072dd45a94bffc677f
-ms.sourcegitcommit: 6a0a40ba5d941ff4c5b24569e15cdd588e143b6b
+ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "67828742"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78909617"
 ---
 # <a name="distribute-a-windows-10-app-from-an-iis-server"></a>Distribuir um aplicativo do Windows 10 por um servidor de IIS
 
@@ -19,7 +19,7 @@ Este tutorial demonstra como configurar um servidor IIS, verificar se seu aplica
 
 O aplicativo do Instalador de aplicativo permite que desenvolvedores e profissionais do setor de TI distribuam aplicativos do Windows 10 hospedando-os em sua própria Rede de disponibilização de conteúdo (CDN. Isso é útil para empresas que não desejam ou precisam publicar seus aplicativos na Microsoft Store, mas ainda querem aproveitar a plataforma de empacotamento e implantação do Windows 10. 
 
-## <a name="setup"></a>Configuração
+## <a name="setup"></a>Instalação
 
 Para percorrer com êxito este tutorial, você precisará do seguinte:
 
@@ -27,7 +27,7 @@ Para percorrer com êxito este tutorial, você precisará do seguinte:
 2. Ferramentas de desenvolvimento da Web e IIS 
 3. Pacote de aplicativos do Windows 10-o pacote do aplicativo que será distribuído
 
-Opcional: [Projeto inicial](https://github.com/AppInstaller/MySampleWebApp) no github. Isso é útil se você não tem pacotes de aplicativos para trabalhar, mas ainda gostaria de aprender a usar esse recurso.
+Opcional: [Projeto inicial](https://github.com/AppInstaller/MySampleWebApp) no GitHub. Isso é útil se você não tem pacotes de aplicativos para trabalhar, mas ainda gostaria de aprender a usar esse recurso.
 
 ## <a name="step-1---install-iis-and-aspnet"></a>Etapa 1-instalar o IIS e o ASP.NET 
 
@@ -68,7 +68,7 @@ Nas propriedades do aplicativo Web, selecione a guia **Web** . Na seção **serv
 
 Adicione o pacote do aplicativo que você vai distribuir para o aplicativo Web. Você pode usar o pacote do aplicativo que faz parte dos [pacotes de projeto inicial](https://github.com/AppInstaller/MySampleWebApp/tree/master/MySampleWebApp/packages) fornecidos no GitHub se você não tiver um pacote de aplicativo disponível. O certificado (MySampleApp.cer) que o pacote usou também faz parte da amostra no GitHub. Você deve ter o certificado instalado em seu dispositivo antes de instalar o aplicativo (etapa 9).
 
-No aplicativo Web do projeto inicial, uma nova pasta foi adicionada ao aplicativo Web chamado **pacotes** que contém os pacotes de aplicativos a serem distribuídos. Para criar a pasta no Visual Studio, clique com o botão direito do mouse no nó do projeto em Gerenciador de soluções, selecione **Adicionar** -> **nova pasta** e nomeie-a como **pacotes**. Para adicionar pacotes de aplicativos à pasta, clique com o botão direito do mouse na pasta **pacotes** e selecione **Adicionar** -> **Item existente...** e navegue até o local do pacote do aplicativo. 
+No aplicativo Web do projeto inicial, uma nova pasta foi adicionada ao aplicativo Web chamado **pacotes** que contém os pacotes de aplicativos a serem distribuídos. Para criar a pasta no Visual Studio, clique com o botão direito do mouse no nó do projeto em Gerenciador de Soluções, selecione **adicionar** -> **nova pasta** e nomeie-o como **pacotes**. Para adicionar pacotes de aplicativos à pasta, clique com o botão direito do mouse na pasta **pacotes** e selecione **Adicionar** -> **Item existente...** e navegue até o local do pacote do aplicativo. 
 
 ![Captura de tela da adição de um pacote](images/add-package.png)
 
@@ -76,13 +76,13 @@ No aplicativo Web do projeto inicial, uma nova pasta foi adicionada ao aplicativ
 
 Este aplicativo Web de exemplo usa HTML simples. Você está livre para criar seu aplicativo Web conforme necessário de acordo com suas necessidades. 
 
-Clique com o botão direito do mouse no projeto raiz do Gerenciador de soluções, selecione **Adicionar** -> **novo item**e adicione uma nova **página HTML** da seção **da Web** .
+Clique com o botão direito do mouse no projeto raiz do Gerenciador de soluções, selecione **adicionar** -> **novo item**e adicione uma nova **página HTML** da seção **da Web** .
 
 Depois que a página HTML for criada, clique com o botão direito do mouse na página HTML na Gerenciador de Soluções e selecione **definir como página inicial**.  
 
 Clique duas vezes no arquivo HTML para abri-lo na janela Editor de código. Neste tutorial, somente os elementos no necessário na página da Web para invocar o aplicativo instalador do aplicativo com êxito para instalar um aplicativo do Windows 10 serão usados. 
 
-Inclua o código HTML a seguir em sua página da Web. A chave para invocar com êxito o instalador do aplicativo é usar o esquema personalizado que o instalador do aplicativo registra com `ms-appinstaller:?source=`o sistema operacional:. Consulte o exemplo de código abaixo para obter mais detalhes.
+Inclua o código HTML a seguir em sua página da Web. A chave para invocar com êxito o instalador do aplicativo é usar o esquema personalizado que o instalador do aplicativo registra com o sistema operacional: `ms-appinstaller:?source=`. Consulte o exemplo de código abaixo para obter mais detalhes.
 
 > [!NOTE]
 > Verifique se o caminho da URL especificado após o esquema personalizado corresponde à URL do projeto na guia Web da solução VS.
@@ -101,7 +101,7 @@ Inclua o código HTML a seguir em sua página da Web. A chave para invocar com �
 
 ## <a name="step-7---configure-the-web-app-for-app-package-mime-types"></a>Etapa 7-configurar o aplicativo Web para tipos de MIME do pacote de aplicativos
 
-Abra o arquivo **Web. config** no Gerenciador de soluções e adicione as linhas a seguir no `<configuration>` elemento. 
+Abra o arquivo **Web. config** no Gerenciador de soluções e adicione as linhas a seguir no elemento `<configuration>`. 
 
 ```xml
 <system.webServer>
@@ -118,7 +118,7 @@ Abra o arquivo **Web. config** no Gerenciador de soluções e adicione as linhas
 
 ## <a name="step-8---add-loopback-exemption-for-app-installer"></a>Etapa 8 – adicionar a isenção de auto-retorno para o instalador do aplicativo
 
-Devido ao isolamento de rede, os aplicativos do Windows 10, como o instalador do aplicativo, são http://localhost/ restritos a usar endereços IP loopback como. Ao usar o servidor IIS local, o instalador de aplicativo deve ser adicionado à lista de isenção de auto-retorno. 
+Devido ao isolamento de rede, os aplicativos do Windows 10, como o instalador do aplicativo, são restritos a usar endereços IP loopback como http://localhost/. Ao usar o servidor IIS local, o instalador de aplicativo deve ser adicionado à lista de isenção de auto-retorno. 
 
 Para fazer isso, abra o **prompt de comando** como **administrador** e insira o seguinte:
 ```Command Line
