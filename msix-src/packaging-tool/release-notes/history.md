@@ -6,14 +6,23 @@ ms.topic: article
 keywords: Windows 10, UWP, msix, ferramenta de empacotamento msix, programa Insider
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: be79b90229ed23b04cfa58f12ee3372491f4b818
-ms.sourcegitcommit: b54bb64bcc05a91b4444b62d52586f8a794e7267
+ms.openlocfilehash: d35eb8712d5830c879011c7d3610d95ab019b9bd
+ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77027664"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79097890"
 ---
-# <a name="release-notes-for-the-msix-packaging-tool"></a>Notas de versão para a ferramenta de empacotamento MSIX
+# <a name="release-notes-for-the-msix-packaging-tool"></a>Notas sobre a versão da Ferramenta de Empacotamento MSIX
+## <a name="version-120202250"></a>1\.2020.225.0 da versão
+- Capacidade de importar arquivos de registro (. reg) no editor de pacote
+- Capacidade de adicionar automaticamente o [suporte do MSIX Core](../../msix-core/msixcore.md) a um MSIX
+- Adicionar bugs corrigidos da extensão InstalledLocationVirtualization:
+- Validar o formato do manifesto após a edição 
+- Tornar a mensagem quando a tarefa de inicialização inicial falhar mais claro 
+- Proibir caminhos relativos para desempacotamento 
+- Filtros de arquivo atualizados para mostrar quais formatos são válidos (por exemplo, para instaladores que ele costumava dizer *.*  e agora `*.msi, *.exe, ...`) 
+- Corrigido quando o Unpack converteria espaços em caminhos em "%20"
 
 ## <a name="version-120202030"></a>1\.2020.203.0 da versão
 - A configuração de integridade do pacote está ativada por padrão

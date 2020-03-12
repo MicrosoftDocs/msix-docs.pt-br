@@ -1,19 +1,19 @@
 ---
-title: Modificar script de Publicador de pacote
+title: Modificar script do editor de pacote
 description: Este artigo fornece detalhes sobre o script de editor de pacote de modificação no TOOLIT MSIX.
 ms.date: 1/23/2020
 ms.topic: article
 keywords: Windows 10, msix, msix Toolkit
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b54d6d0a6d1f1d971a7ece99104fdac0db3c49d3
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: b8033cebdaf046164a857abe074b211171c17906
+ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073572"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79097870"
 ---
-# <a name="modify-package-publisher-script"></a>Modificar script de Publicador de pacote
+# <a name="modify-package-publisher-script"></a>Modificar script do editor de pacote
 
 O [script de editor de pacote de modificação](https://github.com/microsoft/MSIX-Toolkit/tree/master/Scripts/ModifyPackagePublisher) no kit de ferramentas do MSIX pode ser usado para atualizar o Publicador no manifesto antes de assinar novamente o pacote com base em um novo certificado. Esse script está atualmente limitado a aplicativos MSIX e não a pacotes MSIX.
 
@@ -31,7 +31,7 @@ O [script de editor de pacote de modificação](https://github.com/microsoft/MSI
 PS C:\> .\modify-package-publisher.ps1 -directory "C:\MSIX" -redist "C:\MSIX-Toolkit\Redist" -certPath "C:\cert\mycert.cer"
 ```
 
-Esse comando pesquisa recursivamente o conteúdo de C:\MSIX para todos os pacotes do MSIX e atualiza o editor do aplicativo MSIX para corresponder ao Publicador do certificado localizado em C:\cert\mycert.cer.
+Esse comando pesquisa recursivamente o conteúdo de C:\MSIX para todos os pacotes do MSIX e atualiza o editor do aplicativo MSIX para corresponder ao Publicador do certificado localizado em C:\cert\mycert.cer. Não há suporte para a assinatura de um aplicativo de formato de pacote MSIX com um certificado SHA1.
 
 ### <a name="update-the-publisher-and-sign-the-msix-app"></a>Atualizar o Publicador e assinar o aplicativo MSIX
 
@@ -39,7 +39,7 @@ Esse comando pesquisa recursivamente o conteúdo de C:\MSIX para todos os pacote
 PS C:\> .\modify-package-publisher.ps1 -directory "C:\MSIX" -redist "C:\MSIX-Toolkit\Redist" -certPath "C:\cert\mycert.cer" -pfxPath "C:\cert\CertKey.pfx"
 ```
 
-Esse comando pesquisa recursivamente o conteúdo de C:\MSIX para todos os pacotes do MSIX e atualiza o editor do aplicativo MSIX para corresponder ao Publicador do certificado localizado em C:\cert\mycert.cer. Em seguida, o comando assina novamente os pacotes MSIX identificados usando o certificado localizado em C:\cert\CertKey.pfx.
+Esse comando pesquisa recursivamente o conteúdo de C:\MSIX para todos os pacotes do MSIX e atualiza o editor do aplicativo MSIX para corresponder ao Publicador do certificado localizado em C:\cert\mycert.cer. Em seguida, o comando assina novamente os pacotes MSIX identificados usando o certificado localizado em C:\cert\CertKey.pfx. Não há suporte para a assinatura do aplicativo formato de pacote MSIX com um certificado SHA1.
 
 ### <a name="update-the-publisher-and-sign-the-msix-app-with-a-password-protected-pfx-certificate"></a>Atualizar o Publicador e assinar o aplicativo MSIX com um certificado PFX protegido por senha
 
@@ -47,7 +47,7 @@ Esse comando pesquisa recursivamente o conteúdo de C:\MSIX para todos os pacote
 PS C:\> .\modify-package-publisher.ps1 -directory "C:\MSIX" -redist "C:\MSIX-Toolkit\Redist" -certPath "C:\cert\mycert.cer" -pfxPath "C:\cert\CertKey.pfx" -password "aaabbbccc"
 ```
 
-Esse comando pesquisa recursivamente o conteúdo de C:\MSIX para todos os pacotes do MSIX e atualiza o editor do aplicativo MSIX para corresponder ao Publicador do certificado localizado em C:\cert\mycert.cer. Em seguida, o comando assina novamente os pacotes MSIX identificados usando o certificado localizado em C:\cert\CertKey.pfx usando a senha *aaabbbccc* para desbloquear o certificado protegido por senha.
+Esse comando pesquisa recursivamente o conteúdo de C:\MSIX para todos os pacotes do MSIX e atualiza o editor do aplicativo MSIX para corresponder ao Publicador do certificado localizado em C:\cert\mycert.cer. Em seguida, o comando assina novamente os pacotes MSIX identificados usando o certificado localizado em C:\cert\CertKey.pfx usando a senha *aaabbbccc* para desbloquear o certificado protegido por senha. Não há suporte para a assinatura do aplicativo formato de pacote MSIX com um certificado SHA1.
 
 ### <a name="update-the-publisher-sign-the-msix-app-and-force-continue-to-next-msix-app"></a>Atualize o Publicador, assine o aplicativo MSIX e Force continuar para o próximo aplicativo MSIX
 
@@ -55,7 +55,7 @@ Esse comando pesquisa recursivamente o conteúdo de C:\MSIX para todos os pacote
 PS C:\> .\modify-package-publisher.ps1 -directory "C:\MSIX" -redist "C:\MSIX-Toolkit\Redist" -certPath "C:\cert\mycert.cer" -pfxPath "C:\cert\CertKey.pfx" -forceContinue -pfxPath "C:\cert\CertKey.pfx"
 ```
 
-Esse comando pesquisa recursivamente o conteúdo de C:\MSIX para todos os pacotes do MSIX e atualiza o editor do aplicativo MSIX para corresponder ao Publicador do certificado localizado em C:\cert\mycert.cer. Em seguida, o comando assina novamente os pacotes MSIX identificados usando o certificado localizado em C:\cert\CertKey.pfx. Se ocorrerem erros durante o processamento de um pacote MSIX, o script continuará atualizando o Publicador e assinará novamente os pacotes MSIX identificados.
+Esse comando pesquisa recursivamente o conteúdo de C:\MSIX para todos os pacotes do MSIX e atualiza o editor do aplicativo MSIX para corresponder ao Publicador do certificado localizado em C:\cert\mycert.cer. Em seguida, o comando assina novamente os pacotes MSIX identificados usando o certificado localizado em C:\cert\CertKey.pfx. Se ocorrerem erros durante o processamento de um pacote MSIX, o script continuará atualizando o Publicador e assinará novamente os pacotes MSIX identificados. Não há suporte para a assinatura do aplicativo formato de pacote MSIX com um certificado SHA1.
 
 ## <a name="parameters"></a>Parâmetros
 

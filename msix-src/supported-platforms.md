@@ -1,5 +1,5 @@
 ---
-title: Plataformas compatíveis
+title: Plataformas com suporte
 description: Este artigo descreve a plataforma com suporte para MSIX.
 author: dianmsft
 ms.date: 12/02/2019
@@ -7,14 +7,14 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3e01fa41354e8c6fa0b1d1096a597dc0b16fa9a9
-ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
+ms.openlocfilehash: 5929bbef4e1b3b6d2199031700ecf94e9a743103
+ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77779074"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79097860"
 ---
-# <a name="supported-platforms"></a>Plataformas compatíveis
+# <a name="supported-platforms"></a>Plataformas com suporte
 
 Atualmente, o MSIX tem suporte nas seguintes versões do Windows:
 
@@ -37,16 +37,17 @@ A tabela a seguir mostra quais recursos e cenários do MSIX têm suporte em dife
 > [!div class="mx-tableFixed"]
 | Recursos | 1709 | 1803 | 1809 | 1903 | 1909 | 2004| Windows Server 2019 LTSC | Windows Enterprise 2019 LTSC|
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| Instalação e desinstalação do MSIX nativo | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark: |
+| [Permitir elevação](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) | w.x.y.                | w.x.y.                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
 | [Suporte ao arquivo do instalador do aplicativo](app-installer/installing-windows10-apps-web.md)| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
+| [Adiar sinalizador de registro](desktop/managing-your-msix-deployment-update.md) |  w.x.y. | w.x.y. | w.x.y. | w.x.y.| w.x.y. | :heavy_check_mark:| w.x.y. | w.x.y. |
+| [Forçar atualização de qualquer downgrade de versão](desktop/managing-your-msix-deployment-targetdevices.md) |  w.x.y.                | w.x.y.                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
+| Forçar provisionamento |  w.x.y. | w.x.y. | w.x.y. | w.x.y.| w.x.y. | :heavy_check_mark:| w.x.y. | w.x.y. |
 | Identidade para aplicativos de desktop empacotados | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
-| Permitir elevação | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
-| Pacotes de modificação | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
-| Forçar atualização de qualquer downgrade de versão |  :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
-| Estrutura de suporte do pacote (PSF) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:|  :heavy_check_mark: | :heavy_check_mark:|  
-| Serviços Windows | :x: | :x: | :x: | :x:| :x: | :heavy_check_mark:| :x:| :x: | 
-| Adiar sinalizador de registro |  :x: | :x: | :x: | :x:| :x: | :heavy_check_mark:| :x: | :x: |
-| Forçar provisionamento |  :x: | :x: | :x: | :x:| :x: | :heavy_check_mark:| :x: | :x: |
+| [Pacotes de modificação](modification-packages.md) | w.x.y.                | w.x.y.                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
+| Instalação e desinstalação do MSIX nativo | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark: |
+| [Estrutura de suporte do pacote (PSF)](psf/package-support-framework-overview.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:|  :heavy_check_mark: | :heavy_check_mark:|  
+| [Serviços do Windows](packaging-tool/convert-an-installer-with-services.md) | w.x.y. | w.x.y. | w.x.y. | w.x.y.| w.x.y. | :heavy_check_mark:| w.x.y.| w.x.y. | 
+
 
 ## <a name="package-format-support"></a>Suporte a formato de pacote
 
@@ -55,7 +56,7 @@ A tabela a seguir mostra quais formatos de pacote têm suporte em diferentes ver
 | Formato do pacote | 1709 | 1803 | 1809 | 1903 | 1909 | 2004
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
 | .msix              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
-| .msixbundle| :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:|
+| .msixbundle| w.x.y.                | w.x.y.                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:|
 | .appx | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 | .appxbundle | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 
@@ -65,10 +66,10 @@ A tabela a seguir mostra quais recursos de Microsoft Store têm suporte em difer
 
 | Recursos | 1709 | 1803 | 1809 | 1903 | 1909 | 2004
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| Publicação             | :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
-| Notificação de atualização| :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
-| Instalação de streaming | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| 
-| Atualizações Delta | :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
+| Publicando             | w.x.y. | w.x.y. | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
+| Notificação de atualização| w.x.y. | w.x.y. | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
+| Instalação de streaming | w.x.y.                | w.x.y.                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| 
+| Atualizações Delta | w.x.y. | w.x.y. | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 
 > [!NOTE]
 > . Appx ou. appxbundle funcionará para todas as versões do Windows 10 listadas acima. A tabela reflete apenas o comportamento. msix ou. msixbundle.

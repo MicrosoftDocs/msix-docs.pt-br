@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5de118ddf9e55567c80b38ffe4a453e2391cfff9
-ms.sourcegitcommit: 90eed7d23240aefa3761085955a193323f4661d4
+ms.openlocfilehash: 9dcf8358cf96ab628d0b947aeb291ed63792d05d
+ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75831462"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79097913"
 ---
 # <a name="run-scripts-with-the-package-support-framework"></a>Executar scripts com o Package Support Framework
 
@@ -20,7 +20,7 @@ Os scripts permitem que os profissionais de ti personalizem um aplicativo dinami
 
 Você pode usar a estrutura de suporte de pacote (PSF) para executar um script do PowerShell antes que um executável de aplicativo empacotado seja executado e um script do PowerShell após a execução do executável do aplicativo para limpeza. Cada executável de aplicativo definido no manifesto do aplicativo pode ter seus próprios scripts. Você pode configurar o script para ser executado apenas uma vez na primeira inicialização do aplicativo e sem mostrar a janela do PowerShell para que os usuários não terminem o script prematuramente por engano. Há outras opções para configurar a maneira como os scripts podem ser executados, mostrados abaixo.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 
 Para permitir que os scripts sejam executados, você precisa definir a política de execução do PowerShell como `RemoteSigned`. Você pode fazer isso executando este comando:
 
@@ -52,20 +52,20 @@ A seguir estão os itens de configuração disponíveis para os scripts. O scrip
 
 | Nome da chave                | Tipo de valor | Necessário? | Padrão  | Descrição
 |-------------------------|------------|-----------|----------|---------|
-| `scriptPath`              | sequência     | Sim       | N/D      | O caminho para o script, incluindo o nome e a extensão. O caminho é iniciado a partir do diretório raiz do aplicativo.
-| `scriptArguments`         | sequência     | Não        | vazio    | Lista de argumentos delimitados por espaço. O formato é o mesmo para uma chamada de script do PowerShell. Essa cadeia de caracteres é anexada a `scriptPath` para fazer uma chamada PowerShell. exe válida.
-| `runInVirtualEnvironment` | booliano    | Não        | verdadeiro     | Especifica se o script deve ser executado no mesmo ambiente virtual em que o aplicativo empacotado é executado.
-| `runOnce`                 | booliano    | Não        | verdadeiro     | Especifica se o script deve ser executado uma vez por usuário, por versão.
-| `showWindow`              | booliano    | Não        | false    | Especifica se a janela do PowerShell é mostrada.
-| `stopOnScriptError`       | booliano    | Não        | false    | Especifica se deseja sair do aplicativo se o script inicial falhar.
-| `waitForScriptToFinish`   | booliano    | Não        | verdadeiro     | Especifica se o aplicativo empacotado deve aguardar a conclusão do script inicial antes de iniciar.
-| `timeout`                 | DWORD      | Não        | INFINITE | Quanto tempo o script terá permissão para ser executado. Quando o tempo decorrido, o script será interrompido.
+| `scriptPath`              | string     | Sim       | {1&gt;N/A&lt;1}      | O caminho para o script, incluindo o nome e a extensão. O caminho é relativo ao diretório de trabalho do aplicativo, se especificado, caso contrário, ele será iniciado no diretório raiz do pacote.
+| `scriptArguments`         | string     | Não        | vazio    | Lista de argumentos delimitados por espaço. O formato é o mesmo para uma chamada de script do PowerShell. Essa cadeia de caracteres é anexada a `scriptPath` para fazer uma chamada PowerShell. exe válida.
+| `runInVirtualEnvironment` | boolean    | Não        | {1&gt;true&lt;1}     | Especifica se o script deve ser executado no mesmo ambiente virtual em que o aplicativo empacotado é executado.
+| `runOnce`                 | boolean    | Não        | {1&gt;true&lt;1}     | Especifica se o script deve ser executado uma vez por usuário, por versão.
+| `showWindow`              | boolean    | Não        | {1&gt;false&lt;1}    | Especifica se a janela do PowerShell é mostrada.
+| `stopOnScriptError`       | boolean    | Não        | {1&gt;false&lt;1}    | Especifica se deseja sair do aplicativo se o script inicial falhar.
+| `waitForScriptToFinish`   | boolean    | Não        | {1&gt;true&lt;1}     | Especifica se o aplicativo empacotado deve aguardar a conclusão do script inicial antes de iniciar.
+| `timeout`                 | DWORD      | Não        | LOOP | Quanto tempo o script terá permissão para ser executado. Quando o tempo decorrido, o script será interrompido.
 
 > [!NOTE]
 > Não há suporte para a definição de `stopOnScriptError: true` e `waitForScriptToFinish: false` para o aplicativo de exemplo. Se você definir esses dois itens de configuração, PSF retornará o erro ERROR_BAD_CONFIGURATION.
 
 
-## <a name="sample-configuration"></a>Configuração de exemplo
+## <a name="sample-configuration"></a>Exemplo de configuração
 
 Aqui está um exemplo de configuração usando dois executáveis de aplicativo diferentes.
 

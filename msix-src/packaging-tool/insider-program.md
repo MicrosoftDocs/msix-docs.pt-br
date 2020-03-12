@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3dc664ede52dc757bc3a74ba3e5fb5ebc17141d3
-ms.sourcegitcommit: 4d912f89e385268757e87bf8fd9ca1828b99e109
+ms.openlocfilehash: 8280ad784fad1547b43db14124f1118dfff846f5
+ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77544740"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79097840"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -35,10 +35,10 @@ Se a ferramenta já estiver instalada no computador, verifique a versão instala
 
 ## <a name="current-insider-preview-build"></a>Build atual do Insider Preview
 
-## <a name="version-120202030"></a>1\.2020.203.0 da versão
+## <a name="version-120202250"></a>1\.2020.225.0 da versão
 
--A configuração de integridade do pacote está ativada por padrão
-- Capacidade de exportar seus arquivos de registro (. reg)
+- O suporte do MSIX core pode ser adicionado automaticamente aos pacotes gerados
+- Capacidade de importar os arquivos de registro (. reg) no editor de pacote
 
 Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](release-notes/history.md).
 

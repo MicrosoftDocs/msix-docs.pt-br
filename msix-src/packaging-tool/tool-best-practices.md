@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a22f4cbc2f96746fea48cb1bca1199e6006f938b
-ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
+ms.openlocfilehash: b4c78d47a2e9adb53f80090b685583636e064458
+ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78909608"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79129536"
 ---
 # <a name="best-practices-for-the-msix-packaging-tool"></a>Melhores práticas da Ferramenta de Empacotamento MSIX
 
@@ -34,7 +34,10 @@ Se você ainda não configurou seu ambiente para conversão, você pode seguir n
     - Assinar com um certificado (. pfx)-recomendamos essa opção se você já tiver um certificado confiável que você está usando em sua empresa.
     - Especifique um arquivo. cer (não assina)-se você não deseja assinar no momento da conversão, mas quer garantir que as informações do Publicador sejam válidas no momento da assinatura, você pode escolher essa opção.
     - Não assinar pacote. -Se você quiser assinar seu pacote usando outro método ou posteriormente depois que o pacote tiver sido gerado, você poderá escolher essa opção.
-    Também recomendamos que você adicione uma URL do servidor de carimbo de data/hora à sua preferência de assinatura (quando aplicável), para que seu aplicativo possa ser instalado, mesmo que seu certificado expire.
+    Também recomendamos que você adicione uma URL do servidor de carimbo de data/hora à sua preferência de assinatura (quando aplicável), para que seu aplicativo possa ser instalado, mesmo que seu certificado expire.   
+
+> [!Note]
+> Não há suporte para a assinatura de um aplicativo de formato de pacote MSIX com um certificado SHA1.
 
 ### <a name="other-settings"></a>Outras configurações
 
