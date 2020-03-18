@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, MSIX
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ms.openlocfilehash: d8f2e1dbf6a9d40ec9e913088a6aa8e8f1c039b4
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072756"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78909705"
 ---
 # <a name="set-up-your-desktop-application-for-msix-packaging-in-visual-studio"></a>Configurar o aplicativo da área de trabalho para empacotamento MSIX no Visual Studio
 

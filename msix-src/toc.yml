@@ -210,7 +210,7 @@
       items:
         - name: Visão geral
           href: desktop/managing-your-msix-deployment-enterprise.md
-        - name: Console de administração do Gerenciador de Ponto de Extremidade da Microsoft
+        - name: Console de administração do Microsoft Endpoint Manager
           href: desktop/managing-your-msix-deployment-mem-adminconsole.md
         - name: Microsoft Endpoint Configuration Manager
           href: desktop/managing-your-msix-deployment-configmgr.md
@@ -274,8 +274,12 @@
       items:
         - name: Visão geral
           href: msix-core/msixcore.md
+        - name: Implantar o MSIX Core com o Microsoft Endpoint Configuration Manager
+          href: msix-core/deploy-msix-core-with-configmgr.md
         - name: Atualizar o pacote MSIX para oferecer suporte ao MSIX Core
           href: msix-core/support-msix-core.md
+        - name: Implantar o aplicativo MSIX Core com o Microsoft Endpoint Configuration Manager
+          href: msix-core/deploy-msix-core-app-with-configmgr.md
         - name: Implantar um pacote MSIX com o MSIX Core
           href: msix-core/deploy-with-msix-core.md
         - name: Criar um pacote MSIX com o MSIX Core com base no código-fonte
