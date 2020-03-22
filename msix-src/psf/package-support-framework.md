@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c280cbff2d2151cb2a791165df9dd5f23d10c7d
-ms.sourcegitcommit: d749fa662214bddaa6854f1ee95761c547db8dae
+ms.sourcegitcommit: e703ffe4c635d9b127ecf8c02e087370b676aa9c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2019
-ms.locfileid: "75008136"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80108179"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>Aplicar correções de tempo de execução a um pacote MSIX usando a estrutura de suporte do pacote
 
@@ -95,7 +95,7 @@ makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContent
 
 Isso fornecerá algo parecido com o seguinte.
 
-![Layout do Pacote](images/package_contents.png)
+![Layout do pacote](images/package_contents.png)
 
 Se você não tiver um arquivo. msix (ou. AppX) para começar, poderá criar a pasta e os arquivos do pacote do zero.
 
@@ -133,7 +133,7 @@ O conteúdo do pacote agora deve ser semelhante a este.
 
 ### <a name="modify-the-package-manifest"></a>Modificar o manifesto do pacote
 
-Abra o manifesto do pacote em um editor de texto e, em seguida, defina o atributo `Executable` do elemento `Application` como o nome do arquivo executável do iniciador PSF.  Se você souber a arquitetura do seu aplicativo de destino, selecione a versão apropriada, PSFLauncher32. exe ou PSFLauncher64. exe.  Caso contrário, o PSFLauncher32. exe funcionará em todos os casos.  Veja um exemplo.
+Abra o manifesto do pacote em um editor de texto e, em seguida, defina o atributo `Executable` do elemento `Application` como o nome do arquivo executável do iniciador PSF.  Se você souber a arquitetura do seu aplicativo de destino, selecione a versão apropriada, PSFLauncher32. exe ou PSFLauncher64. exe.  Caso contrário, o PSFLauncher32. exe funcionará em todos os casos.  Aqui está um exemplo.
 
 ```xml
 <Package ...>
@@ -188,12 +188,12 @@ Crie um nome de arquivo ``config.json``e salve esse arquivo na pasta raiz do seu
 
 Veja a seguir um guia para o esquema config. JSON:
 
-| Array | key | Valor |
+| Array | key | {1&gt;Valor&lt;1} |
 |-------|-----------|-------|
-| applications | id |  Use o valor do atributo `Id` do elemento `Application` no manifesto do pacote. |
-| applications | executável | O caminho relativo do pacote para o executável que você deseja iniciar. Na maioria dos casos, você pode obter esse valor do arquivo de manifesto do pacote antes de modificá-lo. É o valor do atributo `Executable` do elemento `Application`. |
-| applications | workingDirectory | Adicional Um caminho relativo de pacote a ser usado como o diretório de trabalho do aplicativo que é iniciado. Se você não definir esse valor, o sistema operacional usará o diretório `System32` como o diretório de trabalho do aplicativo. |
-| processos | executável | Na maioria dos casos, esse será o nome do `executable` configurado acima com o caminho e a extensão de arquivo removidos. |
+| aplicativos | {1&gt;id&lt;1} |  Use o valor do atributo `Id` do elemento `Application` no manifesto do pacote. |
+| aplicativos | executá | O caminho relativo do pacote para o executável que você deseja iniciar. Na maioria dos casos, você pode obter esse valor do arquivo de manifesto do pacote antes de modificá-lo. É o valor do atributo `Executable` do elemento `Application`. |
+| aplicativos | workingDirectory | Adicional Um caminho relativo de pacote a ser usado como o diretório de trabalho do aplicativo que é iniciado. Se você não definir esse valor, o sistema operacional usará o diretório `System32` como o diretório de trabalho do aplicativo. |
+| processos | executá | Na maioria dos casos, esse será o nome do `executable` configurado acima com o caminho e a extensão de arquivo removidos. |
 | ajustes | dll | Caminho relativo ao pacote para a correção,. msix/. Appx a ser carregado. |
 | ajustes | config | Adicional Controla como a DLL de correção se comporta. O formato exato desse valor varia de acordo com a correção, pois cada correção pode interpretar esse "blob" como desejado. |
 
@@ -269,7 +269,7 @@ Quando terminar, sua solução terá uma aparência semelhante a esta.
 
 Vamos examinar cada projeto neste exemplo.
 
-| Projeto | Finalidade |
+| {1&gt;Projeto&lt;1} | Finalidade |
 |-------|-----------|
 | DesktopApplicationPackage | Este projeto é baseado no [projeto de empacotamento de aplicativos do Windows](../desktop/desktop-to-uwp-packaging-dot-net.md) e gera o pacote MSIX. |
 | Runtimefix | Este é um C++ projeto de biblioteca vinculado dinâmico que contém uma ou mais funções de substituição que servem como correção de tempo de execução. |
@@ -328,7 +328,7 @@ Clique no ícone de configurações próximo ao campo.
 
 Procure o pacote NuGet *PSF** e instale-o para este projeto.
 
-![pacote nuget](images/psf-package.png)
+![pacote NuGet](images/psf-package.png)
 
 Se você quiser depurar ou estender uma correção de tempo de execução existente, adicione os arquivos de correção de tempo de execução obtidos usando as diretrizes descritas na seção [encontrar uma correção de tempo de execução](#find) deste guia.
 
@@ -352,23 +352,23 @@ Adicione uma referência de projeto ao projeto de correção de tempo de execuç
 
 Clique com o botão direito do mouse na referência e, em seguida, na janela **Propriedades** , aplique esses valores.
 
-| Propriedade | Valor |
+| Propriedade | {1&gt;Valor&lt;1} |
 |-------|-----------|
 | Copiar local | True |
 | Copiar assemblies satélite locais | True |
 | Saída do assembly de referência | True |
-| Dependências da Biblioteca de Links | False |
+| Vincular dependências de biblioteca | False |
 | Entradas de dependência da biblioteca de links | False |
 
 ### <a name="configure-the-packaging-project"></a>Configurar o projeto de empacotamento
 
 No projeto de empacotamento, clique com botão direito na pasta **Aplicativos** e escolha **Adicionar referência**.
 
-![Adicionar referência de projeto](images/add-reference-packaging-project.png)
+![Adicionar Referência de Projeto](images/add-reference-packaging-project.png)
 
 Escolha o projeto do iniciador PSF e o projeto de aplicativo da área de trabalho e escolha o botão **OK** .
 
-![Projeto de desktop](images/package-project-references.png)
+![Projeto de área de trabalho](images/package-project-references.png)
 
 >[!NOTE]
 > Se você não tiver o código-fonte para seu aplicativo, basta escolher o projeto iniciador PSF. Mostraremos como fazer referência ao seu executável ao criar um arquivo de configuração.
@@ -403,14 +403,14 @@ Adicione um arquivo chamado ``config.json`` ao seu projeto de empacotamento e co
 }
 ```
 
-Forneça um valor para cada chave. Use essa tabela como um guia.
+Forneça um valor para cada chave. Use esta tabela como um guia.
 
-| Array | key | Valor |
+| Array | key | {1&gt;Valor&lt;1} |
 |-------|-----------|-------|
-| applications | id |  Use o valor do atributo `Id` do elemento `Application` no manifesto do pacote. |
-| applications | executável | O caminho relativo do pacote para o executável que você deseja iniciar. Na maioria dos casos, você pode obter esse valor do arquivo de manifesto do pacote antes de modificá-lo. É o valor do atributo `Executable` do elemento `Application`. |
-| applications | workingDirectory | Adicional Um caminho relativo de pacote a ser usado como o diretório de trabalho do aplicativo que é iniciado. Se você não definir esse valor, o sistema operacional usará o diretório `System32` como o diretório de trabalho do aplicativo. |
-| processos | executável | Na maioria dos casos, esse será o nome do `executable` configurado acima com o caminho e a extensão de arquivo removidos. |
+| aplicativos | {1&gt;id&lt;1} |  Use o valor do atributo `Id` do elemento `Application` no manifesto do pacote. |
+| aplicativos | executá | O caminho relativo do pacote para o executável que você deseja iniciar. Na maioria dos casos, você pode obter esse valor do arquivo de manifesto do pacote antes de modificá-lo. É o valor do atributo `Executable` do elemento `Application`. |
+| aplicativos | workingDirectory | Adicional Um caminho relativo de pacote a ser usado como o diretório de trabalho do aplicativo que é iniciado. Se você não definir esse valor, o sistema operacional usará o diretório `System32` como o diretório de trabalho do aplicativo. |
+| processos | executá | Na maioria dos casos, esse será o nome do `executable` configurado acima com o caminho e a extensão de arquivo removidos. |
 | ajustes | dll | Caminho relativo do pacote para o DLL de correção a ser carregado. |
 | ajustes | config | Adicional Controla como a DLL de correção se comporta. O formato exato desse valor varia de acordo com a correção, pois cada correção pode interpretar esse "blob" como desejado. |
 

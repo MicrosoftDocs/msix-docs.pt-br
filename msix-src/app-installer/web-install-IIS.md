@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, instalador de aplicativos, AppInstaller, Sideload, co
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
 ms.openlocfilehash: bacf7ab3125d651ef30320072dd45a94bffc677f
-ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
+ms.sourcegitcommit: e703ffe4c635d9b127ecf8c02e087370b676aa9c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78909617"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80108159"
 ---
 # <a name="distribute-a-windows-10-app-from-an-iis-server"></a>Distribuir um aplicativo do Windows 10 por um servidor de IIS
 

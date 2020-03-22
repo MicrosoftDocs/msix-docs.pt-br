@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, Windows 7, Windows 8, Windows Server, UWP, msix, msixcore, 1709, 1703, 1607, 1511, 1507
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: fb12dcc8513753f8e44bd1141523c913ca91e244
-ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
+ms.openlocfilehash: b338f9bb5b994b21164278a62983cf9f7cb531df
+ms.sourcegitcommit: e703ffe4c635d9b127ecf8c02e087370b676aa9c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79111298"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070026"
 ---
 # <a name="deploy-msix-core-apps-with-microsoft-endpoint-configuration-manager"></a>Implantar aplicativos MSIX core com o Microsoft Endpoint Configuration Manager
 A entrega de aplicativos MSIXs usando o Microsoft Endpoint Configuration Manager permite que os profissionais de ti vinculem outros aplicativos como dependências, forçando-os a instalarem antes do. Ao criar uma dependência para o aplicativo MSIX Core, impõem o aplicativo MSIX core a ser instalado somente quando exigido pelo dispositivo. Para obter mais informações sobre dependências de aplicativo no ponto de extremidade Microsoft Configuration Manager consulte: [criar aplicativos: dependências do tipo de implantação](https://docs.microsoft.com/configmgr/apps/deploy-use/create-applications#bkmk_dt-depend).
@@ -50,9 +50,9 @@ Supondo que você seguiu os guias anteriores (consulte a lista de guias na seç�
 ```
 1. Defina o campo programa de desinstalação como: 
 ```batch
-"C:\Program Files\msixmgr\msixmgr.exe" -RemovePackage [Application Family Name] -quietUX
+"C:\Program Files\msixmgr\msixmgr.exe" -RemovePackage [Package Family Name] -quietUX
 ```
-1. Substitua [nome da família de aplicativos] pelo nome da família de aplicativos do aplicativo MSIX.
+1. Substitua [Package Family Name] pelo nome da família de pacotes do aplicativo MSIX.
 1. Selecione o botão **Avançar** .
 1. Selecione o botão de opção **usar um script personalizado para detectar a presença desse tipo de implantação** .
 1. Selecione o botão **Editar** .
@@ -63,7 +63,7 @@ Set-Location "C:\Program Files\msixmgr"
 
 IF([Boolean]$(get-item "msixmgr.exe"))
 {
-    $Result = $(.\msixmgr.exe -FindPackage [Application Family Name]*)
+    $Result = $(.\msixmgr.exe -FindPackage [Package Family Name]*)
 
     IF($($Result.GetType().Name) -eq "Object[]")
     {
@@ -71,7 +71,7 @@ IF([Boolean]$(get-item "msixmgr.exe"))
     }
 }
 ```
-1. Atualize [nome da família de aplicativos] com o nome da família de pacotes MSIX do aplicativo.
+1. Atualize [nome da família de pacotes] com o nome da família de pacotes MSIX do aplicativo.
 1. Selecione o botão **OK** .
 1. Selecione o botão **Avançar** .
 1. Defina o comportamento de instalação para **instalar para o usuário**.

@@ -5,12 +5,12 @@ ms.date: 07/12/2019
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: 73ed0fcb5ef4bb1656eda01dcb8ecbdd2bb5b65e
-ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
+ms.openlocfilehash: 7fa356679943afd8267a1e8df8527a2179f61b98
+ms.sourcegitcommit: e703ffe4c635d9b127ecf8c02e087370b676aa9c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78909666"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80108229"
 ---
 # <a name="sign-an-msix-package-with-device-guard-signing"></a>Assinar um pacote do MSIX com a autenticação do Device Guard
 
@@ -30,7 +30,10 @@ As seções a seguir descrevem essas etapas mais detalhadamente.
 
 ## <a name="configure-permissions-for-device-guard-signing"></a>Configurar permissões para assinatura do Device Guard
 
-Para usar a assinatura do Device Guard no Microsoft Store for Business ou Microsoft Store for Education, você precisa da função de **signatário do Device Guard** . Essa é a função de privilégios mínimos que tem a capacidade de assinar. Outras funções como **administrador global** e **proprietário da conta de cobrança** também podem assinar.
+Para usar a assinatura do Device Guard no Microsoft Store for Business ou Microsoft Store for Education, você precisa da função de **signatário do Device Guard** . Essa é a função de privilégios mínimos que tem a capacidade de assinar. Outras funções como **administrador global** e **proprietário da conta de cobrança** também podem assinar. 
+
+ > [!NOTE]
+ > A função de assinante do Device Guard é usada quando você está assinando como um aplicativo. O administrador global e o proprietário da conta de cobrança são usados quando você assina como uma pessoa conectada.
 
 Para confirmar ou reatribuir funções:
 
@@ -78,6 +81,7 @@ function GetToken()
     $Body = @{
       'grant_type' = 'password'
       'client_id'= '<application-id>'
+      'client_secret' = '<client_secret>'
       'resource' = 'https://onestore.microsoft.com'
       'username' = $user
       'password' = $password
