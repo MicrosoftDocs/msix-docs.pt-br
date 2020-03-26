@@ -1,19 +1,19 @@
 ---
-title: Instalar aplicativos do Windows 10 de uma página da web
+title: Instalando aplicativos do Windows 10 em uma página da Web
 description: Nesta seção, analisaremos as etapas que você precisa executar para permitir que os usuários instalem seus aplicativos diretamente a partir da página da Web.
 ms.date: 11/16/2017
 ms.topic: article
 keywords: windows 10, uwp, instalador de aplicativo, AppInstaller, sideload, conjunto relacionado, pacotes opcionais
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c6007dfb124e308dad5d17bf7643a7021957e277
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 35081a4d2ff45e12c7cb6eff3365e5c41b7d8d08
+ms.sourcegitcommit: f5936c95c0f5b6f080e51b8d47a7cd62ccf6a600
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67828699"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80241942"
 ---
-# <a name="installing-windows-10-apps-from-a-web-page"></a>Instalar aplicativos do Windows 10 de uma página da web
+# <a name="installing-windows-10-apps-from-a-web-page"></a>Instalando aplicativos do Windows 10 em uma página da Web
 
 Normalmente, um aplicativo precisa estar disponível localmente em um dispositivo antes de poder ser instalado com o Instalador de Aplicativo. Para o cenário da Web, isso significa que o usuário deve baixar o conjunto de aplicativo do servidor Web, após o qual ele pode ser instalado com o Instalador de Aplicativo. Isso é ineficiente e desperdiça espaço de disco, por isso, o Instalador de Aplicativo agora tem recursos integrados para otimizar o processo no disco.
 
@@ -29,10 +29,10 @@ Nesse mecanismo, o Instalador de Aplicativo registra com o sistema operacional p
 
 ### <a name="requirements-for-protocol-activation-scheme"></a>Requisitos para o esquema de ativação de protocolo
 
-1. Servidores Web precisam ter suporte para solicitações de intervalo de bytes (HTTP/1.1)
-    - Servidores que dão suporte ao protocolo HTTP/1.1 devem ter suporte para solicitações de intervalo de bytes
-2. Servidores Web precisam saber sobre os tipos de conteúdo do pacote de aplicativo Windows 10
-    - Aqui está como declarar os novos tipos de conteúdo como parte do [o arquivo de configuração da web](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)
+1. Os servidores Web precisam ter suporte para solicitações de intervalo de bytes (HTTP/1.1)
+    - Os servidores que dão suporte ao protocolo HTTP/1.1 devem ter suporte para solicitações de intervalo de bytes
+2. Os servidores Web precisarão saber sobre os tipos de conteúdo do pacote de aplicativos do Windows 10
+    - Veja como declarar os novos tipos de conteúdo como parte do [arquivo de configuração da Web](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)
 
 ### <a name="how-to-enable-this-on-a-webpage"></a>Como habilitar isso em uma página da Web
 Os desenvolvedores de aplicativos que desejam pacotes do aplicativo host em seus sites precisam seguir essa etapa:
@@ -42,8 +42,8 @@ Fixe seus URIs de conjunto de aplicativo com o esquema de ativação `'ms-appins
 <html>
     <body>
         <h1> MyApp Web Page </h1>
-        <a href="ms-appinstaller:?source=http://mywebservice.azureedge.net/HubApp.appx"> Install app package </a>
-        <a href="ms-appinstaller:?source=http://mywebservice.azureedge.net/HubAppBundle.appxbundle"> Install app bundle  </a>
+        <a href="ms-appinstaller:?source=http://mywebservice.azureedge.net/HubApp.msix"> Install app package </a>
+        <a href="ms-appinstaller:?source=http://mywebservice.azureedge.net/HubAppBundle.msixbundle"> Install app bundle  </a>
         <a href="ms-appinstaller:?source=http://mywebservice.azureedge.net/HubAppSet.appinstaller"> Install related set </a>
     </body>
 </html>
@@ -54,11 +54,11 @@ Para que os usuários instalem seu aplicativo, você precisará assinar o pacote
 
 Se você estiver implantando um aplicativo para funcionários em uma empresa, poderá usar uma empresa que emitiu o certificado para assinar o aplicativo. É importante observar que o certificado corporativo deve ser implantado em todos os dispositivos em que o aplicativo será instalado. Para obter mais informações sobre como implantar aplicativos corporativos, consulte [Gerenciamento de aplicativos corporativos](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management).
 
-## Instalar experiência da Web em versões anteriores do Windows 10<a name="web-install-experience"></a>
+## <a name="web-install-experience-on-previous-versions-of-windows-10"></a>Instalar experiência da Web em versões anteriores do Windows 10<a name="web-install-experience"></a>
 
 Invocar o Instalador de Aplicativo do navegador é compatível com todas as versões do Windows 10 onde o Instalador de Aplicativo está disponível (começando com a atualização de aniversário). No entanto, a funcionalidade para instalar diretamente da web sem a necessidade de baixar o pacote primeiro só está disponível no Windows 10 Fall Creators Update.  
 
-Usuários de versões anteriores do Windows 10 (com o instalador do aplicativo disponível) também podem tirar proveito da instalação da web de aplicativos do Windows 10 por meio do instalador do aplicativo, mas terão uma experiência de usuário diferente. Quando os usuários clicarem no link da Web, o Instalador de Aplicativo solicitará para **Baixar** o pacote, em vez de **Instalar**. Após o download, o Instalador de Aplicativo irá iniciar o lançamento do pacote baixado automaticamente. Como o conjunto de aplicativo é baixado da Web, esses arquivos passarão pelo Microsoft SmartScreen para uma verificação de segurança. Depois do usuário fornecer permissão para continuar e, em seguida, mais um clique em **Instalar**, o aplicativo está pronto para uso!
+Os usuários de versões anteriores do Windows 10 (com o instalador de aplicativo disponível) também podem aproveitar a instalação da Web de aplicativos do Windows 10 por meio do instalador de aplicativos, mas terão uma experiência de usuário diferente. Quando os usuários clicarem no link da Web, o Instalador de Aplicativo solicitará para **Baixar** o pacote, em vez de **Instalar**. Após o download, o Instalador de Aplicativo irá iniciar o lançamento do pacote baixado automaticamente. Como o conjunto de aplicativo é baixado da Web, esses arquivos passarão pelo Microsoft SmartScreen para uma verificação de segurança. Depois do usuário fornecer permissão para continuar e, em seguida, mais um clique em **Instalar**, o aplicativo está pronto para uso!
 
 Embora esse fluxo não seja tão perfeito como a instalação direta no Windows 10 Fall Creators Update, os usuários ainda podem interagir rapidamente com o aplicativo. Além disso, com esse fluxo o usuário não precisa se preocupar com arquivos do conjunto de aplicativo desnecessariamente ocupando espaço em unidades. O Instalador de Aplicativo gerencia o espaço com eficiência baixando o pacote em sua pasta de dados de aplicativo e limpando pacotes quando eles não são mais necessários.
 

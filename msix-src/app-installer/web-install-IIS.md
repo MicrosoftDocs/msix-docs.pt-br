@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, instalador de aplicativos, AppInstaller, Sideload, conjunto relacionado, pacotes opcionais, servidor IIS
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: bacf7ab3125d651ef30320072dd45a94bffc677f
-ms.sourcegitcommit: e703ffe4c635d9b127ecf8c02e087370b676aa9c
+ms.openlocfilehash: 7a8f07613b111b95d96b9556be560b6ba4522644
+ms.sourcegitcommit: f5936c95c0f5b6f080e51b8d47a7cd62ccf6a600
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80108159"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80241960"
 ---
 # <a name="distribute-a-windows-10-app-from-an-iis-server"></a>Distribuir um aplicativo do Windows 10 por um servidor de IIS
 
@@ -94,7 +94,7 @@ Inclua o código HTML a seguir em sua página da Web. A chave para invocar com �
     <title> Install Page </title>
 </head>
 <body>
-    <a href="ms-appinstaller:?source=http://localhost/SampleWebApp/packages/MySampleApp.appxbundle"> Install My Sample App</a>
+    <a href="ms-appinstaller:?source=http://localhost/SampleWebApp/packages/MySampleApp.msixbundle"> Install My Sample App</a>
 </body>
 </html>
 ```
