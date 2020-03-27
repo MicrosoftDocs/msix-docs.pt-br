@@ -8,11 +8,11 @@ ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 6799625432b42303b81ddcc7fcaacfb72e36f8fe
-ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
+ms.sourcegitcommit: e703ffe4c635d9b127ecf8c02e087370b676aa9c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78909637"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80108450"
 ---
 # <a name="generating-msix-package-components"></a>Geração de componentes do pacote MSIX
 
