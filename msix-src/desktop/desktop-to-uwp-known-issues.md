@@ -1,33 +1,33 @@
 ---
-description: Este artigo descreve os problemas conhecidos que podem ocorrer quando você cria um pacote MSIX para seu aplicativo de área de trabalho.
-title: Problemas conhecidos com aplicativos de área de trabalho empacotados
+description: Este artigo descreve os problemas conhecidos que podem ocorrer quando você cria um pacote MSIX para seu aplicativo da área de trabalho.
+title: Problemas conhecidos com aplicativos empacotados da área de trabalho
 ms.date: 07/29/2019
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f56cc122f82f2806b0cc1d014c9ab4c14307895
-ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
-ms.translationtype: MT
+ms.sourcegitcommit: e703ffe4c635d9b127ecf8c02e087370b676aa9c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78909630"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80108440"
 ---
-# <a name="known-issues-with-packaged-desktop-apps"></a>Problemas conhecidos com aplicativos de área de trabalho empacotados
+# <a name="known-issues-with-packaged-desktop-apps"></a>Problemas conhecidos com aplicativos empacotados da área de trabalho
 
-Este artigo contém problemas conhecidos que podem ocorrer quando você cria um pacote MSIX para seu aplicativo de área de trabalho.
+Este artigo contém os problemas conhecidos que podem ocorrer quando você cria um pacote MSIX para seu aplicativo da área de trabalho.
 
-## <a name="you-receive-the-error----msb4018-the-generateresource-task-failed-unexpectedly"></a>Você recebe o erro MSB4018 A tarefa "GenerateResource" falhou inesperadamente
+## <a name="you-receive-the-error----msb4018-the-generateresource-task-failed-unexpectedly"></a>Você recebe o erro MSB4018 Falha inesperada na tarefa "GenerateResource"
 
-Isso poderá acontecer quando você estiver tentando converter assemblies de satélite em arquivos PRI (Índice de Recurso do Pacote).
+Isso pode acontecer quando você tenta converter assemblies satélite em arquivos de PRI (Índice de Recurso do Pacote).
 
-Estamos cientes desse problema e estamos trabalhando em um solução de longo prazo. Como uma solução temporária, você pode desabilitar o gerador de recursos, adicionando esta linha de XML ao primeiro elemento PropertyGroup do arquivo de projeto de hospedagem:
+Estamos cientes desse problema e trabalhando em uma solução de mais longo prazo. Como uma solução temporária, você pode desabilitar o gerador de recursos adicionando esta linha de XML ao primeiro elemento PropertyGroup no arquivo de projeto de hospedagem:
 
 ``<AppxGeneratePrisForPortableLibrariesEnabled>false</AppxGeneratePrisForPortableLibrariesEnabled>``
 
 ## <a name="blue-screen-with-error-code-0x139-kernel_security_check_failure"></a>Tela azul com código de erro 0x139 (KERNEL_SECURITY_CHECK_FAILURE)
 
-Depois de instalar ou iniciar determinados aplicativos do Microsoft Store, seu computador pode ser reinicializado inesperadamente com o erro: **0x139 (KERNEL\_SECURITY\_verificar\_ falha)** .
+Depois da instalação ou da inicialização de certos aplicativos da Microsoft Store, talvez o computador seja reiniciado inesperadamente com o erro: **0x139 (KERNEL\_SECURITY\_CHECK\_ FAILURE)** .
 
 Entre os aplicativos afetados conhecidos estão Kodi, JT2Go, Ear Trumpet, Teslagrad e outros.
 
@@ -35,7 +35,7 @@ Uma [atualização do Windows (versão 14393.351 - KB3197954)](https://support.m
 
 Se a atualização não corrigir o problema ou se você não souber como recuperar o computador, entre em contato com o [Suporte da Microsoft](https://support.microsoft.com/contactus/).
 
-Se for um desenvolvedor, você desejará impedir a instalação do aplicativo empacotado em versões do Windows que não incluam essa atualização. Observe que, ao fazer isso, seu aplicativo não estará disponível para os usuários que ainda não instalaram a atualização. Para limitar a disponibilidade do seu aplicativo aos usuários que instalaram essa atualização, modifique o arquivo AppxManifest. XML da seguinte maneira:
+Caso você seja desenvolvedor, talvez deseje impedir a instalação de seu aplicativo empacotado em versões do Windows que não incluam essa atualização. Observe que, ao você fazer isso, o aplicativo não estará disponível para os usuários que ainda não tiverem instalado a atualização. Para limitar a disponibilidade do aplicativo para os usuários que tenham instalado essa atualização, modifique o arquivo AppxManifest.xml da seguinte maneira:
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
@@ -45,9 +45,9 @@ Os detalhes a respeito do Windows Update podem ser encontrados em:
 
 ## <a name="common-errors-that-can-appear-when-you-sign-your-app"></a>Erros comuns que podem aparecer quando você assina seu aplicativo
 
-### <a name="publisher-and-cert-mismatch-causes-signtool-error-error-signersign-failed--21470248850x8007000b"></a>O fornecedor e algumas incompatibilidades causam um erro Signtool "Error: SignerSign() Failed" (-2147024885/0x8007000b)
+### <a name="publisher-and-cert-mismatch-causes-signtool-error-error-signersign-failed--21470248850x8007000b"></a>A incompatibilidade de publicadores e de certificados causa o erro SignTool "Erro: Falha no SignerSign()" (-2147024885/0x8007000b)
 
-A entrada de Fornecedor no manifesto do pacote de aplicativo do Windows deve corresponder ao Assunto do certificado que você está assinando.  Você pode usar qualquer um dos seguintes métodos para ver o assunto do certificado.
+A entrada do publicador no manifesto do pacote do aplicativo do Windows deve corresponder à entidade do certificado com o qual você está assinando.  Você pode usar qualquer um dos seguintes métodos para ver o assunto do certificado.
 
 **Opção 1: PowerShell**
 
@@ -57,13 +57,13 @@ Execute o seguinte comando do PowerShell: Ambos .cer ou .pfx pode ser usado como
 (Get-PfxCertificate <cert_file>).Subject
 ```
 
-**Opção 2: explorador de arquivos**
+**Opção 2: Explorador de Arquivos**
 
 Clique duas vezes no certificado no Explorador de Arquivos, selecione a guia *Detalhes* e depois o campo *Assunto* na lista. Em seguida, você pode copiar o conteúdo.
 
 **Opção 3: CertUtil**
 
-Execute o **certutil** na linha de comando no arquivo PFX e copie o campo *assunto* da saída.
+Por meio da linha de comando, execute o **certutil** no arquivo PFX e copie o campo *Entidade* da saída.
 
 ```cmd
 certutil -dump <cert_file.pfx>
@@ -71,19 +71,19 @@ certutil -dump <cert_file.pfx>
 
 <a id="bad-pe-cert" />
 
-### <a name="bad-pe-certificate-0x800700c1"></a>Certificado PE inadequado (0x800700C1)
+### <a name="bad-pe-certificate-0x800700c1"></a>Certificado PE defeituoso (0x800700C1)
 
-Isso pode acontecer quando o pacote contém um binário que tem um certificado corrompido. Aqui estão alguns dos motivos pelos quais isso pode acontecer:
+Isso pode acontecer quando seu pacote contém um binário que corrompeu o certificado. Aqui estão algumas das razões por que isso pode acontecer:
 
 * O início do certificado não está no final de uma imagem.  
 
 * O tamanho do certificado não é positivo.
 
-* O certificado iniciado não é posterior à estrutura de `IMAGE_NT_HEADERS32` de um executável de 32 bits ou após a estrutura de `IMAGE_NT_HEADERS64` para um executável de 64 bits.
+* O início do certificado não está depois da estrutura `IMAGE_NT_HEADERS32` de um executável de 32 bits nem depois da estrutura `IMAGE_NT_HEADERS64` de um executável de 64 bits.
 
-* O ponteiro do certificado não está alinhado corretamente para uma estrutura de WIN_CERTIFICATE.
+* O ponteiro do certificado não está adequadamente alinhado com uma estrutura WIN_CERTIFICATE.
 
-Para localizar arquivos que contenham um certificado PE insatisfatório, abra um **prompt de comando**e defina a variável de ambiente chamada `APPXSIP_LOG` como um valor de 1.
+Para localizar arquivos que contenham um certificado PE defeituoso, abra um **prompt de comando** e defina a variável de ambiente nomeada `APPXSIP_LOG` a um valor de 1.
 
 ```
 set APPXSIP_LOG=1
@@ -95,7 +95,7 @@ Em seguida, no **prompt de comando**, assine o aplicativo novamente. Por exemplo
 signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx
 ```
 
-As informações sobre arquivos que contêm um certificado PE inadequado aparecerão na **janela do console**. Por exemplo:
+As informações sobre os arquivos que contêm um certificado PE defeituoso aparecerão na **janela do console**. Por exemplo:
 
 ```
 ...
@@ -105,6 +105,6 @@ ERROR: [AppxSipCustomLoggerCallback] File has malformed certificate: uninstall.e
 ...   
 ```
 
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
+## <a name="next-steps"></a>Próximas etapas
 
 Tem dúvidas? Pergunte-nos no Stack Overflow. Nossa equipe monitora estas [marcas](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Você também pode entrar em contato conosco [aqui](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
