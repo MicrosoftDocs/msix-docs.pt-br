@@ -1,17 +1,17 @@
 ---
 title: Programa Insider da Ferramenta de Empacotamento MSIX
 description: Este artigo apresenta o programa MSIX Packaging Tool Insider, que fornece versões de acesso antecipadas da ferramenta de empacotamento MSIX.
-ms.date: 06/25/2019
+ms.date: 03/25/2020
 ms.topic: article
 keywords: Windows 10, UWP, MSIX, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 8280ad784fad1547b43db14124f1118dfff846f5
-ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
+ms.openlocfilehash: b6c62eea20f47072492cf0bb5bb0b12632e4ec94
+ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79097840"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80391600"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -19,7 +19,7 @@ O Programa Insider da Ferramenta de Empacotamento MSIX fornece acesso antecipado
 
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://aka.ms/MSIXPackagingPreviewProgram" data-linktype="external">Clique aqui para ingressar</a></p></div>
 
-## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Windows 10, versão 1809 (ou posterior).
 - Um alias válido da conta Microsoft para acessar o aplicativo na Microsoft Store.
@@ -35,10 +35,10 @@ Se a ferramenta já estiver instalada no computador, verifique a versão instala
 
 ## <a name="current-insider-preview-build"></a>Build atual do Insider Preview
 
-## <a name="version-120202250"></a>1\.2020.225.0 da versão
+## <a name="version-120203190"></a>1\.2020.319.0 da versão
 
-- O suporte do MSIX core pode ser adicionado automaticamente aos pacotes gerados
-- Capacidade de importar os arquivos de registro (. reg) no editor de pacote
+- Qualidade aprimorada de ícones extraídos
+- Extração de ícones aprimorados de atalhos
 
 Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](release-notes/history.md).
 

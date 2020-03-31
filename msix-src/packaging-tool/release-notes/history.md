@@ -1,19 +1,25 @@
 ---
 title: Notas de versão da ferramenta de empacotamento MSIX
 description: Este artigo fornece o histórico completo de notas de versão para diferentes versões da ferramenta de empacotamento MSIX.
-ms.date: 12/19/2019
+ms.date: 03/25/2020
 ms.topic: article
 keywords: Windows 10, UWP, msix, ferramenta de empacotamento msix, programa Insider
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: d35eb8712d5830c879011c7d3610d95ab019b9bd
-ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
+ms.openlocfilehash: 2fb911d4515816a02ad74064e4f7db78efbcb5eb
+ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79097890"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80391665"
 ---
 # <a name="release-notes-for-the-msix-packaging-tool"></a>Notas sobre a versão da Ferramenta de Empacotamento MSIX
+
+## <a name="version-120203190"></a>1\.2020.319.0 da versão
+- Qualidade aprimorada de ícones extraídos
+- Extração de ícones aprimorados de atalhos
+- correções de bugs gerais
+
 ## <a name="version-120202250"></a>1\.2020.225.0 da versão
 - Capacidade de importar arquivos de registro (. reg) no editor de pacote
 - Capacidade de adicionar automaticamente o [suporte do MSIX Core](../../msix-core/msixcore.md) a um MSIX

@@ -1,17 +1,17 @@
 ---
 title: Criar um pacote MSIX de qualquer instalador de área de trabalho
 description: Criar um pacote MSIX de qualquer instalador de desktop (MSI, EXE, ClickOnce ou App-V)
-ms.date: 02/11/2019
+ms.date: 03/25/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 125dd3dab5fc2884b48dceeac1006614156a8ba8
-ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
+ms.openlocfilehash: 56b01b3081e1271a79728a7b9a32ddb060c99039
+ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79097898"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80391609"
 ---
 # <a name="create-an-msix-package-from-any-desktop-installer-msi-exe-clickonce-or-app-v"></a>Criar um pacote MSIX de qualquer instalador de desktop (MSI, EXE, ClickOnce ou App-V)
 
@@ -116,7 +116,8 @@ Em **preferência de assinatura**, selecione uma opção de assinatura. Também 
 - Não **assinar pacote** Selecione esta opção se você estiver assinando seu pacote posteriormente. Observação: não é possível instalar um pacote MSIX se ele não estiver assinado
 - Ao assinar, é altamente recomendável adicionar um **carimbo de data/hora** ao seu certificado para que a validade do seu certificado possa Outlast sua data de expiração. O formato aceito é uma [URL do servidor com carimbo de data/hora RFC 3161](https://docs.microsoft.com/windows/win32/seccrypto/signtool).
 
-> Anotações Não há suporte para a assinatura de um aplicativo de formato de pacote MSIX com um certificado SHA1.
+> [!NOTE]
+> Não há suporte para a assinatura de um aplicativo de formato de pacote MSIX com um certificado SHA1.
 
 Clique em **Próximo** para continuar.
 
@@ -150,7 +151,7 @@ Depois de optar por empacotar o aplicativo em uma máquina virtual existente, vo
     - Procure e selecione um caminho de pasta.
     - Verifique se esse arquivo corresponde ao local de instalação do instalador enquanto você executa a operação de instalação do aplicativo.
 - Descrição:
-    - Este campo é opcional. 
+    - Esse campo é opcional. 
 
 ## <a name="installation"></a>Instalação
 

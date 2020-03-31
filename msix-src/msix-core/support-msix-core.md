@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, Windows 7, Windows 8, Windows Server, UWP, msix, msixcore, 1709, 1703, 1607, 1511, 1507
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: d21d350e6df7f0b0860a5c0b428a42e8d4517cef
-ms.sourcegitcommit: 44b9510ea76623d668d87ddca575a7921c60a19a
+ms.openlocfilehash: 3fb4d333c0ed84a4d54522e17b7e4ab54c6e28be
+ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75322651"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80391617"
 ---
 # <a name="update-your-existing-msix-package-to-support-msix-core"></a>Atualize seu pacote MSIX existente para dar suporte ao MSIX Core
 
@@ -31,7 +31,7 @@ O exemplo a seguir especifica o Windows 7 SP1 como uma versão mínima:
 Todos os aplicativos **MSIXCore. desktop** serão implantados no Windows Server com sistemas operacionais baseados na experiência desktop com o mesmo número de Build. Se o aplicativo for destinado apenas a um sistema operacional de servidor, especifique um **TargetDeviceFamily** com o nome **MSIXCore. Server**. Não há suporte para a implantação do Windows Server Core.
 
 ## <a name="update-manifest-using-the-msix-packaging-tool"></a>Atualizar o manifesto usando a ferramenta de empacotamento MSIX 
-Se você tiver um pacote MSIX, poderá usar a ferramenta de pacote MSIX para atualizar seu pacote para dar suporte ao MSIX Core. Estas são as etapas: 
+Se você tiver um pacote MSIX, poderá usar a ferramenta de pacote MSIX para atualizar seu pacote para dar suporte ao MSIX Core. Aqui estão as etapas: 
 1. Abrir o aplicativo de **ferramenta de empacotamento MSIX**
 2. Selecionar o **Editor de pacote** 
 3. Clique em **procurar...** para localizar o pacote
@@ -39,7 +39,7 @@ Se você tiver um pacote MSIX, poderá usar a ferramenta de pacote MSIX para atu
 5. Em **arquivo de manifesto**, clique em **Abrir arquivo**
 6. Você está exibindo o manifesto do pacote. Em **dependência** , adicione MSIX Core como uma família de dispositivos de destino (veja acima)
 7. Salvar e fechar o manifesto 
-8. Desistir do pacote 
+8. Assinar novamente o pacote 
 9. Clique em **salvar** e selecione se deseja que seu pacote seja incrementado 
 
 ## <a name="windows-versions-supported-by-msix-core"></a>Versões do Windows com suporte do MSIX Core
@@ -52,5 +52,5 @@ Se você tiver um pacote MSIX, poderá usar a ferramenta de pacote MSIX para atu
 | Windows 10 2016 LTSB (1607)|10.0.14393.0|
 | Windows Server 2008 R2| 6.1.7601.0|
 | Windows Server 2012| 6.2.9200.0|
-| R2 do Windows Server 2012| 6.3.9600.0|
+| Windows Server 2012 R2| 6.3.9600.0|
 | Windows Server 2016 | 10.0.14393.0|
