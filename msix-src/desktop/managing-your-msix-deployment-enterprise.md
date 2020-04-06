@@ -6,26 +6,27 @@ ms.topic: article
 keywords: windows 10, implantação, msix
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: acfdf9346f5d1a482733671b0b9dbe206a4c42ff
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: df42f17642e054ab720a6e0c81bf9639173a1dc6
+ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073952"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80391639"
 ---
 #   <a name="msix-app-distribution"></a>Distribuição de aplicativo MSIX
 O formato de empacotamento pode ser distribuído para dispositivos cliente com ferramentas de gerenciamento de dispositivos e aplicativos, como o Microsoft Intune e o Microsoft Endpoint Configuration Manager. 
 
 ##  <a name="microsoft-endpoint-configuration-manager"></a>Microsoft Endpoint Configuration Manager 
-Para obter detalhes sobre a Microsoft Store para Empresas, veja Microsoft Endpoint Configuration Manager (ramificação atual) oferece suporte à implantação de aplicativos MSIX em dispositivos cliente pelo modelo de Aplicativo. Como o MSIX é um formato padronizado de empacotamento de instalação, os detalhes relacionados ao aplicativo (Editor, Nome do aplicativo e Versão) serão recuperados e apresentados automaticamente para revisão pelo assistente de criação de aplicativo no Microsoft Endpoint Configuration Manager. De forma semelhante, a cadeia de caracteres de instalação e os métodos de detecção usados com os aplicativos MSIX são constantes e configurados automaticamente pelo assistente de criação de aplicativos do Microsoft Endpoint Configuration Manager.
 
-Ao criar um aplicativo no Microsoft Endpoint Configuration Manager, selecione o tipo de aplicativo: <b>Pacote do aplicativo do Windows (*.appx, *.appxbundle, *.msix, *.msixbundle)</b>. Para obter orientações sobre a criação e a implantação de um aplicativo pelo [Microsoft Endpoint Configuration Manager.](https://docs.microsoft.com/configmgr/apps/get-started/create-and-deploy-an-application)
+Como o MSIX é um formato padronizado de empacotamento de instalação, os detalhes relacionados ao aplicativo (Editor, Nome do aplicativo e Versão) serão recuperados e apresentados automaticamente para revisão pelo assistente de criação de aplicativo no Microsoft Endpoint Configuration Manager. De forma semelhante, a cadeia de caracteres de instalação e os métodos de detecção usados com os aplicativos MSIX são constantes e configurados automaticamente pelo assistente de criação de aplicativos do Microsoft Endpoint Configuration Manager.
+
+Ao criar um aplicativo no Microsoft Endpoint Configuration Manager, selecione o tipo de aplicativo: **pacote do aplicativo Windows (* .appx, *.appxbundle, *.msix, *.msixbundle)**. Para obter orientação sobre como criar e implantar um aplicativo por meio do Microsoft Endpoint Configuration Manager, confira [criar e implantar um aplicativo](https://docs.microsoft.com/configmgr/apps/get-started/create-and-deploy-an-application).
 
 ## <a name="microsoft-intune"></a>Microsoft Intune
 
-O Microsoft Intune é compatível com a implantação do aplicativo MSIX em dispositivos cliente pelo modelo de aplicativo cliente. Como o MSIX é um formato padronizado de empacotamento de instalação, os detalhes relacionados ao aplicativo (Nome do aplicativo, Descrição e Editor) são preenchidos automaticamente nas informações do Aplicativo.
+O Microsoft Intune é compatível com a implantação de aplicativos MSIX em dispositivos cliente por meio do modelo de aplicativo cliente. Como o MSIX é um formato padronizado de empacotamento de instalação, os detalhes relacionados ao aplicativo (Nome do aplicativo, Descrição e Editor) são preenchidos automaticamente nas informações do Aplicativo.
 
-A instalação de um aplicativo MSIX é padronizada. Sendo assim, ao adicionar um novo <b>Aplicativo de linha de negócios</b> ao Microsoft Intune, não há requisitos para configurar os parâmetros de instalação silenciosa necessários para a instalação. Para obter orientação sobre a criação e a implantação de um aplicativo pelo Microsoft Intune: 
+A instalação de um aplicativo MSIX é padronizada. Sendo assim, ao adicionar um novo aplicativo de linha de negócios ao Microsoft Intune, não há requisitos para configurar os parâmetros de instalação silenciosa necessários para a instalação. Para obter orientação sobre como criar e implantar um aplicativo por meio do Microsoft Intune, confira [Criação de aplicativos de linha de negócios no Intune](https://docs.microsoft.com/mem/intune/apps/lob-apps-windows).
 
 ## <a name="web-app-installer"></a>Web (Instalador de aplicativo)
 
