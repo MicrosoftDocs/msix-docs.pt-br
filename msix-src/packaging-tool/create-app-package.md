@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 56b01b3081e1271a79728a7b9a32ddb060c99039
-ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
+ms.openlocfilehash: 034abce3f240275e2c4be87b62e6fe9e8e6345ee
+ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391609"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81433762"
 ---
 # <a name="create-an-msix-package-from-any-desktop-installer-msi-exe-clickonce-or-app-v"></a>Criar um pacote MSIX de qualquer instalador de desktop (MSI, EXE, ClickOnce ou App-V)
 
@@ -112,7 +112,7 @@ Em **preferência de assinatura**, selecione uma opção de assinatura. Também 
 
 - **Assinar com assinatura do Device Guard** Essa opção permite que você entre em sua conta do Microsoft Active Directory que você configurou para usar com a assinatura do Device Guard, que é um serviço de assinatura que a Microsoft fornece onde você não precisa fornecer seu próprio certificado. Saiba mais sobre como configurar sua conta e sobre a assinatura do Device Guard [aqui](../package/signing-package-device-guard-signing.md). 
 - **Assinar com um certificado (. pfx)** Navegue até e selecione seu arquivo de certificado. pfx. Se o certificado for protegido por senha, digite a senha na caixa de senha.
-- **Especificar um arquivo. cer (o sinal de nota)** Essa opção permite que você especifique um arquivo. cer. Isso é útil quando você não deseja assinar o pacote, mas deseja garantir que as informações do Publicador correspondam ao assunto do certificado que será usado para assinatura. 
+- **Especificar um arquivo. cer (não assina)** Essa opção permite que você especifique um arquivo. cer. Isso é útil quando você não deseja assinar o pacote, mas deseja garantir que as informações do Publicador correspondam ao assunto do certificado que será usado para assinatura. 
 - Não **assinar pacote** Selecione esta opção se você estiver assinando seu pacote posteriormente. Observação: não é possível instalar um pacote MSIX se ele não estiver assinado
 - Ao assinar, é altamente recomendável adicionar um **carimbo de data/hora** ao seu certificado para que a validade do seu certificado possa Outlast sua data de expiração. O formato aceito é uma [URL do servidor com carimbo de data/hora RFC 3161](https://docs.microsoft.com/windows/win32/seccrypto/signtool).
 
@@ -127,7 +127,6 @@ Depois de optar por empacotar o aplicativo em uma máquina virtual existente, vo
 
 - Nome do pacote:
     - Obrigatório; corresponde ao Nome de identidade do pacote no manifesto para descrever o conteúdo do pacote.
-    - Precisa ser correspondente às informações da entidade do Nome do certificado usado para assinar um pacote.
     - Não é mostrado ao usuário final.
     - Diferencia maiúsculas de minúsculas e não pode ter um espaço.
     - Pode aceitar uma cadeia de caracteres entre 3 e 50 caracteres que consiste em caracteres alfanuméricos, ponto e traço.
@@ -145,13 +144,13 @@ Depois de optar por empacotar o aplicativo em uma máquina virtual existente, vo
 - Versão:
     - Obrigatório; corresponde ao pacote no manifesto para descrever o número de versão do pacote.
     - Este campo aceita uma cadeia de caracteres de versão na notação quádrupla: "Major. Minor. Build. Revision".
+- Descrição:
+    - Este campo é opcional.
 - Local de instalação:
     - Esse é o local em que o instalador copiará o conteúdo do aplicativo (normalmente, a pasta Arquivos de Programas).
     - Esse campo é opcional, mas recomendado quando a carga do aplicativo está sendo instalada fora das pastas de arquivos de programas.
     - Procure e selecione um caminho de pasta.
-    - Verifique se esse arquivo corresponde ao local de instalação do instalador enquanto você executa a operação de instalação do aplicativo.
-- Descrição:
-    - Esse campo é opcional. 
+    - Verifique se esse arquivo corresponde ao local de instalação do instalador enquanto você executa a operação de instalação do aplicativo. 
 
 ## <a name="installation"></a>Instalação
 

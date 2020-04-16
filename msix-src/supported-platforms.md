@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d30a28fa6a2eb551cc640b5ce2b666089cd5daa8
-ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
+ms.openlocfilehash: 702dd154fee357bf616fca4a4babe408ed7a6e2f
+ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391588"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81433732"
 ---
 # <a name="supported-platforms"></a>Plataformas compatíveis
 
@@ -47,7 +47,7 @@ A tabela a seguir mostra quais recursos e cenários do MSIX têm suporte em dife
 | Instalação e desinstalação do MSIX nativo | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark: |
 | [Estrutura de suporte do pacote (PSF)](psf/package-support-framework-overview.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:|  :heavy_check_mark: | :heavy_check_mark:|  
 | [Serviços do Windows](packaging-tool/convert-an-installer-with-services.md) | :x: | :x: | :x: | :x:| :x: | :heavy_check_mark:| :x:| :x: | 
-
+| [Imposição de integridade do pacote para pacotes que não são de armazenamento](package/signing-package-overview.md#package-integrity-enforcement) | :x: | :x: | :x: | :x:| :x: | :heavy_check_mark:| :x:| :x: | 
 ## <a name="package-format-support"></a>Suporte a formato de pacote
 
 A tabela a seguir mostra quais formatos de pacote têm suporte em diferentes versões do Windows 10.
@@ -65,7 +65,7 @@ A tabela a seguir mostra quais recursos de Microsoft Store têm suporte em difer
 
 | Recursos | 1709 | 1803 | 1809 | 1903 | 1909 | 2004
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| Publicação             | :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
+| Publicando             | :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 | Notificação de atualização| :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 | Instalação de streaming | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| 
 | Atualizações Delta | :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 

@@ -5,12 +5,12 @@ ms.date: 07/12/2019
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fa356679943afd8267a1e8df8527a2179f61b98
-ms.sourcegitcommit: e703ffe4c635d9b127ecf8c02e087370b676aa9c
+ms.openlocfilehash: c489a4bed1598c0fecca7f20d33aee4880201b96
+ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80108229"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81433742"
 ---
 # <a name="sign-an-msix-package-with-device-guard-signing"></a>Assinar um pacote do MSIX com a autenticação do Device Guard
 
@@ -113,7 +113,7 @@ signtool sign /fd sha256 /dlib DgssLib.dll /dmdf <Azure AAD in .json format> /t 
 
 ## <a name="test"></a>{1&gt;Testar&lt;1}
 
-Para testar a assinatura do Device Guard, baixe o certificado raiz do organização da Microsoft Store para o portal de negócios.
+Para testar a assinatura do Device Guard, baixe o certificado raiz da sua organização do Microsoft Store para o portal de negócios.
 
 1. Entre na [Microsoft Store para Empresas](https://businessstore.microsoft.com/).
 2. Selecione **gerenciar** e, em seguida, **configurações**.
@@ -128,4 +128,4 @@ Implante este certificado em seu dispositivo. Instale seu aplicativo assinado re
 Aqui estão erros comuns que podem ser encontrados.
 
 * 0x800700d: esse erro comum significa que o formato do arquivo JSON do Azure AD é inválido.
-* Talvez seja necessário aceitar os termos e a condição de Microsoft Store para negócios antes de downloadidng o certificado raiz da assinatura do Device Guard. Isso pode ser feito por meio do obtenção de um aplicativo gratuito no Portal.
+* Talvez seja necessário aceitar os termos e condições de Microsoft Store para negócios antes de baixar o certificado raiz da assinatura do Device Guard. Isso pode ser feito adquirindo um aplicativo gratuito no Portal.

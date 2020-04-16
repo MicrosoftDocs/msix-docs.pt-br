@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b6c62eea20f47072492cf0bb5bb0b12632e4ec94
-ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
+ms.openlocfilehash: 57519a22974b083068af7c353426b987afa30022
+ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391600"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81433782"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -19,7 +19,7 @@ O Programa Insider da Ferramenta de Empacotamento MSIX fornece acesso antecipado
 
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://aka.ms/MSIXPackagingPreviewProgram" data-linktype="external">Clique aqui para ingressar</a></p></div>
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 
 - Windows 10, versão 1809 (ou posterior).
 - Um alias válido da conta Microsoft para acessar o aplicativo na Microsoft Store.
@@ -35,10 +35,10 @@ Se a ferramenta já estiver instalada no computador, verifique a versão instala
 
 ## <a name="current-insider-preview-build"></a>Build atual do Insider Preview
 
-## <a name="version-120203190"></a>1\.2020.319.0 da versão
-
-- Qualidade aprimorada de ícones extraídos
-- Extração de ícones aprimorados de atalhos
+## <a name="version-120204020---public-release"></a>Versão 1.2020.402.0 – versão pública
+- A configuração de integridade do pacote está ativada por padrão
+- Capacidade de adicionar automaticamente o [suporte do MSIX Core](../msix-core/msixcore.md) a um MSIX
+- Capacidade de importar ou exportar arquivos de registro (. reg) no editor de pacote
 
 Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](release-notes/history.md).
 

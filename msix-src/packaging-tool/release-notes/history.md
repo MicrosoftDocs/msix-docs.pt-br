@@ -6,35 +6,29 @@ ms.topic: article
 keywords: Windows 10, UWP, msix, ferramenta de empacotamento msix, programa Insider
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: 2fb911d4515816a02ad74064e4f7db78efbcb5eb
-ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
+ms.openlocfilehash: c9221464799aba0744e5b6f0acaef59aebd850cf
+ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391665"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81433752"
 ---
 # <a name="release-notes-for-the-msix-packaging-tool"></a>Notas sobre a versão da Ferramenta de Empacotamento MSIX
 
-## <a name="version-120203190"></a>1\.2020.319.0 da versão
-- Qualidade aprimorada de ícones extraídos
-- Extração de ícones aprimorados de atalhos
-- correções de bugs gerais
-
-## <a name="version-120202250"></a>1\.2020.225.0 da versão
-- Capacidade de importar arquivos de registro (. reg) no editor de pacote
+## <a name="version-120204020---public-release"></a>Versão 1.2020.402.0 – versão pública
+- A configuração de integridade do pacote está ativada por padrão
 - Capacidade de adicionar automaticamente o [suporte do MSIX Core](../../msix-core/msixcore.md) a um MSIX
-- Adicionar bugs corrigidos da extensão InstalledLocationVirtualization:
+- Capacidade de importar ou exportar arquivos de registro (. reg) no editor de pacote
+- A página Criar pacote agora mostra o local de salvamento padrão
+- Adicionar extensão InstalledLocationVirtualization
+- Qualidade aprimorada de ícones extraídos
+- Extração de ícones aprimorados de erros corrigidos de atalhos:
 - Validar o formato do manifesto após a edição 
 - Tornar a mensagem quando a tarefa de inicialização inicial falhar mais claro 
 - Proibir caminhos relativos para desempacotamento 
 - Filtros de arquivo atualizados para mostrar quais formatos são válidos (por exemplo, para instaladores que ele costumava dizer *.*  e agora `*.msi, *.exe, ...`) 
 - Corrigido quando o Unpack converteria espaços em caminhos em "%20"
-
-## <a name="version-120202030"></a>1\.2020.203.0 da versão
-- A configuração de integridade do pacote está ativada por padrão
-- A página Criar pacote agora mostra o local de salvamento padrão
-- Capacidade de exportar seus arquivos de registro (. reg)
-- Aprimoramentos de correção de bugs gerais
+- correções de bugs gerais
 
 ## <a name="version-1201912200---public-release"></a>Versão 1.2019.1220.0 – versão pública
 - O suporte para a conversão de um instalador existente com serviços agora está disponível
