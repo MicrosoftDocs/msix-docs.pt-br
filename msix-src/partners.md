@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9aafc33d3ffebf44704e1172ea2eeac991430ca2
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 3be32823427b7c62a84db0933d22aec49d1b3eee
+ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073026"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81433722"
 ---
 # <a name="msix-partners"></a>Parceiros de MSIX
 
@@ -41,6 +41,11 @@ Os parceiros a seguir fornecem ferramentas adicionais e suporte para cenários d
 :::column:::
 [![Logotipo da Flexera](images/Flexera_Logo.png)](https://www.flexera.com/company/news/press-releases/Flexera-Launches-Support-for-Microsofts-MSIX.html)    
 :::column-end:::
+
+:::column:::
+[![Logotipo da installAware](images/installAware_logo.png)](https://www.installaware.com/msix.htm)    
+:::column-end:::
+
 
 :::row-end:::
 
