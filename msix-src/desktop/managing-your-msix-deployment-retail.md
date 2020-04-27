@@ -7,10 +7,10 @@ keywords: windows 10, implantação, msix
 ms.assetid: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a27a4804786ce82485ba3e7de9c855a2bf2e23c
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "77073852"
 ---
 # <a name="distribute-your-msix-in-a-consumer-environment"></a>Distribuir o MSIX em um ambiente do consumidor
@@ -27,7 +27,7 @@ Para saber como publicar um aplicativo na Microsoft App Store e conhecer os recu
 
 ## <a name="app-center"></a>App Center
 
-O [App Center](https://appcenter.ms/) permite criar o aplicativo automaticamente, testá-lo em dispositivos reais e distribuí-lo para testadores beta.  O App Center permite enviar aplicativos com mais frequência, com qualidade mais alta e com maior confiança.  Com o App Center é possível conectar o repositório e, em alguns minutos, automatizar os builds, testar em dispositivos reais na nuvem, distribuir os aplicativos para testadores beta e monitorar a utilização no mundo real com dados de falha e de análise. Tudo em um só lugar.
+O [App Center](https://appcenter.ms/) permite criar o aplicativo automaticamente, testá-lo em dispositivos reais e distribuí-lo para testadores beta.  O App Center permite enviar aplicativos com mais frequência, com qualidade mais alta e com maior confiança.  Com o App Center é possível conectar o repositório e, em alguns minutos, automatizar os builds, testar em dispositivos reais na nuvem, distribuir os aplicativos para testadores beta e monitorar a utilização no mundo real com dados de falha e de análise. Tudo isso em um só lugar.
 Para obter mais informações sobre o App Center, consulte [App Center](https://docs.microsoft.com/appcenter/).
 
 ## <a name="web-install"></a>Instalação na Web
