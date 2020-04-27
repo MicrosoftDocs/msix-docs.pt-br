@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, msix, compilador de imagem nativa
 ms.localizationpriority: medium
 ms.openlocfilehash: ebc2c7351fef0856d83529e55ba4ebf012aaaeed
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "77073086"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>Otimize os aplicativos de área de trabalho .NET com imagens nativas

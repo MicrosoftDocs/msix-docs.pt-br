@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, implantação, msix
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: df42f17642e054ab720a6e0c81bf9639173a1dc6
-ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
+ms.openlocfilehash: b0cabc375e89e0c811826c04798aed252d4a6dc1
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391639"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "81613992"
 ---
 #   <a name="msix-app-distribution"></a>Distribuição de aplicativo MSIX
 O formato de empacotamento pode ser distribuído para dispositivos cliente com ferramentas de gerenciamento de dispositivos e aplicativos, como o Microsoft Intune e o Microsoft Endpoint Configuration Manager. 
@@ -41,16 +41,15 @@ Para saber como distribuir um arquivo MSIX no IIS e como configurar o servidor I
 
 O [App Center](https://appcenter.ms/) permite criar o aplicativo automaticamente, testá-lo em dispositivos reais e distribuí-lo para testadores beta.  O App Center permite enviar aplicativos com mais frequência, com qualidade mais alta e com maior confiança.  Com o App Center é possível conectar o repositório e, em alguns minutos, automatizar os builds, testar em dispositivos reais na nuvem, distribuir os aplicativos para testadores beta e monitorar a utilização no mundo real com dados de falha e de análise. Tudo isso em um só lugar.
 
-
 ## <a name="deployment-image-servicing-and-management-dismexe-and-provisioning"></a>Gerenciamento e provisionamento de imagens de implantação (DISM.exe)
 
 ### <a name="dism"></a>DISM
 Os profissionais de TI podem usar os cmdlets DISM (Gerenciamento de imagens de implantação) para instalar, desinstalar e configurar pacotes MSIX em uma imagem do Windows antes da implantação.  
-Para saber mais sobre o provisionamento, veja [Gerenciamento, manutenção e provisionamento de imagens de implantação.](managing-your-msix-deployment-dism-provisioning.md)
+Para saber mais sobre o provisionamento, veja [Gerenciamento, manutenção e provisionamento de imagens de implantação.](deploy-preinstalled-apps.md)
 
 ### <a name="provisioning"></a>Provisionamento
 Os profissionais de TI usam o provisionamento para configurar dispositivos de usuário final sem precisar gerar a imagem novamente.  Os profissionais de TI podem pré-instalar pacotes MSIX nos sistemas dos usuários finais.
-Para saber mais sobre o provisionamento, veja [Gerenciamento, manutenção e provisionamento de imagens de implantação.](managing-your-msix-deployment-dism-provisioning.md)
+Para saber mais sobre o provisionamento, veja [Gerenciamento, manutenção e provisionamento de imagens de implantação.](deploy-preinstalled-apps.md)
 
 ## <a name="managing-your-msix-app"></a>Gerenciamento do aplicativo MSIX
 

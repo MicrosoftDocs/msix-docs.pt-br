@@ -8,10 +8,10 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: ce394fa310da995a59289bfb463d643bf2b46413
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "77074082"
 ---
 # <a name="building-an-msix-package-from-your-code"></a>Criar um pacote do MSIX com base em seu código 
@@ -28,7 +28,7 @@ Se estiver desenvolvendo um aplicativo UWP, o Visual Studio usará o MSIX como f
 |[Empacotamento pela linha de comando](../package/manual-packaging-root.md)| Esta seção fala sobre como empacotar o aplicativo como MSIX usando ferramentas de linha de comando.|
 |[Estender o aplicativo MSIX](extend-overview.md)| Esta seção fala sobre como é possível estender o aplicativo usando extensões e pacotes opcionais.|
 
-## <a name="add-modern-windows-10-experiences"></a>Adicionar as experiências modernas do Windows 10
+## <a name="add-modern-windows-10-experiences"></a>Adicionar experiências modernas do Windows 10
 
 Depois de criar um pacote MSIX para o aplicativo de área de trabalho, é possível usar APIs da UWP, extensões de pacote e componentes UWP para possibilitar experiências modernas e envolventes do Windows 10, como notificações e blocos dinâmicos.
 

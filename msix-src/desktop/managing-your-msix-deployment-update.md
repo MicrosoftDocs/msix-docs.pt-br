@@ -7,10 +7,10 @@ keywords: windows 10, implantação, msix
 ms.assetid: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: 893b67394b4ed996d4506a65b030205a1b8a9f3f
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "77074112"
 ---
 # <a name="differential-updates-for-msix-app-packages"></a>Atualizações diferenciais para pacotes do aplicativo MSIX

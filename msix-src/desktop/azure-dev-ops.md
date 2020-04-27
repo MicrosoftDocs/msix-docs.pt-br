@@ -7,15 +7,15 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 633cca3493238ea4528e1b3eb37f1c735a78ad2b
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "77074152"
 ---
 # <a name="set-up-a-cicd-pipeline-to-automate-your-msix-builds-and-deployments"></a>Configure um pipeline da CI/CD para automatizar builds e implantações do MSIX
 
-Você pode usar o Azure Pipelines para criar builds automatizados para seu projeto MSIX. Este artigo mostra como fazer isso no Azure DevOps. Também mostraremos como realizar essas tarefas usando a linha de comando para que seja possível fazer a integração com qualquer sistema de build.
+Você pode usar o Azure Pipelines para criar builds automatizados para seu projeto MSIX. Este artigo mostra como fazer isso no Azure DevOps. Também mostraremos como realizar essas tarefas usando a linha de comando para que seja possível integrar com qualquer outro sistema de build.
 
 ## <a name="create-a-new-azure-pipeline"></a>Crie um novo pipeline do Azure
 
@@ -23,7 +23,7 @@ Comece [inscrevendo-se no Azure Pipelines](https://docs.microsoft.com/azure/devo
 
 Em seguida, crie um pipeline que possa ser usado para criar seu código-fonte. Para obter um tutorial sobre como criar um pipeline para criar um repositório GitHub, consulte [Crie seu primeiro pipeline](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml). O Azure Pipelines é compatível com os tipos de repositório listados [neste artigo](https://docs.microsoft.com/azure/devops/pipelines/repos).
 
-Para configurar o pipeline do build propriamente dito, navegue para o portal Azure DevOps em dev.azure.com/<organization> e crie um novo projeto. Se não tiver uma conta, crie uma gratuitamente. Depois de entrar e criar um projeto, você poderá enviar o código-fonte por push para o repositório Git configurado para você em https://<organization>@dev.azure.com/\<organização>/<project>/_git/<project> ou usar qualquer outro provedor, como o GitHub. Você poderá escolher a localização do repositório quando criar um novo pipeline no portal, basta primeiro clicar no botão “Pipelines”, depois em “Novo Pipeline”.
+Para configurar o pipeline do build propriamente dito, navegue para o portal Azure DevOps em dev.azure.com/<organization> e crie um novo projeto. Se não tiver uma conta, é possível criar uma gratuitamente. Depois de entrar e criar um projeto, você poderá enviar o código-fonte por push para o repositório Git configurado para você em https://<organization>@dev.azure.com/\<organização>/<project>/_git/<project> ou usar qualquer outro provedor, como o GitHub. Você poderá escolher a localização do repositório quando criar um novo pipeline no portal, clicando primeiro no botão “Pipelines” e em “Novo Pipeline”.
 
 Na tela Configurar que aparece em seguida, você deve selecionar a opção “Arquivo YAML Existente do Azure Pipelines” e o caminho para o arquivo YAML verificado no repositório.
 
@@ -55,7 +55,7 @@ Os diferentes argumentos MSBuild que podem ser definidos para configurar o pipel
 |**Argumento MSBuild**|**Valor**|**Descrição**|
 |--------------------|---------|---------------|
 | AppxPackageDir | $(Build.ArtifactStagingDirectory)\AppxPackages | Define a pasta para armazenar os artefatos gerados. |
-| AppxBundlePlatforms | $(Build.BuildPlatform) | Permite definir quais plataformas são incluídas no pacote. |
+| AppxBundlePlatforms | $(Build.BuildPlatform) | Permite definir quais plataformas incluir no pacote. |
 | AppxBundle | Sempre | Cria um .msixbundle/.appxbundle com os arquivos .msix/.appx da plataforma especificada. |
 | UapAppxPackageBuildMode | StoreUpload | Gera o arquivo .msixupload/.appxupload e a pasta **_Test** para sideload. |
 | UapAppxPackageBuildMode | CI | Gera somente o arquivo .msixupload/.appxupload. |
@@ -67,7 +67,7 @@ Os diferentes argumentos MSBuild que podem ser definidos para configurar o pipel
 
 
 
-Antes de criar o projeto de empacotamento da mesma forma que o assistente no Visual Studio usando a linha de comando MSBuild, o processo de build pode criar a versão do pacote MSIX sendo produzido editando o atributo Version no elemento Package no arquivo Package.appxmanifest. No Azure Pipelines, isso pode ser feito usando uma expressão para configurar uma variável de contador, que é incrementada para cada build, e um script do PowerShell que usa a classe System.Xml.Linq.XDocument no .NET para alterar o valor do atributo. 
+Antes de criar o projeto de empacotamento da mesma forma que o assistente no Visual Studio usando a linha de comando MSBuild, o processo de build pode criar a versão do pacote MSIX sendo produzido editando o atributo Version no elemento Package no arquivo Package.appxmanifest. No Azure Pipelines, isso pode ser feito usando-se uma expressão para configurar uma variável de contador que é incrementada para cada build e um script do PowerShell que usa a classe System.Xml.Linq.XDocument no .NET para alterar o valor do atributo. 
 
 Exemplo de arquivo YAML que define o Pipeline de Build do MSIX
 
@@ -213,7 +213,7 @@ Um arquivo .appinstaller que buscará arquivos atualizados em \\server\foo
 </AppInstaller>
 ```
 
-O elemento UpdateSettings é usado para informar ao sistema quando procurar atualizações e se é necessário forçar o usuário a fazer a atualização. A referência de esquema completa, incluindo os namespaces compatíveis com cada versão do Windows 10, pode ser encontrada nos documentos em bit.ly/2TGWnCR.
+O elemento UpdateSettings é usado para informar ao sistema quando verificar por atualizações e se é necessário forçar o usuário a atualizar. A referência de esquema completa, incluindo os namespaces compatíveis com cada versão do Windows 10, pode ser encontrada nos documentos em bit.ly/2TGWnCR.
 
 Se você adicionar o arquivo .appinstaller ao projeto de empacotamento e definir a propriedade Package Action dele como Content e a propriedade Copy to Output Directory como Copy if newer, será possível adicionar outra tarefa do PowerShell ao arquivo YAML que atualiza os atributos Version da raiz e os elementos MainPackage e salva o arquivo atualizado no diretório de teste:
 

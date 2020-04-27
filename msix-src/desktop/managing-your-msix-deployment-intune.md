@@ -7,10 +7,10 @@ keywords: windows 10, uwp, mem, mem ac, console de admin mem, app, msix
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: cf2fe754de71cd5242833c3bfd5b74f3c95b1a37
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "77073922"
 ---
 # <a name="microsoft-intune"></a>Microsoft Intune
@@ -21,6 +21,6 @@ Ao implantar um aplicativo cliente pelo Microsoft Intune para ser distribuído p
 
 |||
 |-----|------|
-| 1. Capturar um pacote do MSIX do Instalador ou recuperar um aplicativo MSIX existente | [Criar um pacote do MSIX por um instalador da área de trabalho](../packaging-tool/create-app-package.md) |
+| 1. Capturar um pacote do MSIX do Instalador ou recuperar um aplicativo MSIX existente | [Criar um pacote do MSIX de um instalador de área de trabalho](../packaging-tool/create-app-package.md) |
 | 2. Iniciar o Console do Intune | [Console do Microsoft Intune](https://portal.azure.com/#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview) |
 | 3. Criar e implantar um aplicativo de linha de negócios | [Criar e implantar um aplicativo de linha de negócios](https://docs.microsoft.com/intune/apps/lob-apps-windows) |

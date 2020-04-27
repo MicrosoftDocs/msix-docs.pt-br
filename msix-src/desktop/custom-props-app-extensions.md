@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, msix, uwp, extensões
 ms.localizationpriority: medium
 ms.openlocfilehash: 126fa9b8f897e543d0418ea39d35cd088f0aeace
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "77073872"
 ---
 # <a name="using-custom-properties-for-app-extensions"></a>Usar propriedades personalizadas para extensões de aplicativo
