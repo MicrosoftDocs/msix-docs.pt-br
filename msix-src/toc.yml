@@ -132,6 +132,8 @@
               href: psf/package-support-framework.md
             - name: Executar scripts com o Package Support Framework
               href: psf/run-scripts-with-package-support-framework.md
+            - name: Iniciar aplicativos com parâmetros
+              href: psf\psf-launch-apps-with-parameters.md
         - name: Agrupar pacotes MSIX
           href: packaging-tool/bundle-msix-packages.md
     - name: MSIX Toolkit
@@ -218,12 +220,10 @@
           href: desktop/managing-your-msix-deployment-intune.md
         - name: Cmdlets do PowerShell do MSIX
           href: desktop/powershell-msix-cmdlets.md
-        - name: Usar a Política de Grupo
+        - name: Como usar a Política de Grupo
           href: group-policy-msix.md
-        - name: Implantar aplicativos pré-instalados
+        - name: Pré-instalar aplicativos empacotados
           href: desktop/deploy-preinstalled-apps.md
-        - name: Instalar o aplicativo para todos os usuários
-          href: desktop/managing-your-msix-deployment-dism-provisioning.md
         - name: Instalar versões anteriores de um pacote do aplicativo MSIX
           href: desktop/managing-your-msix-deployment-downgrading.md
     - name: Implantar o MSIX com um arquivo do Instalador de Aplicativo
@@ -298,6 +298,8 @@
       href: manage/troubleshoot-msix-container.md
     - name: Depurar e testar um aplicativo empacotado
       items:
+        - name: 'Solucionar problemas de empacotamento, implantação e consulta de aplicativos Windows'
+          href: 'https://docs.microsoft.com/windows/win32/appxpkg/troubleshooting?context=/windows/msix/render'
         - name: 'Executar, depurar e testar um aplicativo da área de trabalho empacotado'
           href: desktop/desktop-to-uwp-debug.md
         - name: Detectar a identidade do pacote e o contexto do runtime
