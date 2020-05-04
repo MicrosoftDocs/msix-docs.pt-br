@@ -1,60 +1,60 @@
 ---
-description: Este artigo descreve como testar seu aplicativo do Windows para garantir que ele funcionará corretamente em dispositivos que executam o Windows 10 no modo S.
+description: Este artigo descreve como testar seu aplicativo do Windows para verificar se ele funcionará corretamente em dispositivos que executam o Windows 10 no modo S.
 title: Testar seu aplicativo do Windows para Windows 10 S
 ms.date: 07/29/2019
 ms.topic: article
-keywords: Windows 10 S, UWP, msix
+keywords: windows 10 S, uwp, msix
 ms.localizationpriority: medium
 ms.openlocfilehash: 195f202595a4c1474f5fc1c3f5389ad8657889a7
-ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
-ms.translationtype: MT
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/20/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "75303323"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>Testar seu aplicativo do Windows para Windows 10 no modo S
 
-Você pode testar seu aplicativo do Windows para garantir que ele funcione corretamente em dispositivos que executam o Windows 10 no modo S. Na verdade, se planeja publicar o aplicativo na Microsoft Store, você deve fazer isso, pois é um requisito da Store. Para testar seu aplicativo, você pode aplicar uma política de integridade de código do Device Guard em um dispositivo que estiver executando o Windows 10 Pro.
+Teste seu aplicativo do Windows para verificar se ele funcionará corretamente em dispositivos que executam o Windows 10 no modo S. Na verdade, se você pretende publicar seu aplicativo na Microsoft Store, faça isso, pois esse é um requisito da loja. Para testar seu aplicativo, aplique uma política de integridade de código do Device Guard em um dispositivo que executar o Windows 10 Pro.
 
 > [!NOTE]
-> O dispositivo no qual você aplica a política de integridade de código do Device Guard deve estar executando o Windows 10 Creators Edition (10.0; compilação 15063) ou posterior.
+> O dispositivo no qual você aplicará a política de integridade de código do Device Guard precisa executar o Windows 10 Creators Edition (10.0; build 15063) ou posterior.
 
-A política de integridade de código do Device Guard impõe as regras com as quais os aplicativos devem estar de acordo para serem executados no Windows 10 S.
+A Política de integridade de código do Device Guard impõe as regras com as quais os aplicativos precisam estar em conformidade para serem executados no Windows 10 S.
 
 > [!IMPORTANT]
->Recomendamos que você aplique essas políticas a uma máquina virtual, mas se você quiser aplicá-las à sua máquina local, certifique-se de revisar nossa orientação sobre as melhores práticas na seção "Próximo, instalar a política e reiniciar o sistema" deste tópico antes de aplicar uma política.
+>Recomendamos que você aplique essas políticas a uma máquina virtual, mas se você deseja aplicá-las ao computador local, examine nossas diretrizes de melhores práticas na seção "Próximo, instalar a política e reiniciar o sistema" deste tópico antes de aplicar uma política.
 
 <a id="choose-policy" />
 
-## <a name="first-download-the-policies-and-then-choose-one"></a>Primeiro, baixe as políticas e escolha uma
+## <a name="first-download-the-policies-and-then-choose-one"></a>Primeiro, baixe as políticas e, depois, escolha uma delas
 
 Baixe as políticas de integridade de código do Device Guard [aqui](https://go.microsoft.com/fwlink/?linkid=849018).
 
-Em seguida, escolha o que faz mais sentido para você. Aqui está o resumo de cada política.
+Em seguida, escolha a que faz mais sentido para você. Veja abaixo um resumo de cada política.
 
 |Política |Imposição |Certificado de autenticação |Nome do Arquivo |
 |--|--|--|--|
-|Política do modo de auditoria |Registra problemas / não bloqueia |Loja |SiPolicy_Audit.p7b |
-|Política de modo de produção |Sim |Loja |SiPolicy_Enforced.p7b |
-|Política de modo de produto com aplicativos auto-assinados |Sim |Certificado de teste do AppX  |SiPolicy_DevModeEx_Enforced.p7b |
+|Política de modo de auditoria |Registra problemas em log/não faz bloqueios |Repositório |SiPolicy_Audit.p7b |
+|Política de modo de produção |Sim |Repositório |SiPolicy_Enforced.p7b |
+|Política de modo de produto com aplicativos autoassinados |Sim |Certificado de teste do AppX  |SiPolicy_DevModeEx_Enforced.p7b |
 
-Recomendamos que você comece com a política de modo de auditoria. Você pode revisar os registros de eventos de integridade do código e usar essas informações para ajudá-lo a fazer ajustes em seu aplicativo. Em seguida, aplique a política de modo de produção quando estiver pronto para testes finais.
+Recomendamos que você comece com a política de modo de auditoria. Examine os logs de eventos de integridade do código e use essas informações para ajudar você a fazer ajustes no seu aplicativo. Em seguida, aplique a política de modo de produção quando estiver pronto para o teste final.
 
-Aqui está um pouco mais informações sobre cada política.
+Veja a seguir mais informações sobre cada política.
 
-### <a name="audit-mode-policy"></a>Política do modo de auditoria
-Com este modo, seu aplicativo é executado, mesmo que ele execute tarefas que não são suportadas no Windows 10 S. O Windows registra todos os executáveis que teriam sido bloqueados nos Registros de eventos de integridade do código.
+### <a name="audit-mode-policy"></a>Política de modo de auditoria
+Com esse modo, o aplicativo é executado, mesmo que ele execute tarefas não compatíveis com o Windows 10 S. O Windows registra em log todos os executáveis que teriam sido bloqueados nos logs de eventos de integridade do código.
 
-Você pode encontrar esses logs ao abrir o **Visualizador de Eventos** e então navegar até este local: Logs de Aplicativo e Serviços -> Microsoft -> Windows -> CodeIntegrity -> Operacional.
+Encontre esses logs abrindo o **Visualizador de Eventos** e navegue até esta localização: Logs de Aplicativos e Serviços -> Microsoft -> Windows -> Integridade de Código -> Operacional.
 
 ![code-integrity-event-logs](images/code-integrity-logs.png)
 
-Esse modo é seguro e não impede que o sistema seja inicializado.
+Esse modo é seguro e não impedirá que o sistema seja inicializado.
 
 #### <a name="optional-find-specific-failure-points-in-the-call-stack"></a>(Opcional) Encontrar pontos de falha específicos na pilha de chamadas
-Para encontrar pontos específicos na pilha de chamadas onde ocorrem problemas de bloqueio, adicione esta chave do Registro e depois [configure um ambiente de depuração do modo kernel](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-#span-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanset-up-a-kernel-mode-debugging).
+Para encontrar pontos específicos na pilha de chamadas em que ocorrem problemas de bloqueio, adicione esta chave do Registro e depois [configure um ambiente de depuração do modo kernel](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-#span-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanset-up-a-kernel-mode-debugging).
 
-|Chave|Nome|Digite|Valor|
+|Chave|Nome|Tipo|Valor|
 |--|---|--|--|
 |HKEY_LOCAL_MACHINE\SYSTEM\CurentControlSet\Control\CI| DebugFlags |REG_DWORD | 1 |
 
@@ -62,36 +62,36 @@ Para encontrar pontos específicos na pilha de chamadas onde ocorrem problemas d
 ![reg-setting](images/ci-debug-setting.png)
 
 ### <a name="production-mode-policy"></a>Política de modo de produção
-Esta política impõe as regras de integridade do código que combinam o Windows 10 S para que você possa simular a execução no Windows 10 S. Essa é a política mais rigorosa e é excelente para o teste de produção final. Neste modo, seu aplicativo está sujeito às mesmas restrições que estarão sujeitas no dispositivo de um usuário. Para usar este modo, seu aplicativo deve ser assinado pela Microsoft Store.
+Essa política impõe as regras de integridade do código que combinam o Windows 10 S para que você possa simular a execução no Windows 10 S. Essa é a política mais rigorosa e é excelente para o teste de produção final. Neste modo, seu aplicativo está sujeito às mesmas restrições que estarão sujeitas no dispositivo de um usuário. Para usar esse modo, o aplicativo precisa ser assinado pela Microsoft Store.
 
 ### <a name="production-mode-policy-with-self-signed-apps"></a>Política de modo de produção com aplicativos autoassinados
-Este modo é semelhante à política de modo de produção, mas também permite que as coisas sejam executadas que são assinadas com o certificado de teste incluído no arquivo zip. Instale o arquivo PFX incluído na pasta **AppxTestRootAgency** desse arquivo zip. Em seguida, assine seu app com ele. Dessa forma, você pode iterar rapidamente sem exigir a assinatura da loja.
+Esse modo é semelhante à política de modo de produção, mas também permite a execução de itens que sejam assinados com o certificado de teste incluído no arquivo zip. Instale o arquivo .pfx incluído na pasta **AppxTestRootAgency** desse arquivo zip. Em seguida, assine o aplicativo nele. Dessa forma, você pode iterar rapidamente sem precisar da assinatura da Store.
 
-Como o nome do publicador do seu certificado deve corresponder ao nome do fornecedor do seu app, você precisará alterar temporariamente o valor do atributo **Publisher** do elemento **Identity** para "CN=Appx Test Root Agency Ex". Você pode alterar esse atributo para seu valor original depois de concluir os testes.
+Como o nome do fornecedor do certificado precisa corresponder ao nome do fornecedor do aplicativo, você precisará alterar temporariamente o valor do atributo **Publisher** do elemento **Identity** para "CN=Appx Test Root Agency Ex". Você pode alterar esse atributo novamente para o valor original depois de concluir os testes.
 
 ## <a name="next-install-the-policy-and-restart-your-system"></a>Em seguida, instale a política e reinicie o sistema
 
-Recomendamos que você aplique essas políticas a uma máquina virtual porque essas políticas podem levar a falhas de inicialização. Isso ocorre porque essas políticas bloqueiam a execução do código que não foi assinado pela Microsoft Store, incluindo drivers.
+Recomendamos que você aplique essas políticas a uma máquina virtual, porque essas políticas podem levar a falhas de inicialização. Isso ocorre porque essas políticas bloqueiam a execução do código que não foi assinado pela Microsoft Store, incluindo drivers.
 
-Se você deseja aplicar essas políticas à sua máquina local, é melhor começar com a política de Modo de auditoria. Com esta política, você pode revisar os registros de eventos de integridade do código para garantir que nada crítico seja bloqueado em uma política forçada.
+Se você deseja aplicar essas políticas ao computador local, é melhor começar com a política de modo de auditoria. Com essa política, você pode examinar os logs de eventos de integridade do código para verificar se nada crítico será bloqueado em uma política imposta.
 
-Quando estiver pronto para aplicar uma política, localize o. Arquivo P7B para a política que você escolheu, renomeie-o como **SIPolicy. p7b**e, em seguida, salve esse arquivo nesse local em seu sistema: **C:\Windows\System32\CodeIntegrity\\** .
+Quando estiver pronto para aplicar uma política, encontre o arquivo .P7B da política escolhida, renomeie-o para **SIPolicy.P7B** e salve esse arquivo nesta localização do sistema: **C:\Windows\System32\CodeIntegrity\\** .
 
 Em seguida, reinicie o sistema.
 
 >[!NOTE]
->Para remover uma política do seu sistema, exclua o arquivo .P7B e, em seguida, reinicie o sistema.
+>Para remover uma política do sistema, exclua o arquivo .P7B e reinicie o sistema.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-**Encontre respostas para suas perguntas**
+**Encontre respostas para suas dúvidas**
 
-Tem dúvidas? Pergunte-nos sobre o Stack Overflow. Nossa equipe monitora estas [marcas](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Você também pode entrar em contato conosco [aqui](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Tem dúvidas? Pergunte-nos no Stack Overflow. Nossa equipe monitora estas [marcas](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Você também pode entrar em contato conosco [aqui](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
-**Examine um artigo de blog detalhado que foi Postado por nossa equipe de Consultoria de Aplicativos**
+**Examinar um artigo de blog detalhado postado pela nossa Equipe de Consultoria de Aplicativos**
 
-Consulte [Como portar e testar seus aplicativos da área de trabalho clássicos no Windows 10 S com a Ponte de Desktop](https://blogs.msdn.microsoft.com/appconsult/2017/06/15/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge/).
+Confira [Como portar e testar seus aplicativos clássicos da área de trabalho no Windows 10 S com a Ponte de Desktop](https://blogs.msdn.microsoft.com/appconsult/2017/06/15/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge/).
 
-**Saiba mais sobre as ferramentas que facilitam o teste do Windows no modo S**
+**Saiba mais sobre as ferramentas que facilitam os testes do Windows no modo S**
 
-Consulte [Descompactar, modificar, reempacotar, assinar um APPX](https://blogs.msdn.microsoft.com/appconsult/2017/08/07/unpack-modify-repack-sign-appx/).
+Confira [Desempacotar, modificar, reempacotar e assinar um appx](https://blogs.msdn.microsoft.com/appconsult/2017/08/07/unpack-modify-repack-sign-appx/).

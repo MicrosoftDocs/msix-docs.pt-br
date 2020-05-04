@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 010e14fa34852656dc0a117d84dae2b73e594e7d
-ms.sourcegitcommit: 4d912f89e385268757e87bf8fd9ca1828b99e109
+ms.openlocfilehash: 8c753e40c6ccf1e20458159f863bbd17a8617f5b
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77544780"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "81613974"
 ---
 # <a name="package-a-desktop-app-using-third-party-installers"></a>Formar pacote de um aplicativo da área de trabalho usando instaladores de terceiros
 
@@ -54,7 +54,21 @@ A extensão de MSIX da FireGiant usa análise estática e emulação inteligente
 
 Como a extensão de MSIX da FireGiant não converte o instalador ao executá-lo, você pode manter seu instalador do WiX sem precisar convertê-lo repetidamente em pacotes de aplicativo do Windows. Todos os usuários em diferentes versões do Windows recebem seus aprimoramentos mais recentes e você não precisa se preocupar com pacotes de aplicativos do Windows e do MSI fora de sincronia.
 
-Confira este [vídeo](https://www.youtube.com/watch?v=AFBpdBiAYQE) e veja como, em algumas linhas de código, o CEO da FireGiant, Rob Mensching, cria uma versão do Appx (pacote de aplicativo do Windows) da conhecida ferramenta de compactação de software livre 7-Zip e, em seguida, aprimora os pacotes de aplicativos do Windows e do MSI com alterações no mesmo código-fonte WiX.
+Confira este [vídeo](https://www.youtube.com/watch?v=AFBpdBiAYQE) e veja como, em algumas linhas de código, o CEO da FireGiant, Rob Mensching, cria uma versão do Appx (pacote de aplicativo do Windows) da conhecida ferramenta de compactação de software livre 7-Zip e, em seguida, aprimora os pacotes de aplicativos do Windows e do MSI com alterações no mesmo código-fonte WiX. 
+
+## <a name="installaware"></a>InstallAware
+
+O InstallAware, com um [registro de acompanhamento](https://www.installaware.com/press-room.htm) de suporte rápido para inovações da Microsoft, builds de [pacotes de aplicativos do Windows (Ponte de Desktop)](https://www.installaware.com/appx-builder.htm), App-V (Application Virtualization), MSI (Windows Installer) e pacotes EXE (código nativo) de uma só origem.
+
+<img width="20%" src="images/installaware.png">
+
+O InstallAware fornece extensões gratuitas do InstallAware para as versões 2012 a 2017 do Visual Studio. Você pode usá-las para criar pacotes de aplicativos do Windows com um só clique diretamente na [barra de ferramentas do Visual Studio](https://www.installaware.com/visual-studio-installer-2015.htm).
+
+Você também pode importar qualquer instalação, mesmo se não tiver o código-fonte da instalação em questão, usando o PackageAware (capturas de instalação sem instantâneos) ou o Assistente de Importação de Banco de Dados (para todos os instaladores MSI e módulos de mesclagem MSM). Use as [ferramentas de GUI](https://www.installaware.com/scripting-two-way-integrated-ide.htm) para manter e aprimorar suas importações, visualmente ou por meio de script.
+
+As [opções avançadas de criação de appx](https://www.installaware.com/mhtml5/desktop/appx.htm) ajudam você a direcionar envios da Microsoft Store ou a produzir binários assinados do pacote do aplicativo do Windows para distribuição por sideload aos usuários finais. Você pode, até mesmo, compilar pacotes do Instalador WSA (Aplicativos do Windows Server) destinados a implantações no **Nano Server** em uma só origem e com suporte total para [automação de linha de comando](https://www.installaware.com/scripting-automation-interface.htm), além de uma GUI.
+
+O InstallAware também disponibilizou como [software livre](https://www.installaware.com/gnu.asp) uma **biblioteca de compilador appx**, além de um exemplo de miniaplicativo de linha de comando, sob a licença da GNU Affero GPL. Tudo isso foi projetado para uso com plataformas de software livre, como a WiX.
 
 ## <a name="installshield"></a>InstallShield
 
