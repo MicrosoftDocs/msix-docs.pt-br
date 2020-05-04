@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b19c4f7c3d898bb3c1a1ed319de6ae0dbd359af0
-ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
+ms.openlocfilehash: 5e73ecb893ccddacf28f87a7080382eeb02f80c3
+ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391633"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82726597"
 ---
 # <a name="best-practices-for-the-msix-packaging-tool"></a>Melhores práticas da Ferramenta de Empacotamento MSIX
 
@@ -24,7 +24,8 @@ Se você ainda não configurou seu ambiente para conversão, você pode seguir n
 - **Gerar uma linha de comando com cada pacote** Essa configuração fará com que você gere automaticamente um arquivo de modelo de linha de comando para que, se você estiver Reempacotando o mesmo aplicativo (como uma nova versão) por meio da linha de comando mais tarde, você pode ter um arquivo de modelo de linha de comando pré-configurado para esse aplicativo. Você precisará fornecer um instalador para gerar um arquivo de modelo durante o fluxo de trabalho.
 - **Selecionar todas as correções por padrão para preparar computador** Essa configuração permite que você tenha todas as correções recomendadas previamente selecionadas para que, durante o estágio preparar computador, você possa simplesmente optar por desabilitar tudo sem precisar selecioná-las individualmente.
 - **Impor requisitos de controle de versão Microsoft Store** Se você estiver planejando implantar seu aplicativo por meio do Microsoft Store, certifique-se de que isso esteja selecionado para que ele esteja em conformidade com os requisitos da loja (isso afetará os requisitos de versão do pacote e o suporte mínimo da versão do sistema operacional). Se essa opção estiver desmarcada, o pacote terá uma versão mínima definida como Windows 10 1709 e você terá controle total sobre os 4 dígitos da versão do pacote. Se esta opção estiver marcada, o pacote terá uma versão mínima definida para o Windows 10 1809 e a versão deverá terminar em. 0 (por exemplo, 1.5.6.0).
-- **Adicionar integridade do pacote ao gerar um pacote** Se essa opção estiver selecionada, a integridade do pacote será adicionada automaticamente a todos os pacotes gerados. A [integridade do pacote](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-packageintegrity) tem suporte no Windows 10 2004 e posterior.
+- **Adicionar integridade do pacote ao gerar um pacote** Se essa opção estiver selecionada, a integridade do pacote será adicionada automaticamente a todos os pacotes gerados. A [integridade do pacote](../package/signing-package-overview.md#package-integrity-enforcement) tem suporte no Windows 10 2004 e posterior.
+- **Adicionar suporte para MSIX Core ao gerar um pacote** Essa opção permite que você adicione o 9MSIX Core] (.. /msix-Core/msixcore.MD) suporte a todos os pacotes que você gerar. Depois de selecionado, isso oferecerá uma lista suspensa que permitirá que você especifique a versão do Windows para dar suporte ao. 
 - **Local de salvamento padrão** Especifique o local de salvamento padrão onde os pacotes gerados e os arquivos associados serão salvos.
 - **Local de procura do instalador padrão** Especifique o local padrão para localizar instaladores a serem convertidos.
 - **Número da porta do servidor** Especifique o número da porta do servidor para a ferramenta de empacotamento MSIX. Isso será relevante se você estiver planejando converter usando um [computador remoto](remote-conversion-setup.md). 

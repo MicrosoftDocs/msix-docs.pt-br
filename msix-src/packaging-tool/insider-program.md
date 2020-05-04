@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 57519a22974b083068af7c353426b987afa30022
-ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
+ms.openlocfilehash: 9d00543c21350f31447012afe2399c018734e81c
+ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81433782"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82726531"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -19,7 +19,7 @@ O Programa Insider da Ferramenta de Empacotamento MSIX fornece acesso antecipado
 
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://aka.ms/MSIXPackagingPreviewProgram" data-linktype="external">Clique aqui para ingressar</a></p></div>
 
-## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Windows 10, versão 1809 (ou posterior).
 - Um alias válido da conta Microsoft para acessar o aplicativo na Microsoft Store.
@@ -35,16 +35,16 @@ Se a ferramenta já estiver instalada no computador, verifique a versão instala
 
 ## <a name="current-insider-preview-build"></a>Build atual do Insider Preview
 
-## <a name="version-120204020---public-release"></a>Versão 1.2020.402.0 – versão pública
-- A configuração de integridade do pacote está ativada por padrão
-- Capacidade de adicionar automaticamente o [suporte do MSIX Core](../msix-core/msixcore.md) a um MSIX
-- Capacidade de importar ou exportar arquivos de registro (. reg) no editor de pacote
+## <a name="version-120204230"></a>1.2020.423.0 da versão
+- Capacidade de excluir itens do editor de pacote
+- Usar Ctrl para opções de seleção múltipla no editor de pacote
+- Adicionou um prompt ao substituir arquivos
 
 Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](release-notes/history.md).
 
 ## <a name="share-your-feedback"></a>Compartilhe seus comentários
 
-Caso você tenha um problema ao usar o aplicativo, pressione a **tecla Windows + F** para inicializar o **Hub de Feedback**. Forneça o máximo possível de detalhes sobre o problema para nos ajudar a diagnosticá-lo e resolvê-lo. Use a categoria **aplicativos** > a **ferramenta de empacotamento MSIX** para obter os comentários diretamente para nós.
+Caso você tenha um problema ao usar o aplicativo, pressione a **tecla Windows + F** para inicializar o **Hub de Feedback**. Forneça o máximo possível de detalhes sobre o problema para nos ajudar a diagnosticá-lo e resolvê-lo. Use a ferramenta Category **Applications** > **MSIX Packaging** para obter os comentários para nós diretamente.
 
 Você também pode compartilhar comentários de dentro do aplicativo. Clique em Configurações (ícone de engrenagem) na tela inicial, escolha a guia **Comentários** e selecione o botão que melhor representa seu problema. Isso iniciará o **Hub de Feedback** diretamente e preencha as informações de categoria necessárias em seu nome. 
 

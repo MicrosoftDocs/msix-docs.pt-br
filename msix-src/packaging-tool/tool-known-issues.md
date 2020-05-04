@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Ferramenta de Empacotamento MSIX, problemas conhecidos, solução de problemas
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a8a5c6071b0b507a77fa6c5f590ac40f7bd0ecd0
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 4ae2efbc30106e8a5cf6a2861f7577ecae73048a
+ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073812"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82726393"
 ---
 # <a name="known-issues-and-troubleshooting-tips-for-the-msix-packaging-tool"></a>Problemas conhecidos e dicas de solução de problemas para a ferramenta de empacotamento MSIX
 
@@ -31,9 +31,12 @@ Se você estiver interessado em ingressar em nosso programa Insider, clique [aqu
 
 ### <a name="minimum-version"></a>Versão mínima
 
+Há alguns recursos a serem considerados que alteram automaticamente o suporte de versão do mínimo em seu pacote MSIX. 
+
+#### <a name="enforce-microsoft-store-versioning-requirements"></a>Impor os requisitos de controle de versão da Microsoft Store
 Se você converter o instalador existente usando uma versão da [ferramenta de empacotamento MSIX](tool-overview.md) anterior à **1.2019.701.0**, a ferramenta importou Microsoft Store requisitos de controle de versão ou usou outra ferramenta para criar o pacote que não definiu a versão mínima para 10.0.16299.0 (Windows 10, versão 1709). Isso causará uma mensagem de erro ao implantar seu aplicativo no Windows 10, versão 1709 ou uma versão posterior.
 
-Para corrigir esse problema, abra a **ferramenta de empacotamento MSIX** e edite seu aplicativo por meio do **Editor de pacotes**. Abra o manifesto e defina o atributo `MinVersion` do elemento `TargetDeviceFamily` como "10.0.16299.0".
+Para corrigir esse problema, abra a **ferramenta de empacotamento MSIX** e edite seu aplicativo por meio do **Editor de pacotes**. Abra o manifesto e defina o `MinVersion` atributo do `TargetDeviceFamily` elemento como "10.0.16299.0".
 
 ```xml
 <Dependencies>
@@ -41,11 +44,14 @@ Para corrigir esse problema, abra a **ferramenta de empacotamento MSIX** e edite
 </Dependencies>
 ```
 
+#### <a name="msix-with-services"></a>MSIX com serviços
+Na versão 1.2019.1220.0 da ferramenta de empacotamento MSIX, adicionamos suporte para a criação de um [pacote MSIX com serviços](convert-an-installer-with-services.md). Devido às restrições do sistema operacional com suporte a serviços, a ferramenta de empacotamento MSIX altera automaticamente a versão mínima com suporte em um pacote MSIX com serviços para 10.0.19025.0. Isso significa que você não pode instalar um MSIX com serviços em um sistema operacional inferior à versão 2004 do Windows, mas pode criar esse MSIX usando a ferramenta de empacotamento MSIX para o Windows 10 1809. Se você precisar instalar esse aplicativo em um sistema operacional inferior, atualize a versão mínima apropriadamente, mas observe que o suporte para serviços não funcionará.
+
 ### <a name="frameworks-and-drivers"></a>Estruturas e drivers
 
 Se o aplicativo exigir uma estrutura, verifique se a estrutura está instalada durante a fase de monitoramento da conversão. Percorra os logs para garantir que isso esteja acontecendo. Se seu aplicativo exigir que um driver seja instalado, você precisará avaliar se isso é necessário para que seu aplicativo seja executado corretamente. Atualmente, o MSIX não dá suporte à instalação do driver.
 
-### <a name="remote-machine"></a>{1&gt;{2&gt;Computador Remoto&lt;2}&lt;1}
+### <a name="remote-machine"></a>Computador remoto
 Se você estiver executando problemas com o uso de uma VM remota para suas conversões, consulte [instruções de instalação para conversões de computador remoto](remote-conversion-setup.md).
 
 ### <a name="issues-during-conversion"></a>Problemas durante a conversão
@@ -55,7 +61,7 @@ Se você estiver executando problemas com o uso de uma VM remota para suas conve
 
 #### <a name="bad-pe-certificate-0x800700c1"></a>Certificado PE inadequado (0x800700C1)
 
-Esse problema ocorre quando o pacote contém um arquivo binário que tem um certificado corrompido. Para resolver esse problema, use o comando `dumpbin.exe /headers` para despejar os cabeçalhos de arquivo e inspecionar elementos inválidos. Reescreva manualmente os cabeçalhos para corrigir o problema. Em geral, a ferramenta de empacotamento MSIX detecta automaticamente cabeçalhos inválidos. Se esse problema persistir, os comentários do arquivo. Mais informações podem ser encontradas [aqui](../desktop/desktop-to-uwp-known-issues.md#bad-pe-certificate-0x800700c1).
+Esse problema ocorre quando o pacote contém um arquivo binário que tem um certificado corrompido. Para resolver esse problema, use o `dumpbin.exe /headers` comando para despejar os cabeçalhos de arquivo e inspecionar elementos inválidos. Reescreva manualmente os cabeçalhos para corrigir o problema. Em geral, a ferramenta de empacotamento MSIX detecta automaticamente cabeçalhos inválidos. Se esse problema persistir, os comentários do arquivo. Encontre mais informações [aqui](../desktop/desktop-to-uwp-known-issues.md#bad-pe-certificate-0x800700c1).
 
 #### <a name="device-guard-signing"></a>Autenticação do Device Guard
 
@@ -94,9 +100,9 @@ Esse erro ocorre quando há um problema com o manifesto do pacote. Para identifi
 
 #### <a name="file-not-found"></a>Arquivo não encontrado
 
-O arquivo pode estar aberto ou não existente. Para resolver esse problema, adicione o arquivo apropriado ou feche o arquivo que está em uso no momento. Observe que você não receberá um erro `File not Found` se ele estiver aberto. Em vez disso, você obterá um erro de `Access Denied` ou `File in Use`.
+O arquivo pode estar aberto ou não existente. Para resolver esse problema, adicione o arquivo apropriado ou feche o arquivo que está em uso no momento. Observe que você não receberá um `File not Found` erro se ele estiver aberto. Em vez disso, você `Access Denied` receberá `File in Use` um erro ou.
 
-#### <a name="file-type-associations"></a>File Type Associations
+#### <a name="file-type-associations"></a>Associações de tipo de arquivo
 
 Os problemas relacionados a FTAS (associações de tipo de arquivo) variam de pacote para pacote. A ferramenta de empacotamento MSIX dá suporte a associações de arquivo para instalações de clique duplo. Por exemplo, se seu aplicativo tiver um menu de contexto, ele não será adicionado automaticamente, portanto, será necessário adicioná-lo manualmente ao manifesto. Consulte o elemento manifesto [desktop4: FileExplorerContextMenus](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus) para obter um exemplo.
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, Windows 7, Windows 8, Windows Server, UWP, msix, msixcore, 1709, 1703, 1607, 1511, 1507
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 3fb4d333c0ed84a4d54522e17b7e4ab54c6e28be
-ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
+ms.openlocfilehash: a916cdf10b6fcf97f4e96f029bf7a2ad883615b9
+ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391617"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82726422"
 ---
 # <a name="update-your-existing-msix-package-to-support-msix-core"></a>Atualize seu pacote MSIX existente para dar suporte ao MSIX Core
 
@@ -30,17 +30,43 @@ O exemplo a seguir especifica o Windows 7 SP1 como uma versão mínima:
 
 Todos os aplicativos **MSIXCore. desktop** serão implantados no Windows Server com sistemas operacionais baseados na experiência desktop com o mesmo número de Build. Se o aplicativo for destinado apenas a um sistema operacional de servidor, especifique um **TargetDeviceFamily** com o nome **MSIXCore. Server**. Não há suporte para a implantação do Windows Server Core.
 
-## <a name="update-manifest-using-the-msix-packaging-tool"></a>Atualizar o manifesto usando a ferramenta de empacotamento MSIX 
-Se você tiver um pacote MSIX, poderá usar a ferramenta de pacote MSIX para atualizar seu pacote para dar suporte ao MSIX Core. Aqui estão as etapas: 
+## <a name="update-manifest-using-the-msix-packaging-tool-package-editor"></a>Atualizar o manifesto usando o editor de pacote da ferramenta de empacotamento MSIX
+Se você tiver um pacote MSIX, poderá usar a ferramenta de pacote MSIX para atualizar seu pacote existente para dar suporte ao MSIX Core sem reempacotamento. Você pode fazer isso de duas maneiras por meio do editor de pacote:
+
 1. Abrir o aplicativo de **ferramenta de empacotamento MSIX**
 2. Selecionar o **Editor de pacote** 
 3. Clique em **procurar...** para localizar o pacote
 4. Clique em **Abrir pacote**
+
+### <a name="option-1-use-the-checkbox-and-dropdown-to-add-support"></a>[Opção 1] Use a caixa de seleção e a lista suspensa para adicionar suporte
+5. Em **suporte do MSIX Core**, marque a caixa de seleção para **Adicionar suporte para o MSIX core a este pacote**
+6. Selecione a versão do Windows que você deseja que tenha suporte para este pacote
+
+
+### <a name="option-2-manually-add-in-the-manifest-file"></a>[Opção 2] Adicionar manualmente no arquivo de manifesto
 5. Em **arquivo de manifesto**, clique em **Abrir arquivo**
 6. Você está exibindo o manifesto do pacote. Em **dependência** , adicione MSIX Core como uma família de dispositivos de destino (veja acima)
 7. Salvar e fechar o manifesto 
+
 8. Assinar novamente o pacote 
 9. Clique em **salvar** e selecione se deseja que seu pacote seja incrementado 
+
+## <a name="add-msix-core-support-using-the-msix-packaging-tool-during-conversion"></a>Adicionar o suporte do MSIX Core usando a ferramenta de empacotamento MSIX durante a conversão
+A partir da versão 1.2020.402.0, você pode adicionar o suporte do MSIX core a cada pacote MSIX que você gera com a ferramenta de empacotamento MSIX. 
+
+### <a name="add-msix-core-support-to-all-msix-packages"></a>Adicionar suporte do MSIX core a todos os pacotes do MSIX
+1. Abrir o aplicativo de **ferramenta de empacotamento MSIX**
+2. Selecione a engrenagem no canto superior direito para acessar as **configurações**
+3. Em **padrões de ferramentas** , marque a caixa de seleção para **Adicionar suporte para MSIX Core ao gerar um pacote.**
+4. Selecione a versão do Windows para a qual você gostaria de obter suporte por padrão
+5. Salvar configurações
+
+### <a name="add-msix-core-support-to-a-single-package-during-workflow"></a>Adicionar o suporte do MSIX core a um único pacote durante o fluxo de trabalho
+Durante a conversão de um instalador existente, você pode optar por adicionar o suporte do MSIX Core ao pacote que está gerando, se você não o tiver especificado como uma configuração padrão. Você também pode substituir a configuração padrão que você especificou em suas configurações. 
+
+1. Na etapa informações do pacote da conversão, marque a caixa de seleção para **Adicionar suporte para MSIX core a este pacote**
+2. Selecione a versão do Windows que você deseja que tenha suporte para este pacote
+3. Continuar com o processo de conversão
 
 ## <a name="windows-versions-supported-by-msix-core"></a>Versões do Windows com suporte do MSIX Core
 

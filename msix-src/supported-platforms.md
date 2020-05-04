@@ -1,5 +1,5 @@
 ---
-title: Plataformas compatíveis
+title: Plataformas com Suporte
 description: Este artigo descreve a plataforma com suporte para MSIX.
 author: dianmsft
 ms.date: 03/06/2020
@@ -7,20 +7,22 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 702dd154fee357bf616fca4a4babe408ed7a6e2f
-ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
+ms.openlocfilehash: ad03f17ce2a34347959f2723ea83408ae97f623c
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81433732"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81614020"
 ---
-# <a name="supported-platforms"></a>Plataformas compatíveis
+# <a name="supported-platforms"></a>Plataformas com Suporte
 
 Atualmente, o MSIX tem suporte nas seguintes versões do Windows:
 
 * Windows 10, versão 1709 e posterior.
 * Windows Server 2019 LTSC e posterior.
 * Windows Enterprise 2019 LTSC e posterior.
+
+Para obter mais detalhes sobre o suporte ao ciclo de vida do Windows, como datas de fim de serviço, visite a [folha de fatos do ciclo de vida do Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)
 
 Este artigo descreve como os principais recursos do MSIX têm suporte nessas versões do Windows.
 
@@ -35,7 +37,7 @@ Este artigo descreve como os principais recursos do MSIX têm suporte nessas ver
 A tabela a seguir mostra quais recursos e cenários do MSIX têm suporte em diferentes versões do Windows.
 
 > [!div class="mx-tableFixed"]
-| Recursos | 1709 | 1803 | 1809 | 1903 | 1909 | 2004| Windows Server 2019 LTSC | Windows Enterprise 2019 LTSC|
+| Recursos | 1.709 | 1803 | 1809 | 1903 | 1909 | 2004| Windows Server 2019 LTSC | Windows Enterprise 2019 LTSC|
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
 | [Permitir elevação](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
 | [Suporte ao arquivo do instalador do aplicativo](app-installer/installing-windows10-apps-web.md)| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
@@ -46,13 +48,13 @@ A tabela a seguir mostra quais recursos e cenários do MSIX têm suporte em dife
 | [Pacotes de modificação](modification-packages.md) | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
 | Instalação e desinstalação do MSIX nativo | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark: |
 | [Estrutura de suporte do pacote (PSF)](psf/package-support-framework-overview.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:|  :heavy_check_mark: | :heavy_check_mark:|  
-| [Serviços do Windows](packaging-tool/convert-an-installer-with-services.md) | :x: | :x: | :x: | :x:| :x: | :heavy_check_mark:| :x:| :x: | 
+| [Serviços Windows](packaging-tool/convert-an-installer-with-services.md) | :x: | :x: | :x: | :x:| :x: | :heavy_check_mark:| :x:| :x: | 
 | [Imposição de integridade do pacote para pacotes que não são de armazenamento](package/signing-package-overview.md#package-integrity-enforcement) | :x: | :x: | :x: | :x:| :x: | :heavy_check_mark:| :x:| :x: | 
 ## <a name="package-format-support"></a>Suporte a formato de pacote
 
 A tabela a seguir mostra quais formatos de pacote têm suporte em diferentes versões do Windows 10.
 
-| Formato do pacote | 1709 | 1803 | 1809 | 1903 | 1909 | 2004
+| Formato do pacote | 1.709 | 1803 | 1809 | 1903 | 1909 | 2004
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
 | .msix              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 | .msixbundle| :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:|
@@ -63,9 +65,9 @@ A tabela a seguir mostra quais formatos de pacote têm suporte em diferentes ver
 
 A tabela a seguir mostra quais recursos de Microsoft Store têm suporte em diferentes versões do Windows 10.
 
-| Recursos | 1709 | 1803 | 1809 | 1903 | 1909 | 2004
+| Recursos | 1.709 | 1803 | 1809 | 1903 | 1909 | 2004
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| Publicando             | :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
+| Publicação             | :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 | Notificação de atualização| :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 | Instalação de streaming | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| 
 | Atualizações Delta | :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 

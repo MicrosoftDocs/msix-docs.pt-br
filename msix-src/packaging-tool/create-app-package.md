@@ -1,17 +1,17 @@
 ---
-title: Criar um pacote MSIX de qualquer instalador de área de trabalho
+title: Criar um pacote MSIX de qualquer instalador de desktop
 description: Criar um pacote MSIX de qualquer instalador de desktop (MSI, EXE, ClickOnce ou App-V)
 ms.date: 03/25/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 034abce3f240275e2c4be87b62e6fe9e8e6345ee
-ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
+ms.openlocfilehash: bd0d47f15291c0c8c214bb96080a69b95cf90d87
+ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81433762"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82726487"
 ---
 # <a name="create-an-msix-package-from-any-desktop-installer-msi-exe-clickonce-or-app-v"></a>Criar um pacote MSIX de qualquer instalador de desktop (MSI, EXE, ClickOnce ou App-V)
 
@@ -23,7 +23,7 @@ Você pode usar a [ferramenta de empacotamento MSIX](tool-overview.md) para cria
 - EXE
 - ClickOnce
 - App-V
-- Script
+- script
 - Instalação manual
 
 Este documento explicará como obter quaisquer ativos existentes que você tenha e convertê-los em MSIX.
@@ -145,12 +145,14 @@ Depois de optar por empacotar o aplicativo em uma máquina virtual existente, vo
     - Obrigatório; corresponde ao pacote no manifesto para descrever o número de versão do pacote.
     - Este campo aceita uma cadeia de caracteres de versão na notação quádrupla: "Major. Minor. Build. Revision".
 - Descrição:
-    - Este campo é opcional.
+    - Esse campo é opcional.
 - Local de instalação:
     - Esse é o local em que o instalador copiará o conteúdo do aplicativo (normalmente, a pasta Arquivos de Programas).
     - Esse campo é opcional, mas recomendado quando a carga do aplicativo está sendo instalada fora das pastas de arquivos de programas.
     - Procure e selecione um caminho de pasta.
     - Verifique se esse arquivo corresponde ao local de instalação do instalador enquanto você executa a operação de instalação do aplicativo. 
+- Adicione suporte para MSIX core a este pacote. 
+    - Quando selecionada, essa caixa de seleção revelará uma lista suspensa que irá ALOOW-lo a selecionar uma versão do Windows para o suporte do [MSIX Core](../msix-core/msixcore.md) para o pacote que você está gerando.
 
 ## <a name="installation"></a>Instalação
 
@@ -207,4 +209,4 @@ Depois que um serviço for corrigido, você poderá movê-lo para a tabela **inc
 - Se desejar continuar editando o conteúdo e as propriedades do pacote antes de salvar o pacote MSIX, você poderá selecionar o [Editor de pacote](package-editor.md) e ser levado ao editor de pacotes.
 - Clique em **Criar** para criar o pacote MSIX.
 
-Você verá um pop-up quando o pacote for criado. Esse pop-up incluirá o local de salvamento, vinculado ao local do arquivo do pacote recém-criado. Ele também inclui um link para o local dos arquivos de log para a ferramenta de empacotamento MSIX. Feche esse pop-up e seja redirecionado para a página inicial. Você também pode selecionar o [Editor de pacote](package-editor.md) para ver e modificar as propriedades e o conteúdo do pacote.
+Você verá um pop-up quando o pacote for criado. Esse pop-up incluirá o local de salvamento, vinculado ao local do arquivo do pacote recém-criado. Ele também inclui um link para o local dos arquivos de log para a ferramenta de empacotamento MSIX. Feche esse pop-up e seja redirecionado para a página inicial. Você também pode selecionar o [Editor de pacote](package-editor.md) para ver e modificar o conteúdo e as propriedades do pacote.

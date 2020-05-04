@@ -6,14 +6,19 @@ ms.topic: article
 keywords: Windows 10, UWP, msix, ferramenta de empacotamento msix, programa Insider
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: c9221464799aba0744e5b6f0acaef59aebd850cf
-ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
+ms.openlocfilehash: f156b0f6dc48a7b36c19844cd35a265b9de38f74
+ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81433752"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82726406"
 ---
-# <a name="release-notes-for-the-msix-packaging-tool"></a>Notas sobre a versão da Ferramenta de Empacotamento MSIX
+# <a name="release-notes-for-the-msix-packaging-tool"></a>Notas de versão para a ferramenta de empacotamento MSIX
+
+## <a name="version-120204230"></a>1.2020.423.0 da versão
+- Capacidade de adicionar itens do editor de pacote à lista de exclusões
+- Usar Ctrl para opções de seleção múltipla no editor de pacote
+- Adicionou um prompt ao substituir arquivos ao mover ou adicionar
 
 ## <a name="version-120204020---public-release"></a>Versão 1.2020.402.0 – versão pública
 - A configuração de integridade do pacote está ativada por padrão

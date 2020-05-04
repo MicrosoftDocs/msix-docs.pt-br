@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 21dc0d3f5100641253455f2af24ef19c0fa41270
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 4af514f0027efba09b2ffcdbeaff55d729c39c53
+ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073116"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82726558"
 ---
 # <a name="customize-your-enterprise-apps-with-modification-packages"></a>Personalizar seus aplicativos empresariais com pacotes de modificação
 
@@ -19,7 +19,7 @@ A capacidade de personalizar a experiência de um aplicativo é importante, espe
 
 No Windows 10, versão 1809, apresentamos um novo tipo de pacote MSIX chamado de *pacote de modificação*. Os pacotes de modificação são pacotes MSIX que armazenam personalizações. Os pacotes de modificação também podem ser plug-ins/complementos que podem não ter um ponto de ativação. Os profissionais de ti podem usar esse recurso para alterar de maneira flexível os contêineres de MSIX para que os aplicativos sejam sobrepostos pelas personalizações da sua empresa.
 
-## <a name="how-it-works"></a>Como funciona
+## <a name="how-it-works"></a>Como ele funciona
 
 Os pacotes de modificação são projetados para empresas que não possuem o código do aplicativo e só têm o instalador. Você pode criar um pacote de modificação usando a versão mais recente da ferramenta de empacotamento MSIX (para Windows 10 versão 1809 ou posterior). Se você tiver o código para o aplicativo, você pode criar uma extensão de [aplicativo](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-an-extension)como alternativa. 
 
@@ -44,7 +44,7 @@ O exemplo a seguir demonstra como especificar um certificado ou Publicador difer
 
 ```
 
-Essa é uma configuração simples se a relação entre o pacote de modificação e o pacote principal for um para um. As personalizações típicas geralmente exigem chaves do registro em HKEY_CURRENT_USER ou HKEY_CURRENT_USERCLASS. Dentro de nosso pacote MSIX temos os arquivos user. dat e userclass. dat para capturar as chaves do registro. Você precisará criar User. dat se precisar de chaves do registro em HKCU\Software\* (assim como o Registry. dat é usado para HKLM\Software\*). Use userclass. dat se você precisar de chaves em HKCU\Sofware\Classes\*. 
+Essa é uma configuração simples se a relação entre o pacote de modificação e o pacote principal for um para um. As personalizações típicas geralmente exigem chaves do registro em HKEY_CURRENT_USER ou HKEY_CURRENT_USERCLASS. Dentro de nosso pacote MSIX temos os arquivos user. dat e userclass. dat para capturar as chaves do registro. Você precisará criar User. dat se precisar de chaves do registro em HKCU\Software\* (assim como Registry. dat é usado para HKLM\Software\*). Use userclass. dat se você precisar de chaves em\*HKCU\Sofware\Classes. 
 
 Aqui estão as maneiras típicas de criar um arquivo. dat:
 
@@ -87,7 +87,7 @@ Adicionamos suporte no elemento a seguir ao manifesto do pacote de modificação
 
 Para garantir que os pacotes de modificação funcionem na versão 1903 ou posterior, o manifesto do pacote de modificação precisarão incluir esse elemento. Isso será feito para você se empacotar o pacote de modificação MSIX usando a versão de janeiro da Ferramenta de Empacotamento MSIX. Se você converter um pacote usando nossa ferramenta anterior à versão, poderá editar o pacote existente na ferramenta para adicionar esse novo elemento. Além disso, se os usuários instalarem o pacote de modificação, eles serão alertados de que o pacote poderá modificar o aplicativo principal.
 
-Se você estiver usando um pacote de modificação que foi criado antes da versão 1903, será necessário editar o manifesto do pacote para atualizar o atributo `MaxVersionTested` para 10.0.18362.0.
+Se você estiver usando um pacote de modificação que foi criado antes da versão 1903, será necessário editar o manifesto do pacote para atualizar `MaxVersionTested` o atributo para 10.0.18362.0.
 
 ```xml
 <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17701.0" MaxVersionTested="10.0.18362.0" />
@@ -118,5 +118,3 @@ Você pode criar um pacote de modificação manualmente usando a ferramenta [Mak
 * Crie Registry.dat, User.dat e Userclass.dat para criar as chaves do Registro necessárias para carregar o pacote de modificação. Isso só será necessário se você precisar que o aplicativo principal exiba chaves do Registro personalizadas. Lembre-se de que, como tudo está sendo executado dentro de um contêiner, em runtime, o Registro virtual do pacote principal e do pacote de modificação será mesclado, de modo que o pacote principal possa exibir o Registro virtual dos pacotes de modificação.  
 
 Esse processo também dá suporte aos plug-ins e às personalizações do sistema de arquivos, desde que o executável do aplicativo principal não esteja em um VFS (sistema de arquivos virtual). Isso serve para garantir que o pacote principal obtenha todo o VFS do pacote principal e do pacote de modificação.
-
-O suporte para os plug-ins e as personalizações do sistema de arquivos enquanto o executável do aplicativo principal está em um VFS está planejado para a próxima versão principal do Windows. Visualize esse suporte no Build do Windows 10 Insider Preview 18312 ou posterior. Para obter mais informações, consulte [este artigo](modification-package-1903.md). 
