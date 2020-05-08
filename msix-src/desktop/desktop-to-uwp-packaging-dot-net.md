@@ -6,21 +6,31 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c34ec830981e9d9907dba9ec4ea124f800cbc02
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: ac24e33a1580aa8a3ddac6899f4b37829e625620
+ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "80108430"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82726469"
 ---
 # <a name="set-up-your-desktop-application-for-msix-packaging-in-visual-studio"></a>Configurar o aplicativo da área de trabalho para empacotamento MSIX no Visual Studio
 
-Você pode usar o projeto do **Projeto de Empacotamento de Aplicativo do Windows** no Visual Studio para gerar um pacote para o aplicativo de área de trabalho. Em seguida, é possível publicar o pacote na Microsoft Store ou fazer sideload dele em um ou mais computadores.
+Você pode usar o projeto do **Projeto de Empacotamento de Aplicativo do Windows** no Visual Studio para gerar um pacote para o aplicativo de área de trabalho. Em seguida, você pode distribuir o pacote para a Microsoft Store, na Web, em sua empresa ou em qualquer outro mecanismo de distribuição que esteja usando.
 
-Um projeto do **Projeto de Empacotamento de Aplicativo do Windows** está disponível nas versões a seguir do Visual Studio. Para ter a melhor experiência, recomendamos usar a versão mais recente.
+## <a name="required-visual-studio-version-and-workload"></a>Carga de trabalho e versão do Visual Studio necessárias
+
+O **Projeto de Empacotamento de Aplicativo do Windows** está disponível nas versões a seguir do Visual Studio:
 
 * Visual Studio 2019
 * Visual Studio 2017 15.5 e posterior
+
+Para ver o modelo do Projeto de Empacotamento de Aplicativo do Windows no menu "Adicionar novo projeto", você precisa ter **pelo menos uma** destas cargas de trabalho do Visual Studio instaladas:
+
+* A carga de trabalho "Desenvolvimento para a Plataforma Universal do Windows"
+* O componente opcional "Ferramentas de Empacotamento MSIX" na carga de trabalho do NET Core.
+* O componente opcional "Ferramentas de Empacotamento MSIX" na carga de trabalho de desenvolvimento para desktop com o .NET.
+
+ Para que você tenha a melhor experiência, recomendamos que use a versão mais recente do Visual Studio.
 
 > [!IMPORTANT]
 > Um projeto do **Projeto de Empacotamento de Aplicativo do Windows** no Visual Studio é compatível com o Windows 10, versão 1607 e posteriores. Ele só pode ser usado em projetos que visam a Atualização de Aniversário do Windows 10 (10.0; Build 14393) ou uma versão posterior.
@@ -68,11 +78,43 @@ Examine este guia antes de começar a criar um pacote para o aplicativo: [Prepar
 
    ![Definir ponto de entrada](images/entry-point-set.png)
 
-6. Crie o projeto de empacotamento para garantir que nenhum erro apareça. Se você receber erros, abra **Gerenciador de Configurações** e verifique se os projetos se destinam à mesma plataforma.
+6. Se o aplicativo sendo empacotado visa o .NET Core 3, siga estas etapas para adicionar um novo destino de build ao arquivo do projeto. Isso só é necessário em aplicativos que visam o .NET Core 3.  
+
+    1. No Gerenciador de Soluções, clique com o botão direito do mouse no nó do projeto de empacotamento e selecione **Editar Arquivo de Projeto**.
+
+    2. Localize o elemento `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` no arquivo.
+
+    3. Substitua esse elemento pelo XML a seguir.
+
+        ``` xml
+        <ItemGroup>
+          <SDKReference Include="Microsoft.VCLibs,Version=14.0">
+            <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
+            <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
+            <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
+            <Implicit>true</Implicit>
+          </SDKReference>
+        </ItemGroup>
+        <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
+        <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
+          <ItemGroup>
+            <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
+            <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
+            <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
+              <SourceProject>
+              </SourceProject>
+            </_FilteredNonWapProjProjectOutput>
+          </ItemGroup>
+        </Target>
+        ```
+
+    4. Salve o arquivo do projeto e feche-o.
+
+7. Crie o projeto de empacotamento para garantir que nenhum erro apareça. Se você receber erros, abra **Gerenciador de Configurações** e verifique se os projetos se destinam à mesma plataforma.
 
    ![Gerenciador de Configurações](images/config-manager.png)
 
-7. Use o assistente de [Criar Pacotes de Aplicativos](../package/packaging-uwp-apps.md) para gerar um pacote/grupo MSIX ou um arquivo .msixupload/.appxupload (para publicação na Microsoft Store).
+8. Use o assistente de [Criar Pacotes de Aplicativos](../package/packaging-uwp-apps.md) para gerar um pacote/grupo MSIX ou um arquivo .msixupload/.appxupload (para publicação na Microsoft Store).
 
 
 ## <a name="next-steps"></a>Próximas etapas
