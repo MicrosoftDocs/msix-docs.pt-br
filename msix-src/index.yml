@@ -9,12 +9,12 @@ metadata:
   keywords: windows 10, uwp, MSIX
   ms.localizationpriority: medium
   ms.custom: RS5, seodec18
-  ms.openlocfilehash: ba52f4840f8fb65d2ff7f2952250e88b0ed947c0
-  ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+  ms.openlocfilehash: 54a3d1507b35c47364a49ac2d9860cf081031e7b
+  ms.sourcegitcommit: 8d6bc53d5f5ae80d9ce191fe81660407e9f11e0e
   ms.translationtype: HT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 04/24/2020
-  ms.locfileid: "77073452"
+  ms.lasthandoff: 05/15/2020
+  ms.locfileid: "83427325"
 highlightedContent:
   items:
   - title: O que é MSIX?
@@ -33,6 +33,9 @@ additionalContent:
   sections:
   - title: Principais tarefas
     items:
+    - title: Saiba mais sobre as jornadas dos nossos clientes com o MSIX
+      summary: Leia sobre as jornadas dos nossos clientes sobre como o MSIX aprimorou a implantação de aplicativos do Windows.
+      url: customer-journey.md
     - title: Criar pacotes MSIX de instaladores existentes
       summary: A Ferramenta de Empacotamento de MSIX permite atualizar pacotes de aplicativos existentes da área de trabalho para o formato MSIX.
       url: packaging-tool/create-an-msix-overview.md

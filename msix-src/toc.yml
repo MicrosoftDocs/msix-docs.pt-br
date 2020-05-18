@@ -54,6 +54,8 @@
           href: 'https://docs.microsoft.com/uwp/schemas/appinstallerschema/app-installer-file?context=/windows/msix/render'
     - name: Recursos do MSIX
       href: resources.md
+    - name: Jornadas dos Clientes do MSIX
+      href: customer-journey.md
     - name: SDK do MSIX
       items:
         - name: Visão geral
@@ -124,18 +126,22 @@
           href: packaging-tool/edit-icons-and-assets.md
     - name: Tarefas para depois de criar um pacote MSIX
       items:
-        - name: PSF (estrutura de suporte do pacote)
+        - name: PSF (Package Support Framework)
           items:
             - name: Visão geral
               href: psf/package-support-framework-overview.md
-            - name: Aplicar correções de runtime em um pacote do aplicativo da área de trabalho
+            - name: Introdução ao Package Support Framework
               href: psf/package-support-framework.md
+            - name: Diretório de trabalho atual do PSF
+              href: psf\psf-current-working-directory.md
+            - name: Iniciar aplicativos com parâmetros usando o PSF
+              href: psf\psf-launch-apps-with-parameters.md
+            - name: Aplicar o Package Support Framework no Visual Studio
+              href: psf\package-support-framework-vs.md
             - name: Executar scripts com o Package Support Framework
               href: psf/run-scripts-with-package-support-framework.md
-            - name: Diretório de trabalho atual
-              href: psf\psf-current-working-directory.md
-            - name: Iniciar aplicativos com parâmetros
-              href: psf\psf-launch-apps-with-parameters.md
+            - name: Criar a correção do Package Support Framework
+              href: psf/create-package-support-framework.md
         - name: Agrupar pacotes MSIX
           href: packaging-tool/bundle-msix-packages.md
     - name: MSIX Toolkit
