@@ -1,17 +1,17 @@
 ---
-Description: Execute o Desktop App Converter para empacotar um aplicativo da área de trabalho do Windows (como Win32, WPF e Windows Forms).
+Description: Execute o Desktop App Converter para empacotar um aplicativo da área de trabalho do Windows (como o Win32, o WPF e o Windows Forms).
 title: Empacotar um aplicativo usando o Desktop App Converter (Ponte de Desktop)
 ms.date: 07/29/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: 45c6bbf652768054f5ae13d3b662792723ffea76
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: e5fafa90820eed04e33ff3405a8aaf21588e89e5
+ms.sourcegitcommit: 4593ba54c2c75ce82878e948566c92e21c27699d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75303349"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83383646"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Empacotar um aplicativo da área de trabalho com o Desktop App Converter
 
@@ -368,7 +368,7 @@ O Desktop App Converter não possui suporte para Unicode, assim, não podem ser 
 
 ## <a name="known-issues-with-the-desktop-app-converter"></a>Problemas conhecidos no Desktop App Converter
 
-### <a name="e_creating_isolated_env_failed-an-e_starting_isolated_env_failed-errors"></a>Erros E_CREATING_ISOLATED_ENV_FAILED e E_STARTING_ISOLATED_ENV_FAILED    
+### <a name="e_creating_isolated_env_failed-and-e_starting_isolated_env_failed-errors"></a>Erros E_CREATING_ISOLATED_ENV_FAILED e E_STARTING_ISOLATED_ENV_FAILED    
 
 Se você receber um desses erros, verifique se está usando uma imagem base válida do [Centro de Download](https://aka.ms/converterimages).
 Se estiver usando uma imagem base válida, tente usar ``-Cleanup All`` no comando.
@@ -398,7 +398,7 @@ Essa é uma limitação conhecida e, atualmente, não há nenhuma solução alte
 
 Isso poderá acontecer se os executáveis no aplicativo tiverem uma extensão **.EXE** em maiúsculas. Apesar disso, o uso de maiúsculas nessa extensão não deverá afetar a execução do aplicativo, mas poderá fazer com que o DAC gere esse erro.
 
-Para resolver esse problema, tente especificar o sinalizador **-AppExecutable** ao empacotar o aplicativo e use ".exe" em minúsculas na extensão do executável principal (por exemplo: MYAPP.exe).    Como alternativa, converta as minúsculas usadas em todos os executáveis no aplicativo em maiúsculas (por exemplo: de .EXE para .exe).
+Para resolver esse problema, tente especificar o sinalizador **-AppExecutable** ao empacotar o aplicativo e use ".exe" em minúsculas na extensão do executável principal (por exemplo: MYAPP.exe).    Como alternativa, converta as maiúsculas usadas em todos os executáveis no aplicativo em minúsculas (por exemplo, de .EXE para .exe).
 
 ### <a name="corrupted-or-malformed-authenticode-signatures"></a>Assinaturas Authenticode corrompidas ou malformadas
 
