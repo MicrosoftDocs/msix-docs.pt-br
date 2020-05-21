@@ -6,14 +6,14 @@ ms.topic: article
 keywords: Windows 10, UWP, msix, PSF
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3cef18d724d1474edcee97e48db674e218451e86
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: ab24f85ad83806863294928dea863672138ecb2a
+ms.sourcegitcommit: 8d6bc53d5f5ae80d9ce191fe81660407e9f11e0e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81615760"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83427327"
 ---
-# <a name="package-support-framework---launch-apps-with-parameters"></a>Estrutura de suporte do pacote – iniciar aplicativos com parâmetros
+# <a name="launch-apps-with-parameters-through-package-support-framework"></a>Iniciar aplicativos com parâmetros por meio da estrutura de suporte do pacote
 A estrutura de suporte do pacote usa um arquivo config. JSON para configurar o comportamento de um aplicativo.
 
 ## <a name="proceedure"></a>Proceedure
@@ -29,7 +29,7 @@ Para configurar a execução do aplicativo para receber valores de parâmetro pa
 A estrutura de suporte do pacote pode ser recuperada usando a ferramenta de linha de comando do NuGet autônoma ou por meio do Visual Studio.
 
 ### <a name="nuget-comandline-tool"></a>Ferramenta NuGet comandline:
-Instale a ferramenta de linha de comando do NuGet do site [https://www.nuget.org/downloads](https://www.nuget.org/downloads)do NuGet:. Após a instalação, execute a linha de comando a seguir em uma janela administrativa do PowerShell.
+Instale a ferramenta de linha de comando do NuGet do site do NuGet: [https://www.nuget.org/downloads](https://www.nuget.org/downloads) . Após a instalação, execute a linha de comando a seguir em uma janela administrativa do PowerShell.
 
 ``` powershell
 nuget install Microsoft.PackageSupportFramework
@@ -81,8 +81,8 @@ A ferramenta MakeAppx pode ser encontrada em seu local padrão:
 
 | Arquitetura do SO | Diretório                                                   |
 |-----------------|-------------------------------------------------------------|
-| Windows 10 x86  | C:\Arquivos de programas\Windows\[Kits\10\bin**versão**] \x86\makeappx.exe       |
-| Windows 10 x64  | C:\Arquivos de programas (x86) \Windows\[Kits\10\bin**versão**] \x64\makeappx.exe |
+| Windows 10 x86  | C:\Arquivos de Programas\windows Kits\10\bin \[ **versão**] \x86\makeappx.exe       |
+| Windows 10 x64  | C:\Arquivos de programas (x86) \Windows Kits\10\bin \[ **versão**] \x64\makeappx.exe |
 
 ```powershell
 makeappx unpack /p PrimaryApp.msix /d PackageContents

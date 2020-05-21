@@ -1,19 +1,19 @@
 ---
 Description: A estrutura de suporte do pacote ajuda a trabalhar com o diretório de trabalho.
 title: Diretório de trabalho atual do Package support Framework
-ms.date: 09/05/2018
+ms.date: 05/14/2020
 ms.topic: article
 keywords: Windows 10, UWP, msix, PSF
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 50b58af26d826b7dd09828b3a6705590d992068b
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: 69c5d73ad3be28f1c138553b6f8da27c0820940a
+ms.sourcegitcommit: 8d6bc53d5f5ae80d9ce191fe81660407e9f11e0e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726660"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83427348"
 ---
-# <a name="package-support-framework---current-working-directory"></a>Estrutura de suporte do pacote-diretório de trabalho atual
+# <a name="current-working-directory-psf"></a>Diretório de trabalho atual do PSF
 A estrutura de suporte do pacote usa um arquivo config. JSON para configurar o comportamento de um aplicativo.
 
 ## <a name="proceedure"></a>Proceedure
@@ -29,7 +29,7 @@ Para configurar a execução do aplicativo para receber valores de parâmetro pa
 A estrutura de suporte do pacote pode ser recuperada usando a ferramenta de linha de comando do NuGet autônoma ou por meio do Visual Studio.
 
 ### <a name="nuget-comandline-tool"></a>Ferramenta NuGet comandline:
-Instale a ferramenta de linha de comando do NuGet do site [https://www.nuget.org/downloads](https://www.nuget.org/downloads)do NuGet:. Após a instalação, execute a linha de comando a seguir em uma janela administrativa do PowerShell.
+Instale a ferramenta de linha de comando do NuGet do site do NuGet: [https://www.nuget.org/downloads](https://www.nuget.org/downloads) . Após a instalação, execute a linha de comando a seguir em uma janela administrativa do PowerShell.
 
 ``` powershell
 nuget install Microsoft.PackageSupportFramework
@@ -89,8 +89,8 @@ A ferramenta MakeAppx pode ser encontrada em seu local padrão:
 
 | Arquitetura do SO | Diretório                                                   |
 |-----------------|-------------------------------------------------------------|
-| Windows 10 x86  | C:\Arquivos de programas\Windows\[Kits\10\bin**versão**] \x86\makeappx.exe       |
-| Windows 10 x64  | C:\Arquivos de programas (x86) \Windows\[Kits\10\bin**versão**] \x64\makeappx.exe |
+| Windows 10 x86  | C:\Arquivos de Programas\windows Kits\10\bin \[ **versão**] \x86\makeappx.exe       |
+| Windows 10 x64  | C:\Arquivos de programas (x86) \Windows Kits\10\bin \[ **versão**] \x64\makeappx.exe |
 
 ```powershell
 makeappx unpack /p PrimaryApp.msix /d PackageContents
