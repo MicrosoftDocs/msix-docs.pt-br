@@ -1,5 +1,5 @@
 ---
-title: Plataformas com Suporte
+title: Plataformas compatíveis
 description: Este artigo descreve a plataforma com suporte para MSIX.
 author: dianmsft
 ms.date: 03/06/2020
@@ -7,14 +7,14 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ad03f17ce2a34347959f2723ea83408ae97f623c
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 9cece807e2206f754e96f6a394c5da626129c177
+ms.sourcegitcommit: d65b3457343e0590f53e36fc2710863cc2f13897
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81614020"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83790588"
 ---
-# <a name="supported-platforms"></a>Plataformas com Suporte
+# <a name="supported-platforms"></a>Plataformas compatíveis
 
 Atualmente, o MSIX tem suporte nas seguintes versões do Windows:
 
@@ -47,7 +47,7 @@ A tabela a seguir mostra quais recursos e cenários do MSIX têm suporte em dife
 | Identidade para aplicativos de desktop empacotados | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 | [Pacotes de modificação](modification-packages.md) | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
 | Instalação e desinstalação do MSIX nativo | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark: |
-| [Estrutura de suporte do pacote (PSF)](psf/package-support-framework-overview.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:|  :heavy_check_mark: | :heavy_check_mark:|  
+| [PSF (Package Support Framework)](psf/package-support-framework-overview.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:|  :heavy_check_mark: | :heavy_check_mark:|  
 | [Serviços Windows](packaging-tool/convert-an-installer-with-services.md) | :x: | :x: | :x: | :x:| :x: | :heavy_check_mark:| :x:| :x: | 
 | [Imposição de integridade do pacote para pacotes que não são de armazenamento](package/signing-package-overview.md#package-integrity-enforcement) | :x: | :x: | :x: | :x:| :x: | :heavy_check_mark:| :x:| :x: | 
 ## <a name="package-format-support"></a>Suporte a formato de pacote
@@ -82,3 +82,6 @@ A versão mínima compatível do sistema operacional de um pacote MSIX está lis
 No Windows 10, versões 1709, 1803 e 1809, damos suporte aos cenários de implantação corporativos convencionais. Isso inclui a instalação por meio do Microsoft Endpoint Configuration Manager, Microsoft Intune, PowerShell ou clique duas vezes em instalação.
 
 Atualmente, a instalação do MSIX por meio do Microsoft Store e Microsoft Store for Business requer o Windows 10, versão 1809 e posterior.
+
+### <a name="non-windows-platform"></a>Plataforma não Windows
+O [SDK do MSIX](https://github.com/Microsoft/msix-packaging) é um projeto de software livre que permite aos desenvolvedores usar o formato de pacote MSIX universalmente em todas as plataformas. O SDK pode ser usado por qualquer aplicativo cliente de plataforma cruzada que permita que terceiros criem plug-ins ou extensões. Os desenvolvedores de aplicativos cliente podem usar o modelo de extensão de aplicativo que está disponível na plataforma Windows 10 e usar o SDK do MSIX em plataformas que não são do Windows 10, como macOS, iOS, Android e Linux. 
