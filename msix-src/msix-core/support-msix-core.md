@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, Windows 7, Windows 8, Windows Server, UWP, msix, msixcore, 1709, 1703, 1607, 1511, 1507
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: a916cdf10b6fcf97f4e96f029bf7a2ad883615b9
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: df3a15600257487f89416a80307baae37e8f3d1b
+ms.sourcegitcommit: 7a52883434aa05272c15d033d85b67e2dd1e8c75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726422"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84107344"
 ---
 # <a name="update-your-existing-msix-package-to-support-msix-core"></a>Atualize seu pacote MSIX existente para dar suporte ao MSIX Core
 
@@ -47,7 +47,6 @@ Se você tiver um pacote MSIX, poderá usar a ferramenta de pacote MSIX para atu
 5. Em **arquivo de manifesto**, clique em **Abrir arquivo**
 6. Você está exibindo o manifesto do pacote. Em **dependência** , adicione MSIX Core como uma família de dispositivos de destino (veja acima)
 7. Salvar e fechar o manifesto 
-
 8. Assinar novamente o pacote 
 9. Clique em **salvar** e selecione se deseja que seu pacote seja incrementado 
 
