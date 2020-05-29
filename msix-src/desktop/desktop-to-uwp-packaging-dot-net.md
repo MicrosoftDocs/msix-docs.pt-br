@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: ac24e33a1580aa8a3ddac6899f4b37829e625620
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: bd6cf9c3c00221fc929e395296eb527b3e3fc049
+ms.sourcegitcommit: 7a52883434aa05272c15d033d85b67e2dd1e8c75
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726469"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84107374"
 ---
 # <a name="set-up-your-desktop-application-for-msix-packaging-in-visual-studio"></a>Configurar o aplicativo da área de trabalho para empacotamento MSIX no Visual Studio
 
@@ -78,43 +78,11 @@ Examine este guia antes de começar a criar um pacote para o aplicativo: [Prepar
 
    ![Definir ponto de entrada](images/entry-point-set.png)
 
-6. Se o aplicativo sendo empacotado visa o .NET Core 3, siga estas etapas para adicionar um novo destino de build ao arquivo do projeto. Isso só é necessário em aplicativos que visam o .NET Core 3.  
-
-    1. No Gerenciador de Soluções, clique com o botão direito do mouse no nó do projeto de empacotamento e selecione **Editar Arquivo de Projeto**.
-
-    2. Localize o elemento `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` no arquivo.
-
-    3. Substitua esse elemento pelo XML a seguir.
-
-        ``` xml
-        <ItemGroup>
-          <SDKReference Include="Microsoft.VCLibs,Version=14.0">
-            <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
-            <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
-            <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
-            <Implicit>true</Implicit>
-          </SDKReference>
-        </ItemGroup>
-        <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
-        <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
-          <ItemGroup>
-            <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
-            <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
-            <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-              <SourceProject>
-              </SourceProject>
-            </_FilteredNonWapProjProjectOutput>
-          </ItemGroup>
-        </Target>
-        ```
-
-    4. Salve o arquivo do projeto e feche-o.
-
-7. Crie o projeto de empacotamento para garantir que nenhum erro apareça. Se você receber erros, abra **Gerenciador de Configurações** e verifique se os projetos se destinam à mesma plataforma.
+6. Crie o projeto de empacotamento para garantir que nenhum erro apareça. Se você receber erros, abra **Gerenciador de Configurações** e verifique se os projetos se destinam à mesma plataforma.
 
    ![Gerenciador de Configurações](images/config-manager.png)
 
-8. Use o assistente de [Criar Pacotes de Aplicativos](../package/packaging-uwp-apps.md) para gerar um pacote/grupo MSIX ou um arquivo .msixupload/.appxupload (para publicação na Microsoft Store).
+7. Use o assistente de [Criar Pacotes de Aplicativos](../package/packaging-uwp-apps.md) para gerar um pacote/grupo MSIX ou um arquivo .msixupload/.appxupload (para publicação na Microsoft Store).
 
 
 ## <a name="next-steps"></a>Próximas etapas
