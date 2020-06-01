@@ -6,18 +6,18 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d1c3e4c0b9ff6a0617755a2f7a0ad1674a8ea72e
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 2cd4de777c7fc45a62e511d76916d61a46d5492a
+ms.sourcegitcommit: 7a52883434aa05272c15d033d85b67e2dd1e8c75
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77779064"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84107334"
 ---
 # <a name="what-is-msix"></a>O que é MSIX?
 
 O MSIX é um formato de pacote de aplicativo do Windows que oferece uma experiência de empacotamento moderna para todos os aplicativos do Windows. O formato de pacote MSIX preserva a funcionalidade de pacotes de aplicativo existentes e/ou de arquivos de instalação, além de habilitar recursos de empacotamento e implantação novos e modernos para aplicativos Win32, WPF e Windows Forms.
 
-O MSIX possibilita que as empresas permaneçam atualizadas e garantam que os aplicativos estejam sempre atualizados. Ele permite que os desenvolvedores e profissionais de TI para oferecer uma solução voltada para o usuário ao mesmo tempo que reduz o custo de propriedade do aplicativo reduzindo a necessidade de reempacotar.
+O MSIX possibilita que as empresas permaneçam atualizadas e garantam que os aplicativos estejam sempre atualizados. Ele permite que os profissionais e os desenvolvedores de TI forneçam uma solução voltada para o usuário ao mesmo tempo que reduz o custo de propriedade de aplicativos por meio da diminuição da necessidade de reempacotamento.
 
 ## <a name="key-features"></a>Principais recursos
 

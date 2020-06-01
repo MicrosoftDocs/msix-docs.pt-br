@@ -5,21 +5,23 @@ ms.date: 07/29/2019
 ms.topic: article
 keywords: windows 10 S, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: 195f202595a4c1474f5fc1c3f5389ad8657889a7
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: ed5df7ed7655bf08ab8e1401f55bd88988be9768
+ms.sourcegitcommit: 7a52883434aa05272c15d033d85b67e2dd1e8c75
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75303323"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84107364"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>Testar seu aplicativo do Windows para Windows 10 no modo S
 
-Teste seu aplicativo do Windows para verificar se ele funcionará corretamente em dispositivos que executam o Windows 10 no modo S. Na verdade, se você pretende publicar seu aplicativo na Microsoft Store, faça isso, pois esse é um requisito da loja. Para testar seu aplicativo, aplique uma política de integridade de código do Device Guard em um dispositivo que executar o Windows 10 Pro.
+Teste seu aplicativo do Windows para verificar se ele funcionará corretamente em dispositivos que executam o Windows 10 no modo S. Na verdade, se você pretende publicar seu aplicativo na Microsoft Store, faça isso, pois esse é um requisito da loja. Para testar o aplicativo, você pode aplicar uma política do WDAC (Controle de Aplicativos do Windows Defender) a um dispositivo que esteja executando o Windows 10 Pro.
 
 > [!NOTE]
-> O dispositivo no qual você aplicará a política de integridade de código do Device Guard precisa executar o Windows 10 Creators Edition (10.0; build 15063) ou posterior.
+> Teste seu aplicativo do Windows para verificar se ele funcionará corretamente em dispositivos que executam o Windows 10 no modo S. Na verdade, se você pretende publicar seu aplicativo na Microsoft Store, faça isso, pois esse é um requisito da loja. Para testar o aplicativo, você pode aplicar uma política do WDAC a um dispositivo que esteja executando o Windows 10 Pro.
 
-A Política de integridade de código do Device Guard impõe as regras com as quais os aplicativos precisam estar em conformidade para serem executados no Windows 10 S.
+
+Essa política do WDAC impõe as regras com as quais os aplicativos devem estar em conformidade para serem executados no Windows 10 S.
+
 
 > [!IMPORTANT]
 >Recomendamos que você aplique essas políticas a uma máquina virtual, mas se você deseja aplicá-las ao computador local, examine nossas diretrizes de melhores práticas na seção "Próximo, instalar a política e reiniciar o sistema" deste tópico antes de aplicar uma política.
@@ -28,7 +30,7 @@ A Política de integridade de código do Device Guard impõe as regras com as qu
 
 ## <a name="first-download-the-policies-and-then-choose-one"></a>Primeiro, baixe as políticas e, depois, escolha uma delas
 
-Baixe as políticas de integridade de código do Device Guard [aqui](https://go.microsoft.com/fwlink/?linkid=849018).
+Baixe as políticas do WDAC [aqui](https://go.microsoft.com/fwlink/?linkid=849018).
 
 Em seguida, escolha a que faz mais sentido para você. Veja abaixo um resumo de cada política.
 
