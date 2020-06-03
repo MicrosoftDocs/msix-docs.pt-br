@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 9d00543c21350f31447012afe2399c018734e81c
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: 0fa0de03463ff974bdbfd004ba2da27fb1c336d6
+ms.sourcegitcommit: c35618a528daaebcf9e4d4f8effdcb44743b9452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726531"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84310987"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -25,7 +25,7 @@ O Programa Insider da Ferramenta de Empacotamento MSIX fornece acesso antecipado
 - Um alias válido da conta Microsoft para acessar o aplicativo na Microsoft Store.
 - Privilégios de administrador no computador para executar a ferramenta.
 
-## <a name="install"></a>Instalar
+## <a name="install"></a>Instalar o
 
 Depois de ingressar no programa, você receberá um email confirmando sua inscrição. 
 
@@ -35,16 +35,16 @@ Se a ferramenta já estiver instalada no computador, verifique a versão instala
 
 ## <a name="current-insider-preview-build"></a>Build atual do Insider Preview
 
-## <a name="version-120204230"></a>1.2020.423.0 da versão
-- Capacidade de excluir itens do editor de pacote
-- Usar Ctrl para opções de seleção múltipla no editor de pacote
-- Adicionou um prompt ao substituir arquivos
+## <a name="version-120205280"></a>1.2020.528.0 da versão
+- Capacidade de adicionar vários arquivos ao editor de pacotes
+- Capacidade de importar vários arquivos. reg para o editor de pacote
+- Suporte aprimorado para converter qualquer tipo de instalador
 
 Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](release-notes/history.md).
 
 ## <a name="share-your-feedback"></a>Compartilhe seus comentários
 
-Caso você tenha um problema ao usar o aplicativo, pressione a **tecla Windows + F** para inicializar o **Hub de Feedback**. Forneça o máximo possível de detalhes sobre o problema para nos ajudar a diagnosticá-lo e resolvê-lo. Use a ferramenta Category **Applications** > **MSIX Packaging** para obter os comentários para nós diretamente.
+Caso você tenha um problema ao usar o aplicativo, pressione a **tecla Windows + F** para inicializar o **Hub de Feedback**. Forneça o máximo possível de detalhes sobre o problema para nos ajudar a diagnosticá-lo e resolvê-lo. Use a ferramenta Category **Applications**  >  **MSIX Packaging** para obter os comentários para nós diretamente.
 
 Você também pode compartilhar comentários de dentro do aplicativo. Clique em Configurações (ícone de engrenagem) na tela inicial, escolha a guia **Comentários** e selecione o botão que melhor representa seu problema. Isso iniciará o **Hub de Feedback** diretamente e preencha as informações de categoria necessárias em seu nome. 
 

@@ -6,14 +6,22 @@ ms.topic: article
 keywords: Windows 10, UWP, msix, ferramenta de empacotamento msix, programa Insider
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: f156b0f6dc48a7b36c19844cd35a265b9de38f74
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: 651b4b6c5c8d47e8eedf63434f9016518fa1a6f9
+ms.sourcegitcommit: c35618a528daaebcf9e4d4f8effdcb44743b9452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726406"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84310977"
 ---
-# <a name="release-notes-for-the-msix-packaging-tool"></a>Notas de versão para a ferramenta de empacotamento MSIX
+# <a name="release-notes-for-the-msix-packaging-tool"></a>Notas sobre a versão da Ferramenta de Empacotamento MSIX
+
+## <a name="version-120205280"></a>1.2020.528.0 da versão
+- Capacidade de adicionar vários arquivos ao editor de pacotes
+- Capacidade de importar vários arquivos. reg para o editor de pacote
+- Suporte aprimorado para converter qualquer tipo de instalador
+- Correções de bugs:
+    - Desabilite a seleção da máquina VM local quando o Hyper-V não estiver presente
+    - A caixa de seleção impor requisitos de repositório está marcada, impedir a criação de ícones não aceitos pela loja
 
 ## <a name="version-120204230"></a>1.2020.423.0 da versão
 - Capacidade de adicionar itens do editor de pacote à lista de exclusões
@@ -31,7 +39,7 @@ ms.locfileid: "82726406"
 - Validar o formato do manifesto após a edição 
 - Tornar a mensagem quando a tarefa de inicialização inicial falhar mais claro 
 - Proibir caminhos relativos para desempacotamento 
-- Filtros de arquivo atualizados para mostrar quais formatos são válidos (por exemplo, para instaladores que ele costumava dizer *.*  e agora `*.msi, *.exe, ...`) 
+- Filtros de arquivo atualizados para mostrar quais formatos são válidos (por exemplo, para instaladores que ele costumava dizer *.*   e agora `*.msi, *.exe, ...` ) 
 - Corrigido quando o Unpack converteria espaços em caminhos em "%20"
 - correções de bugs gerais
 
