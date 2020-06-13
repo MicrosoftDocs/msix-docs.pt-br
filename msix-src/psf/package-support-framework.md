@@ -5,12 +5,12 @@ ms.date: 05/14/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dc0fc16868f5cbdfd83b188d17ec4eae7bea7d9
-ms.sourcegitcommit: 8d6bc53d5f5ae80d9ce191fe81660407e9f11e0e
+ms.openlocfilehash: c878ccb97ea3b77635344a36feb1d63c3f42f9ed
+ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83427364"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84724600"
 ---
 # <a name="get-started-with-package-support-framework"></a>Introdução à estrutura de suporte do pacote 
 
@@ -52,11 +52,11 @@ Opcionalmente, você pode filtrar eventos para mostrar apenas as falhas.
 
 Se você suspeitar de uma falha de acesso ao sistema de arquivos, Procure eventos com falha que estejam sob o caminho de arquivo system32/SysWOW64 ou pacote. Os filtros também podem ajudar aqui. Inicie na parte inferior desta lista e role para cima. As falhas que aparecem na parte inferior desta lista ocorreram mais recentemente. Preste mais atenção aos erros que contêm cadeias de caracteres como "acesso negado" e "caminho/nome não encontrado" e ignore as coisas que não parecem suspeitas. O [PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/) tem dois problemas. Você pode ver esses problemas na lista que aparece na imagem a seguir.
 
-![ProcMon config. txt](images/procmon_config_txt.png)
+![Config.txt ProcMon](images/procmon_config_txt.png)
 
-No primeiro problema que aparece nessa imagem, o aplicativo está falhando ao ler do arquivo "config. txt" que está localizado no caminho "C:\Windows\SysWOW64". É improvável que o aplicativo esteja tentando referenciar esse caminho diretamente. Provavelmente, ele está tentando ler a partir desse arquivo usando um caminho relativo e, por padrão, "system32/SysWOW64" é o diretório de trabalho do aplicativo. Isso sugere que o aplicativo está esperando que seu diretório de trabalho atual seja definido como algum lugar no pacote. Olhando dentro do Appx, podemos ver que o arquivo existe no mesmo diretório que o executável.
+No primeiro problema que aparece nessa imagem, o aplicativo está falhando ao ler do arquivo "Config.txt" que está localizado no caminho "C:\Windows\SysWOW64". É improvável que o aplicativo esteja tentando referenciar esse caminho diretamente. Provavelmente, ele está tentando ler a partir desse arquivo usando um caminho relativo e, por padrão, "system32/SysWOW64" é o diretório de trabalho do aplicativo. Isso sugere que o aplicativo está esperando que seu diretório de trabalho atual seja definido como algum lugar no pacote. Olhando dentro do Appx, podemos ver que o arquivo existe no mesmo diretório que o executável.
 
-![App config. txt](images/psfsampleapp_config_txt.png)
+![Config.txt do aplicativo](images/psfsampleapp_config_txt.png)
 
 O segundo problema aparece na imagem a seguir.
 
@@ -64,7 +64,7 @@ O segundo problema aparece na imagem a seguir.
 
 Nesse problema, o aplicativo está falhando em gravar um arquivo. log em seu caminho de pacote. Isso sugere que uma correção de redirecionamento de arquivo pode ajudar.
 
-<a id="find" />
+<a id="find"></a>
 
 ## <a name="step-2-find-a-runtime-fix"></a>Etapa 2: encontrar uma correção de tempo de execução
 
@@ -95,7 +95,7 @@ Vamos examinar cada tarefa.
 
 ### <a name="create-the-package-layout-folder"></a>Criar a pasta de layout do pacote
 
-Se você já tiver um arquivo. msix (ou. AppX), poderá desempacotar seu conteúdo em uma pasta de layout que servirá como a área de preparo para seu pacote. Você pode fazer isso em um prompt de comando usando a ferramenta MakeAppx, com base no caminho de instalação do SDK, é aqui que você encontrará a ferramenta MakeAppx. exe em seu PC com Windows 10: x86: C:\Arquivos de programas (x86) \Windows Kits\10\bin\x86\makeappx.exe x64: C:\Arquivos de programas (x86) \Windows Kits\10\bin\x64\makeappx.exe
+Se você já tiver um arquivo. msix (ou. AppX), poderá desempacotar seu conteúdo em uma pasta de layout que servirá como a área de preparo para seu pacote. Você pode fazer isso em um prompt de comando usando a ferramenta MakeAppx, com base no caminho de instalação do SDK, é aqui que você encontrará a ferramenta de makeappx.exe em seu PC com Windows 10: x86: C:\Arquivos de programas (x86) \Windows Kits\10\bin\x86\makeappx.exe x64: C:\Arquivos de programas (x86) \Windows Kits\10\bin\x64\makeappx.exe
 
 ```powershell
 makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
@@ -132,9 +132,9 @@ Adicione as DLLs de PSF e arquivos executáveis de 32 bits e de 64 bits necessá
 
 | O executável do aplicativo é x64 | O executável do aplicativo é x86 |
 |-------------------------------|-----------|
-| [PSFLauncher64. exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |  [PSFLauncher32. exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |
-| [PSFRuntime64. dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) | [PSFRuntime32. dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) |
-| [PSFRunDll64. exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) | [PSFRunDll32. exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) |
+| [PSFLauncher64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |  [PSFLauncher32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |
+| [PSFRuntime64.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) | [PSFRuntime32.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) |
+| [PSFRunDll64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) | [PSFRunDll32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) |
 
 O conteúdo do pacote agora deve ser semelhante a este.
 
@@ -142,7 +142,7 @@ O conteúdo do pacote agora deve ser semelhante a este.
 
 ### <a name="modify-the-package-manifest"></a>Modificar o manifesto do pacote
 
-Abra o manifesto do pacote em um editor de texto e defina o `Executable` atributo do `Application` elemento como o nome do arquivo executável do iniciador PSF.  Se você souber a arquitetura do seu aplicativo de destino, selecione a versão apropriada, PSFLauncher32. exe ou PSFLauncher64. exe.  Caso contrário, o PSFLauncher32. exe funcionará em todos os casos.  Aqui está um exemplo.
+Abra o manifesto do pacote em um editor de texto e defina o `Executable` atributo do `Application` elemento como o nome do arquivo executável do iniciador PSF.  Se você souber a arquitetura do seu aplicativo de destino, selecione a versão apropriada, PSFLauncher32.exe ou PSFLauncher64.exe.  Se não, PSFLauncher32.exe funcionará em todos os casos.  Aqui está um exemplo.
 
 ```xml
 <Package ...>
@@ -159,7 +159,7 @@ Abra o manifesto do pacote em um editor de texto e defina o `Executable` atribut
 
 ### <a name="create-a-configuration-file"></a>Criar um arquivo de configuração
 
-Crie um nome de arquivo ``config.json`` e salve esse arquivo na pasta raiz do seu pacote. Modifique a ID do aplicativo declarado do arquivo config. JSON para apontar para o executável que você acabou de substituir. Usando o conhecimento obtido usando o Process Monitor, você também pode definir o diretório de trabalho, bem como usar a correção de redirecionamento de arquivo para redirecionar leituras/gravações para arquivos. log no diretório "PSFSampleApp" relativo ao pacote.
+Crie um nome de arquivo ``config.json`` e salve esse arquivo na pasta raiz do seu pacote. Modifique a ID de aplicativo declarada do config.jsno arquivo para apontar para o executável que você acabou de substituir. Usando o conhecimento obtido usando o Process Monitor, você também pode definir o diretório de trabalho, bem como usar a correção de redirecionamento de arquivo para redirecionar leituras/gravações para arquivos. log no diretório "PSFSampleApp" relativo ao pacote.
 
 ```json
 {
@@ -195,7 +195,7 @@ Crie um nome de arquivo ``config.json`` e salve esse arquivo na pasta raiz do se
 }
 ```
 
-Veja a seguir um guia para o esquema config. JSON:
+Veja a seguir um guia para o config.jsno esquema:
 
 | Array | chave | Valor |
 |-------|-----------|-------|
@@ -206,7 +206,7 @@ Veja a seguir um guia para o esquema config. JSON:
 | ajustes | dll | Caminho relativo ao pacote para a correção,. msix/. Appx a ser carregado. |
 | ajustes | config | Adicional Controla como a DLL de correção se comporta. O formato exato desse valor varia de acordo com a correção, pois cada correção pode interpretar esse "blob" como desejado. |
 
-As `applications` `processes` chaves, e `fixups` são matrizes. Isso significa que você pode usar o arquivo config. JSON para especificar mais de um aplicativo, processo e DLL de correção.
+As `applications` `processes` chaves, e `fixups` são matrizes. Isso significa que você pode usar a config.jsno arquivo para especificar mais de um aplicativo, processo e DLL de correção.
 
 ### <a name="package-and-test-the-app"></a>Empacotar e testar o aplicativo
 
@@ -241,7 +241,7 @@ Você pode verificar se a correção de tempo de execução está em execução.
 
 ### <a name="use-the-trace-fixup"></a>Usar a correção de rastreamento
 
-Uma técnica alternativa para diagnosticar problemas de compatibilidade de aplicativos empacotados é usar a correção de rastreamento. Essa DLL está incluída no PSF e fornece uma exibição de diagnóstico detalhada do comportamento do aplicativo, semelhante ao Process Monitor.  Ele é especialmente projetado para revelar problemas de compatibilidade de aplicativos.  Para usar a correção de rastreamento, adicione a DLL ao pacote, adicione o fragmento a seguir ao seu config. JSON e, em seguida, empacote e instale o aplicativo.
+Uma técnica alternativa para diagnosticar problemas de compatibilidade de aplicativos empacotados é usar a correção de rastreamento. Essa DLL está incluída no PSF e fornece uma exibição de diagnóstico detalhada do comportamento do aplicativo, semelhante ao Process Monitor.  Ele é especialmente projetado para revelar problemas de compatibilidade de aplicativos.  Para usar a correção de rastreamento, adicione a DLL ao pacote, adicione o fragmento a seguir ao seu config.jsativado e, em seguida, empacote e instale o aplicativo.
 
 ```json
 {
@@ -254,7 +254,7 @@ Uma técnica alternativa para diagnosticar problemas de compatibilidade de aplic
 }
 ```
 
-Por padrão, a correção de rastreamento filtra falhas que podem ser consideradas "esperadas".  Por exemplo, os aplicativos podem tentar excluir um arquivo incondicionalmente sem verificar se ele já existe, ignorando o resultado. Isso tem a conseqüência de que algumas falhas inesperadas podem ser filtradas, portanto, no exemplo acima, optamos por receber todas as falhas das funções FileSystem. Fazemos isso porque sabemos antes que a tentativa de ler do arquivo config. txt falha com a mensagem "arquivo não encontrado". Essa é uma falha que é frequentemente observada e, geralmente, não é presumida como inesperada. Na prática, é provável que seja melhor começar a filtragem apenas para falhas inesperadas e, em seguida, voltar a todas as falhas se houver um problema que ainda não possa ser identificado.
+Por padrão, a correção de rastreamento filtra falhas que podem ser consideradas "esperadas".  Por exemplo, os aplicativos podem tentar excluir um arquivo incondicionalmente sem verificar se ele já existe, ignorando o resultado. Isso tem a conseqüência de que algumas falhas inesperadas podem ser filtradas, portanto, no exemplo acima, optamos por receber todas as falhas das funções FileSystem. Fazemos isso porque sabemos antes que a tentativa de ler a partir do arquivo de Config.txt falha com a mensagem "arquivo não encontrado". Essa é uma falha que é frequentemente observada e, geralmente, não é presumida como inesperada. Na prática, é provável que seja melhor começar a filtragem apenas para falhas inesperadas e, em seguida, voltar a todas as falhas se houver um problema que ainda não possa ser identificado.
 
 Por padrão, a saída da correção de rastreamento é enviada para o depurador anexado. Para este exemplo, não vamos anexar um depurador e, em vez disso, usaremos o programa [DebugView](https://docs.microsoft.com/sysinternals/downloads/debugview) da Sysinternals para exibir sua saída. Depois de executar o aplicativo, podemos ver as mesmas falhas que antes, o que nos indicaria nas mesmas correções de tempo de execução.
 
@@ -445,7 +445,7 @@ Quando terminar, o ``config.json`` arquivo terá uma aparência semelhante a est
 ```
 
 >[!NOTE]
-> As `applications` `processes` chaves, e `fixups` são matrizes. Isso significa que você pode usar o arquivo config. JSON para especificar mais de um aplicativo, processo e DLL de correção.
+> As `applications` `processes` chaves, e `fixups` são matrizes. Isso significa que você pode usar a config.jsno arquivo para especificar mais de um aplicativo, processo e DLL de correção.
 
 ### <a name="debug-a-runtime-fix"></a>Depurar uma correção de tempo de execução
 
@@ -459,7 +459,7 @@ Para resolver esse problema, use a implantação de pacote. msix/. Appx em vez d
 
 Outro problema com o Visual Studio é que ele não tem suporte interno para anexar a processos filho iniciados pelo depurador.   Isso dificulta a depuração da lógica no caminho de inicialização do aplicativo de destino, que deve ser anexado manualmente pelo Visual Studio após a inicialização.
 
-Para resolver esse problema, use um depurador que dá suporte à anexação de processo filho.  Observe que geralmente não é possível anexar um depurador JIT (just-in-time) ao aplicativo de destino.  Isso ocorre porque a maioria das técnicas de JIT envolve a inicialização do depurador no lugar do aplicativo de destino, por meio da chave do registro ImageFileExecutionOptions.  Isso anula o mecanismo de despasseio usado pelo PSFLauncher. exe para injetar FixupRuntime. dll no aplicativo de destino.  O WinDbg, incluído nas [ferramentas de depuração para Windows](https://docs.microsoft.com/windows-hardware/drivers/debugger/index), e obtido do [SDK do Windows](https://developer.microsoft.com/windows/downloads/windows-10-sdk), dá suporte à anexação do processo filho.  Agora, ele também dá suporte à [inicialização e à depuração direta de um aplicativo UWP](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg#span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app).
+Para resolver esse problema, use um depurador que dá suporte à anexação de processo filho.  Observe que geralmente não é possível anexar um depurador JIT (just-in-time) ao aplicativo de destino.  Isso ocorre porque a maioria das técnicas de JIT envolve a inicialização do depurador no lugar do aplicativo de destino, por meio da chave do registro ImageFileExecutionOptions.  Isso anula o mecanismo de desvio usado pelo PSFLauncher.exe para injetar FixupRuntime.dll no aplicativo de destino.  O WinDbg, incluído nas [ferramentas de depuração para Windows](https://docs.microsoft.com/windows-hardware/drivers/debugger/index), e obtido do [SDK do Windows](https://developer.microsoft.com/windows/downloads/windows-10-sdk), dá suporte à anexação do processo filho.  Agora, ele também dá suporte à [inicialização e à depuração direta de um aplicativo UWP](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg#span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app).
 
 Para depurar a inicialização do aplicativo de destino como um processo filho, inicie ``WinDbg`` .
 

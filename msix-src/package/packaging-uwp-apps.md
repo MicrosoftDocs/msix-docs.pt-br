@@ -9,14 +9,14 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: 247871fab660ca0afa976e1a233cf731b8d13735
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: 712b3bdca76efa2eb24b04e246b6fc65b3f55b15
+ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726559"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84724610"
 ---
-# <a name="package-a-desktop-or-uwp-app-in-visual-studio"></a>Empacotar um aplicativo de área de trabalho ou UWP no Visual Studio
+# <a name="package-a-desktop-or-uwp-app-in-visual-studio"></a>Empacotar um aplicativo UWP ou da área de trabalho no Visual Studio
 
 Antes de distribuir seu aplicativo, você precisa empacotá-lo. Este artigo descreve o processo de configuração, criação e teste de um pacote MSIX usando o Visual Studio.
 
@@ -75,7 +75,7 @@ O designer de manifesto do Visual Studio permite a atualização do arquivo de m
     Da guia **Empacotamento**, você pode inserir dados de publicação. É aqui que você pode escolher qual certificado usar para assinar seu aplicativo. Todos os aplicativos MSIX devem ser assinados com um certificado.
 
     > [!NOTE]
-    > A partir do Visual Studio 2019, um certificado temporário não é mais gerado em projetos de desktop ou UWP empacotados. Para criar ou exportar certificados, use os cmdlets do PowerShell descritos neste [artigo](create-certificate-package-signing.md).
+    > A partir do Visual Studio 2019, um certificado temporário não é mais gerado em projetos de desktop ou UWP empacotados. Para criar ou exportar certificados, use os cmdlets do PowerShell descritos neste [artigo](create-certificate-package-signing.md). Em versões recentes do Visual Studio, você também pode [assinar seu aplicativo com um certificado armazenado em Azure Key Vault](../desktop/sign-with-akv-cert.md) para cenários de desenvolvimento e teste.
 
     > [!IMPORTANT]
     > Se você estiver publicando seu aplicativo na Microsoft Store, seu aplicativo será assinado com um certificado confiável para você. Isso permite que o usuário instale e execute seu aplicativo sem precisar instalar o certificado de autenticação do aplicativo associado.
@@ -84,7 +84,7 @@ O designer de manifesto do Visual Studio permite a atualização do arquivo de m
 
 4. Salve seu arquivo **Package.appxmanifest** depois de fazer as edições necessárias para o aplicativo.
 
-Se você estiver distribuindo seu aplicativo por meio do Microsoft Store, o Visual Studio poderá associar seu pacote à loja. Para fazer isso, clique com o botão direito do mouse no nome do projeto em Gerenciador de soluções e escolha **publicar**->**aplicativo associado com a loja** (antes do Visual Studio 2019 versão 16,3, o menu **publicar** é chamado de **repositório**). Você também pode fazer isso no Assistente para **criar pacotes de aplicativos** , que é descrito na seção a seguir. Quando você associa seu aplicativo, alguns dos campos na guia Empacotamento do designer de manifesto são atualizados automaticamente.
+Se você estiver distribuindo seu aplicativo por meio do Microsoft Store, o Visual Studio poderá associar seu pacote à loja. Para fazer isso, clique com o botão direito do mouse no nome do projeto em Gerenciador de soluções e escolha **publicar** -> **aplicativo associado com a loja** (antes do Visual Studio 2019 versão 16,3, o menu **publicar** é chamado de **repositório**). Você também pode fazer isso no Assistente para **criar pacotes de aplicativos** , que é descrito na seção a seguir. Quando você associa seu aplicativo, alguns dos campos na guia Empacotamento do designer de manifesto são atualizados automaticamente.
 
 ## <a name="generate-an-app-package"></a>Gerar um pacote de aplicativo
 
@@ -98,7 +98,7 @@ Os aplicativos podem ser instalados sem serem publicados no armazenamento, publi
 
 1. No **Gerenciador de soluções**, abra a solução para seu projeto de aplicativo.
 
-2. Clique com o botão direito do mouse no projeto e escolha **publicar**->**criar pacotes de aplicativos** (antes do Visual Studio 2019 versão 16,3, o menu **publicar** é chamado de **repositório**).
+2. Clique com o botão direito do mouse no projeto e escolha **publicar** -> **criar pacotes de aplicativos** (antes do Visual Studio 2019 versão 16,3, o menu **publicar** é chamado de **repositório**).
 
     ![Menu de contexto com navegação para Criar Pacotes de Aplicativos](images/packaging-screen2.jpg)
 
@@ -140,7 +140,7 @@ Para distribuir seu aplicativo para o Microsoft Store, recomendamos que você ge
 Você pode criar um arquivo de carregamento de pacote de aplicativo usando o assistente para **criar pacotes de aplicativos** no Visual Studio, ou você pode criar um manualmente a partir de pacotes de aplicativo existentes ou de grupos de aplicativos.
 
 > [!NOTE]
-> Se você quiser criar um pacote de aplicativo (. msix ou. AppX) ou um pacote de aplicativo (. msixbundle ou. appxbundle) manualmente, consulte [criar um pacote de aplicativo com a ferramenta MakeAppx. exe](create-app-package-with-makeappx-tool.md).
+> Se você quiser criar um pacote de aplicativo (. msix ou. AppX) ou um pacote de aplicativo (. msixbundle ou. appxbundle) manualmente, consulte [criar um pacote de aplicativo com a ferramenta MakeAppx.exe](create-app-package-with-makeappx-tool.md).
 
 ### <a name="create-your-app-package-upload-file-using-visual-studio"></a>Criar o arquivo de carregamento do pacote do aplicativo usando o Visual Studio
 
@@ -149,7 +149,7 @@ Você pode criar um arquivo de carregamento de pacote de aplicativo usando o ass
 
 1. Em **Gerenciador de soluções**, abra a solução para seu projeto de aplicativo UWP.
 
-2. Clique com o botão direito do mouse no projeto e escolha **publicar**->**criar pacotes de aplicativos** (antes do Visual Studio 2019 versão 16,3, o menu **publicar** é chamado de **repositório**). Se essa opção estiver desabilitada ou não aparecer, verifique se o projeto é um projeto Universal do Windows.  
+2. Clique com o botão direito do mouse no projeto e escolha **publicar** -> **criar pacotes de aplicativos** (antes do Visual Studio 2019 versão 16,3, o menu **publicar** é chamado de **repositório**). Se essa opção estiver desabilitada ou não aparecer, verifique se o projeto é um projeto Universal do Windows.  
 
     ![Menu de contexto com navegação para Criar Pacotes de Aplicativos](images/packaging-screen2.jpg)
 
@@ -186,7 +186,7 @@ Você pode criar um arquivo de carregamento de pacote de aplicativo usando o ass
     - Um ou mais pacotes de aplicativos (. msix ou. AppX) ou um pacote de aplicativo (. msixbundle ou. appxbundle).
     - Um arquivo. appxsym. Este é um arquivo. pdb compactado que contém símbolos públicos de seu aplicativo usado para o [Crash Analytics](https://docs.microsoft.com/windows/uwp/publish/health-report) no Partner Center. Você pode omitir esse arquivo, mas se você fizer isso, nenhuma informação analítica ou de depuração de pane estará disponível para seu aplicativo.
 
-2. Selecione todos os arquivos dentro da pasta, clique com o botão direito do mouse nos arquivos e selecione **Enviar para** -> **pasta compactada (zipada)**.
+2. Selecione todos os arquivos dentro da pasta, clique com o botão direito do mouse nos arquivos e selecione **Enviar para**  ->  **pasta compactada (zipada)**.
 
 3. Altere o nome da extensão do novo arquivo zip de. zip para. msixupload ou. appxupload.
 
@@ -248,7 +248,7 @@ Em seguida, você pode recuperar as credenciais do Partner Center necessárias p
 
 4. Clique no nome do seu aplicativo do Azure AD para ir para as configurações do aplicativo. Nessa página, copie a **ID do locatário** e os valores da **ID do cliente** .
 
-5. Na seção **chaves** , clique em **Adicionar nova chave**. Na próxima tela, copie o valor da **chave** , que corresponde ao segredo do cliente. Você não poderá acessar essas informações novamente depois de sair dessa página, portanto, lembre-se de não perdê-las. Para obter mais informações, consulte [Gerenciar chaves para um aplicativo do Azure AD](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys-for-an-azure-ad-application).
+5. Na seção **chaves** , clique em **Adicionar nova chave**. Na próxima tela, copie o valor da **chave** , que corresponde ao segredo do cliente. Você não poderá acessar essas informações novamente depois de sair dessa página, portanto, lembre-se de não perdê-las. Para saber mais, veja [Gerenciar chaves de um aplicativo do Azure AD](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys-for-an-azure-ad-application).
 
 ### <a name="configure-automatic-store-submissions-in-visual-studio"></a>Configurar envios de repositório automático no Visual Studio
 
