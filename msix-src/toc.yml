@@ -176,6 +176,8 @@
           href: desktop/desktop-to-uwp-packaging-dot-net.md
         - name: Empacotar um aplicativo UWP ou da área de trabalho no Visual Studio
           href: package/packaging-uwp-apps.md
+        - name: Assinar pacotes com o Azure Key Vault
+          href: desktop/sign-with-akv-cert.md
         - name: Otimizar binários com imagens nativas
           href: desktop/desktop-to-uwp-r2r.md
     - name: Pipelines de CI/CD para builds do MSIX
