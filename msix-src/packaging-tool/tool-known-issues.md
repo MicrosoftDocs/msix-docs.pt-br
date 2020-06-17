@@ -1,19 +1,19 @@
 ---
 title: Problemas conhecidos da ferramenta de empacotamento MSIX e dicas de solução de problemas
 description: Descreve problemas conhecidos e fornece dicas de solução de problemas a serem consideradas ao converter seus aplicativos para MSIX usando a ferramenta de empacotamento MSIX.
-ms.date: 02/03/2020
+ms.date: 06/11/2020
 ms.topic: article
 keywords: Ferramenta de Empacotamento MSIX, problemas conhecidos, solução de problemas
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4ae2efbc30106e8a5cf6a2861f7577ecae73048a
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: 466e7527ae1c7dc20322aa6eb2c3d507f1a1962f
+ms.sourcegitcommit: 6243b7aca6f52f007f4571c835f580f433c31769
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726393"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84812764"
 ---
-# <a name="known-issues-and-troubleshooting-tips-for-the-msix-packaging-tool"></a>Problemas conhecidos e dicas de solução de problemas para a ferramenta de empacotamento MSIX
+# <a name="known-issues-and-troubleshooting-tips-for-the-msix-packaging-tool"></a>Problemas conhecidos e dicas de solução de problemas para a Ferramenta de Empacotamento MSIX
 
 Este artigo descreve os problemas conhecidos e fornece dicas de solução de problemas a serem considerados ao converter seus aplicativos em MSIX usando a Ferramenta de Empacotamento MSIX. Confira nossos outros documentos se precisar adquirir a ferramenta de empacotamento MSIX ou o driver em [ambientes desconectados](disconnected-environment.md).
 
@@ -23,11 +23,38 @@ Este artigo descreve os problemas conhecidos e fornece dicas de solução de pro
 
 Se você tiver optado pelo nosso [programa Insider](insider-program.md), verifique se você tem a versão correta da ferramenta de empacotamento MSIX:
 - Vá para a seção **sobre** na ferramenta de empacotamento MSIX para exibir em qual versão você está.
-- Acesse [aqui](insider-program.md#current-insider-preview-build) para determinar a versão mais recente do insider Preview e confirme se você tem essa versão da ferramenta de empacotamento MSIX instalada. Verifique se o MSA que se inscreveu para o vôo é a conta que está conectada à Microsoft Store. 
-- Atualize manualmente a ferramenta de empacotamento MSIX por meio do Microsoft Store em seu computador. Se essa opção estiver disponível para você, abra a loja, vá para **downloads e atualizações**e clique em **obter atualizações**.
+- Acesse [aqui](insider-program.md#current-insider-preview-build) para determinar a versão mais recente do insider Preview e confirme se você tem essa versão da ferramenta de empacotamento MSIX instalada. 
+- Verifique se o MSA que se inscreveu para o vôo é a conta que está conectada à Microsoft Store. 
+- Atualize manualmente a ferramenta de empacotamento MSIX por meio do Microsoft Store em seu computador. Se essa opção estiver disponível para você, abra a loja, vá para **downloads e atualizações**e clique em **obter atualizações**. Como alternativa, procure a ferramenta de empacotamento MSIX e, na página do produto, você pode solicitar uma atualização. 
 - Para instalar a ferramenta de empacotamento MSIX para uso offline, siga [estas instruções](disconnected-environment.md#get-the-msix-packaging-tool) para garantir que você obtenha o aplicativo mais recente por meio do nosso processo offline.
 
 Se você estiver interessado em ingressar em nosso programa Insider, clique [aqui](https://aka.ms/MSIXPackagingPreviewProgram).
+
+### <a name="msix-packaging-tool-driver"></a>Driver da ferramenta de empacotamento MSIX
+
+O driver da ferramenta de empacotamento MSIX é fornecido como um pacote de [fod (recurso sob demanda)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities) de Windows Update. Ele não será instalado se o serviço de Windows Update estiver desabilitado no computador ou se as configurações do Windows Insider Flight Ring não corresponderem à compilação do sistema operacional do computador.
+
+Se você estiver com problemas para adquirir o driver ou estiver trabalhando em um ambiente offline, poderá encontrar links para baixar o driver [aqui](disconnected-environment.md#get-the-msix-packaging-tool-driver). 
+
+Se você tiver baixado o driver e estiver com problemas durante a conversão do pacote, pode ser um dos seguintes problemas.
+
+#### <a name="network-connectivity-issues"></a>Problemas de conectividade de rede
+
+Os códigos de erro a seguir podem indicar que você está encontrando problemas de conexão:
+
+* -2145107924 (0x8024402C)
+* -2145107945 (0x80244017)
+* -2145123272 (0x80240438)
+
+#### <a name="windows-server-update-service-wsus-configuration-manager-or-group-policies-affecting-windows-update-connectivity"></a>Windows Server Update Service (WSUS), Configuration Manager ou diretivas de grupo que afetam Windows Update conectividade
+
+O código de erro a seguir pode indicar que as políticas em seu computador estão afetando a conectividade Windows Update:-2145124306 (0x8024002e).
+
+Se você receber esse código de erro, talvez seja necessário verificar as [configurações e políticas de ambiente](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs).
+
+#### <a name="driver-required-a-reinstall"></a>O driver exigiu uma reinstalação
+
+Nesse cenário, a ferramenta de empacotamento MSIX o notificará na mensagem de erro e registrará que o driver precisa de uma reinicialização. Reinicie o computador e inicie a conversão novamente para corrigir esse problema. 
 
 ### <a name="minimum-version"></a>Versão mínima
 
@@ -100,7 +127,7 @@ Esse erro ocorre quando há um problema com o manifesto do pacote. Para identifi
 
 #### <a name="file-not-found"></a>Arquivo não encontrado
 
-O arquivo pode estar aberto ou não existente. Para resolver esse problema, adicione o arquivo apropriado ou feche o arquivo que está em uso no momento. Observe que você não receberá um `File not Found` erro se ele estiver aberto. Em vez disso, você `Access Denied` receberá `File in Use` um erro ou.
+O arquivo pode estar aberto ou não existente. Para resolver esse problema, adicione o arquivo apropriado ou feche o arquivo que está em uso no momento. Observe que você não receberá um `File not Found` erro se ele estiver aberto. Em vez disso, você receberá um `Access Denied` `File in Use` erro ou.
 
 #### <a name="file-type-associations"></a>Associações de tipo de arquivo
 
