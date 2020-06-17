@@ -150,7 +150,7 @@
           href: toolkit/msix-toolkit-overview.md
         - name: Modificar script do editor de pacote
           href: toolkit/msix-toolkit-modifypackagepublisher.md
-        - name: Scripts de conversão em lote
+        - name: Scripts de conversão em massa
           href: toolkit/msix-toolkit-msixbatchconversion.md
         - name: Ferramenta Criador de Arquivos do AppInstaller
           href: toolkit/msix-toolkit-appinstallerfilebuilder.md
