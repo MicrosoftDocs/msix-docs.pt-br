@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 781c59a2b62cdc1066e7ee884edc3c6161b1c40e
-ms.sourcegitcommit: bd738ef9264bd4c2785e5d175c44f2b785092e58
+ms.openlocfilehash: 485fda5e4d0ef4ca39a1cf2d8220a5cdf003881b
+ms.sourcegitcommit: 6c517bd2f6354db1a2c51217a208e1d2cfd466da
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84633860"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85295563"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -25,7 +25,7 @@ O Programa Insider da Ferramenta de Empacotamento MSIX fornece acesso antecipado
 - Um alias válido da conta Microsoft para acessar o aplicativo na Microsoft Store.
 - Privilégios de administrador no computador para executar a ferramenta.
 
-## <a name="install"></a>Instalar
+## <a name="install"></a>Instalar o
 
 Depois de ingressar no programa, você receberá um email confirmando sua inscrição. 
 
@@ -35,8 +35,9 @@ Se a ferramenta já estiver instalada no computador, verifique a versão instala
 
 ## <a name="current-insider-preview-build"></a>Build atual do Insider Preview
 
-## <a name="version-120206030"></a>1.2020.603.0 da versão
-- Corrigido um problema com os valores do registro do App-V durante a conversão
+## <a name="version-120206180"></a>1.2020.618.0 da versão
+- Adicionada uma sessão de tempo limite mais longa para conversões de linha de comando remotas
+- Melhores seleções do so MSIX Core para reduzir conflitos e confusão
 
 Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](release-notes/history.md).
 

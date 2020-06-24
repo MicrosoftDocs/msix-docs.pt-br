@@ -6,14 +6,18 @@ ms.topic: article
 keywords: Windows 10, UWP, msix, ferramenta de empacotamento msix, programa Insider
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: c03cf8ba7fd1098184b8e370298997c3a7c51878
-ms.sourcegitcommit: bd738ef9264bd4c2785e5d175c44f2b785092e58
+ms.openlocfilehash: 6aa47ea616a28694a9e22cb68a2a89a100e86629
+ms.sourcegitcommit: 6c517bd2f6354db1a2c51217a208e1d2cfd466da
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84633850"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85295573"
 ---
 # <a name="release-notes-for-the-msix-packaging-tool"></a>Notas sobre a versão da Ferramenta de Empacotamento MSIX
+
+## <a name="version-120206180"></a>1.2020.618.0 da versão
+- Adicionada uma sessão de tempo limite mais longa para conversões de linha de comando remotas
+- Melhores seleções do so MSIX Core para reduzir conflitos e confusão
 
 ## <a name="version-120206030"></a>1.2020.603.0 da versão
 - Corrigido um problema com os valores do registro do App-V durante a conversão
