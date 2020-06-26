@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: e5fafa90820eed04e33ff3405a8aaf21588e89e5
-ms.sourcegitcommit: 4593ba54c2c75ce82878e948566c92e21c27699d
+ms.openlocfilehash: 251ee703973695fae70b9e4d84b4bb46cb889432
+ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83383646"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84724570"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Empacotar um aplicativo da área de trabalho com o Desktop App Converter
 
@@ -144,7 +144,7 @@ Veja a seguir algumas maneiras comuns de empacotar o aplicativo.
 * [Empacotar um aplicativo que não tenha um instalador](#no-installer-conversion)
 * [Empacotar um aplicativo, assiná-lo e prepará-lo para envio à Store](#optional-parameters)
 
-<a id="installer-conversion" />
+<a id="installer-conversion"></a>
 
 #### <a name="package-an-application-that-has-an-installer-msi-file"></a>Empacotar um aplicativo que tenha um arquivo instalador (.msi)
 
@@ -159,7 +159,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 
 Se o instalador incluir instaladores para bibliotecas ou estruturas dependentes, talvez você precise organizar os itens de uma forma um pouco diferente. Confira [Encadeamento de vários instaladores com a Ponte de Desktop](https://blogs.msdn.microsoft.com/appconsult/2017/09/11/chaining-multiple-installers-with-the-desktop-app-converter/).
 
-<a id="setup-conversion" />
+<a id="setup-conversion"></a>
 
 #### <a name="package-an-application-that-has-a-setup-executable-file"></a>Empacotar um aplicativo que tenha um arquivo executável de instalação
 
@@ -174,7 +174,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 O parâmetro ``InstallerArguments`` é um parâmetro opcional. No entanto, como o Desktop App Converter precisa do instalador para ser executado no modo autônomo, você poderá precisar usá-lo se o aplicativo exigir sinalizadores silenciosos para a execução silenciosa. O sinalizador ``/S`` é um sinalizador silencioso muito comum, mas o sinalizador que você usará poderá ser diferente dependendo da tecnologia do instalador usada para criar o arquivo de configuração.
 
-<a id="no-installer-conversion" />
+<a id="no-installer-conversion"></a>
 
 #### <a name="package-an-application-that-doesnt-have-an-installer"></a>Empacotar um aplicativo que não tenha um instalador
 
@@ -189,7 +189,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 >[!IMPORTANT]
 >Caso a Central de Parceiros atribua uma identidade ao pacote que comece com um número, transmita também o parâmetro <i>-AppId</i> e use apenas o sufixo da cadeia de caracteres (após o separador de ponto) como o valor desse parâmetro.
 
-<a id="optional-parameters" />
+<a id="optional-parameters"></a>
 
 #### <a name="package-an-app-sign-the-app-and-run-validation-checks-on-the-package"></a>Empacotar um aplicativo, assiná-lo e executar verificações de validação no pacote
 
@@ -224,7 +224,7 @@ Os parâmetros ``Sign`` e ``Verify`` são opcionais. Existem muitos outros parâ
 ```
 Leia sobre todos eles na próxima seção.
 
-<a id="command-reference" />
+<a id="command-reference"></a>
 
 ### <a name="parameter-reference"></a>Referência de parâmetro
 
@@ -242,13 +242,13 @@ Veja também toda a lista executando o comando ``Get-Help`` na janela do console
 
 ||||
 |-------------|-----------|-------------|
-|<a id="setup-params" /> <strong>Parâmetros de configuração</strong>  ||
+|<a id="setup-params"></a> <strong>Parâmetros de configuração</strong>  ||
 |-Setup [&lt;SwitchParameter&gt;] |Necessária |Executa DesktopAppConverter no modo de instalação. O modo de instalação aceita a expansão de uma imagem de base fornecida.|
 |-BaseImage &lt;String&gt; | Necessária |Caminho completo para uma imagem de base não expandida. Este parâmetro será necessário se -Setup for especificado.|
 | -LogFile &lt;String&gt; |Opcional |Especifica um arquivo de log. Se omitido, um local temporário de arquivo de log será criado.|
 |-NatSubnetPrefix &lt;String&gt; |Opcional |Valor de prefixo a ser usado para a instância do Nat. Normalmente, você desejaria alterar isso somente se seu computador host fosse anexado à mesma faixa de sub-rede do NetNat do conversor. Você pode consultar a configuração atual do NetNat do conversor usando o cmdlet **Get-NetNat**. |
 |-NoRestart [&lt;SwitchParameter&gt;] |Necessária |Não solicite a reinicialização ao executar a instalação (é necessário reiniciar para habilitar o recurso de contêiner). |
-|<a id="conversion-params" /> <strong>Parâmetros de conversão</strong>|||
+|<a id="conversion-params"></a> <strong>Parâmetros de conversão</strong>|||
 |-AppInstallPath &lt;String&gt;  |Opcional |O caminho completo da pasta raiz do aplicativo dos arquivos instalados se ele estivesse instalado (por exemplo, "C:\Program Files (x86) \MyApp").|
 |-Destination &lt;String&gt; |Necessária |O destino desejado para a saída de appx do conversor - o DesktopAppConverter pode criar esse local caso ele ainda não exista.|
 |-Installer &lt;String&gt; |Necessária |O caminho para o instalador do aplicativo, que precisa conseguir ser executado de maneira autônoma/silenciosa. Conversão sem instalador, este é o caminho para o diretório raiz dos arquivos do aplicativo. |
@@ -256,11 +256,11 @@ Veja também toda a lista executando o comando ``Get-Help`` na janela do console
 |-InstallerValidExitCodes &lt;Int32&gt; |Opcional |Uma lista separada por vírgula de códigos de saída que indica que o instalador foi executado com êxito (por exemplo: 0, 1234, 5678).  Por padrão, o valor é 0 para não msi e 0, 1641, 3010 para msi.|
 |-MakeAppx [&lt;SwitchParameter&gt;]  |Opcional |Um botão que, quando presente, informa a este script para chamar MakeAppx na saída. |
 |-MakeMSIX [&lt;SwitchParameter&gt;]  |Opcional |Uma opção que, quando presente, instrui este script a empacotar a saída como um pacote MSIX. |
-|<a id="identity-params" /><strong>Parâmetros de identidade do pacote</strong>||
+|<a id="identity-params"></a><strong>Parâmetros de identidade do pacote</strong>||
 |-PackageName &lt;String&gt; |Necessária |O nome do pacote do aplicativo universal do Windows. Caso a Central de Parceiros atribua uma identidade ao pacote que comece com um número, transmita também o parâmetro <i>-AppId</i> e use apenas o sufixo da cadeia de caracteres (após o separador de ponto) como o valor desse parâmetro. |
 |-Publisher &lt;String&gt; |Necessária |O editor do seu pacote de aplicativo Universal do Windows |
 |-Version &lt;Version&gt; |Necessária |O número de versão do seu pacote de aplicativo Universal do Windows |
-|<a id="manifest-params" /><strong>Parâmetros do manifesto do pacote</strong>||
+|<a id="manifest-params"></a><strong>Parâmetros do manifesto do pacote</strong>||
 |-AppExecutable &lt;String&gt; |Opcional |O nome do executável principal do aplicativo (ex: "MyApp.exe"). Esse parâmetro é necessário para uma conversão sem instalador. |
 |-AppFileTypes &lt;String&gt;|Opcional |Uma lista separada por vírgula de tipos de arquivos aos quais o aplicativo será associado. Exemplo de uso: -AppFileTypes "'.md', '.markdown'".|
 |-AppId &lt;String&gt; |Opcional |Especifica um valor para definir a ID do Aplicativo no manifesto do pacote de aplicativo do Windows. Se não for especificado, ele será definido como o valor passado para *PackageName*. Em muitos casos, o uso do *PackageName* funciona bem. No entanto, caso a Central de Parceiros atribua uma identidade ao pacote que comece com um número, transmita também o parâmetro <i>-AppId</i> e use apenas o sufixo da cadeia de caracteres (após o separador de ponto) como o valor desse parâmetro. |
@@ -268,14 +268,14 @@ Veja também toda a lista executando o comando ``Get-Help`` na janela do console
 |-AppDescription &lt;String&gt; |Opcional |Especifica um valor para definir a descrição do aplicativo no manifesto do pacote de aplicativo do Windows. Se não for especificado, ele será definido como o valor passado para *PackageName*.|
 |-PackageDisplayName &lt;String&gt; |Opcional |Especifica um valor para definir o nome da exibição do pacote no manifesto do pacote de aplicativo do Windows. Se não for especificado, ele será definido como o valor passado para *PackageName*. |
 |-PackagePublisherDisplayName &lt;String&gt; |Opcional |Especifica um valor para definir o nome de exibição do fornecedor de pacotes no manifesto do pacote de aplicativo do Windows. Se não for especificado, ele será definido como o valor passado para *Publisher*. |
-|<a id="cleanup-params" /><strong>Parâmetros de limpeza</strong>|||
+|<a id="cleanup-params"></a><strong>Parâmetros de limpeza</strong>|||
 |-Cleanup [&lt;Option&gt;] |Necessária |Executa a limpeza de artefatos DesktopAppConverter. Há 3 opções válidas para o modo de limpeza. |
 |-Cleanup All | |Exclui todas as imagens de base expandidas, remove todos os arquivos temporários do conversor, remove a rede de contêiner e desabilita o recurso Windows opcional, Contêineres. |
 |-Cleanup WorkDirectory |Necessária |Remove todos os arquivos temporários do conversor. |
 |-Cleanup ExpandedImage |Necessária |Exclui todas as imagens de base expandidas instaladas no computador host. |
-|<a id="architecture-params" /><strong>Parâmetros da arquitetura do pacote</strong>|||
+|<a id="architecture-params"></a><strong>Parâmetros da arquitetura do pacote</strong>|||
 |-PackageArch &lt;String&gt; |Necessária |Gera um pacote com a arquitetura especificada. As opções válidas são 'x86' ou 'x64'; por exemplo, -PackageArch x86. Esse parâmetro é opcional. Se não for especificado, o DesktopAppConverter tentará detectar automaticamente a arquitetura do pacote. Se a detecção automática falhar, o padrão será pacote x64. |
-|<a id="other-params" /><strong>Parâmetros diversos</strong>|||
+|<a id="other-params"></a><strong>Parâmetros diversos</strong>|||
 |-ExpandedBaseImage &lt;String&gt;  |Opcional |Caminho completo para uma imagem de base já expandida.|
 |-LogFile &lt;String&gt;  |Opcional |Especifica um arquivo de log. Se omitido, um local temporário de arquivo de log será criado. |
 | -Sign [&lt;SwitchParameter&gt;] |Opcional |Instrui este script a assinar o pacote de aplicativo do Windows de saída usando um certificado gerado para fins de teste. Essa opção deve estar presente junto com a opção ```-MakeAppx```. |
@@ -283,7 +283,7 @@ Veja também toda a lista executando o comando ``Get-Help`` na janela do console
 | -Verify [&lt;SwitchParameter&gt;] |Opcional |Uma opção que, quando presente, instrui o DAC a validar o pacote de aplicativo em relação aos requisitos da Ponte de Desktop e da Microsoft Store. O resultado é um relatório de validação "VerifyReport.xml", que é mais bem visualizado em um navegador. Essa opção deve estar presente junto com a opção `-MakeAppx`. |
 |-PublishComRegistrations| Opcional| Examina todos os registos COM públicos feitos pelo instalador e publica os válidos no manifesto. Use esse sinalizador somente se desejar disponibilizar esses registros para outros aplicativos. Você não precisará usar esse sinalizador se esses registros forem usados apenas pelo aplicativo. <br><br>Examine [este artigo](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#lDg5gSFxJ2TDlpC6.97) para verificar se os registros COM se comportam como esperado após o empacotamento do aplicativo.
 
-<a id="run-app" />
+<a id="run-app"></a>
 
 ## <a name="run-the-packaged-app"></a>Executar o aplicativo empacotado
 

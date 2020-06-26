@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: bd6cf9c3c00221fc929e395296eb527b3e3fc049
-ms.sourcegitcommit: 7a52883434aa05272c15d033d85b67e2dd1e8c75
+ms.openlocfilehash: fcaca4943d3101600ef408b0e1d0349e2fc06f94
+ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84107374"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84724550"
 ---
 # <a name="set-up-your-desktop-application-for-msix-packaging-in-visual-studio"></a>Configurar o aplicativo da área de trabalho para empacotamento MSIX no Visual Studio
 
@@ -45,12 +45,11 @@ Estas são outras coisas que você pode fazer pelo Projeto de Empacotamento de A
 
 :heavy_check_mark: (Caso vá publicar na Microsoft Store) Atribua com facilidade uma identidade ao aplicativo com um nome já reservado no [Partner Center](https://partner.microsoft.com/dashboard).
 
-
 ## <a name="prepare-your-application"></a>Prepare seu aplicativo
 
 Examine este guia antes de começar a criar um pacote para o aplicativo: [Preparar um pacote de um aplicativo de área de trabalho](desktop-to-uwp-prepare.md).
 
-<a id="new-packaging-project"/>
+<a id="new-packaging-project"></a>
 
 ## <a name="setup-the-windows-application-packaging-project-in-your-solution"></a>Configure o Projeto de Empacotamento de Aplicativo do Windows na solução
 

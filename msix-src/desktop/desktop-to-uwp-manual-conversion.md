@@ -7,12 +7,12 @@ keywords: Windows 10, UWP, MSIX
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6799625432b42303b81ddcc7fcaacfb72e36f8fe
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 0345e15ad014afb9461eccc6ed112550a3c0c7a8
+ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "80108450"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84724530"
 ---
 # <a name="generating-msix-package-components"></a>Geração de componentes do pacote MSIX
 
@@ -145,7 +145,7 @@ Este é um exemplo do nó [VisualElements](https://docs.microsoft.com/uwp/schema
     Square44x44Logo="images\small_icon.png"
     Description="A useful description" />
 ```
-<a id="target-based-assets" />
+<a id="target-based-assets"></a>
 
 ## <a name="optional-add-target-based-unplated-assets"></a>(Opcional) Adicione ativos não incluídos no destino
 
@@ -162,7 +162,7 @@ Os ativos baseados no destino são para ícones e blocos que aparecem na barra d
 
 4. Continue até a próxima subseção para gerar um novo arquivo de índice de recurso do pacote.
 
-<a id="make-pri" />
+<a id="make-pri"></a>
 
 ### <a name="generate-a-package-resource-index-pri-file-using-makepri"></a>Gerar um arquivo PRI (índice de recurso do pacote) usando MakePri
 
@@ -184,7 +184,7 @@ Não há nenhuma versão ARM dessa ferramenta.
 
 6.  Empacote o aplicativo usando as instruções da próxima etapa.
 
-<a id="make-appx" />
+<a id="make-appx"></a>
 
 ## <a name="test-your-application-before-packaging"></a>Teste o aplicativo antes de empacotar
 

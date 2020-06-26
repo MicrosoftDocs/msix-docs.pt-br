@@ -5,12 +5,12 @@ ms.date: 07/29/2019
 ms.topic: article
 keywords: windows 10 S, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: ed5df7ed7655bf08ab8e1401f55bd88988be9768
-ms.sourcegitcommit: 7a52883434aa05272c15d033d85b67e2dd1e8c75
+ms.openlocfilehash: d6b19d6664bb8e2bc95b8f3e85b34541e2fc68e3
+ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84107364"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84724520"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>Testar seu aplicativo do Windows para Windows 10 no modo S
 
@@ -26,7 +26,7 @@ Essa política do WDAC impõe as regras com as quais os aplicativos devem estar 
 > [!IMPORTANT]
 >Recomendamos que você aplique essas políticas a uma máquina virtual, mas se você deseja aplicá-las ao computador local, examine nossas diretrizes de melhores práticas na seção "Próximo, instalar a política e reiniciar o sistema" deste tópico antes de aplicar uma política.
 
-<a id="choose-policy" />
+<a id="choose-policy"></a>
 
 ## <a name="first-download-the-policies-and-then-choose-one"></a>Primeiro, baixe as políticas e, depois, escolha uma delas
 
