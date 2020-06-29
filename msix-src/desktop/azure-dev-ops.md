@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 42f2486f0575cb1d7d15614ce65765388eaaa940
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: 21b5f8f78a12f1942ca3f723f0c0b8052c44062e
+ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726447"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84724580"
 ---
 # <a name="set-up-a-cicd-pipeline-to-automate-your-msix-builds-and-deployments"></a>Configure um pipeline da CI/CD para automatizar builds e implantações do MSIX
 
@@ -23,9 +23,9 @@ Comece [inscrevendo-se no Azure Pipelines](https://docs.microsoft.com/azure/devo
 
 Em seguida, crie um pipeline que possa ser usado para criar seu código-fonte. Para obter um tutorial sobre como criar um pipeline para criar um repositório GitHub, consulte [Crie seu primeiro pipeline](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml). O Azure Pipelines é compatível com os tipos de repositório listados [neste artigo](https://docs.microsoft.com/azure/devops/pipelines/repos).
 
-Para configurar o pipeline do build propriamente dito, navegue para o portal Azure DevOps em dev.azure.com/<organization> e crie um novo projeto. Se não tiver uma conta, é possível criar uma gratuitamente. Depois de entrar e criar um projeto, você poderá enviar o código-fonte por push para o repositório Git configurado para você em https://<organization>@dev.azure.com/\<organização>/<project>/_git/<project> ou usar qualquer outro provedor, como o GitHub. Você poderá escolher a localização do repositório quando criar um novo pipeline no portal, clicando primeiro no botão “Pipelines” e em “Novo Pipeline”.
+Para configurar o pipeline do build propriamente dito, navegue para o portal Azure DevOps em dev.azure.com/\<organization\> e crie um novo projeto. Se não tiver uma conta, crie uma gratuitamente. Depois de entrar e criar um projeto, você poderá enviar o código-fonte por push ao repositório Git configurado para você em https://\<organization\>@dev.azure.com/<organization\>/\<project\>/_git/\<project\> ou usar qualquer outro provedor, como o GitHub. Você poderá escolher a localização do repositório ao criar um pipeline no portal, basta primeiro clicar no botão **Pipelines**, depois em **Novo Pipeline**.
 
-Na tela Configurar que aparece em seguida, você deve selecionar a opção “Arquivo YAML Existente do Azure Pipelines” e o caminho para o arquivo YAML verificado no repositório.
+Na tela **Configurar** que aparecerá em seguida, você deverá selecionar a opção **Arquivo YAML existente do Azure Pipelines** e o caminho para o arquivo YAML verificado no repositório.
 
 ## <a name="add-your-project-certificate-to-the-secure-files-library"></a>Adicione o certificado do projeto à biblioteca Arquivos seguros
 
@@ -36,12 +36,8 @@ Para carregar um certificado em seu build automatizado:
 
 1. No Azure Pipelines, expanda **Pipelines** no painel de navegação e clique em **Biblioteca**.
 2. Clique na guia **Arquivos seguros** e clique em **+ Arquivo seguro**.
-
-  
-
 3. Navegue até o arquivo de certificado e clique em **OK**.
 4. Depois de carregar o certificado, selecione-o para visualizar as propriedades dele. Em **Permissões de pipeline**, habilite a opção **Autorizar para uso em todos os pipelines**.
-
 5. Se a chave privada no certificado tiver uma senha, recomendamos que você a armazene no [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) e a vincule a um [grupo de variáveis](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Você pode usar a variável para acessar a senha pelo pipeline. Observe que uma senha é compatível apenas com a chave privada. No momento, não é possível usar um arquivo de certificado que seja, em si, protegido por senha.
 
 > [!NOTE]
