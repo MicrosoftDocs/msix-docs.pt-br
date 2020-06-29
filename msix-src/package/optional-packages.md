@@ -8,18 +8,18 @@ author: dianmsft
 ms.author: diahar
 keywords: Windows 10, msix, UWP, pacotes opcionais, conjunto relacionado, extensão do pacote, Visual Studio
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bf83ac69bc45e2ef984fefc96ad0f9ff9074420
-ms.sourcegitcommit: 7a52883434aa05272c15d033d85b67e2dd1e8c75
+ms.openlocfilehash: c8b0dbc98e73e4086556fa6f169522ed5fcc37d9
+ms.sourcegitcommit: f6bb9ced4cce853ae6acd3a359cbbb5e2e3f7187
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84107354"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441653"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>Criação de pacotes opcionais e conjunto relacionado
 
 Os pacotes opcionais contêm conteúdo que pode ser integrado com um pacote principal. Estes são úteis para o conteúdo para download (DLC), dividindo um aplicativo grande para restrições de tamanho ou para enviar qualquer conteúdo adicional para separado do seu aplicativo original.
 
-Conjuntos relacionados são uma extensão de pacotes opcionais - eles permitem que você imponha um conjunto rigoroso de versões em pacotes principais e opcionais. Eles também permitem carregar código nativo (C ++) de pacotes opcionais. Os conjuntos relacionados podem ter editores diferentes do aplicativo principal se ele for implantado fora do repositório.
+Conjuntos relacionados são uma extensão de pacotes opcionais - eles permitem que você imponha um conjunto rigoroso de versões em pacotes principais e opcionais. Os conjuntos relacionados podem ter editores diferentes do aplicativo principal se ele for implantado fora do repositório.
 
 Pacotes opcionais e conjuntos relacionados todos são executados dentro do contêiner MSIX do aplicativo principal.
 
@@ -44,62 +44,60 @@ Para criar um pacote opcional no Visual Studio, você precisará:
 1. Verifique se a **versão mínima da plataforma de destino** do aplicativo está definida como: 10.0.15063.0 ou superior.
 2. Em seu projeto **pacote principal**, abra o arquivo `Package.appxmanifest`. Navegue até a guia "Pacotes" e anote seu **nome de família do pacote**, que é tudo antes do caractere "_".
 3. Em seu projeto **pacote opcional**, clique com botão direito em `Package.appxmanifest` e selecione **Abrir com > Editor XML (texto)**.
-4. Localize o elemento `<Dependencies>` no arquivo. Adicione o seguinte:
+4. Localize o elemento `<Dependencies>` no arquivo. Adicione o seguinte e substitua `[MainPackageDependency]` pelo **nome da família de pacotes** da etapa 2. Isso especifica que seu **pacote opcional** depende seu **pacote principal**.
+    ```XML
+    <uap3:MainPackageDependency Name="[MainPackageDependency]"/>
+    ```
 
-```XML
-<uap3:MainPackageDependency Name="[MainPackageDependency]"/>
-```
-
-Substitua `[MainPackageDependency]`com seu **nome de família do pacote** a partir da etapa 2. Isso especifica que seu **pacote opcional** depende seu **pacote principal**.
-
-Depois de ter suas dependências de pacotes configuradas nos Passos 1 a 4, você pode continuar desenvolvendo como você faria normalmente. Se você quiser carregar o código do pacote opcional no pacote principal, você precisará criar um conjunto relacionado. Consulte a seção [Conjuntos relacionados](#related_sets) para obter mais detalhes.
+Depois de ter suas dependências de pacote configuradas das etapas 1 a 4, você pode continuar desenvolvendo como faria normalmente. 
 
 O Visual Studio pode ser configurado para implementar novamente seu pacote principal sempre que você implantar um pacote opcional. Para definir a dependência de compilação no Visual Studio, você deve:
 
-- Clique com o botão direito no projeto de pacote opcional e selecione **Dependências da compilação > Dependências do projeto...**
-- Verifique se o projeto do pacote principal e selecione "OK". 
+1. Clique com o botão direito no projeto de pacote opcional e selecione **Dependências da compilação > Dependências do projeto...**
+2. Verifique se o projeto do pacote principal e selecione "OK". 
 
 Agora, toda vez que você pressionar F5 ou criar um projeto de pacote opcional, o Visual Studio irá construir o projeto do pacote principal primeiro. Isso garante que seu projeto principal e projetos opcionais estejam em sincronia.
 
 ## <a name="related-sets"></a>Conjuntos relacionados<a name="related_sets"></a>
 
-Se você quiser carregar o código do pacote opcional no pacote principal, você precisará criar um conjunto relacionado. Para compilar um conjunto relacionado, o pacote principal e o pacote opcional devem ser bem acoplados. Os metadados para conjuntos relacionados são especificados no arquivo. appxbundle ou. msixbundle do pacote principal. O Visual Studio ajuda você a obter os metadados corretos em seus arquivos. Para configurar a solução do seu aplicativo para conjuntos relacionados, use as seguintes etapas:
+Um conjunto relacionado consiste em um pacote principal e um pacote opcional que são rigidamente acoplados por meio de metadados que são especificados no arquivo. appxbundle ou. msixbundle do pacote principal. Esses metadados vinculam o pacote principal ao pacote opcional (usando o nome do arquivo. appxbundle + versão) e o pacote opcional para o pacote principal (usando o nome independente da versão). O Visual Studio ajuda você a obter os metadados corretos em seus arquivos. 
+
+O controle de versão de pacotes em um conjunto relacionado é sincronizado de uma maneira que não permitirá que a versão mais recente de qualquer pacote seja usada até que todos os pacotes do conjunto relacionado (especificados pela versão no pacote principal) estejam instalados. Os pacotes são atendidos de forma independente, mas os pacotes especificados no conjunto podem não ser usados até que todos tenham sido atualizados.
+
+Para configurar a solução do seu aplicativo para conjuntos relacionados, use as seguintes etapas:
 
 1. Clique com botão direito do projeto do pacote principal, selecione **Adicionar > Novo Item...**
 2. Na janela, pesquise os modelos instalados para ". txt" e adicione um novo arquivo de texto.
     > [!IMPORTANT]
     > O novo arquivo de texto deve ser nomeado: `Bundle.Mapping.txt`.
 3. No arquivo `Bundle.Mapping.txt`, você especificará caminhos relativos para todos os projetos de pacote opcional ou pacotes externos. Um arquivo `Bundle.Mapping.txt` de amostra deve ser algo parecido com isto:
+    ```syntax
+    [OptionalProjects]
+    "..\ActivatableOptionalPackage1\ActivatableOptionalPackage1.vcxproj"
+    "..\ActivatableOptionalPackage2\ActivatableOptionalPackage2.vcxproj"
 
-```syntax
-[OptionalProjects]
-"..\ActivatableOptionalPackage1\ActivatableOptionalPackage1.vcxproj"
-"..\ActivatableOptionalPackage2\ActivatableOptionalPackage2.vcxproj"
+    [ExternalPackages]
+    "..\ActivatableOptionalPackage1\x86\Release\ActivatableOptionalPackage3_1.1.1.0\ ActivatableOptionalPackage3_1.1.1.0.appx"
+    ```
 
-[ExternalPackages]
-"..\ActivatableOptionalPackage1\x86\Release\ActivatableOptionalPackage3_1.1.1.0\ ActivatableOptionalPackage3_1.1.1.0.appx"
-```
-
-Quando sua solução for configurada dessa maneira, o Visual Studio criará um manifesto de pacote para o pacote principal com todos os metadados necessários para conjuntos relacionados. 
+Quando sua solução estiver configurada dessa forma, o Visual Studio criará um [manifesto de pacote](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest) chamado AppxBundleManifest.xml para o pacote principal com todos os metadados necessários para conjuntos relacionados. 
 
 Observe que, assim como os pacotes opcionais, um `Bundle.Mapping.txt` arquivo para conjuntos relacionados só funcionará no Windows 10, versão 1703 ou superior. Além disso, a versão mínima da plataforma de destino do seu aplicativo deve ser definida como 10.0.15063.0 ou superior.
 
 ## <a name="removing-optional-packages"></a>Removendo pacotes opcionais 
 Os usuários podem acessar seu aplicativo de **configurações** e remover os pacotes opcionais. Da mesma forma, os desenvolvedores podem usar o [RemoveOptionalPackageAsync](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.PackageCatalog) para remover uma lista de pacotes opcionais. 
 
-```
- 
-    PackageCatalog catalog = PackageCatalog.OpenForCurrentPackage();
-    List<string> optionalList = new List<string>();
-    optionalList.Add("FabrikamAgeAnalysis_kwpnjs8c36mz0");
+```csharp
+PackageCatalog catalog = PackageCatalog.OpenForCurrentPackage();
+List<string> optionalList = new List<string>();
+optionalList.Add("FabrikamAgeAnalysis_kwpnjs8c36mz0");
     
-     //Warn user that application will be restarted. 
-    var result = await catalog.RemoveOptionalPackagesAsync(optionalList);
-    if(result.ExtendedError != null)
-    {
-        throw removalResult.ExtendedError;
-    }
-    
+// Warn user that application will be restarted. 
+var result = await catalog.RemoveOptionalPackagesAsync(optionalList);
+if (result.ExtendedError != null)
+{
+    throw removalResult.ExtendedError;
+}
 ```
 > [!NOTE]
 > No caso de um conjunto relacionado, a plataforma precisará reiniciar o aplicativo principal para finalizar a remoção para evitar situações em que o aplicativo tem conteúdo carregado do pacote que está sendo removido. Os aplicativos devem notificar os usuários de que o aplicativo precisará ser reiniciado antes que o aplicativo chame a API.
