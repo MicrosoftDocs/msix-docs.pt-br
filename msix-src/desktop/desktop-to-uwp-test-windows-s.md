@@ -5,23 +5,18 @@ ms.date: 07/29/2019
 ms.topic: article
 keywords: windows 10 S, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: d6b19d6664bb8e2bc95b8f3e85b34541e2fc68e3
-ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
+ms.openlocfilehash: 11989302e0c5c1d69623aaffafec59d06db5353b
+ms.sourcegitcommit: f6bb9ced4cce853ae6acd3a359cbbb5e2e3f7187
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84724520"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441663"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>Testar seu aplicativo do Windows para Windows 10 no modo S
 
 Teste seu aplicativo do Windows para verificar se ele funcionará corretamente em dispositivos que executam o Windows 10 no modo S. Na verdade, se você pretende publicar seu aplicativo na Microsoft Store, faça isso, pois esse é um requisito da loja. Para testar o aplicativo, você pode aplicar uma política do WDAC (Controle de Aplicativos do Windows Defender) a um dispositivo que esteja executando o Windows 10 Pro.
 
-> [!NOTE]
-> Teste seu aplicativo do Windows para verificar se ele funcionará corretamente em dispositivos que executam o Windows 10 no modo S. Na verdade, se você pretende publicar seu aplicativo na Microsoft Store, faça isso, pois esse é um requisito da loja. Para testar o aplicativo, você pode aplicar uma política do WDAC a um dispositivo que esteja executando o Windows 10 Pro.
-
-
 Essa política do WDAC impõe as regras com as quais os aplicativos devem estar em conformidade para serem executados no Windows 10 S.
-
 
 > [!IMPORTANT]
 >Recomendamos que você aplique essas políticas a uma máquina virtual, mas se você deseja aplicá-las ao computador local, examine nossas diretrizes de melhores práticas na seção "Próximo, instalar a política e reiniciar o sistema" deste tópico antes de aplicar uma política.
