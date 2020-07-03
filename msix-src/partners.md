@@ -6,18 +6,22 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3be32823427b7c62a84db0933d22aec49d1b3eee
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 33c7a07c72b6d820f9ce51c09532e70435daea50
+ms.sourcegitcommit: c95c0a9ddbe944863b131298c158703385835445
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "81433722"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85795558"
 ---
 # <a name="msix-partners"></a>Parceiros de MSIX
 
 Os parceiros a seguir fornecem ferramentas adicionais e suporte para cenários de desenvolvimento do MSIX.
 
 :::row:::
+:::column:::
+[![Logotipo da Access IT Automation](images/AccessITAutomationLogoTransp.png)](http://info.accessitautomation.com/ty-evergreen-it-webinar-0)
+:::column-end:::
+
 :::column:::
 [![Logotipo da Advanced Installer](images/AdvancedInstaller_Logo.png)](https://www.advancedinstaller.com/desktop-bridge)
 :::column-end:::
@@ -26,13 +30,12 @@ Os parceiros a seguir fornecem ferramentas adicionais e suporte para cenários d
 [![Logotipo da Camwood](images/Camwood_Logo_2.png)](http://camwood.com/windows-10/)
 :::column-end:::
 
-:::column:::
-[![Logotipo da Cloudhouse](images/CloudHouse_Logo.png)](https://cloudhouse.com/msixpr)
-:::column-end:::
-
 :::row-end:::
 
 :::row:::
+:::column:::
+[![Logotipo da Cloudhouse](images/CloudHouse_Logo.png)](https://cloudhouse.com/msixpr)
+:::column-end:::
 
 :::column:::
 [![Logotipo da FireGiant](images/FireGiant_Logo.png)](https://www.firegiant.com/r/msix/)
@@ -42,14 +45,15 @@ Os parceiros a seguir fornecem ferramentas adicionais e suporte para cenários d
 [![Logotipo da Flexera](images/Flexera_Logo.png)](https://www.flexera.com/company/news/press-releases/Flexera-Launches-Support-for-Microsofts-MSIX.html)    
 :::column-end:::
 
-:::column:::
-[![Logotipo da installAware](images/installAware_logo.png)](https://www.installaware.com/msix.htm)    
-:::column-end:::
+
 
 
 :::row-end:::
 
 :::row:::
+:::column:::
+[![Logotipo da installAware](images/installAware_logo.png)](https://www.installaware.com/msix.htm)    
+:::column-end:::
 
 :::column:::
 [![Logotipo da Raynet](images/RayPackStudio_Logo_offset.png)](https://raynet.de/en/msix/)
