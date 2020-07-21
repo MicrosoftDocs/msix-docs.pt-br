@@ -6,26 +6,26 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5e73ecb893ccddacf28f87a7080382eeb02f80c3
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: d5b4c857e18770406b8a045b6ec8bda586c170f6
+ms.sourcegitcommit: 642563e98a52d4cc384987e618c5482022e29aba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726597"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86556271"
 ---
 # <a name="best-practices-for-the-msix-packaging-tool"></a>Melhores práticas da Ferramenta de Empacotamento MSIX
 
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">Obter a Ferramenta de Empacotamento MSIX</a></p></div>
 
-Se você ainda não configurou seu ambiente para conversão, você pode seguir nossas recomendações de [práticas recomendadas de ambiente](prepare-your-environment.md) e, em seguida, voltar aqui para configurar a ferramenta de empacotamento MSIX. Antes de iniciar qualquer conversão, é recomendável definir suas configurações na ferramenta de empacotamento MSIX para simplificar o fluxo de trabalho a cada vez.
+Se você ainda não configurou seu ambiente para conversão, você pode seguir nossas recomendações de [práticas recomendadas de ambiente](prepare-your-environment.md) e, em seguida, voltar aqui para configurar a ferramenta de empacotamento MSIX. Antes de iniciar qualquer conversão, é recomendável definir suas configurações na ferramenta de empacotamento MSIX para simplificar o fluxo de trabalho a cada vez. Inicie a ferramenta de empacotamento MSIX e vá para as configurações (engrenagem no canto superior direito da página de aterrissagem) para configurar os padrões da ferramenta. 
 
-### <a name="tool-defaults"></a>Padrões de ferramenta
+### <a name="configure-your-msix-packaging-tool-defaults"></a>Configurar os padrões da ferramenta de empacotamento MSIX
 
 - **Gerar uma linha de comando com cada pacote** Essa configuração fará com que você gere automaticamente um arquivo de modelo de linha de comando para que, se você estiver Reempacotando o mesmo aplicativo (como uma nova versão) por meio da linha de comando mais tarde, você pode ter um arquivo de modelo de linha de comando pré-configurado para esse aplicativo. Você precisará fornecer um instalador para gerar um arquivo de modelo durante o fluxo de trabalho.
 - **Selecionar todas as correções por padrão para preparar computador** Essa configuração permite que você tenha todas as correções recomendadas previamente selecionadas para que, durante o estágio preparar computador, você possa simplesmente optar por desabilitar tudo sem precisar selecioná-las individualmente.
 - **Impor requisitos de controle de versão Microsoft Store** Se você estiver planejando implantar seu aplicativo por meio do Microsoft Store, certifique-se de que isso esteja selecionado para que ele esteja em conformidade com os requisitos da loja (isso afetará os requisitos de versão do pacote e o suporte mínimo da versão do sistema operacional). Se essa opção estiver desmarcada, o pacote terá uma versão mínima definida como Windows 10 1709 e você terá controle total sobre os 4 dígitos da versão do pacote. Se esta opção estiver marcada, o pacote terá uma versão mínima definida para o Windows 10 1809 e a versão deverá terminar em. 0 (por exemplo, 1.5.6.0).
 - **Adicionar integridade do pacote ao gerar um pacote** Se essa opção estiver selecionada, a integridade do pacote será adicionada automaticamente a todos os pacotes gerados. A [integridade do pacote](../package/signing-package-overview.md#package-integrity-enforcement) tem suporte no Windows 10 2004 e posterior.
-- **Adicionar suporte para MSIX Core ao gerar um pacote** Essa opção permite que você adicione o 9MSIX Core] (.. /msix-Core/msixcore.MD) suporte a todos os pacotes que você gerar. Depois de selecionado, isso oferecerá uma lista suspensa que permitirá que você especifique a versão do Windows para dar suporte ao. 
+- **Adicionar suporte para MSIX Core ao gerar um pacote** Essa opção permite que você adicione o suporte do [MSIX Core](../msix-core/msixcore.md) a todos os pacotes que você gerar. Depois de selecionado, isso oferecerá uma lista suspensa que permitirá que você especifique a versão do Windows para dar suporte ao. 
 - **Local de salvamento padrão** Especifique o local de salvamento padrão onde os pacotes gerados e os arquivos associados serão salvos.
 - **Local de procura do instalador padrão** Especifique o local padrão para localizar instaladores a serem convertidos.
 - **Número da porta do servidor** Especifique o número da porta do servidor para a ferramenta de empacotamento MSIX. Isso será relevante se você estiver planejando converter usando um [computador remoto](remote-conversion-setup.md). 
@@ -35,7 +35,7 @@ Se você ainda não configurou seu ambiente para conversão, você pode seguir n
     - Assinar com um certificado (. pfx)-recomendamos essa opção se você já tiver um certificado confiável que você está usando em sua empresa.
     - Especifique um arquivo. cer (não assina)-se você não deseja assinar no momento da conversão, mas quer garantir que as informações do Publicador sejam válidas no momento da assinatura, você pode escolher essa opção.
     - Não assinar pacote. -Se você quiser assinar seu pacote usando outro método ou posteriormente depois que o pacote tiver sido gerado, você poderá escolher essa opção.
-    Também recomendamos que você adicione uma URL do servidor de carimbo de data/hora à sua preferência de assinatura (quando aplicável), para que seu aplicativo possa ser instalado, mesmo que seu certificado expire.   
+    Também recomendamos que você adicione uma **URL do servidor de carimbo de data/hora** à sua preferência de assinatura (quando aplicável), para que seu aplicativo possa ser instalado, mesmo que seu certificado expire.   
 
 > [!NOTE]
 > Não há suporte para a assinatura de um aplicativo de formato de pacote MSIX com um certificado SHA1.
