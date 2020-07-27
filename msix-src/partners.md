@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 33c7a07c72b6d820f9ce51c09532e70435daea50
-ms.sourcegitcommit: c95c0a9ddbe944863b131298c158703385835445
+ms.openlocfilehash: b7ee90dd5209cbec49784c7bfc021a8d675d6ec1
+ms.sourcegitcommit: 193e3df2d20ba2a6372c0daaedd281a020168036
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85795558"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87120070"
 ---
 # <a name="msix-partners"></a>Parceiros de MSIX
 
@@ -45,14 +45,18 @@ Os parceiros a seguir fornecem ferramentas adicionais e suporte para cenários d
 [![Logotipo da Flexera](images/Flexera_Logo.png)](https://www.flexera.com/company/news/press-releases/Flexera-Launches-Support-for-Microsofts-MSIX.html)    
 :::column-end:::
 
-
+:::column:::
+[![Logotipo da installAware](images/installAware_logo.png)](https://www.installaware.com/msix.htm)    
+:::column-end:::
 
 
 :::row-end:::
 
 :::row:::
+
+
 :::column:::
-[![Logotipo da installAware](images/installAware_logo.png)](https://www.installaware.com/msix.htm)    
+[![Logotipo da Pace](images/Pace_Logo.png)](https://pacesuite.com/convert-exe-to-msix/)
 :::column-end:::
 
 :::column:::
@@ -64,7 +68,7 @@ Os parceiros a seguir fornecem ferramentas adicionais e suporte para cenários d
 :::column-end:::
 
 :::column:::
-[![Logotipo da Pace](images/Pace_Logo.png)](https://pacesuite.com/convert-exe-to-msix/)
+[![Logotipo do SSH2](images/SSH2_Logo.png)](https://ssh2.xyz/)
 :::column-end:::
 
 :::row-end:::
