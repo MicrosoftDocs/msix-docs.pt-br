@@ -7,18 +7,18 @@ author: dianmsft
 ms.author: diahar
 keywords: Windows 10, msix, UWP, instalador de aplicativos, AppInstaller, Sideload, conjunto relacionado, pacotes opcionais
 ms.localizationpriority: medium
-ms.openlocfilehash: 17c225c13f026f2707c392ccaf4d77655faaeebb
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 6a3862f0c7eaa875444fc9fb99f7b54e1dbe7b5d
+ms.sourcegitcommit: 769bbff22df0ab9e46e1306b4180bbec6a44daba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072536"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87538461"
 ---
 # <a name="optional-packages-with-executable-code"></a>Pacotes opcionais com código executável
  
 [Pacotes opcionais](optional-packages.md) com código executável são úteis para dividir um aplicativo grande ou complexo, ou para adicionar em um aplicativo que já foi publicado. Com o Visual Studio 2017, versão 15.7 e .NET Native 2.1, você pode carregar o código executável dos pacotes opcionais C++ e C#.
 
-## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Visual Studio 2019 ou Visual Studio 2017 (versão 15,7 ou posterior)
 - Windows 10, versão 1709 ou posterior
@@ -30,7 +30,7 @@ Para obter as ferramentas de desenvolvimento mais recentes, consulte [Downloads 
 > Para enviar um aplicativo que usa pacotes opcionais e/ou conjuntos relacionados para a Store, você precisará de permissão. Os pacotes opcionais e os conjuntos relacionados podem ser usados para LOB (linha de negócios) ou aplicativos empresariais sem a permissão do Partner Center se não forem enviados para a loja. Consulte [Suporte do desenvolvedor Windows](https://developer.microsoft.com/windows/support) para obter permissão para enviar um aplicativo que usa pacotes opcionais e conjuntos relacionados.
 
 > [!NOTE]
-> Pacotes opcionais contendo código executável devem fazer parte de um [conjunto relacionado](optional-packages.md#related_sets). Você não poderá executar o código de um pacote opcional, a menos que ele faça parte de um conjunto relacionado.
+> Pacotes opcionais contendo código executável devem fazer parte de um [conjunto relacionado](optional-packages.md#related-sets). Você não poderá executar o código de um pacote opcional, a menos que ele faça parte de um conjunto relacionado.
 
 ## <a name="c-optional-packages-with-executable-code"></a>Pacotes opcionais do C++ com código executável
 
@@ -60,7 +60,7 @@ Para começar a criar um pacote opcional de código em C#, siga as etapas a segu
     <uap3:MainPackageDependency Name="12345.MainAppProjectTest" />
     ```
 
-6. Adicione um arquivo `Bundle.mapping.txt` ao aplicativo principal. Siga as etapas na seção [Conjuntos relacionados](optional-packages.md#related_sets) para criar um conjunto relacionado contendo ambos os aplicativos.
+6. Adicione um arquivo `Bundle.mapping.txt` ao aplicativo principal. Siga as etapas na seção [Conjuntos relacionados](optional-packages.md#related-sets) para criar um conjunto relacionado contendo ambos os aplicativos.
 
 7. Compile o projeto do pacote opcional e vá até a pasta de Referência do pacote na saída da compilação encontrada em `..\[PathToOptionalPackageProject]\bin\[architecture]\[configuration]\Reference`. Observe que você pode escolher qualquer arquitetura no caminho para a pasta de Referência, pois o arquivo `.winmd` (etapa 8) não depende de arquitetura.
 

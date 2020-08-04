@@ -1,16 +1,16 @@
 ---
 description: Este artigo descreve como assinar um pacote MSIX com a assinatura do Device Guard, que permite às empresas garantir que os aplicativos venham de uma fonte confiável.
 title: Assinar um pacote do MSIX com a autenticação do Device Guard
-ms.date: 07/12/2019
+ms.date: 07/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: c489a4bed1598c0fecca7f20d33aee4880201b96
-ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
+ms.openlocfilehash: dd122ccded203482f32a367473d55bdde4c9d814
+ms.sourcegitcommit: 769bbff22df0ab9e46e1306b4180bbec6a44daba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81433742"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87538471"
 ---
 # <a name="sign-an-msix-package-with-device-guard-signing"></a>Assinar um pacote do MSIX com a autenticação do Device Guard
 
@@ -50,13 +50,13 @@ Para registrar seu aplicativo com as configurações apropriadas para que você 
 1. Entre no [portal do Azure](https://portal.azure.com/) e siga as instruções em [início rápido: registrar um aplicativo com a plataforma de identidade da Microsoft](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app) para registrar o aplicativo que usará a assinatura do Device Guard.
 
     > [!NOTE]
-    > Na seção **URI de redirecionamento** , recomendamos que você escolha **cliente público (Mobile & Desktop)** . Caso contrário, se você escolher **Web** para o tipo de aplicativo, será necessário fornecer um [segredo do cliente](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-access-web-apis#add-credentials-to-your-web-application) ao obter um token de acesso do Azure ad posteriormente neste processo.
+    > Na seção **URI de redirecionamento** , recomendamos que você escolha **cliente público (Mobile & Desktop)**. Caso contrário, se você escolher **Web** para o tipo de aplicativo, será necessário fornecer um [segredo do cliente](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-access-web-apis#add-credentials-to-your-web-application) ao obter um token de acesso do Azure ad posteriormente neste processo.
 
-2. Depois de registrar seu aplicativo, na página principal para seu aplicativo no portal do Azure, clique em **permissões de API** e adicione uma permissão para a **API da Windows Store para empresas**.
+2. Depois de registrar seu aplicativo, na página principal para seu aplicativo no portal do Azure, clique em **permissões de API**, em **APIs minha organização usa** e adicione uma permissão para a **API da Windows Store para empresas**.
 
 3. Em seguida, selecione **permissões delegadas** e, em seguida, selecione **user_impersonation**.
 
-## <a name="get-an-azure-ad-access-token"></a>Obter um token de acesso do AD do Azure
+## <a name="get-an-azure-ad-access-token"></a>Obter um token de acesso do Azure AD
 
 Em seguida, obtenha um token de acesso do Azure AD para seu aplicativo do Azure AD no formato JSON. Você pode fazer isso usando uma variedade de linguagens de programação e script. Para obter mais informações sobre esse processo, consulte [autorizar o acesso a Azure Active Directory aplicativos Web usando o fluxo de concessão de código OAuth 2,0](https://docs.microsoft.com/azure/active-directory/develop/v1-protocols-oauth-code). Recomendamos que você recupere um [token de atualização](https://docs.microsoft.com/azure/active-directory/develop/v1-protocols-oauth-code#refreshing-the-access-tokens) junto com o token de acesso, pois seu token de acesso expirará em uma hora.
 
@@ -111,17 +111,17 @@ signtool sign /fd sha256 /dlib DgssLib.dll /dmdf <Azure AAD in .json format> /t 
 > * Há suporte apenas para o algoritmo SHA256.
 > * Quando você assina seu pacote com a assinatura do Device Guard, seu pacote não está sendo enviado pela Internet.
 
-## <a name="test"></a>{1&gt;Testar&lt;1}
+## <a name="test"></a>Teste
 
-Para testar a assinatura do Device Guard, baixe o certificado raiz da sua organização do Microsoft Store para o portal de negócios.
+Para testar a assinatura do Device Guard, baixe o certificado do Microsoft Store para o portal de negócios.
 
 1. Entre na [Microsoft Store para Empresas](https://businessstore.microsoft.com/).
 2. Selecione **gerenciar** e, em seguida, **configurações**.
 3. Exibir **dispositivos**.
 4. Exibir **baixar o certificado raiz da sua organização para uso com o Device Guard**
-5. Clique em **baixar**
+5. Clique em **baixar** 
 
-Implante este certificado em seu dispositivo. Instale seu aplicativo assinado recentemente para verificar se você assinou com êxito seu aplicativo com a assinatura do Device Guard.
+Instale o certificado raiz para as **autoridades de certificação raiz confiáveis** em seu dispositivo. Instale seu aplicativo assinado recentemente para verificar se você assinou com êxito seu aplicativo com a assinatura do Device Guard.
 
 ## <a name="common-errors"></a>Erros comuns
 

@@ -8,18 +8,18 @@ author: dianmsft
 ms.author: diahar
 keywords: Windows 10, msix, UWP, pacotes opcionais, conjunto relacionado, extensão do pacote, Visual Studio
 ms.localizationpriority: medium
-ms.openlocfilehash: c8b0dbc98e73e4086556fa6f169522ed5fcc37d9
-ms.sourcegitcommit: f6bb9ced4cce853ae6acd3a359cbbb5e2e3f7187
+ms.openlocfilehash: 335a2ad74475c331e96548c4aa231dd5754acbd3
+ms.sourcegitcommit: 769bbff22df0ab9e46e1306b4180bbec6a44daba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85441653"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87538451"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>Criação de pacotes opcionais e conjunto relacionado
 
-Os pacotes opcionais contêm conteúdo que pode ser integrado com um pacote principal. Estes são úteis para o conteúdo para download (DLC), dividindo um aplicativo grande para restrições de tamanho ou para enviar qualquer conteúdo adicional para separado do seu aplicativo original.
+Os pacotes opcionais contêm conteúdo que pode ser integrado com um pacote principal. Estes são úteis para o conteúdo para download (DLC), dividindo um aplicativo grande para restrições de tamanho ou para enviar qualquer conteúdo adicional para separado do seu aplicativo original. Para obter mais informações sobre pacotes opcionais, consulte [postagem de blog: estender seu aplicativo usando pacotes opcionais](https://docs.microsoft.com/archive/blogs/appinstaller/uwpoptionalpackages).
 
-Conjuntos relacionados são uma extensão de pacotes opcionais - eles permitem que você imponha um conjunto rigoroso de versões em pacotes principais e opcionais. Os conjuntos relacionados podem ter editores diferentes do aplicativo principal se ele for implantado fora do repositório.
+Os conjuntos relacionados são uma extensão de pacotes opcionais. Os conjuntos relacionados permitem que você aplique um conjunto estrito de versões em pacotes principais e opcionais. Os conjuntos relacionados podem ter editores diferentes do aplicativo principal se ele for implantado fora do repositório. Para obter mais informações sobre conjuntos relacionados, consulte [postagem no blog: ferramentas para criar um conjunto relacionado](https://docs.microsoft.com/archive/blogs/appinstaller/tooling-to-create-a-related-set).
 
 Pacotes opcionais e conjuntos relacionados todos são executados dentro do contêiner MSIX do aplicativo principal.
 
@@ -41,6 +41,7 @@ Enquanto você está lendo este artigo, recomenda-se que você acompanhe o [exem
 ## <a name="optional-packages"></a>Pacotes opcionais
 
 Para criar um pacote opcional no Visual Studio, você precisará:
+
 1. Verifique se a **versão mínima da plataforma de destino** do aplicativo está definida como: 10.0.15063.0 ou superior.
 2. Em seu projeto **pacote principal**, abra o arquivo `Package.appxmanifest`. Navegue até a guia "Pacotes" e anote seu **nome de família do pacote**, que é tudo antes do caractere "_".
 3. Em seu projeto **pacote opcional**, clique com botão direito em `Package.appxmanifest` e selecione **Abrir com > Editor XML (texto)**.
@@ -49,7 +50,7 @@ Para criar um pacote opcional no Visual Studio, você precisará:
     <uap3:MainPackageDependency Name="[MainPackageDependency]"/>
     ```
 
-Depois de ter suas dependências de pacote configuradas das etapas 1 a 4, você pode continuar desenvolvendo como faria normalmente. 
+Depois de ter suas dependências de pacote configuradas das etapas 1 a 4, você pode continuar desenvolvendo como faria normalmente. Para obter mais informações, consulte [postagem no blog: criar seu primeiro pacote opcional](https://docs.microsoft.com/archive/blogs/appinstaller/build-your-first-optional-package).
 
 O Visual Studio pode ser configurado para implementar novamente seu pacote principal sempre que você implantar um pacote opcional. Para definir a dependência de compilação no Visual Studio, você deve:
 
@@ -58,11 +59,11 @@ O Visual Studio pode ser configurado para implementar novamente seu pacote princ
 
 Agora, toda vez que você pressionar F5 ou criar um projeto de pacote opcional, o Visual Studio irá construir o projeto do pacote principal primeiro. Isso garante que seu projeto principal e projetos opcionais estejam em sincronia.
 
-## <a name="related-sets"></a>Conjuntos relacionados<a name="related_sets"></a>
+## <a name="related-sets"></a>Conjuntos relacionados
 
 Um conjunto relacionado consiste em um pacote principal e um pacote opcional que são rigidamente acoplados por meio de metadados que são especificados no arquivo. appxbundle ou. msixbundle do pacote principal. Esses metadados vinculam o pacote principal ao pacote opcional (usando o nome do arquivo. appxbundle + versão) e o pacote opcional para o pacote principal (usando o nome independente da versão). O Visual Studio ajuda você a obter os metadados corretos em seus arquivos. 
 
-O controle de versão de pacotes em um conjunto relacionado é sincronizado de uma maneira que não permitirá que a versão mais recente de qualquer pacote seja usada até que todos os pacotes do conjunto relacionado (especificados pela versão no pacote principal) estejam instalados. Os pacotes são atendidos de forma independente, mas os pacotes especificados no conjunto podem não ser usados até que todos tenham sido atualizados.
+O controle de versão de pacotes em um conjunto relacionado é sincronizado de uma maneira que não permitirá que a versão mais recente de qualquer pacote seja usada até que todos os pacotes do conjunto relacionado (especificados pela versão no pacote principal) estejam instalados. Os pacotes são atendidos de forma independente, mas os pacotes especificados no conjunto podem não ser usados até que todos tenham sido atualizados. Para obter mais informações sobre conjuntos relacionados, consulte [postagem no blog: ferramentas para criar um conjunto relacionado](https://docs.microsoft.com/archive/blogs/appinstaller/tooling-to-create-a-related-set).
 
 Para configurar a solução do seu aplicativo para conjuntos relacionados, use as seguintes etapas:
 
@@ -70,21 +71,19 @@ Para configurar a solução do seu aplicativo para conjuntos relacionados, use a
 2. Na janela, pesquise os modelos instalados para ". txt" e adicione um novo arquivo de texto.
     > [!IMPORTANT]
     > O novo arquivo de texto deve ser nomeado: `Bundle.Mapping.txt`.
-3. No arquivo `Bundle.Mapping.txt`, você especificará caminhos relativos para todos os projetos de pacote opcional ou pacotes externos. Um arquivo `Bundle.Mapping.txt` de amostra deve ser algo parecido com isto:
+3. No `Bundle.Mapping.txt` arquivo, insira a cadeia de caracteres "[OptionalProjects]" seguida pelos caminhos relativos para seus projetos de pacote opcionais. Veja aqui um exemplo de arquivo `Bundle.Mapping.txt`:
     ```syntax
     [OptionalProjects]
     "..\ActivatableOptionalPackage1\ActivatableOptionalPackage1.vcxproj"
     "..\ActivatableOptionalPackage2\ActivatableOptionalPackage2.vcxproj"
-
-    [ExternalPackages]
-    "..\ActivatableOptionalPackage1\x86\Release\ActivatableOptionalPackage3_1.1.1.0\ ActivatableOptionalPackage3_1.1.1.0.appx"
     ```
 
 Quando sua solução estiver configurada dessa forma, o Visual Studio criará um [manifesto de pacote](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest) chamado AppxBundleManifest.xml para o pacote principal com todos os metadados necessários para conjuntos relacionados. 
 
 Observe que, assim como os pacotes opcionais, um `Bundle.Mapping.txt` arquivo para conjuntos relacionados só funcionará no Windows 10, versão 1703 ou superior. Além disso, a versão mínima da plataforma de destino do seu aplicativo deve ser definida como 10.0.15063.0 ou superior.
 
-## <a name="removing-optional-packages"></a>Removendo pacotes opcionais 
+## <a name="removing-optional-packages"></a>Removendo pacotes opcionais
+
 Os usuários podem acessar seu aplicativo de **configurações** e remover os pacotes opcionais. Da mesma forma, os desenvolvedores podem usar o [RemoveOptionalPackageAsync](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.PackageCatalog) para remover uma lista de pacotes opcionais. 
 
 ```csharp
@@ -104,6 +103,13 @@ if (result.ExtendedError != null)
 
 Se o pacote opcional for somente conteúdo, o desenvolvedor deverá informar explicitamente à plataforma que o pacote que está prestes a remover não está em uso pelo aplicativo antes que o desenvolvedor remova o pacote opcional. Isso também permite que o desenvolvedor remova o pacote sem uma reinicialização.
 
-## <a name="known-issues"></a>Problemas conhecidos<a name="known_issues"></a>
+## <a name="known-issues"></a>Problemas conhecidos
 
 A depuração de um projeto opcional de conjunto relacionado não é atualmente suportada no Visual Studio. Para resolver este problema, você pode implantar e iniciar a ativação (Ctrl + F5) e anexar manualmente o depurador a um processo. Para anexar o depurador, vá no menu "Depurar" no Visual Studio, selecione "Anexar ao Processo ..." e anexe o depurador ao **processo principal do aplicativo**.
+
+## <a name="related-articles"></a>Artigos relacionados
+
+* [Postagem no blog: Estenda seu aplicativo usando pacotes opcionais](https://docs.microsoft.com/archive/blogs/appinstaller/uwpoptionalpackages)
+* [Postagem no blog: criar seu primeiro pacote opcional](https://docs.microsoft.com/archive/blogs/appinstaller/build-your-first-optional-package)
+* [Postagem do blog: carregando código de um pacote opcional](https://docs.microsoft.com/archive/blogs/appinstaller/loading-code-from-an-optional-package)
+* [Postagem no blog: ferramentas para criar um conjunto relacionado](https://docs.microsoft.com/archive/blogs/appinstaller/tooling-to-create-a-related-set)
