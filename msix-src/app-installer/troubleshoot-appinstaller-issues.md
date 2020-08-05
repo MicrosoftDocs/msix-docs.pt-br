@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, instalador do aplicativo, AppInstaller, sideload
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fd0dbb8160fc1c3a384afc6a52121db71e295975
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 99f38075d1ad586186261bfb9c39e7f3253ed05e
+ms.sourcegitcommit: f1c366459764cf1f3c0bc9edcac4f845937794bd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67828678"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87754516"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>Solucionar problemas de instalação com o arquivo do Instalador de Aplicativo
 
@@ -33,7 +33,7 @@ Há alguns problemas comuns ao fazer sideload um aplicativo pela primeira vez na
 
 Cada versão do Windows 10 aprimora a experiência de sideload, na tabela a seguir você vai encontrar quais recursos estão disponíveis em cada versão principal. Se você tentar fazer o sideload de um aplicativo usando um método que não possui suporte na sua versão do Windows 10, você receberá um erro de implantação.
 
-| Version | Notas de sideload |
+| Versão | Notas de sideload |
 |---------|----------------|
 | Build 17134 (atualização de abril de 2018, versão 1803)    | O arquivo `.appinstaller` pode ser acessado pela pastas UNC/compartilhadas. As verificações de atualização configuráveis também estão disponíveis. |
 | Build 16299 (Fall Creators Update, versão 1709) | Introduziu o arquivo `.appinstaller` para fornecer atualizações automáticas ao seu aplicativo. Esta versão só possui suporte a pontos de extremidade HTTP. Verificações de atualização não são configuráveis e ocorrem a cada 24 horas. |
@@ -44,41 +44,52 @@ Cada versão do Windows 10 aprimora a experiência de sideload, na tabela a segu
 
 ### <a name="trusted-certificates"></a>Certificados confiáveis
 
-O pacote do aplicativo deve ter assinatura com certificado de uma fonte confiável pelo dispositivo. Certificados fornecidos por Autoridades de Certificação comuns são confiáveis por padrão no sistema operacional Windows, no entanto, se o certificado não for confiável, ele deve ser instalado no dispositivo **antes** de instalar o aplicativo. Para confiar no certificado, ele deve estar presente em um dos seguintes repositórios de certificados do computador local no seu dispositivo:
+Os pacotes de aplicativos devem ser assinados com um certificado confiável pelo dispositivo. Os certificados fornecidos por autoridades de certificação comuns são confiáveis por padrão no sistema operacional Windows.
 
-- Fornecedores Confiáveis
-- Pessoas de Confiança
-- Autoridades Raiz Confiáveis (não recomendado)
+No entanto, se o certificado usado para assinar um pacote de aplicativo não for confiável ou for um certificado gerado localmente/autoassinado usado durante o desenvolvimento, o instalador do aplicativo poderá relatar que o pacote não é confiável e impedirá que ele seja instalado:
 
- >[!IMPORTANT]
- > Instalar um certificado no repositório do Computador local requer acesso administrativo.
+![MSIX assinado com certificado ausente ou não confiável](..\images\msix-bad-cert.png)
 
-### <a name="dependencies-not-installed"></a>Dependências não instaladas 
+Para resolver esse problema, um usuário com direitos de administrador local para o dispositivo deve usar a ferramenta **certificados de computador** para importar o certificado em um dos seguintes contêineres:
 
-Aplicativos do Windows 10 podem ter dependências de estrutura com base na plataforma do aplicativo usada para gerar o aplicativo. Se você estiver usando C# ou VB, o aplicativo precisará usar o .NET Runtime e os pacotes do .NET Framework. Aplicativos C++ exigem o VCLibs.
+1. Computador local: pessoas confiáveis
+2. Computador local: autoridades de raiz confiáveis (não recomendado)
 
->[!IMPORTANT] 
+>[!IMPORTANT]
+> Não **importe certificados de assinatura de pacote para o repositório de certificados do usuário**. O instalador do aplicativo não pesquisa certificados de usuário ao verificar a identidade do pacote.
+
+A ferramenta de gerenciamento de certificados de computador pode ser facilmente encontrada com a pesquisa no menu iniciar:
+
+![Localizar a ferramenta de certificados do computador local por meio do menu iniciar](..\images\start-comp-cert.png)
+
+Depois que o certificado de autenticação for importado com êxito, executar novamente o instalador do aplicativo mostrará que o pacote é confiável e pode ser instalado:
+
+![MSIX assinado com um certificado confiável](..\images\msix-good-cert.png)
+
+### <a name="dependencies-not-installed"></a>Dependências não instaladas
+
+Os aplicativos do Windows 10 podem ter dependências de estrutura baseadas na plataforma de aplicativo usada para gerar o aplicativo. Se você estiver usando C# ou VB, o aplicativo precisará usar o .NET Runtime e os pacotes do .NET Framework. Aplicativos C++ exigem o VCLibs.
+
+>[!IMPORTANT]
 > Se o pacote de aplicativo é compilado na configuração de modo Versão, as dependências de estrutura serão obtidas da Microsoft Store. No entanto, se o aplicativo é compilado na configuração de modo Depuração, as dependências serão obtidas a partir do local especificado no arquivo `.appinstaller`.
 
 ### <a name="files-not-accessible"></a>Os arquivos não estão acessíveis
 
 Ao instalar em um ponto de extremidade HTTP, é importante verificar que todos os arquivos estejam acessíveis com o tipo MIME correto. O método mais fácil de verificar esses arquivos é seguindo os links fornecidos na página HTML gerada pelo Visual Studio. Você deve verificar esses arquivos:
 
-- `.appinstaller` arquivo, disponível como um `application/xml`
-- `.appx` e `.appxbundle` arquivos, disponível como `application/vns.ms-appx`
+- `.appinstaller`arquivo, disponível como um`application/xml`
+- `.appx`e `.appxbundle` arquivos, disponíveis como`application/vns.ms-appx`
 
 ## <a name="isolate-app-installer-app-issues"></a>Isolar problemas de aplicativo do Instalador de Aplicativo
 
-Se o aplicativo do Instalador de Aplicativo não puder instalá-lo, essas etapas ajudarão a identificar o problema de instalação.
+Se o instalador do aplicativo não puder instalar o aplicativo, essas etapas ajudarão a identificar o problema de instalação.
 
-### <a name="verify-app-package-file-installation"></a>Verifique se a instalação de arquivo de pacote do aplicativo
+### <a name="verify-app-package-file-installation"></a>Verificar a instalação do arquivo do pacote do aplicativo
 
-- Baixe o arquivo de pacote de aplicativo para uma pasta local e tente instalá-lo usando o [Add-AppxPackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) comando do PowerShell.
+- Baixe o arquivo de pacote do aplicativo em uma pasta local e tente instalá-lo usando o comando do PowerShell [Add-AppxPackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) .
 
 - Baixe o arquivo `.appinstaller` para uma pasta local e tentar instalá-lo usando o comando `Add-AppxPackage -Appinstaller` do PowerShell.
 
-## <a name="related-logs"></a>Logs relacionados
+### <a name="app-installer-event-logs"></a>Logs de eventos do instalador de aplicativos
 
-A infraestrutura de implantação do aplicativo fornece logs para depuração no Visualizador de Eventos do Windows. Esses logs são encontrados aqui: `Application and Services Logs->Microsoft->Windows->AppxDeployment-Server`
-
-
+A infraestrutura de implantação de aplicativo emite logs que geralmente são úteis para depurar problemas de instalação por meio do Windows Visualizador de Eventos:`Application and Services Logs -> Microsoft -> Windows -> AppxDeployment-Server`

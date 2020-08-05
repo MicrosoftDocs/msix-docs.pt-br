@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP, pacote do aplicativo, atualização do aplicativo, MSIX, appx
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: e68269c0a17254fd92fb00fad6bcbc1d7a16e588
-ms.sourcegitcommit: 6243b7aca6f52f007f4571c835f580f433c31769
+ms.openlocfilehash: 1c120193a278fb8584761d7b6aaa4ab0430697ad
+ms.sourcegitcommit: f1c366459764cf1f3c0bc9edcac4f845937794bd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84812778"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87754505"
 ---
 # <a name="update-non-store-published-app-packages-from-your-code"></a>Atualizar pacotes de aplicativos publicados não armazenados do seu código
 
@@ -137,6 +137,7 @@ private async void CommandInvokedHandler(IUICommand command)
     }
 }
 ```
+
 ## <a name="automatically-restarting-your-app-after-an-update"></a>Reiniciar automaticamente o aplicativo após uma atualização
 
 Se seu aplicativo for um aplicativo UWP, passar em AddPackageByAppInstallerOptions. ForceApplicationShutdown ou addpackageoptions. ForceTargetAppShutdown ao aplicar uma atualização deve agendar o aplicativo para reiniciar após o desligamento + atualização. Para aplicativos não UWP, você precisa chamar [RegisterApplicationRestart](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions#updates) antes de aplicar a atualização.
