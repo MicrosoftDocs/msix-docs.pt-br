@@ -1,16 +1,16 @@
 ---
-Description: Corrigir problemas que impedem que o aplicativo da área de trabalho seja executado em um contêiner MSIX
+description: Corrigir problemas que impedem que o aplicativo da área de trabalho seja executado em um contêiner MSIX
 title: Corrigir problemas que impedem que o aplicativo da área de trabalho seja executado em um contêiner MSIX
 ms.date: 05/14/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c878ccb97ea3b77635344a36feb1d63c3f42f9ed
-ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
+ms.openlocfilehash: c6526587d94af34b6c5c7df9702f0ab19e64e095
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84724600"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091254"
 ---
 # <a name="get-started-with-package-support-framework"></a>Introdução à estrutura de suporte do pacote 
 
@@ -34,11 +34,11 @@ Quando os usuários iniciam seu aplicativo, o iniciador da estrutura de suporte 
 
 ## <a name="step-1-identify-packaged-application-compatibility-issues"></a>Etapa 1: identificar problemas de compatibilidade de aplicativos empacotados
 
-Primeiro, crie um pacote para seu aplicativo. Em seguida, instale-o, execute-o e observe seu comportamento. Você poderá receber mensagens de erro que podem ajudá-lo a identificar um problema de compatibilidade. Use também o [Monitor do Processo](https://docs.microsoft.com/sysinternals/downloads/procmon) para identificar problemas.  Problemas comuns relacionados a pressuposições de aplicativo em relação às permissões de diretório de trabalho e caminho do programa.
+Primeiro, crie um pacote para seu aplicativo. Em seguida, instale-o, execute-o e observe seu comportamento. Você poderá receber mensagens de erro que podem ajudá-lo a identificar um problema de compatibilidade. Use também o [Monitor do Processo](/sysinternals/downloads/procmon) para identificar problemas.  Problemas comuns relacionados a pressuposições de aplicativo em relação às permissões de diretório de trabalho e caminho do programa.
 
 ### <a name="using-process-monitor-to-identify-an-issue"></a>Usando o Process Monitor para identificar um problema
 
-O [Process Monitor](https://docs.microsoft.com/sysinternals/downloads/procmon) é um utilitário poderoso para observar as operações de registro e arquivo de um aplicativo e seus resultados.  Isso pode ajudá-lo a entender os problemas de compatibilidade de aplicativos.  Depois de abrir o Process Monitor, adicione um filtro (filtro > filtro...) para incluir somente os eventos do executável do aplicativo.
+O [Process Monitor](/sysinternals/downloads/procmon) é um utilitário poderoso para observar as operações de registro e arquivo de um aplicativo e seus resultados.  Isso pode ajudá-lo a entender os problemas de compatibilidade de aplicativos.  Depois de abrir o Process Monitor, adicione um filtro (filtro > filtro...) para incluir somente os eventos do executável do aplicativo.
 
 ![Filtro de aplicativo ProcMon](images/procmon_app_filter.png)
 
@@ -142,7 +142,7 @@ O conteúdo do pacote agora deve ser semelhante a este.
 
 ### <a name="modify-the-package-manifest"></a>Modificar o manifesto do pacote
 
-Abra o manifesto do pacote em um editor de texto e defina o `Executable` atributo do `Application` elemento como o nome do arquivo executável do iniciador PSF.  Se você souber a arquitetura do seu aplicativo de destino, selecione a versão apropriada, PSFLauncher32.exe ou PSFLauncher64.exe.  Se não, PSFLauncher32.exe funcionará em todos os casos.  Aqui está um exemplo.
+Abra o manifesto do pacote em um editor de texto e defina o `Executable` atributo do `Application` elemento como o nome do arquivo executável do iniciador PSF.  Se você souber a arquitetura do seu aplicativo de destino, selecione a versão apropriada, PSFLauncher32.exe ou PSFLauncher64.exe.  Se não, PSFLauncher32.exe funcionará em todos os casos.  Veja um exemplo.
 
 ```xml
 <Package ...>
@@ -222,7 +222,7 @@ Em seguida, assine-o.
 signtool sign /a /v /fd sha256 /f ExportedSigningCertificate.pfx PSFSamplePackageFixup.msix
 ```
 
-Para obter mais informações, consulte [como criar um certificado de assinatura de pacote](https://docs.microsoft.com/windows/desktop/appxpkg/how-to-create-a-package-signing-certificate) e [como assinar um pacote usando Signtool](https://docs.microsoft.com/windows/desktop/appxpkg/how-to-sign-a-package-using-signtool)
+Para obter mais informações, consulte [como criar um certificado de assinatura de pacote](/windows/desktop/appxpkg/how-to-create-a-package-signing-certificate) e [como assinar um pacote usando Signtool](/windows/desktop/appxpkg/how-to-sign-a-package-using-signtool)
 
 Usando o PowerShell, instale o pacote.
 
@@ -256,7 +256,7 @@ Uma técnica alternativa para diagnosticar problemas de compatibilidade de aplic
 
 Por padrão, a correção de rastreamento filtra falhas que podem ser consideradas "esperadas".  Por exemplo, os aplicativos podem tentar excluir um arquivo incondicionalmente sem verificar se ele já existe, ignorando o resultado. Isso tem a conseqüência de que algumas falhas inesperadas podem ser filtradas, portanto, no exemplo acima, optamos por receber todas as falhas das funções FileSystem. Fazemos isso porque sabemos antes que a tentativa de ler a partir do arquivo de Config.txt falha com a mensagem "arquivo não encontrado". Essa é uma falha que é frequentemente observada e, geralmente, não é presumida como inesperada. Na prática, é provável que seja melhor começar a filtragem apenas para falhas inesperadas e, em seguida, voltar a todas as falhas se houver um problema que ainda não possa ser identificado.
 
-Por padrão, a saída da correção de rastreamento é enviada para o depurador anexado. Para este exemplo, não vamos anexar um depurador e, em vez disso, usaremos o programa [DebugView](https://docs.microsoft.com/sysinternals/downloads/debugview) da Sysinternals para exibir sua saída. Depois de executar o aplicativo, podemos ver as mesmas falhas que antes, o que nos indicaria nas mesmas correções de tempo de execução.
+Por padrão, a saída da correção de rastreamento é enviada para o depurador anexado. Para este exemplo, não vamos anexar um depurador e, em vez disso, usaremos o programa [DebugView](/sysinternals/downloads/debugview) da Sysinternals para exibir sua saída. Depois de executar o aplicativo, podemos ver as mesmas falhas que antes, o que nos indicaria nas mesmas correções de tempo de execução.
 
 ![Arquivo TraceShim não encontrado](images/traceshim_filenotfound.png)
 
@@ -363,9 +363,9 @@ Clique com o botão direito do mouse na referência e, em seguida, na janela **P
 
 | Propriedade | Valor |
 |-------|-----------|
-| Copiar local | True |
-| Assemblies Satélite do Local da Cópia | True |
-| Saída do Assembly de Referência | True |
+| Copiar local | Verdadeiro |
+| Assemblies Satélite do Local da Cópia | Verdadeiro |
+| Saída do Assembly de Referência | Verdadeiro |
 | Dependências da Biblioteca de Links | Falso |
 | Entradas de dependência da biblioteca de links | Falso |
 
@@ -455,11 +455,11 @@ Depois de configurar isso, você pode definir pontos de interrupção ao lado da
 
 Como a depuração F5 executa o aplicativo implantando arquivos soltos do caminho da pasta de layout do pacote, em vez de instalar de um pacote. msix/. Appx, a pasta de layout normalmente não tem as mesmas restrições de segurança que uma pasta de pacote instalada. Como resultado, talvez não seja possível reproduzir os erros de negação de acesso ao caminho do pacote antes de aplicar uma correção de tempo de execução.
 
-Para resolver esse problema, use a implantação de pacote. msix/. Appx em vez de F5 implantação de arquivo flexível.  Para criar um arquivo de pacote. msix/. Appx, use o utilitário [MakeAppx](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) do SDK do Windows, conforme descrito acima. Ou, no Visual Studio, clique com o botão direito do mouse no nó do projeto de aplicativo e selecione **Store-> criar pacotes de aplicativos**.
+Para resolver esse problema, use a implantação de pacote. msix/. Appx em vez de F5 implantação de arquivo flexível.  Para criar um arquivo de pacote. msix/. Appx, use o utilitário [MakeAppx](/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) do SDK do Windows, conforme descrito acima. Ou, no Visual Studio, clique com o botão direito do mouse no nó do projeto de aplicativo e selecione **Store-> criar pacotes de aplicativos**.
 
 Outro problema com o Visual Studio é que ele não tem suporte interno para anexar a processos filho iniciados pelo depurador.   Isso dificulta a depuração da lógica no caminho de inicialização do aplicativo de destino, que deve ser anexado manualmente pelo Visual Studio após a inicialização.
 
-Para resolver esse problema, use um depurador que dá suporte à anexação de processo filho.  Observe que geralmente não é possível anexar um depurador JIT (just-in-time) ao aplicativo de destino.  Isso ocorre porque a maioria das técnicas de JIT envolve a inicialização do depurador no lugar do aplicativo de destino, por meio da chave do registro ImageFileExecutionOptions.  Isso anula o mecanismo de desvio usado pelo PSFLauncher.exe para injetar FixupRuntime.dll no aplicativo de destino.  O WinDbg, incluído nas [ferramentas de depuração para Windows](https://docs.microsoft.com/windows-hardware/drivers/debugger/index), e obtido do [SDK do Windows](https://developer.microsoft.com/windows/downloads/windows-10-sdk), dá suporte à anexação do processo filho.  Agora, ele também dá suporte à [inicialização e à depuração direta de um aplicativo UWP](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg#span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app).
+Para resolver esse problema, use um depurador que dá suporte à anexação de processo filho.  Observe que geralmente não é possível anexar um depurador JIT (just-in-time) ao aplicativo de destino.  Isso ocorre porque a maioria das técnicas de JIT envolve a inicialização do depurador no lugar do aplicativo de destino, por meio da chave do registro ImageFileExecutionOptions.  Isso anula o mecanismo de desvio usado pelo PSFLauncher.exe para injetar FixupRuntime.dll no aplicativo de destino.  O WinDbg, incluído nas [ferramentas de depuração para Windows](/windows-hardware/drivers/debugger/index), e obtido do [SDK do Windows](https://developer.microsoft.com/windows/downloads/windows-10-sdk), dá suporte à anexação do processo filho.  Agora, ele também dá suporte à [inicialização e à depuração direta de um aplicativo UWP](/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg#span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app).
 
 Para depurar a inicialização do aplicativo de destino como um processo filho, inicie ``WinDbg`` .
 
@@ -488,7 +488,7 @@ bp ...
 ```
 
 >[!NOTE]
-> O [o plmdebug](https://docs.microsoft.com/windows-hardware/drivers/debugger/plmdebug) também pode ser usado para anexar um depurador a um aplicativo na inicialização e também está incluído nas [ferramentas de depuração para Windows](https://docs.microsoft.com/windows-hardware/drivers/debugger/index).  No entanto, é mais complexo usar do que o suporte direto agora fornecido pelo WinDbg.
+> O [o plmdebug](/windows-hardware/drivers/debugger/plmdebug) também pode ser usado para anexar um depurador a um aplicativo na inicialização e também está incluído nas [ferramentas de depuração para Windows](/windows-hardware/drivers/debugger/index).  No entanto, é mais complexo usar do que o suporte direto agora fornecido pelo WinDbg.
 
 ## <a name="support"></a>Suporte
 

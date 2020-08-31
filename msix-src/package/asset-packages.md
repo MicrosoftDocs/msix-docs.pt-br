@@ -5,12 +5,12 @@ ms.date: 07/02/2019
 ms.topic: article
 keywords: Windows 10, msix, empacotamento, layout de pacote, pacote de ativos
 ms.localizationpriority: medium
-ms.openlocfilehash: 0571f61579f95dbe3465f106b4d8860be636dea8
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 0279d052f5a5d98ec13ab26bfd130882afd5255a
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072796"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091164"
 ---
 # <a name="introduction-to-asset-packages"></a>Introdução aos pacotes de ativo
 
@@ -47,7 +47,7 @@ A maneira mais fácil para criar pacotes de ativo é usando o layout de empacota
 "Video.mp4"         "Video.mp4"
 ```
 
-Use um desses comandos para criar o pacote de ativos usando MakeAppx. exe (para MSIX e. AppX).
+Use um desses comandos para criar o pacote de ativos usando MakeAppx.exe (para MSIX e. AppX).
 
 ```cmd
 MakeAppx.exe pack /r /m AppxManifest.xml /f MappingFile.txt /p Videos.appx
@@ -58,7 +58,7 @@ Deve-se notar aqui que todos os arquivos referenciados no AppxManifest (os arqui
 
 Os pacotes de ativo também não devem conter um resources.pri; MRT não pode ser usado para acessar arquivos do pacote de ativo. Para saber mais sobre como acessar arquivos do pacote de ativo e por que os pacotes de ativo requerem que seu aplicativo seja instalado em uma unidade NTFS, consulte [Desenvolvendo com pacotes de ativo e dobra de pacote](Package-Folding.md).
 
-Para controlar se um pacote de ativo pode ser executado ou não, você pode usar **[uap6:AllowExecution](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-allowexecution)** no elemento **Properties** de AppxManifest. Você também deve adicionar **uap6** ao elemento **Package** de nível superior para se tornar o seguinte: 
+Para controlar se um pacote de ativo pode ser executado ou não, você pode usar **[uap6:AllowExecution](/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-allowexecution)** no elemento **Properties** de AppxManifest. Você também deve adicionar **uap6** ao elemento **Package** de nível superior para se tornar o seguinte: 
 
 ```XML
 <Package IgnorableNamespaces="uap uap6" 
@@ -67,4 +67,4 @@ xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
 xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10">
 ```
 
- Se não for especificado, o valor padrão de **AllowExecution** é **true** – defina-o como **false** para pacotes de ativo sem executáveis para agilizar a publicação.  
+ Se não for especificado, o valor padrão de **AllowExecution** é **true** – defina-o como **false** para pacotes de ativo sem executáveis para agilizar a publicação.

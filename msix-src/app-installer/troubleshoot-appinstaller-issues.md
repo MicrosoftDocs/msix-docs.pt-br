@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, instalador do aplicativo, AppInstaller, sideload
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 99f38075d1ad586186261bfb9c39e7f3253ed05e
-ms.sourcegitcommit: f1c366459764cf1f3c0bc9edcac4f845937794bd
+ms.openlocfilehash: c9e4e454500f401faf4a39abaca1fc79d1228fab
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87754516"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89089884"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>Solucionar problemas de instalação com o arquivo do Instalador de Aplicativo
 
@@ -21,7 +21,7 @@ Se você encontrar problemas ao instalar um aplicativo do arquivo do Instalador 
 
 Para poder fazer sideload de aplicativos no Windows 10, o dispositivo do usuário deve satisfazer os seguintes requisitos:
 
-- O dispositivo deve estar habilitado para o Modo de Desenvolvedor ou para aplicativos de Sideload. Consulte [Habilitar seu dispositivo para desenvolvimento](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) para saber mais.
+- O dispositivo deve estar habilitado para o Modo de Desenvolvedor ou para aplicativos de Sideload. Consulte [Habilitar seu dispositivo para desenvolvimento](/windows/uwp/get-started/enable-your-device-for-development) para saber mais.
 - O certificado usado para assinar o pacote deve ser confiável pelo dispositivo. Consulte a seção **Certificados confiáveis** abaixo para obter mais detalhes.
 - A versão do Windows 10 deve dar suporte ao esquema de arquivo `.appinstaller` e ao protocolo de distribuição.
 
@@ -39,8 +39,8 @@ Cada versão do Windows 10 aprimora a experiência de sideload, na tabela a segu
 | Build 16299 (Fall Creators Update, versão 1709) | Introduziu o arquivo `.appinstaller` para fornecer atualizações automáticas ao seu aplicativo. Esta versão só possui suporte a pontos de extremidade HTTP. Verificações de atualização não são configuráveis e ocorrem a cada 24 horas. |
 | Build 15063 (Creators Update, versão 1703)      | O aplicativo do Instalador de Aplicativo pode baixar dependências do aplicativo (somente no modo versão) da Store. |
 | Build 14393 (Atualização de Aniversário, versão 1607)   | Não há suporte para o aplicativo do Instalador de Aplicativo para instalar os arquivos .appx e arquivos .appxbundle, e o arquivo .appinstaller não é suportado. |
-| Build 10586 (Atualização de novembro, versão 1511)      | Fazer o sideload só está disponível por meio do PowerShell usando o [Add-AppxPackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) comando. |
-| Build 10240 (Windows 10, versão 1507)           | Fazer o sideload só está disponível por meio do PowerShell usando o [Add-AppxPackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) comando. |
+| Build 10586 (Atualização de novembro, versão 1511)      | Fazer o sideload só está disponível por meio do PowerShell usando o [Add-AppxPackage](/powershell/module/appx/add-appxpackage?view=win10-ps) comando. |
+| Build 10240 (Windows 10, versão 1507)           | Fazer o sideload só está disponível por meio do PowerShell usando o [Add-AppxPackage](/powershell/module/appx/add-appxpackage?view=win10-ps) comando. |
 
 ### <a name="trusted-certificates"></a>Certificados confiáveis
 
@@ -77,8 +77,8 @@ Os aplicativos do Windows 10 podem ter dependências de estrutura baseadas na pl
 
 Ao instalar em um ponto de extremidade HTTP, é importante verificar que todos os arquivos estejam acessíveis com o tipo MIME correto. O método mais fácil de verificar esses arquivos é seguindo os links fornecidos na página HTML gerada pelo Visual Studio. Você deve verificar esses arquivos:
 
-- `.appinstaller`arquivo, disponível como um`application/xml`
-- `.appx`e `.appxbundle` arquivos, disponíveis como`application/vns.ms-appx`
+- `.appinstaller` arquivo, disponível como um `application/xml`
+- `.appx` e `.appxbundle` arquivos, disponíveis como `application/vns.ms-appx`
 
 ## <a name="isolate-app-installer-app-issues"></a>Isolar problemas de aplicativo do Instalador de Aplicativo
 
@@ -86,10 +86,10 @@ Se o instalador do aplicativo não puder instalar o aplicativo, essas etapas aju
 
 ### <a name="verify-app-package-file-installation"></a>Verificar a instalação do arquivo do pacote do aplicativo
 
-- Baixe o arquivo de pacote do aplicativo em uma pasta local e tente instalá-lo usando o comando do PowerShell [Add-AppxPackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) .
+- Baixe o arquivo de pacote do aplicativo em uma pasta local e tente instalá-lo usando o comando do PowerShell [Add-AppxPackage](/powershell/module/appx/add-appxpackage?view=win10-ps) .
 
 - Baixe o arquivo `.appinstaller` para uma pasta local e tentar instalá-lo usando o comando `Add-AppxPackage -Appinstaller` do PowerShell.
 
 ### <a name="app-installer-event-logs"></a>Logs de eventos do instalador de aplicativos
 
-A infraestrutura de implantação de aplicativo emite logs que geralmente são úteis para depurar problemas de instalação por meio do Windows Visualizador de Eventos:`Application and Services Logs -> Microsoft -> Windows -> AppxDeployment-Server`
+A infraestrutura de implantação de aplicativo emite logs que geralmente são úteis para depurar problemas de instalação por meio do Windows Visualizador de Eventos: `Application and Services Logs -> Microsoft -> Windows -> AppxDeployment-Server`

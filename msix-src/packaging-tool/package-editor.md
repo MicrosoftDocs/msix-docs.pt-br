@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a64a25074f8ff20c9eff461cdbad541548c6c284
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: b71f94871b9cce020cf0a20f86c36ca32b0c0bf1
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726493"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090874"
 ---
 # <a name="edit-a-package-using-package-editor"></a>Editar um pacote usando o editor de pacote
 
@@ -35,7 +35,7 @@ Você pode navegar para outras seções do editor de pacote para editar seus rec
 
 ## <a name="capabilities-page"></a>Página Funcionalidades
 
-Na página [Funcionalidades](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-capability), você pode adicionar ou remover **funcionalidades** do pacote. Se uma funcionalidade estiver presente no pacote, a caixa de seleção ficará marcada. Se você marcar ou desmarcar uma funcionalidade, ela atualizará o manifesto. Isso é convertido no elemento <capability> no manifesto MSIX.
+Na página [Funcionalidades](/uwp/schemas/appxpackage/uapmanifestschema/element-capability), você pode adicionar ou remover **funcionalidades** do pacote. Se uma funcionalidade estiver presente no pacote, a caixa de seleção ficará marcada. Se você marcar ou desmarcar uma funcionalidade, ela atualizará o manifesto. Isso é convertido no elemento <capability> no manifesto MSIX.
 
 ![pic11](images/pic11.png)
 

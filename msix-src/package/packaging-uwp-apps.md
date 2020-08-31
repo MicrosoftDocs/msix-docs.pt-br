@@ -9,12 +9,12 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: 712b3bdca76efa2eb24b04e246b6fc65b3f55b15
-ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
+ms.openlocfilehash: 489912e9b2ad645c6467e081460c2be754bd2b42
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84724610"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091154"
 ---
 # <a name="package-a-desktop-or-uwp-app-in-visual-studio"></a>Empacotar um aplicativo UWP ou da área de trabalho no Visual Studio
 
@@ -29,7 +29,7 @@ Antes de distribuir seu aplicativo, você precisa empacotá-lo. Este artigo desc
     Um lote de aplicativo é um tipo de pacote que pode conter vários pacotes de aplicativos, cada um deles é criado para dar suporte a uma arquitetura de dispositivo específico. Por exemplo, um lote de aplicativo pode conter três pacotes de aplicativo separado para configurações x86, x64 e ARM. Lotes de aplicativo devem ser gerados sempre que possível, pois eles permitem que seu aplicativo esteja disponível na maior variedade possível de dispositivos.  
 
 - **Arquivo de carregamento do pacote do aplicativo (. msixupload ou. appxupload)-somente para envio da loja**  
-    Um único arquivo que pode conter vários pacotes de aplicativos ou um lote de aplicativo para dar suporte a várias arquiteturas de processador. O arquivo de upload do pacote do aplicativo também contém um arquivo de símbolo para [analisar o desempenho do aplicativo](https://docs.microsoft.com/windows/uwp/publish/analytics) depois que o aplicativo tiver sido publicado no Microsoft Store. Esse arquivo será criado automaticamente para você se você estiver empacotando seu aplicativo com o Visual Studio com a intenção de enviá-lo ao Partner Center para publicar no Microsoft Store.
+    Um único arquivo que pode conter vários pacotes de aplicativos ou um lote de aplicativo para dar suporte a várias arquiteturas de processador. O arquivo de upload do pacote do aplicativo também contém um arquivo de símbolo para [analisar o desempenho do aplicativo](/windows/uwp/publish/analytics) depois que o aplicativo tiver sido publicado no Microsoft Store. Esse arquivo será criado automaticamente para você se você estiver empacotando seu aplicativo com o Visual Studio com a intenção de enviá-lo ao Partner Center para publicar no Microsoft Store.
 
 Aqui está uma visão geral das etapas de preparação e de criação de um pacote do app:
 
@@ -45,11 +45,11 @@ Aqui está uma visão geral das etapas de preparação e de criação de um paco
 
 ## <a name="before-packaging-your-app"></a>Antes de empacotar o aplicativo
 
-1. **Teste seu aplicativo.** Antes de empacotar seu aplicativo, verifique se ele funciona conforme o esperado em todas as famílias de dispositivos para as quais você planeja dar suporte. Essas famílias de dispositivos podem incluir desktop, celular, Surface Hub, Xbox, dispositivos IoT ou outros. Para obter mais informações sobre como implantar e testar seu aplicativo usando o Visual Studio, consulte [Implantando e Depurando aplicativos UWP](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps) (também se aplica a aplicativos de desktop empacotados).
+1. **Teste seu aplicativo.** Antes de empacotar seu aplicativo, verifique se ele funciona conforme o esperado em todas as famílias de dispositivos para as quais você planeja dar suporte. Essas famílias de dispositivos podem incluir desktop, celular, Surface Hub, Xbox, dispositivos IoT ou outros. Para obter mais informações sobre como implantar e testar seu aplicativo usando o Visual Studio, consulte [Implantando e Depurando aplicativos UWP](/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps) (também se aplica a aplicativos de desktop empacotados).
 
-2. **Otimize o aplicativo.** Você pode usar as ferramentas de criação de perfil e depuração do Visual Studio para otimizar o desempenho do aplicativo empacotado. Por exemplo, a ferramenta de linha do tempo para capacidade de resposta da interface do usuário, a ferramenta de uso da memória, a ferramenta de uso da CPU e muito mais. Para obter mais informações sobre essas ferramentas, consulte o tópico [Tour sobre recurso de perfil](https://docs.microsoft.com/visualstudio/profiling/profiling-feature-tour).
+2. **Otimize o aplicativo.** Você pode usar as ferramentas de criação de perfil e depuração do Visual Studio para otimizar o desempenho do aplicativo empacotado. Por exemplo, a ferramenta de linha do tempo para capacidade de resposta da interface do usuário, a ferramenta de uso da memória, a ferramenta de uso da CPU e muito mais. Para obter mais informações sobre essas ferramentas, consulte o tópico [Tour sobre recurso de perfil](/visualstudio/profiling/profiling-feature-tour).
 
-3. **Verifique a compatibilidade do .NET Native (para aplicativos VB e C#).** Na Plataforma Universal do Windows, existe um compilador nativo que melhorará o desempenho do tempo de execução do app. Com essa alteração, você deverá testar seu aplicativo nesse ambiente de compilação. Por padrão, a configuração de Build de **versão** habilita o ferramentas [nativo do .net](https://docs.microsoft.com/dotnet/framework/net-native/) , portanto, é importante testar seu aplicativo com essa configuração de **versão** e verificar se o aplicativo se comporta conforme o esperado.
+3. **Verifique a compatibilidade do .NET Native (para aplicativos VB e C#).** Na Plataforma Universal do Windows, existe um compilador nativo que melhorará o desempenho do tempo de execução do app. Com essa alteração, você deverá testar seu aplicativo nesse ambiente de compilação. Por padrão, a configuração de Build de **versão** habilita o ferramentas [nativo do .net](/dotnet/framework/net-native/) , portanto, é importante testar seu aplicativo com essa configuração de **versão** e verificar se o aplicativo se comporta conforme o esperado.
 
 
 
@@ -70,12 +70,12 @@ O designer de manifesto do Visual Studio permite a atualização do arquivo de m
 
     ![Designer de manifesto do Visual Studio](images/packaging-screen1.jpg)
 
-    Verifique se você tem todas as imagens necessárias para um aplicativo na guia **ativos visuais** .  É aí que você forneceria [ícones de aplicativos e logotipos](https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos).
+    Verifique se você tem todas as imagens necessárias para um aplicativo na guia **ativos visuais** .  É aí que você forneceria [ícones de aplicativos e logotipos](/windows/uwp/design/style/app-icons-and-logos).
 
     Da guia **Empacotamento**, você pode inserir dados de publicação. É aqui que você pode escolher qual certificado usar para assinar seu aplicativo. Todos os aplicativos MSIX devem ser assinados com um certificado.
 
     > [!NOTE]
-    > A partir do Visual Studio 2019, um certificado temporário não é mais gerado em projetos de desktop ou UWP empacotados. Para criar ou exportar certificados, use os cmdlets do PowerShell descritos neste [artigo](create-certificate-package-signing.md). Em versões recentes do Visual Studio, você também pode [assinar seu aplicativo com um certificado armazenado em Azure Key Vault](../desktop/sign-with-akv-cert.md) para cenários de desenvolvimento e teste.
+    > A partir do Visual Studio 2019, um certificado temporário não é mais gerado em projetos de desktop ou UWP empacotados. Para criar ou exportar certificados, use os cmdlets do PowerShell descritos [neste artigo](create-certificate-package-signing.md). Em versões recentes do Visual Studio, você também pode [assinar seu aplicativo com um certificado armazenado em Azure Key Vault](../desktop/sign-with-akv-cert.md) para cenários de desenvolvimento e teste.
 
     > [!IMPORTANT]
     > Se você estiver publicando seu aplicativo na Microsoft Store, seu aplicativo será assinado com um certificado confiável para você. Isso permite que o usuário instale e execute seu aplicativo sem precisar instalar o certificado de autenticação do aplicativo associado.
@@ -114,10 +114,10 @@ Os aplicativos podem ser instalados sem serem publicados no armazenamento, publi
 
 ### <a name="install-your-app-package-by-double-clicking"></a>Instale o pacote do aplicativo clicando duas vezes
 
-Os pacotes de aplicativos podem ser instalados simplesmente clicando duas vezes no arquivo de pacote do aplicativo. Para fazer isso, navegue até o pacote do aplicativo ou o arquivo de pacote de aplicativo e clique duas vezes nele. O [instalador do aplicativo](https://docs.microsoft.com/windows/msix/app-installer/app-installer-root) é iniciado e fornece as informações básicas do aplicativo, bem como um botão de instalação, barra de progresso da instalação e quaisquer mensagens de erro relevantes.
+Os pacotes de aplicativos podem ser instalados simplesmente clicando duas vezes no arquivo de pacote do aplicativo. Para fazer isso, navegue até o pacote do aplicativo ou o arquivo de pacote de aplicativo e clique duas vezes nele. O [instalador do aplicativo](../app-installer/app-installer-root.md) é iniciado e fornece as informações básicas do aplicativo, bem como um botão de instalação, barra de progresso da instalação e quaisquer mensagens de erro relevantes.
 
 > [!NOTE]
-> O instalador do aplicativo pressupõe que o pacote foi assinado com um certificado confiável no dispositivo. Se não foi, você precisará instalar o certificado de autenticação no repositório de autoridades de certificação de pessoas confiáveis ou de fornecedores confiáveis no dispositivo. Se você não tiver certeza de como fazer isso, consulte [Instalação de certificados de teste](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates).
+> O instalador do aplicativo pressupõe que o pacote foi assinado com um certificado confiável no dispositivo. Se não foi, você precisará instalar o certificado de autenticação no repositório de autoridades de certificação de pessoas confiáveis ou de fornecedores confiáveis no dispositivo. Se você não tiver certeza de como fazer isso, consulte [Instalação de certificados de teste](/windows-hardware/drivers/install/installing-test-certificates).
 
 ### <a name="install-your-app-package-using-an-install-script"></a>Instalar o pacote do aplicativo usando um script de instalação
 
@@ -171,7 +171,7 @@ Você pode criar um arquivo de carregamento de pacote de aplicativo usando o ass
 
     ![Janela Criar Pacotes de Aplicativos com a configuração do pacote mostrada](images/packaging-screen5.jpg)
 
-7. Inclua arquivos de símbolos públicos para [analisar o desempenho do aplicativo](https://docs.microsoft.com/windows/uwp/publish/analytics) do Partner Center depois que seu aplicativo tiver sido publicado. Configurar todos os detalhes adicionais, como a numeração de versão ou o local de saída do pacote.
+7. Inclua arquivos de símbolos públicos para [analisar o desempenho do aplicativo](/windows/uwp/publish/analytics) do Partner Center depois que seu aplicativo tiver sido publicado. Configurar todos os detalhes adicionais, como a numeração de versão ou o local de saída do pacote.
 
 8. Clique em **Criar** para gerar o pacote do aplicativo. Se você selecionou um dos **desejo criar pacotes para carregar** nas opções de Microsoft Store na etapa 3 e estiver criando um pacote para o envio do Partner Center, o assistente criará um arquivo de upload de pacote (. appxupload ou. msixupload). Se você selecionou **desejo criar pacotes para Sideload** na etapa 3, o assistente criará um único pacote de aplicativo ou um pacote de aplicativo com base em suas seleções na etapa 6.
 
@@ -184,7 +184,7 @@ Você pode criar um arquivo de carregamento de pacote de aplicativo usando o ass
 1. Coloque os seguintes arquivos em uma pasta:
 
     - Um ou mais pacotes de aplicativos (. msix ou. AppX) ou um pacote de aplicativo (. msixbundle ou. appxbundle).
-    - Um arquivo. appxsym. Este é um arquivo. pdb compactado que contém símbolos públicos de seu aplicativo usado para o [Crash Analytics](https://docs.microsoft.com/windows/uwp/publish/health-report) no Partner Center. Você pode omitir esse arquivo, mas se você fizer isso, nenhuma informação analítica ou de depuração de pane estará disponível para seu aplicativo.
+    - Um arquivo. appxsym. Este é um arquivo. pdb compactado que contém símbolos públicos de seu aplicativo usado para o [Crash Analytics](/windows/uwp/publish/health-report) no Partner Center. Você pode omitir esse arquivo, mas se você fizer isso, nenhuma informação analítica ou de depuração de pane estará disponível para seu aplicativo.
 
 2. Selecione todos os arquivos dentro da pasta, clique com o botão direito do mouse nos arquivos e selecione **Enviar para**  ->  **pasta compactada (zipada)**.
 
@@ -192,13 +192,13 @@ Você pode criar um arquivo de carregamento de pacote de aplicativo usando o ass
 
 ## <a name="validate-your-app-package"></a>Validar seu pacote de aplicativos
 
-Valide seu aplicativo antes de enviá-lo para o Partner Center para certificação em um computador local ou remoto. Você pode validar apenas compilações de lançamento para o pacote do app e não compilações de depuração. Para obter mais informações sobre como enviar seu aplicativo para o Partner Center, consulte [envios de aplicativos](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
+Valide seu aplicativo antes de enviá-lo para o Partner Center para certificação em um computador local ou remoto. Você pode validar apenas compilações de lançamento para o pacote do app e não compilações de depuração. Para obter mais informações sobre como enviar seu aplicativo para o Partner Center, consulte [envios de aplicativos](/windows/uwp/publish/app-submissions).
 
 ### <a name="validate-your-app-package-locally"></a>Validar o pacote do aplicativo localmente
 
-1. Na página **término da criação do pacote** final do assistente para **criar pacotes de aplicativos** , deixe a opção **computador local** selecionada e clique em **Iniciar kit de certificação de aplicativos para Windows**. Para obter mais informações sobre como testar seu aplicativo com o Kit de Certificação de Aplicativos Windows, consulte [Kit de Certificação de Aplicativos Windows](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit).
+1. Na página **término da criação do pacote** final do assistente para **criar pacotes de aplicativos** , deixe a opção **computador local** selecionada e clique em **Iniciar kit de certificação de aplicativos para Windows**. Para obter mais informações sobre como testar seu aplicativo com o Kit de Certificação de Aplicativos Windows, consulte [Kit de Certificação de Aplicativos Windows](/windows/uwp/debug-test-perf/windows-app-certification-kit).
 
-    O kit de certificação de aplicativos para Windows (WACK) executa vários testes e retorna os resultados. Consulte [Testes do Kit de Certificação de Aplicativos Windows](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests) para obter informações mais específicas.
+    O kit de certificação de aplicativos para Windows (WACK) executa vários testes e retorna os resultados. Consulte [Testes do Kit de Certificação de Aplicativos Windows](/windows/uwp/debug-test-perf/windows-app-certification-kit-tests) para obter informações mais específicas.
 
     Se você tiver um dispositivo Windows 10 remoto que gostaria de usar para testar, será preciso instalar manualmente o Kit de Certificação de Aplicativos Windows nesse dispositivo. A próxima seção o guiará pelas etapas. Depois de ter feito isso, você pode selecionar **Máquina remota** e clicar em **Iniciar o Kit de Certificação de Aplicativos Windows** para se conectar ao dispositivo remoto e executar os testes de validação.
 
@@ -206,23 +206,23 @@ Valide seu aplicativo antes de enviá-lo para o Partner Center para certificaç�
 
 ### <a name="validate-your-app-package-on-a-remote-windows10-device"></a>Valide seu pacote do aplicativo em um dispositivo Windows 10 remoto.
 
-1. Habilite seu dispositivo Windows 10 para desenvolvimento seguindo as instruções de [Habilitar seu dispositivo para desenvolvimento](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
+1. Habilite seu dispositivo Windows 10 para desenvolvimento seguindo as instruções de [Habilitar seu dispositivo para desenvolvimento](/windows/uwp/get-started/enable-your-device-for-development).
     >[!IMPORTANT]
     > {1&gt;Você não pode validar seu pacote do aplicativo em um dispositivo ARM remoto para Windows 10.&lt;1}
 
-2. Baixe e instale as ferramentas remotas para o Visual Studio. Essas ferramentas são usadas para executar o Kit de Certificação de Aplicativos Windows remotamente. Você pode obter mais informações sobre essas ferramentas, incluindo onde baixá-las visitando [executar MSIX applicationss em um computador remoto](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-on-a-remote-machine?view=vs-2015).
+2. Baixe e instale as ferramentas remotas para o Visual Studio. Essas ferramentas são usadas para executar o Kit de Certificação de Aplicativos Windows remotamente. Você pode obter mais informações sobre essas ferramentas, incluindo onde baixá-las visitando [executar MSIX applicationss em um computador remoto](/visualstudio/debugger/run-windows-store-apps-on-a-remote-machine?view=vs-2015).
 
 3. Baixe o [Kit de Certificação de Aplicativos Windows](https://go.microsoft.com/fwlink/p/?LinkID=309666) exigido e, depois, instale-o em seu dispositivo Windows 10 remoto.
 
 4. Na página **Criação de pacote concluída** do assistente, escolha o botão de opção **Máquina remota** e, em seguida, escolha o botão de reticências próximo ao botão **Conexão de teste**.
     >[!NOTE]
-    > O botão de opção **máquina remota** só estará disponível se você tiver selecionado pelo menos uma configuração de solução que ofereça suporte à validação. Para obter mais informações sobre como testar o aplicativo com o WACK, consulte [Kit de Certificação de Aplicativos Windows](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit).
+    > O botão de opção **máquina remota** só estará disponível se você tiver selecionado pelo menos uma configuração de solução que ofereça suporte à validação. Para obter mais informações sobre como testar o aplicativo com o WACK, consulte [Kit de Certificação de Aplicativos Windows](/windows/uwp/debug-test-perf/windows-app-certification-kit).
 
 5. Especifique uma forma de dispositivo dentro de sua sub-rede, ou forneça o Servidor de Nomes de Domínios DNS ou o endereço IP de um dispositivo que esteja fora de sua sub-rede.
 
 6. Na lista **Modo de autenticação**, escolha **Nenhum**, se seu dispositivo não exigir que você se registre usando suas credenciais do Windows.
 
-7. Escolha o botão **Selecionar** e, em seguida, escolha o botão **Iniciar o Kit de Certificação de Aplicativos Windows**. Se as ferramentas remotas estiverem sendo executadas nesse dispositivo, o Visual Studio se conectará ao aplicativo e, então, realizará o testes de validação. Consulte [Testes do Kit de Certificação de Aplicativos Windows](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests).
+7. Escolha o botão **Selecionar** e, em seguida, escolha o botão **Iniciar o Kit de Certificação de Aplicativos Windows**. Se as ferramentas remotas estiverem sendo executadas nesse dispositivo, o Visual Studio se conectará ao aplicativo e, então, realizará o testes de validação. Consulte [Testes do Kit de Certificação de Aplicativos Windows](/windows/uwp/debug-test-perf/windows-app-certification-kit-tests).
 
 ## <a name="automate-store-submissions"></a>Automatizar envios de armazenamento
 
@@ -232,9 +232,9 @@ A partir do Visual Studio 2019, você pode enviar o arquivo. appxupload gerado p
 
 Antes de recuperar as credenciais necessárias para envios de repositório automáticos, você deve primeiro seguir estas etapas no [painel do Partner Center](https://partner.microsoft.com/dashboard) se ainda não tiver feito isso.
 
-1. [Associe sua conta do Partner Center ao Azure Active Directory da sua organização](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center). Se sua organização já usa o Office 365 ou outros serviços comerciais da Microsoft, você já tem Azure AD. Caso contrário, você pode criar um novo locatário do Azure AD no Partner Center sem custo adicional.
+1. [Associe sua conta do Partner Center ao Azure Active Directory da sua organização](/windows/uwp/publish/associate-azure-ad-with-partner-center). Se sua organização já usa o Office 365 ou outros serviços comerciais da Microsoft, você já tem Azure AD. Caso contrário, você pode criar um novo locatário do Azure AD no Partner Center sem custo adicional.
 
-2. [Adicione um aplicativo do Azure ad à sua conta do Partner Center](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account). Este aplicativo do Azure AD representa o aplicativo ou serviço que você usará para acessar os envios para sua conta do centro de desenvolvimento. Você deve atribuir esse aplicativo à função de **gerente** . Se esse aplicativo já existe no diretório do Azure AD, selecione-o na página **Adicionar aplicativos do Azure AD** para adicioná-lo à sua conta do Centro de Desenvolvimento. Do contrário, você pode criar um novo aplicativo do Azure AD na página **Add Azure AD applications**.
+2. [Adicione um aplicativo do Azure ad à sua conta do Partner Center](/windows/uwp/publish/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account). Este aplicativo do Azure AD representa o aplicativo ou serviço que você usará para acessar os envios para sua conta do centro de desenvolvimento. Você deve atribuir esse aplicativo à função de **gerente** . Se esse aplicativo já existe no diretório do Azure AD, selecione-o na página **Adicionar aplicativos do Azure AD** para adicioná-lo à sua conta do Centro de Desenvolvimento. Do contrário, você pode criar um novo aplicativo do Azure AD na página **Add Azure AD applications**.
 
 ### <a name="retrieve-the-credentials-required-for-submissions"></a>Recuperar as credenciais necessárias para envios
 
@@ -248,7 +248,7 @@ Em seguida, você pode recuperar as credenciais do Partner Center necessárias p
 
 4. Clique no nome do seu aplicativo do Azure AD para ir para as configurações do aplicativo. Nessa página, copie a **ID do locatário** e os valores da **ID do cliente** .
 
-5. Na seção **chaves** , clique em **Adicionar nova chave**. Na próxima tela, copie o valor da **chave** , que corresponde ao segredo do cliente. Você não poderá acessar essas informações novamente depois de sair dessa página, portanto, lembre-se de não perdê-las. Para saber mais, veja [Gerenciar chaves de um aplicativo do Azure AD](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys-for-an-azure-ad-application).
+5. Na seção **chaves** , clique em **Adicionar nova chave**. Na próxima tela, copie o valor da **chave** , que corresponde ao segredo do cliente. Você não poderá acessar essas informações novamente depois de sair dessa página, portanto, lembre-se de não perdê-las. Para saber mais, veja [Gerenciar chaves de um aplicativo do Azure AD](/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys-for-an-azure-ad-application).
 
 ### <a name="configure-automatic-store-submissions-in-visual-studio"></a>Configurar envios de repositório automático no Visual Studio
 

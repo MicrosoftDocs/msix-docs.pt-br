@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, instalador de aplicativo, AppInstaller, sideload, conjunto relacionado, pacotes opcionais
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 35081a4d2ff45e12c7cb6eff3365e5c41b7d8d08
-ms.sourcegitcommit: f5936c95c0f5b6f080e51b8d47a7cd62ccf6a600
+ms.openlocfilehash: 78bf4f315777fe5d6eb20fbfb650274b90609420
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80241942"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89089904"
 ---
 # <a name="installing-windows-10-apps-from-a-web-page"></a>Instalando aplicativos do Windows 10 em uma página da Web
 
@@ -52,7 +52,7 @@ Fixe seus URIs de conjunto de aplicativo com o esquema de ativação `'ms-appins
 ## <a name="signing-the-app-package"></a>Assinando o pacote de aplicativos
 Para que os usuários instalem seu aplicativo, você precisará assinar o pacote do aplicativo com um certificado confiável. Você pode usar um certificado de terceiros pago de uma autoridade de certificação confiável para assinar seu pacote do aplicativo. Se um certificado de terceiros for usado, o usuário precisará ter o dispositivo no modo de sideload ou desenvolvedor para instalar e executar seu aplicativo.
 
-Se você estiver implantando um aplicativo para funcionários em uma empresa, poderá usar uma empresa que emitiu o certificado para assinar o aplicativo. É importante observar que o certificado corporativo deve ser implantado em todos os dispositivos em que o aplicativo será instalado. Para obter mais informações sobre como implantar aplicativos corporativos, consulte [Gerenciamento de aplicativos corporativos](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management).
+Se você estiver implantando um aplicativo para funcionários em uma empresa, poderá usar uma empresa que emitiu o certificado para assinar o aplicativo. É importante observar que o certificado corporativo deve ser implantado em todos os dispositivos em que o aplicativo será instalado. Para obter mais informações sobre como implantar aplicativos corporativos, consulte [Gerenciamento de aplicativos corporativos](/windows/client-management/mdm/enterprise-app-management).
 
 ## <a name="web-install-experience-on-previous-versions-of-windows-10"></a>Instalar experiência da Web em versões anteriores do Windows 10<a name="web-install-experience"></a>
 
@@ -71,7 +71,6 @@ Veja uma rápida comparação da versão do Windows 10 Fall Creators Update do I
 | Após o download do pacote, o Instalador de Aplicativo inicia automaticamente o conjunto de aplicativo | Usuário deve clicar em **Instalar** e iniciar manualmente o conjunto de aplicativo |
 | O Instalador de Aplicativo cuidará da remoção de pacotes baixados | Usuário exclui manualmente os arquivos baixados |
 
-## <a name="web-install-experience-on-previous-versions-of-windows-10"></a>Instalar experiência da Web em versões anteriores do Windows 10
 Em versões anteriores a Windows 10 Fall Creators Update, o Instalador de Aplicativo não pode instalar um aplicativo da Web. Nessas versões, o Instalador de Aplicativo só pode instalar pacotes de aplicativos que estão disponíveis localmente. Em vez disso, o Instalador de Aplicativo baixará o pacote e pedirá que o usuário clique duas vezes no pacote baixado para instalar.
 
 

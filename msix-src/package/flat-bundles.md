@@ -7,19 +7,19 @@ ms.author: diahar
 ms.topic: article
 keywords: Windows 10, msix, empacotamento, configuração de pacote, pacote simples
 ms.localizationpriority: medium
-ms.openlocfilehash: 3647723a4d193b95d5dab2e9ec15ebaf9e93b0eb
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: a4d67d89b922cb8d9f850157e9a673017f92c43d
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073096"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091114"
 ---
 # <a name="flat-bundle-app-packages"></a>Pacotes de aplicativo do pacote simples 
 
 > [!IMPORTANT]
 > Se você pretender enviar seu aplicativo para a Store, precisará entrar em contato com [Suporte ao desenvolvedor Windows](https://developer.microsoft.com/windows/support) para obter aprovação para usar lotes simples.
 
-Os pacotes simples são uma maneira aprimorada de agrupar os arquivos de pacote do aplicativo. Um arquivo de pacote de aplicativo do Windows típico usa uma estrutura de empacotamento de vários níveis na qual os arquivos de pacote do aplicativo precisam estar contidos no pacote, os pacotes simples removem essa necessidade apenas referenciando os arquivos de pacote do aplicativo, permitindo que eles estejam fora do pacote de aplicativos. Como os arquivos de pacote do aplicativo não estão mais contidos no pacote, eles podem ser processados em paralelo, o que resulta em tempo de carregamento reduzido, publicação mais rápida (já que cada arquivo de pacote de aplicativo pode ser processado ao mesmo tempo) e desenvolvimento mais rápido iterações.
+Os pacotes simples são uma maneira aprimorada de agrupar os arquivos de pacote do aplicativo. Um arquivo de pacote de aplicativo do Windows típico usa uma estrutura de empacotamento de vários níveis na qual os arquivos de pacote do aplicativo precisam estar contidos no pacote, os pacotes simples removem essa necessidade apenas referenciando os arquivos de pacote do aplicativo, permitindo que eles estejam fora do pacote de aplicativos. Como os arquivos de pacote do aplicativo não estão mais contidos no pacote, eles podem ser processados em paralelo, o que resulta em tempo de carregamento reduzido, publicação mais rápida (já que cada arquivo de pacote de aplicativo pode ser processado ao mesmo tempo) e iterações de desenvolvimento mais rápidas.
 
 ![Diagrama de lote simples](images/bundle-combined.png)
 
@@ -32,7 +32,7 @@ Um lote simples pode ser criado usando a ferramenta MakeAppx.exe ou usando o lay
 
 ### <a name="using-makeappxexe"></a>Usando a MakeAppx.exe
 
-Para criar um pacote simples usando MakeAppx. exe, use o comando "pacote de MakeAppx. exe" como de costume, mas com a opção/FB para gerar o arquivo de pacote de aplicativo simples (que será extremamente pequeno, já que ele faz referência apenas aos arquivos de pacote do aplicativo e não contém nenhuma carga real). 
+Para criar um pacote simples usando MakeAppx.exe, use o comando "pacote de MakeAppx.exe" como de costume, mas com a opção/FB para gerar o arquivo de pacote de aplicativo simples (que será extremamente pequeno, já que ele faz referência apenas aos arquivos de pacote do aplicativo e não contém nenhuma carga real). 
 
 Eis um exemplo da sintaxe do comando:
 
@@ -52,8 +52,8 @@ Antes que um pacote simples possa ser implantado, cada um dos pacotes de aplicat
 
 Depois que os pacotes são assinados, você pode instalar o aplicativo por meio de uma destas opções:
 * Clique duas vezes no arquivo de pacote de aplicativo para instalar com o instalador do aplicativo.
-* Use o [cmdlet Add-AppxPackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) no PowerShell e aponte para o arquivo de pacote de aplicativo (supondo que os pacotes de aplicativo sejam onde o pacote de aplicativo espera que sejam). 
+* Use o [cmdlet Add-AppxPackage](/powershell/module/appx/add-appxpackage?view=win10-ps) no PowerShell e aponte para o arquivo de pacote de aplicativo (supondo que os pacotes de aplicativo sejam onde o pacote de aplicativo espera que sejam). 
 
 Você não pode implantar os pacotes. Appx/. msix individuais de um pacote simples por si só. Eles devem ser implantados por meio de. appxbundle/. msixbundle. No entanto, você pode atualizar pacotes. Appx/. msix individuais de um pacote simples após a instalação inicial. Se você atualizar o pacote. Appx/. msix individual, também será necessário atualizar o manifesto do pacote simples.
 
-Por exemplo, se seu pacote simples v1 é composto de um. msixbundle, um x86. msix, um x64. msix e um Asset. msix, e você sabe que o seu pacote V2 tem apenas alterações no pacote de ativos, você só precisa criar o. msixbundle e o Asset. msix para poder instalar o th atualização e. Você deve compilar o. msixbundle para v2 porque o pacote mantém o controle de todas as versões de seus pacotes. msix. Ao aumentar a versão do Asset. msix para a v2, você precisa de um New. msixbundle que tenha essa nova referência. O v2. msixbundle pode conter referências para o v1 x86. msix e x64. msix; os pacotes. msix de um pacote simples não precisam ter o mesmo número de versão.  
+Por exemplo, se seu pacote simples v1 é composto de um. msixbundle, um x86. msix, um x64. msix e um Asset. msix, e você sabe que o seu pacote V2 tem apenas alterações no pacote de ativos, você só precisa criar o. msixbundle e o Asset. msix para poder instalar a atualização. Você deve compilar o. msixbundle para v2 porque o pacote mantém o controle de todas as versões de seus pacotes. msix. Ao aumentar a versão do Asset. msix para a v2, você precisa de um New. msixbundle que tenha essa nova referência. O v2. msixbundle pode conter referências para o v1 x86. msix e x64. msix; os pacotes. msix de um pacote simples não precisam ter o mesmo número de versão.

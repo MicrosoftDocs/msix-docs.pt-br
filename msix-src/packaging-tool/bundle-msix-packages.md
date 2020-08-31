@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: d7eaa493577c4a83739829c1bee51acbb41640a8
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: a33817b4fa45ab6eb447ebd00ab1934b396d7de1
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072926"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090924"
 ---
 # <a name="bundle-msix-packages"></a>Agrupar pacotes de MSIX
 
@@ -28,9 +28,9 @@ Você precisará da seguinte configuração para compilar com êxito um pacote M
 - [SDK do Windows 10](https://developer.microsoft.com/windows/downloads/windows-10-sdk) (versão 1809 ou superior)
 - Pacotes MSIX x64 e x86 convertidos
 
-## <a name="step-1-find-makeappxexe"></a>Etapa 1: localizar MakeAppx. exe
+## <a name="step-1-find-makeappxexe"></a>Etapa 1: localizar MakeAppx.exe
 
-O [MakeAppx.exe](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) é uma ferramenta disponível no SDK do Windows 10 que permite o empacotamento e o agrupamento de pacotes MSIX. Você usará essa ferramenta para agrupar os dois pacotes MSIX.
+O [MakeAppx.exe](/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) é uma ferramenta disponível no SDK do Windows 10 que permite o empacotamento e o agrupamento de pacotes MSIX. Você usará essa ferramenta para agrupar os dois pacotes MSIX.
 
 O MakeAppx.exe pode ser usado para extrair o conteúdo do arquivo de um pacote ou um pacote do aplicativo do Windows 10. Ele também criptografa e descriptografa pacotes e pacotes de aplicativos.
 
@@ -93,5 +93,4 @@ C:\> "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\SignTool.exe" 
 
 Para obter mais informações sobre como assinar pacotes de aplicativos com SignTool.exe, confira [este artigo](../package/sign-app-package-using-signtool.md). 
 
-Depois de assinar o pacote com êxito, você estará pronto para hospedá-lo em um compartilhamento de rede ou em qualquer rede de distribuição de conteúdo para distribuí-lo para seus usuários. 
-
+Depois de assinar o pacote com êxito, você estará pronto para hospedá-lo em um compartilhamento de rede ou em qualquer rede de distribuição de conteúdo para distribuí-lo para seus usuários.

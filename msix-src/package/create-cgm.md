@@ -8,12 +8,12 @@ ms.author: diahar
 ms.topic: article
 keywords: Windows 10, msix, UWP, mapa de grupo de conteúdo, instalação de streaming, instalação de streaming de aplicativo, mapa de grupo de conteúdo de origem
 ms.localizationpriority: medium
-ms.openlocfilehash: 09b5d42033082971ee490ef83de59fb30837e227
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: ffb038e011ce6115364e5716aa39e1d5558e0bc5
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328822"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091104"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>Criar e converter um mapa de grupo de conteúdo de origem
 
@@ -54,7 +54,7 @@ Antes de entrarmos em detalhes, veja aqui um exemplo de um arquivo simples e com
 </ContentGroupMap>
 ```
 
-Existem dois componentes principais para um mapa de grupo de conteúdo: a seção **necessária**, que contém o grupo de conteúdo exigido e a seção **automática**, que pode conter vários grupos de conteúdo automático.
+Há dois componentes principais para um mapa de grupos de conteúdo: a seção **necessária** , que contém o grupo de conteúdo necessário e a seção **automática** , que pode conter vários grupos de conteúdo automáticos.
 
 ### <a name="required-content-group"></a>Grupo de conteúdo necessário
 
@@ -80,7 +80,7 @@ Há algumas coisas importantes a serem observadas aqui:
 Uma maneira fácil de começar a escrever este arquivo é abrir uma nova página em seu editor de texto favorito, clicar rapidamente a função "Salvar como" do seu arquivo na pasta do projeto do seu aplicativo e nomear o arquivo recém-criado: `SourceAppxContentGroupMap.xml`.
 
 > [!IMPORTANT]
-> Se você estiver desenvolvendo um C++ aplicativo, precisará ajustar as propriedades do arquivo de seu `SourceAppxContentGroupMap.xml`. Defina a propriedade `Content` para **verdadeiro** e a propriedade `File Type` para **arquivo XML**.
+> Se você estiver desenvolvendo um aplicativo C++, precisará ajustar as propriedades do arquivo do seu `SourceAppxContentGroupMap.xml` . Defina a propriedade `Content` para **verdadeiro** e a propriedade `File Type` para **arquivo XML**.
 
 Quando você estiver criando o `SourceAppxContentGroupMap.xml`, é útil tirar proveito do uso de curingas em nomes de arquivo, para obter mais informações, consulte a seção [Dicas e truques para o uso de curingas](#wildcards).
 
@@ -123,7 +123,7 @@ O layout do grupo automático é bastante semelhante ao grupo necessário, com p
 - Os grupos de conteúdo automático não podem conter **qualquer** arquivo do grupo de conteúdo necessário. 
 - Um grupo de conteúdo automático pode conter arquivos que também estão em outros grupos de conteúdo automático. Os arquivos serão baixados apenas uma vez, e serão baixados com o primeiro grupo de conteúdo automático que os contém.
 
-#### Dicas e truques para o uso de curingas<a name="wildcards"></a>
+#### <a name="tips-and-tricks-for-using-wildcards"></a>Dicas e truques para o uso de curingas<a name="wildcards"></a>
 
 O layout do arquivo para os mapas de grupos de conteúdo é sempre relativo à sua pasta raiz do projeto.
 
@@ -168,4 +168,4 @@ Para obter mais informações sobre as opções que você pode usar com o **Make
 MakeAppx convertCGM /?
 ```
 
-Isso é tudo o que você precisa para deixar seu `AppxContentGroupMap.xml` final pronto para seu aplicativo! Ainda há mais a fazer para que seu aplicativo esteja totalmente pronto para o Microsoft Store. Para obter mais informações sobre o processo completo de adição de instalação de streaming ao seu aplicativo, confira [esta postagem no blog](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/).
+Isso é tudo o que você precisa para deixar seu `AppxContentGroupMap.xml` final pronto para seu aplicativo! Ainda há mais a fazer para que seu aplicativo esteja totalmente pronto para o Microsoft Store. Para obter mais informações sobre o processo completo de adição de instalação de streaming ao seu aplicativo, confira [esta postagem no blog](../index.yml).

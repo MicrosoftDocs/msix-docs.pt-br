@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, Windows 7, Windows 8, Windows Server, UWP, msix, msixcore, 1709, 1703, 1607, 1511, 1507
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: fdab2cf07a3a9e7ecbcae82120422647eaf145d5
-ms.sourcegitcommit: 90eed7d23240aefa3761085955a193323f4661d4
+ms.openlocfilehash: f12efb71fb004f7354ef50193ef2127173e82ded
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75831478"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090254"
 ---
 # <a name="msix-core"></a>MSIX Core
 
@@ -36,7 +36,7 @@ O objetivo do MSIX Core é habilitar a instalação, a consulta e a remoção de
 
 * O MSIX Core não fornece os benefícios do contêiner do MSIX nativo, nem permite que um aplicativo que usa recursos específicos do Windows 10 funcione em versões anteriores do Windows.
 * Ao usar o MSIX Core em um sistema operacional de nível inferior, OS [aliases de execução de aplicativo](/windows/apps/desktop/modernize/desktop-to-uwp-extensions#start-your-application-by-using-an-alias) só funcionarão do **Win + R** e não do prompt de comando nem do PowerShell.
-* O MSIX Core não dá suporte à integração Microsoft Store. Os desenvolvedores que desejam publicar seus aplicativos na loja podem seguir a documentação [aqui](https://docs.microsoft.com/windows/uwp/publish/).
+* O MSIX Core não dá suporte à integração Microsoft Store. Os desenvolvedores que desejam publicar seus aplicativos na loja podem seguir a documentação [aqui](/windows/uwp/publish/).
 
 ## <a name="get-started"></a>Introdução
 

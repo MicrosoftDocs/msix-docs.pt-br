@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: 484f2ba6df7044b628154fd73990089652cede20
-ms.sourcegitcommit: e703ffe4c635d9b127ecf8c02e087370b676aa9c
+ms.openlocfilehash: 5df8516441ab7acb8eea54afe6443f92c586c7a4
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80108169"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091043"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>Assinar um pacote do aplicativo usando a SignTool
 
@@ -20,24 +20,24 @@ ms.locfileid: "80108169"
 > [!IMPORTANT] 
 > Se você usou o Visual Studio para desenvolver seu aplicativo, é recomendável que você use o Assistente do Visual Studio para criar e assinar seu pacote de aplicativo. Para obter mais informações, consulte [empacotar um aplicativo UWP com o Visual Studio](packaging-uwp-apps.md) e [empacotar um aplicativo de desktop do código-fonte usando o Visual Studio](../desktop/desktop-to-uwp-packaging-dot-net.md).
 
-Para obter mais informações sobre assinatura de código e certificados em geral, consulte [Introdução à Assinatura de Código](https://docs.microsoft.com/windows/desktop/SecCrypto/cryptography-tools).
+Para obter mais informações sobre assinatura de código e certificados em geral, consulte [Introdução à Assinatura de Código](/windows/desktop/SecCrypto/cryptography-tools).
 
-## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
+## <a name="prerequisites"></a>Pré-requisitos
 
 - **Um aplicativo empacotado**  
     Para saber mais sobre como criar manualmente um pacote de aplicativos, consulte [Criar um pacote do aplicativo com a ferramenta MakeAppx.exe](create-app-package-with-makeappx-tool.md).
 
-- **Um certificado de autenticação válido**  
+- **Um certificado de assinatura válido**  
     Para obter mais informações sobre como criar ou importar um certificado válido de assinatura, consulte [Criar ou importar um certificado de assinatura de pacote](create-certificate-package-signing.md).
 
-- **SignTool. exe**  
+- **SignTool.exe**  
     Dependendo do seu caminho de instalação do SDK, a **SignTool** é instalada no computador Windows 10 nos seguintes locais:
-    - x86: C:\Arquivos de programas (x86) \Windows Kits\10\bin\\&lt;SDK versão&gt;\x86\SignTool.exe
-    - x64: C:\Arquivos de programas (x86) \Windows Kits\10\bin\\&lt;SDK versão&gt;\x64\SignTool.exe
+    - x86: C:\Arquivos de programas (x86) \Windows Kits\10\bin \\ &lt; sdk versão &gt;\x86\SignTool.exe
+    - x64: C:\Arquivos de programas (x86) \Windows Kits\10\bin \\ &lt; sdk versão &gt;\x64\SignTool.exe
 
 ## <a name="using-signtool"></a>Usando o SignTool
 
-**SignTool** pode ser usado para assinar arquivos, verificar assinaturas ou carimbos de data e hora, remover assinaturas e muito mais. Para a finalidade de assinar um pacote de aplicativos, destacaremos o comando **sign**. Para obter informações completas sobre o **SignTool**, consulte a página de referência do [SignTool](https://docs.microsoft.com/windows/desktop/SecCrypto/signtool).
+**SignTool** pode ser usado para assinar arquivos, verificar assinaturas ou carimbos de data e hora, remover assinaturas e muito mais. Para a finalidade de assinar um pacote de aplicativos, destacaremos o comando **sign**. Para obter informações completas sobre o **SignTool**, consulte a página de referência do [SignTool](/windows/desktop/SecCrypto/signtool).
 
 ### <a name="determine-the-hash-algorithm"></a>Determinar o algoritmo de hash
 
@@ -108,4 +108,4 @@ SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 
 Observe que alguns certificados não usam uma senha. Se o certificado não tiver uma senha, omita "/p &lt;Sua Senha&gt;" dos comandos de amostra.
 
-Depois que o pacote de aplicativos é assinado com um certificado válido, você está pronto para carregar o pacote para a Loja. Para obter mais orientações sobre como carregar e enviar aplicativos para a Loja, consulte [Envios de aplicativos](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
+Depois que o pacote de aplicativos é assinado com um certificado válido, você está pronto para carregar o pacote para a Loja. Para obter mais orientações sobre como carregar e enviar aplicativos para a Loja, consulte [Envios de aplicativos](/windows/uwp/publish/app-submissions).

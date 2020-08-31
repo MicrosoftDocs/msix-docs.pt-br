@@ -5,12 +5,12 @@ ms.date: 01/29/2020
 ms.topic: article
 keywords: MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dcad66f84c14648bce90920bf42bfd9faf2de8c
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: 70e68a96ab4f94bff6b7753343e9ff5c4e68c728
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726463"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090814"
 ---
 # <a name="know-your-installer"></a>Conheça o instalador
 
@@ -20,13 +20,13 @@ Este artigo lista as coisas que você precisa saber antes de converter o instala
 
 + __O instalador requer uma reinicialização__. Se o instalador exigir uma [reinicialização](support-restart.md), isso terá suporte na ferramenta de empacotamento MSIX a partir da versão 1.2019.701.0. Se o seu instalador retornar um código de saída incomum para indicar que precisa de uma reinicialização, você deverá adicioná-lo à seção [reiniciar códigos de saída](tool-best-practices.md#other-settings) das configurações da ferramenta de empacotamento MSIX. 
 
-+ __Seu aplicativo .NET requer uma versão do .NET Framework anterior a 4.6.2__. Se você estiver empacotando um aplicativo .NET, recomendamos que o destino do aplicativo .NET Framework 4.6.2 ou posterior. A capacidade de instalar e executar aplicativos de desktop empacotados foi introduzida pela primeira vez no Windows 10, versão 1607 (também chamada de atualização de aniversário), e essa versão do sistema operacional inclui o .NET Framework 4.6.2 por padrão. Versões posteriores do so incluem versões posteriores do .NET Framework. Para obter uma lista completa de quais versões do .NET estão incluídas nas versões posteriores do Windows 10, consulte [Este artigo](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies).
++ __Seu aplicativo .NET requer uma versão do .NET Framework anterior a 4.6.2__. Se você estiver empacotando um aplicativo .NET, recomendamos que o destino do aplicativo .NET Framework 4.6.2 ou posterior. A capacidade de instalar e executar aplicativos de desktop empacotados foi introduzida pela primeira vez no Windows 10, versão 1607 (também chamada de atualização de aniversário), e essa versão do sistema operacional inclui o .NET Framework 4.6.2 por padrão. Versões posteriores do so incluem versões posteriores do .NET Framework. Para obter uma lista completa de quais versões do .NET estão incluídas nas versões posteriores do Windows 10, consulte [Este artigo](/dotnet/framework/migration-guide/versions-and-dependencies).
 
   Espera-se que as versões de destino das .NET Framework anteriores à 4.6.2 em aplicativos de desktop empacotados funcionem na maioria dos casos. No entanto, se você visar uma versão anterior à 4.6.2, deverá testar completamente o aplicativo de área de trabalho empacotado antes de distribuí-lo aos usuários.
 
   + 4,0-4.6.1: os aplicativos destinados a essas versões do .NET Framework devem ser executados sem problemas no 4.6.2 ou posterior. Portanto, esses aplicativos devem ser instalados e executados sem alterações no Windows 10, versão 1607 ou posterior, com a versão do .NET Framework que está incluído no sistema operacional.
 
-  + 2,0 e 3,5: em nossos testes, os aplicativos de área de trabalho empacotados que visam essas versões do .NET Framework geralmente funcionam, mas podem apresentar problemas de desempenho em alguns cenários. Para que esses aplicativos empacotados sejam instalados e executados, o [recurso .NET Framework 3,5](https://docs.microsoft.com/dotnet/framework/install/dotnet-35-windows-10) deve ser instalado no computador de destino (esse recurso também inclui .NET Framework 2,0 e 3,0). Você também deve testar esses aplicativos cuidadosamente depois de empacotá-los.
+  + 2,0 e 3,5: em nossos testes, os aplicativos de área de trabalho empacotados que visam essas versões do .NET Framework geralmente funcionam, mas podem apresentar problemas de desempenho em alguns cenários. Para que esses aplicativos empacotados sejam instalados e executados, o [recurso .NET Framework 3,5](/dotnet/framework/install/dotnet-35-windows-10) deve ser instalado no computador de destino (esse recurso também inclui .NET Framework 2,0 e 3,0). Você também deve testar esses aplicativos cuidadosamente depois de empacotá-los.
 
 + __Seu aplicativo requer um driver__. MSIX não dá suporte a drivers. 
 
@@ -41,4 +41,4 @@ Este artigo lista as coisas que você precisa saber antes de converter o instala
 + __Seu aplicativo instala e carrega assemblies da pasta lado a lado do Windows__. Por exemplo, seu aplicativo usa as bibliotecas de tempo de execução C VC8 ou VC9 e está vinculando-as dinamicamente da pasta lado a lado do Windows, o que significa que seu código está usando os arquivos DLL comuns de uma pasta compartilhada, como C:\Windows\WinSxS. Isso não tem suporte. Você precisará vinculá-las de forma estática vinculando-as aos arquivos da biblioteca redistribuível diretamente no código. 
 
   > [!NOTE]
-  > Se seu aplicativo precisar gravar no diretório de instalação ou usar o diretório de trabalho atual, você também pode considerar adicionar uma correção de tempo de execução usando a [estrutura de suporte do pacote](https://github.com/microsoft/MSIX-PackageSupportFramework) ao seu pacote. Para obter mais detalhes, consulte [Este artigo](../psf/package-support-framework.md).  
+  > Se seu aplicativo precisar gravar no diretório de instalação ou usar o diretório de trabalho atual, você também pode considerar adicionar uma correção de tempo de execução usando a [estrutura de suporte do pacote](https://github.com/microsoft/MSIX-PackageSupportFramework) ao seu pacote. Para obter mais detalhes, confira [este artigo](../psf/package-support-framework.md).

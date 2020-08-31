@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP, pacote do aplicativo, atualização do aplicativo, MSIX, appx
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 1c120193a278fb8584761d7b6aaa4ab0430697ad
-ms.sourcegitcommit: f1c366459764cf1f3c0bc9edcac4f845937794bd
+ms.openlocfilehash: ae161305bccd1e0fa53bde5be66ab808e1334e3b
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87754505"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091194"
 ---
 # <a name="update-non-store-published-app-packages-from-your-code"></a>Atualizar pacotes de aplicativos publicados não armazenados do seu código
 
@@ -22,7 +22,7 @@ Este artigo fornece exemplos que demonstram como declarar a `packageManagement` 
 
 ## <a name="add-the-packagemanagement-capability-to-your-package-manifest"></a>Adicionar a capacidade de PackageManagement ao manifesto do pacote
 
-Para usar as `PackageManager` APIs, seu aplicativo deve declarar o `packageManagement` [recurso restrito](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities) no [manifesto do pacote](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest).
+Para usar as `PackageManager` APIs, seu aplicativo deve declarar o `packageManagement` [recurso restrito](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities) no [manifesto do pacote](/uwp/schemas/appxpackage/appx-package-manifest).
 
 ```xml
 <Package>
@@ -38,7 +38,7 @@ Para usar as `PackageManager` APIs, seu aplicativo deve declarar o `packageManag
 
 ## <a name="updating-packages-deployed-using-an-app-installer-file"></a>Atualizando pacotes implantados usando um arquivo do instalador de aplicativos
 
-Se você estiver implantando seu aplicativo usando o arquivo do instalador do aplicativo, qualquer atualização orientada por código que você executar deverá usar as [APIs do arquivo do instalador do aplicativo](https://docs.microsoft.com/windows/msix/app-installer/app-installer-documentation#app-installer-file-apis). Isso garante que as atualizações regulares do arquivo do instalador de aplicativos continuarão funcionando. Para intiating uma atualização baseada no instalador de aplicativo do seu código, você pode usar [PackageManager. AddPackageByAppInstallerFileAsync](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.addpackagebyappinstallerfileasync?view=winrt-19041) ou [PackageManager. RequestAddPackageByAppInstallerFileAsync](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.requestaddpackagebyappinstallerfileasync?view=winrt-19041). Você pode verificar se uma atualização está disponível usando a API [Package. CheckUpdateAvailabilityAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package.checkupdateavailabilityasync?view=winrt-19041) . Abaixo está o código de exemplo:
+Se você estiver implantando seu aplicativo usando o arquivo do instalador do aplicativo, qualquer atualização orientada por código que você executar deverá usar as [APIs do arquivo do instalador do aplicativo](./app-installer/app-installer-documentation.md#app-installer-file-apis). Isso garante que as atualizações regulares do arquivo do instalador de aplicativos continuarão funcionando. Para intiating uma atualização baseada no instalador de aplicativo do seu código, você pode usar [PackageManager. AddPackageByAppInstallerFileAsync](/uwp/api/windows.management.deployment.packagemanager.addpackagebyappinstallerfileasync?view=winrt-19041) ou [PackageManager. RequestAddPackageByAppInstallerFileAsync](/uwp/api/windows.management.deployment.packagemanager.requestaddpackagebyappinstallerfileasync?view=winrt-19041). Você pode verificar se uma atualização está disponível usando a API [Package. CheckUpdateAvailabilityAsync](/uwp/api/windows.applicationmodel.package.checkupdateavailabilityasync?view=winrt-19041) . Abaixo está o código de exemplo:
 
 ```csharp
 using Windows.Management.Deployment;
@@ -119,7 +119,7 @@ private async void CheckUpdate(object sender, TappedRoutedEventArgs e)
 
 ### <a name="apply-the-update"></a>Aplicar a atualização 
 
-Depois de determinar que uma atualização está disponível, você pode enfileirar para download e instalar usando a API do [AddPackageAsync](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.addpackageasync?view=winrt-19041) . A atualização será aplicada na próxima vez em que seu aplicativo for desligado. Depois que o aplicativo for reiniciado, a nova versão estará disponível para o usuário. Abaixo está o código de exemplo:
+Depois de determinar que uma atualização está disponível, você pode enfileirar para download e instalar usando a API do [AddPackageAsync](/uwp/api/windows.management.deployment.packagemanager.addpackageasync?view=winrt-19041) . A atualização será aplicada na próxima vez em que seu aplicativo for desligado. Depois que o aplicativo for reiniciado, a nova versão estará disponível para o usuário. Abaixo está o código de exemplo:
 
 ```csharp
 
@@ -140,7 +140,7 @@ private async void CommandInvokedHandler(IUICommand command)
 
 ## <a name="automatically-restarting-your-app-after-an-update"></a>Reiniciar automaticamente o aplicativo após uma atualização
 
-Se seu aplicativo for um aplicativo UWP, passar em AddPackageByAppInstallerOptions. ForceApplicationShutdown ou addpackageoptions. ForceTargetAppShutdown ao aplicar uma atualização deve agendar o aplicativo para reiniciar após o desligamento + atualização. Para aplicativos não UWP, você precisa chamar [RegisterApplicationRestart](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions#updates) antes de aplicar a atualização.
+Se seu aplicativo for um aplicativo UWP, passar em AddPackageByAppInstallerOptions. ForceApplicationShutdown ou addpackageoptions. ForceTargetAppShutdown ao aplicar uma atualização deve agendar o aplicativo para reiniciar após o desligamento + atualização. Para aplicativos não UWP, você precisa chamar [RegisterApplicationRestart](/windows/apps/desktop/modernize/desktop-to-uwp-extensions#updates) antes de aplicar a atualização.
 
 Você deve chamar RegisterApplicationRestart antes que seu aplicativo comece a ser desligado. Veja abaixo um exemplo de como fazer isso usando os serviços de interoperabilidade para chamar o método nativo em C#:
 

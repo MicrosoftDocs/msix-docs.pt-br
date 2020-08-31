@@ -1,17 +1,17 @@
 ---
-title: Criar um pacote MSIX de qualquer instalador de desktop
+title: Criar um pacote MSIX de qualquer instalador de área de trabalho
 description: Criar um pacote MSIX de qualquer instalador de desktop (MSI, EXE, ClickOnce ou App-V)
 ms.date: 03/25/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bd0d47f15291c0c8c214bb96080a69b95cf90d87
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: b9aea569ea6c66935c8d5f6fdc1e86e429b18760
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726487"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091034"
 ---
 # <a name="create-an-msix-package-from-any-desktop-installer-msi-exe-clickonce-or-app-v"></a>Criar um pacote MSIX de qualquer instalador de desktop (MSI, EXE, ClickOnce ou App-V)
 
@@ -114,12 +114,12 @@ Em **preferência de assinatura**, selecione uma opção de assinatura. Também 
 - **Assinar com um certificado (. pfx)** Navegue até e selecione seu arquivo de certificado. pfx. Se o certificado for protegido por senha, digite a senha na caixa de senha.
 - **Especificar um arquivo. cer (não assina)** Essa opção permite que você especifique um arquivo. cer. Isso é útil quando você não deseja assinar o pacote, mas deseja garantir que as informações do Publicador correspondam ao assunto do certificado que será usado para assinatura. 
 - Não **assinar pacote** Selecione esta opção se você estiver assinando seu pacote posteriormente. Observação: não é possível instalar um pacote MSIX se ele não estiver assinado
-- Ao assinar, é altamente recomendável adicionar um **carimbo de data/hora** ao seu certificado para que a validade do seu certificado possa Outlast sua data de expiração. O formato aceito é uma [URL do servidor com carimbo de data/hora RFC 3161](https://docs.microsoft.com/windows/win32/seccrypto/signtool).
+- Ao assinar, é altamente recomendável adicionar um **carimbo de data/hora** ao seu certificado para que a validade do seu certificado possa Outlast sua data de expiração. O formato aceito é uma [URL do servidor com carimbo de data/hora RFC 3161](/windows/win32/seccrypto/signtool).
 
 > [!NOTE]
 > Não há suporte para a assinatura de um aplicativo de formato de pacote MSIX com um certificado SHA1.
 
-Clique em **Próximo** para continuar.
+Clique em **Avançar** para continuar.
 
 ## <a name="package-information"></a>Informações do pacote
 

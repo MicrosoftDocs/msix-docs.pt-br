@@ -6,14 +6,18 @@ ms.topic: article
 keywords: Windows 10, UWP, msix, ferramenta de empacotamento msix, programa Insider
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: 68c627110ef2212f241fc44046ce4d19cb58b54c
-ms.sourcegitcommit: 642563e98a52d4cc384987e618c5482022e29aba
+ms.openlocfilehash: e954eb6fec69a57b8ca9460a6aab860eae2cba70
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86556251"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090784"
 ---
 # <a name="release-notes-for-the-msix-packaging-tool"></a>Notas sobre a versão da Ferramenta de Empacotamento MSIX
+
+## <a name="version-120208240"></a>1.2020.824.0 da versão
+- Adicionado um relatório de serviços ao editor de pacote
+- Correções gerais de bugs
 
 ## <a name="version-120207090---public-release"></a>Versão 1.2020.709.0 – versão pública
 - Capacidade de adicionar vários arquivos ao editor de pacotes
@@ -27,19 +31,4 @@ ms.locfileid: "86556251"
 - Corrigido um problema com os valores do registro do App-V durante a conversão
 - Adicionada uma sessão de tempo limite mais longa para conversões de linha de comando remotas
 - Melhores seleções do so MSIX Core para reduzir conflitos e confusão
-
-## <a name="version-120204020---public-release"></a>Versão 1.2020.402.0 – versão pública
-- A configuração de integridade do pacote está ativada por padrão
-- Capacidade de adicionar automaticamente o [suporte do MSIX Core](../../msix-core/msixcore.md) a um MSIX
-- Capacidade de importar ou exportar arquivos de registro (. reg) no editor de pacote
-- A página Criar pacote agora mostra o local de salvamento padrão
-- Adicionar extensão InstalledLocationVirtualization
-- Qualidade aprimorada de ícones extraídos
-- Extração de ícones aprimorados de erros corrigidos de atalhos:
-- Validar o formato do manifesto após a edição 
-- Tornar a mensagem quando a tarefa de inicialização inicial falhar mais claro 
-- Proibir caminhos relativos para desempacotamento 
-- Filtros de arquivo atualizados para mostrar quais formatos são válidos (por exemplo, para instaladores que ele costumava dizer *.*   e agora `*.msi, *.exe, ...` ) 
-- Corrigido quando o Unpack converteria espaços em caminhos em "%20"
-- correções de bugs gerais
 

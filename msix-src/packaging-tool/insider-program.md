@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3c60ae9d5f247de8b5b1923beea274a18ede4e4f
-ms.sourcegitcommit: 642563e98a52d4cc384987e618c5482022e29aba
+ms.openlocfilehash: 7621f3de4f20cec8f120b6b6c2d6aba5c7407b59
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86556261"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090824"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -25,7 +25,7 @@ O Programa Insider da Ferramenta de Empacotamento MSIX fornece acesso antecipado
 - Um alias válido da conta Microsoft para acessar o aplicativo na Microsoft Store.
 - Privilégios de administrador no computador para executar a ferramenta.
 
-## <a name="install"></a>Instalar
+## <a name="install"></a>Instalar o
 
 Depois de ingressar no programa, você receberá um email confirmando sua inscrição. 
 
@@ -35,10 +35,9 @@ Se a ferramenta já estiver instalada no computador, verifique a versão instala
 
 ## <a name="current-insider-preview-build"></a>Build atual do Insider Preview
 
-## <a name="version-120207090---public-release"></a>Versão 1.2020.709.0 – versão pública
-- Capacidade de adicionar vários arquivos ao editor de pacotes
-- Capacidade de importar vários arquivos. reg para o editor de pacote
-- Suporte aprimorado para converter qualquer tipo de instalador
+## <a name="version-120208240"></a>1.2020.824.0 da versão
+- Adicionado um relatório de serviços ao editor de pacote
+- Correções gerais de bugs
 
 Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](release-notes/history.md).
 

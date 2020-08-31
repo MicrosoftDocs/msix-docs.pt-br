@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Ferramenta de Empacotamento MSIX, problemas conhecidos, solução de problemas
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 466e7527ae1c7dc20322aa6eb2c3d507f1a1962f
-ms.sourcegitcommit: 6243b7aca6f52f007f4571c835f580f433c31769
+ms.openlocfilehash: 0c432cd0bd02d68f52034f5f392a1f16e9f552ab
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84812764"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090764"
 ---
 # <a name="known-issues-and-troubleshooting-tips-for-the-msix-packaging-tool"></a>Problemas conhecidos e dicas de solução de problemas para a Ferramenta de Empacotamento MSIX
 
@@ -32,7 +32,7 @@ Se você estiver interessado em ingressar em nosso programa Insider, clique [aqu
 
 ### <a name="msix-packaging-tool-driver"></a>Driver da ferramenta de empacotamento MSIX
 
-O driver da ferramenta de empacotamento MSIX é fornecido como um pacote de [fod (recurso sob demanda)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities) de Windows Update. Ele não será instalado se o serviço de Windows Update estiver desabilitado no computador ou se as configurações do Windows Insider Flight Ring não corresponderem à compilação do sistema operacional do computador.
+O driver da ferramenta de empacotamento MSIX é fornecido como um pacote de [fod (recurso sob demanda)](/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities) de Windows Update. Ele não será instalado se o serviço de Windows Update estiver desabilitado no computador ou se as configurações do Windows Insider Flight Ring não corresponderem à compilação do sistema operacional do computador.
 
 Se você estiver com problemas para adquirir o driver ou estiver trabalhando em um ambiente offline, poderá encontrar links para baixar o driver [aqui](disconnected-environment.md#get-the-msix-packaging-tool-driver). 
 
@@ -50,7 +50,7 @@ Os códigos de erro a seguir podem indicar que você está encontrando problemas
 
 O código de erro a seguir pode indicar que as políticas em seu computador estão afetando a conectividade Windows Update:-2145124306 (0x8024002e).
 
-Se você receber esse código de erro, talvez seja necessário verificar as [configurações e políticas de ambiente](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs).
+Se você receber esse código de erro, talvez seja necessário verificar as [configurações e políticas de ambiente](/windows/deployment/update/fod-and-lang-packs).
 
 #### <a name="driver-required-a-reinstall"></a>O driver exigiu uma reinstalação
 
@@ -131,7 +131,7 @@ O arquivo pode estar aberto ou não existente. Para resolver esse problema, adic
 
 #### <a name="file-type-associations"></a>Associações de tipo de arquivo
 
-Os problemas relacionados a FTAS (associações de tipo de arquivo) variam de pacote para pacote. A ferramenta de empacotamento MSIX dá suporte a associações de arquivo para instalações de clique duplo. Por exemplo, se seu aplicativo tiver um menu de contexto, ele não será adicionado automaticamente, portanto, será necessário adicioná-lo manualmente ao manifesto. Consulte o elemento manifesto [desktop4: FileExplorerContextMenus](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus) para obter um exemplo.
+Os problemas relacionados a FTAS (associações de tipo de arquivo) variam de pacote para pacote. A ferramenta de empacotamento MSIX dá suporte a associações de arquivo para instalações de clique duplo. Por exemplo, se seu aplicativo tiver um menu de contexto, ele não será adicionado automaticamente, portanto, será necessário adicioná-lo manualmente ao manifesto. Consulte o elemento manifesto [desktop4: FileExplorerContextMenus](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus) para obter um exemplo.
 
 #### <a name="shortcuts-with-arguments"></a>Atalhos com argumentos
 

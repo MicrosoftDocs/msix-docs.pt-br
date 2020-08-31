@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: bac524ead0db9d7c56502b534571989aa9e6d0d9
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 446e0d90f9aeb2670d1fa5e5d1f3bc85f3b01567
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328917"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090334"
 ---
 # <a name="troubleshoot-runtime-issues-in-an-msix-container"></a>Solucionar problemas de tempo de execução em um contêiner MSIX 
 
@@ -19,7 +19,7 @@ Neste artigo, examinaremos como você pode solucionar problemas de tempo de exec
 
 Pode haver casos em que a ordem em que esses aplicativos são instalados pode causar problemas de imprevistos em que as chaves de registro esperadas podem ser substituídas e os arquivos esperados podem ser substituídos. 
 
-Para ajudar a diagnosticar esses problemas, o [Invoke-CommandInDesktopPackage](https://docs.microsoft.com/powershell/module/appx/invoke-commandindesktoppackage?view=win10-ps) é um cmdlet do PowerShell que pode ser usado para executar um aplicativo dentro do contêiner MSIX. Isso permite que os usuários executem o prompt de comando, o editor do registro, o PowerShell dentro do contêiner MSIX e obtenham uma exibição do sistema de arquivos mesclado e do hive do registro mesclado. 
+Para ajudar a diagnosticar esses problemas, o [Invoke-CommandInDesktopPackage](/powershell/module/appx/invoke-commandindesktoppackage?view=win10-ps) é um cmdlet do PowerShell que pode ser usado para executar um aplicativo dentro do contêiner MSIX. Isso permite que os usuários executem o prompt de comando, o editor do registro, o PowerShell dentro do contêiner MSIX e obtenham uma exibição do sistema de arquivos mesclado e do hive do registro mesclado. 
 
  > [!IMPORTANT]
  > Invoke-CommandInDesktopPackage exige que o dispositivo esteja no modo de desenvolvedor para os builds do Windows 10 anteriores a 18922.
@@ -33,7 +33,7 @@ Para exibir o sistema de arquivos conforme observado pelos aplicativos que estã
 Invoke-CommandInDesktopPackage -AppId "AppPackage1" -PackageFamilyName "Contoso.AppPackage1_8h66172c634n0" -Command "cmd.exe" -PreventBreakaway
 ```
 
-O comando acima iniciará uma instância do cmd. exe no contêiner de pacote *contoso. AppPackage1_8h66172c634n0* . Como você está executando o prompt de comando de dentro do contêiner, você pode navegar pelo sistema de arquivos e exibir os arquivos mesclados. 
+O comando acima iniciará uma instância do cmd.exe no contêiner de pacote *contoso. AppPackage1_8h66172c634n0* . Como você está executando o prompt de comando de dentro do contêiner, você pode navegar pelo sistema de arquivos e exibir os arquivos mesclados. 
 
 ## <a name="view-the-merged-registry-hive"></a>Exibir o hive mesclado do registro
 
@@ -49,4 +49,4 @@ O comando acima iniciará o editor do registro no contexto do contêiner do paco
  > Use o sinalizador '-PreventBreakaway ' ao usar Invoke-CommandInDesktopPackage se desejar iniciar processos subsequentes no mesmo contêiner. Caso contrário, qualquer inicialização subsequente será interrompida no contêiner. 
 
  >[!NOTE]
- > Nem todos os aplicativos podem ser iniciados dentro do contêiner. Por exemplo, o Explorer. exe fará a busca do contêiner.
+ > Nem todos os aplicativos podem ser iniciados dentro do contêiner. Por exemplo, explorer.exe fará a análise do contêiner.

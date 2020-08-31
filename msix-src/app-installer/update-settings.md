@@ -6,18 +6,18 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 10a8c443097f15ab18144198134d1f0fcedb939d
-ms.sourcegitcommit: 6243b7aca6f52f007f4571c835f580f433c31769
+ms.openlocfilehash: f4ffccb0cdfbdd851c6561593e92059f72198ced
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84812750"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89089924"
 ---
 # <a name="configure-update-settings-in-the-app-installer-file"></a>Definir configurações de atualização no arquivo do Instalador de Aplicativo
 
 Conforme mencionado na [visão geral do arquivo do instalador do aplicativo](app-installer-file-overview.md), você pode configurar o comportamento de atualização do aplicativo no arquivo do instalador do aplicativo. Este artigo explora as opções de atualização e suas respectivas compensações.
 
-Você pode configurar o comportamento de atualização do aplicativo usando o elemento [UpdateSettings](https://docs.microsoft.com/uwp/schemas/appinstallerschema/element-update-settings) . Aqui, exploramos as opções de atualização e suas respectivas compensações.
+Você pode configurar o comportamento de atualização do aplicativo usando o elemento [UpdateSettings](/uwp/schemas/appinstallerschema/element-update-settings) . Aqui, exploramos as opções de atualização e suas respectivas compensações.
 
 Em suma, você pode optar por verificar se há atualizações de duas maneiras diferentes:
 1. Independentemente do usuário que está iniciando o aplicativo.
@@ -30,7 +30,7 @@ Além disso, você pode optar por aplicar atualizações de duas maneiras difere
 Por fim, ao informar ao usuário uma atualização, você pode forçá-los a fazer a atualização antes de permitir que eles iniciem o aplicativo ou você pode permitir que eles iniciem o aplicativo e apliquem a atualização em um horário Opportune.
 
 
-O elemento [UpdateSettings](https://docs.microsoft.com/uwp/schemas/appinstallerschema/element-update-settings) pode ter os seguintes elementos filho:
+O elemento [UpdateSettings](/uwp/schemas/appinstallerschema/element-update-settings) pode ter os seguintes elementos filho:
 
 | Configuração de atualização de arquivo do instalador de aplicativo | Versão mínima do Windows 10
 |------------------|--------------------|

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 54bc62d90ee3fef134668c562655d4b4bef39801
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: db873832bdcaf68ca4e29d0e7e58f3b945696866
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328723"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090984"
 ---
 # <a name="edit-icons-and-assets-using-the-msix-packaging-tool"></a>Editar ícones e ativos usando a Ferramenta de Empacotamento MSIX
 
@@ -20,7 +20,7 @@ Há várias maneiras de modificar os ativos de pacote do aplicativo durante o pr
 * É possível modificar os ativos de pacote do aplicativo durante o processo de conversão.
 * Depois que seu pacote for criado, será possível modificar os ativos de pacote do aplicativo por meio do [Editor de pacote](package-editor.md).
 
-Confira as [diretrizes para ícone e ativos](https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos) enquanto faz suas modificações.
+Confira as [diretrizes para ícone e ativos](/windows/uwp/design/style/app-icons-and-logos) enquanto faz suas modificações.
 
 ## <a name="modify-assets-during-the-conversion-process"></a>Modificar ativos durante o processo de conversão
 
@@ -33,4 +33,4 @@ Para modificar os ativos do pacote do aplicativo após criar seu pacote MSIX, ab
 - Para adicionar um novo arquivo de ativo, clique com o botão direito do mouse na pasta dos ativos e selecione **Adicionar arquivo** ou **Adicionar pasta**.
 - Para excluir um arquivo de ativo existente, clique com o botão direito do mouse no arquivo e selecione **Excluir**.
 
-Para verificar as alterações do ativo, acesse a página **Informações do pacote** e abra o arquivo de manifesto. Confirme se os ativos adicionados ou removidos estão representados no nó [uap:VisualElements](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-visualelements). A referência do manifesto precisa ser específica, mas os arquivos do ativo podem ser nomeados da maneira como você desejar. 
+Para verificar as alterações do ativo, acesse a página **Informações do pacote** e abra o arquivo de manifesto. Confirme se os ativos adicionados ou removidos estão representados no nó [uap:VisualElements](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-visualelements). A referência do manifesto precisa ser específica, mas os arquivos do ativo podem ser nomeados da maneira como você desejar.

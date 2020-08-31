@@ -1,21 +1,21 @@
 ---
-title: Criando o pacote MSIX com o MSIX Core do código-fonte
+title: Criação do pacote MSIX com o MSIX Core do código-fonte
 description: Descreve como criar um pacote MSIX do código-fonte com o MSIX Core.
 ms.date: 12/19/2019
 ms.topic: article
 keywords: Windows 10, Windows 7, Windows 8, Windows Server, UWP, msix, msixcore, 1709, 1703, 1607, 1511, 1507
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 349eb1e99a752d56126936dde5517050fae9f090
-ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
+ms.openlocfilehash: 4266b860b749c93f6916352185160a6ec5ecbbfa
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75303338"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090274"
 ---
-# <a name="create-an-msix-package-with-msix-core-from-source-code"></a>Criar um pacote MSIX com o MSIX Core do código-fonte
+# <a name="create-an-msix-package-with-msix-core-from-source-code"></a>Criar um pacote MSIX com o MSIX Core com base no código-fonte
 
-O [MSIX Core](msixcore.md) traz a implantação do MSIX para selecionar versões anteriores do Windows. Você pode aproveitar o instalador do MSIX Core para criar um aplicativo usando o ClickOnce. Isso permitirá que os usuários baixem um setup. exe e instalem o aplicativo MSIX por meio do instalador do MSIX Core.
+O [MSIX Core](msixcore.md) traz a implantação do MSIX para selecionar versões anteriores do Windows. Você pode aproveitar o instalador do MSIX Core para criar um aplicativo usando o ClickOnce. Isso permitirá que os usuários baixem um setup.exe e instalem o aplicativo MSIX por meio do instalador do MSIX Core.
 
 ## <a name="host-your-app-on-a-web-server"></a>Hospedar seu aplicativo em um servidor Web
 
@@ -29,7 +29,7 @@ Para usar essa opção, você deve ter uma assinatura do Azure. Para obter uma, 
 
 Para começar, vá para a [página de portal do Azure](https://portal.azure.com/) e siga estas etapas:
 
-1. Clique em **criar um recurso**.
+1. Clique em **Criar um Recurso**.
 2. Clique em **Web** e selecione **aplicativo Web**.
 3. Em **detalhes da instância**, crie um nome de aplicativo exclusivo e selecione as configurações apropriadas para seu aplicativo. Por exemplo, você precisará escolher entre o **código ou o contêiner do Docker** e a **pilha de tempo de execução**. Caso contrário, deixe todos os outros padrões.
 4. Clique em **criar** e conclua o assistente.
@@ -38,12 +38,12 @@ Para começar, vá para a [página de portal do Azure](https://portal.azure.com/
 
 1. Depois de criar o aplicativo Web, selecione o aplicativo.
 2. Em **ferramentas de desenvolvimento**, clique em **Editor do serviço de aplicativo**.
-3. No editor, há um arquivo **hostingstart. html** padrão. Clique com o botão direito do mouse no espaço vazio do explorador de arquivos e selecione **carregar arquivos** para começar a carregar seus pacotes de aplicativos.
+3. No editor, há um **hostingstart.htmarquivo l** padrão. Clique com o botão direito do mouse no espaço vazio do explorador de arquivos e selecione **carregar arquivos** para começar a carregar seus pacotes de aplicativos.
 4. Clique com o botão direito do mouse no espaço vazio do painel explorador de arquivos novamente e selecione **novos arquivos** para criar um novo arquivo. Nomeie o arquivo como você deseja que sua página HTML padrão seja.
 
 #### <a name="configure-the-web-app-for-app-package-mime-types"></a>Configurar o aplicativo Web para tipos de MIME do pacote de aplicativos
 
-Adicione um novo arquivo chamado Web. config ao aplicativo Web. Abra o arquivo Web. config e adicione o seguinte XML ao arquivo.
+Adicione um novo arquivo chamado Web.config ao aplicativo Web. Abra o arquivo Web.config e adicione o seguinte XML ao arquivo.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -64,14 +64,14 @@ O IIS é um recurso opcional do Windows. Para instalar o IIS:
 
 1. Clique em **Iniciar** e procure **Ativar ou desativar recursos do Windows**.
 2. Selecione **serviços de informações da Internet**. 
-3. Além disso, certifique-se de instalar o **ASP.NET 4,5** ou superior. Na caixa de diálogo **recursos do Windows** , expanda **serviços de informações da Internet** -> **World Wide Web serviços** -> **recursos de desenvolvimento de aplicativos**e selecione uma versão de **ASP.net** que seja maior ou igual a **ASP.NET 4,5**.
+3. Além disso, certifique-se de instalar o **ASP.NET 4,5** ou superior. Na caixa de diálogo **recursos do Windows** , expanda **serviços de informações da Internet**  ->  recursos de desenvolvimento de aplicativos**World Wide Web Services**  ->  **Application Development Features**e selecione uma versão de **ASP.net** que seja maior ou igual a **ASP.NET 4,5**.
 4. Clique em **OK** para iniciar a instalação.
 
-O Visual Studio 2017 (ou uma versão posterior) e as ferramentas de desenvolvimento para a Web são necessários. Se você já tiver o Visual Studio 2017 ou uma versão posterior instalada, verifique se você tem as cargas de trabalho de desenvolvimento de ASP.NET e Web instaladas. Caso contrário, instale o Visual Studio [aqui](https://docs.microsoft.com/visualstudio/install/install-visual-studio).
+O Visual Studio 2017 (ou uma versão posterior) e as ferramentas de desenvolvimento para a Web são necessários. Se você já tiver o Visual Studio 2017 ou uma versão posterior instalada, verifique se você tem as cargas de trabalho de desenvolvimento de ASP.NET e Web instaladas. Caso contrário, instale o Visual Studio [aqui](/visualstudio/install/install-visual-studio).
 
 #### <a name="build-a-web-app"></a>Compilar um aplicativo Web
 
-Inicie o Visual Studio como administrador e crie um novo projeto de **aplicativo Web Visual C#**  com um modelo de projeto vazio.
+Inicie o Visual Studio como administrador e crie um novo projeto de **aplicativo Web do Visual C#** com um modelo de projeto vazio.
 
 #### <a name="configure-iis-with-your-web-app"></a>Configurar o IIS com seu aplicativo Web
 
@@ -84,16 +84,16 @@ Inicie o Visual Studio como administrador e crie um novo projeto de **aplicativo
 Adicione o pacote do aplicativo que você deseja distribuir para o aplicativo Web:
 
 1. Em **Gerenciador de soluções**, clique com o botão direito do mouse no nó do projeto.
-2. Selecione **adicionar** -> **nova pasta** e nomeie a pasta **pacotes**. 
-3. Para adicionar pacotes de aplicativos à pasta, clique com o botão direito do mouse na pasta pacotes e selecione **adicionar** -> **Item existente**. Navegue até o local do pacote do aplicativo.
+2. Selecione **Adicionar**  ->  **nova pasta** e nomeie a pasta **pacotes**. 
+3. Para adicionar pacotes de aplicativos à pasta, clique com o botão direito do mouse na pasta pacotes e selecione **Adicionar**  ->  **Item existente**. Navegue até o local do pacote do aplicativo.
 
 #### <a name="create-a-web-page"></a>Criar uma página da Web
 
-Crie uma página HTML ou qualquer outro aplicativo Web conforme necessário de acordo com suas necessidades. Adicione o link do seu novo setup. exe.
+Crie uma página HTML ou qualquer outro aplicativo Web conforme necessário de acordo com suas necessidades. Adicione o link do seu novo setup.exe.
 
 #### <a name="configure-the-web-app-for-app-package-mime-types"></a>Configurar o aplicativo Web para tipos de MIME do pacote de aplicativos
 
-Abra o arquivo **Web. config** no Gerenciador de soluções e adicione o seguinte XML no elemento <configuration>.
+Abra o arquivo **Web.config** no Gerenciador de soluções e adicione o seguinte XML no <configuration> elemento.
 
 ```xml
 <system.webServer>
@@ -105,7 +105,7 @@ Abra o arquivo **Web. config** no Gerenciador de soluções e adicione o seguint
 </system.webServer>
 ```
 
-### <a name="amazon-web-services-aws"></a>Amazon Web Services (AWS)
+### <a name="amazon-web-services-aws"></a>AWS (Amazon Web Services)
 
 Para usar essa opção, você deve ter uma associação AWS. Para obter mais informações, consulte [detalhes da conta do AWS](https://aws.amazon.com/free/).
 
@@ -119,7 +119,7 @@ O Amazon S3 (Simple Storage Service) é uma oferta AWS para coletar, armazenar e
 
 #### <a name="configure-the-web-app-for-app-package-mime-types"></a>Configurar o aplicativo Web para tipos de MIME do pacote de aplicativos
 
-Usar uma interface de serviço da Web como de [navegador S3](https://s3browser.com/features-content-mime-types-editor.aspx) para adicionar novos **cabeçalhos HTTP padrão**.
+Usando uma interface de serviço Web como o [navegador S3](https://s3browser.com/features-content-mime-types-editor.aspx)   para adicionar novos **cabeçalhos HTTP padrão**.
 
 1. Navegue até **ferramentas** e selecione **cabeçalhos HTTP padrão**.
 2. Na caixa de diálogo **cabeçalhos HTTP padrão** , clique em **Adicionar**.
@@ -134,13 +134,13 @@ Usar uma interface de serviço da Web como de [navegador S3](https://s3browser
 
 ## <a name="use-the-msix-core-installer-to-build-the-clickonce-application"></a>Usar o instalador do MSIX Core para compilar o aplicativo ClickOnce
 
-Localize o aplicativo de aplicativo ClickOnce setup. exe.
+Localize o setup.exe do ClickOnce do aplicativo de aplicativo.
 
-### <a name="run-url-command-to-create-new-setupexe"></a>Execute o comando URL para criar um novo setup. exe
+### <a name="run-url-command-to-create-new-setupexe"></a>Execute o comando URL para criar novos setup.exe
 
 Verifique se você seguiu as instruções para clonar, criar e publicar a solução MSIX Core no Visual Studio.
 
-Navegue até o diretório em que você baixou o arquivo setup. exe e execute este comando:
+Navegue até o diretório em que você baixou o arquivo de setup.exe e execute este comando:
 
 ```PowerShell
 setup-exe - url=<location of your msix in the webservice>
@@ -148,17 +148,17 @@ setup-exe - url=<location of your msix in the webservice>
 
 ### <a name="sign-the-application"></a>Assinar o aplicativo
 
-Como a etapa anterior criou um novo setup. exe, será necessário assinar o aplicativo novamente para verificar se você é um editor confiável do aplicativo e estabelecer a integridade do aplicativo. Você pode usar o [SignTool](https://docs.microsoft.com/dotnet/framework/tools/signtool-exe) e fornecer seu certificado.
+Como a etapa anterior criou um novo setup.exe, será necessário assinar o aplicativo novamente para verificar se você é um editor confiável do aplicativo e estabelecer a integridade do aplicativo. Você pode usar o [SignTool](/dotnet/framework/tools/signtool-exe) e fornecer seu certificado.
 
 ### <a name="distribute-the-application-to-your-users"></a>Distribua o aplicativo para seus usuários
 
-Agora você pode apontar para o novo setup. exe com um link ou botão de download em seu site. O MSIX Core destina-se a usuários no Windows 10, versão 1703 e anteriores. O [instalador do aplicativo](https://docs.microsoft.com/windows/msix/app-installer/installing-windows10-apps-web) é o processo de instalação ideal para pacotes MSIX no Windows 1709 ou uma versão posterior. O instalador do aplicativo otimiza o espaço em disco no lado do consumidor e pode instalar aplicativos diretamente de locais HTTP. O MSIX Core detectará se um consumidor está no Windows 1709 ou em uma versão posterior e os redirecionará para o instalador do aplicativo. 
+Agora você pode apontar para o novo setup.exe com um link ou botão de download em seu site. O MSIX Core destina-se a usuários no Windows 10, versão 1703 e anteriores. O [instalador do aplicativo](../app-installer/installing-windows10-apps-web.md) é o processo de instalação ideal para pacotes MSIX no Windows 1709 ou uma versão posterior. O instalador do aplicativo otimiza o espaço em disco no lado do consumidor e pode instalar aplicativos diretamente de locais HTTP. O MSIX Core detectará se um consumidor está no Windows 1709 ou em uma versão posterior e os redirecionará para o instalador do aplicativo. 
 
-No Microsoft Edge, você pode chamar o método [getHostEnvironmentValue ()](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/mt795399%28v%3dvs.85%29) e o campo *so-Build* no valor de retorno especificará a versão do sistema operacional do usuário. A partir daí, você pode solicitar que o processo de instalação use o MSIX Core (para Windows 10, versão 1703 e anterior) ou o instalador do aplicativo (para Windows 10, versão 1709 e posterior).
+No Microsoft Edge, você pode chamar o método [getHostEnvironmentValue ()](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/mt795399(v=vs.85)) e o campo *so-Build* no valor de retorno especificará a versão do sistema operacional do usuário. A partir daí, você pode solicitar que o processo de instalação use o MSIX Core (para Windows 10, versão 1703 e anterior) ou o instalador do aplicativo (para Windows 10, versão 1709 e posterior).
 
 ## <a name="user-experience"></a>Experiência do usuário
 
-Os usuários simplesmente baixam e executam o setup. exe na página da Web do desenvolvedor.
+Os usuários simplesmente baixam e executam o setup.exe na página da Web do desenvolvedor.
 
-* Se o instalador do MSIX Core ainda não estiver instalado quando o usuário executar Setup. exe, o usuário verá o prompt do ClickOnce e clicará em **instalar** para instalar o instalador do MSIX Core. O instalador é iniciado automaticamente e mostra a tela de instalação do pacote MSIX especificado na cadeia de caracteres de consulta do desenvolvedor para que os usuários possam instalar o aplicativo.
-* Se o instalador do MSIX Core já estiver instalado quando o usuário executar Setup. exe, o instalador do MSIX Core será iniciado automaticamente e mostrará a tela de instalação do pacote MSIX especificado na cadeia de caracteres de consulta para que os usuários instalem o aplicativo.
+* Se o instalador do MSIX Core ainda não estiver instalado quando o usuário executar setup.exe, o usuário verá o prompt do ClickOnce e clicará em **instalar** para instalar o instalador do MSIX Core. O instalador é iniciado automaticamente e mostra a tela de instalação do pacote MSIX especificado na cadeia de caracteres de consulta do desenvolvedor para que os usuários possam instalar o aplicativo.
+* Se o instalador do MSIX Core já estiver instalado quando o usuário executar setup.exe, o instalador do MSIX Core será iniciado automaticamente e mostrará a tela de instalação do pacote MSIX especificado na cadeia de caracteres de consulta para que os usuários instalem o aplicativo.

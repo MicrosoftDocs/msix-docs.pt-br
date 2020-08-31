@@ -1,36 +1,36 @@
 ---
 title: Criar um pacote de aplicativo com a ferramenta MakeAppx.exe
-description: A MakeAppx.exe cria, criptografa, descriptografa e extrai arquivos de pacotes e lotes de aplicativos.
+description: MakeAppx.exe cria, criptografa, descriptografa e extrai arquivos de pacotes e lotes de apps.
 ms.date: 07/29/2019
 ms.topic: article
 keywords: windows 10, uwp, empacotamento
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6ea1e3bc5dbea0531d2d397a523db8b76063d4fe
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 4ff829ad716ae0ff4ea27dc5b45fb54a61ae6eb7
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072896"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091124"
 ---
-# <a name="create-an-msix-package-or-bundle-with-makeappxexe"></a>Criar um pacote ou grupo MSIX com MakeAppx. exe
+# <a name="create-an-msix-package-or-bundle-with-makeappxexe"></a>Criar um pacote ou grupo MSIX com MakeAppx.exe
 
-O **MakeAppx. exe** cria os pacotes de aplicativos (. msix ou. AppX) e os pacotes de pacote do aplicativo (. msixbundle ou. appxbundle). Além disso, a **MakeAppx.exe** extrai arquivos de um pacote ou lote de aplicativo e criptografa ou descriptografa pacotes e lotes de aplicativos. Essa ferramenta está incluída no SDK do Windows 10 e pode ser usada em um prompt de comando ou um arquivo de script.
+**MakeAppx.exe** cria os pacotes de aplicativos (. msix ou. AppX) e os pacotes de pacote de aplicativo (. msixbundle ou. appxbundle). Além disso, a **MakeAppx.exe** extrai arquivos de um pacote ou lote de aplicativo e criptografa ou descriptografa pacotes e lotes de aplicativos. Essa ferramenta está incluída no SDK do Windows 10 e pode ser usada em um prompt de comando ou um arquivo de script.
 
-Para obter informações sobre como usar o **MakeApp. exe** para empacotar um aplicativo de área de trabalho, consulte [empacotar um aplicativo de área de trabalho manualmente](../desktop/desktop-to-uwp-manual-conversion.md).
+Para obter informações sobre como usar **MakeApp.exe** para empacotar um aplicativo de área de trabalho, consulte [empacotar um aplicativo de área de trabalho manualmente](../desktop/desktop-to-uwp-manual-conversion.md).
 
 > [!IMPORTANT]
 > Se você usou o Visual Studio para desenvolver seu app, é recomendável que você use o Assistente do Visual Studio para criar e assinar seu pacote de app. Para obter mais informações, consulte [empacotar um aplicativo UWP com o Visual Studio](packaging-uwp-apps.md) e [empacotar um aplicativo de desktop do código-fonte usando o Visual Studio](../desktop/desktop-to-uwp-packaging-dot-net.md).
 
 > [!IMPORTANT]
-> Observe que o **MakeAppx. exe** não cria um [arquivo de carregamento de pacote de aplicativo (. appxupload ou. msixupload)](packaging-uwp-apps.md#types-of-app-packages), que é o tipo recomendado de pacote de aplicativo válido para [envios para o Partner Center](https://docs.microsoft.com/windows/uwp/publish/upload-app-packages). O arquivo de upload do pacote do aplicativo normalmente é [criado como parte do processo de empacotamento do Visual Studio](packaging-uwp-apps.md#generate-an-app-package-upload-file-for-store-submission), embora também possa ser criado manualmente.
+> Observe que **MakeAppx.exe** não cria um [arquivo de carregamento de pacote de aplicativo (. appxupload ou. msixupload)](packaging-uwp-apps.md#types-of-app-packages), que é o tipo recomendado de pacote de aplicativo válido para [envios para o Partner Center](/windows/uwp/publish/upload-app-packages). O arquivo de upload do pacote do aplicativo normalmente é [criado como parte do processo de empacotamento do Visual Studio](packaging-uwp-apps.md#generate-an-app-package-upload-file-for-store-submission), embora também possa ser criado manualmente.
 
 ## <a name="using-makeappxexe"></a>Usando a MakeAppx.exe
 
 Dependendo do seu caminho de instalação do SDK, a **MakeAppx.exe** é instalada no computador Windows 10 nos seguintes locais:
-- x86: C:\Arquivos de programas (x86) \Windows Kits\10\bin\\&lt;número de Build&gt;\x86\makeappx.exe
-- x64: C:\Arquivos de programas (x86) \Windows Kits\10\bin\\&lt;número de Build&gt;\x64\makeappx.exe
+- x86: C:\Arquivos de programas (x86) \Windows Kits\10\bin \\ &lt; número de Build &gt;\x86\makeappx.exe
+- x64: C:\Arquivos de programas (x86) \Windows Kits\10\bin \\ &lt; número de Build &gt;\x64\makeappx.exe
 
 Não há nenhuma versão ARM dessa ferramenta.
 
@@ -44,19 +44,19 @@ MakeAppx <command> [options]
 
 A tabela a seguir descreve os comandos da **MakeAppx.exe**.
 
-| **Linha**   | **Descrição**                       |
+| **Comando**   | **Descrição**                       |
 |---------------|---------------------------------------|
 | pack          | Cria um pacote.                    |
-| desempacotar        | Extrai todos os arquivos do pacote especificado para o diretório de saída especificado. |
+| unpack        | Extrai todos os arquivos do pacote especificado para o diretório de saída especificado. |
 | bundle        | Cria um pacote.                     |
 | unbundle      | Descompacta todos os pacotes em um subdiretório no caminho de saída especificado nomeado de acordo com o nome completo do pacote. |
 | encrypt       | Cria um pacote ou lote de aplicativo criptografado a partir do pacote/lote de entrada no pacote/lote de saída especificado. |
-| decrypt       | Cria um pacote ou lote de aplicativo descriptografado a partir do pacote/lote de aplicativo de entrada no pacote/lote de saída especificado. |
+| descriptografar       | Cria um pacote ou lote de aplicativo descriptografado a partir do pacote/lote de aplicativo de entrada no pacote/lote de saída especificado. |
 
 
 Esta lista de opções se aplica a todos os comandos:
 
-| **Option**    | **Descrição**                       |
+| **Opção**    | **Descrição**                       |
 |---------------|---------------------------------------|
 | /d            | Especifica a entrada, a saída ou o diretório de conteúdo. |
 | /l            | Usado para pacotes localizados. A validação padrão é bloqueada em pacotes localizados. Essas opção desabilita apenas aquela validação específica, sem exigir que todas as validações sejam desabilitadas. |
@@ -72,7 +72,7 @@ Esta lista de opções se aplica a todos os comandos:
 
 A lista a seguir contém argumentos possíveis:
 
-| **Argumento**                          | **Descrição**                       |
+| **Argument**                          | **Descrição**                       |
 |---------------------------------------|---------------------------------------|
 | &lt;output package name&gt;           | O nome do pacote criado. Esse é o nome do arquivo anexado com. msix ou. Appx. |
 | &lt;encrypted output package name&gt; | O nome do pacote criptografado criado. Esse é o nome do arquivo anexado com. emsix ou. eappx. |
@@ -89,13 +89,13 @@ A lista a seguir contém argumentos possíveis:
 | &lt;algorithm ID&gt;                  | Algoritmos usados durante a criação de um mapa de blocos. Os algoritmos válidos incluem: SHA256 (padrão), SHA384, SHA512. |
 
 
-### <a name="create-an-app-package"></a>{1&gt;Criar um pacote de aplicativos&lt;1}
+### <a name="create-an-app-package"></a>Criar um pacote de aplicativo
 
 Um pacote de aplicativo é um conjunto completo de arquivos do aplicativo empacotado em um arquivo de pacote. msix ou. Appx. Para criar um pacote de aplicativo usando o comando **pack**, você deve informar um diretório de conteúdo ou um arquivo de mapeamento para o local do pacote. Você também pode criptografar um pacote ao criá-lo. Se desejar criptografar o pacote, você deverá usar /ep e especificar se está usando um arquivo de chave (/kf) ou a tecla de teste global (/kt). Para obter mais informações sobre como criar um pacote criptografado, consulte [Criptografar ou descriptografar um pacote ou um lote](#encrypt-or-decrypt-a-package-or-bundle).
 
 Opções específicas ao comando **pack**:
 
-| **Option**    | **Descrição**                       |
+| **Opção**    | **Descrição**                       |
 |---------------|---------------------------------------|
 | /f            | Especifica o arquivo de mapeamento.           |
 | /h            | Especifica o algoritmo de hash a ser usado ao criar o mapa de blocos. Isso pode ser usado apenas com o comando pack. Os algoritmos válidos incluem: SHA256 (padrão), SHA384, SHA512. |
@@ -132,7 +132,7 @@ Um lote de aplicativo é semelhante a um pacote de aplicativo, mas um lote pode 
 
 Opções específicas ao comando **bundle**:
 
-| **Option**    | **Descrição**                       |
+| **Opção**    | **Descrição**                       |
 |---------------|---------------------------------------|
 | /bv           | Especifica o número de versão do lote. O número de versão deve estar em quatro partes separadas por pontos no formato: &lt;Principal&gt;.&lt;Secundário&gt;.&lt;Compilação&gt;.&lt;Revisão&gt;. |
 | /f            | Especifica o arquivo de mapeamento.           |
@@ -162,7 +162,7 @@ Além de empacotar e agrupar apps, a **MakeAppx.exe** também pode desempacotar 
 
 Opções específicas aos comandos **unpack** e **unbundle**:
 
-| **Option**    | **Descrição**                       |
+| **Opção**    | **Descrição**                       |
 |---------------|---------------------------------------|
 | /nd           | Não realiza a descriptografia ao descompactar ou desagrupar o pacote/lote. |
 | /pfn          | Desempacota/desagrupa todos os arquivos em um subdiretório no caminho de saída especificado, nomeado de acordo com o nome completo do pacote ou lote |
@@ -199,7 +199,7 @@ A criptografia e a descriptografia não estão disponíveis com o Assistente de 
 
 Opções específicas aos comandos **encrypt** e **decrypt**:
 
-| **Option**    | **Descrição**                       |
+| **Opção**    | **Descrição**                       |
 |---------------|---------------------------------------|
 | /ep           | Especifica um pacote ou lote de aplicativo criptografado. |
 

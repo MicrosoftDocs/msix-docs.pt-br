@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, msix, msixtoolkit, msix Toolkit, kit de ferramentas, lote, conversão, massa, conversão em massa
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b2af803cc540d393703e68569d8da1a78d478f2d
-ms.sourcegitcommit: 6243b7aca6f52f007f4571c835f580f433c31769
+ms.openlocfilehash: 38f084fcd32f85032dfeb9c08a294828e726c246
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84812785"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091244"
 ---
 # <a name="msix-bulk-conversion-scripts"></a>Scripts de conversão em massa do MSIX
 
@@ -38,7 +38,7 @@ O computador host deve atender aos seguintes requisitos:
             Enable-PSRemoting -force
             ```
     * O dispositivo existe em um grupo de trabalho ou em um domínio alternativo como computador (es) remoto (s):
-        * Habilitar a comunicação remota do PowerShell 
+        * Habilitar a Comunicação Remota do PowerShell 
         * O host confiável do WinRM deve conter o nome do dispositivo ou o endereço IP do computador remoto 
             ```PowerShell
             # Enables PowerShell Remoting
@@ -89,7 +89,7 @@ Este é um conjunto de scripts do PowerShell que fornece a capacidade de empacot
 
 Os aplicativos que estão sendo empacotados no formato de aplicativo MSIX serão convertidos na ordem em que foram inseridos no script de **entry.ps1** . Os computadores remotos listados no script de **entry.ps1** serão usados para empacotar os aplicativos no formato MSIX serão usados singularmente. As máquinas virtuais podem ser usadas várias vezes para empacotar diferentes aplicativos no formato de aplicativo MSIX.
 
-Antes de executar o script, você deve primeiro adicionar os aplicativos que deseja converter para a `conversionsParameters` variável no script. Vários aplicativos podem ser adicionados à variável. O script aproveita o aplicativo e as máquinas remotas/virtuais para criar um arquivo XML formatado para atender aos requisitos da [ferramenta de empacotamento MSIX](..\packaging-tool\mpt-overview.md) (MsixPackagingTool.exe). Depois de criar o arquivo XML, o script de **run_job.ps1** é executado em um novo processo do PowerShell que executa MsixPackagingTool.exe no dispositivo de destino para converter o aplicativo e colocá-lo na pasta **.\Out** localizada na pasta de execução do script.
+Antes de executar o script, você deve primeiro adicionar os aplicativos que deseja converter para a `conversionsParameters` variável no script. Vários aplicativos podem ser adicionados à variável. O script aproveita o aplicativo e as máquinas remotas/virtuais para criar um arquivo XML formatado para atender aos requisitos da [ferramenta de empacotamento MSIX](../packaging-tool/tool-overview.md) (MsixPackagingTool.exe). Depois de criar o arquivo XML, o script de **run_job.ps1** é executado em um novo processo do PowerShell que executa MsixPackagingTool.exe no dispositivo de destino para converter o aplicativo e colocá-lo na pasta **.\Out** localizada na pasta de execução do script.
 
 ## <a name="example"></a>Exemplo
 
@@ -195,10 +195,10 @@ $conversionsParameters = @(
 )
 ```
 
-As informações do aplicativo fornecidas na `conversionsParameters` variável serão usadas para gerar um arquivo XML com todos os detalhes necessários do aplicativo. Depois de criar o arquivo XML, o script passará o arquivo XML para a [ferramenta de empacotamento MSIX](..\packaging-tool\mpt-overview.md) (MsixPackagingTool.exe) para ser empacotado.
+As informações do aplicativo fornecidas na `conversionsParameters` variável serão usadas para gerar um arquivo XML com todos os detalhes necessários do aplicativo. Depois de criar o arquivo XML, o script passará o arquivo XML para a [ferramenta de empacotamento MSIX](../packaging-tool/tool-overview.md) (MsixPackagingTool.exe) para ser empacotado.
 
-## <a name="logging"></a>Registro em log
+## <a name="logging"></a>Registrando em log
 
-O script irá gerar um arquivo de log que descreve o que ocorreu durante a execução do script. O arquivo de log fornecerá detalhes relacionados ao pacote de aplicativos para o formato de empacotamento MSIX e informações relacionadas à progressão de script. Os logs podem ser lidos de qualquer utilitário de texto, mas foram configurados para leitura usando o leitor de log do Trace32. Os erros na execução do script serão realçados como vermelho e os avisos são amarelos. Para obter mais informações sobre o leitor de log 32 de rastreamento, visite [CMTrace](https://docs.microsoft.com/mem/configmgr/core/support/cmtrace) em Microsoft docs.
+O script irá gerar um arquivo de log que descreve o que ocorreu durante a execução do script. O arquivo de log fornecerá detalhes relacionados ao pacote de aplicativos para o formato de empacotamento MSIX e informações relacionadas à progressão de script. Os logs podem ser lidos de qualquer utilitário de texto, mas foram configurados para leitura usando o leitor de log do Trace32. Os erros na execução do script serão realçados como vermelho e os avisos são amarelos. Para obter mais informações sobre o leitor de log 32 de rastreamento, visite [CMTrace](/mem/configmgr/core/support/cmtrace) em Microsoft docs.
 
 O arquivo de log é criado no diretório do script `.\logs\BulkConversion.log` .

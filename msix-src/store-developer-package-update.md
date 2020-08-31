@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP, pacote do aplicativo, atualização do aplicativo, MSIX, appx
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 1d387789c072782199b85d52c79b57c1c94e8312
-ms.sourcegitcommit: 97166b4a273cea789aedcfbb3cba4ce074958ed8
+ms.openlocfilehash: 381c3f06ebc0d9ea3093e3dab48d29eeb0c2533a
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76726626"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090661"
 ---
 # <a name="update-store-published-apps-from-your-code"></a>Atualizar, por meio do seu código, aplicativos publicados na Store
 
@@ -22,7 +22,7 @@ Há duas maneiras fundamentais pelas quais as atualizações de aplicativo podem
 
 ## <a name="simple-updates"></a>Atualizações simples
 
-A primeira e mais importante é a chamada de API muito simples que diz ao sistema para verificar se há atualizações, baixá-las e solicitar permissão do usuário para instalá-las. Você começará usando a classe [StoreContext](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext) para obter objetos [StorePackageUpdate](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StorePackageUpdate) , baixá-los e instalá-los.
+A primeira e mais importante é a chamada de API muito simples que diz ao sistema para verificar se há atualizações, baixá-las e solicitar permissão do usuário para instalá-las. Você começará usando a classe [StoreContext](/uwp/api/Windows.Services.Store.StoreContext) para obter objetos [StorePackageUpdate](/uwp/api/Windows.Services.Store.StorePackageUpdate) , baixá-los e instalá-los.
 
 ```csharp
 using Windows.Services.Store;
@@ -41,7 +41,7 @@ private async void GetEasyUpdates()
 }
 ```
 
-Neste ponto, o usuário tem duas opções que podem escolher: aplicar a atualização agora ou adiar a atualização. Qualquer que seja a opção que o usuário fizer será retornada por meio do objeto `StorePackageUpdateResult`, permitindo que os desenvolvedores realizem outras ações, como fechar o aplicativo se a atualização for necessária para continuar ou simplesmente tentar novamente mais tarde.
+Neste ponto, o usuário tem duas opções que podem escolher: aplicar a atualização agora ou adiar a atualização. Qualquer que seja a opção que o usuário faça será retornada por meio do `StorePackageUpdateResult` objeto, permitindo que os desenvolvedores realizem ações adicionais, como fechar o aplicativo se a atualização for necessária para continuar ou simplesmente tentar novamente mais tarde.
 
 ## <a name="fine-controlled-updates"></a>Atualizações controladas corretamente
 
@@ -79,7 +79,7 @@ private async void DownloadUpdatesAsync()
 }
 ```
 
-### <a name="install-updates"></a>Instalar atualizações
+### <a name="install-updates"></a>Instalar as atualizações
 
 ```csharp
 private async void InstallUpdatesAsync()
@@ -109,7 +109,7 @@ Em alguns casos, pode ser realmente desejável ter uma atualização que deve se
 
 ### <a name="implementing-app-code"></a>Implementando o código do aplicativo
 
-Para aproveitar ao máximo as atualizações obrigatórias, você precisará fazer algumas pequenas modificações no código acima. Você precisará usar o [objeto StorePackageUpdate](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StorePackageUpdate) para determinar se a atualização é obrigatória.
+Para aproveitar ao máximo as atualizações obrigatórias, você precisará fazer algumas pequenas modificações no código acima. Você precisará usar o [objeto StorePackageUpdate](/uwp/api/Windows.Services.Store.StorePackageUpdate) para determinar se a atualização é obrigatória.
 
 ```csharp
  private async bool CheckForMandatoryUpdates()
@@ -131,9 +131,9 @@ Para aproveitar ao máximo as atualizações obrigatórias, você precisará faz
 
 Em seguida, você precisará criar uma caixa de diálogo personalizada no aplicativo para informar ao usuário que há uma atualização obrigatória e que ela deve instalá-la para continuar o uso completo do aplicativo. Se o usuário recusar a atualização, o aplicativo poderá degradar a funcionalidade (por exemplo, impedir o acesso online) ou terminar completamente (por exemplo, jogos somente online).
 
-### <a name="partner-center"></a>Centro de Parceiros
+### <a name="partner-center"></a>Partner Center
 
-Para garantir que o [StorePackageUpdate](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StorePackageUpdate) mostra true para uma atualização obrigatória, você precisará marcar a atualização como obrigatória no Partner Center na página **pacotes** .
+Para garantir que o [StorePackageUpdate](/uwp/api/Windows.Services.Store.StorePackageUpdate) mostra true para uma atualização obrigatória, você precisará marcar a atualização como obrigatória no Partner Center na página **pacotes** .
 
 Algumas coisas a serem observadas:
 

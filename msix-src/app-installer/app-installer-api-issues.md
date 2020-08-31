@@ -6,22 +6,22 @@ ms.topic: article
 keywords: Windows 10, UWP, instalador de aplicativos, AppInstaller, Sideload, API
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ca759a80d443daeb58dd66913be2b2acd9e17eef
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 53bb2f4e4794d8aeb1b6fec9056bcaa891316680
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328269"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89089794"
 ---
 # <a name="app-installer-file-api-issues"></a>Problemas de API de arquivo do instalador de aplicativo
 
 ## <a name="javascript-support-for-app-installer-file-apis"></a>Suporte a JavaScript para APIs de arquivo do instalador de aplicativo
 
-As classes [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager) e [Package](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package) no SDK do Windows fornecem métodos que você pode usar para adicionar ou modificar pacotes por meio de arquivos do instalador de aplicativos ou para recuperar informações sobre aplicativos com uma associação de instalador de aplicativo. Para obter mais informações, confira [Documentação relacionada](app-installer-documentation.md).
+As classes [PackageManager](/uwp/api/windows.management.deployment.packagemanager) e [Package](/uwp/api/windows.applicationmodel.package) no SDK do Windows fornecem métodos que você pode usar para adicionar ou modificar pacotes por meio de arquivos do instalador de aplicativos ou para recuperar informações sobre aplicativos com uma associação de instalador de aplicativo. Para obter mais informações, confira [Documentação relacionada](app-installer-documentation.md).
 
-Desses métodos, [PackageManager. AddPackageByAppInstallerFileAsync](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.addpackagebyappinstallerfileasync), [PackageManager. RequestAddPackageByAppInstallerFileAsync](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.requestaddpackagebyappinstallerfileasync)e [Package. CheckUpdateAvailabilityAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package.checkupdateavailabilityasync) não têm suporte em JavaScript. No entanto, você pode criar um [componente de Windows Runtime](https://docs.microsoft.com/windows/uwp/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript) que chama esses métodos e, em seguida, chamar esse componente de um aplicativo UWP JavaScript.
+Desses métodos, [PackageManager. AddPackageByAppInstallerFileAsync](/uwp/api/windows.management.deployment.packagemanager.addpackagebyappinstallerfileasync), [PackageManager. RequestAddPackageByAppInstallerFileAsync](/uwp/api/windows.management.deployment.packagemanager.requestaddpackagebyappinstallerfileasync)e [Package. CheckUpdateAvailabilityAsync](/uwp/api/windows.applicationmodel.package.checkupdateavailabilityasync) não têm suporte em JavaScript. No entanto, você pode criar um [componente de Windows Runtime](/windows/uwp/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript) que chama esses métodos e, em seguida, chamar esse componente de um aplicativo UWP JavaScript.
 
-Aqui está um exemplo.
+Veja um exemplo.
 
 ```csharp
 namespace CSRuntimeComponent
