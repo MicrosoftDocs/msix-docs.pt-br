@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ce394fa310da995a59289bfb463d643bf2b46413
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 34308aefcd0417bc4461c69f3b3459b125a8bf8c
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77074082"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091214"
 ---
 # <a name="building-an-msix-package-from-your-code"></a>Criar um pacote do MSIX com base em seu código 
 
@@ -36,16 +36,16 @@ Depois de criar um pacote MSIX para o aplicativo de área de trabalho, é possí
 
 Depois de preparar o pacote do aplicativo, será possível aprimorá-lo com recursos como blocos dinâmicos e notificações por push. Alguns desses recursos podem melhorar significativamente o nível de envolvimento do seu aplicativo e podem ser adicionados rapidamente. Outros aprimoramentos exigem um pouco mais de código.
 
-Veja [Usar as APIs da UWP em aplicativos de área de trabalho](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
+Veja [Usar as APIs da UWP em aplicativos de área de trabalho](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
 
 ### <a name="integrate-with-package-extensions"></a>Integrar com extensões de pacote
 
 Caso o aplicativo precise se integrar ao sistema (por exemplo, estabelecer regras de firewall), descreva os itens no manifesto do pacote do aplicativo e o sistema vai se encarregar do resto. Não é necessário escrever códigos para a maioria dessas tarefas. Com um pouco de XML no manifesto, você pode fazer coisas como iniciar um processo quando o usuário fizer logon, integrar o aplicativo no Explorador de Arquivos e adicionar nele uma lista de destinos de impressão que aparecem em outros aplicativos.
 
-Consulte [Integrar o aplicativo da área de trabalho com as extensões de pacote](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions).
+Consulte [Integrar o aplicativo da área de trabalho com as extensões de pacote](/windows/apps/desktop/modernize/desktop-to-uwp-extensions).
 
 ### <a name="extend-with-uwp-components"></a>Estender com componentes UWP
 
-Algumas experiências do Windows 10 (por exemplo, uma página da interface do usuário habilitada para toque) devem ser executadas dentro de um contêiner de aplicativo moderno. Normalmente, primeiro é necessário determinar se é possível adicionar sua experiência [aprimorando](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance) o aplicativo da área de trabalho existente com APIs da UWP. Caso seja necessário usar um componente UWP para obter a experiência, será possível adicionar um projeto UWP à solução e usar os serviços de aplicativo para fazer a comunicação entre o aplicativo da área de trabalho e o componente UWP.
+Algumas experiências do Windows 10 (por exemplo, uma página da interface do usuário habilitada para toque) devem ser executadas dentro de um contêiner de aplicativo moderno. Normalmente, primeiro é necessário determinar se é possível adicionar sua experiência [aprimorando](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) o aplicativo da área de trabalho existente com APIs da UWP. Caso seja necessário usar um componente UWP para obter a experiência, será possível adicionar um projeto UWP à solução e usar os serviços de aplicativo para fazer a comunicação entre o aplicativo da área de trabalho e o componente UWP.
 
-Veja [Estender seu aplicativo da área de trabalho com componentes UWP](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extend).
+Veja [Estender seu aplicativo da área de trabalho com componentes UWP](/windows/apps/desktop/modernize/desktop-to-uwp-extend).

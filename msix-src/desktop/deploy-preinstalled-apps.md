@@ -7,12 +7,12 @@ author: dianmsft
 ms.author: diahar
 keywords: windows 10, msix, uwp, pacotes opcionais, conjunto relacionado, extensão de pacote, visual studio, dism, pré-instalar, pré-instalação, aplicativos empacotados
 ms.localizationpriority: medium
-ms.openlocfilehash: be5c13d0374ed058934c920053f52a1fdc39df43
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 100e1b95aae5161a0811459e3dfbee866f7d56a8
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "81614001"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090094"
 ---
 # <a name="preinstalling-packaged-apps"></a>Como pré-instalar aplicativos empacotados
 Há várias ferramentas que podem ser usadas para instalar um aplicativo empacotado MSIX em um dispositivo para todos os usuários:
@@ -48,10 +48,9 @@ No Windows 10, versão 2004, um aplicativo empacotado provisionado será reinsta
 
 ## <a name="powershell"></a>PowerShell
 Lista de comandos relevantes do PowerShell
-* **[Get-ProvisionedAppxPackages](https://docs.microsoft.com/powershell/module/dism/get-appxprovisionedpackage?view=win10-ps)** Isso listará todos os aplicativos pré-instalados na imagem.
-* **[Add-ProvisionedAppxPackage](https://docs.microsoft.com/powershell/module/dism/add-appxprovisionedpackage?view=win10-ps)** Isso prepara o pacote appx e o configura para pré-instalação. Todas as dependências também precisam ser fornecidas, as quais podem ser encontradas no SDK ou nos pacotes baixados da Microsoft Store.
-* **[Remove-ProvisionedAppxPackage](https://docs.microsoft.com/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps)** Isso pode ser usado para remover um aplicativo pré-instalado. Observe que isso não remove o aplicativo caso ele já esteja registrado para algum usuário; apenas remove o comportamento de registro automático para que ele não seja atualizado automaticamente para os novos usuários.  Caso nenhum usuário tenha instalado o aplicativo, esse comando também removerá os arquivos preparados.
+* **[Get-ProvisionedAppxPackages](/powershell/module/dism/get-appxprovisionedpackage?view=win10-ps)** Isso listará todos os aplicativos pré-instalados na imagem.
+* **[Add-ProvisionedAppxPackage](/powershell/module/dism/add-appxprovisionedpackage?view=win10-ps)** Isso prepara o pacote appx e o configura para pré-instalação. Todas as dependências também precisam ser fornecidas, as quais podem ser encontradas no SDK ou nos pacotes baixados da Microsoft Store.
+* **[Remove-ProvisionedAppxPackage](/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps)** Isso pode ser usado para remover um aplicativo pré-instalado. Observe que isso não remove o aplicativo caso ele já esteja registrado para algum usuário; apenas remove o comportamento de registro automático para que ele não seja atualizado automaticamente para os novos usuários.  Caso nenhum usuário tenha instalado o aplicativo, esse comando também removerá os arquivos preparados.
 
 ## <a name="licensing"></a>Licenciamento
 O licenciamento se aplica somente ao provisionamento de um aplicativo da Windows Store. Qualquer outro aplicativo pode ser provisionado sem uma licença. Se um aplicativo for da Store, uma licença de computador também deverá ser fornecida quando o aplicativo for provisionado. Nesse momento, todos os aplicativos pré-instalados da Windows Store precisam ser gratuitos e configurados como pré-instaláveis pelo Partner Center da Windows Store. Depois de configurados, o pacote pré-instalável e a licença podem ser baixados e provisionados em qualquer imagem.
-

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
-ms.openlocfilehash: 08a21a15d5e9929d7f7b01e0865ee90da45f8a7c
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: ca179a49a282d2bee6217a142ef94409e2161c8d
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77074182"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091224"
 ---
 # <a name="registering-a-package-layout-from-a-network-share"></a>Registrar um layout de pacote de um compartilhamento de rede
 
@@ -31,11 +31,11 @@ Várias pessoas podem contribuir para um único layout de pacote de aplicativo e
 
 ## <a name="in-visual-studio"></a>No Visual Studio
 
-Se estiver desenvolvendo no Visual Studio, será possível seguir as etapas descritas [aqui](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps?redirectedfrom=MSDN#advanced-remote-deployment-options).
+Se estiver desenvolvendo no Visual Studio, será possível seguir as etapas descritas [aqui](/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#advanced-remote-deployment-options).
 
 ## <a name="from-the-command-line"></a>Da linha de comando
 
-Caso não esteja desenvolvendo no Visual Studio e usando ferramentas de linha de comando, será possível usar [WinDeployAppCmd](https://docs.microsoft.com/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool). Abaixo está um exemplo de como fazer isso por uma janela de linha de comando:
+Caso não esteja desenvolvendo no Visual Studio e usando ferramentas de linha de comando, será possível usar [WinDeployAppCmd](/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool). Abaixo está um exemplo de como fazer isso por uma janela de linha de comando:
 
 ```
 WinAppDeployCmd.exe registerfiles -remotedeploydir <network path> -ip <IP Address> -pin <target machine PIN>

@@ -1,16 +1,16 @@
 ---
-Description: Este guia explica como configurar a solução do Visual Studio para otimizar os binários do aplicativo com imagens nativas.
+description: Este guia explica como configurar a solução do Visual Studio para otimizar os binários do aplicativo com imagens nativas.
 title: Otimize os aplicativos de área de trabalho .NET com imagens nativas
 ms.date: 07/29/2019
 ms.topic: article
 keywords: windows 10, uwp, msix, compilador de imagem nativa
 ms.localizationpriority: medium
-ms.openlocfilehash: ebc2c7351fef0856d83529e55ba4ebf012aaaeed
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: c4f0bfda14c6d14b75da0478366196cbaf14ca16
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77073086"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090034"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>Otimize os aplicativos de área de trabalho .NET com imagens nativas
 
@@ -91,7 +91,7 @@ A. Os binários otimizados vão se beneficiar das melhorias se forem executados 
 
 **P. Como posso fornecer comentários ou relatar problemas?**
 
-A. Informe um problema usando a ferramenta Comentários no Visual Studio 2017. [Mais informações](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017).
+A. Informe um problema usando a ferramenta Comentários no Visual Studio 2017. [Mais informações](/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017).
 
 **P. Qual é o impacto de adicionar a imagem nativa aos binários existentes?**
 

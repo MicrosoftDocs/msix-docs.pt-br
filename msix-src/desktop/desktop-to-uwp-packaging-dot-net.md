@@ -1,17 +1,17 @@
 ---
-Description: Este guia explica como configurar a Solução do Visual Studio para editar, depurar e empacotar o aplicativo da área de trabalho.
+description: Este guia explica como configurar a Solução do Visual Studio para editar, depurar e empacotar o aplicativo da área de trabalho.
 title: Empacotar um aplicativo da área de trabalho no código-fonte usando o Visual Studio
 ms.date: 02/02/2020
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: fcaca4943d3101600ef408b0e1d0349e2fc06f94
-ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
+ms.openlocfilehash: d609bfa787cd1e53dfe66a02566a9fd66b8db185
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84724550"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090114"
 ---
 # <a name="set-up-your-desktop-application-for-msix-packaging-in-visual-studio"></a>Configurar o aplicativo da área de trabalho para empacotamento MSIX no Visual Studio
 
@@ -103,12 +103,12 @@ Veja [Executar, depurar e testar um aplicativo empacotado](desktop-to-uwp-debug.
 
 **Aprimorar o aplicativo de área de trabalho adicionando APIs da UWP**
 
-Veja [Aprimorar o aplicativo de área de trabalho para o Windows 10](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance)
+Veja [Aprimorar o aplicativo de área de trabalho para o Windows 10](/windows/apps/desktop/modernize/desktop-to-uwp-enhance)
 
 **Estenda o aplicativo da área de trabalho adicionando projetos UWP e Componentes do Windows Runtime**
 
-Veja [Estender o aplicativo de área de trabalho com componentes UWP modernos](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extend).
+Veja [Estender o aplicativo de área de trabalho com componentes UWP modernos](/windows/apps/desktop/modernize/desktop-to-uwp-extend).
 
 **Distribuir o aplicativo**
 
-Veja [Distribuir um aplicativo de área de trabalho empacotado](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-distribute).
+Veja [Distribuir um aplicativo de área de trabalho empacotado](/windows/apps/desktop/modernize/desktop-to-uwp-distribute).

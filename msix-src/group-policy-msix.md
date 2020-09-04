@@ -5,20 +5,20 @@ ms.date: 04/12/2019
 ms.topic: article
 keywords: MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: d7c5bec4b088bd5bf9f003b3936d14529f53197c
-ms.sourcegitcommit: 6243b7aca6f52f007f4571c835f580f433c31769
+ms.openlocfilehash: 100fd87c2d40bcb15aa68ad146fb7de693b965a8
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84812739"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090414"
 ---
 # <a name="group-policy-and-msix-packaged-apps"></a>Política de Grupo e aplicativos empacotados como MSIX
 
 Os desenvolvedores que usam o MSIX podem aproveitar a Política de Grupo de modo semelhante a como se beneficiam de outros tipos de instaladores.
 
-Se você empacotar o aplicativo Win32 em um MSIX (ou se criou o aplicativo usando a Ponte de Desktop), o aplicativo terá a funcionalidade de confiança total habilitada. Isso permitirá que você faça a leitura das chaves do Registro da Política de Grupo. Durante o tempo de execução, o aplicativo terá a mesma exibição do registro da Política de Grupo que teria se tivesse sido instalado usando um método diferente. Do Windows 10 versão 1809 em diante, se o aplicativo for um aplicativo da UWP (Plataforma Universal do Windows), ele poderá acessar as mesmas chaves da Política de Grupo. Para obter mais informações sobre como criar a Política de Grupo, consulte [este artigo](https://docs.microsoft.com/openspecs/windows_protocols/ms-gpreg/834da877-264f-4589-9b80-b6b012c8edc3).
+Se você empacotar o aplicativo Win32 em um MSIX (ou se criou o aplicativo usando a Ponte de Desktop), o aplicativo terá a funcionalidade de confiança total habilitada. Isso permitirá que você faça a leitura das chaves do Registro da Política de Grupo. Durante o tempo de execução, o aplicativo terá a mesma exibição do registro da Política de Grupo que teria se tivesse sido instalado usando um método diferente. Do Windows 10 versão 1809 em diante, se o aplicativo for um aplicativo da UWP (Plataforma Universal do Windows), ele poderá acessar as mesmas chaves da Política de Grupo. Para obter mais informações sobre como criar a Política de Grupo, consulte [este artigo](/openspecs/windows_protocols/ms-gpreg/834da877-264f-4589-9b80-b6b012c8edc3).
 
-Se você estiver convertendo um instalador existente em MSIX usando a [Ferramenta de Empacotamento MSIX](mpt-overview.md), não precisará fazer nenhuma alteração para que o aplicativo dê suporte à Política de Grupo. Continue gerenciando as Políticas de Grupo como normalmente faria para o instalador original. Os aplicativos convertidos para MSIX ainda poderão fazer a leitura por meio das chaves do Registro da Política de Grupo existente. 
+Se você estiver convertendo um instalador existente em MSIX usando a [Ferramenta de Empacotamento MSIX](./packaging-tool/tool-overview.md), não precisará fazer nenhuma alteração para que o aplicativo dê suporte à Política de Grupo. Continue gerenciando as Políticas de Grupo como normalmente faria para o instalador original. Os aplicativos convertidos para MSIX ainda poderão fazer a leitura por meio das chaves do Registro da Política de Grupo existente. 
 
 A Política de Grupo não tem suporte nativo para a instalação de aplicativos MSIX. 
 

@@ -1,17 +1,17 @@
 ---
-Description: Uma visão geral dos tópicos sobre criação de um pacote do MSIX com base em código-fonte
+description: Uma visão geral dos tópicos sobre criação de um pacote do MSIX com base em código-fonte
 title: Criar um pacote do MSIX com base em seu código
 ms.date: 01/27/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5d0f2105f9ac7fa245b2ced572a7c9c75485b2f0
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 6fb34afdbe3b3b5f74c6a19997e6c7a29994b471
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77074032"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090614"
 ---
 # <a name="extend-your-packaged-applications"></a>Estenda os aplicativos empacotados
 
@@ -25,8 +25,6 @@ As extensões de aplicativo também são pacotes independentes. Elas podem ser a
 
 |Tópico| Descrição |
 |:---|:---|
-|[Criação e hospedagem de uma extensão de aplicativo](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-an-extension?context=/windows/msix/render)|Esta seção aborda como criar e hospedar uma extensão de aplicativo no pacote MSIX. |
+|[Criação e hospedagem de uma extensão de aplicativo](/windows/uwp/launch-resume/how-to-create-an-extension?context=%252fwindows%252fmsix%252frender)|Esta seção aborda como criar e hospedar uma extensão de aplicativo no pacote MSIX. |
 [Propriedades personalizadas de extensões de aplicativo](custom-props-app-extensions.md)|Esta seção discute como usar as propriedades personalizadas de extensões de aplicativo. |
 |[Extensão do aplicativo usando pacotes opcionais](../package/optional-packages-with-executable-code.md)| Esta seção aborda como aproveitar o modelo de pacote opcional para carregar conteúdo no pacote principal. |
-
-

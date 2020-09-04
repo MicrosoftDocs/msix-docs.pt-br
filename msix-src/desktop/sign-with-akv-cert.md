@@ -5,12 +5,12 @@ ms.date: 05/07/2020
 ms.topic: article
 keywords: Windows 10, MSIX, UWP, Azure Key Vault, Visual Studio
 ms.localizationpriority: medium
-ms.openlocfilehash: d7dec1116ddbb56d335a5734f360eb7cfffa41f6
-ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
+ms.openlocfilehash: ac69ae105dbd1fff5d64c20f50af644f9d27504f
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84740485"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090424"
 ---
 # <a name="sign-packages-with-azure-key-vault"></a>Assinar pacotes com o Azure Key Vault
 
@@ -22,7 +22,7 @@ No Visual Studio 2019 versão 16.6 (Versão Prévia 3 e versões posteriores), v
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Uma conta do Azure. Caso ainda não tenha uma conta do Azure, inicie [aqui](https://azure.microsoft.com/free/).
-- Um Azure Key Vault. Para obter mais informações, confira [Criar um Key Vault](https://docs.microsoft.com/azure/key-vault/secrets/quick-create-portal#create-a-vault).
+- Um Azure Key Vault. Para obter mais informações, confira [Criar um Key Vault](/azure/key-vault/secrets/quick-create-portal#create-a-vault).
 - Um certificado de assinatura de pacote válido importado para o Azure Key Vault. O certificado padrão gerado pelo Azure Key Vault não funcionará para a assinatura de código. Para obter detalhes sobre como criar um certificado de assinatura de pacote, confira [Criar um certificado para assinatura de pacote](../package/create-certificate-package-signing.md).
 
 ## <a name="import-a-certificate-to-your-key-vault"></a>Importar um certificado para o Key Vault
@@ -43,7 +43,7 @@ Adicionar um certificado ao Key Vault é muito simples. Neste exemplo, adicionam
 
 ## <a name="configure-the-access-policies-for-your-key-vault"></a>Configurar as políticas de acesso para o Key Vault
 
-Você poderá controlar quem tem acesso ao conteúdo do Key Vault usando as **políticas de acesso**. As políticas de acesso ao Key Vault concedem permissões separadamente a chaves, segredos e certificados. Você poderá permitir a um usuário acesso apenas a chaves e não a segredos. As permissões de acesso a chaves, segredos e certificados são gerenciadas no nível do cofre. Para obter mais informações, confira [Segurança do Azure Key Vault](https://docs.microsoft.com/azure/key-vault/general/overview-security#identity-and-access-management).
+Você poderá controlar quem tem acesso ao conteúdo do Key Vault usando as **políticas de acesso**. As políticas de acesso ao Key Vault concedem permissões separadamente a chaves, segredos e certificados. Você poderá permitir a um usuário acesso apenas a chaves e não a segredos. As permissões de acesso a chaves, segredos e certificados são gerenciadas no nível do cofre. Para obter mais informações, confira [Segurança do Azure Key Vault](/azure/key-vault/general/overview-security#identity-and-access-management).
 
 > [!NOTE]
 > Quando você cria um Key Vault em uma assinatura do Azure, ele é automaticamente associado ao locatário do Azure Active Directory da assinatura. Qualquer pessoa que tentar gerenciar ou recuperar conteúdo de um Key Vault deverá ser autenticada pelo Azure AD.

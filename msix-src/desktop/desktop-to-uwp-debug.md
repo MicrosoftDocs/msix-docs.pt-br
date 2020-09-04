@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f4e0fe597847ab88c7929fd398c4ddb5dfa1f9c
-ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
+ms.openlocfilehash: 4996c7c868fb07424f88c4e1d381d6d99c06efbf
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84724590"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090084"
 ---
 # <a name="run-debug-and-test-an-msix-package"></a>Executar, depurar e testar um pacote MSIX
 
@@ -69,9 +69,9 @@ Se você fizer alterações no aplicativo para corrigir bugs, reempacote-o e use
 
 Em alguns casos, você poderá querer um controle mais refinado do processo de depuração incluindo a capacidade de depurar o aplicativo antes que ele seja iniciado.
 
-Você pode usar o [PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx) para obter controle total do ciclo de vida do aplicativo, incluindo suspensão, retomada e encerramento.
+Você pode usar o [PLMDebug](/windows-hardware/drivers/debugger/plmdebug) para obter controle total do ciclo de vida do aplicativo, incluindo suspensão, retomada e encerramento.
 
-O [PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx) está incluído no SDK do Windows.
+O [PLMDebug](/windows-hardware/drivers/debugger/plmdebug) está incluído no SDK do Windows.
 
 ## <a name="test-your-app"></a>Teste seu aplicativo
 

@@ -1,5 +1,5 @@
 ---
-Description: Mostra como empacotar manualmente um aplicativo de área de trabalho do Windows (como Win32, WPF e Windows Forms) para Windows 10.
+description: Mostra como empacotar manualmente um aplicativo de área de trabalho do Windows (como Win32, WPF e Windows Forms) para Windows 10.
 title: Empacotar um aplicativo manualmente (Ponte de Desktop)
 ms.date: 07/29/2019
 ms.topic: article
@@ -7,12 +7,12 @@ keywords: Windows 10, UWP, MSIX
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0345e15ad014afb9461eccc6ed112550a3c0c7a8
-ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
+ms.openlocfilehash: 0abfa56857bc417df1381ec56ef3627ac17b7e1c
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84724530"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090044"
 ---
 # <a name="generating-msix-package-components"></a>Geração de componentes do pacote MSIX
 
@@ -80,7 +80,7 @@ Este é um exemplo do elemento **Identity** com texto de espaço reservado para 
 
 ### <a name="properties"></a>Propriedades
 
-O elemento [Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) tem 3 elementos filhos necessários. Este é um exemplo do nó **Propriedades** com texto de espaço reservado para os elementos. O **DisplayName** é o nome do aplicativo que você reserva na Microsoft Store para aplicativos que são carregados na Microsoft Store.
+O elemento [Properties](/uwp/schemas/appxpackage/appxmanifestschema/element-properties) tem 3 elementos filhos necessários. Este é um exemplo do nó **Propriedades** com texto de espaço reservado para os elementos. O **DisplayName** é o nome do aplicativo que você reserva na Microsoft Store para aplicativos que são carregados na Microsoft Store.
 
 ```XML
 <Properties>
@@ -92,7 +92,7 @@ O elemento [Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxm
 
 ### <a name="resources"></a>Recursos
 
-Este é um exemplo do nó [Recursos](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-resources).
+Este é um exemplo do nó [Recursos](/uwp/schemas/appxpackage/appxmanifestschema/element-resources).
 
 ```XML
 <Resources>
@@ -135,7 +135,7 @@ Nos aplicativos de área de trabalho para os quais você cria um pacote, o atrib
 
 ### <a name="visual-elements"></a>Elementos visuais
 
-Este é um exemplo do nó [VisualElements](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements).
+Este é um exemplo do nó [VisualElements](/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements).
 
 ```XML
 <uap:VisualElements
@@ -149,7 +149,7 @@ Este é um exemplo do nó [VisualElements](https://docs.microsoft.com/uwp/schema
 
 ## <a name="optional-add-target-based-unplated-assets"></a>(Opcional) Adicione ativos não incluídos no destino
 
-Os ativos baseados no destino são para ícones e blocos que aparecem na barra de tarefas do Windows, na visão de tarefas, em ALT+TAB, no Assistente de Ajuste e no canto inferior direito dos blocos em Iniciar. Você pode ler mais sobre isso [aqui](https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos#unplated-assets).
+Os ativos baseados no destino são para ícones e blocos que aparecem na barra de tarefas do Windows, na visão de tarefas, em ALT+TAB, no Assistente de Ajuste e no canto inferior direito dos blocos em Iniciar. Você pode ler mais sobre isso [aqui](/windows/uwp/design/style/app-icons-and-logos#unplated-assets).
 
 1. Obtenha as imagens 44x44 corretas e copie-as para a pasta que contém as imagens (ou seja, Ativos).
 
@@ -204,5 +204,3 @@ Consulte [Criar um pacote ou grupo MSIX com a ferramenta MakeAppx.exe](../packag
 
 > [!NOTE]
 > Um aplicativo empacotado sempre é executado como um usuário interativo e qualquer unidade na qual você instale seu aplicativo empacotado deve estar formatada em NTFS.
-
-

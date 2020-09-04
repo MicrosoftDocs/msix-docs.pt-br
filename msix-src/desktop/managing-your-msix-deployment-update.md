@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, implantação, msix
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: 893b67394b4ed996d4506a65b030205a1b8a9f3f
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 80258b0b63b16ed02ac12a0b103ac1a4c8949c8e
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77074112"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091234"
 ---
 # <a name="differential-updates-for-msix-app-packages"></a>Atualizações diferenciais para pacotes do aplicativo MSIX
 
@@ -47,5 +47,4 @@ A instalação de um pacote do aplicativo MSIX em um dispositivo usando o PowerS
 | -RetainFilesOnFailure | Caso haja falha na implantação, se a opção estiver definida como True, os arquivos criados no computador de destino durante o processo de instalação não serão removidos. |
 | -Update | Especifica que o pacote sendo adicionado é uma atualização de pacote de dependência. Um pacote de dependência é removido quando o aplicativo primário é removido. Se não for especificado, o pacote não será removido quando o aplicativo primário for removido. |
 
-Para obter uma lista completa dos parâmetros disponíveis para este cmdlet, visite o artigo PowerShell em [add-appxpackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps).
-
+Para obter uma lista completa dos parâmetros disponíveis para este cmdlet, visite o artigo PowerShell em [add-appxpackage](/powershell/module/appx/add-appxpackage?view=win10-ps).

@@ -1,17 +1,17 @@
 ---
-Description: Você pode usar o Azure Pipelines para criar builds automatizados para seu projeto MSIX.
+description: Você pode usar o Azure Pipelines para criar builds automatizados para seu projeto MSIX.
 title: Configure um pipeline da CI/CD para automatizar builds e implantações do MSIX
 ms.date: 01/27/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 21b5f8f78a12f1942ca3f723f0c0b8052c44062e
-ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
+ms.openlocfilehash: 79b8e7472685f63104a8d5e1066a316a970ab8aa
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84724580"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090624"
 ---
 # <a name="set-up-a-cicd-pipeline-to-automate-your-msix-builds-and-deployments"></a>Configure um pipeline da CI/CD para automatizar builds e implantações do MSIX
 
@@ -19,9 +19,9 @@ Você pode usar o Azure Pipelines para criar builds automatizados para seu proje
 
 ## <a name="create-a-new-azure-pipeline"></a>Crie um novo pipeline do Azure
 
-Comece [inscrevendo-se no Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/pipelines-sign-up) caso ainda não tenha feito isso.
+Comece [inscrevendo-se no Azure Pipelines](/azure/devops/pipelines/get-started/pipelines-sign-up) caso ainda não tenha feito isso.
 
-Em seguida, crie um pipeline que possa ser usado para criar seu código-fonte. Para obter um tutorial sobre como criar um pipeline para criar um repositório GitHub, consulte [Crie seu primeiro pipeline](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml). O Azure Pipelines é compatível com os tipos de repositório listados [neste artigo](https://docs.microsoft.com/azure/devops/pipelines/repos).
+Em seguida, crie um pipeline que possa ser usado para criar seu código-fonte. Para obter um tutorial sobre como criar um pipeline para criar um repositório GitHub, consulte [Crie seu primeiro pipeline](/azure/devops/pipelines/get-started-yaml). O Azure Pipelines é compatível com os tipos de repositório listados [neste artigo](/azure/devops/pipelines/repos).
 
 Para configurar o pipeline do build propriamente dito, navegue para o portal Azure DevOps em dev.azure.com/\<organization\> e crie um novo projeto. Se não tiver uma conta, crie uma gratuitamente. Depois de entrar e criar um projeto, você poderá enviar o código-fonte por push ao repositório Git configurado para você em https://\<organization\>@dev.azure.com/<organization\>/\<project\>/_git/\<project\> ou usar qualquer outro provedor, como o GitHub. Você poderá escolher a localização do repositório ao criar um pipeline no portal, basta primeiro clicar no botão **Pipelines**, depois em **Novo Pipeline**.
 
@@ -30,7 +30,7 @@ Na tela **Configurar** que aparecerá em seguida, você deverá selecionar a op�
 ## <a name="add-your-project-certificate-to-the-secure-files-library"></a>Adicione o certificado do projeto à biblioteca Arquivos seguros
 
 > [!NOTE]
->Se possível, você deve evitar enviar certificados para o seu repositório e o git os ignorará por padrão. Para gerenciar o tratamento seguro de arquivos confidenciais como certificados, o Azure DevOps oferece suporte ao recurso [arquivos seguros](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops).
+>Se possível, você deve evitar enviar certificados para o seu repositório e o git os ignorará por padrão. Para gerenciar o tratamento seguro de arquivos confidenciais como certificados, o Azure DevOps oferece suporte ao recurso [arquivos seguros](/azure/devops/pipelines/library/secure-files?view=azure-devops).
 
 Para carregar um certificado em seu build automatizado:
 
@@ -38,10 +38,10 @@ Para carregar um certificado em seu build automatizado:
 2. Clique na guia **Arquivos seguros** e clique em **+ Arquivo seguro**.
 3. Navegue até o arquivo de certificado e clique em **OK**.
 4. Depois de carregar o certificado, selecione-o para visualizar as propriedades dele. Em **Permissões de pipeline**, habilite a opção **Autorizar para uso em todos os pipelines**.
-5. Se a chave privada no certificado tiver uma senha, recomendamos que você a armazene no [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) e a vincule a um [grupo de variáveis](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Você pode usar a variável para acessar a senha pelo pipeline. Observe que uma senha é compatível apenas com a chave privada. No momento, não é possível usar um arquivo de certificado que seja, em si, protegido por senha.
+5. Se a chave privada no certificado tiver uma senha, recomendamos que você a armazene no [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) e a vincule a um [grupo de variáveis](/azure/devops/pipelines/library/variable-groups). Você pode usar a variável para acessar a senha pelo pipeline. Observe que uma senha é compatível apenas com a chave privada. No momento, não é possível usar um arquivo de certificado que seja, em si, protegido por senha.
 
 > [!NOTE]
-> A partir do Visual Studio 2019, um certificado temporário não é mais gerado nos projetos MSIX. Para criar ou exportar certificados, use os cmdlets do PowerShell descritos [neste artigo](/windows/msix/package/create-certificate-package-signing).
+> A partir do Visual Studio 2019, um certificado temporário não é mais gerado nos projetos MSIX. Para criar ou exportar certificados, use os cmdlets do PowerShell descritos [neste artigo](../package/create-certificate-package-signing.md).
 
 
 ## <a name="configure-the-build-in-your-yaml-file"></a>Configure o Build no arquivo YAML
@@ -59,7 +59,7 @@ Os diferentes argumentos MSBuild que podem ser definidos para configurar o pipel
 | AppxPackageSigningEnabled | verdadeiro | Habilita a assinatura do pacote. |
 | PackageCertificateThumbprint | Impressão digital do certificado | Esse valor **deve** corresponder à impressão digital no certificado de autenticação ou ser uma cadeia de caracteres vazia. |
 | PackageCertificateKeyFile | Caminho | O caminho para o certificado a ser usado. Isso é recuperado pelos metadados do arquivo seguro. |
-| PackageCertificatePassword | Senha | A senha da chave privada no certificado. Recomendamos que você armazene a senha no [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) e vincule-a ao [grupo de variáveis](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Você pode passar a variável para este argumento. |
+| PackageCertificatePassword | Senha | A senha da chave privada no certificado. Recomendamos que você armazene a senha no [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) e vincule-a ao [grupo de variáveis](/azure/devops/pipelines/library/variable-groups). Você pode passar a variável para este argumento. |
 
 
 
@@ -164,7 +164,7 @@ Em seguida, atualize a tarefa MSBuild para fazer referência ao certificado de a
 Os parâmetros definidos com a sintaxe `$()` são variáveis ajustadas na definição do build e serão alterados em outros sistemas de build.
 
 
-Para ver todas as variáveis predefinidas, consulte [Variáveis de build predefinidas](https://docs.microsoft.com/azure/devops/pipelines/build/variables).
+Para ver todas as variáveis predefinidas, consulte [Variáveis de build predefinidas](/azure/devops/pipelines/build/variables).
 
 ## <a name="configure-the-publish-build-artifacts-task"></a>Configure a tarefa Publicar Artefatos de Build
 
@@ -291,5 +291,3 @@ O arquivo HTML gerado inclui um hiperlink prefixado com o esquema de ativação 
 ```
 
 Se você configurar um pipeline de lançamento que publica o conteúdo da pasta de destino na intranet ou em qualquer outro site e o servidor Web oferecer suporte a solicitações de intervalo de bytes e estiver configurado corretamente, os usuários finais poderão usar esse link para instalar o aplicativo diretamente sem baixar o pacote MSIX primeiro.
-
-

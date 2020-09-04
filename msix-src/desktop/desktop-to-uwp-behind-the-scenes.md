@@ -1,17 +1,17 @@
 ---
-Description: Este artigo detalha a foma como a Ponte de Desktop funciona nos bastidores.
+description: Este artigo detalha a foma como a Ponte de Desktop funciona nos bastidores.
 title: Nos bastidores da ponte da área de trabalho
 ms.date: 01/30/2020
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.localizationpriority: medium
-ms.openlocfilehash: c646f8c393c43a6aa01fc0cf594b269cef984433
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 6e7641f095ef7a74210c796d52f62c778d8b040d
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77072737"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090074"
 ---
 # <a name="understanding-how-packaged-desktop-apps-run-on-windows"></a>Noções básicas sobre como os aplicativos da área de trabalho empacotados são executados no Windows
 
@@ -58,7 +58,7 @@ Essa curta tabela de referência mostra operações comuns de sistema de arquivo
 
 ### <a name="packaged-vfs-locations"></a>Locais dos pacotes VFS
 
-A tabela a seguir mostra onde os arquivos fornecidos como parte do pacote são sobrepostos no sistema para o aplicativo. O aplicativo perceberá que os arquivos esses arquivos estão nos locais de sistema listados quando, na verdade, eles estão nos locais redirecionados em *C:\Program Files\WindowsApps\package_name\VFS*. Os locais de FOLDERID são das constantes [**KNOWNFOLDERID**](https://msdn.microsoft.com/library/windows/desktop/dd378457.aspx).
+A tabela a seguir mostra onde os arquivos fornecidos como parte do pacote são sobrepostos no sistema para o aplicativo. O aplicativo perceberá que os arquivos esses arquivos estão nos locais de sistema listados quando, na verdade, eles estão nos locais redirecionados em *C:\Program Files\WindowsApps\package_name\VFS*. Os locais de FOLDERID são das constantes [**KNOWNFOLDERID**](/windows/win32/shell/knownfolderid).
 
 Local do sistema | Local redirecionado (em [PackageRoot]\VFS\) | Válido em arquiteturas
  :--- | :--- | :---

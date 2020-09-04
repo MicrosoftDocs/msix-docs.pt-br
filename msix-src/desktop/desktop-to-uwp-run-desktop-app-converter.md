@@ -1,22 +1,22 @@
 ---
-Description: Execute o Desktop App Converter para empacotar um aplicativo da área de trabalho do Windows (como o Win32, o WPF e o Windows Forms).
+description: Execute o Desktop App Converter para empacotar um aplicativo da área de trabalho do Windows (como o Win32, o WPF e o Windows Forms).
 title: Empacotar um aplicativo usando o Desktop App Converter (Ponte de Desktop)
 ms.date: 07/29/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: 251ee703973695fae70b9e4d84b4bb46cb889432
-ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
+ms.openlocfilehash: 16e9c5b24f213dfcde2555354b364a222b6c1947
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84724570"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090174"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Empacotar um aplicativo da área de trabalho com o Desktop App Converter
 
 > [!NOTE]
-> A ferramenta Desktop App Converter foi preterida. Recomendamos usar a [Ferramenta de Empacotamento MSIX](../packaging-tool/create-app-package-msi-vm.md).
+> A ferramenta Desktop App Converter foi preterida. Recomendamos usar a [Ferramenta de Empacotamento MSIX](../packaging-tool/create-app-package.md).
 
 ![Ícone do DAC](images/dac.png)
 
@@ -98,7 +98,7 @@ Avance para a próxima seção se o aplicativo não tiver um instalador.
    Verifique se o número de versão mostrado no nome do arquivo corresponde ao número da versão do build do Windows.
 
    >[!IMPORTANT]
-   > Se estiver usando o número de build **15063** e a versão secundária do build for igual ou superior a **.483** (por exemplo: **15063,540**), baixe o arquivo **BaseImage-15063-UPDATE.wim**. Se a versão secundária do build for inferior à **.483**, baixe o arquivo **BaseImage-15063.wim**. Se você já tiver configurado uma versão incompatível desse arquivo base, poderá corrigi-lo. Esta [postagem no blog](https://blogs.msdn.microsoft.com/appconsult/2017/08/04/desktop-app-converter-fails-on-windows-10-15063-483-and-later-how-to-solve-it/) explica como fazer isso.
+   > Se estiver usando o número de build **15063** e a versão secundária do build for igual ou superior a **.483** (por exemplo: **15063,540**), baixe o arquivo **BaseImage-15063-UPDATE.wim**. Se a versão secundária do build for inferior à **.483**, baixe o arquivo **BaseImage-15063.wim**. Se você já tiver configurado uma versão incompatível desse arquivo base, poderá corrigi-lo. Esta [postagem no blog](/archive/blogs/appconsult/desktop-app-converter-fails-on-windows-10-15063-483-and-later-how-to-solve-it) explica como fazer isso.
 
 3. Coloque o arquivo baixado em qualquer lugar no computador, em que poderá encontrá-lo mais tarde.
 
@@ -157,7 +157,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 > [!IMPORTANT]
 > Há duas coisas importantes para ter em mente aqui. Primeiro, verifique se o instalador está localizado em uma pasta independente e que apenas os arquivos relacionados a esse instalador estão na mesma pasta. O conversor copia todo o conteúdo dessa pasta para o ambiente isolado do Windows. <br> Em segundo lugar, se a Central de Parceiros atribuir uma identidade ao pacote que comece com um número, transmita também o parâmetro <i>-AppId</i> e use apenas o sufixo da cadeia de caracteres (após o separador de ponto) como o valor desse parâmetro.  
 
-Se o instalador incluir instaladores para bibliotecas ou estruturas dependentes, talvez você precise organizar os itens de uma forma um pouco diferente. Confira [Encadeamento de vários instaladores com a Ponte de Desktop](https://blogs.msdn.microsoft.com/appconsult/2017/09/11/chaining-multiple-installers-with-the-desktop-app-converter/).
+Se o instalador incluir instaladores para bibliotecas ou estruturas dependentes, talvez você precise organizar os itens de uma forma um pouco diferente. Confira [Encadeamento de vários instaladores com a Ponte de Desktop](/archive/blogs/appconsult/chaining-multiple-installers-with-the-desktop-app-converter).
 
 <a id="setup-conversion"></a>
 
@@ -413,7 +413,7 @@ Para a assinatura Authenticode estar correta, o seguinte deverá ser verdadeiro 
 - O tamanho da entrada **WIN_CERTIFICATE** deve ser positiva
 - A entrada **WIN_CERTIFICATE** deve ser iniciada após a estrutura **IMAGE_NT_HEADERS32** para executáveis de 32 bits e a estrutura IMAGE_NT_HEADERS64 para executáveis de 64 bits
 
-Para obter mais detalhes, consulte a [Especificação de Authenticode Portal Executable](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx) e a [Especificação de formato de arquivo PE](https://msdn.microsoft.com/windows/hardware/gg463119.aspx).
+Para obter mais detalhes, consulte a [Especificação de Authenticode Portal Executable](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx) e a [Especificação de formato de arquivo PE](/windows/win32/debug/pe-format).
 
 Observe que SignTool.exe pode gerar uma lista dos binários corrompidos ou malformados ao tentar assinar um pacote de aplicativo do Windows. Para fazer isso, ative o registro detalhado, definindo a variável de ambiente APPXSIP_LOG como 1 (por exemplo, ```set APPXSIP_LOG=1``` ) e execute novamente SignTool.exe.
 

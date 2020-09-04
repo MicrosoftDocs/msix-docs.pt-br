@@ -5,12 +5,12 @@ ms.date: 07/29/2019
 ms.topic: article
 keywords: windows 10 S, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: 11989302e0c5c1d69623aaffafec59d06db5353b
-ms.sourcegitcommit: f6bb9ced4cce853ae6acd3a359cbbb5e2e3f7187
+ms.openlocfilehash: 4cceecd65452b96eed96692095947a7e17c6418e
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85441663"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89089864"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>Testar seu aplicativo do Windows para Windows 10 no modo S
 
@@ -49,7 +49,7 @@ Encontre esses logs abrindo o **Visualizador de Eventos** e navegue até esta lo
 Esse modo é seguro e não impedirá que o sistema seja inicializado.
 
 #### <a name="optional-find-specific-failure-points-in-the-call-stack"></a>(Opcional) Encontrar pontos de falha específicos na pilha de chamadas
-Para encontrar pontos específicos na pilha de chamadas em que ocorrem problemas de bloqueio, adicione esta chave do Registro e depois [configure um ambiente de depuração do modo kernel](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-#span-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanset-up-a-kernel-mode-debugging).
+Para encontrar pontos específicos na pilha de chamadas em que ocorrem problemas de bloqueio, adicione esta chave do Registro e depois [configure um ambiente de depuração do modo kernel](/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-#span-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanset-up-a-kernel-mode-debugging).
 
 |Chave|Nome|Tipo|Valor|
 |--|---|--|--|
@@ -87,8 +87,8 @@ Tem dúvidas? Pergunte-nos no Stack Overflow. Nossa equipe monitora estas [marca
 
 **Examinar um artigo de blog detalhado postado pela nossa Equipe de Consultoria de Aplicativos**
 
-Confira [Como portar e testar seus aplicativos clássicos da área de trabalho no Windows 10 S com a Ponte de Desktop](https://blogs.msdn.microsoft.com/appconsult/2017/06/15/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge/).
+Confira [Como portar e testar seus aplicativos clássicos da área de trabalho no Windows 10 S com a Ponte de Desktop](/archive/blogs/appconsult/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge).
 
 **Saiba mais sobre as ferramentas que facilitam os testes do Windows no modo S**
 
-Confira [Desempacotar, modificar, reempacotar e assinar um appx](https://blogs.msdn.microsoft.com/appconsult/2017/08/07/unpack-modify-repack-sign-appx/).
+Confira [Desempacotar, modificar, reempacotar e assinar um appx](/archive/blogs/appconsult/unpack-modify-repack-sign-appx).
