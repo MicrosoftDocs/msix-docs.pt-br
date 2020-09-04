@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, UWP, pacote do aplicativo, atualização do aplicativo, MSIX, appx
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 0fe0a721368b10f68ba30665883e9070692dbb04
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: da35e755235f1dc22d51c52e54462e5765945e97
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "76726586"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091204"
 ---
 # <a name="detect-package-identity-and-runtime-context"></a>Detectar a identidade do pacote e o contexto do runtime
 
 Você poderá ter algumas versões do aplicativo que não foram distribuídas em um pacote MSIX. Em runtime, o aplicativo pode detectar se foi implantado como um pacote MSIX usando a API do Gerenciador de Pacotes do Windows ou o próprio instalador personalizado. O ideal é alterar o comportamento do aplicativo, como as configurações de atualização, ou aproveitar a funcionalidade disponível somente para pacotes MSIX.
 
-Para determinar se o seu aplicativo está sendo executado como um pacote MSIX em uma versão do Windows que dê suporte ao conjunto completo de recursos do MSIX, use a função nativa [GetCurrentPackageFullName](https://msdn.microsoft.com/library/windows/desktop/hh446599(v=vs.85).aspx) na kernel32.dll. Quando um aplicativo da área de trabalho está sendo executado como um aplicativo não empacotado sem a identidade do pacote, essa função retorna um erro que pode ajudar você a inferir o contexto no qual o aplicativo está sendo executado.
+Para determinar se o seu aplicativo está sendo executado como um pacote MSIX em uma versão do Windows que dê suporte ao conjunto completo de recursos do MSIX, use a função nativa [GetCurrentPackageFullName](/windows/win32/api/appmodel/nf-appmodel-getcurrentpackagefullname) na kernel32.dll. Quando um aplicativo da área de trabalho está sendo executado como um aplicativo não empacotado sem a identidade do pacote, essa função retorna um erro que pode ajudar você a inferir o contexto no qual o aplicativo está sendo executado.
 
 Se a função for bem-sucedida, isso indicará que:
 
@@ -27,7 +27,7 @@ Se a função for bem-sucedida, isso indicará que:
 
 ## <a name="use-getcurrentpackagefullname-in-native-code"></a>Usar GetCurrentPackageFullName no código nativo
 
-O exemplo de código a seguir demonstra como usar [GetCurrentPackageFullName](https://msdn.microsoft.com/library/windows/desktop/hh446599(v=vs.85).aspx) para determinar o contexto de um aplicativo.
+O exemplo de código a seguir demonstra como usar [GetCurrentPackageFullName](/windows/win32/api/appmodel/nf-appmodel-getcurrentpackagefullname) para determinar o contexto de um aplicativo.
 
 ```cpp
 #define _UNICODE 1
@@ -74,7 +74,7 @@ int __cdecl wmain()
 
 ## <a name="use-getcurrentpackagefullname-function-in-managed-code"></a>Usar a função GetCurrentPackageFullName no código gerenciado
 
-Para chamar [GetCurrentPackageFullName](https://msdn.microsoft.com/library/windows/desktop/hh446599(v=vs.85).aspx) em um aplicativo .NET Framework gerenciado, você precisará usar [P/Invoke (invocação de plataforma)](https://docs.microsoft.com/dotnet/standard/native-interop/pinvoke) ou alguma outra forma de interoperabilidade.
+Para chamar [GetCurrentPackageFullName](/windows/win32/api/appmodel/nf-appmodel-getcurrentpackagefullname) em um aplicativo .NET Framework gerenciado, você precisará usar [P/Invoke (invocação de plataforma)](/dotnet/standard/native-interop/pinvoke) ou alguma outra forma de interoperabilidade.
 
 Para simplificar esse processo, use a biblioteca [DesktopBridgeHelpers](https://github.com/qmatteoq/DesktopBridgeHelpers/). Esta biblioteca dá suporte ao .NET Framework 4 e posterior e usa P/Invoke internamente para fornecer uma classe auxiliar que determina se o aplicativo está sendo executado em uma versão do Windows que dá suporte ao conjunto completo de recursos MSIX. Essa biblioteca também está disponível como um [pacote NuGet](https://www.nuget.org/packages/DesktopBridge.Helpers/).
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2cd4de777c7fc45a62e511d76916d61a46d5492a
-ms.sourcegitcommit: 7a52883434aa05272c15d033d85b67e2dd1e8c75
+ms.openlocfilehash: 108fb7be52c24c52f8b65fd3c17b9c35feb96a30
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84107334"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091174"
 ---
 # <a name="what-is-msix"></a>O que é MSIX?
 
@@ -27,7 +27,7 @@ O MSIX possibilita que as empresas permaneçam atualizadas e garantam que os apl
 
 ## <a name="highlights"></a>Destaques
 
-* **Empacotar aplicativos existentes do Windows.** Use a [Ferramenta de Empacotamento de MSIX](packaging-tool/mpt-overview.md) para criar um pacote MSIX para qualquer aplicativo do Windows, antigo ou novo. A Ferramenta de Empacotamento MSIX simplifica a experiência de empacotamento, oferecendo uma interface do usuário interativa ou uma linha de comando para converter e empacotar aplicativos do Windows.
+* **Empacotar aplicativos existentes do Windows.** Use a [Ferramenta de Empacotamento de MSIX](./packaging-tool/tool-overview.md) para criar um pacote MSIX para qualquer aplicativo do Windows, antigo ou novo. A Ferramenta de Empacotamento MSIX simplifica a experiência de empacotamento, oferecendo uma interface do usuário interativa ou uma linha de comando para converter e empacotar aplicativos do Windows.
 * **Instalar pacotes de aplicativo do MSIX.** Use o [Instalador de Aplicativo](app-installer/app-installer-root.md) para instalar ou atualizar qualquer pacote de aplicativo MSIX que esteja localmente disponível ou em qualquer rede de distribuição de conteúdo.
 * **Aplicar correções de tempo de execução para aplicativos empacotados.** A [Estrutura de Suporte do Pacote](psf/package-support-framework-overview.md) é um kit de software livre que ajuda a aplicar correções a seu aplicativo da área de trabalho existente quando não há acesso ao código-fonte, para que ele possa ser executado em um contêiner do MSIX.
 * **Usar o MSIX em qualquer lugar.** Com o [SDK do MSIX](msix-sdk/sdk-overview.md) de software livre, os pacotes MSIX são mais versáteis e independentes de plataforma. O SDK fornece todas as APIs necessárias para verificar, validar e desempacotar um pacote de aplicativo em qualquer plataforma, incluindo plataformas do Windows 10 e plataformas que não são do Windows 10.
