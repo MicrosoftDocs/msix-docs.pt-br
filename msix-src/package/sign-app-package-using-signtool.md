@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: 5df8516441ab7acb8eea54afe6443f92c586c7a4
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: 58fa5477c8b1503a061e3c72a4342b25acc2387f
+ms.sourcegitcommit: cb145c63d700446e6aec1be8f9e6d2ae7481fb6b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89091043"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92011578"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>Assinar um pacote do aplicativo usando a SignTool
 
@@ -105,6 +105,8 @@ SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.appx
 ```syntax
 SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 ```
+
+Para obter mais exemplos, consulte [usando Signtool para assinar um arquivo](/windows/win32/seccrypto/using-signtool-to-sign-a-file)
 
 Observe que alguns certificados não usam uma senha. Se o certificado não tiver uma senha, omita "/p &lt;Sua Senha&gt;" dos comandos de amostra.
 

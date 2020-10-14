@@ -5,12 +5,12 @@ ms.date: 08/27/2020
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b3324b396cb08344ab677dfa95f481b4800113d
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: 36084feb04c75e375ac000493fdea6e4b9139007
+ms.sourcegitcommit: cb145c63d700446e6aec1be8f9e6d2ae7481fb6b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89090974"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92011566"
 ---
 # <a name="sign-an-msix-package-with-device-guard-signing"></a>Assinar um pacote do MSIX com a autenticação do Device Guard
 
@@ -29,7 +29,7 @@ ms.locfileid: "89090974"
 > - Baixar certificado raiz
 > - Baixar o histórico de suas operações de assinatura 
 >
-> Compartilharemos instruções detalhadas e a localização do NuGet antes de meados de setembro de 2020. Para dúvidas, entre em contato conosco DGSSMigration@microsoft.com para obter mais informações sobre a migração.  
+> Compartilharemos instruções detalhadas e a localização do NuGet antes de meados de 2020 de outubro. Para dúvidas, entre em contato conosco DGSSMigration@microsoft.com para obter mais informações sobre a migração.  
 
 
 A [assinatura do Device Guard](/microsoft-store/device-guard-signing-portal) é um recurso do Device Guard que está disponível no Microsoft Store para negócios e educação. Ele permite que as empresas garantam que cada aplicativo vem de uma fonte confiável. A partir do Build 18945 do Windows 10 Insider Preview, você pode usar SignTool no SDK do Windows para assinar seus aplicativos MSIX com a assinatura do Device Guard. Esse suporte ao recurso permite que você incorpore facilmente a assinatura do Device Guard no fluxo de trabalho de criação e assinatura de pacotes MSIX.
