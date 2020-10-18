@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: 16e9c5b24f213dfcde2555354b364a222b6c1947
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: 6a295086873813d888207214d1f8cefe3255949e
+ms.sourcegitcommit: cb145c63d700446e6aec1be8f9e6d2ae7481fb6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89090174"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92011594"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Empacotar um aplicativo da área de trabalho com o Desktop App Converter
 
@@ -279,7 +279,7 @@ Veja também toda a lista executando o comando ``Get-Help`` na janela do console
 |-ExpandedBaseImage &lt;String&gt;  |Opcional |Caminho completo para uma imagem de base já expandida.|
 |-LogFile &lt;String&gt;  |Opcional |Especifica um arquivo de log. Se omitido, um local temporário de arquivo de log será criado. |
 | -Sign [&lt;SwitchParameter&gt;] |Opcional |Instrui este script a assinar o pacote de aplicativo do Windows de saída usando um certificado gerado para fins de teste. Essa opção deve estar presente junto com a opção ```-MakeAppx```. |
-|&lt;Parâmetros comuns&gt; |Necessária |Esse cmdlet dá suporte a parâmetros comuns: *Verbose*, *Debug*, *ErrorAction*, *ErrorVariable*, *WarningAction*, *WarningVariable*, *OutBuffer*, *PipelineVariable* e *OutVariable*. Para obter mais informações, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216). |
+|&lt;Parâmetros comuns&gt; |Necessária |Esse cmdlet dá suporte a parâmetros comuns: *Verbose*, *Debug*, *ErrorAction*, *ErrorVariable*, *WarningAction*, *WarningVariable*, *OutBuffer*, *PipelineVariable* e *OutVariable*. Para obter mais informações, consulte [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters). |
 | -Verify [&lt;SwitchParameter&gt;] |Opcional |Uma opção que, quando presente, instrui o DAC a validar o pacote de aplicativo em relação aos requisitos da Ponte de Desktop e da Microsoft Store. O resultado é um relatório de validação "VerifyReport.xml", que é mais bem visualizado em um navegador. Essa opção deve estar presente junto com a opção `-MakeAppx`. |
 |-PublishComRegistrations| Opcional| Examina todos os registos COM públicos feitos pelo instalador e publica os válidos no manifesto. Use esse sinalizador somente se desejar disponibilizar esses registros para outros aplicativos. Você não precisará usar esse sinalizador se esses registros forem usados apenas pelo aplicativo. <br><br>Examine [este artigo](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#lDg5gSFxJ2TDlpC6.97) para verificar se os registros COM se comportam como esperado após o empacotamento do aplicativo.
 
