@@ -6,14 +6,19 @@ ms.topic: article
 keywords: Windows 10, UWP, msix, ferramenta de empacotamento msix, programa Insider
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: e954eb6fec69a57b8ca9460a6aab860eae2cba70
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: c694256f43c91278ad7ffaa7917c3b43983d486f
+ms.sourcegitcommit: 79a5d5b901b123ec2590d3b9fb305f281a9bcc1f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89090784"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92169239"
 ---
 # <a name="release-notes-for-the-msix-packaging-tool"></a>Notas sobre a versão da Ferramenta de Empacotamento MSIX
+
+## <a name="version-1202010060"></a>1.2020.1006.0 da versão
+- Suporte adicionado para a [versão 2 da assinatura do Device Guard](../../package/signing-package-device-guard-signing.md). Se tiver alguma dúvida, entre em contato com a equipe de suporte da assinatura do Device Guard DGSSMigration@microsoft.com
+- Adicionada uma correção para MaxVersionTested para manter o manifesto atualizado
+- Correção de bug para preservar ícones em atalhos para conversões do App-V
 
 ## <a name="version-120208240"></a>1.2020.824.0 da versão
 - Adicionado um relatório de serviços ao editor de pacote

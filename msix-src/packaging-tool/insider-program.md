@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7621f3de4f20cec8f120b6b6c2d6aba5c7407b59
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: 8f2c4ed6f42bd4e66ef008caa4be25df943deae5
+ms.sourcegitcommit: 79a5d5b901b123ec2590d3b9fb305f281a9bcc1f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89090824"
+ms.lasthandoff: 10/18/2020
+ms.locfileid: "92169249"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -25,7 +25,7 @@ O Programa Insider da Ferramenta de Empacotamento MSIX fornece acesso antecipado
 - Um alias válido da conta Microsoft para acessar o aplicativo na Microsoft Store.
 - Privilégios de administrador no computador para executar a ferramenta.
 
-## <a name="install"></a>Instalar o
+## <a name="install"></a>Instalar
 
 Depois de ingressar no programa, você receberá um email confirmando sua inscrição. 
 
@@ -35,9 +35,10 @@ Se a ferramenta já estiver instalada no computador, verifique a versão instala
 
 ## <a name="current-insider-preview-build"></a>Build atual do Insider Preview
 
-## <a name="version-120208240"></a>1.2020.824.0 da versão
-- Adicionado um relatório de serviços ao editor de pacote
-- Correções gerais de bugs
+## <a name="version-1202010060"></a>1.2020.1006.0 da versão
+- Suporte adicionado para a [versão 2 da assinatura do Device Guard](../package/signing-package-device-guard-signing.md). Se tiver alguma dúvida, entre em contato com a equipe de suporte da assinatura do Device Guard DGSSMigration@microsoft.com
+- Adicionada uma correção para MaxVersionTested para manter o manifesto atualizado
+- Correção de bug para preservar ícones em atalhos para conversões do App-V
 
 Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](release-notes/history.md).
 
