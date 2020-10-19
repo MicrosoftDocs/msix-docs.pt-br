@@ -6,15 +6,17 @@ ms.topic: article
 keywords: windows 10, implantação, msix
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: 37e36025d28364627d13aea3b1452f5b17f5d20f
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: 0d0fba14c51b95149e77f553e5f2fe415d660d54
+ms.sourcegitcommit: cb145c63d700446e6aec1be8f9e6d2ae7481fb6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89090534"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92011548"
 ---
 #   <a name="msix-app-distribution"></a>Distribuição de aplicativo MSIX
 O formato de empacotamento pode ser distribuído para dispositivos cliente com ferramentas de gerenciamento de dispositivos e aplicativos, como o Microsoft Intune e o Microsoft Endpoint Configuration Manager. 
+
+Os aplicativos MSIX empacotados podem ser instalados usando as ferramentas de implantação, o PowerShell ou o [Instalador de Aplicativo](https://www.microsoft.com/p/app-installer/9nblggh4nns1?ocid=9nblggh4nns1_ORSEARCH_Bing&rtc=1&activetab=pivot:overviewtab). Usando o Instalador de Aplicativo para instalar um aplicativo MSIX empacotado, o usuário ou o Profissional de TI pode escolher clicar com o botão direito do mouse e fazer a instalação ou clicar duas vezes no instalador do MSIX. Essa abordagem solicitará que o usuário clique no botão **Instalar** para iniciar a instalação e exibir o progresso da instalação. Como alternativa, usando os [cmdlets do PowerShell](https://docs.microsoft.com/windows/msix/desktop/powershell-msix-cmdlets) disponíveis, a instalação e a desinstalação de um aplicativo MSIX empacotado pode ser executada silenciosamente.
 
 ##  <a name="microsoft-endpoint-configuration-manager"></a>Microsoft Endpoint Configuration Manager 
 
@@ -35,7 +37,7 @@ Para saber como distribuir um arquivo MSIX no IIS e como configurar o servidor I
 
 ## <a name="microsoft-store-for-business"></a>Microsoft Store para Empresas
 
-[O Microsoft Store for Business](https://businessstore.microsoft.com/store) é um armazenamento projetado especificamente para distribuição de aplicativos de Educação e Negócios. É possível usar a Microsoft Store para encontrar, adquirir, distribuir e gerenciar aplicativos de sua organização ou escola.  Para obter detalhes sobre a Microsoft Store para Empresas, veja [Microsoft Store para Empresas e Educação.](/microsoft-store/)
+[O Microsoft Store for Business](https://businessstore.microsoft.com/store) é um armazenamento projetado especificamente para distribuição de aplicativos de Educação e Negócios. É possível usar a Microsoft Store para encontrar, adquirir, distribuir e gerenciar aplicativos para a organização ou escola.  Para obter detalhes sobre a Microsoft Store para Empresas, veja [Microsoft Store para Empresas e Educação.](/microsoft-store/)
 
 ## <a name="app-center"></a>App Center
 
