@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Ferramenta de Empacotamento MSIX, problemas conhecidos, solução de problemas
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0c432cd0bd02d68f52034f5f392a1f16e9f552ab
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: faa2183021235b32d59c1266f0098bbe1165bb6e
+ms.sourcegitcommit: 4ecff6f1386c6239cfd79ddf82265f4194302bbb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89090764"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92686860"
 ---
 # <a name="known-issues-and-troubleshooting-tips-for-the-msix-packaging-tool"></a>Problemas conhecidos e dicas de solução de problemas para a Ferramenta de Empacotamento MSIX
 
@@ -25,7 +25,7 @@ Se você tiver optado pelo nosso [programa Insider](insider-program.md), verifiq
 - Vá para a seção **sobre** na ferramenta de empacotamento MSIX para exibir em qual versão você está.
 - Acesse [aqui](insider-program.md#current-insider-preview-build) para determinar a versão mais recente do insider Preview e confirme se você tem essa versão da ferramenta de empacotamento MSIX instalada. 
 - Verifique se o MSA que se inscreveu para o vôo é a conta que está conectada à Microsoft Store. 
-- Atualize manualmente a ferramenta de empacotamento MSIX por meio do Microsoft Store em seu computador. Se essa opção estiver disponível para você, abra a loja, vá para **downloads e atualizações**e clique em **obter atualizações**. Como alternativa, procure a ferramenta de empacotamento MSIX e, na página do produto, você pode solicitar uma atualização. 
+- Atualize manualmente a ferramenta de empacotamento MSIX por meio do Microsoft Store em seu computador. Se essa opção estiver disponível para você, abra a loja, vá para **downloads e atualizações** e clique em **obter atualizações** . Como alternativa, procure a ferramenta de empacotamento MSIX e, na página do produto, você pode solicitar uma atualização. 
 - Para instalar a ferramenta de empacotamento MSIX para uso offline, siga [estas instruções](disconnected-environment.md#get-the-msix-packaging-tool) para garantir que você obtenha o aplicativo mais recente por meio do nosso processo offline.
 
 Se você estiver interessado em ingressar em nosso programa Insider, clique [aqui](https://aka.ms/MSIXPackagingPreviewProgram).
@@ -54,16 +54,33 @@ Se você receber esse código de erro, talvez seja necessário verificar as [con
 
 #### <a name="driver-required-a-reinstall"></a>O driver exigiu uma reinstalação
 
-Nesse cenário, a ferramenta de empacotamento MSIX o notificará na mensagem de erro e registrará que o driver precisa de uma reinicialização. Reinicie o computador e inicie a conversão novamente para corrigir esse problema. 
+Nesse cenário, a ferramenta de empacotamento MSIX o notificará na mensagem de erro e registrará que o driver precisa de uma reinicialização. Reinicie o computador e inicie a conversão novamente para corrigir esse problema.  
+
+#### <a name="error-starting-the-msix-packaging-tool-driver-0x80131500"></a>Erro ao iniciar o driver da ferramenta de empacotamento MSIX 0x80131500
+
+Se você receber esse erro durante a conversão, ao verificar o arquivo de log, você deverá encontrar uma entrada semelhante à seguinte:  
+
+`[Error] Error monitoring: Insufficient system resources exist to complete the requested service`
+
+Esse erro ocorre quando a ferramenta inicia uma nova sessão de rastreamento de eventos do sistema, mas você excedeu o número máximo de sessões que o Windows pode criar em todo o sistema. Se você exceder o limite padrão (64), atingirá um erro ERROR_NO_SYSTEM_RESOURCES, o que causará falha no driver.
+
+A solução é interromper algumas das sessões de rastreamento de eventos existentes seguindo estas etapas:
+
+1) Abra o menu iniciar e procure monitor de desempenho.
+2) Clique com o botão direito do mouse nele e escolha Executar como administrador mais >.
+3) No menu de árvore, escolha conjuntos de coletores de dados-> sessões de rastreamento de eventos.
+4) Clique com o botão direito do mouse em algumas das sessões existentes na lista e escolha parar.
+
+Agora você pode tentar executar novamente a conversão com a ferramenta de empacotamento MSIX.
 
 ### <a name="minimum-version"></a>Versão mínima
 
 Há alguns recursos a serem considerados que alteram automaticamente o suporte de versão do mínimo em seu pacote MSIX. 
 
 #### <a name="enforce-microsoft-store-versioning-requirements"></a>Impor os requisitos de controle de versão da Microsoft Store
-Se você converter o instalador existente usando uma versão da [ferramenta de empacotamento MSIX](tool-overview.md) anterior à **1.2019.701.0**, a ferramenta importou Microsoft Store requisitos de controle de versão ou usou outra ferramenta para criar o pacote que não definiu a versão mínima para 10.0.16299.0 (Windows 10, versão 1709). Isso causará uma mensagem de erro ao implantar seu aplicativo no Windows 10, versão 1709 ou uma versão posterior.
+Se você converter o instalador existente usando uma versão da [ferramenta de empacotamento MSIX](tool-overview.md) anterior à **1.2019.701.0** , a ferramenta importou Microsoft Store requisitos de controle de versão ou usou outra ferramenta para criar o pacote que não definiu a versão mínima para 10.0.16299.0 (Windows 10, versão 1709). Isso causará uma mensagem de erro ao implantar seu aplicativo no Windows 10, versão 1709 ou uma versão posterior.
 
-Para corrigir esse problema, abra a **ferramenta de empacotamento MSIX** e edite seu aplicativo por meio do **Editor de pacotes**. Abra o manifesto e defina o `MinVersion` atributo do `TargetDeviceFamily` elemento como "10.0.16299.0".
+Para corrigir esse problema, abra a **ferramenta de empacotamento MSIX** e edite seu aplicativo por meio do **Editor de pacotes** . Abra o manifesto e defina o `MinVersion` atributo do `TargetDeviceFamily` elemento como "10.0.16299.0".
 
 ```xml
 <Dependencies>
@@ -147,14 +164,14 @@ Você pode corrigir isso usando a gravação da estrutura de suporte do pacote p
 
 A melhor maneira de enviar seus comentários é por meio do [**Hub de comentários**](https://www.microsoft.com/p/feedback-hub/9nblggh4r32n?activetab=pivot:overviewtab).
 
-1. Abra o **Hub de Feedback** ou digite **Windows + F**.
+1. Abra o **Hub de Feedback** ou digite **Windows + F** .
 2. Forneça um título e as etapas necessárias para reproduzir o problema.
-3. Em **Categoria**, selecione **Aplicativos** e selecione **Ferramenta de Empacotamento MSIX**.
+3. Em **Categoria** , selecione **Aplicativos** e selecione **Ferramenta de Empacotamento MSIX** .
 4. Anexe os [arquivos de log](#log-files) associados à conversão. Encontre os logs na pasta fornecida acima.
 5. Anexe o pacote MSIX convertido (se possível).
-6. Clique em **Enviar**.
+6. Clique em **Enviar** .
 
-Envie-nos também comentários diretamente da Ferramenta de Empacotamento MSIX acessando a guia **Comentários** em **Configurações**. 
+Envie-nos também comentários diretamente da Ferramenta de Empacotamento MSIX acessando a guia **Comentários** em **Configurações** . 
 
 > [!NOTE]
 > Poderá levar 24 horas até recebermos seus comentários. Portanto, se você estiver usando uma VM para converter o pacote, o ideal será manter a VM ligada e em seu estado atual durante 24 horas após a conversão. Além disso, você pode anexar manualmente os logs de conversão aos comentários.
