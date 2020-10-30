@@ -1,17 +1,17 @@
 ---
-Description: Este artigo tem todos os detalhes de que você precisa para gerenciar a implantação de aplicativos MSIX em um ambiente empresarial.  Este artigo destina-se a profissionais de TI e corporativos.
+description: Este artigo tem todos os detalhes de que você precisa para gerenciar a implantação de aplicativos MSIX em um ambiente empresarial.  Este artigo destina-se a profissionais de TI e corporativos.
 title: Visão geral do gerenciamento da implantação MSIX
 ms.date: 2/3/2020
 ms.topic: article
 keywords: windows 10, implantação, msix
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a1d9cec6226529c0d00cc663c34611abc0d15f3
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: f775895bebfba77b649f1e52aada2bb9b8f88ecb
+ms.sourcegitcommit: 4ecff6f1386c6239cfd79ddf82265f4194302bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77074132"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92686833"
 ---
 # <a name="manage-your-msix-deployment"></a>Gerenciar a implantação do MSIX
 
@@ -43,7 +43,7 @@ Os desenvolvedores têm diferentes ferramentas para distribuir os aplicativos.  
 O MSIX é uma experiência de instalação de aplicativo moderna e confiável. A experiência do MSIX tem uma taxa de sucesso de instalação de 99,96%.  Mas há algumas limitações. Não há suporte para MSIX por padrão em todas as versões do Windows e o conjunto de recursos com suporte pode depender da versão do Windows 10 que você está implantando.  Na seção [Planeje a implantação](managing-your-msix-deployment-targetdevices.md), falaremos sobre a importância de entender o dispositivo de destino no qual o MSIX será implantado. 
 
 ## <a name="providing-support-for-my-customer"></a>Fornecendo suporte para seus clientes
-Embora o MSIX tenha uma taxa de sucesso de instalação de 99,96%, você ainda precisa planejar como dar suporte ao seu cliente.  Na seção [Solução de problemas e validação de MSIX](managing-your-msix-deployment-overview.md) falamos sobre as ferramentas para diagnosticar problemas de instalação.
+Embora o MSIX tenha uma taxa de sucesso de instalação de 99,96%, você ainda precisa planejar como dar suporte ao seu cliente.  Na seção [Solução de problemas e validação de MSIX](managing-your-msix-deployment-troubleshooting.md) falamos sobre as ferramentas para diagnosticar problemas de instalação.
 
 
  
