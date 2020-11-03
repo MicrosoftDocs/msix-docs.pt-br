@@ -5,19 +5,17 @@ ms.date: 10/26/2020
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: af2f8984cc44c67ce2671e0cc910adc75db3daa5
-ms.sourcegitcommit: 4ecff6f1386c6239cfd79ddf82265f4194302bbb
+ms.openlocfilehash: 687d2c0ab59b8a02c0c08f1f7bade7c1301666be
+ms.sourcegitcommit: b907ca46c847bfff6278fdcf2af84efb6e23c3e3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92686840"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93191500"
 ---
 # <a name="sign-an-msix-package-with-device-guard-signing"></a>Assinar um pacote do MSIX com a autenticação do Device Guard
 
 > [!IMPORTANT]
 > O [serviço de assinatura do Device Guard v2](https://docs.microsoft.com/microsoft-store/device-guard-signing-portal) já está disponível. Conforme anunciado anteriormente, você terá até o final de dezembro de 2020 para fazer a transição para o DGSS v2. No final de dezembro de 2020, os mecanismos existentes baseados na Web para a versão atual do serviço DGSS serão desativados e não estarão mais disponíveis para uso. Você deve fazer planos para migrar para a nova versão do serviço antes de dezembro de 2020. Para obter mais informações, entre em contato com DGSSMigration@Microsoft.com. 
-
-
 
 A [assinatura do Device Guard](/microsoft-store/device-guard-signing-portal) é um recurso do Device Guard que está disponível no Microsoft Store para negócios e educação. Ele permite que as empresas garantam que cada aplicativo vem de uma fonte confiável. A partir do Build 18945 do Windows 10 Insider Preview, você pode usar SignTool no SDK do Windows para assinar seus aplicativos MSIX com a assinatura do Device Guard. Esse suporte ao recurso permite que você incorpore facilmente a assinatura do Device Guard no fluxo de trabalho de criação e assinatura de pacotes MSIX.
 
@@ -100,12 +98,20 @@ function GetToken()
 > [!NOTE]
 > Recomandomos para salvar o arquivo JSON para uso posterior.
 
+## <a name="obtain-the-device-guard-signing-version-2-dll"></a>Obter a DLL de assinatura do Device Guard versão 2
+Para assinar com a versão 2 da assinatura do Device Guard, obtenha o **Microsoft.Acs.Dlib.dll** baixando o [pacote NuGet](https://www.nuget.org/packages/Microsoft.Acs.Dgss.Client/) que será usado para assinar seu pacote. Isso também é necessário para obter o certificado raiz. 
+
 ## <a name="sign-your-package"></a>Assinar seu pacote
 
 Depois de ter o token de acesso do AD do Azure, você estará pronto para usar o SignTool para assinar seu pacote com a assinatura do Device Guard. Para obter mais informações sobre como usar SignTool para assinar pacotes, consulte [assinar um pacote de aplicativo usando Signtool](/windows/uwp/packaging/sign-app-package-using-signtool?context=%252fwindows%252fmsix%252frender#prerequisites).
 
-O exemplo de linha de comando a seguir demonstra como assinar um pacote com a assinatura do Device Guard.
+O exemplo de linha de comando a seguir demonstra como assinar um pacote com a versão 2 da assinatura do Device Guard.
 
+```cmd
+signtool sign /fd sha256 /dlib Microsoft.Acs.Dlib.dll /dmdf <Azure AAD in .json format> /t <timestamp-service-url> <your .msix package>
+```
+
+O exemplo de linha de comando a seguir demonstra como assinar com a versão 1 da assinatura do Device Guard. Observe que isso será preterido até o final de dezembro de 2020.
 ```cmd
 signtool sign /fd sha256 /dlib DgssLib.dll /dmdf <Azure AAD in .json format> /t <timestamp-service-url> <your .msix package>
 ```
@@ -123,7 +129,10 @@ Para testar, baixe o certificado raiz baixando o [pacote NuGet](https://www.nuge
 Get-RootCertificate
 ```
 
-Instale o certificado raiz para as **autoridades de certificação raiz confiáveis** em seu dispositivo. Instale seu aplicativo assinado recentemente para verificar se você assinou com êxito seu aplicativo com a assinatura do Device Guard.
+Instale o certificado raiz para as **autoridades de certificação raiz confiáveis** em seu dispositivo. Instale seu aplicativo assinado recentemente para verificar se você assinou com êxito seu aplicativo com a assinatura do Device Guard. 
+
+> [!NOTE]
+> É recomendável usar a política de CI para isolamento adicional. Certifique-se de ler a documentação readme_cmdlets e a migração da documentação do DGSSv1 para a DGSSv2 que está incluída no pacote NuGet. 
 
 ## <a name="common-errors"></a>Erros comuns
 
