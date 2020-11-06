@@ -7,12 +7,12 @@ author: dianmsft
 keywords: Windows 10, Windows 7, Windows 8, Windows Server, UWP, msix, msixcore, 1709, 1703, 1607, 1511, 1507
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 55ff75fffb4c6c512c857a4b727e764471889c12
-ms.sourcegitcommit: 53b064a0e56e526728545575e404512440dde761
+ms.openlocfilehash: d7ad0bf345bdfa8fe3aa3ef0cb02060f48d9bb1e
+ms.sourcegitcommit: d6f8b07e60cfd87dfac46a9b7f679e731a56a740
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84221690"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93413661"
 ---
 # <a name="msix-resources"></a>Recursos do MSIX
 
@@ -47,6 +47,15 @@ Este artigo fornece uma lista de repositórios, vídeos e outros recursos do Git
 :::row-end:::
 :::row:::
     :::column:::
+        <h3>MSIX na empresa</h3>
+        <p>A plataforma MSIX continua crescendo e se adaptando às necessidades do cliente. Vamos examinar as novidades do ano passado para a plataforma MSIX e o que isso significa para sua empresa.  Também abordaremos os planos futuros para a plataforma MSIX.</p>
+    :::column-end:::
+    :::column:::
+        <iframe src="https://www.youtube.com/embed/orh87lo6VKY" width="640" height="320" allowFullScreen="true" frameBorder="0"></iframe>
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
         <h3>Anexo do aplicativo MSIX na Área de Trabalho Virtual do Windows</h3>
         <p>Saiba como você pode usar o MSIX para a entrega dinâmica de aplicativos em ambientes virtuais, como a Área de Trabalho Virtual do Windows.</p>
     :::column-end:::
@@ -56,11 +65,11 @@ Este artigo fornece uma lista de repositórios, vídeos e outros recursos do Git
 :::row-end:::
 :::row:::
     :::column:::
-        <h3>Segurança e implantação de aplicativos</h3>
-        <p>Saiba como melhorar a distribuição de aplicativos.  Falaremos sobre o uso da assinatura de código para melhorar a autenticidade do seu aplicativo e os aprimoramentos que estamos fazendo para reduzir o conflito do desenvolvedor.  Também nos aprofundamos em como melhorar o empacotamento e a implantação de seu aplicativo com o MSIX.  Abordaremos os benefícios, os recursos e a movimentação de seu aplicativo existente para o MSIX.</p>
+        <h3>Usando o MSIX com pipelines de CI/CD para alterações de código</h3>
+        <p>Com o MSIX e o Azure DevOps, você pode fazer uma alteração de código em seu repositório para obter a versão atualizada do seu aplicativo nos computadores dos usuários em questão de minutos. Junte-se a nós nesta sessão orientada por demonstração enquanto demonstramos como usar pipelines de CI/CD MSIX para automatizar a criação, o empacotamento e a implantação de seus aplicativos de desktop.</p>
     :::column-end:::
     :::column:::
-        <iframe src="https://www.youtube.com/embed/iju9KAAIUCM" width="640" height="320" allowFullScreen="true" frameBorder="0"></iframe>
+        <iframe src="https://www.youtube.com/embed/MnDCaQNnZc0" width="640" height="320" allowFullScreen="true" frameBorder="0"></iframe>
     :::column-end:::
 :::row-end:::
 :::row:::
