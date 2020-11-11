@@ -190,8 +190,12 @@
           href: desktop/sign-with-akv-cert.md
         - name: Otimizar binários com imagens nativas
           href: desktop/desktop-to-uwp-r2r.md
-    - name: Pipelines de CI/CD para builds do MSIX
-      href: desktop/azure-dev-ops.md
+    - name: Pipelines de MSIX e de CI/CD
+      items:
+        - name: Pipelines de CI/CD para builds do MSIX
+          href: desktop/azure-dev-ops.md
+        - name: Extensão de empacotamento do MSIX
+          href: desktop/msix-packaging-extension.md
     - name: Empacotar da linha de comando
       items:
         - name: Visão geral
