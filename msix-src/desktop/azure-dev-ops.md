@@ -6,16 +6,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 79b8e7472685f63104a8d5e1066a316a970ab8aa
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: 1f01d24a2ed6c7ea9b0e54760a5af883ab6c303b
+ms.sourcegitcommit: 0b5b7bfc2985f2b420f0ba9f2edb25c5843f8ce6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89090624"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94378966"
 ---
 # <a name="set-up-a-cicd-pipeline-to-automate-your-msix-builds-and-deployments"></a>Configure um pipeline da CI/CD para automatizar builds e implantações do MSIX
 
 Você pode usar o Azure Pipelines para criar builds automatizados para seu projeto MSIX. Este artigo mostra como fazer isso no Azure DevOps. Também mostraremos como realizar essas tarefas usando a linha de comando para que seja possível integrar com qualquer outro sistema de build.
+
+Se você preferir usar uma extensão do Azure DevOps baseada na interface do usuário para configurar o pipeline, use a Extensão de [*Empacotamento do MSIX*](msix-packaging-extension.md)
 
 ## <a name="create-a-new-azure-pipeline"></a>Crie um novo pipeline do Azure
 
