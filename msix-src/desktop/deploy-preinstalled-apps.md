@@ -9,7 +9,7 @@ keywords: windows 10, msix, uwp, pacotes opcionais, conjunto relacionado, extens
 ms.localizationpriority: medium
 ms.openlocfilehash: 100e1b95aae5161a0811459e3dfbee866f7d56a8
 ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/29/2020
 ms.locfileid: "89090094"
