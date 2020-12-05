@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: a33817b4fa45ab6eb447ebd00ab1934b396d7de1
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: 382577bc0f5f219295f38f9a7c118eb1eece59b6
+ms.sourcegitcommit: de0c711ce28851ef6976a71dd1317291f278b4d1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89090924"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96612094"
 ---
 # <a name="bundle-msix-packages"></a>Agrupar pacotes de MSIX
 
@@ -41,7 +41,7 @@ Após a instalação do SDK do Windows 10, MakeAppx.exe é geralmente encontrado
 
 ## <a name="step-2-bundle-the-packages"></a>Etapa 2: agrupar os pacotes
 
-A maneira mais fácil de agrupar pacotes com o MakeApp.exe é adicionar todos os pacotes que você deseja agrupar a uma pasta. O diretório precisa estar livre de todo o resto, exceto os pacotes que devem ser agrupados.
+A maneira mais fácil de agrupar pacotes com o MakeApp.exe é adicionar todos os pacotes que você deseja agrupar a uma pasta. O diretório deve estar livre de todo o resto, exceto os pacotes que precisam ser agrupados.
 
 Mova os pacotes de aplicativos que deseja agrupar para um diretório, conforme mostrado na captura de tela a seguir.
 

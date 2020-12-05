@@ -7,12 +7,12 @@ keywords: windows 10, uwp, empacotamento
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4ff829ad716ae0ff4ea27dc5b45fb54a61ae6eb7
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: 7720d585d56199dc89616b7220ef72e0d1a559e4
+ms.sourcegitcommit: de0c711ce28851ef6976a71dd1317291f278b4d1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89091124"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96612735"
 ---
 # <a name="create-an-msix-package-or-bundle-with-makeappxexe"></a>Criar um pacote ou grupo MSIX com MakeAppx.exe
 
@@ -49,7 +49,7 @@ A tabela a seguir descreve os comandos da **MakeAppx.exe**.
 | pack          | Cria um pacote.                    |
 | unpack        | Extrai todos os arquivos do pacote especificado para o diretório de saída especificado. |
 | bundle        | Cria um pacote.                     |
-| unbundle      | Descompacta todos os pacotes em um subdiretório no caminho de saída especificado nomeado de acordo com o nome completo do pacote. |
+| unbundle      | Descompacta todos os pacotes em um subdiretório no caminho de saída especificado, nomeados após o pacote ou o nome completo. |
 | encrypt       | Cria um pacote ou lote de aplicativo criptografado a partir do pacote/lote de entrada no pacote/lote de saída especificado. |
 | descriptografar       | Cria um pacote ou lote de aplicativo descriptografado a partir do pacote/lote de aplicativo de entrada no pacote/lote de saída especificado. |
 
@@ -165,7 +165,7 @@ Opções específicas aos comandos **unpack** e **unbundle**:
 | **Opção**    | **Descrição**                       |
 |---------------|---------------------------------------|
 | /nd           | Não realiza a descriptografia ao descompactar ou desagrupar o pacote/lote. |
-| /pfn          | Desempacota/desagrupa todos os arquivos em um subdiretório no caminho de saída especificado, nomeado de acordo com o nome completo do pacote ou lote |
+| /pfn          | Desempacota/desagrupa todos os arquivos em um subdiretório no caminho de saída especificado, nomeados após o pacote ou o nome completo de pacotes |
 
 Os exemplos de uso a seguir mostram algumas opções de sintaxe possíveis para os comandos **unpack** e **unbundle**:
 
