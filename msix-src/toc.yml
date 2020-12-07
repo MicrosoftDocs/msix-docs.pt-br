@@ -312,6 +312,8 @@
           href: msix-core/msixcore-troubleshoot.md
     - name: Validação e solução de problemas da implantação
       href: desktop\managing-your-msix-deployment-troubleshooting.md
+    - name: Redefinir e reparar aplicativos MSIX
+      href: desktop\managing-your-msix-reset-and-repair.md
 - name: Validação e solução de problemas do MSIX
   items:
     - name: Suporte ao MSIX no Windows Server 2019
