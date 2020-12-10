@@ -1,18 +1,18 @@
 ---
 title: Como pré-instalar aplicativos empacotados
 description: Este artigo apresenta uma visão geral dos aplicativos pré-instalados
-ms.date: 04/02/2020
+ms.date: 11/30/2020
 ms.topic: article
 author: dianmsft
 ms.author: diahar
-keywords: windows 10, msix, uwp, pacotes opcionais, conjunto relacionado, extensão de pacote, visual studio, dism, pré-instalar, pré-instalação, aplicativos empacotados
+keywords: Windows 10, msix, UWP, pacotes opcionais, conjunto relacionado, extensão do pacote, Visual Studio, DISM, pré-instalação, pré-instalação, aplicativos empacotados, nome completo do pacote, pfun
 ms.localizationpriority: medium
-ms.openlocfilehash: 100e1b95aae5161a0811459e3dfbee866f7d56a8
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: 2a3eacd19444df5df553ea6550d134d636b1c4a1
+ms.sourcegitcommit: de0c711ce28851ef6976a71dd1317291f278b4d1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89090094"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96612084"
 ---
 # <a name="preinstalling-packaged-apps"></a>Como pré-instalar aplicativos empacotados
 Há várias ferramentas que podem ser usadas para instalar um aplicativo empacotado MSIX em um dispositivo para todos os usuários:
@@ -52,5 +52,7 @@ Lista de comandos relevantes do PowerShell
 * **[Add-ProvisionedAppxPackage](/powershell/module/dism/add-appxprovisionedpackage?view=win10-ps)** Isso prepara o pacote appx e o configura para pré-instalação. Todas as dependências também precisam ser fornecidas, as quais podem ser encontradas no SDK ou nos pacotes baixados da Microsoft Store.
 * **[Remove-ProvisionedAppxPackage](/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps)** Isso pode ser usado para remover um aplicativo pré-instalado. Observe que isso não remove o aplicativo caso ele já esteja registrado para algum usuário; apenas remove o comportamento de registro automático para que ele não seja atualizado automaticamente para os novos usuários.  Caso nenhum usuário tenha instalado o aplicativo, esse comando também removerá os arquivos preparados.
 
+Usando os cmdlets do PowerShell do MSIX, para pré-instalar ou provisionar um aplicativo empacotado do MSIX em um dispositivo, você deve usar o nome completo do pacote do aplicativo MSIX. O nome completo do pacote é o nome completo do pacote que contém o nome do pacote, a versão, a arquitetura e as informações do Publicador. Veja a seguir um exemplo de um nome completo do pacote: `Contoso.ContosoApp_44.20231.1000.0_neutral__8wekyb3d8bbwe`
+
 ## <a name="licensing"></a>Licenciamento
-O licenciamento se aplica somente ao provisionamento de um aplicativo da Windows Store. Qualquer outro aplicativo pode ser provisionado sem uma licença. Se um aplicativo for da Store, uma licença de computador também deverá ser fornecida quando o aplicativo for provisionado. Nesse momento, todos os aplicativos pré-instalados da Windows Store precisam ser gratuitos e configurados como pré-instaláveis pelo Partner Center da Windows Store. Depois de configurados, o pacote pré-instalável e a licença podem ser baixados e provisionados em qualquer imagem.
+O licenciamento se aplica somente ao provisionar um aplicativo da Windows Store. Qualquer outro aplicativo pode ser provisionado sem uma licença. Se um aplicativo for da loja a um computador, a licença também deverá ser fornecida quando o aplicativo for provisionado. Neste momento, todos os aplicativos da Windows Store de pré-instalação devem ser aplicativos gratuitos e configurados para serem pré-instalados por meio do Windows Store Partner Center. Depois de configurado, o pacote pré-instalado e a licença podem ser baixados e provisionados em qualquer imagem.
