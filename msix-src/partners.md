@@ -1,17 +1,17 @@
 ---
 title: Parceiros de MSIX
 description: Fornece links para documentação adicional de nossos parceiros confiáveis sobre suporte e ferramentas do MSIX.
-ms.date: 09/14/2018
+ms.date: 12/4/2020
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b7ee90dd5209cbec49784c7bfc021a8d675d6ec1
-ms.sourcegitcommit: 193e3df2d20ba2a6372c0daaedd281a020168036
+ms.openlocfilehash: 6089aad8ce5b8dac1884f9a4ec74b4017ee1027b
+ms.sourcegitcommit: de0c711ce28851ef6976a71dd1317291f278b4d1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87120070"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96612114"
 ---
 # <a name="msix-partners"></a>Parceiros de MSIX
 
@@ -64,7 +64,7 @@ Os parceiros a seguir fornecem ferramentas adicionais e suporte para cenários d
 :::column-end:::
 
 :::column:::
-[![Logotipo da Rimo3](images/Rimo3_Logo.png)](https://rimo3.com/activ/)
+[![Logotipo da Rimo3](images/Rimo3_Logo.png)](https://rimo3.com/msix)
 :::column-end:::
 
 :::column:::
