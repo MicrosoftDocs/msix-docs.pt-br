@@ -1,17 +1,17 @@
 ---
 title: Atualizações de pacote do aplicativo
 description: Descreve como pacotes MSIX são otimizados para garantir que somente os bits alterados essenciais do aplicativo sejam baixados para atualizar um aplicativo do Windows já existente.
-ms.date: 09/10/2018
+ms.date: 11/30/2020
 ms.topic: article
-keywords: Windows 10, UWP, pacote do aplicativo, atualização do aplicativo, MSIX, appx
+keywords: windows 10, UWP, pacote do aplicativo, atualização do aplicativo, msix, appx, pfan, nome da família de pacotes
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 5d088f60103543e998b4499977fc273f80f97a69
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: f5ba16e6cc691846735dcbc26f8695fc95fab294
+ms.sourcegitcommit: de0c711ce28851ef6976a71dd1317291f278b4d1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89090184"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96612745"
 ---
 # <a name="app-package-updates"></a>Atualizações de pacote do aplicativo
 
@@ -52,7 +52,7 @@ Em uma escala maior, se um arquivo inteiro não for alterado (determinado por um
 ## <a name="app-update-constraints"></a>Restrições da atualização de aplicativo
 
 #### <a name="updates-are-performed-within-the-same-package-family"></a>As atualizações são executadas na mesma família de pacotes
-A família de pacotes é composta pelo Nome do Pacote e pelo Fornecedor. Para conseguir fazer a atualização, os novos metadados de pacote precisarão ser os mesmos do pacote instalado anteriormente. 
+O nome da família de pacotes é composta pelo Nome do Pacote e pelo Fornecedor. Para conseguir fazer a atualização, os novos metadados de pacote precisarão ser os mesmos do pacote instalado anteriormente. Segue um exemplo do nome da família de pacotes: `Contoso.ContosoApp_8wekyb3d8bbwe`.
 
 #### <a name="app-updates-must-increment-to-a-higher-version"></a>As atualizações de aplicativo precisam ser incrementada para uma versão superior
 No geral, as atualizações de aplicativo exigem que a versão do novo pacote sejam superiores à atual. O processo de atualização de aplicativo não permitirá que os pacotes de versões anteriores sejam instalados por padrão. A partir da versão 1809 do Windows 10, é possível usar ForceUpdateToAnyVersion para permitir que pacotes de versões anteriores sejam instalados quando se forneça uma opção de substituição como parte dos argumentos de atualização. No momento, ele está disponível no PowerShell usando a opção [ForceUpdateFromAnyVersion](/powershell/module/appx/add-appxpackage?view=win10-ps), por meio da [API do PackageManager](/uwp/api/windows.management.deployment.deploymentoptions), do [CSP do EnterpriseModernAppManagement](/windows/client-management/mdm/enterprisemodernappmanagement-csp) e no [arquivo AppInstaller](./app-installer/update-settings.md).  
