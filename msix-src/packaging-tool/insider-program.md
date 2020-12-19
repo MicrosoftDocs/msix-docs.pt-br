@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: c98a63b1118a79a8e9efb1c9761aa0b162f1d922
-ms.sourcegitcommit: 8359e46fdfb62d87c6aa85e3347048a9d7bd8fde
+ms.openlocfilehash: 129834b10303a76e350ef2b6c0088438001f192b
+ms.sourcegitcommit: 77e8b10706d4ad2fa97b2c71d82947528555398b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92346246"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97691701"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -35,10 +35,10 @@ Se a ferramenta já estiver instalada no computador, verifique a versão instala
 
 ## <a name="current-insider-preview-build"></a>Build atual do Insider Preview
 
-## <a name="version-1202010060---public-release"></a>Versão 1.2020.1006.0 – versão pública
-- Suporte adicionado para a [versão 2 da assinatura do Device Guard](../package/signing-package-device-guard-signing.md). Se tiver alguma dúvida, entre em contato com a equipe de suporte da assinatura do Device Guard DGSSMigration@microsoft.com
-- Adicionada uma correção para MaxVersionTested para manter o manifesto atualizado
-- Correção de bug para preservar ícones em atalhos para conversões do App-V
+## <a name="version-1202011300"></a>1.2020.1130.0 da versão
+- Correção de um problema em que clicar na mesma linha em arquivos de pacote não funcionou para realçar o item
+- Aprimoramentos de UX para a página Selecionar instalador
+- Somente adicione um logotipo padrão para a loja se um não for extraído do aplicativo
 
 Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](release-notes/history.md).
 
@@ -50,7 +50,7 @@ Você também pode compartilhar comentários de dentro do aplicativo. Clique em 
 
 O **Hub de Feedback** também é uma ótima maneira de compartilhar ideias e sugestões de novos recursos que você deseja ver no aplicativo.  
 
-## <a name="faqs"></a>Perguntas frequentes
+## <a name="faqs"></a>Perguntas Frequentes
 
 1. Não recebi nenhum email confirmando minha inscrição no Programa Insider. 
     - [Ingresse no programa](https://aka.ms/MSIXPackagingPreviewProgram) novamente.  
