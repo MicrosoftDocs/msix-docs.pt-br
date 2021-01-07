@@ -278,6 +278,8 @@
           href: app-installer/web-install-IIS.md
         - name: Distribuir um aplicativo do Windows 10 por um serviço Web AWS
           href: app-installer/web-install-aws.md
+    - name: Passar parâmetros de instalação para seu aplicativo por meio do Instalador de Aplicativo
+      href: app-installer/install-parameters.md
     - name: Distribuir o MSIX em um ambiente do consumidor
       items:
         - name: Visão geral
