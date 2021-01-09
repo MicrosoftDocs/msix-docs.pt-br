@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, instalador de aplicativos, AppInstaller, Sideload, conjunto relacionado, pacotes opcionais, servidor IIS
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 386a8fe4323b7c0a7f1898e282d93912ff28e906
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: 24a27f857ff8782d7a91817f2a5333b8ee87c104
+ms.sourcegitcommit: 3a9aae783331833bbf244091544c48848768137e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89090344"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98041147"
 ---
 # <a name="distribute-a-windows-10-app-from-an-iis-server"></a>Distribuir um aplicativo do Windows 10 por um servidor de IIS
 
@@ -76,7 +76,7 @@ No aplicativo Web do projeto inicial, uma nova pasta foi adicionada ao aplicativ
 
 Este aplicativo Web de exemplo usa HTML simples. Você está livre para criar seu aplicativo Web conforme necessário de acordo com suas necessidades. 
 
-Clique com o botão direito do mouse no projeto raiz do Gerenciador de soluções, selecione **Adicionar**  ->  **novo item**e adicione uma nova **página HTML** da seção **da Web** .
+Clique com o botão direito do mouse no projeto raiz do Gerenciador de soluções, selecione **Adicionar**  ->  **novo item** e adicione uma nova **página HTML** da seção **da Web** .
 
 Depois que a página HTML for criada, clique com o botão direito do mouse na página HTML na Gerenciador de Soluções e selecione **definir como página inicial**.  
 
@@ -115,6 +115,9 @@ Abra o arquivo **Web.config** no Gerenciador de soluções e adicione as linhas 
     </staticContent>
 </system.webServer>
 ```
+
+> [!NOTE]
+> No mais recente .Net Core de tecnologia Web da Microsoft. Build de site usando .Net Core ASP ignore web.config mapeamento de conteúdo estático. Como resultado, para a configuração adequada do site .Net Core que hospedará sua instalação do MSIX, você precisará modificar o método configure no arquivo Startup.cs.
 
 ## <a name="step-8---add-loopback-exemption-for-app-installer"></a>Etapa 8 – adicionar a isenção de auto-retorno para o instalador do aplicativo
 

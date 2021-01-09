@@ -6,14 +6,17 @@ ms.topic: article
 keywords: Windows 10, UWP, msix, ferramenta de empacotamento msix, programa Insider
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: 5371305d2ae1b1b76e76236913393aab7fd4b241
-ms.sourcegitcommit: 77e8b10706d4ad2fa97b2c71d82947528555398b
+ms.openlocfilehash: 2a63cd0927216d71b5a8006b646a001817249c5c
+ms.sourcegitcommit: 3a9aae783331833bbf244091544c48848768137e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97691692"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98041107"
 ---
 # <a name="release-notes-for-the-msix-packaging-tool"></a>Notas sobre a versão da Ferramenta de Empacotamento MSIX
+
+## <a name="version-1202012190"></a>1.2020.1219.0 da versão
+- Foi removido o suporte à versão 1 da assinatura do Device Guard. Consulte a documentação sobre como usar a [versão 2](../../package/signing-package-device-guard-signing.md). Se tiver alguma dúvida, entre em contato com a equipe de suporte da assinatura do Device Guard DGSSMigration@microsoft.com
 
 ## <a name="version-1202011300"></a>1.2020.1130.0 da versão
 - Correção de um problema em que clicar na mesma linha em arquivos de pacote não funcionou para realçar o item

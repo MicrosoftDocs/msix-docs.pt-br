@@ -1,40 +1,55 @@
 ---
-description: Fornece orientação sobre como aplicar correções de tempo de execução com a estrutura de suporte do pacote.
-title: Estrutura de suporte de pacote-iniciando aplicativos do Windows com parâmetros
+description: Fornece orientação sobre como aplicar correções de permissão de gravação do sistema de arquivos com a estrutura de suporte do pacote.
+title: Estrutura de suporte do pacote-correção de permissão de gravação do sistema de arquivos
 ms.date: 12/16/2020
 ms.topic: article
-keywords: Windows 10, UWP, PSF, estrutura de suporte a pacotes, argumentos, inicializador de aplicativos, parâmetros, atalho, msix
+keywords: Windows 10, UWP, PSF, estrutura de suporte a pacote, FileSystem, permissão de gravação, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: b0a82a00d578d23297341f39d03bf783cb3ca443
+ms.openlocfilehash: 9ab3e24da14096c298f02c9c950c996814c918d5
 ms.sourcegitcommit: 3a9aae783331833bbf244091544c48848768137e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/08/2021
-ms.locfileid: "98041237"
+ms.locfileid: "98043282"
 ---
-# <a name="launching-windows-app-with-parameters"></a>Iniciando o aplicativo do Windows com parâmetros
+# <a name="package-support-framework---filesystem-write-permission-fixup"></a>Estrutura de suporte do pacote-correção de permissão de gravação do sistema de arquivos
 
 ## <a name="investigation"></a>Investigação
 
-Alguns iniciadores de aplicativos do Windows no menu iniciar exigem o uso de parâmetros a serem passados para o executável ao iniciar o aplicativo do Windows. Para fazer isso, primeiro precisaremos identificar o iniciador que requer o parâmetro antes de integrar o aplicativo do Windows com a estrutura de suporte do pacote.
+Os aplicativos do Windows redirecionarão diretórios específicos relacionados ao aplicativo para a pasta de contêiner do aplicativo do Windows. Se um aplicativo tentar gravar no contêiner do aplicativo do Windows, um erro será disparado e a gravação falhará. 
 
-#### <a name="identifying-windows-app-launcher-parameter-requirement"></a>Identificando requisito de parâmetro do iniciador do aplicativo Windows
+Usando o PSF (Package support Framework), os aprimoramentos podem ser feitos ao pacote de aplicativos do Windows para resolver esse problema. Primeiro, devemos identificar a falha e os caminhos de diretório que estão sendo solicitados pelo aplicativo.
 
-1. Instale seu aplicativo do Windows em um computador de teste.
-1. Abra o **menu Iniciar do Windows**.
-1. Localize e selecione o inicializador de aplicativos do Windows no menu iniciar.
-1. Se o aplicativo for iniciado, você não terá nenhum problema (teste todos os iniciadores de aplicativo do Windows associados no menu Iniciar).
-1. Desinstale o aplicativo do Windows no computador de teste.
-1. Usando a mídia de instalação do Win32, instale o aplicativo em seu computador de teste.
-1. Abra o **menu Iniciar do Windows**.
-1. Localize e clique com o botão direito do mouse no seu aplicativo do Windows de dentro do menu iniciar.
-1. Selecione **mais**  >>  **local do arquivo aberto** no menu suspenso.
-1. Clique com o botão direito do mouse no primeiro atalho do aplicativo associado (repita as três próximas etapas para todos os atalhos de aplicativo associados).
-1. Selecione **Propriedades** no menu suspenso.
-1. Examine o valor na caixa de texto à direita de **destino**. Após o caminho do arquivo de aplicativo, se houver um parâmetro listado, este :::image type="content" source="images/contosoapp-fileproperties-target-parameter.png" alt-text="exemplo de aplicativo da janela de propriedades de arquivo com o parâmetro no destino":::
+#### <a name="capture-the-windows-app-failure"></a>Capturar a falha do aplicativo do Windows
 
-1. Registre o valor do parâmetro para uso futuro.
+Filtrar os resultados é uma etapa opcional, que facilitará a exibição de falhas relacionadas ao aplicativo. Para fazer isso, criaremos duas regras de filtro. O primeiro filtro de inclusão para o nome do processo do aplicativo e o segundo é uma inclusão de todos os resultados que não forem bem-sucedidos.
 
+1. Baixe e extraia o [Monitor de processos do Sysinternals](https://docs.microsoft.com/sysinternals/downloads/procmon) para o diretório **C:\PSF\ProcessMonitor**
+1. Abra o Windows Explorer e navegue até a pasta do monitor de processos do SysInternals extraído
+1. Clique duas vezes no arquivo do monitor de processo do SysInternals (procmon.exe), iniciando o aplicativo.
+1. Se solicitado pelo UAC, selecione o botão **Sim** .
+1. Na janela filtro do Process Monitor, selecione o primeiro menu suspenso rotulado com **arquitetura**.
+1. Selecione **nome do processo** no menu suspenso.
+1. No próximo menu suspenso, verifique se ele está definido com o valor de **é**.
+1. No campo de texto, digite o nome do processo do seu aplicativo (exemplo: PSFSample.exe).
+    :::image type="content" source="images/procmon-filterdialog-processname-psfsample.png" alt-text="Exemplo de filtro do processo monitor Windows com o nome do aplicativo":::
+1. Selecione o botão **Adicionar**.
+1. Na janela filtro do monitor de processos, selecione o primeiro menu suspenso rotulado como **nome do processo**.
+1. Selecione **resultado** no menu suspenso.
+1. No menu suspenso seguinte, selecione-o e selecione **não está** no menu suspenso.
+1. No campo de texto tipo: **êxito**.
+    :::image type="content" source="images/procmon-filterdialog-result-success.png" alt-text="Exemplo de janelas de filtro do monitor de processos com resultado":::
+1. Selecione o botão **Adicionar**.
+1. Selecione o botão **OK** .
+1. Inicie o aplicativo do Windows, dispare o erro e feche o aplicativo do Windows.
+
+#### <a name="review-the-windows-app-failure-logs"></a>Examinar os logs de falha de aplicativo do Windows
+
+Depois de capturar os processos de aplicativo do Windows, os resultados precisarão ser investigados para identificar se a falha está relacionada ao diretório de trabalho.
+
+1. Examine os resultados do monitor de processos do SysInternals, procurando falhas descritas na tabela acima.
+1. Se os resultados mostrarem um resultado de **"nome não encontrado"** , com os detalhes **"acesso desejado:..."** para seu aplicativo específico direcionado a um diretório fora do **"c:\Arquivos de Files\WindowsApps \\ ... \\ "** (como visto na imagem abaixo), você identificou com êxito uma falha relacionada ao diretório de trabalho, use o artigo [suporte do PSF-sistema de arquivos]() para obter orientação sobre como aplicar a correção do PSF ao seu aplicativo.
+:::image type="content" source="images/procmon-psfsampleapp-writefailure.png" alt-text="Exibe a mensagem de erro testemunhada no monitor de processo do SysInternals para falha ao gravar no diretório.":::
 
 ## <a name="resolution"></a>Resolução
 
@@ -113,8 +128,29 @@ Depois de atualizar o **config.jsno** arquivo, o **config.jsno** arquivo e o sup
         "applications": [
             {
                 "id": "",
+                "executable": ""
+            }
+        ],
+        "processes": [
+            {
                 "executable": "",
-                "arguments": ""
+                "fixups": [
+                {
+                    "dll": "",
+                    "config": {
+                        "redirectedPaths": {
+                            "packageRelative": [
+                                {
+                                    "base": "",
+                                    "patterns": [
+                                        ""
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
             }
         ]
     }
@@ -137,10 +173,18 @@ Depois de atualizar o **config.jsno** arquivo, o **config.jsno** arquivo e o sup
 1. Defina o `applications.executable` valor no *config.jsem* para direcionar o caminho relativo para o aplicativo localizado no campo **Applications.Application.Executable** do arquivo de *AppxManifest.xml* .
     :::image type="content" source="images/appxmanifest-application-executable.png" alt-text="Imagem destacando o local do executável no arquivo AppxManifest.":::
 
-1. Defina o `applications.arguments` valor no *config.js* para corresponder ao argumento usado para iniciar o aplicativo. Consulte o valor gravado na etapa final do guia de [investigação-identificando as diretrizes de requisito de parâmetro do inicializador de aplicativo do Windows](#identifying-windows-app-launcher-parameter-requirement) .
-
 1. Defina o `applications.workingdirectory` valor no *config.jsem* para direcionar o caminho da pasta relativa encontrado no campo **Applications.Application.Executable** do arquivo de *AppxManifest.xml* .
     :::image type="content" source="images/appxmanifest-application-workingdirectory.png" alt-text="Imagem destacando o local do diretório de trabalho dentro do arquivo AppxManifest.":::
+
+1. Defina o `process.executable` valor no *config.js* como destino o nome do arquivo (sem caminho e extensões) encontrado no campo **Applications.Application.Executable** do arquivo de *AppxManifest.xml* .
+    :::image type="content" source="images/appxmanifest-application-processexecutable.png" alt-text="Imagem destacando o local do executável do processo dentro do arquivo AppxManifest.":::
+
+1. Defina o `processes.fixups.dll` valor no *config.jsem* para direcionar a arquitetura **FileRedirectionFixup.dll** específica. Se a correção for para a arquitetura x64, defina o valor como **FileRedirectionFixup64.dll**. Se a arquitetura for x86 ou for desconhecida, defina o valor a ser **FileRedirectionFixup86.dll**
+
+1. Defina o `processes.fixups.config.redirectedPaths.packageRelative.base` valor no *config.js* para o caminho da pasta relativa do pacote, conforme encontrado no **Applications.Application.Executable** do arquivo de *AppxManifest.xml* .
+    :::image type="content" source="images/appxmanifest-application-workingdirectory.png" alt-text="Imagem destacando o local do diretório de trabalho dentro do arquivo AppxManifest.":::
+
+1. Defina o `processes.fixups.config.redirectedPaths.packageRelative.patterns` valor no *config.jsno* arquivo para corresponder ao tipo de arquivo que está sendo criado pelo aplicativo. Usando **". * \\ . log"** , o PSF redirecionará as gravações para todos os arquivos de log que estão no diretório identificado no caminho **processes.fixups.config. redirectedPaths. packageRelative. base** , bem como nos diretórios filho.
 
 1. Salve o **config.jsatualizado no** arquivo.
     ```json
@@ -148,8 +192,29 @@ Depois de atualizar o **config.jsno** arquivo, o **config.jsno** arquivo e o sup
         "applications": [
             {
             "id": "PSFSample",
-            "executable": "VFS/ProgramFilesX64/PS Sample App/PSFSample.exe",
-            "arguments": "/bootfromsettingshortcut"
+            "executable": "VFS/ProgramFilesX64/PS Sample App/PSFSample.exe"
+            }
+        ],
+        "processes": [
+            {
+                "executable": "PSFSample",
+                "fixups": [
+                    {
+                        "dll": "FileRedirectionFixup64.dll",
+                        "config": {
+                            "redirectedPaths": {
+                                "packageRelative": [
+                                    {
+                                        "base": "VFS/ProgramFilesX64/PS Sample App/",
+                                        "patterns": [
+                                            ".*\\.log"
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -162,6 +227,7 @@ Depois de atualizar o **config.jsno** arquivo, o **config.jsno** arquivo e o sup
     | PSFLauncher64.exe          | PSFLauncher32.exe          |
     | PSFRuntime64.dll           | PSFRuntime32.dll           |
     | PSFRunDll64.exe            | PSFRunDll32.exe            |
+    | FileRedirectionFixup64.dll | FileRedirectionFixup64.dll |
 
 
 ### <a name="update-appxmanifest"></a>Atualizar AppxManifest

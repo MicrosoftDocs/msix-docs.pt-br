@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 129834b10303a76e350ef2b6c0088438001f192b
-ms.sourcegitcommit: 77e8b10706d4ad2fa97b2c71d82947528555398b
+ms.openlocfilehash: ba38b2b58d667f6fefc29647fe9e8bb4d3ea0e00
+ms.sourcegitcommit: 3a9aae783331833bbf244091544c48848768137e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97691701"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98041127"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -35,10 +35,8 @@ Se a ferramenta já estiver instalada no computador, verifique a versão instala
 
 ## <a name="current-insider-preview-build"></a>Build atual do Insider Preview
 
-## <a name="version-1202011300"></a>1.2020.1130.0 da versão
-- Correção de um problema em que clicar na mesma linha em arquivos de pacote não funcionou para realçar o item
-- Aprimoramentos de UX para a página Selecionar instalador
-- Somente adicione um logotipo padrão para a loja se um não for extraído do aplicativo
+## <a name="version-1202012190"></a>1.2020.1219.0 da versão
+- Foi removido o suporte à versão 1 da assinatura do Device Guard. Consulte a documentação sobre como usar a [versão 2](../package/signing-package-device-guard-signing.md). Se tiver alguma dúvida, entre em contato com a equipe de suporte da assinatura do Device Guard DGSSMigration@microsoft.com
 
 Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](release-notes/history.md).
 
@@ -50,7 +48,7 @@ Você também pode compartilhar comentários de dentro do aplicativo. Clique em 
 
 O **Hub de Feedback** também é uma ótima maneira de compartilhar ideias e sugestões de novos recursos que você deseja ver no aplicativo.  
 
-## <a name="faqs"></a>Perguntas Frequentes
+## <a name="faqs"></a>Perguntas frequentes
 
 1. Não recebi nenhum email confirmando minha inscrição no Programa Insider. 
     - [Ingresse no programa](https://aka.ms/MSIXPackagingPreviewProgram) novamente.  
