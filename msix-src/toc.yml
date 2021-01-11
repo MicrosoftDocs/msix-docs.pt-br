@@ -142,18 +142,24 @@
               href: psf/package-support-framework-overview.md
             - name: Introdução ao Package Support Framework
               href: psf/package-support-framework.md
-            - name: Diretório de trabalho atual do PSF
-              href: psf\psf-current-working-directory.md
-            - name: Iniciar aplicativos com parâmetros usando o PSF
-              href: psf\psf-launch-apps-with-parameters.md
-            - name: Aplicar o Package Support Framework no Visual Studio
-              href: psf\package-support-framework-vs.md
-            - name: Executar scripts com o Package Support Framework
-              href: psf/run-scripts-with-package-support-framework.md
             - name: Criar a correção do Package Support Framework
               href: psf/create-package-support-framework.md
+            - name: Como implementar o PSF em seu pacote
+              items:
+                - name: Erro no diretório de trabalho do aplicativo do Windows
+                  href: psf\psf-current-working-directory.md
+                - name: Erro na gravação do aplicativo do Windows no diretório
+                  href: psf/psf-filesystem-writepermission.md
+                - name: Requisito de parâmetro do inicializador do aplicativo do Windows
+                  href: psf\psf-launch-apps-with-parameters.md
+                - name: Aplicar o Package Support Framework no Visual Studio
+                  href: psf\package-support-framework-vs.md
+                - name: Executar scripts com o Package Support Framework
+                  href: psf/run-scripts-with-package-support-framework.md
         - name: Agrupar pacotes MSIX
           href: packaging-tool/bundle-msix-packages.md
+        - name: Agrupar aplicativos em uma pasta no menu Iniciar
+          href: packaging-tool/create-start-group.md
     - name: MSIX Toolkit
       items:
         - name: Visão geral
