@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX, Ferramenta de Empacotamento MSIX
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ba38b2b58d667f6fefc29647fe9e8bb4d3ea0e00
-ms.sourcegitcommit: 3a9aae783331833bbf244091544c48848768137e
+ms.openlocfilehash: b55cb8b4622c3d72109129eca24d2d314437de9a
+ms.sourcegitcommit: 789ba344260b0afd46206f94954de3120aefb91e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98041127"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177665"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>Programa Insider da Ferramenta de Empacotamento MSIX
 
@@ -35,8 +35,10 @@ Se a ferramenta já estiver instalada no computador, verifique a versão instala
 
 ## <a name="current-insider-preview-build"></a>Build atual do Insider Preview
 
-## <a name="version-1202012190"></a>1.2020.1219.0 da versão
+### <a name="version-1202012190---public-version"></a>Versão 1.2020.1219.0 – versão pública
 - Foi removido o suporte à versão 1 da assinatura do Device Guard. Consulte a documentação sobre como usar a [versão 2](../package/signing-package-device-guard-signing.md). Se tiver alguma dúvida, entre em contato com a equipe de suporte da assinatura do Device Guard DGSSMigration@microsoft.com
+- Correção de um problema em que clicar na mesma linha em arquivos de pacote não funcionou para realçar o item
+- Aprimoramentos de UX para a página Selecionar instalador
 
 Encontre o histórico completo das notas sobre a versão da Ferramenta de Empacotamento MSIX [aqui](release-notes/history.md).
 
