@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, implantação, msix
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d0fba14c51b95149e77f553e5f2fe415d660d54
-ms.sourcegitcommit: 0b5b7bfc2985f2b420f0ba9f2edb25c5843f8ce6
+ms.openlocfilehash: 3d0ba4470183730f06553779491fbbf4bb180d21
+ms.sourcegitcommit: 3a9aae783331833bbf244091544c48848768137e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "92011548"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98041097"
 ---
 #   <a name="msix-app-distribution"></a>Distribuição de aplicativo MSIX
 O formato de empacotamento pode ser distribuído para dispositivos cliente com ferramentas de gerenciamento de dispositivos e aplicativos, como o Microsoft Intune e o Microsoft Endpoint Configuration Manager. 

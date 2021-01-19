@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, implantação, msix
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: 284023d31ef249e515afb42a2675f28bdacf875f
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: 62dc7479a888aa94156612cff103271b65bb4323
+ms.sourcegitcommit: 3a9aae783331833bbf244091544c48848768137e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89090475"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98041137"
 ---
 # <a name="distribute-your-msix-in-a-consumer-environment"></a>Distribuir o MSIX em um ambiente do consumidor
 
@@ -19,11 +19,11 @@ Caso não seja um desenvolvedor empresarial, a distribuição de varejo do MSIX 
 
 ## <a name="microsoft-store"></a>Microsoft Store
 
-A [Microsoft App Store](https://www.microsoft.com/store/apps/windows) pode ser uma ótima maneira de distribuir o aplicativo.  Ela está disponível para os consumidores desde o lançamento do Windows 8, no final de 2012. Os usuários podem navegar, pesquisar e baixar aplicativos ou jogos para o Windows.
+A [Microsoft Store](https://www.microsoft.com/store/apps/windows) pode ser uma ótima maneira de distribuir o aplicativo.  Ela está disponível para os consumidores desde o lançamento do Windows 8, no final de 2012. Os usuários podem navegar, pesquisar e baixar aplicativos ou jogos para o Windows.
 
-Para obter detalhes sobre a Microsoft App Store e os recursos que ela oferece, veja [Microsoft App Store.](/windows/uwp/publish/) 
+Para obter detalhes sobre a Microsoft Store e as funcionalidades que ela oferece, consulte [Microsoft Store.](/windows/uwp/publish/) 
 
-Para saber como publicar um aplicativo na Microsoft App Store e conhecer os recursos que ela oferece, confira o [Partner Center](https://partner.microsoft.com/dashboard/home).
+Para saber como publicar um aplicativo na Microsoft Store e conhecer as funcionalidades que ela oferece, consulte o [Partner Center](https://partner.microsoft.com/dashboard/home)
 
 ## <a name="app-center"></a>App Center
 
