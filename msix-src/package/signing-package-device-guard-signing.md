@@ -5,17 +5,17 @@ ms.date: 10/26/2020
 ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fefea6e25cb878ff9d6f6ccd50e25d34bd29885
-ms.sourcegitcommit: 07decd168211fdecdee069bcfb5d073b89f904ca
+ms.openlocfilehash: 1b440b20908baa73f0c8d46303d82d221975d9ee
+ms.sourcegitcommit: 059f215a0804adeeefeaaa09b376684caa4382eb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97350028"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98768818"
 ---
 # <a name="sign-an-msix-package-with-device-guard-signing"></a>Assinar um pacote do MSIX com a autenticação do Device Guard
 
 > [!IMPORTANT]
-> O [serviço de assinatura do Device Guard v2](https://docs.microsoft.com/microsoft-store/device-guard-signing-portal)(DGSS v2) já está disponível. Dezembro de 2020-o mecanismo existente baseado na Web para o serviço de assinatura do Device Guard V1 foi desativado e não está mais disponível para uso. Faça a transição para a versão baseada no PowerShell do serviço (DGSS v2). Um [pacote NuGet](https://www.nuget.org/packages/Microsoft.Acs.Dgss.Client) que contém os componentes necessários do DGSS V2 e a documentação de migração está disponível. Leia os termos de uso da Microsoft incluídos no pacote NuGet; Observe que o uso de DGSS implica a aceitação desses termos. Para dúvidas, entre em contato conosco em DGSSMigration@microsoft.com .
+> O [serviço de assinatura do Device Guard v2](/microsoft-store/device-guard-signing-portal)(DGSS v2) já está disponível. Dezembro de 2020-o mecanismo existente baseado na Web para o serviço de assinatura do Device Guard V1 foi desativado e não está mais disponível para uso. Faça a transição para a versão baseada no PowerShell do serviço (DGSS v2). Um [pacote NuGet](https://www.nuget.org/packages/Microsoft.Acs.Dgss.Client) que contém os componentes necessários do DGSS V2 e a documentação de migração está disponível. Leia os termos de uso da Microsoft incluídos no pacote NuGet; Observe que o uso de DGSS implica a aceitação desses termos. Para dúvidas, entre em contato conosco em DGSSMigration@microsoft.com .
 
 A [assinatura do Device Guard](/microsoft-store/device-guard-signing-portal) é um recurso do Device Guard que está disponível no Microsoft Store para negócios e educação. Ele permite que as empresas garantam que cada aplicativo vem de uma fonte confiável. Você pode usar SignTool no SDK do Windows e o DGSSv2 dlib no pacote NuGet para assinar seus aplicativos MSIX com a assinatura do Device Guard. Esse suporte ao recurso permite que você incorpore facilmente a assinatura do Device Guard no fluxo de trabalho de criação e assinatura de pacotes MSIX.
 

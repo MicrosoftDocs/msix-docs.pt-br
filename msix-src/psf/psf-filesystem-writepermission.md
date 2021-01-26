@@ -5,12 +5,12 @@ ms.date: 12/16/2020
 ms.topic: article
 keywords: Windows 10, UWP, PSF, estrutura de suporte a pacote, FileSystem, permissão de gravação, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ab3e24da14096c298f02c9c950c996814c918d5
-ms.sourcegitcommit: 3a9aae783331833bbf244091544c48848768137e
+ms.openlocfilehash: 577dd4d1f7d68bdf8a7be0bd69732373f97faf36
+ms.sourcegitcommit: 059f215a0804adeeefeaaa09b376684caa4382eb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98043282"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98768862"
 ---
 # <a name="package-support-framework---filesystem-write-permission-fixup"></a>Estrutura de suporte do pacote-correção de permissão de gravação do sistema de arquivos
 
@@ -24,7 +24,7 @@ Usando o PSF (Package support Framework), os aprimoramentos podem ser feitos ao 
 
 Filtrar os resultados é uma etapa opcional, que facilitará a exibição de falhas relacionadas ao aplicativo. Para fazer isso, criaremos duas regras de filtro. O primeiro filtro de inclusão para o nome do processo do aplicativo e o segundo é uma inclusão de todos os resultados que não forem bem-sucedidos.
 
-1. Baixe e extraia o [Monitor de processos do Sysinternals](https://docs.microsoft.com/sysinternals/downloads/procmon) para o diretório **C:\PSF\ProcessMonitor**
+1. Baixe e extraia o [Monitor de processos do Sysinternals](/sysinternals/downloads/procmon) para o diretório **C:\PSF\ProcessMonitor**
 1. Abra o Windows Explorer e navegue até a pasta do monitor de processos do SysInternals extraído
 1. Clique duas vezes no arquivo do monitor de processo do SysInternals (procmon.exe), iniciando o aplicativo.
 1. Se solicitado pelo UAC, selecione o botão **Sim** .
@@ -74,7 +74,7 @@ Esse processo orientará você durante a recuperação de e o uso das seguintes 
 O seguinte fornecerá orientações passo a passo sobre como baixar e instalar as ferramentas necessárias.
 
 1. Baixe a versão mais recente (sem visualização) da [ferramenta de cliente do NuGet](https://www.nuget.org/downloads)e salve o **nuget.exe** na `C:\PSF\nuget` pasta.
-1. Baixe a estrutura de suporte do pacote usando o [NuGet](https://docs.microsoft.com/nuget/install-nuget-client-tools#nugetexe-cli) executando o seguinte em uma janela administrativa do PowerShell:
+1. Baixe a estrutura de suporte do pacote usando o [NuGet](/nuget/install-nuget-client-tools#nugetexe-cli) executando o seguinte em uma janela administrativa do PowerShell:
     ```PowerShell
     Set-Location "C:\PSF"
     .\nuget\nuget.exe install Microsoft.PackageSupportFramework

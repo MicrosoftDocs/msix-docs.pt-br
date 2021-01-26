@@ -5,12 +5,12 @@ ms.date: 12/16/2020
 ms.topic: article
 keywords: Windows 10, UWP, PSF, estrutura de suporte a pacotes, argumentos, inicializador de aplicativos, parâmetros, atalho, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: b0a82a00d578d23297341f39d03bf783cb3ca443
-ms.sourcegitcommit: 3a9aae783331833bbf244091544c48848768137e
+ms.openlocfilehash: 4eaee3a4b514527500f715ec3390fbad136790c7
+ms.sourcegitcommit: 059f215a0804adeeefeaaa09b376684caa4382eb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98041237"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98768853"
 ---
 # <a name="launching-windows-app-with-parameters"></a>Iniciando o aplicativo do Windows com parâmetros
 
@@ -59,7 +59,7 @@ Esse processo orientará você durante a recuperação de e o uso das seguintes 
 O seguinte fornecerá orientações passo a passo sobre como baixar e instalar as ferramentas necessárias.
 
 1. Baixe a versão mais recente (sem visualização) da [ferramenta de cliente do NuGet](https://www.nuget.org/downloads)e salve o **nuget.exe** na `C:\PSF\nuget` pasta.
-1. Baixe a estrutura de suporte do pacote usando o [NuGet](https://docs.microsoft.com/nuget/install-nuget-client-tools#nugetexe-cli) executando o seguinte em uma janela administrativa do PowerShell:
+1. Baixe a estrutura de suporte do pacote usando o [NuGet](/nuget/install-nuget-client-tools#nugetexe-cli) executando o seguinte em uma janela administrativa do PowerShell:
     ```PowerShell
     Set-Location "C:\PSF"
     .\nuget\nuget.exe install Microsoft.PackageSupportFramework
