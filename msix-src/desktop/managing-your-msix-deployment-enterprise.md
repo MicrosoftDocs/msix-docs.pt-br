@@ -6,17 +6,17 @@ ms.topic: article
 keywords: windows 10, implantação, msix
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d0ba4470183730f06553779491fbbf4bb180d21
-ms.sourcegitcommit: 3a9aae783331833bbf244091544c48848768137e
+ms.openlocfilehash: 383d87a6e9ae9050299a422fe47d552f00cb2669
+ms.sourcegitcommit: 059f215a0804adeeefeaaa09b376684caa4382eb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98041097"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98768844"
 ---
 #   <a name="msix-app-distribution"></a>Distribuição de aplicativo MSIX
 O formato de empacotamento pode ser distribuído para dispositivos cliente com ferramentas de gerenciamento de dispositivos e aplicativos, como o Microsoft Intune e o Microsoft Endpoint Configuration Manager. 
 
-Os aplicativos MSIX empacotados podem ser instalados usando as ferramentas de implantação, o PowerShell ou o [Instalador de Aplicativo](https://www.microsoft.com/p/app-installer/9nblggh4nns1?ocid=9nblggh4nns1_ORSEARCH_Bing&rtc=1&activetab=pivot:overviewtab). Usando o Instalador de Aplicativo para instalar um aplicativo MSIX empacotado, o usuário ou o Profissional de TI pode escolher clicar com o botão direito do mouse e fazer a instalação ou clicar duas vezes no instalador do MSIX. Essa abordagem solicitará que o usuário clique no botão **Instalar** para iniciar a instalação e exibir o progresso da instalação. Como alternativa, usando os [cmdlets do PowerShell](https://docs.microsoft.com/windows/msix/desktop/powershell-msix-cmdlets) disponíveis, a instalação e a desinstalação de um aplicativo MSIX empacotado pode ser executada silenciosamente.
+Os aplicativos MSIX empacotados podem ser instalados usando as ferramentas de implantação, o PowerShell ou o [Instalador de Aplicativo](https://www.microsoft.com/p/app-installer/9nblggh4nns1?ocid=9nblggh4nns1_ORSEARCH_Bing&rtc=1&activetab=pivot:overviewtab). Usando o Instalador de Aplicativo para instalar um aplicativo MSIX empacotado, o usuário ou o Profissional de TI pode escolher clicar com o botão direito do mouse e fazer a instalação ou clicar duas vezes no instalador do MSIX. Essa abordagem solicitará que o usuário clique no botão **Instalar** para iniciar a instalação e exibir o progresso da instalação. Como alternativa, usando os [cmdlets do PowerShell](./powershell-msix-cmdlets.md) disponíveis, a instalação e a desinstalação de um aplicativo MSIX empacotado pode ser executada silenciosamente.
 
 ##  <a name="microsoft-endpoint-configuration-manager"></a>Microsoft Endpoint Configuration Manager 
 

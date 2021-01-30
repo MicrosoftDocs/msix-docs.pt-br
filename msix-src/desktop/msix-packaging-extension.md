@@ -6,12 +6,12 @@ ms.topic: article
 keywords: msix, extensão do DevOps, empacotamento, CI/CD, Azure DevOps
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 53d63fec204fad166f8de4548f1ae401a5c1556a
-ms.sourcegitcommit: 0b5b7bfc2985f2b420f0ba9f2edb25c5843f8ce6
+ms.openlocfilehash: f4ddb293bcb25fc85c574f9108d399c83877715c
+ms.sourcegitcommit: 059f215a0804adeeefeaaa09b376684caa4382eb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94384918"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98768889"
 ---
 # <a name="msix-packaging-extension"></a>Extensão de empacotamento do MSIX
 
@@ -67,7 +67,7 @@ Pesquise por ***MSIX** _ na barra de pesquisa _Adicionar tarefas* e você dever�
 ![Tarefa de compilação e empacotamento](images/msix-packaging-ext/build-and-package.png)
 
 - **Nome de exibição** – Personalize o nome da tarefa
-- **Caminho de saída** – Especifique o caminho de saída para o pacote MSIX que será criado por essa tarefa. O caminho do exemplo acima usa a [variável predefinida](https://docs.microsoft.com/azure/devops/pipelines/build/variables) **Build.ArtifactStagingDirectory** que é o caminho local no agente para armazenar artefatos e é usada aqui para armazenar os arquivos de saída da tarefa que podem ser publicados posteriormente usando uma tarefa de publicar artefatos.
+- **Caminho de saída** – Especifique o caminho de saída para o pacote MSIX que será criado por essa tarefa. O caminho do exemplo acima usa a [variável predefinida](/azure/devops/pipelines/build/variables) **Build.ArtifactStagingDirectory** que é o caminho local no agente para armazenar artefatos e é usada aqui para armazenar os arquivos de saída da tarefa que podem ser publicados posteriormente usando uma tarefa de publicar artefatos.
 - **Compilar solução com o MSBuild** – Selecione esta opção para compilar a solução com o MSBuild para a plataforma de destino especificada. Deixe a caixa desmarcada se você já tiver binários que precisam apenas ser empacotados. Se você deixar a caixa desmarcada, será solicitado que forneça o caminho para os binários.
 - **Projeto a Compilar** – Forneça o caminho para o arquivo do projeto ou da solução que precisa ser compilado.
 - **Limpar antes de Compilar** – Marque essa caixa de seleção se quiser que a tarefa execute uma limpeza antes da compilação.
