@@ -1,52 +1,19 @@
 ---
-description: Você pode usar o Azure Pipelines para criar builds automatizados para seu projeto MSIX.
-title: Configure um pipeline da CI/CD para automatizar builds e implantações do MSIX
-ms.date: 01/27/2020
+description: Você pode configurar um pipeline com um arquivo YAML para criar compilações automatizadas para seu projeto MSIX.
+title: Configurar o pipeline de CI/CD com o arquivo YAML
+ms.date: 01/11/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1f01d24a2ed6c7ea9b0e54760a5af883ab6c303b
-ms.sourcegitcommit: 0b5b7bfc2985f2b420f0ba9f2edb25c5843f8ce6
+ms.openlocfilehash: 8eb1888727939e6eba6dd0595f4128339258c3d1
+ms.sourcegitcommit: 059f215a0804adeeefeaaa09b376684caa4382eb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94378966"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98768808"
 ---
-# <a name="set-up-a-cicd-pipeline-to-automate-your-msix-builds-and-deployments"></a>Configure um pipeline da CI/CD para automatizar builds e implantações do MSIX
-
-Você pode usar o Azure Pipelines para criar builds automatizados para seu projeto MSIX. Este artigo mostra como fazer isso no Azure DevOps. Também mostraremos como realizar essas tarefas usando a linha de comando para que seja possível integrar com qualquer outro sistema de build.
-
-Se você preferir usar uma extensão do Azure DevOps baseada na interface do usuário para configurar o pipeline, use a Extensão de [*Empacotamento do MSIX*](msix-packaging-extension.md)
-
-## <a name="create-a-new-azure-pipeline"></a>Crie um novo pipeline do Azure
-
-Comece [inscrevendo-se no Azure Pipelines](/azure/devops/pipelines/get-started/pipelines-sign-up) caso ainda não tenha feito isso.
-
-Em seguida, crie um pipeline que possa ser usado para criar seu código-fonte. Para obter um tutorial sobre como criar um pipeline para criar um repositório GitHub, consulte [Crie seu primeiro pipeline](/azure/devops/pipelines/get-started-yaml). O Azure Pipelines é compatível com os tipos de repositório listados [neste artigo](/azure/devops/pipelines/repos).
-
-Para configurar o pipeline do build propriamente dito, navegue para o portal Azure DevOps em dev.azure.com/\<organization\> e crie um novo projeto. Se não tiver uma conta, crie uma gratuitamente. Depois de entrar e criar um projeto, você poderá enviar o código-fonte por push ao repositório Git configurado para você em https://\<organization\>@dev.azure.com/<organization\>/\<project\>/_git/\<project\> ou usar qualquer outro provedor, como o GitHub. Você poderá escolher a localização do repositório ao criar um pipeline no portal, basta primeiro clicar no botão **Pipelines**, depois em **Novo Pipeline**.
-
-Na tela **Configurar** que aparecerá em seguida, você deverá selecionar a opção **Arquivo YAML existente do Azure Pipelines** e o caminho para o arquivo YAML verificado no repositório.
-
-## <a name="add-your-project-certificate-to-the-secure-files-library"></a>Adicione o certificado do projeto à biblioteca Arquivos seguros
-
-> [!NOTE]
->Se possível, você deve evitar enviar certificados para o seu repositório e o git os ignorará por padrão. Para gerenciar o tratamento seguro de arquivos confidenciais como certificados, o Azure DevOps oferece suporte ao recurso [arquivos seguros](/azure/devops/pipelines/library/secure-files?view=azure-devops).
-
-Para carregar um certificado em seu build automatizado:
-
-1. No Azure Pipelines, expanda **Pipelines** no painel de navegação e clique em **Biblioteca**.
-2. Clique na guia **Arquivos seguros** e clique em **+ Arquivo seguro**.
-3. Navegue até o arquivo de certificado e clique em **OK**.
-4. Depois de carregar o certificado, selecione-o para visualizar as propriedades dele. Em **Permissões de pipeline**, habilite a opção **Autorizar para uso em todos os pipelines**.
-5. Se a chave privada no certificado tiver uma senha, recomendamos que você a armazene no [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) e a vincule a um [grupo de variáveis](/azure/devops/pipelines/library/variable-groups). Você pode usar a variável para acessar a senha pelo pipeline. Observe que uma senha é compatível apenas com a chave privada. No momento, não é possível usar um arquivo de certificado que seja, em si, protegido por senha.
-
-> [!NOTE]
-> A partir do Visual Studio 2019, um certificado temporário não é mais gerado nos projetos MSIX. Para criar ou exportar certificados, use os cmdlets do PowerShell descritos [neste artigo](../package/create-certificate-package-signing.md).
-
-
-## <a name="configure-the-build-in-your-yaml-file"></a>Configure o Build no arquivo YAML
+# <a name="configure-cicd-pipeline-with-yaml-file"></a>Configurar o pipeline de CI/CD com o arquivo YAML
 
 Os diferentes argumentos MSBuild que podem ser definidos para configurar o pipeline do build estão listados na tabela a seguir.
 
@@ -111,9 +78,6 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
 ```
-
-
-
 
 Abaixo está o detalhamento das diferentes tarefas de Build definidas no arquivo YAMl:
 
