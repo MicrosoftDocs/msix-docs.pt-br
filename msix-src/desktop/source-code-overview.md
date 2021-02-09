@@ -1,5 +1,5 @@
 ---
-Description: Uma visão geral dos tópicos sobre criação de um pacote do MSIX com base em código-fonte
+description: Uma visão geral dos tópicos sobre criação de um pacote do MSIX com base em código-fonte
 title: Criar um pacote MSIX com base na visão geral do código
 author: Huios
 ms.date: 02/03/2020
@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 34308aefcd0417bc4461c69f3b3459b125a8bf8c
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: 33a6589273bbb0e3fd7c9d0b61c35f69017a595c
+ms.sourcegitcommit: 9e844d74e1f6710c9068d8d92f87e1d9754339f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89091214"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99081546"
 ---
 # <a name="building-an-msix-package-from-your-code"></a>Criar um pacote do MSIX com base em seu código 
 
@@ -22,7 +22,7 @@ Se estiver desenvolvendo um aplicativo UWP, o Visual Studio usará o MSIX como f
 
 |Tópico| Descrição |
 |:---|:---|
-|[O que saber antes de empacotar o aplicativo de área de trabalho](before-packaging-overview.md)| Histórico de requisitos de MSIX e comportamento de tempo de execução de aplicativo. É útil ter essas informações antes de criar um pacote MSIX para o aplicativo de área de trabalho. Se estiver criando um aplicativo UWP, será possível ignorar essa seção. | 
+|[O que saber antes de empacotar o aplicativo de área de trabalho](before-packaging-overview.md)| Histórico de requisitos de MSIX e comportamento de tempo de execução do aplicativo da área de trabalho. É útil ter essas informações antes de criar um pacote MSIX para o aplicativo de área de trabalho. Se estiver criando um aplicativo UWP, será possível ignorar essa seção. | 
 |[Empacotar o aplicativo UWP ou da área de trabalho no Visual Studio](vs-package-overview.md)| Esta seção fala sobre como empacotar o aplicativo UWP ou da área de trabalho (Windows Forms, WPF, Win32 etc.) como MSIX no Visual Studio.|
 |[Pipelines de CI/CD para Builds e Implantações MSIX](azure-dev-ops.md)| Esta seção fala sobre como automatizar os fluxos de trabalho de build e implantação usando pipelines de CI/CD no Azure DevOps.|
 |[Empacotamento pela linha de comando](../package/manual-packaging-root.md)| Esta seção fala sobre como empacotar o aplicativo como MSIX usando ferramentas de linha de comando.|
