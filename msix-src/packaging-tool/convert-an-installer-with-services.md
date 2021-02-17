@@ -5,12 +5,12 @@ ms.date: 12/19/2019
 ms.topic: article
 keywords: Windows 10, MSIX, MSIX Packaging Tool, serviços
 ms.localizationpriority: medium
-ms.openlocfilehash: 58def1075e3850764c735057caf4f5ef61478beb
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: f5306be1c4be846c5e3d0be6fe55e83a61c3220c
+ms.sourcegitcommit: 1c4e671172104bba39eebd513d849cfbbb689539
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89090884"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100630847"
 ---
 # <a name="convert-an-installer-that-includes-services"></a>Converter um instalador que inclui os serviços
 
@@ -29,7 +29,7 @@ Para corrigir um serviço ou ver dados adicionais sobre o serviço, clique duas 
 - **Nome para exibição:** O nome de exibição do serviço.
 - **Caminho da imagem:** Local do executável do serviço. Isso não é editável.
 - **Conta inicial:** A conta inicial do serviço.
-- **Tipo de inicialização:** Tipo de inicialização para o serviço. Dá suporte a **automático**, **manual**e **desabilitado**.
+- **Tipo de inicialização:** Tipo de inicialização para o serviço. Dá suporte a **automático**, **manual**, **desabilitado** e **atrasado**.
 - **Argumentos:** Argumentos a serem executados quando o serviço for iniciado.
 - **Dependências:** Dependências para o serviço.
 
@@ -39,7 +39,7 @@ Depois que um serviço for corrigido, você poderá movê-lo para a tabela **inc
 
 O caminho do executável dos serviços (também chamado de caminho da imagem) não é editável no momento. Para corrigir problemas com o caminho, você deve editar manualmente o caminho do executável do serviço antes de converter o instalador. Como alternativa, após a conversão, você pode editar o manifesto manualmente usando o [Editor de pacote](package-editor.md) na ferramenta de empacotamento MSIX.
 
-O relatório de serviços não está disponível no **Editor de pacotes**no momento. Você deve editar manualmente o manifesto para fazer alterações nos serviços incluídos no pacote MSIX.
+O relatório de serviços não está disponível no **Editor de pacotes** no momento. Você deve editar manualmente o manifesto para fazer alterações nos serviços incluídos no pacote MSIX.
 
 No momento, não há suporte para serviços com dependências fora do pacote.
 

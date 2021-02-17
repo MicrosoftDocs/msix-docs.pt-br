@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 726d743106932f7febac35ad70256b867146101d
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: d9b9d7f62e1f3a0238341f9ad7337dc3ee35ace8
+ms.sourcegitcommit: 1c4e671172104bba39eebd513d849cfbbb689539
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073712"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100630867"
 ---
 # <a name="conversion-with-the-command-line"></a>Conversão com a linha de comando
 
@@ -25,15 +25,17 @@ Para os scripts PowerShell e Bash de exemplo que demonstram como automatizar o p
 
 ## <a name="use-the-command-line-with-the-command-prompt"></a>Usar a linha de comando com o prompt de comando
 
-Para criar um novo pacote MSIX para seu aplicativo, execute o comando `MsixPackagingTool.exe create-package` em uma janela de prompt de comando do administrador.
+Para criar um novo pacote MSIX para seu aplicativo, execute o `MsixPackagingTool.exe create-package` comando em uma janela de prompt de comando do administrador.
 
-Estes são os parâmetros que podem ser passados como argumentos de linha de comando:
+Aqui estão os parâmetros que podem ser passados como argumentos de linha de comando (diferencia maiúsculas de minúsculas):
 
 |**Parâmetro** |    **Descrição**|
 |---------|---------|
 |-? --help  |Mostra informações da Ajuda|
 |--template | [obrigatório] Caminho para o arquivo XML do modelo de conversão que contém informações do pacote e configurações para essa conversão|
-|--virtualMachinePassword   | [opcional] A senha para a Máquina Virtual ser usada para o ambiente de conversão. Observações: o arquivo de modelo deve conter um elemento VirtualMachine e o atributo Settings:: AllowPromptForPassword não deve ser definido como true.|
+|--virtualMachinePassword   | [opcional] A senha para a Máquina Virtual ser usada para o ambiente de conversão. Observação: o arquivo de modelo deve conter um elemento VirtualMachine e o atributo Settings:: AllowPromptForPassword não deve ser definido como true.|
+|--machinePassword  |adicional A senha do computador remoto a ser usada para o ambiente de conversão. Observação: o arquivo de modelo deve conter um elemento RemoteMachine ou VirtualMachine e o atributo Settings:: AllowPromptForPassword não deve ser definido como true.|
+|--retomar   |adicional Usado para retomar o fluxo de conversão após uma reinicialização.|
 |-v --verbose   |[opcional] Imprime os logs detalhados no console.|
 
 Exemplos:

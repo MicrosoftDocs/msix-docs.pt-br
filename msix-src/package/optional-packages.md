@@ -8,12 +8,12 @@ author: dianmsft
 ms.author: diahar
 keywords: Windows 10, msix, UWP, pacotes opcionais, conjunto relacionado, extensão do pacote, Visual Studio
 ms.localizationpriority: medium
-ms.openlocfilehash: c896edc6b2bc835bd6b37917675dbd466ec256ae
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: aee0817b2d9e56b6254e74dfe1a1d3a3dc722d12
+ms.sourcegitcommit: 1c4e671172104bba39eebd513d849cfbbb689539
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89091084"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100630857"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>Criação de pacotes opcionais e conjunto relacionado
 
@@ -49,6 +49,9 @@ Para criar um pacote opcional no Visual Studio, você precisará:
     ```XML
     <uap3:MainPackageDependency Name="[MainPackageDependency]"/>
     ```
+
+> [!NOTE]
+> Se você quiser criar um pacote opcional de um Publicador diferente, será necessário especificar o editor do aplicativo principal se eles forem diferentes. Assim <uap4: MainPackageDependency Name = "Main_app" Publisher = "CN = contoso..."/>. Isso não funcionará se você estiver publicando no repositório.
 
 Depois de ter suas dependências de pacote configuradas das etapas 1 a 4, você pode continuar desenvolvendo como faria normalmente. Para obter mais informações, consulte [postagem no blog: criar seu primeiro pacote opcional](/archive/blogs/appinstaller/build-your-first-optional-package).
 
