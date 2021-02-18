@@ -326,23 +326,21 @@
       href: desktop\managing-your-msix-reset-and-repair.md
 - name: Validação e solução de problemas do MSIX
   items:
+    - name: 'Solucionar problemas de empacotamento, implantação e consulta de aplicativos Windows'
+      href: /windows/win32/appxpkg/troubleshooting?context=/windows/msix/render
+    - name: Solucionar problemas de runtime em um contêiner do MSIX
+      href: manage/troubleshoot-msix-container.md
     - name: Suporte ao MSIX no Windows Server 2019
       href: msix-server-2019.md
     - name: Portal de dispositivos do Windows
       href: /windows/uwp/debug-test-perf/device-portal?context=/windows/msix/render
-    - name: Solucionar problemas de runtime em um contêiner do MSIX
-      href: manage/troubleshoot-msix-container.md
-    - name: Depurar e testar um aplicativo empacotado
-      items:
-        - name: 'Solucionar problemas de empacotamento, implantação e consulta de aplicativos Windows'
-          href: /windows/win32/appxpkg/troubleshooting?context=/windows/msix/render
-        - name: 'Executar, depurar e testar um aplicativo da área de trabalho empacotado'
-          href: desktop/desktop-to-uwp-debug.md
-        - name: Detectar a identidade do pacote e o contexto do runtime
-          href: detect-package-identity.md
-        - name: Registrar um layout de pacote de um compartilhamento de rede
-          href: desktop/register-from-network.md
-        - name: Testar no Windows 10 S
-          href: desktop/desktop-to-uwp-test-windows-s.md
-        - name: Problemas conhecidos ao empacotar um MSIX
-          href: desktop/desktop-to-uwp-known-issues.md
+    - name: 'Executar, depurar e testar um aplicativo da área de trabalho empacotado'
+      href: desktop/desktop-to-uwp-debug.md
+    - name: Detectar a identidade do pacote e o contexto do runtime
+      href: detect-package-identity.md
+    - name: Registrar um layout de pacote de um compartilhamento de rede
+      href: desktop/register-from-network.md
+    - name: Testar no Windows 10 S
+      href: desktop/desktop-to-uwp-test-windows-s.md
+    - name: Problemas conhecidos ao empacotar um MSIX
+      href: desktop/desktop-to-uwp-known-issues.md
