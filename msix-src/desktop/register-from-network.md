@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, MSIX
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
-ms.openlocfilehash: ca179a49a282d2bee6217a142ef94409e2161c8d
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: 11caf37140740bf85e316c4f3cbc45af27725e6b
+ms.sourcegitcommit: 19217755634ed88bff58db38cfba4b157db3bad8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89091224"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100255397"
 ---
 # <a name="registering-a-package-layout-from-a-network-share"></a>Registrar um layout de pacote de um compartilhamento de rede
 
@@ -35,7 +35,7 @@ Se estiver desenvolvendo no Visual Studio, será possível seguir as etapas desc
 
 ## <a name="from-the-command-line"></a>Da linha de comando
 
-Caso não esteja desenvolvendo no Visual Studio e usando ferramentas de linha de comando, será possível usar [WinDeployAppCmd](/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool). Abaixo está um exemplo de como fazer isso por uma janela de linha de comando:
+Se não estiver desenvolvendo no Visual Studio nem usando ferramentas de linha de comando, você poderá usar o [WinAppDeployCmd](/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool). Abaixo está um exemplo de como fazer isso por uma janela de linha de comando:
 
 ```
 WinAppDeployCmd.exe registerfiles -remotedeploydir <network path> -ip <IP Address> -pin <target machine PIN>
