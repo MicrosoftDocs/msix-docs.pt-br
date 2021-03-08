@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 83a071db2d9ca15e044b2f0f01d45059cf19ed0e
-ms.sourcegitcommit: 9e844d74e1f6710c9068d8d92f87e1d9754339f1
+ms.openlocfilehash: 9143bcba76bd168d38b36d2c8bca2ff4fc89fb80
+ms.sourcegitcommit: f0d0dd5275990c50ca4a72a9c6a689ba604aba38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99081568"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101841151"
 ---
 # <a name="package-a-desktop-app-using-third-party-installers"></a>Formar pacote de um aplicativo da área de trabalho usando instaladores de terceiros
 
@@ -172,3 +172,23 @@ Links relacionados:
 * RayQC: [https://raynet.de/Raynet-Products/RayQC](https://raynet.de/Raynet-Products/RayQC)
 * RayQC Advanced: [https://raynet.de/Raynet-Products/RayQCad](https://raynet.de/Raynet-Products/RayQCad)
 * Licença de avaliação gratuita: [https://raynet.de/contact?init=license](https://raynet.de/contact?init=license)
+
+## <a name="rimo3-cloud"></a>Rimo3 Cloud
+
+O Rimo3 Cloud possibilita a adoção de novas tecnologias em escala por meio da automação inteligente. Assim, ele permite a criação de pacotes de MSIX prontos para implantação e ajuda os clientes a tomar decisões informadas e controladas por dados sobre quais aplicativos serão convertidos e em quais ambientes esses aplicativos funcionarão melhor.
+
+<img width="20%" src="images/Rimo3CLOUD-Logo-Colour-RGB.png" Alt-text="Logo of Rimo3 Cloud">
+
+A modernização de aplicativos com o Rimo3 Cloud aproveita o poder da automação e da orquestração não só para fazer testes em massa, converter e corrigir aplicativos em pacotes de MSIX prontos para implantação, mas também: 
+
+* Entender quais aplicativos são adequados para conversão; 
+* Verificar se os aplicativos realmente funcionam no sistema operacional moderno de destino antes da conversão; 
+* Testar os aplicativos convertidos.
+
+O Rimo3 Cloud elimina quase todo o esforço manual necessário ao lidar com uma iniciativa de transformação de tecnologia, seja uma transformação em larga escala de todos os seus imóveis ou de uma exploração inicial de MSIX. 
+
+Confira o nosso guia de cinco passos para modernizar seus aplicativos para MSIX em questão de minutos [aqui](https://rimo3.com/rimo3cloud/?msix-guide).
+
+Para obter mais informações sobre a modernização dos seus aplicativos com o Rimo3 Cloud e para ver o que mais você pode fazer com a automação inteligente em escala, acesse: https://rimo3.com
+
+
