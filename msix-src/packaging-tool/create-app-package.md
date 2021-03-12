@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b9aea569ea6c66935c8d5f6fdc1e86e429b18760
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: 115cebcebe643df082c60009158a955b7225c3ac
+ms.sourcegitcommit: 08c68ac2dd42098d734baeea215dfbdffda750a2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89091034"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102782672"
 ---
 # <a name="create-an-msix-package-from-any-desktop-installer-msi-exe-clickonce-or-app-v"></a>Criar um pacote MSIX de qualquer instalador de desktop (MSI, EXE, ClickOnce ou App-V)
 
@@ -23,7 +23,7 @@ Você pode usar a [ferramenta de empacotamento MSIX](tool-overview.md) para cria
 - EXE
 - ClickOnce
 - App-V
-- script
+- Script
 - Instalação manual
 
 Este documento explicará como obter quaisquer ativos existentes que você tenha e convertê-los em MSIX.
@@ -39,7 +39,7 @@ Quando a ferramenta for iniciada pela primeira vez, você deverá fornecer conse
 
 A criação de um **pacote de aplicativos** é a opção mais comumente usada. É aqui que você criará um pacote MSIX a partir de um instalador ou por meio da instalação manual da carga do aplicativo.
 
-![pic1](images/pic1.PNG)
+![Pic 1](images/pic1.PNG)
 
 ## <a name="packaging-method"></a>Método de compactação
 
@@ -194,7 +194,7 @@ Para corrigir um serviço ou ver dados adicionais sobre o serviço, clique duas 
 - **Nome para exibição:** O nome de exibição do serviço.
 - **Caminho da imagem:** Local do executável do serviço. Isso não é editável.
 - **Conta inicial:** A conta inicial do serviço.
-- **Tipo de inicialização:** Tipo de inicialização para o serviço. Dá suporte a **automático**, **manual**e **desabilitado**.
+- **Tipo de inicialização:** Tipo de inicialização para o serviço. Dá suporte a **automático**, **manual** e **desabilitado**.
 - **Argumentos:** Argumentos a serem executados quando o serviço for iniciado.
 - **Dependências:** Dependências para o serviço.
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b71f94871b9cce020cf0a20f86c36ca32b0c0bf1
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: bb4961f712b7186f92156b91a2e84079767f83b8
+ms.sourcegitcommit: 08c68ac2dd42098d734baeea215dfbdffda750a2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89090874"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102782682"
 ---
 # <a name="edit-a-package-using-package-editor"></a>Editar um pacote usando o editor de pacote
 
@@ -29,15 +29,15 @@ Na página **Informações do pacote**, você pode alterar as informações do p
 
 Você pode navegar para outras seções do editor de pacote para editar seus recursos, registro virtual ou arquivos de pacote. Quando terminar de editar o pacote, assine o pacote e atualize sua versão antes de salvar as alterações.
 
-![packageeditorpkginfo1](images/PackageEditorPkgInfo1.png)
+![Pacote Editorpkg Info1](images/PackageEditorPkgInfo1.png)
 
-![packageeditorpkginfo2](images/PackageEditorPkgInfo2.png)
+![Pacote Editorpkg Info2](images/PackageEditorPkgInfo2.png)
 
 ## <a name="capabilities-page"></a>Página Funcionalidades
 
 Na página [Funcionalidades](/uwp/schemas/appxpackage/uapmanifestschema/element-capability), você pode adicionar ou remover **funcionalidades** do pacote. Se uma funcionalidade estiver presente no pacote, a caixa de seleção ficará marcada. Se você marcar ou desmarcar uma funcionalidade, ela atualizará o manifesto. Isso é convertido no elemento <capability> no manifesto MSIX.
 
-![pic11](images/pic11.png)
+![Pic 11](images/pic11.png)
 
 ## <a name="virtual-registry-page"></a>Página Registro virtual
 
@@ -56,7 +56,7 @@ Clique com o botão direito do mouse em qualquer lugar na janela direita para ex
 - Adicionar binário: para adicionar um valor binário a uma chave.
 - Adicionar DWORD: para adicionar um valor DWORD a uma chave.
 
-![pic12](images/pic12.png)
+![Pic 12](images/pic12.png)
 
 ## <a name="package-files-page"></a>Página Arquivos de pacote
 
@@ -75,4 +75,4 @@ Clique com o botão direito do mouse em um arquivo para executar essas operaçõ
 - Excluir: exclui o arquivo selecionado.
 - Mover: renomear ou mover o arquivo para um novo local.
 
-![pic13](images/pic13.png)
+![Pic 13](images/pic13.png)

@@ -9,12 +9,12 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: 489912e9b2ad645c6467e081460c2be754bd2b42
-ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
+ms.openlocfilehash: 982a7ec8ce3677d7bb1edd9bef7cafe4bd745605
+ms.sourcegitcommit: 08c68ac2dd42098d734baeea215dfbdffda750a2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89091154"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102782722"
 ---
 # <a name="package-a-desktop-or-uwp-app-in-visual-studio"></a>Empacotar um aplicativo UWP ou da área de trabalho no Visual Studio
 
@@ -104,11 +104,11 @@ Os aplicativos podem ser instalados sem serem publicados no armazenamento, publi
 
 3. Selecione **Sideload** na primeira página do assistente e clique em **Avançar**.
 
-    ![Janela da caixa de diálogo Crie Seus Pacotes mostrada](images/packaging-screen10.png)
+    ![Janela da caixa de diálogo criar seus pacotes mostrada com Sideload](images/packaging-screen10.png)
 
 4. Na página **selecionar método de assinatura** , selecione se deseja ignorar a assinatura de empacotamento ou selecionar um certificado para assinatura. Você pode selecionar um certificado do repositório de certificados local, selecionar um arquivo de certificado ou criar um novo certificado. Para que um pacote MSIX seja instalado na máquina de um usuário final, ele deve ser assinado com um certificado confiável no computador. 
 
-    ![Janela da caixa de diálogo Crie Seus Pacotes mostrada](images/package-signing2.png)
+    ![Janela da caixa de diálogo criar seus pacotes mostrada com a assinatura](images/package-signing2.png)
 
 5. Conclua a página **selecionar e configurar pacotes** conforme descrito na seção [criar seu arquivo de carregamento de pacote do aplicativo usando o Visual Studio](#create-your-app-package-upload-file-using-visual-studio) .
 
@@ -157,7 +157,7 @@ Você pode criar um arquivo de carregamento de pacote de aplicativo usando o ass
 
 3. Selecione **Microsoft Store usando um novo nome de aplicativo** na primeira caixa de diálogo e clique em **Avançar**.  
 
-    ![Janela da caixa de diálogo Crie Seus Pacotes mostrada](images/packaging-screen3.jpg)
+    ![Janela da caixa de diálogo criar seus pacotes mostrada com Microsoft Store](images/packaging-screen3.jpg)
 
     Se você já tiver associado seu projeto a um aplicativo na loja, também terá a opção de criar pacotes para o aplicativo de repositório associado. Se você escolher **Sideload**, o Visual Studio não gerará o arquivo de carregamento do pacote do aplicativo (. msixupload ou. appxupload) para envios do Partner Center. Se você quiser apenas criar um MSIX packge ou um pacote para distribuição que não seja de armazenamento, poderá selecionar essa opção.
 
@@ -204,7 +204,7 @@ Valide seu aplicativo antes de enviá-lo para o Partner Center para certificaç�
 
 2. Depois que o WACK tiver terminado e seu aplicativo tiver passado certificação, você estará pronto para enviar seu aplicativo para o Partner Center. Certifique-se de carregar o arquivo correto. O local padrão do arquivo pode ser encontrado na pasta raiz da sua solução `\[AppName]\AppPackages` e terminará com a extensão de arquivo. appxupload ou. msixupload. O nome será do formulário `[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload` ou `[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload` se você tiver optado por um pacote de aplicativo com toda a arquitetura de pacote selecionada.
 
-### <a name="validate-your-app-package-on-a-remote-windows10-device"></a>Valide seu pacote do aplicativo em um dispositivo Windows 10 remoto.
+### <a name="validate-your-app-package-on-a-remote-windows-10-device"></a>Valide seu pacote do aplicativo em um dispositivo Windows 10 remoto.
 
 1. Habilite seu dispositivo Windows 10 para desenvolvimento seguindo as instruções de [Habilitar seu dispositivo para desenvolvimento](/windows/uwp/get-started/enable-your-device-for-development).
     >[!IMPORTANT]
